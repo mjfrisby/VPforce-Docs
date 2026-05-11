@@ -43,6 +43,7 @@ nav:
     - Other:
       - FFB Trim Wheel: community-projects/FFB_TrimWheel.md
       - FFB Yoke: community-projects/ffb-yoke.md
+      - Force-Enabled Collective: community-projects/Number481_Force_Enabled_Collective.md
 
   - Third-Party Vendors:
     - Introduction: third-party-vendors/index.md
