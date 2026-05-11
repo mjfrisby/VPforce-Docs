@@ -456,6 +456,19 @@ html {
 /* and move the spacing to .md-content so that the sidebar connects flush     */
 /* against the tabs.                                                          */
 @media screen and (min-width: 76.25em) {
+  /* Pull .md-main up by 5rem with matching padding-top so content and sidebars
+     stay at the same visual position. This increases the JS scroll-spy gap
+     (md-main__inner.offsetTop − md-main.offsetTop) from 0 to 5rem, raising
+     the threshold p = headerHeight + 0.8×5rem above the full sticky height
+     (navbar 73px + tabs 2.4rem). Using rem ensures the gap scales with font
+     size the same way the tabs bar does. Without this fix, zeroing
+     md-main__inner margin-top (done below for visual reasons) left p = 73px,
+     causing headings to only activate after sliding past the tabs bar. */
+  [data-md-component="main"] {
+    margin-top: -5rem;
+    padding-top: 5rem;
+  }
+
   .md-main__inner {
     margin-top: 0;
   }
