@@ -100,10 +100,10 @@ The following is a list of STL files, quantities, and support requirements:
 #### Bill of Materials (BOM)
 A detailed Bill of Materials with McMaster Part numbers is available in the GitHub repository. Key components include:
 
-*   **Bearings:** 6806-2RS (x4), 6803-2RS (x4)
+*   **Bearings:** 6806-2RS (x4), 6802-2RS (x8)
 *   **Threaded Inserts:** M3, M4
 *   **Screws:** M3, M4
-*   **Belts:** GT2, 6mm width
+*   **Belts:** HDT 5M-15W
 *   **Connectors:** XT60
 
 #### Assembly
