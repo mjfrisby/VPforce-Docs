@@ -1,4 +1,10 @@
 # Changelog
+- **June 13, 2026:**
+
+    - Added missing image depicting axis rescale example
+    - Clarified procedure for re-centering motors after belt slippage/removal
+    - Refactor "Apply/Save Config" throughout documentation to "Apply/Save Settings" to match button text in Configurator
+
 - **May 1, 2026:**
 
     - Split **[Game Specific Troubleshooting](rhino/game-specific-troubleshooting.md)** into its own dedicated page, separated from the hardware **[Troubleshooting](rhino/troubleshooting-maintenance.md)** page
@@ -28,7 +34,7 @@
 
     - Added and refined **[Leaving the RHINO Idle](rhino/using-the-rhino.md#leaving-the-rhino-idle)** guidance covering USB power-save behavior, the **USB suspend** requirement for automatic sleep, E-stop use, full PSU power-off, and practical recommendations for how to leave the unit between sessions
     - Refactored **[Using the RHINO](rhino/using-the-rhino.md)** to fix broken references, remove a missing image, clarify calibration save steps, and tighten several setup explanations
-    - Standardized **Apply Config** terminology across Rhino setup, usage, and maintenance pages to distinguish temporary activation from **Store Config** permanent saves
+    - Standardized **Apply Settings** terminology across Rhino setup, usage, and maintenance pages to distinguish temporary activation from **Store Settings** permanent saves
 
 - **March 31, 2026:**
 
