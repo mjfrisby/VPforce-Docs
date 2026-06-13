@@ -177,8 +177,8 @@ Each axis (brake, rudder, etc.) has its own calibration row with the following c
     - Move the axis through its full range of motion (from one extreme to the other)
     - The min/max values will automatically update to capture the full travel range
     - Click again to deactivate the button and exit calibration mode
-    - Click **Apply Config** to apply the new calibration
-    - Click **Store Config** if you want to save it permanently
+    - Click **Apply Settings** to apply the new calibration
+    - Click **Store Settings** if you want to save it permanently
 
 - **Center Button (C):** Readjusts the calibration values so that the current stick position becomes the new center point. Useful for correcting center offset without recalibrating the entire range.
 
@@ -189,8 +189,8 @@ Each axis (brake, rudder, etc.) has its own calibration row with the following c
 3. **Click "Calibrate"** for the axis you want to calibrate
 4. **Move the axis** through its complete range of motion (full deflection in all directions)
 5. **Verify** that the min/max values have been captured correctly
-6. **Click "Apply Config"** to apply the calibration
-7. **Click "Store Config"** if you want to save it permanently
+6. **Click "Apply Settings"** to apply the calibration
+7. **Click "Store Settings"** if you want to save it permanently
 8. **Test** the axis movement to ensure proper range and centering
 
 !!! tip "When to Calibrate"
@@ -489,8 +489,8 @@ Increasing Force Compensation adds an outward positional offset near the axis ex
 3. Ensure the stick reaches all physical stops (forward, back, left, right, and corners)
 4. The system captures minimum, maximum, and center values for both axes
 5. Click **Auto Calibrate** to deactivate the button
-6. Click **Apply Config** to activate the calibration
-7. Click **Store Config** if you want to save it permanently
+6. Click **Apply Settings** to activate the calibration
+7. Click **Store Settings** if you want to save it permanently
 
 - **When to calibrate:**
 

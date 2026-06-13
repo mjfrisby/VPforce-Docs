@@ -165,12 +165,12 @@ Once open, you should see values like **raw_x** and **raw_y** react as you move 
     -   **This step is not required for production units, since they are calibrated before shipping**
     -   Go to the **Settings tab** and click **"Auto Calibrate"**.
     -   Move the stick to all extremes to allow the software to detect the full range of motion.
-    -   Turn off **Auto Calibrate**, then click **"Apply Config"** to make the calibration active.
+    -   Turn off **Auto Calibrate**, then click **"Apply Settings"** to make the calibration active.
 
 5.  **Saving the Configuration:**
 
-    - **Apply Config:** Activates the current configuration temporarily; it will be lost on device restart.
-    - **Store Config:** Saves the configuration permanently to the Rhino's flash memory.
+    - **Apply Settings:** Activates the current configuration temporarily; it will be lost on device restart.
+    - **Store Settings:** Saves the configuration permanently to the Rhino's flash memory.
     - **Read Config:** Loads the stored device configuration back into the software.
 
 !!! tip
