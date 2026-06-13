@@ -272,14 +272,14 @@ The only way to compensate for this is to use the **Rescale Axes** feature in VP
 
 ![Axis rescaling example for the A-10](images/troubleshooting-maintenance/axis-rescale-a10.png){ width="260" }
 
-The screenshot above shows a starting point configuration for the A-10. The **X Left Max Position** is reduced to approximately **35%**, which moves the forward neutral point back toward the center of physical stick travel.
+The screenshot above shows a starting point configuration for the A-10. The **Y Axis Forward Max Position** is reduced to approximately **35%**, which moves the forward neutral point back toward the center of physical stick travel.
 
 To configure this:
 
 1. Open **VPforce Configurator** and navigate to the **Axes** tab.
 2. Enable **Rescale Axes**.
-3. Reduce the **forward (X Left) Max Position** value until the stick sits comfortably near center when the aircraft considers it neutral. The A-10 is around 35% as a starting point — adjust to taste.
-4. Click **Apply Config** to test, and **Store Config** when satisfied.
+3. Reduce the **Y Axis Forward Max Position** value until the stick sits comfortably near center when the aircraft considers it neutral. The A-10 is around 35% as a starting point — adjust to taste.
+4. Click **Apply Settings** to test, and **Store Settings** when satisfied.
 
 !!! note
     With this configuration the stick's physical travel is no longer symmetric — you will have less forward throw available than aft. This reflects the actual aircraft geometry and is expected. The goal is simply to place the neutral point at a comfortable physical position rather than eliminating the asymmetry entirely.
