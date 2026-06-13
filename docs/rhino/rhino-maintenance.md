@@ -105,42 +105,51 @@ After belt tensioning:
 3. Click **Auto Calibrate**
 4. Move stick through full range of motion in all directions
 5. Click **Auto Calibrate** again to deactivate
-6. Click **Apply Config** to activate the calibration
-7. Click **Store Config** if you want to save it permanently
+6. Click **Apply Settings** to activate the calibration
+7. Click **Store Settings** if you want to save it permanently
 
 Verify calibration values are approximately **C:~2000** for both axes.
 
 ![Raw motor position values](media/Pictures/100002010000009C0000025C3A699E287D51540D.png){ width="98px" height="378px" }
 
-### Re-alignment After Complete Belt Slip
+### Re-alignment After Complete Belt Slip or Belt Removal
 
-If the belt has slipped off both pulleys completely, the motor position relative to the stick position must be realigned before reinstalling the belt. This is critical because the motor's absolute position encoder needs to match the physical stick position.
+If the belt has slipped off both pulleys completely, or you have removed the belt(s) for any other reason, the motor position relative to the stick position must be realigned before reinstalling the belt. This is critical because the motor's absolute position encoder needs to match the physical stick position.
 
 #### Method 1: Manual Realignment (More Control)
 
-1. **Power on the Rhino** (motors will remain unpowered if belt is off)
-2. Open **VPforce Configurator → FFB Axes Setup** tab
-3. Manually rotate the motor pulley (by hand) while watching the **raw axis value** (raw_x or raw_y)
-4. Rotate until raw value reads between **2000-2100**
-5. Manually center the stick gimbal physically
-6. Reinstall the belt on both pulleys
-7. Run **Auto Calibration**
+1. Start with belt(s) removed
+2. Open **VPforce Configurator → Settings** tab
+3. Set the **Spring** gain slider to %0, "**Apply Settings**" 
+4. Manually rotate the motor pulley (by hand) while watching the **raw axis value** (raw_x or raw_y) in the real-time information panel
+5. Rotate until raw value reads between **2000-2100**
+6. Manually center the stick gimbal physically
+7. Reinstall the belt on the pulley(s) without changing the position of the motor
+8. Set the **Spring** gain slider back to previous value, "**Apply Settings**" 
+9. Run [Auto Calibration](#step-6-run-auto-calibration)
+10. "**Store Settings**" to save the calibration values permanently.  If you have multiple configurator profiles and if the previous calibration values are saved with them, you will either need to recreate them, or load the profiles individually, perform the recalibration and then save the profile off again.
+
 
 #### Method 2: Automatic Motor Recentering (Easier but Less Precise)
 
-1. Open **VPforce Configurator → FFB Axes Setup** tab
-1. Set calibration values:
+1. Start with belt(s) removed
+2. Open **VPforce Configurator → FFB Axes Setup** tab (bottom of the screen)
+3. Manually set the calibration values for whichever axes you are working with:
 
     - **Min:** 0
     - **Max:** 4096
-
-1. Navigate to **Effects** tab
-1. Enable **Spring** effect with moderate gain (~50%)
-1. Click **Apply Config**
-1. The motor will automatically rotate to center position (2048)
-1. Manually center the stick gimbal physically to match
-1. Reinstall the belt on both pulleys
-1. Run **Auto Calibration** to restore proper calibration
+   
+4. Click **Apply Settings**
+5. Navigate to **Effects** tab
+6. Enable **Spring** effect with moderate gain (~50%)
+7. Navigate to **Settings** tab
+8. Set the **Spring** gain slider to %100
+9. Click **Apply Settings**
+10. The motor will automatically rotate to center position (2048)
+11. Manually center the stick gimbal physically to match
+12. Reinstall the belt on both pulleys
+13. Run [Auto Calibration](#step-6-run-auto-calibration) to restore proper calibration
+14. "**Store Settings**" to save the calibration values permanently.  If you have multiple configurator profiles and if the previous calibration values are saved with them, you will either need to recreate them, or load the profiles individually, perform the recalibration and then save the profile off again.
 
 !!! tip "Verification"
     After realignment and calibration, the final calibrated center value should read approximately **C:~2000**. Values significantly outside this range (below 1900 or above 2200) indicate misalignment.
