@@ -1,4 +1,8 @@
 # Changelog
+- **June 28, 2026:**
+
+    - Added **Running TelemFFB from Source** section to the **[Installation](telemffb/installation.md)** page, covering Python setup, cloning the repository, checking out a specific branch, installing dependencies, and launching the app
+
 - **June 13, 2026:**
 
     - Added missing image depicting axis rescale example

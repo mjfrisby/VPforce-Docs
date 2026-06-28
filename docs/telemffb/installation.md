@@ -31,7 +31,7 @@ the executable:
 -   **Submit the executable to Microsoft or your antivirus vendor** for review. This helps improve detection accuracy over time.
 -   Check with [VirusTotal](https://www.virustotal.com/) to independently verify whether the file is flagged across multiple engines.
 
-## First-Time Setup
+## Installing TelemFFB
 
 **New Installations:**
 
@@ -40,3 +40,82 @@ TelemFFB does not have an installer. It is distributed as a zip file package. Si
 The first time you install and launch TelemFFB, you will be greeted by the system settings window. Follow the guidelines in the ***systems setting section*** for setting up TelemFFB.
 
 ![](../rhino/media/Pictures/10000000000002880000026E68808AD3EBF06CDD.png){ width="587px" height="563px" }
+
+## Running TelemFFB from Source
+
+Most users should download the release executable from the [GitHub Releases](https://github.com/walmis/VPforce-TelemFFB/releases) page as described above. However, developers, testers, and anyone who wants to run an unreleased branch can run TelemFFB directly from source instead.
+
+!!! note
+    Running TelemFFB from source uses the exact same user configuration and system settings as the compiled release version. There's no separate config to manage - changes made while running from source will carry over to the release executable, and vice versa.
+
+### 1. Install Python
+
+TelemFFB requires **Python 3.11 or newer**. **Python 3.12** is recommended, as it's the version used to compile the official release builds.
+
+1.  Download the installer from [python.org/downloads](https://www.python.org/downloads/).
+2.  Run the installer. On the first screen, check **"Add python.exe to PATH"** before clicking **Install Now**.
+3.  Verify the installation by opening a terminal (PowerShell or Command Prompt) and running:
+
+    ```
+    python --version
+    ```
+
+    This should print `Python 3.11.x` or newer.
+
+### 2. Clone the repository
+
+If you don't already have Git installed, download and install it from [git-scm.com](https://git-scm.com/downloads). The default options in the installer are appropriate for most users.
+
+Open a terminal in the folder where you want the project to live, then clone the repository:
+
+```
+git clone https://github.com/walmis/VPforce-TelemFFB.git
+cd VPforce-TelemFFB
+```
+
+!!! note
+    All of the remaining steps must be run from inside the `VPforce-TelemFFB` folder created by the clone. If you open a new terminal window or session, make sure to `cd` into that folder first before continuing.
+
+### 3. (Optional) Check out a specific branch
+
+By default, the clone checks out the `wip` branch. To work with a different branch (for example, to test an in-progress feature), make sure you're in the `VPforce-TelemFFB` folder, then list the available branches and check out the one you need:
+
+```
+git fetch
+git branch -a
+git checkout <branch-name>
+```
+
+Replace `<branch-name>` with the name of the branch you want to use.
+
+### 4. Install dependencies
+
+From the `VPforce-TelemFFB` folder, run:
+
+```
+pip install -r requirements.txt
+```
+
+### 5. Run TelemFFB
+
+With dependencies installed, launch the application from the `VPforce-TelemFFB` folder with:
+
+```
+python main.py
+```
+
+The first time you run the program, it may prompt you to install an export script in your `Saved Games\DCS` folder for telemetry data collection - accept this if you intend to use TelemFFB with DCS.
+
+### Updating your source checkout
+
+To pull the latest changes on your current branch:
+
+```
+git pull
+```
+
+To discard local changes and reset to the latest version of the branch:
+
+```
+git reset --hard origin/<branch-name>
+```
