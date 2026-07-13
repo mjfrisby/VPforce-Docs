@@ -548,7 +548,7 @@ Providing complete information up front dramatically speeds up diagnosis and res
 
 1. **Effects Tab** — shows current FFB effect settings and active effects
 2. **Settings Tab** — shows global gain multipliers and force settings
-3. **Debug Tab** — if any errors or warnings are visible
+3. **Debug Tab** — particularly useful when the issue is occuring as it shows all active effects on the device
 4. **Button Mapping Tab** — if your issue involves buttons or inputs
 
 !!! warning "Screenshots are essential"
@@ -575,18 +575,18 @@ Include the following in your support request:
 
 While the issue is occurring:
 
-1. **Watch the Effects Tab** — game-created effects appear in real-time and force values change dynamically while flying
-2. **Check the Debug Tab** — look for error messages, connection issues, or motor faults
-
-!!! tip "One problem at a time"
-    If you have multiple issues, describe each one separately. Mixing several unrelated problems in one request makes diagnosis much harder.
-
+1. **Watch the Debug tab Loaded Effects panel** — game-created effects appear in real-time and force values change dynamically while flying
+2. **Check the Debug tab** — look for error messages, connection issues, or motor faults
 3. **TelemFFB Users (if applicable):**
 
     - Check TelemFFB log window for connection errors or warnings
     - Verify TelemFFB is connected to simulator
     - Post or screenshot TelemFFB log output when reporting issues
-    - Check telemetry window to verify data reception
+    - Check the monitor tab telemetry window to verify data reception
+    - Check the active effects panel on the monitor tab to understand what is playing 
+
+- !!! tip "One problem at a time"
+      If you have multiple issues, describe each one separately. Mixing several unrelated problems in one request makes diagnosis much harder.
 
 ### Common Pitfalls to Avoid
 
