@@ -1,14 +1,16 @@
-# GitHub Copilot Instructions for Documentation Project
+# Instructions for Documentation Project
 
-This file provides guidance for GitHub Copilot when writing, editing, and improving technical documentation in this MkDocs project.
+This file provides guidance for agents when writing, editing, and improving technical documentation in this MkDocs project.
 
 ## Language and Style
 
+- Use ASD-STE100 Simplified Technical English standard
 - Use **concise, clear, and factual language**
 - Avoid unnecessary filler words, marketing tone, or repetition
 - Prefer **active voice** over passive voice
 - Keep sentences **short and direct** (aim for 15-20 words per sentence)
 - Write in a **professional, direct, and reader-focused** tone
+
 
 ## Markdown Formatting
 
