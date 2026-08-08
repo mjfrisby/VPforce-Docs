@@ -3,11 +3,316 @@ MkDocs hooks for post-build processing.
 - WebP image conversion and HTML reference updates
 - External link marking and label paragraph styling
 - Markdown image-to-figure conversion
+- TelemFFB settings-table generation from the vendored defaults.xml
 """
 
 import re
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from PIL import Image
+
+
+# ---------------------------------------------------------------------------
+# TelemFFB settings tables
+#
+# Category pages in docs/telemffb/ can place markers of the form
+#     <!-- telemffb-settings parentgroup=aerodynamics -->
+#     <!-- telemffb-settings parentgroup=aerodynamics grouping=Vibration -->
+# which are expanded at build time into tables generated from the vendored
+# copy of TelemFFB's defaults.xml (data/telemffb-defaults.xml). Update that
+# file from the TelemFFB repo when a release changes settings — the tables
+# follow automatically.
+# ---------------------------------------------------------------------------
+
+TELEMFFB_DEFAULTS_XML = Path(__file__).parent / "data" / "telemffb-defaults.xml"
+_SIMS = ("DCS", "IL2", "BMS", "MSFS", "XPLANE")
+_SIM_LABEL = {"XPLANE": "XP"}
+_DEVICES = ("joystick", "pedals", "collective", "trimwheel")
+_SKIP_DATATYPES = {"group", "convert"}
+
+_telemffb_settings_cache = None
+
+
+def _load_telemffb_settings():
+    """Parse the vendored defaults.xml into deduplicated setting records."""
+    global _telemffb_settings_cache
+    if _telemffb_settings_cache is not None:
+        return _telemffb_settings_cache
+
+    tree = ET.parse(TELEMFFB_DEFAULTS_XML)
+    settings = {}
+    for d in tree.getroot().iter("defaults"):
+        name = d.findtext("name")
+        datatype = (d.findtext("datatype") or "").strip()
+        displayname = (d.findtext("displayname") or "").strip()
+        if not name or not displayname or datatype in _SKIP_DATATYPES:
+            continue
+        try:
+            order = float(d.findtext("order") or 0)
+        except ValueError:
+            order = 0.0
+        sims = {s for s in _SIMS if d.findtext(s) == "true"}
+        devices = {v for v in _DEVICES if d.findtext(v) == "true"}
+        prereq_raw = (d.findtext("prereq") or "").strip()
+        rec = settings.get(name)
+        if rec is None:
+            settings[name] = {
+                "name": name,
+                "displayname": displayname,
+                "info": (d.findtext("info") or "").strip(),
+                "order": order,
+                "prereq": prereq_raw.split(".")[0],
+                # Value-scoped prereq tokens (e.g. spring_mode.FORCETRIM):
+                # the modes of the parent selector this child appears under.
+                "modes": tuple(prereq_raw.split(".")[1:]),
+                "parentgroup": (d.findtext("parentgroup") or "").strip(),
+                "grouping": (d.findtext("grouping") or "").strip(),
+                "sims": sims,
+                "devices": devices,
+            }
+        else:
+            # Same setting declared per-sim: merge applicability, keep the
+            # lowest-order entry's metadata.
+            rec["sims"] |= sims
+            rec["devices"] |= devices
+            if order < rec["order"]:
+                rec.update(order=order, displayname=displayname)
+                if d.findtext("info"):
+                    rec["info"] = d.findtext("info").strip()
+
+    _telemffb_settings_cache = list(settings.values())
+    return _telemffb_settings_cache
+
+
+def _clean_info(info):
+    """Normalize an info string for a table cell: strip HTML, one line."""
+    text = re.sub(r"(?i)<br\s*/?>", " ", info)
+    text = re.sub(r"<[^>]+>", "", text)
+    text = text.replace("|", "\\|")
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _sims_label(sims):
+    if set(_SIMS) <= sims:
+        return "All"
+    return ", ".join(_SIM_LABEL.get(s, s) for s in _SIMS if s in sims)
+
+
+def _devices_label(devices):
+    if {"joystick", "pedals", "collective"} <= devices:
+        return "All"
+    return ", ".join(v.capitalize() for v in _DEVICES if v in devices)
+
+
+# Effects documented via <!-- telemffb-effect --> markers, for the coverage
+# check in on_post_build.
+_telemffb_documented_effects = set()
+
+
+def _strip_tags(text):
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text or "")).strip()
+
+
+def _sim_badges(sims):
+    return " ".join(
+        f'<span class="sim-badge sim-{s.lower()}">{_SIM_LABEL.get(s, s)}</span>'
+        for s in _SIMS if s in sims)
+
+
+def _effect_block(name, part="both"):
+    """Render the badge line and/or sub-setting table for one effect."""
+    settings_by_name = {s["name"]: s for s in _load_telemffb_settings()}
+    root = settings_by_name.get(name)
+    if root is None:
+        return f"*(unknown setting {name!r})*"
+    _telemffb_documented_effects.add(name)
+
+    parts = []
+    if part in ("badges", "both"):
+        devices = _devices_label(root["devices"])
+        devices = "All devices" if devices == "All" else devices
+        parts.append(f'{_sim_badges(root["sims"])} · {devices}')
+
+    if part in ("table", "both"):
+        # Direct children grouped by the parent-selector mode(s) they appear
+        # under (value-scoped prereqs like spring_mode.FORCETRIM). Ordinary
+        # bool parents have a single unscoped group, which renders without a
+        # group label.
+        direct = sorted((s for s in settings_by_name.values()
+                         if s["prereq"] == name), key=lambda s: s["order"])
+        groups = []          # [(modes_tuple, [children...])]
+        for child in direct:
+            for modes, members in groups:
+                if modes == child["modes"]:
+                    members.append(child)
+                    break
+            else:
+                groups.append((child["modes"], [child]))
+
+        def rows_for(children):
+            lines = ["| Sub-setting | Sims | What it does |", "|---|---|---|"]
+            stack = [(c, 0) for c in reversed(children)]
+            while stack:
+                child, depth = stack.pop()
+                label = _strip_tags(child["displayname"]).replace("|", "\\|")
+                if depth:
+                    label = "&nbsp;&nbsp;&nbsp;&nbsp;" * depth + "↳ " + label
+                if child["sims"] == root["sims"] and child["devices"] == root["devices"]:
+                    sims = "—"
+                else:
+                    sims = ", ".join(_SIM_LABEL.get(s, s) for s in _SIMS
+                                     if s in child["sims"]) or "—"
+                    if child["devices"] != root["devices"]:
+                        sims += f' · {_devices_label(child["devices"])}'
+                lines.append(f"| {label} | {sims} | {_clean_info(child['info'])} |")
+                kids = sorted((s for s in settings_by_name.values()
+                               if s["prereq"] == child["name"]),
+                              key=lambda s: s["order"])
+                stack.extend((k, depth + 1) for k in reversed(kids))
+            return "\n".join(lines)
+
+        for modes, members in groups:
+            if modes:
+                label = " / ".join(_MODE_LABELS.get(m, m.title()) for m in modes)
+                parts.append(f"**In mode: {label}**")
+            parts.append(rows_for(members))
+
+    return "\n\n".join(parts)
+
+
+# Human labels for spring-mode / g-effect enum values used in value-scoped
+# prereqs (matches the labels in TelemFFB's SettingsManager enum dicts).
+_MODE_LABELS = {
+    "BASIC": "Basic Dynamic",
+    "CENTER": "Basic Dynamic with Spring Centering",
+    "CNTR_FT": "Spring Centering + Force Trim",
+    "FBW": "FlyByWire (FBW)",
+    "ADVANCED": "Advanced Dynamic",
+    "FORCETRIM": "Force Trim",
+    "STATIC": "Static Spring",
+    "DYNAMIC": "Dynamic Spring",
+    "NOSPRING": "No Spring",
+    "NONE": "None (Game Managed)",
+    "CUSTOM": "Custom",
+    "LEGACY": "Exponential Curve (legacy)",
+    "NEW": "Custom Curve",
+}
+
+
+# Settings-tab sections in app order: (parentgroup, user-facing name).
+_TELEMFFB_SECTIONS = [
+    ("basic", "Basic Settings"),
+    ("aerodynamics", "Aerodynamics"),
+    ("inertial", "Inertial"),
+    ("ground", "Ground"),
+    ("mechanical", "Mechanical\\Airframe"),
+    ("weapons", "Weapons"),
+    ("ffb", "Basic FFB Effects"),
+    ("system", "System"),
+]
+
+_effect_anchor_cache = None
+
+
+def _toc_slug(heading):
+    """Replicate python-markdown's toc slugify (separator '-')."""
+    text = _strip_tags(heading)
+    text = re.sub(r"[*_`]", "", text)
+    text = re.sub(r"[^\w\s-]", "", text.lower())
+    return re.sub(r"[\s]+", "-", text.strip())
+
+
+def _effect_anchor_map():
+    """Scan the TelemFFB pages for effect markers: setting -> (page, anchor)."""
+    global _effect_anchor_cache
+    if _effect_anchor_cache is not None:
+        return _effect_anchor_cache
+    mapping = {}
+    marker = re.compile(r"<!--\s*telemffb-effect\s+([^>]*?)\s*-->")
+    for path in sorted((Path(__file__).parent / "docs" / "telemffb").glob("*.md")):
+        heading = None
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if re.match(r"^#{1,6}\s", line):
+                heading = line.lstrip("#").strip()
+                continue
+            m = marker.search(line)
+            if m and heading:
+                am = re.search(r"name=(\S+)", m.group(1))
+                if am and am.group(1) not in mapping:
+                    mapping[am.group(1)] = (path.name, _toc_slug(heading))
+    _effect_anchor_cache = mapping
+    return mapping
+
+
+def _sim_index(sim):
+    """Render the per-simulator settings directory."""
+    if sim not in _SIMS:
+        return f"*(unknown sim {sim!r})*"
+    settings_by_name = {s["name"]: s for s in _load_telemffb_settings()}
+    anchors = _effect_anchor_map()
+    out = []
+    for parentgroup, section in _TELEMFFB_SECTIONS:
+        tops = sorted((s for s in settings_by_name.values()
+                       if s["parentgroup"] == parentgroup
+                       and s["prereq"] not in settings_by_name
+                       and sim in s["sims"]),
+                      key=lambda s: s["order"])
+        if not tops:
+            continue
+        out.append(f"## {section}")
+        for s in tops:
+            label = _strip_tags(s["displayname"])
+            devs = _devices_label(s["devices"])
+            qualifier = "" if devs == "All" else f" *({devs})*"
+            loc = anchors.get(s["name"])
+            if loc:
+                out.append(f"-   [{label}]({loc[0]}#{loc[1]}){qualifier}")
+            else:
+                print(f"[TelemFFB effects] sim index {sim}: no documented "
+                      f"location for {s['name']}")
+                out.append(f"-   {label}{qualifier}")
+        out.append("")
+    return "\n".join(out).rstrip()
+
+
+def _expand_telemffb_settings(markdown):
+    marker = re.compile(r"<!--\s*telemffb-(effect|sim-index)\s+([^>]*?)\s*-->")
+    arg = re.compile(r'(\w+)=(?:"([^"]*)"|(\S+))')
+
+    def replace(match):
+        args = {m.group(1): m.group(2) if m.group(2) is not None else m.group(3)
+                for m in arg.finditer(match.group(2))}
+        if match.group(1) == "effect":
+            return _effect_block(args.get("name", ""), args.get("part", "both"))
+        if match.group(1) == "sim-index":
+            return _sim_index(args.get("sim", ""))
+        return _settings_table(args.get("parentgroup", ""), args.get("grouping"))
+
+    return marker.sub(replace, markdown)
+
+
+def _report_undocumented_effects():
+    """Warn about top-level settings lacking a telemffb-effect entry.
+
+    Only parentgroups that have at least one documented effect are checked, so
+    pages still using the legacy grouping tables do not produce noise during
+    the transition.
+    """
+    if not _telemffb_documented_effects:
+        return
+    settings_by_name = {s["name"]: s for s in _load_telemffb_settings()}
+    active_groups = {settings_by_name[n]["parentgroup"]
+                     for n in _telemffb_documented_effects if n in settings_by_name}
+    missing = [
+        s for s in settings_by_name.values()
+        if s["parentgroup"] in active_groups
+        and s["prereq"] not in settings_by_name        # top-level
+        and s["name"] not in _telemffb_documented_effects
+        and s["sims"]                                  # hidden legacy entries
+    ]
+    for s in sorted(missing, key=lambda s: (s["parentgroup"], s["order"])):
+        print(f"[TelemFFB effects] UNDOCUMENTED: {s['parentgroup']}: "
+              f"{_strip_tags(s['displayname'])} ({s['name']})")
 
 
 def convert_images_to_webp(config):
@@ -176,12 +481,15 @@ def convert_images_to_webp(config):
 def on_post_build(config):
     """
     Hook called after the build completes.
+    - Reports TelemFFB settings missing an effects-reference entry
     - Copies .htaccess to site output (MkDocs ignores dotfiles)
     - Converts images to WebP format (skipped in serve mode)
     """
     import sys
     import os
     import shutil
+
+    _report_undocumented_effects()
 
     # Copy .htaccess if present (MkDocs skips dotfiles)
     docs_dir = Path(config['docs_dir'])
@@ -292,6 +600,9 @@ def on_page_markdown(markdown, page, config, files):
     Missing images are replaced with a placeholder and a warning is printed.
     Linked images [![alt](img)](url) produce a <figure> with <a><img></a> inside.
     """
+    if '<!-- telemffb-' in markdown:
+        markdown = _expand_telemffb_settings(markdown)
+
     docs_dir = Path(config['docs_dir'])
     page_dir = (docs_dir / page.file.src_path).parent
     is_index = page.file.src_path.endswith('index.md')
