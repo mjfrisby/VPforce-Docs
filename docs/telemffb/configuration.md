@@ -1,7 +1,7 @@
 # System Settings
 
 In the System Menu, choose System Settings:
-![](../rhino/media/Pictures/10000000000002860000026C339E3AB987AF6F65.png){ width="549px" height="527px" }
+![](images/configuration/system-settings.png){ width="650px" }
 
 !!! note
     For where these settings are stored on disk, see [How Settings Work](settings-model.md). The **Launch Options** page is covered in [Devices & Instances](devices-instances.md), and the **Sim Setup** page in [Connecting Your Simulator](sim-setup.md).
@@ -91,4 +91,4 @@ These settings are unique per instance of TelemFFB
 
     -   Define a profile to load on TelemFFB startup and/or exit
 
-    -   See the section on ***Dynamic Configurator Profiles*** for more details
+    -   See [VPforce Configurator Integration](vpconf-profiles.md) for more details

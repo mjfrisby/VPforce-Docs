@@ -31,13 +31,13 @@ aircraft in MSFS/X-Plane.
 
 **Advanced Dynamic** - Define the spring gain mapping as a visual curve over the aircraft's speed envelope. See [Advanced Spring & G-Force Curves](spring-curves.md)
 
-![](../rhino/media/Pictures/1000020100000270000000AD9C67DBE757E0AB3C.png){ width="520px" height="144px" }
+![](images/msfs-xp-axis-spring/spring-mode-select.png){ width="520px" height="144px" }
 
 ### Dynamic
 
 There are settings which directly affect the max force per axis as well as an "exponent" setting which affects the curve at which the gain will be applied over the speed envelope of the aircraft.
 
-![](../rhino/media/Pictures/1000000000000291000000FD9193BE00835101BF.png){ width="482px" height="186px" }
+![](images/msfs-xp-axis-spring/dynamic-settings.png){ width="482px" height="186px" }
 
 **Max Force Settings**
 
@@ -51,7 +51,7 @@ The Max Force adjustment slider handle will fade from gray to green as Max Force
 
 Since Rhino cannot produce the actual real-life forces that could be reached, Expo amplifies those forces at lower speeds, where the feeling of control authority is quickly lost at stall speeds for example. An Expo value of 0.5 doubles stick forces at 25% of V~NE~. For some jets, you might want diminished forces until closer to V~NE~, so you can set a negative Expo value.
 
-![](../rhino/media/Pictures/100002010000054600000382CC3F78E56213C4FC.png){ width="513px" height="320px" }
+![](images/msfs-xp-axis-spring/expo-curve.png){ width="513px" height="320px" }
 
 ### Dynamic + Spring Centered
 
@@ -63,7 +63,7 @@ With this configured, the dynamic spring gain will range from a
 low-point of the "Spring Centered" gain value to a high-point of the
 Max Force setting in the dynamic adjustment settings.
 
-![](../rhino/media/Pictures/100000000000024000000066C6A0A37E810F9FF9.png){ width="576px" height="102px" }
+![](images/msfs-xp-axis-spring/spring-centered.png){ width="576px" height="102px" }
 
 ### Fly By Wire (FBW)
 
@@ -73,4 +73,4 @@ on a given axis. When this mode is active, the spring gain is static
 and will not vary based on airspeed or any other aerodynamic
 conditions.
 
-![](../rhino/media/Pictures/10000000000002860000008F1C6148BA46285CA8.png){ width="573px" height="127px" }
+![](images/msfs-xp-axis-spring/fbw-gains.png){ width="573px" height="127px" }

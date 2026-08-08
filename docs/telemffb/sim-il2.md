@@ -13,11 +13,11 @@ IL2 implements FFB for dynamic stick forces and some very basic shake effects. T
 
 This can be found in Settings→Input Devices within the IL2 configuration
 
-![](../rhino/media/Pictures/10000000000002FF000000D97F38CC74B9B1537A.png){ width="445px" height="126px" }
+![](images/sim-il2/il2-input-shaking.png){ width="445px" height="126px" }
 
 The IL2 Shake Master settings
 
-![](../rhino/media/Pictures/10000000000002A600000147DB116EBA1B03104F.png){ width="423px" height="204px" }
+![](images/sim-il2/il2-shake-master.png){ width="423px" height="204px" }
 
 Each setting individually controls the intensity of that effect type:
 

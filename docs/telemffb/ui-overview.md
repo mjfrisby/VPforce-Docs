@@ -4,7 +4,7 @@
 
 TelemFFB is laid out with a menu bar, the application status area, device status/selection area and the various tabs at the bottom. Refer to the sections below for details on each.
 
-![](../rhino/media/Pictures/100000000000032600000359D429F77068344B7F.png){ width="565px" height="600px" }
+![](images/ui-overview/main-window.png){ width="565px" height="600px" }
 
 ## The Menus
 
@@ -83,7 +83,7 @@ The window menu only shows if the TelemFFB instance is acting as the master inst
 
 ### Active Devices Area
 
-![](../rhino/media/Pictures/10000000000001CC000000AA1FE4734D2BAFC930.png){ width="371px" height="137px" }
+![](images/ui-overview/active-devices.png){ width="371px" height="137px" }
 
 The active devices area is both a way to switch the master instance configuration scope between devices as well as a device/instance status tracker for the primary and child devices and their TelemFFB instances.
 
@@ -91,7 +91,7 @@ The active devices area is both a way to switch the master instance configuratio
 
 To switch between devices for configuration, simply click on the appropriate device icon. When clicked, the configuration elements in the settings page below will update to reflect the settings for that device.
 
-![](../rhino/media/Pictures/1000007E000000F0000000F0CE96294CF17E044E.gif){ width="329px" height="329px" }
+![](images/ui-overview/device-switching.gif){ width="329px" height="329px" }
 
 ### Device/Instance Status Indications
 
@@ -99,25 +99,25 @@ The device icons serve the dual purpose of displaying the status of both the dev
 
 **Green Status Icon:**
 
-![](../rhino/media/Pictures/100000000000005900000058A2B243F374BBD6CE.png){ width="55px" height="55px" }
+![](images/ui-overview/status-running.png){ width="55px" height="55px" }
 
 A green status icon indicates that the device is properly connected to its instance of TelemFFB and the child instance of TelemFFB is healthy
 
 **Yellow Status Icon:**
 
-![](../rhino/media/Pictures/100000000000004D000000563A2626B2737773ED.png){ width="47px" height="53px" }
+![](images/ui-overview/status-paused.png){ width="47px" height="53px" }
 
 A yellow status icon indicates that the device is no longer connected to its instance of TelemFFB
 
 **Red Status Icon:**
 
-![](../rhino/media/Pictures/10000000000000580000005801E638A56D03FDF1.png){ width="54px" height="54px" }
+![](images/ui-overview/status-error.png){ width="54px" height="54px" }
 
 A red status icon indicates that the child instance of TelemFFB has crashed, or there is an error condition present for that instance.
 
 ### Application Status Area
 
-![](../rhino/media/Pictures/100000000000015F0000013180ABDD7676B5BF6F.png){ width="304px" height="264px" }
+![](images/ui-overview/status-area.png){ width="304px" height="264px" }
 
 -   **Sim Status**
 
@@ -154,59 +154,68 @@ A red status icon indicates that the child instance of TelemFFB has crashed, or 
 
     -   Shows active status if the Configurator Gains Override setting is in use and active.
 
-### Hide Tab
+### Profile Notes
 
-The Hide tab is the simplest and reduces information shown to the bare minimum:
+The status area includes a **notes button** for the loaded aircraft profile.
 
-![](../rhino/media/Pictures/1000000000000326000001C01135E07D37D9529C.png){ width="525px" height="291px" }
+![The Profile Notes dialog showing shipped notes and the editable profile note](images/ui-overview/profile-notes.png){ width="550px" }
+
+-   Some shipped default profiles carry **curated notes** — special considerations for the aircraft, or an explanation of why its default settings differ from otherwise similar aircraft.
+-   You can **add your own notes** to any aircraft profile. The dialog shows the inherited notes read-only (shipped notes and any user-default note), with an editable section for the active profile's own note.
+-   When you load an aircraft that has notes to read, the notes icon **flashes green** — click it to view or edit.
 
 ### Monitor Tab
 
 The Monitor tab shows received telemetry data and effects that are
 currently active:
 
-![](../rhino/media/Pictures/10000000000003260000035963064CDF1BA08486.png){ width="516px" height="548px" }
+![](images/ui-overview/monitor-tab.png){ width="516px" height="548px" }
 !!!note 
     You can also detach the monitor tab from the main window and display it separately along side the main TelemFFB window. This can be useful for monitoring the active effects while you are making adjustments on the settings tab.
 
+### Hide Tab
+
+The Hide tab is the simplest and reduces information shown to the bare minimum:
+
+![](images/ui-overview/hide-tab.png){ width="525px" height="291px" }
 
 ### Settings Tab
 
-The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface, details about each setting are in other parts of the manual. Changing any setting has an immediate effect.
+The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface; every effect and setting is documented in the [Effects Reference](effects-overview.md), which mirrors the Settings tab section for section. Changing any setting has an immediate effect.
 
-![](../rhino/media/Pictures/10000000000003260000035901E8D0074808AF76.png){ width="606px" height="644px" }
+![](images/ui-overview/settings-tab.png){ width="606px" height="644px" }
 
-The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows:
+The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows — each links to its reference page:
 
--   **Basic**
+-   **[Basic](effects-basic.md)**
 
     -   Basic effects primarily consist of spring related configurations. This is where you will find settings like the joystick spring mode and various in-game spring override settings
 
--   **Aerodynamics**
+-   **[Aerodynamics](effects-aerodynamics.md)**
 
     -   These effects are typically related to aerodynamic conditions such as AoA, stall buffeting, elevator droop, ETL, VRS, overspeed, etc.
 
--   **Inertial**
+-   **[Inertial](effects-inertial.md)**
 
     -   Inertial effects are those that are related to acceleration vector data such as the g-force effect, and deceleration effect
 
--   **Ground**
+-   **[Ground](effects-ground.md)**
 
     -   Ground effect types will be related to the aircraft interaction with the surface. Effects such as ground rumble and the touchdown effect can be found here
 
--   **Mechanical\\Airframe**
+-   **[Mechanical\\Airframe](effects-mechanical.md)**
 
     -   These effects typically are related to mechanical aspects of the aircraft such as gear, flaps, canopy motion.
 
--   **Weapons**
+-   **[Weapons](effects-weapons.md)**
 
     -   Here you will find the settings for weapon based effects for combat simulators
 
--   **Basic FFB Effects**
+-   **[Basic FFB Effects](effects-ffb.md)**
 
     -   These effects are not telemetry driven. In this section you can enable and configure basic FFB effects such as dampening, friction and inertia
 
--   **System**
+-   **[System](effects-system.md)**
 
     -   The system section has non-effect based configurations such as configurator gain overrides, dynamic vpconf profile selection and other settings that can be configured per-aircraft.
 
@@ -216,27 +225,27 @@ Effect sliders have a toggle to enable or disable that effect. You can quickly t
 
 Example
 
-![](../rhino/media/Pictures/10000000000002520000002D42A1B4500BAC666D.png){ width="594px" height="45px" }
+![](images/ui-overview/slider-toggle.png){ width="594px" height="45px" }
 
 Some settings have additional parameters. You will see an expander button next to them and a clickable hyperlink for the effect name. **Click the expander** **or the hyperlink** to see additional settings, and again to collapse:
 
-![](../rhino/media/Pictures/100000470000032100000087CCE1ADF1E9CE2254.gif){ width="628px" height="106px" }
+![](images/ui-overview/expander.gif){ width="628px" height="106px" }
 
 Any setting you have modified will show a 'x' icon on the right side. You can **click this icon** to return the setting to the default:
 
-![](../rhino/media/Pictures/1000004E000003210000009429FA5BC877D906CF.gif){ width="629px" height="115px" }
+![](images/ui-overview/revert-x.gif){ width="629px" height="115px" }
 
 If you have a setting that you would like to apply to all aircraft of the same class, or for the entire sim, you can right-click on the delete button and choose to move the setting up to the class default or the sim default level. Once you have done so, an information icon will be visible where the delete button was, indicating that the setting has an override from defaults at the sim or class level. Hovering over the information icon will display the override level.
 
-![](../rhino/media/Pictures/1000003F000003C40000006A7173CB08E9846087.gif){ width="680px" height="75px" }
+![](images/ui-overview/promote-override.gif){ width="680px" height="75px" }
 
 For settings where a unit is used, there is a dropdown of acceptable units:
 
-![](../rhino/media/Pictures/100002010000028E0000007B92F660384879CA2D.png){ width="566px" height="106px" }
+![](images/ui-overview/unit-dropdown.png){ width="566px" height="106px" }
 
 Some settings require a grip button assignment before use. **Click the button** on the screen and then press the desired grip button before the timer expires:
 
-![](../rhino/media/Pictures/10000019000002B80000007261D0C18323BA3F0E.gif){ width="638px" height="105px" }
+![](images/ui-overview/button-capture.gif){ width="638px" height="105px" }
 
 Once the button is set, you can right-click on the X to apply to class or sim as shown above if you use the same grip and button for other aircraft.
 
@@ -244,17 +253,17 @@ Once the button is set, you can right-click on the X to apply to class or sim as
 
 When TelemFFB starts, a system tray icon with a context menu is added to the windows taskbar. By default, the icon will be accessible from the expander button in the system tray. You may choose to drag the icon into the pinned icon areas of your task bar so that it is always visible.
 
-![](../rhino/media/Pictures/1000000000000175000000FB6E3EB4A72957B773.png){ width="247px" height="166px" }
+![](images/ui-overview/system-tray.png){ width="247px" height="166px" }
 
 You can force the TelemFFB window to show by double-clicking the icon or from the context menu.
 
 When you start a simulator, the system tray icon will change colors to indicate the current status of the sim, very similar to the status indicator icons in the main TelemFFB window.
 
-*![Sim is running, receiving telemetry](../rhino/media/Pictures/100002010000010000000100A49CDBD55AB225A2.png){ width="20px" height="20px" }*
+*![Sim is running, receiving telemetry](images/ui-overview/tray-status-running.png){ width="20px" height="20px" }*
 
-*![Sim is paused](../rhino/media/Pictures/1000020100000100000001005ACB1268E70F91D7.png){ width="20px" height="20px" }*
+*![Sim is paused](images/ui-overview/tray-status-paused.png){ width="20px" height="20px" }*
 
-*![Error condition.](../rhino/media/Pictures/1000020100000100000001008EA0CDE77DC78A4A.png){ width="20px" height="20px" }*
+*![Error condition.](images/ui-overview/tray-status-error.png){ width="20px" height="20px" }*
 
 <center>There will also be a system
     tray notification with the error information and the error message
@@ -264,7 +273,7 @@ When you start a simulator, the system tray icon will change colors to indicate 
 
 Right-clicking on the system tray icon will open the context window. There are several items.
 
-![](../rhino/media/Pictures/10000000000000A300000083FB4E315A994A1875.png){ width="163px" height="131px" }
+![](images/ui-overview/tray-menu.png){ width="163px" height="131px" }
 
 -   **Show Window**
 

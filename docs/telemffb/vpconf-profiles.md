@@ -23,7 +23,7 @@ Similarly, "aircraft class" (helicopter/prop/jet, etc) will supersede "sim" (DCS
 
 In the system settings options there are fields where you can select discrete profiles that TelemFFB will always push to the device when it starts, or when it exits. This can be useful for keeping a low force profile on your device while not in use, but loading a profile with higher effect settings gains when you start TelemFFB.
 
-![](../rhino/media/Pictures/1000000000000289000000D9C16016ED4067AFF1.png){ width="584px" height="195px" }
+![](images/vpconf-profiles/startup-exit-profiles.png){ width="584px" height="195px" }
 
 ### Global Default configurator profile
 
@@ -33,7 +33,7 @@ Also in the system settings, you can set the TelemFFB startup profile to be used
 
 When loaded into an aircraft, or with the sim, class, or specific aircraft/profile selected in offline mode, simply select the Configurator File selection button in the TelemFFB settings tab System section and browse to the configurator profile. This will be stored in your user configuration and every time that aircraft is loaded, TelemFFB will push the profile to your device.
 
-![](../rhino/media/Pictures/100000000000029D000000C80E8F8C12903E71C3.png){ width="411px" height="123px" }
+![](images/vpconf-profiles/aircraft-vpconf.png){ width="411px" height="123px" }
 
 ## Dynamic Configurator Gain Overrides
 
@@ -203,7 +203,7 @@ To access the override dialog
 
 2.  Press the "Configurator Gains Override" button (2)
 
-![](../rhino/media/Pictures/10000000000002C3000002B61A1105F2D4F01C2F.png){ width="487px" height="478px" }
+![](images/vpconf-profiles/gain-overrides.png){ width="487px" height="478px" }
 
 To override a given effect gain slider, simply tick the checkbox and adjust the slider to your liking. If you enable the Live Updates option, You will feel the effects of the change immediately.
 

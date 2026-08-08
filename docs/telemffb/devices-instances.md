@@ -15,7 +15,13 @@ While DCS, MSFS and IL-2 do not natively support FFB on rudder or collective axe
 
 ## How TelemFFB finds your devices
 
-Devices are identified by USB VID:PID address. The VID for all VPforce control boards is `FFFF`. The default PID for the Rhino joystick base is `2055`. Each device's PID can be viewed (and changed) in the VPforce Configurator utility, and each TelemFFB instance connects to the PID configured for it.
+In most cases, you do not need to configure anything: on startup, TelemFFB enumerates the connected VPforce devices and **auto-assigns** any unassigned device slot.
+
+-   Assignment is by the device's name as configured in VPforce Configurator: a name containing *Joystick*, *Pedals*, *Collective*, or *Trimwheel* assigns the device to that role.
+-   Devices whose names do not match fall back to the default Product IDs: `2055` joystick, `2054` pedals, `2053` collective, `2052` trimwheel.
+-   Auto-assignment never overrides a slot you have already assigned.
+
+To assign devices manually — or fix an auto-assignment — each device role on the **Launch Options** page has a **selector pulldown** listing the connected VPforce devices. Pick the device for each role directly; the USB Product ID field fills in automatically from your selection. If you pick a device that is already assigned to another role, TelemFFB asks whether to override the other assignment or cancel.
 
 ## Launch Options
 
@@ -24,7 +30,11 @@ Devices are identified by USB VID:PID address. The VID for all VPforce control b
 
 These settings are found in **System → System Settings → Launch Options**. They control which device each instance connects to and which instances start automatically.
 
-![](../rhino/media/Pictures/1000000000000280000001198C02EFA45AF1236E.png){ width="527px" height="231px" }
+![](images/devices-instances/launch-options.png){ width="650px" }
+
+-   **Device Selector**
+
+    -   Select the connected VPforce device for each role from the pulldown. Auto-assigned devices appear pre-selected.
 
 -   **Enable Auto-Launch**
 
@@ -38,7 +48,7 @@ These settings are found in **System → System Settings → Launch Options**. T
 
 -   **USB Product ID**
 
-    -   Enter the USB Product ID that is configured for a given device (as configured in VPforce FFB Configurator)
+    -   Filled automatically from the device selector. The VID for all VPforce control boards is `FFFF`; each device's PID can be viewed (and changed) in the VPforce Configurator utility.
 
 -   **Instance Auto Launch Options**
 

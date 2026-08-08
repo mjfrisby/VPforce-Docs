@@ -1,4 +1,11 @@
 # Changelog
+- **August 8, 2026 (later):**
+
+    - Added a **[Troubleshooting & Getting Help](telemffb/troubleshooting.md)** page for the TelemFFB Manual: status-area triage, links to the per-sim troubleshooting checklists, log and support-bundle locations, and a short FAQ
+    - Added a **[Falcon BMS guide](telemffb/sim-bms.md)** covering setup, how TelemFFB augments the F-16's fly-by-wire stick, and the beta integration's limitations
+    - Documented **device auto-assignment** and the per-role device selector pulldowns in [Devices & Instances](telemffb/devices-instances.md), and updated the Quick Start and Troubleshooting pages to match
+    - Documented **[Profile Notes](telemffb/ui-overview.md#profile-notes)** — curated notes on shipped profiles, adding your own notes, and the flashing notes icon
+
 - **August 8, 2026:**
 
     - Reorganized the **[TelemFFB](telemffb/index.md)** section into task-focused groups: Setup, Core Concepts, Simulator Guides, and Reference
@@ -18,7 +25,7 @@
     - Redesigned the entire Effects Reference around per-effect entries in the same order as the Settings tab — simulator badges, a written explanation of every effect, its sub-settings (grouped by spring/g-force mode where applicable), and per-sim behavior notes — across all eight section pages: [Basic Settings](telemffb/effects-basic.md), [Aerodynamics](telemffb/effects-aerodynamics.md), [Inertial](telemffb/effects-inertial.md), [Ground](telemffb/effects-ground.md), [Mechanical & Airframe](telemffb/effects-mechanical.md), [Weapons](telemffb/effects-weapons.md), [Basic FFB Effects](telemffb/effects-ffb.md), and [System](telemffb/effects-system.md)
     - Added per-simulator settings directories — [DCS](telemffb/effects-sim-dcs.md), [IL-2](telemffb/effects-sim-il2.md), [BMS](telemffb/effects-sim-bms.md), [MSFS](telemffb/effects-sim-msfs.md), [X-Plane](telemffb/effects-sim-xplane.md) — listing everything available in each sim with links to the full documentation
     - Fixed the "Overpeed Shake" typo (now Overspeed Shake) in the application's setting labels
-    - Retired the "What's New in 2.0" page — the 1.x upgrade notes moved to **[Installation](telemffb/installation.md#upgrading-from-telemffb-1x)**, and version history lives in the Release Notes
+    - Retired the "What's New in 2.0" page — version history lives in the Release Notes
     - Moved the **[Advanced Curve Editor](telemffb/spring-curves.md)** into the Effects Reference (it documents the editor behind the Advanced Dynamic spring and G-force curve options) and **[VPforce Configurator Integration](telemffb/vpconf-profiles.md)** into Core Concepts
     - Expanded **[Devices & Instances](telemffb/devices-instances.md)** with an explanation of the master/child instance model and how to work with child instances
     - Added a connection-verification note to **[Connecting Your Simulator](telemffb/sim-setup.md)**

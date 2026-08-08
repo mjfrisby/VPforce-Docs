@@ -57,6 +57,7 @@ nav:
         - Helicopters: telemffb/msfs-xp-helicopters.md
       - DCS: telemffb/sim-dcs.md
       - IL-2: telemffb/sim-il2.md
+      - Falcon BMS: telemffb/sim-bms.md
     - Effects Reference:
       - Overview: telemffb/effects-overview.md
       - Basic Settings: telemffb/effects-basic.md
@@ -74,6 +75,7 @@ nav:
         - BMS: telemffb/effects-sim-bms.md
         - MSFS: telemffb/effects-sim-msfs.md
         - X-Plane: telemffb/effects-sim-xplane.md
+    - Troubleshooting & Getting Help: telemffb/troubleshooting.md
     - Release Notes: telemffb/release-notes.md
   - Community Projects:
     - Introduction: community-projects/index.md
@@ -222,6 +224,7 @@ plugins:
         - telemffb/msfs-xp-helicopters.md
         - telemffb/sim-dcs.md
         - telemffb/sim-il2.md
+        - telemffb/sim-bms.md
         - telemffb/effects-overview.md
         - telemffb/effects-basic.md
         - telemffb/effects-aerodynamics.md
@@ -238,6 +241,7 @@ plugins:
         - telemffb/effects-sim-msfs.md
         - telemffb/effects-sim-xplane.md
         - telemffb/vpconf-profiles.md
+        - telemffb/troubleshooting.md
         - telemffb/release-notes.md
         - products/index.md
         - changelog.md

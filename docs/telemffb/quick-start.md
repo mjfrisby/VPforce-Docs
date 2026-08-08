@@ -13,7 +13,9 @@ Download the latest release zip from the [GitHub Releases](https://github.com/wa
 
 The first time you start TelemFFB, the System Settings window opens automatically.
 
--   On the **Launch Options** page, confirm the USB Product ID of your device. The Rhino joystick base defaults to `2055`. If you have more than one VPforce device (pedals, collective), configure their PIDs and enable auto-launch — see [Devices & Instances](devices-instances.md).
+![The System Settings window shown on first launch](images/installation/first-launch.png){ width="600px" }
+
+-   On the **Launch Options** page, verify your devices. TelemFFB auto-assigns connected VPforce devices by their names (Joystick, Pedals, Collective) — the selector pulldowns should already show each device in its role. If you have more than one device, enable auto-launch so the additional instances start automatically — see [Devices & Instances](devices-instances.md).
 -   On the **Sim Setup** page, enable each simulator you fly and let the auto-setup features install the required export scripts or plugins — see [Connecting Your Simulator](sim-setup.md).
 
 Save the settings. TelemFFB connects to your device and sits ready for telemetry.

@@ -146,7 +146,7 @@ Several different spring modes are available. Different options will be availabl
     -   A static spring with configurable gain is started and will override the game spring effect.
     -   Hardware force trim settings are available
 
-![](../rhino/media/Pictures/10000000000002A00000017411E95956440979A4.png){ width="469px" height="260px" }
+![](images/sim-dcs/dcs-spring-override.png){ width="469px" height="260px" }
 
 -   **Advanced Dynamic**
 

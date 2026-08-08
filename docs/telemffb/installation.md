@@ -37,17 +37,9 @@ the executable:
 
 TelemFFB does not have an installer. It is distributed as a zip file package. Simply download the latest version from the [GitHub Releases](https://github.com/walmis/VPforce-TelemFFB/releases) page and extract it where you want the application to reside.
 
-The first time you install and launch TelemFFB, you will be greeted by the system settings window. Follow the guidelines in the ***systems setting section*** for setting up TelemFFB.
+The first time you install and launch TelemFFB, you will be greeted by the system settings window. Follow the guidelines in the [System Settings](configuration.md) section for setting up TelemFFB — the [Quick Start](quick-start.md) walks through the first-launch steps in order.
 
-![](../rhino/media/Pictures/10000000000002880000026E68808AD3EBF06CDD.png){ width="587px" height="563px" }
-
-## Upgrading from TelemFFB 1.x
-
-The first time TelemFFB 2.x loads, it upgrades your existing 1.x settings file (`userconfig.xml`) to the v2 format automatically. No action is required. During the conversion:
-
--   Existing user aircraft settings become user profiles named "Auto User" — rename them afterwards via **Profiles → Profile Manager** if you wish.
--   User-defined aircraft without a default profile become "User Default" aircraft. You can create further profiles from them, but "User Default" itself cannot be renamed.
--   Settings that used to be separate toggle flags for variants of the same feature (for example the MSFS spring options) are converted to the equivalent selection in the corresponding mode pulldown.
+![](images/installation/first-launch.png){ width="587px" height="563px" }
 
 ## Running TelemFFB from Source
 

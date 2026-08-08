@@ -69,7 +69,7 @@ Two settings govern how your hands and the autopilot share the controls:
 -   **Deadzone** — you must move the control further than this before your input is sent to the sim. This lets the autopilot fly without your resting hand fighting it.
 -   **Gain** — the ratio of physical control movement to in-sim control movement once you do move past the deadzone.
 
-![Autopilot Following sub-settings for deadzone and gain](../rhino/media/Pictures/10000201000002B7000000D4CD61DC5DEF9CA39C.png){ width="629px" height="192px" }
+![Autopilot Following sub-settings for deadzone and gain](images/msfs-xp-trim-following/ap-following-settings.png){ width="629px" height="192px" }
 
 !!! note
     If an aircraft becomes unstable with autopilot following engaged and tries to roll inverted, enable the *Invert Aileron Autopilot Axis* option.

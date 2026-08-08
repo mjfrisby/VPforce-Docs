@@ -9,7 +9,7 @@ Helicopter force trim emulation is supported for both MSFS and X-Plane. To enabl
 !!! note
     If you enable force trim, but do not set a button, you will see an error indication for the simulator. The Trim Release button is **mandatory**, the Trim Reset button is **optional**.
 
-![](../rhino/media/Pictures/1000000000000299000000CDAF057E465BAE607A.png){ width="539px" height="166px" }
+![](images/msfs-xp-helicopters/force-trim-settings.png){ width="539px" height="166px" }
 
 -   **Cyclic Spring Gain**
 
@@ -59,7 +59,7 @@ Trim-following updates pause while the force-trim release button is held (the fo
 
 If you fly with a VPforce-powered collective, the **Collective Spring Mode** setting (Basic Settings, collective device) selects how the collective behaves. The implementation is deliberately simple — two modes:
 
-![Collective Spring Mode selection showing the No Spring and Hardware Force Trim options](images/collective-spring-mode.png){ width="600px" }
+![Collective Spring Mode selection showing the No Spring and Hardware Force Trim options](images/msfs-xp-helicopters/collective-spring-mode.png){ width="600px" }
 
 -   **No Spring** — no spring effect is applied. The collective moves freely, held only by whatever friction/damper forces your VPforce Configurator profile provides.
 
@@ -86,7 +86,7 @@ Both the Cyclic and Collective axes (if you have a VPforce powered collective) a
 
 Excerpt from the [HPG H145 user guide](https://davux.com/docs/h145/AFCS.html#afcs-autoflight-system):
 
-![](../rhino/media/Pictures/100002010000030100000238DCC800C75B1409DA.png){ width="624px" height="461px" }
+![](images/msfs-xp-helicopters/hpg-guide-excerpt.png){ width="624px" height="461px" }
 
 As part of this implementation, there are certain requirements and recommended settings in the MSFS control bindings, the HPG Helicopter settings (iPad) and in TelemFFB.
 
@@ -164,18 +164,18 @@ Newer versions of the HPG helicopters have more options that assist with FFB imp
 -   Cyclic Trim System: **'Hardware'**
 -   Cyclic Followup Trim: **'Both'**
 
-![](../rhino/media/Pictures/10000201000002DD000003AD92976A168A6F8130.png){ width="494px" height="635px" }
+![](images/msfs-xp-helicopters/hpg-tablet.png){ width="494px" height="635px" }
 
 ### Force Mode (Experimental)
 
 New in version 2.0, along with the latest v1.0.18 Rhino firmware is an experimental version of the hands on/off detection that is used in the HPG Class aircraft.
-![](../rhino/media/Pictures/10000000000002B1000001742D41603C1106C2F5.png){ width="488px" height="263px" }
+![](images/msfs-xp-helicopters/force-mode.png){ width="488px" height="263px" }
 
 The latest firmware allows us to track the force output for the axis in % of max, which can give a much more granular indication of user hands-on controls as compared to a pure deflection based calculation.
 
 Because the configurator Adaptive Recentering feature "forces" the stick as close to the exact center as possible, having it enabled typically results in a higher "standing force" reading. Because of this, it is recommended to **disable **the **Adaptive Recentering** figure in configurator when flying the HPG helicopters in Force Mode
 
-![](../rhino/media/Pictures/100000000000015F00000110C215BD59016A1AB4.png){ width="232px" height="180px" }
+![](images/msfs-xp-helicopters/configurator-adaptive-recentering.png){ width="232px" height="180px" }
 
 Rather than a hard hands-off threshold, it uses a time based hysteresis. This prevents flapping of hands on/off when passing through the center point.
 
@@ -197,4 +197,4 @@ Rather than a hard hands-off threshold, it uses a time based hysteresis. This pr
 
 In collaboration with FlyInside, TelemFFB uses vibration variables from the flight model. ETL, VRS, and other buffeting and engine vibrations are not used. Instead there is a Vibration control under Mechanical/Airframe:
 
-![](../rhino/media/Pictures/100002010000028C00000043944523BC9D1C4BB8.png){ width="652px" height="67px" }
+![](images/msfs-xp-helicopters/flyinside-vibration.png){ width="652px" height="67px" }

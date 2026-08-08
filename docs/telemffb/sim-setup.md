@@ -2,6 +2,8 @@
 
 These settings are found in **System → System Settings → Sim Setup** and are global for any instance of TelemFFB.
 
+![The Sim Setup page with per-simulator enable and auto-setup options](images/sim-setup/simulator-setup.png){ width="650px" }
+
 Enable each simulator you fly. For the sims that need an export script or plugin (DCS, X-Plane, IL-2), the auto-setup options install it for you.
 
 **Verifying the connection:** start the simulator and load a flight. The TelemFFB status area should show **Running** with the detected aircraft name, and the Monitor tab should show live telemetry values. See [Device/Instance Status Indications](ui-overview.md#deviceinstance-status-indications) if it does not.
