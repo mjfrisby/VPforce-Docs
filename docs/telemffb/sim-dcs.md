@@ -1,8 +1,139 @@
 # DCS
 
-### DCS
+!!! info inline end ""
+    [All settings available in DCS](effects-sim-dcs.md)
 
-#### Joystick Spring Mode
+## Understanding Native DCS FFB, TelemFFB, and VPforce Configurator
+
+To effectively use TelemFFB, it is important to understand how native simulator FFB effects, TelemFFB effects, and VPforce Configurator device settings interact with one another.
+
+### Native DCS FFB Effects
+
+DCS sends native force feedback effects directly to your FFB device without any involvement from TelemFFB. These effects vary by aircraft module and typically include:
+
+- **Aerodynamic buffeting** - Stall buffet, AoA buffeting, and other aerodynamic shaking
+- **Dynamic stick forces** - Changes in control resistance based on airspeed and flight conditions (Typically warbirds, Mig-21, etc.)
+- **Overspeed buffeting** - Shaking when aircraft exceeds safe speeds (Su-25T)
+
+!!! important
+    DCS native FFB effects will work even if TelemFFB is not running, provided your device driver and VPforce Configurator are properly installed.
+
+Module-specific FFB implementation varies. Eagle Dynamics does not publish a comprehensive list of native FFB effects per-module, so discovery typically requires testing in the aircraft itself or consulting module-specific community resources and forums.
+
+### TelemFFB Effects: Supplemental vs. Override
+
+TelemFFB operates in one of two ways relative to native DCS FFB:
+
+**Supplemental Mode (Default)**
+
+- TelemFFB adds additional effects on top of native DCS FFB effects
+- Native DCS effects (spring, buffeting, etc.) continue unmodified from the simulator
+- TelemFFB contributes new effects like engine rumble customization, gunfire enhancement, helicopter ETL shaking, and other telemetry-driven effects
+- Both the simulator and TelemFFB are generating forces simultaneously on the device
+
+**Override Mode (Optional)**
+
+- TelemFFB can be configured to take control of certain effects, particularly spring management
+- When override is enabled for an effect, TelemFFB's implementation replaces the native DCS effect
+- This is useful when you want to customize how forces feel beyond what DCS provides by default
+- Overrides are configured on a per-aircraft basis in TelemFFB's settings
+
+### VPforce Configurator Device Settings
+
+VPforce Configurator controls how your physical device responds to **all** incoming FFB commands, whether they originate from DCS or TelemFFB. These device-level settings include:
+
+- **Spring Gain** - Overall strength of spring/centering forces
+- **Damper** - Resistance and smoothing of stick movement
+- **Inertia** - Rotational inertia of the stick
+- **Friction** - Static friction when the stick is moving
+- **Master Gain** - Overall FFB intensity multiplier
+
+!!! important "Critical Point"
+    Adjusting VPforce Configurator gains affects **all** FFB effects equally. If you increase spring gain in Configurator, both native DCS spring forces and any TelemFFB-generated spring forces become proportionally stronger or weaker.
+
+### Signal Flow: From Simulator to Device
+
+```
+DCS Simulator
+    ↓ (native FFB effects)
+    +─→ FFB Device (via OS/driver)
+        └─→ VPforce Configurator settings applied
+                ↓
+                Physical motor output
+
+TelemFFB (if running)
+    ↓ (supplemental/override effects)
+    +─→ FFB Device (via OS/driver)
+        └─→ VPforce Configurator settings applied
+                ↓
+                Physical motor output (combines with DCS effects)
+```
+
+Both DCS and TelemFFB send their force commands to the same device. The device receives all commands and applies VPforce Configurator settings (gains, damping, etc.) to determine the final motor behavior.
+
+### Testing Without TelemFFB
+
+To experience and evaluate native DCS FFB effects without any TelemFFB customization:
+
+1. Close TelemFFB entirely
+2. Verify your VPforce Configurator device settings are configured appropriately
+3. Start DCS and load the aircraft/module you want to test
+4. Reproduce flight conditions (stall, high-G turns, gunfire, landing, etc.)
+5. Observe and evaluate the native FFB behavior
+6. Adjust VPforce Configurator gains and apply (not store) to see how device settings affect the feel
+
+This baseline understanding of native DCS behavior will help you make informed decisions about which TelemFFB customizations are useful for your preferences.
+
+### When TelemFFB is Running
+
+When TelemFFB is running and connected to a loaded aircraft:
+
+- Native DCS FFB effects continue to be sent to the device
+- TelemFFB simultaneously adds or (if configured) overrides specific effects
+- VPforce Configurator settings shape how all incoming FFB commands are rendered on the device
+- Changing a TelemFFB setting takes effect nearly immediately (slight delay while the application processes the adjustment)
+
+TelemFFB can also dynamically push VPforce Configurator profiles or individual gain overrides to your device. These changes affect how subsequent FFB commands from both DCS and TelemFFB are rendered.
+
+### Monitoring DCS vs TelemFFB Effects Using the Configurator Debug Tab
+
+VPforce Configurator includes a debug tab that displays all FFB effects being sent to your device in real-time. Each effect is labeled with an effect ID and includes a source badge that identifies where the effect originates.
+
+**Effect Source Badges:**
+
+The debug tab displays source badges for each effect:
+
+- **configurator** - Effects generated by VPforce Configurator device firmware (reserved effects with ID ≤ 4)
+- **game** - Effects generated by DCS (native FFB effects with ID > 4)
+- **telemFFB** - Effects generated by the TelemFFB application
+
+These badges make it easy to quickly identify which system is responsible for each effect without needing to manually reference effect IDs.
+
+**Testing Procedure:**
+
+To isolate and observe native DCS FFB effects without TelemFFB interference:
+
+1. Close TelemFFB completely
+2. Open VPforce Configurator and navigate to the debug tab
+3. Start DCS and load the aircraft/module you want to test
+4. In the debug tab, you will see effects appearing in real-time as you fly
+5. Look for effects with the **game** badge—these are native DCS effects that demonstrate what the simulator provides by default
+6. Reproduce specific flight conditions (stall, high-G maneuvers, gunfire, landing) to observe corresponding effects
+7. Note which DCS effects are active and their behavior with your current VPforce Configurator settings
+
+**With TelemFFB Running:**
+
+When you restart TelemFFB after completing your DCS-only testing:
+
+- The debug tab will show effects with all three source badges: **configurator**, **game**, and **telemFFB**
+- Effects with the **telemFFB** badge are supplemental effects added by TelemFFB
+- You can compare the effect list before and after TelemFFB is running to understand what supplemental effects TelemFFB adds
+- This helps you make informed decisions about which TelemFFB customizations enhance your experience
+
+!!! tip
+    Save a screenshot or note of the effect IDs you see in the debug tab while running DCS alone. This baseline reference makes it easier to identify TelemFFB-specific effects when you enable TelemFFB later.
+
+## Joystick Spring Mode
 
 Several different spring modes are available. Different options will be available depending on the selection
 
@@ -21,7 +152,7 @@ Several different spring modes are available. Different options will be availabl
 
     -   See the ***Advanced Dynamic Spring** documentation
 
-#### Pedal Spring Mode
+## Pedal Spring Mode
 
 DCS does not natively support FFB pedals. TelemFFB has implemented basic FFB capabilities.
 
@@ -47,11 +178,24 @@ The following modes are supported
 
 -   **Advanced Dynamic**
 
-    -   See the ***Advanced Dynamic*** Spring section
+    -   See [Advanced Spring & G-Force Curves](spring-curves.md)
 
-#### Low Hydraulic Pressure Effect
+In Dynamic Spring mode, the pedal force builds from the *Pedal Spring Gain* setting: the first 25% of the force accumulates between 0 and the aircraft's V~S~ (stall) speed, and the remaining 75% between V~S~ and V~NE~. All of the DCS warbirds have default V-speed values built into the application; the V-speeds and gains can be overridden per aircraft in the **Advanced Pedal Mode Settings** (Stall Speed V~S~, V~S~ Gain, Never Exceed Speed V~NE~, V~NE~ Gain).
 
-See the documentation for this effect in the ***MSFS Low Hydraulic Pressure Effect Section*** above. The effect works largely the same way for DCS.
+**Pedal trimming** is supported for fixed-wing aircraft that have rudder trimmers (default ON for propeller and jet aircraft). Helicopter pedal trimming is not supported: the "instant trim" options in the sims produce a double-input effect that cannot be reconciled with FFB trim following, and modules like the Mi-24 emulate a foot microswitch whose modes do not integrate with it either. In practice this does not matter — helicopters default to the springless pedal mode, which makes pedal trimming unnecessary.
+
+## Collective Spring Mode
+
+For a VPforce-powered collective, two modes are available for helicopters:
+
+-   **No Spring** — the collective moves freely, held only by the friction/damper forces in your VPforce Configurator profile.
+-   **Hardware Force Trim** — a spring holds the collective at its trimmed position; hold the trim release button to move it and it locks where you let go.
+
+The behavior and button configuration are identical to the MSFS/X-Plane implementation — see [Collective Spring Mode](msfs-xp-helicopters.md#collective-spring-mode) for details.
+
+## Low Hydraulic Pressure Effect
+
+See the [Low Hydraulic Pressure Effect documentation](effects-mechanical.md#low-hydraulic-pressure-effect). The effect works largely the same way for DCS.
 
 Support is currently limited to:
 
@@ -63,7 +207,7 @@ The primary difference is that for each DCS aircraft, the telemetry must be indi
 
 For DCS Aircraft, the Hydraulic System Threshold setting has already been coarsely configured for each of the supported aircraft, depending on how the data is being read and what the normal values are.
 
-#### Autopilot Oscillation with FFB
+## Autopilot Oscillation with FFB
 
 Some DCS aircraft experience pitch or roll oscillations when engaging autopilot modes (attitude hold, altitude hold, etc.) with an FFB joystick connected. This is caused by a mismatch between the physical stick position and the virtual stick position in the simulator — the autopilot commands a stick position through the spring effect, the FFB device overshoots or lags slightly, and the autopilot overcorrects. DCS has inherent lag in its virtual control loop that amplifies this feedback loop, producing several oscillation cycles before stabilizing — or in some cases, never fully stabilizing.
 

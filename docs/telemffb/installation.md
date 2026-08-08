@@ -41,6 +41,14 @@ The first time you install and launch TelemFFB, you will be greeted by the syste
 
 ![](../rhino/media/Pictures/10000000000002880000026E68808AD3EBF06CDD.png){ width="587px" height="563px" }
 
+## Upgrading from TelemFFB 1.x
+
+The first time TelemFFB 2.x loads, it upgrades your existing 1.x settings file (`userconfig.xml`) to the v2 format automatically. No action is required. During the conversion:
+
+-   Existing user aircraft settings become user profiles named "Auto User" — rename them afterwards via **Profiles → Profile Manager** if you wish.
+-   User-defined aircraft without a default profile become "User Default" aircraft. You can create further profiles from them, but "User Default" itself cannot be renamed.
+-   Settings that used to be separate toggle flags for variants of the same feature (for example the MSFS spring options) are converted to the equivalent selection in the corresponding mode pulldown.
+
 ## Running TelemFFB from Source
 
 Most users should download the release executable from the [GitHub Releases](https://github.com/walmis/VPforce-TelemFFB/releases) page as described above. However, developers, testers, and anyone who wants to run an unreleased branch can run TelemFFB directly from source instead.
@@ -50,9 +58,12 @@ Most users should download the release executable from the [GitHub Releases](htt
 
 ### 1. Install Python
 
-TelemFFB requires **Python 3.11 or newer**. **Python 3.12** is recommended, as it's the version used to compile the official release builds.
+TelemFFB currently requires **Python 3.12**. It is the version used to compile the official release builds.
 
-1.  Download the installer from [python.org/downloads](https://www.python.org/downloads/).
+!!! warning "Newer Python versions will not work yet"
+    The numpy version pinned in `requirements.txt` is not compatible with Python versions newer than 3.12. Do not use Python 3.13 or newer until the build environment and the numpy requirement are updated.
+
+1.  Download a **3.12.x** installer from the [python.org downloads page](https://www.python.org/downloads/). The page promotes the newest release at the top, so scroll down to the release list and pick the latest 3.12.x version.
 2.  Run the installer. On the first screen, check **"Add python.exe to PATH"** before clicking **Install Now**.
 3.  Verify the installation by opening a terminal (PowerShell or Command Prompt) and running:
 
@@ -60,7 +71,7 @@ TelemFFB requires **Python 3.11 or newer**. **Python 3.12** is recommended, as i
     python --version
     ```
 
-    This should print `Python 3.11.x` or newer.
+    This should print `Python 3.12.x`.
 
 ### 2. Clone the repository
 

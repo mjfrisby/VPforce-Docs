@@ -10,7 +10,7 @@ Various items can cause issues with FFB depending on the sim in question. This s
 
 By default, the Spring effect — the primary FFB effect type — is owned and managed by DCS. The TelemFFB application does not alter the spring effect unless one of the several override options are enabled.
 
-If FFB is not working, follow the procedure below:
+If FFB is not working, work through the following steps in order. Each step narrows down the cause, starting with DCS's own settings and moving on to TelemFFB, the Configurator, and finally third-party applications.
 
 !!! note
     This procedure assumes you have already confirmed that your Rhino is connected and working properly with VPforce Configurator and that you can feel FFB effects when using the Configurator's test effects.
@@ -18,60 +18,62 @@ If FFB is not working, follow the procedure below:
 !!! important
     DCS does not generate any active FFB effects until you are loaded into an aircraft. Simply being in the main menu or mission editor will deactivate any *Spring* effect set in the *VP Configurator* — therefore the joystick will remain limp.
 
-##### Ensure FFB is enabled in the DCS Misc. settings
+**Step 1 — Ensure FFB is enabled in the DCS Misc. settings**
+{ .procedure-step }
 
-1. Even with FFB disabled, DCS will create a disabled FFB effect (which renders the joystick limp). However, it will never 'start' the effect, so it remains limp even after loading into an aircraft.
+Even with FFB disabled, DCS will create a disabled FFB effect (which renders the joystick limp). However, it will never 'start' the effect, so it remains limp even after loading into an aircraft.
 
-    ![](media/Pictures/10000000000002E4000001B190CAE179096BC625.png){ width="330px" height="193px" }
+![](media/Pictures/10000000000002E4000001B190CAE179096BC625.png){ width="330px" height="193px" }
 
-2. Ensure the 'FF Tune' settings for the axes are non-zero and at the value you intend (default is 100% and recommended to keep it at 100%).
+Next, ensure the 'FF Tune' settings for the axes are non-zero and at the value you intend (default is 100% and recommended to keep it at 100%). To reach these settings, go into a module's axis settings, ensure '**Foldable View**' is disabled, **select the axis binding**, and then choose the **'FF Tune'** button at the bottom.
 
-    1. This involves going into a module's axis settings, ensuring '**Foldable View**' is disabled, **selecting the axis binding**, and then choosing the **'FF Tune'** button at the bottom.
+![](media/Pictures/100000000000076700000457F84F5FD3291D9858.png){ width="563px" height="330px" }
 
-    ![](media/Pictures/100000000000076700000457F84F5FD3291D9858.png){ width="563px" height="330px" }
+'FF Tune' is the 'strength' of the spring effect that DCS will use for that axis for that aircraft. Recommended to leave it at 100%.
 
-    2. This is the 'strength' of the spring effect that DCS will use for that axis for that aircraft. Recommended to leave it at 100%.
+**Step 2 — Test without TelemFFB running**
+{ .procedure-step }
 
-##### Test without TelemFFB running
+Close TelemFFB and test again.
 
-1. **If the issue persists, TelemFFB is not at fault. Proceed to the next step.**
+- **If the issue persists**, TelemFFB is not at fault. Proceed to Step 3.
+- **If the issue goes away**, a TelemFFB configuration is likely the cause. Work through the checks below:
 
-2. If the issue goes away, a TelemFFB configuration is likely the cause.
-
-    1. Check the '**Active Effects**' panel on the TelemFFB **Monitor** page. Look for any spring override type effects and disable any which are active.
+1. Check the '**Active Effects**' panel on the TelemFFB **Monitor** page. Look for any spring override type effects and disable any which are active.
 
     ![](media/Pictures/1000000000000174000000BC120619318D732D8E.png){ width="251px" height="127px" }
 
-    2. If the cause is one of the effects, please read the documentation for the effect and ensure you understand its use and purpose. All of the TelemFFB override type effects have very specific use cases.
+2. If the cause is one of the effects, please read the documentation for the effect and ensure you understand its use and purpose. All of the TelemFFB override type effects have very specific use cases.
 
-    3. If no active effects are causing the issue, check to see if you are pushing a VPforce Configurator profile or are using the Configurator Gains override feature.
+3. If no active effects are causing the issue, check to see if you are pushing a VPforce Configurator profile or are using the Configurator Gains override feature.
+
     ![](media/Pictures/10000000000001EB00000135D1501E27D3966190.png){ width="361px" height="227px" }
-        - Both of these options could make it seem like FFB is not working. If you are setting the **master gain** or **spring gain** to 0 with configurator overrides, or you are pushing a configurator profile with 'sticky spring' or the spring gain slider turned down, it will seem as if "FFB is not working".
 
-    4. If TelemFFB has been determined to be the cause but the above steps did not reveal the issue, reach out to the **#TelemFFB-User** channel on the VPforce Discord.
+    Both of these options could make it seem like FFB is not working. If you are setting the **master gain** or **spring gain** to 0 with configurator overrides, or you are pushing a configurator profile with 'sticky spring' or the spring gain slider turned down, it will seem as if "FFB is not working".
 
-##### Check your configurator settings
+4. If TelemFFB has been determined to be the cause but the above steps did not reveal the issue, reach out to the **#TelemFFB-User** channel on the VPforce Discord.
+
+**Step 3 — Check your Configurator settings**
+{ .procedure-step }
 
 1. Make sure that your master gain and spring gain sliders are non-zero and high enough that you feel the spring force you are expecting. These sliders define the maximum force the Rhino can generate — if they are low or zero, it does not matter what the game sets the spring effect at, it will be no stronger than the combination of those sliders.
 
-![](media/Pictures/100000000000036A000001EFC90C9CFFE8CF22DC.png){ width="319px" height="181px" }
+    ![](media/Pictures/100000000000036A000001EFC90C9CFFE8CF22DC.png){ width="319px" height="181px" }
 
-2. Make sure you do not have **'Sticky'** enabled in the spring effect on the VPforce Configurator **'Effects'** tab.
-    - This option tells the Rhino to ignore the spring effect from the game and use the one configured in the Effects tab.
+2. Make sure you do not have **'Sticky'** enabled in the spring effect on the VPforce Configurator **'Effects'** tab. This option tells the Rhino to ignore the spring effect from the game and use the one configured in the Effects tab.
+
     ![](media/Pictures/100000000000015E0000010B2550517A4501EE8D.png){ width="242px" height="184px" }
 
-3. If the issue is with in-game trimming, ensure you do not have **'Override Trim'** enabled in the hardware force trim section of the VPforce Configurator **Effects** tab.
-    - This option tells the Rhino to ignore the spring center information from the game and control the spring center using the hardware trim bindings in the Effects tab.
+3. If the issue is with in-game trimming, ensure you do not have **'Override Trim'** enabled in the hardware force trim section of the VPforce Configurator **Effects** tab. This option tells the Rhino to ignore the spring center information from the game and control the spring center using the hardware trim bindings in the Effects tab.
 
     ![](media/Pictures/1000000000000130000001104C509358CB3EC220.png){ width="239px" height="214px" }
 
-4. Check your **potentiometer settings**.
+4. Check your **potentiometer settings**. Make sure Pot#1 (and Pot#2, if applicable) are configured as you intend and that the current values are what you expect. If your Pot is configured for Master Gain or Spring Gain and turned all the way down, FFB will seem to *not work*.
 
-    - Make sure Pot#1 (and Pot#2, if applicable) are configured as you intend and that the current values are what you expect. If your Pot is configured for Master Gain or Spring Gain and turned all the way down, FFB will seem to *not work*.
+    ![](media/Pictures/1000000000000374000002AE7C4FC959873320DB.png){ width="493px" height="383px" }
 
-![](media/Pictures/1000000000000374000002AE7C4FC959873320DB.png){ width="493px" height="383px" }
-
-##### Check for 3rd party app issues
+**Step 4 — Check for 3rd party app issues**
+{ .procedure-step }
 
 **vJoy**
 
@@ -126,7 +128,8 @@ You can choose to copy your bindings from the `config/input` folder in your real
 
 TelemFFB receives telemetry data from DCS via a native DLL loaded through the DCS export system. If TelemFFB shows as connected but no telemetry data is being received — effects are absent, the telemetry window shows no data, or the status indicator remains idle — the DLL export hook is typically the cause.
 
-##### Verify the Export.lua entries
+**Step 1 — Verify the Export.lua entries**
+{ .procedure-step }
 
 TelemFFB requires two specific lines to be present in your DCS export script:
 
@@ -146,7 +149,8 @@ If either line is missing or malformed, DCS will not load the TelemFFB DLL and n
 !!! note
     If you already have an `Export.lua` from another application (such as Helios, SRS, or VoiceAttack), the TelemFFB entries must be added to the existing file — not used as a replacement. See the [TelemFFB installation documentation](../telemffb/installation.md) for instructions.
 
-##### Check the DCS log for successful DLL load
+**Step 2 — Check the DCS log for successful DLL load**
+{ .procedure-step }
 
 The most reliable way to confirm TelemFFB is loading correctly is to check the DCS log file after launching a mission:
 
@@ -162,11 +166,13 @@ telemffb installed
 
 If this entry is present, the DLL has been successfully loaded by DCS and the export hook is active. If it is absent, DCS did not load the TelemFFB DLL — proceed to the remediation steps below.
 
-##### Check for errors from other export modules
+**Step 3 — Check for errors from other export modules**
+{ .procedure-step }
 
 While reviewing `dcs.log`, also look for any errors related to other export scripts that are loaded alongside TelemFFB in `Export.lua` (such as Helios, SRS, or VAICOM). An error in another module that runs before the TelemFFB entries can halt execution of the export script entirely, preventing TelemFFB from loading even if its own entries are correct.
 
-##### Remediation — adjust load order in Export.lua
+**Step 4 — Remediation: adjust load order in Export.lua**
+{ .procedure-step }
 
 A common cause of the DLL failing to load is a conflict with the load order of other entries in `Export.lua`. If `telemffb installed` does not appear in the DCS log:
 
@@ -179,6 +185,9 @@ A common cause of the DLL failing to load is a conflict with the load order of o
 Changing the load order resolves the majority of cases where the DLL fails to initialize due to interactions with other export modules.
 
 If the above steps do not resolve the issue, reach out to the **#TelemFFB-User** channel on the VPforce Discord.
+
+!!! tip "Support bundle"
+    TelemFFB can create a support bundle (**Help → Create Support Bundle**) — a timestamped zip containing logs, system settings, and your user config. Attach it when requesting help; it usually contains everything needed for diagnosis.
 
 ---
 
@@ -395,7 +404,7 @@ An active VPN connection is one of the most common causes of telemetry not reach
 
 TelemFFB includes an auto-setup feature that configures IL-2's built-in telemetry output and points it at the correct local port. Verify the following:
 
-1. In TelemFFB, confirm that **Auto IL-2 Telemetry Setup** is enabled and that the **IL-2 Install Path** is set correctly. See **[IL-2 Sturmovik configuration](../telemffb/configuration.md#il-2-sturmovik)** for details on these settings.
+1. In TelemFFB, confirm that **Auto IL-2 Telemetry Setup** is enabled and that the **IL-2 Install Path** is set correctly. See **[IL-2 Sturmovik configuration](../telemffb/sim-setup.md#il-2-sturmovik)** for details on these settings.
 2. If auto-setup is enabled and the path is correct, allow TelemFFB to perform the setup and restart IL-2.
 3. If you have manually edited your IL-2 telemetry configuration, verify that the settings match what TelemFFB expects. Incorrect port numbers or IP addresses are a common cause of failure.
 

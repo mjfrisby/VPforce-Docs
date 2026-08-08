@@ -1,8 +1,10 @@
 # IL-2
 
-### IL-2
+!!! info inline end ""
+    [All settings available in IL-2](effects-sim-il2.md)
 
-#### Duplicate 'Shake' effects
+
+## Duplicate 'Shake' effects
 
 IL2 implements FFB for dynamic stick forces and some very basic shake effects. TelemFFB implements duplicate (but far more configurable) effects which overlap with those that are implemented by IL2. To enable these specific settings, enable the "IL-2 Shake Master" setting in TelemFFB.
 
