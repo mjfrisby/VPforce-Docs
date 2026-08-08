@@ -1,4 +1,34 @@
 # Changelog
+- **August 8, 2026:**
+
+    - Reorganized the **[TelemFFB](telemffb/index.md)** section into task-focused groups: Setup, Core Concepts, Simulator Guides, and Reference
+    - Added **[Connecting Your Simulator](telemffb/sim-setup.md)** page collecting the per-simulator enable and auto-setup steps in one place
+    - Added **[Devices & Instances](telemffb/devices-instances.md)** page combining multi-device setup with the instance launch options
+    - Added **[How Settings Work](telemffb/settings-model.md)** page explaining where settings are stored and how the delta-based configuration model resolves defaults
+    - Moved **Understanding Native DCS FFB, TelemFFB, and VPforce Configurator** from the overview into the **[DCS guide](telemffb/sim-dcs.md)**, keeping the overview focused on what TelemFFB does per simulator
+    - Repaired heading hierarchy on the simulator guide pages so section numbering and the table of contents render correctly
+    - Clarified in **[Running TelemFFB from Source](telemffb/installation.md#running-telemffb-from-source)** that Python 3.12 is required — newer versions are incompatible with the pinned numpy release
+    - Updated **[IL-2 setup](telemffb/sim-setup.md#il-2-sturmovik)** for the current System Settings layout: discrete configuration groups for IL-2 Great Battles and IL-2 Korea, the telemetry port setting, and the new Telemetry Forwarding feature for sending Telemetry/Motion/FFB streams to additional destinations; removed the retired "Pause IL-2 Effects on Focus Loss" setting
+    - Added a **[Quick Start](telemffb/quick-start.md)** walkthrough covering install, first launch, simulator connection, verifying telemetry, and live tuning
+    - Rewrote **[How Settings Work](telemffb/settings-model.md)** to explain the layered defaults model — application defaults, class defaults, shipped aircraft profiles, and user overrides — and how the Settings tab shows where each value comes from
+    - Split the **[MSFS & X-Plane guide](telemffb/sim-msfs-xplane.md)** into ordered chapters: [Axis Control & Spring Modes](telemffb/msfs-xp-axis-spring.md), [Trim & Autopilot Following](telemffb/msfs-xp-trim-following.md), [Automatic Trim Calibration](telemffb/msfs-xp-trim-calibration.md), and [Helicopters](telemffb/msfs-xp-helicopters.md)
+    - Automatic Trim Calibration is now the headlined way to set the trim-following gains; the hand-tuning procedure moved to **[Manual Trim Tuning (Legacy)](telemffb/msfs-xp-trim-manual.md)**
+    - Documented the **[Collective Spring Mode](telemffb/msfs-xp-helicopters.md#collective-spring-mode)** (No Spring / Hardware Force Trim) for MSFS, X-Plane, and DCS, including the trim release, reset, and trim up/down button behavior
+    - Documented **[Cyclic Trim Following](telemffb/msfs-xp-helicopters.md#cyclic-trim-following)** for helicopters, including how its rotor-trim data source and simpler model differ from the fixed-wing implementation
+    - Redesigned the entire Effects Reference around per-effect entries in the same order as the Settings tab — simulator badges, a written explanation of every effect, its sub-settings (grouped by spring/g-force mode where applicable), and per-sim behavior notes — across all eight section pages: [Basic Settings](telemffb/effects-basic.md), [Aerodynamics](telemffb/effects-aerodynamics.md), [Inertial](telemffb/effects-inertial.md), [Ground](telemffb/effects-ground.md), [Mechanical & Airframe](telemffb/effects-mechanical.md), [Weapons](telemffb/effects-weapons.md), [Basic FFB Effects](telemffb/effects-ffb.md), and [System](telemffb/effects-system.md)
+    - Added per-simulator settings directories — [DCS](telemffb/effects-sim-dcs.md), [IL-2](telemffb/effects-sim-il2.md), [BMS](telemffb/effects-sim-bms.md), [MSFS](telemffb/effects-sim-msfs.md), [X-Plane](telemffb/effects-sim-xplane.md) — listing everything available in each sim with links to the full documentation
+    - Fixed the "Overpeed Shake" typo (now Overspeed Shake) in the application's setting labels
+    - Retired the "What's New in 2.0" page — the 1.x upgrade notes moved to **[Installation](telemffb/installation.md#upgrading-from-telemffb-1x)**, and version history lives in the Release Notes
+    - Moved the **[Advanced Curve Editor](telemffb/spring-curves.md)** into the Effects Reference (it documents the editor behind the Advanced Dynamic spring and G-force curve options) and **[VPforce Configurator Integration](telemffb/vpconf-profiles.md)** into Core Concepts
+    - Expanded **[Devices & Instances](telemffb/devices-instances.md)** with an explanation of the master/child instance model and how to work with child instances
+    - Added a connection-verification note to **[Connecting Your Simulator](telemffb/sim-setup.md)**
+    - Rebuilt the Effects Reference as categorized pages with setting tables generated directly from the application's settings catalog: **[Overview](telemffb/effects-overview.md)** (including how effects differ between simulators), **[Basic & Spring](telemffb/effects-basic.md)**, **[Aerodynamic](telemffb/effects-aerodynamics.md)**, **[Inertial](telemffb/effects-inertial.md)**, **[Ground](telemffb/effects-ground.md)**, **[Mechanical & Airframe](telemffb/effects-mechanical.md)**, **[Weapons](telemffb/effects-weapons.md)**, **[Basic FFB Effects](telemffb/effects-ffb.md)**, and **[System](telemffb/effects-system.md)**; the legacy A–Z page now redirects to the new overview, with its remaining unique content migrated into the category pages (G-force effect deep-dive, propeller rumble tuning, glider force trim, DCS pedal spring V-speed behavior, SimConnect axis events) and its troubleshooting content consolidated into [Game-Specific Troubleshooting](rhino/game-specific-troubleshooting.md)
+    - Moved the Turbulence and Low Hydraulic Pressure effect documentation from the MSFS & X-Plane overview into their effects-reference categories, keeping the overview focused on the guide chapters
+
+- **August 7, 2026:**
+
+    - Added a **[TelemFFB Release Notes](telemffb/release-notes.md)** page — full version history (newest first) in collapsible sections, with a stable `/telemffb/latest/` link that always points to the most recent release for the in-app update notification
+
 - **June 28, 2026:**
 
     - Added **Running TelemFFB from Source** section to the **[Installation](telemffb/installation.md)** page, covering Python setup, cloning the repository, checking out a specific branch, installing dependencies, and launching the app
@@ -65,7 +95,7 @@
 
 - **March 16, 2026:**
 
-    - Added **[Autopilot Oscillation with FFB](telemffb/index.md#autopilot-oscillation-with-ffb)** section documenting DCS autopilot pitch/roll oscillation caused by the simulator's autopilot-FFB feedback loop, with diagnostic steps and workarounds
+    - Added **[Autopilot Oscillation with FFB](telemffb/sim-dcs.md#autopilot-oscillation-with-ffb)** section documenting DCS autopilot pitch/roll oscillation caused by the simulator's autopilot-FFB feedback loop, with diagnostic steps and workarounds
 
 - **February 27, 2026:**
 
