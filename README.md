@@ -105,6 +105,33 @@ vpforce-rhino-manual/
 └── .github/workflows/       # GitHub Actions CI/CD
 ```
 
+## 🔄 Generated Content (TelemFFB)
+
+Two parts of the TelemFFB Manual are generated rather than hand-written:
+
+### Release Notes
+
+`docs/telemffb/release-notes.md` is **generated** from the TelemFFB app repo's
+`_RELEASE_NOTES.txt` — do not edit it by hand. When a TelemFFB release is
+tagged on the app's `wip` branch:
+
+1. Run `py tools/update-release-notes.py` (fetches the txt from `wip`; use
+   `--file <path>` to point at a local checkout instead).
+2. Review `git diff docs/telemffb/release-notes.md`, commit, and push —
+   the push deploys the site.
+
+The newest release automatically gets the `id="latest"` anchor that the
+in-app update notification opens via `/telemffb/latest/`. The txt's banner
+format and full process are documented in the script's docstring.
+
+### Effects Reference Tables
+
+The setting tables and simulator badges on the `docs/telemffb/effects-*.md`
+pages are expanded at build time by `hooks.py` from a vendored copy of the
+app's settings catalog at `data/telemffb-defaults.xml`. When app settings
+change, copy the app repo's `defaults.xml` over that file and rebuild — the
+build warns about any top-level setting that lacks a documented entry.
+
 ## 📝 Editing Documentation
 
 Documentation is written in **Markdown**. Each page corresponds to a `.md` file in the `docs/` directory.

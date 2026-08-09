@@ -1,17 +1,8 @@
 <!--
-  MAINTENANCE — adding a new release:
-  1. Copy the <details> block below and paste it as the NEW top entry
-     (directly under this comment, above the current latest).
-  2. On the block you are adding:
-       - set the <summary> to:  <git-tag> &mdash; <Month D, Year>
-       - add  class="release release--latest" id="latest" ... open
-       - append  <span class="latest-badge">latest</span>  to the summary
-  3. On the PREVIOUS latest block, remove  release--latest,  id="latest",
-     the  open  attribute, and the latest-badge span (leave class="release").
-  4. Convert your notes: sim/category headers -> **Bold**, keep bullet lists.
-  The app opens /telemffb/latest/ which redirects to the id="latest" anchor,
-  so moving that id is all that repoints 'latest'. Do NOT use ## headings
-  inside a release (the enumerate-headings plugin would number them).
+  GENERATED FILE - do not edit by hand; changes will be overwritten.
+  Regenerate with:  py tools/update-release-notes.py
+  (see that script's docstring for the release process and the
+  _RELEASE_NOTES.txt banner format)
 -->
 
 # TelemFFB Release Notes
