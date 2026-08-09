@@ -5,6 +5,7 @@
     - Added a **[Falcon BMS guide](telemffb/sim-bms.md)** covering setup, how TelemFFB augments the F-16's fly-by-wire stick, and the beta integration's limitations
     - Documented **device auto-assignment** and the per-role device selector pulldowns in [Devices & Instances](telemffb/devices-instances.md), and updated the Quick Start and Troubleshooting pages to match
     - Documented **[Profile Notes](telemffb/ui-overview.md#profile-notes)** — curated notes on shipped profiles, adding your own notes, and the flashing notes icon
+    - Rewrote **[VPforce Configurator Integration](telemffb/vpconf-profiles.md)** around a four-rule model of how TelemFFB manages device gains, with a precedence table and the worked examples reformatted as state timelines
 
 - **August 8, 2026:**
 

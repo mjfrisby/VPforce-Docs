@@ -91,4 +91,8 @@ These settings are unique per instance of TelemFFB
 
     -   Define a profile to load on TelemFFB startup and/or exit
 
-    -   See [VPforce Configurator Integration](vpconf-profiles.md) for more details
+-   **Restore Startup Gains on Exit**
+
+    -   When enabled, TelemFFB re-pushes the gain values it read from the device at startup when it exits, leaving the device as it was found. Disabled by default.
+
+See [VPforce Configurator Integration](vpconf-profiles.md) for how these interact with per-aircraft profiles and gain overrides.
