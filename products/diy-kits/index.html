@@ -1,0 +1,2050 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/products/diy-kits/" rel="canonical"/>
+<link href="../rhino-ffb-base/" rel="prev"/>
+<link href="../grip-adapters/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>DIY Motor Kits - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#diy-motor-kits">3. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              DIY Motor Kits
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../rhino/">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kit-comparison">3.1 
+<span class="md-ellipsis">
+      
+        Kit Comparison
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-features">3.2 
+<span class="md-ellipsis">
+      
+        Core Features
+      
+    </span>
+</a>
+<nav aria-label="Core Features" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#safety-mechanisms">3.2.1 
+<span class="md-ellipsis">
+      
+        Safety Mechanisms
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#whats-in-the-box">3.3 
+<span class="md-ellipsis">
+      
+        What’s in the Box
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#57blf03-motor-kit">3.4 
+<span class="md-ellipsis">
+      
+        57BLF03 Motor Kit
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#86blf03-motor-kit">3.5 
+<span class="md-ellipsis">
+      
+        86BLF03 Motor Kit
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#86blf04-motor-kit">3.6 
+<span class="md-ellipsis">
+      
+        86BLF04 Motor Kit
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assembly-and-engineering-notes">3.7 
+<span class="md-ellipsis">
+      
+        Assembly and Engineering Notes
+      
+    </span>
+</a>
+<nav aria-label="Assembly and Engineering Notes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mechanical-transmission">3.7.1 
+<span class="md-ellipsis">
+      
+        Mechanical Transmission
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#power-supply-sizing">3.7.2 
+<span class="md-ellipsis">
+      
+        Power Supply Sizing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frame-materials">3.7.3 
+<span class="md-ellipsis">
+      
+        Frame Materials
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#software-integration">3.8 
+<span class="md-ellipsis">
+      
+        Software Integration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grip-adapters">3.9 
+<span class="md-ellipsis">
+      
+        Grip Adapters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#community-builds-using-diy-kits">3.10 
+<span class="md-ellipsis">
+      
+        Community Builds Using DIY Kits
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="diy-motor-kits"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> DIY Motor Kits<a class="headerlink" href="#diy-motor-kits" title="Link to this section">¶</a></h1>
+<p>VPforce DIY kits provide the exact same professional-grade electronics, servo motors, and firmware platform that powers the Rhino FFB Base — in modular kit form. They are designed for builders who want to construct custom FFB joysticks, yokes, helicopter collectives, or pedal systems.</p>
+<p>All prices exclude VAT. Available at <a class="external" href="https://order.vpforce.eu" target="_blank">order.vpforce.eu</a>.</p>
+<hr/>
+<h2 id="kit-comparison"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Kit Comparison<a class="headerlink" href="#kit-comparison" title="Link to this section">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Kit</th>
+<th>Frame</th>
+<th>Torque constant</th>
+<th>Peak torque</th>
+<th>Weight</th>
+<th>Single kit</th>
+<th>Dual kit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#57blf03-motor-kit">3.4 57BLF03</a></td>
+<td>NEMA23 (57 mm)</td>
+<td>0.066 Nm/A</td>
+<td>≈ 1.98 Nm</td>
+<td>1.27 kg</td>
+<td>179 EUR</td>
+<td>299 EUR</td>
+</tr>
+<tr>
+<td><a href="#86blf03-motor-kit">3.5 86BLF03</a></td>
+<td>NEMA34 (86 mm)</td>
+<td>0.11 Nm/A</td>
+<td>≈ 3.30 Nm</td>
+<td>2.5 kg</td>
+<td>229 EUR</td>
+<td>399 EUR</td>
+</tr>
+<tr>
+<td><a href="#86blf04-motor-kit">3.6 86BLF04</a></td>
+<td>NEMA34 (86 mm)</td>
+<td>0.127 Nm/A</td>
+<td>≈ 3.81 Nm</td>
+<td>2.8 kg</td>
+<td>249 EUR</td>
+<td>429 EUR</td>
+</tr>
+</tbody>
+</table>
+<p>Dual-motor kits are designed for two-axis controls (joystick, yoke). Single-motor kits suit single-axis applications (rudder pedals, helicopter collective).</p>
+<figure class="figure-image"> <a class="external" href="https://vpforce.eu/downloads/ffb-diagram.pdf" target="_blank"><img alt="VPforce FFB Kit Diagram" src="../../images/kit-diagram.webp"/></a> <figcaption>VPforce FFB Kit Diagram</figcaption></figure>
+<hr/>
+<h2 id="core-features"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> Core Features<a class="headerlink" href="#core-features" title="Link to this section">¶</a></h2>
+<p>All VPforce DIY kits share the following features:</p>
+<ul>
+<li><strong>Software anti-cogging</strong> — motors are individually calibrated with cogging torque maps, virtually eliminating the notchy feel of raw brushless motors.</li>
+<li><strong>Pre-tuned operation</strong> — motors and drivers are factory-configured for smooth FFB responses. No complex electrical setup is required during assembly.</li>
+<li><strong>High-resolution encoder</strong> — integrated for fast, accurate position tracking essential for stable force rendering.</li>
+<li><strong>Battle-tested durability</strong> — hardware proven in daily use by hobbyists and flight trainers worldwide.</li>
+</ul>
+<h3 id="safety-mechanisms"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.1</span> Safety Mechanisms<a class="headerlink" href="#safety-mechanisms" title="Link to this section">¶</a></h3>
+<ul>
+<li><strong>Safe low-voltage design</strong> — motors operate at 19–24 V DC.</li>
+<li><strong>Temperature monitoring</strong> — built-in thermal sensors automatically limit power output when safe thresholds are exceeded.</li>
+<li><strong>Software watchdog</strong> — forces neutralize automatically on control signal loss.</li>
+</ul>
+<hr/>
+<h2 id="whats-in-the-box"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> What’s in the Box<a class="headerlink" href="#whats-in-the-box" title="Link to this section">¶</a></h2>
+<p>Each kit includes:</p>
+<ul>
+<li>1× or 2× Brushless motors (single or dual)</li>
+<li>1× VPforce FFB Mainboard</li>
+<li>1× USB interface cable (30 cm)</li>
+<li>1× Motor power cable (25 cm) per motor</li>
+<li>1× Motor data cable (20 cm) per motor</li>
+</ul>
+<hr/>
+<h2 id="57blf03-motor-kit"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4</span> 57BLF03 Motor Kit<a class="headerlink" href="#57blf03-motor-kit" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <img alt="57BLF03 Motor Kit" src="../images/57blf03-placeholder.svg"> <figcaption>57BLF03 Motor Kit</figcaption></img></figure>
+<p>A compact workhorse that balances size and torque for light to medium FFB projects. The NEMA23 frame makes it compatible with widely available off-the-shelf mounting hardware.</p>
+<p class="label-paragraph"><strong>Best for:</strong> Custom joysticks, light yokes, pedal conversions, space-constrained builds.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frame</td>
+<td>NEMA23 — 57 × 101 mm</td>
+</tr>
+<tr>
+<td>Torque constant</td>
+<td>0.066 Nm/A</td>
+</tr>
+<tr>
+<td>Peak torque</td>
+<td>≈ 1.98 Nm</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>1.27 kg per motor</td>
+</tr>
+<tr>
+<td>Operating voltage</td>
+<td>19–24 V DC</td>
+</tr>
+<tr>
+<td>Max phase current</td>
+<td>30 A (controller-limited)</td>
+</tr>
+<tr>
+<td>Recommended PSU</td>
+<td>24 V, 8 A per motor</td>
+</tr>
+<tr>
+<td>Shaft input</td>
+<td>8 mm (for third-party gearboxes)</td>
+</tr>
+<tr>
+<td>Single kit</td>
+<td>179 EUR</td>
+</tr>
+<tr>
+<td>Dual kit</td>
+<td>299 EUR</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Phase current vs. PSU current</p>
+<p class="label-paragraph"><strong>30 A per phase</strong> is the peak current the VPforce controller drives through the motor windings — it is <strong>not</strong> the current you need from your power supply. Actual PSU draw (<strong>Ibus</strong>) is approximately 7–8 A per motor under typical load. See <a href="#power-supply-sizing">3.7.2 Power Supply Sizing</a> below.</p>
+</div>
+<hr/>
+<h2 id="86blf03-motor-kit"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5</span> 86BLF03 Motor Kit<a class="headerlink" href="#86blf03-motor-kit" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <img alt="86BLF03 Motor Kit" src="../images/86blf03-placeholder.svg"/> <figcaption>86BLF03 Motor Kit</figcaption></figure>
+<p>Mid-range performance in the larger NEMA34 frame. Suitable for two-axis joysticks and heavier rudder pedal builds where more torque is needed without the additional length of the 86BLF04.</p>
+<p class="label-paragraph"><strong>Best for:</strong> Two-axis joysticks, heavier rudder pedal conversions, moderate extension setups.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frame</td>
+<td>NEMA34 — 86 × 81 mm</td>
+</tr>
+<tr>
+<td>Torque constant</td>
+<td>0.11 Nm/A</td>
+</tr>
+<tr>
+<td>Peak torque</td>
+<td>≈ 3.30 Nm</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>2.5 kg per motor</td>
+</tr>
+<tr>
+<td>Operating voltage</td>
+<td>19–24 V DC</td>
+</tr>
+<tr>
+<td>Max phase current</td>
+<td>30 A (controller-limited)</td>
+</tr>
+<tr>
+<td>Recommended PSU</td>
+<td>24 V, 8 A per motor</td>
+</tr>
+<tr>
+<td>Shaft input</td>
+<td>12.7 mm (for third-party gearboxes)</td>
+</tr>
+<tr>
+<td>Single kit</td>
+<td>229 EUR</td>
+</tr>
+<tr>
+<td>Dual kit</td>
+<td>399 EUR</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Phase current vs. PSU current</p>
+<p class="label-paragraph"><strong>30 A per phase</strong> is the peak current the VPforce controller drives through the motor windings — it is <strong>not</strong> the current you need from your power supply. Actual PSU draw (<strong>Ibus</strong>) is approximately 7–8 A per motor under typical load. See <a href="#power-supply-sizing">3.7.2 Power Supply Sizing</a> below.</p>
+</div>
+<hr/>
+<h2 id="86blf04-motor-kit"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.6</span> 86BLF04 Motor Kit<a class="headerlink" href="#86blf04-motor-kit" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <img alt="86BLF04 Motor Kit" src="../images/86blf04-placeholder.svg"/> <figcaption>86BLF04 Motor Kit</figcaption></figure>
+<p>The highest-torque configuration in the lineup. The longer motor body provides greater thermal mass, making it well-suited to demanding setups with long stick extensions or heavily loaded controls.</p>
+<p class="label-paragraph"><strong>Best for:</strong> Long stick extensions, full-size replicated aircraft controls, helicopter goosenecks, high-load continuous operation.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frame</td>
+<td>NEMA34 — 86 × 94 mm</td>
+</tr>
+<tr>
+<td>Torque constant</td>
+<td>0.127 Nm/A</td>
+</tr>
+<tr>
+<td>Peak torque</td>
+<td>≈ 3.81 Nm</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>2.8 kg per motor</td>
+</tr>
+<tr>
+<td>Operating voltage</td>
+<td>19–24 V DC</td>
+</tr>
+<tr>
+<td>Max phase current</td>
+<td>30 A (controller-limited)</td>
+</tr>
+<tr>
+<td>Recommended PSU</td>
+<td>24 V, 8 A per motor</td>
+</tr>
+<tr>
+<td>Shaft input</td>
+<td>12.7 mm (for third-party gearboxes)</td>
+</tr>
+<tr>
+<td>Single kit</td>
+<td>249 EUR</td>
+</tr>
+<tr>
+<td>Dual kit</td>
+<td>429 EUR</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Phase current vs. PSU current</p>
+<p class="label-paragraph"><strong>30 A per phase</strong> is the peak current the VPforce controller drives through the motor windings — it is <strong>not</strong> the current you need from your power supply. Actual PSU draw (<strong>Ibus</strong>) is approximately 7–8 A per motor under typical load. See <a href="#power-supply-sizing">3.7.2 Power Supply Sizing</a> below.</p>
+</div>
+<hr/>
+<h2 id="assembly-and-engineering-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.7</span> Assembly and Engineering Notes<a class="headerlink" href="#assembly-and-engineering-notes" title="Link to this section">¶</a></h2>
+<h3 id="mechanical-transmission"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.7.1</span> Mechanical Transmission<a class="headerlink" href="#mechanical-transmission" title="Link to this section">¶</a></h3>
+<p>Custom builds typically use 3D-printed (PETG or PA12) or CNC-machined frames. The transmission method — timing pulleys vs. planetary gearboxes — significantly affects the final feel.</p>
+<p class="label-paragraph"><strong>Timing pulleys</strong> are cost-effective and commonplace in DIY projects.</p>
+<p class="label-paragraph"><strong>Planetary gearboxes</strong> multiply torque and provide integrated bearing assemblies, but introduce considerations:</p>
+<ul>
+<li>Select a model rated at <strong>&lt; 3 arcmin backlash</strong>. Higher backlash (25+ arcmin) creates a noticeable mechanical deadzone at center.</li>
+<li>Gearboxes add inertia that can make controls feel sluggish. The <strong>Natural Damping Compensation</strong> setting in the VPforce Configurator can cancel this effect out entirely.</li>
+<li>Shaft compatibility: 57BLF motors require an <strong>8 mm</strong> gearbox input shaft; 86BLF motors require a <strong>12.7 mm</strong> input shaft.</li>
+</ul>
+<h3 id="power-supply-sizing"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.7.2</span> Power Supply Sizing<a class="headerlink" href="#power-supply-sizing" title="Link to this section">¶</a></h3>
+<p>All VPforce kits operate at <strong>19–24 V DC</strong>. Use 24 V when possible — the higher bus voltage reduces peak current draw and minimises voltage sag under load.</p>
+<p class="label-paragraph"><strong>Motor phase current vs. PSU current</strong><br/>
+The motor spec tables list <strong>30 A per phase</strong> (the peak current the VPforce controller drives through each motor winding). This is <em>not</em> the current your power supply needs to deliver. The actual bus current draw (<strong>Ibus</strong>, visible in the Configurator Debug tab) is approximately <strong>7–8 A per motor</strong> under typical load, and this is similar across all motor variants (57BLF03, 86BLF03, 86BLF04) despite their different torque constants.</p>
+<table>
+<thead>
+<tr>
+<th>Build</th>
+<th>Recommended PSU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single-axis (any motor)</td>
+<td>24 V, 8 A</td>
+</tr>
+<tr>
+<td>Dual-axis (any motor)</td>
+<td>24 V, 15 A</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>Diagonal movement and the PSU current limit</strong><br/>
+When both axes are deflected simultaneously (diagonal inputs), total Ibus can briefly approach the sum of both motors. Set the <strong>Max PSU Current</strong> in the Configurator Settings tab to your PSU’s rated output — the firmware will cap total Ibus at that value, spreading demand across both axes and preventing a lower-rated PSU from tripping. A correctly configured 10–12 A PSU can therefore work for a dual-axis build with this limit set appropriately.</p>
+<p>Always monitor <strong>Ibus</strong> under real load in the Debug tab. If <strong>Vbus</strong> sags below ~20 V during peak demand, raise the Max PSU Current setting is not the fix — upgrade the PSU or reduce spring/gain settings.</p>
+<h3 id="frame-materials"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.7.3</span> Frame Materials<a class="headerlink" href="#frame-materials" title="Link to this section">¶</a></h3>
+<ul>
+<li><strong>PETG</strong> — good for prototyping and light-duty builds, widely available.</li>
+<li><strong>PA12 (Nylon)</strong> — significantly stronger, suitable for production-quality builds.</li>
+<li><strong>CNC aluminium or steel</strong> — maximum rigidity for demanding setups.</li>
+</ul>
+<hr/>
+<h2 id="software-integration"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.8</span> Software Integration<a class="headerlink" href="#software-integration" title="Link to this section">¶</a></h2>
+<p>DIY kits run on the identical firmware and software platform as the Rhino FFB Base — there are no feature limitations.</p>
+<ul>
+<li><strong>VPforce FFB Configurator</strong> — handles real-time tuning, diagnostics, and per-aircraft profile management across DCS, MSFS, IL-2, X-Plane, Falcon BMS, and Condor Soaring.</li>
+<li><strong>TelemFFB</strong> — open-source companion app that synthesizes physics-based effects (stall buffet, turbulence, gunfire, engine vibration, wheel rumble) from live simulator telemetry.</li>
+</ul>
+<hr/>
+<h2 id="grip-adapters"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.9</span> Grip Adapters<a class="headerlink" href="#grip-adapters" title="Link to this section">¶</a></h2>
+<p>See the dedicated <a href="../grip-adapters/">Grip Adapters</a> page for full compatibility details, setup instructions, and photos for the WinWing and VKB adapters.</p>
+<hr/>
+<h2 id="community-builds-using-diy-kits"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.10</span> Community Builds Using DIY Kits<a class="headerlink" href="#community-builds-using-diy-kits" title="Link to this section">¶</a></h2>
+<p>The VPforce DIY ecosystem supports an active community of builders. Third-party vendors and open-source projects include:</p>
+<ul>
+<li><strong>Kaltokri DIY Kits</strong> — pre-crimped solder-free conversion kits for MFG Crosswind, Thrustmaster TPR, and Virpil ACE pedals using 57BLF03 or 86BLF03 motors. <a href="../../third-party-vendors/kaltokri-kits/">See Third-Party Vendors →</a></li>
+<li><strong>SR-F Winger Monster Rhino Kitbase</strong> — premium pre-assembled base using the 86BLF04 kit, designed for helicopter gooseneck extensions. <a href="../../third-party-vendors/winger-kits/monster-rhino/">See Third-Party Vendors →</a></li>
+<li><strong>FFB Yoke (YuchenYan)</strong> — 3D-printable dual-axis yoke using 57BLF03 motors with a linear rail gantry. <a href="../../community-projects/ffb-yoke/">See Community Projects →</a></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">DIY Disclaimer</p>
+<p>Community designs and third-party builds are not official VPforce products. You are responsible for the safety and reliability of your build. VPforce does not provide direct technical support for community or third-party projects. Peer support is available on the <a class="external" href="https://discord.gg/XEXZmQHk3T" target="_blank">VPforce Discord</a>.</p>
+</div>
+<!-- TODO: Add motor and mainboard photos once available -->
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

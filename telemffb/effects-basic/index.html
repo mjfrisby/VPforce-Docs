@@ -1,0 +1,2485 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/telemffb/effects-basic/" rel="canonical"/>
+<link href="../effects-overview/" rel="prev"/>
+<link href="../effects-aerodynamics/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Basic Settings - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#basic-settings">1. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Basic Settings
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../rhino/">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#class">1.1 
+<span class="md-ellipsis">
+      
+        Class
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spring-mode">1.2 
+<span class="md-ellipsis">
+      
+        Spring Mode
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disable-collective-spring">1.3 
+<span class="md-ellipsis">
+      
+        Disable Collective Spring
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#trim-wheel-buttons">1.4 
+<span class="md-ellipsis">
+      
+        Trim Wheel Buttons
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#trim-workaround">1.5 
+<span class="md-ellipsis">
+      
+        Trim Workaround
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pedal-force-trim">1.6 
+<span class="md-ellipsis">
+      
+        Pedal Force Trim
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#il2-shake-master">1.7 
+<span class="md-ellipsis">
+      
+        IL2 Shake Master
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#axis-control">1.8 
+<span class="md-ellipsis">
+      
+        Axis Control
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collective-ap-spring-gain-dampening">1.9 
+<span class="md-ellipsis">
+      
+        Collective AP Spring Gain / Dampening
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hpg-pedal-spring-gain">1.10 
+<span class="md-ellipsis">
+      
+        HPG Pedal Spring Gain
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#co-pilotrio-spring-override">1.11 
+<span class="md-ellipsis">
+      
+        Co-Pilot/RIO Spring Override
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autopilot-deadzone">1.12 
+<span class="md-ellipsis">
+      
+        Autopilot Deadzone
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="basic-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Basic Settings<a class="headerlink" href="#basic-settings" title="Link to this section">¶</a></h1>
+<p>The settings that define how your controls fundamentally feel — the spring model, force trim, axis control, and per-aircraft basics — in the order they appear under the <strong>Basic Settings</strong> section of the Settings tab. The badge lines and sub-setting tables are generated from the application’s settings catalog, so they always match the app.</p>
+<h2 id="class"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Class<a class="headerlink" href="#class" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p>The aircraft class: PropellerAircraft, TurbopropAircraft, JetAircraft, GliderAircraft, Helicopter, or a special class such as HPGHelicopter (choices depend on the simulator). The class decides which class defaults apply and which spring modes and effects are offered — see <a href="../settings-model/">How Settings Work</a>.</p>
+<h2 id="spring-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Spring Mode<a class="headerlink" href="#spring-mode" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p>The master selector for how the centering spring behaves. The available modes depend on the simulator, aircraft class, and device — an MSFS fixed-wing joystick offers different modes than DCS helicopter pedals or a collective. Each mode reveals its own sub-settings, listed below by mode.</p>
+<ul>
+<li>For <strong>MSFS/X-Plane</strong>, the spring modes are the core of the FFB implementation — see <a href="../msfs-xp-axis-spring/">Axis Control &amp; Spring Modes</a>.</li>
+<li>For <strong>DCS</strong>, the default is the game-managed spring; the override modes are described in the <a href="../sim-dcs/#joystick-spring-mode">DCS guide</a>, including the <a href="../sim-dcs/#pedal-spring-mode">pedal modes</a>.</li>
+<li>For a <strong>collective</strong>, the modes are <em>No Spring</em> and <em>Hardware Force Trim</em> — see <a href="../msfs-xp-helicopters/#collective-spring-mode">Collective Spring Mode</a>.</li>
+<li><strong>Advanced Dynamic</strong> is configured through its own curve editor — see <a href="../spring-curves/">Advanced Spring &amp; G-Force Curves</a>.</li>
+<li><strong>Force Trim</strong> (helicopters and gliders) holds the stick where you release the trim button — see <a href="../msfs-xp-helicopters/#helicopter-force-trim">Helicopter Force Trim</a>. Many gliders have a lever-actuated trim system that works the same way, which is why the aileron/elevator force-trim options exist for gliders too.</li>
+</ul>
+<p class="label-paragraph"><strong>In mode: Basic Dynamic / Basic Dynamic with Spring Centering / Spring Centering + Force Trim</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aileron Max Force</td>
+<td>MSFS, XP · Joystick</td>
+<td>Aileron maximum value for use in dynamic forces calculationst This is a percentage of the spring force value in VPforce Configurator The % shown in the slider is current force applied. 100% occurs near Vne</td>
+</tr>
+<tr>
+<td>Aileron Expo</td>
+<td>MSFS, XP · Joystick</td>
+<td>Aileron exponential value. 0 = linear gain, at 0.5, it rises 2x as much in the low end. Negative values decrease force up to 1/3x.</td>
+</tr>
+<tr>
+<td>Elevator Max Force</td>
+<td>MSFS, XP · Joystick</td>
+<td>Elevator maximum value for use in dynamic forces calculations This is a percentage of the spring force value in VPforce Configurator The % shown in the slider is current force applied. 100% occurs near Vne</td>
+</tr>
+<tr>
+<td>Elevator Expo</td>
+<td>MSFS, XP · Joystick</td>
+<td>Elevator exponential value. 0 = linear gain, at 0.5, it rises 2x as much in the low end. Negative values decrease force up to 1/3x.</td>
+</tr>
+<tr>
+<td>Rudder Max Force</td>
+<td>MSFS, XP · Pedals</td>
+<td>Rudder maximum value for use in dynamic forces calculations This is a percentage of the spring force value in VPforce Configurator The % shown in the slider is current force applied. 100% occurs near Vne</td>
+</tr>
+<tr>
+<td>Rudder Expo</td>
+<td>MSFS, XP · Pedals</td>
+<td>Rudder exponential value. 0 = linear gain, at 0.5, it rises 2x as much in the low end. Negative values decrease force up to 1/3x.</td>
+</tr>
+<tr>
+<td>V NE Override</td>
+<td>MSFS, XP · Joystick, Pedals</td>
+<td>Override Vne if plane data is incorrect. Leave blank or delete setting to use sim Vne data Enter Vne Airspeed (IAS) where dynamic forces max out</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Advanced Dynamic</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Advanced Spring Mapping</td>
+<td>DCS, IL2, BMS, MSFS, XP · Joystick, Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>Use Hardware Trim</td>
+<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Trim Reset</td>
+<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Trim     ⇧</td>
+<td>DCS, IL2, BMS · Joystick</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Trim     ⇩</td>
+<td>DCS, IL2, BMS · Joystick</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Trim     ⇦</td>
+<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Trim     ⇨</td>
+<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Trim Slew Rate</td>
+<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td>Rate at which the trim will move. Calculated as “steps per second” (1 step =1/8192 of total throw)</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Basic Dynamic with Spring Centering / Spring Centering + Force Trim</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base Aileron Spring Gain</td>
+<td>MSFS, XP · Joystick</td>
+<td>Aileron spring gain when “aircraft is spring centered” is enabled This is a percentage of the spring force value in VPforce Configurator</td>
+</tr>
+<tr>
+<td>Base Elevator Spring Gain</td>
+<td>MSFS, XP · Joystick</td>
+<td>Elevator spring gain when “aircraft is spring centered” is enabled This is a percentage of the spring force value in VPforce Configurator</td>
+</tr>
+<tr>
+<td>Base Rudder Spring Gain</td>
+<td>MSFS, XP · Pedals</td>
+<td>Rudder spring gain when “aircraft is spring centered” is enabled This is a percentage of the spring force value in VPforce Configurator</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: FlyByWire (FBW)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FBW Aileron Gain</td>
+<td>MSFS, XP · Joystick</td>
+<td>Fixed spring gain for FBW aircraft This is a percentage of the spring force value in VPforce Configurator</td>
+</tr>
+<tr>
+<td>FBW Elevator Gain</td>
+<td>MSFS, XP · Joystick</td>
+<td>Fixed spring gain for FBW aircraft This is a percentage of the spring force value in VPforce Configurator</td>
+</tr>
+<tr>
+<td>FBW Rudder Gain</td>
+<td>MSFS, XP · Pedals</td>
+<td>Fixed spring gain for FBW aircraft This is a percentage of the spring force value in VPforce Configurator</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Static Spring / Dynamic Spring / Custom</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pedal Spring Gain</td>
+<td>DCS, IL2, BMS, MSFS, XP · Pedals</td>
+<td>Percent of spring setting in VPForce Configurator</td>
+</tr>
+<tr>
+<td>Pedal Trimming</td>
+<td>DCS · Pedals</td>
+<td>Enable pedal trimming feedback for fixed wing aircfraft</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Custom</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stall Speed V S</td>
+<td>DCS, IL2, BMS · Pedals</td>
+<td>Stall Speed</td>
+</tr>
+<tr>
+<td>V S Gain</td>
+<td>DCS, IL2, BMS · Pedals</td>
+<td>Spring gain when aircraft at Vs</td>
+</tr>
+<tr>
+<td>Never Exceed Speed V NE</td>
+<td>DCS, IL2, BMS · Pedals</td>
+<td>Never Exceed Speed</td>
+</tr>
+<tr>
+<td>V NE Gain</td>
+<td>DCS, IL2, BMS · Pedals</td>
+<td>Spring gain when aircraft is at Vne</td>
+</tr>
+<tr>
+<td>Override Spring Gain</td>
+<td>DCS, IL2, BMS · Joystick</td>
+<td></td>
+</tr>
+<tr>
+<td>Hardware Force Trim</td>
+<td>DCS, IL2, BMS · Joystick</td>
+<td>Bindings and other options for force trim release and hat based hardware trim</td>
+</tr>
+<tr>
+<td>    ↳ Trim Release</td>
+<td>DCS, BMS · Joystick</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Trim Release Damper</td>
+<td>DCS, BMS · Joystick</td>
+<td>Dampening force while trim release is active</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: None (Game Managed)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trim Release Damper</td>
+<td>DCS, BMS · Joystick</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ In Game TR Button</td>
+<td>DCS, BMS · Joystick</td>
+<td>Trim release button (mirror what is configured in DCS)</td>
+</tr>
+<tr>
+<td>    ↳ Damper Intensity</td>
+<td>DCS, BMS · Joystick</td>
+<td>Damper force applied while TR is pressed</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Force Trim / Spring Centering + Force Trim</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cyclic Spring Gain</td>
+<td>MSFS, XP · Joystick</td>
+<td>Strength of cyclic spring</td>
+</tr>
+<tr>
+<td>Elevator Axis</td>
+<td>MSFS, XP · Joystick</td>
+<td>Enable force tirm for elevator axis</td>
+</tr>
+<tr>
+<td>Aileron Axis</td>
+<td>MSFS, XP · Joystick</td>
+<td>Enable force tirm for aileron axis</td>
+</tr>
+<tr>
+<td>Use buttons from master device</td>
+<td>MSFS, XP · Collective</td>
+<td>Use the button inputs from the master device (likely your joystick). If disabled, feature will expect to receive inputs from collective (grip or loopback app).</td>
+</tr>
+<tr>
+<td>Force Trim Release Button</td>
+<td>MSFS, XP · Joystick, Collective</td>
+<td>Button # to hold to release spring while moving axis</td>
+</tr>
+<tr>
+<td>Force Trim Reset Button</td>
+<td>MSFS, XP · Joystick</td>
+<td>Button # to recenter spring trims</td>
+</tr>
+<tr>
+<td>Zero Trim with TR</td>
+<td>MSFS · Joystick</td>
+<td>When enabled (default), TelemFFB sends “ROTOR_TRIM_RESET” to zero trim when force trim is repositioned,</td>
+</tr>
+<tr>
+<td>Trim Release Damper</td>
+<td>MSFS, XP · Joystick, Collective</td>
+<td>Spring gain while trim release is pressed Acts as dampening force when trim release is depressed</td>
+</tr>
+<tr>
+<td>Force Trim Switch Simvar</td>
+<td>MSFS</td>
+<td>Enable toggle of Force Trim via Simconnect L:var</td>
+</tr>
+<tr>
+<td>    ↳ Force Trim Switch Simvar</td>
+<td>MSFS</td>
+<td>Toggle this L:Var externally to toggle Force Trim on (1) or off (0). Alternatively,set to the L:var which is mapped to the switch in the helicopter cockpit if one exists</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Force Trim</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AFCS Response Rate</td>
+<td>XP</td>
+<td>Rate at which axis moves in response to AFCS command</td>
+</tr>
+<tr>
+<td>Spring Gain</td>
+<td>DCS, BMS, MSFS, XP · Collective</td>
+<td>Spring Gain</td>
+</tr>
+<tr>
+<td>Trim Release Damper Gain</td>
+<td>DCS, BMS, MSFS, XP · Collective</td>
+<td>Trim Release Damper Gain</td>
+</tr>
+<tr>
+<td>Trim Release Button</td>
+<td>DCS, BMS, MSFS, XP · Collective</td>
+<td>Trim Release Button</td>
+</tr>
+<tr>
+<td>Trim Reset Button (full down)</td>
+<td>DCS, BMS, MSFS, XP · Collective</td>
+<td>Trim Reset Button (full down)</td>
+</tr>
+<tr>
+<td>Trim     ⇧</td>
+<td>DCS, BMS, MSFS, XP · Collective</td>
+<td></td>
+</tr>
+<tr>
+<td>Trim     ⇩</td>
+<td>DCS, BMS, MSFS, XP · Collective</td>
+<td></td>
+</tr>
+<tr>
+<td>Trim Slew Rate</td>
+<td>DCS, BMS, MSFS, XP · Collective</td>
+<td>Affects rate at which trim will move when button held</td>
+</tr>
+<tr>
+<td>Use buttons from master device</td>
+<td>DCS, BMS, MSFS, XP · Pedals</td>
+<td>Use the button inputs from the master device (likely your joystick). If disabled, feature will expect to receive inputs from pedals (use loopback app).</td>
+</tr>
+<tr>
+<td>Trim Release Button</td>
+<td>DCS, BMS, MSFS, XP · Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>Trim Reset Button</td>
+<td>DCS, BMS, MSFS, XP · Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>Trim Release Damper</td>
+<td>DCS, BMS, MSFS, XP · Pedals</td>
+<td>Enable dampening force while trim release is pressed</td>
+</tr>
+<tr>
+<td>    ↳ Trim Release Damper</td>
+<td>DCS, BMS, MSFS, XP · Pedals</td>
+<td>Enable dampening force while trim release is pressed</td>
+</tr>
+<tr>
+<td>AFCS Threshold</td>
+<td>XP · Pedals</td>
+<td>Trim threshold where axis will move</td>
+</tr>
+</tbody>
+</table>
+<h2 id="disable-collective-spring"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Disable Collective Spring<a class="headerlink" href="#disable-collective-spring" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Collective</p>
+<p>When flying a fixed-wing aircraft with a collective connected, TelemFFB normally zeroes the collective’s spring gain (a fixed-wing throttle has no centering spring). This option disables that behavior.</p>
+<h2 id="trim-wheel-buttons"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Trim Wheel Buttons<a class="headerlink" href="#trim-wheel-buttons" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Trimwheel</p>
+<p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Trimwheel</p>
+<p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Trimwheel</p>
+<p>For a VPforce trim wheel device: use button inputs from the master device (or the wheel itself), and bind the nose-down / nose-up trim buttons.</p>
+<h2 id="trim-workaround"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Trim Workaround<a class="headerlink" href="#trim-workaround" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-dcs">DCS</span> · Joystick</p>
+<p>Some DCS modules (AV-8B, MiG-19) do not implement native FFB trim following. This workaround mimics it by moving the physical joystick with the trim.</p>
+<h2 id="pedal-force-trim"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Pedal Force Trim<a class="headerlink" href="#pedal-force-trim" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · </p>
+<p>Enables a static spring on the pedals with a force-trim release button — hold the button, position the pedals, release to lock the new center.</p>
+<h2 id="il2-shake-master"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> IL2 Shake Master<a class="headerlink" href="#il2-shake-master" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-il2">IL2</span> · All devices</p>
+<p>IL-2 implements its own basic FFB shake effects in-game. The Shake Master group replaces them with TelemFFB’s more configurable versions — buffeting, runway rumble, and weapons effects, each individually adjustable. When using these, set the in-game “Shaking” intensity to 0 — see the <a href="../sim-il2/">IL-2 guide</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buffeting</td>
+<td>—</td>
+<td>These effects are duplicates of IL-2 native effects . Recommend to disable ‘shake’ in IL-2 FFB settings when using these effects.</td>
+</tr>
+<tr>
+<td>    ↳ Buffeting</td>
+<td>—</td>
+<td>common setting for all buffeting (stall, gear, etc) - IL2 limitation</td>
+</tr>
+<tr>
+<td>Runway Rumble</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Runway Rumble</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>Weapon Effects</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Dynamic Gunfire Mode</td>
+<td>—</td>
+<td>Reads gun data (mass, velocity) from telemetry and plays a stonger/weaker, faster/slower effect based on the data</td>
+</tr>
+<tr>
+<td>    ↳ Gunfire</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Bombs</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Rockets</td>
+<td>—</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>IL-2 provides a single combined buffeting channel (stall, gear, and so on share one intensity) — a limitation of the IL-2 telemetry, not of TelemFFB. The <em>Dynamic Gunfire Mode</em> reads shell mass and velocity from telemetry, so lighter, faster-firing guns feel quicker and sharper than heavy cannon.</p>
+</div>
+<h2 id="axis-control"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8</span> Axis Control<a class="headerlink" href="#axis-control" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p>MSFS/X-Plane only: TelemFFB becomes the source of the axis positions the simulator receives — the foundation for the spring modes, trim following, and autopilot following. The family includes the axis scales, hands-on detection, custom axis variables, and the entire Trim/AP Following tree.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When Axis Control is enabled in MSFS, you must <strong>unbind the affected axes in MSFS</strong> (or SPAD.neXt). See <a href="../msfs-xp-axis-spring/">Axis Control &amp; Spring Modes</a>.</p>
+</div>
+<ul>
+<li>Trim following and its gains: <a href="../msfs-xp-trim-following/">Trim &amp; Autopilot Following</a></li>
+<li>The calibrated trim curve: <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a></li>
+<li>Hands-on detection and Force Mode: <a href="../msfs-xp-helicopters/#force-mode-experimental">Helicopters — Force Mode</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disable for this device</td>
+<td>—</td>
+<td>Disable axis control for this device</td>
+</tr>
+<tr>
+<td>Use Firmware Axis Override</td>
+<td>—</td>
+<td>Route TelemFFB axis manipulation through Rhino firmware instead of simulator axis injection</td>
+</tr>
+<tr>
+<td>X Axis Scale</td>
+<td>MSFS, XP · Joystick</td>
+<td>Scaling of axis position sent to game</td>
+</tr>
+<tr>
+<td>Y Axis Scale</td>
+<td>MSFS, XP · Joystick, Trimwheel</td>
+<td>Scaling of axis position sent to game</td>
+</tr>
+<tr>
+<td>Rudder (X) Axis Scale</td>
+<td>MSFS, XP · Pedals</td>
+<td>Scaling of axis position sent to game</td>
+</tr>
+<tr>
+<td>Hands On Deadzone</td>
+<td>MSFS · Joystick</td>
+<td>Distance required to trigger a hands-on condition</td>
+</tr>
+<tr>
+<td>Hands Off Deadzone</td>
+<td>MSFS · Joystick</td>
+<td>Distance at which hands-off resumes (set lower than hands-on)</td>
+</tr>
+<tr>
+<td>Force Mode ( Experimental )</td>
+<td>MSFS · Joystick</td>
+<td>When enabled, uses force output from Rhino vs. deflection to determine hands-on detection Note: Regular hands on/off sliders are inactive when force mode enabled. Use Force Mode sub settings to control hands on/off detection. For best results, disable adaptive recentering in configurator</td>
+</tr>
+<tr>
+<td>    ↳ Hands On Force Threshold</td>
+<td>MSFS · Joystick</td>
+<td>Force value to achieve hands-on detection</td>
+</tr>
+<tr>
+<td>    ↳ Hands Off Hysteresis Time (ms)</td>
+<td>MSFS · Joystick</td>
+<td>Time (ms) duration below hands-on threshold to consider “hands-off”</td>
+</tr>
+<tr>
+<td>    ↳ Debug Logging</td>
+<td>MSFS · Joystick</td>
+<td>Enable logging of hands on/off state (generates lots of logs.. only use if troubleshooting)</td>
+</tr>
+<tr>
+<td>Feet On Deadzone</td>
+<td>MSFS · Pedals</td>
+<td>Distance required to trigger a feet-on condition</td>
+</tr>
+<tr>
+<td>Feet Off Deadzone</td>
+<td>MSFS · Pedals</td>
+<td>Distance at which feet-off resumes (set lower than hands-on)</td>
+</tr>
+<tr>
+<td>Use Axis instead of Direct</td>
+<td>MSFS, XP · Trimwheel</td>
+<td>Enable to use Axis control (vs direct trim surface manipulating)</td>
+</tr>
+<tr>
+<td>    ↳ Elevator Trim Axis Invert</td>
+<td>MSFS, XP · Trimwheel</td>
+<td>Enable if trim wheel axis moves the wrong way</td>
+</tr>
+<tr>
+<td>Custom Simconnect X Variable</td>
+<td>MSFS · Joystick, Pedals</td>
+<td>Custom Simconnect Variable - use “VARNAME” for simvars or “L:VARNAME” for LVARS</td>
+</tr>
+<tr>
+<td>    ↳ Custom Simconnect X Var Name</td>
+<td>MSFS · Joystick, Pedals</td>
+<td>Custom Simconnect Variable - use “VARNAME” for simvars or “L:VARNAME” for LVARS</td>
+</tr>
+<tr>
+<td>    ↳ Bit Range X Scaling</td>
+<td>MSFS · Joystick, Pedals</td>
+<td>Bit Range Scaling</td>
+</tr>
+<tr>
+<td>Custom Simconnect Y Variable</td>
+<td>MSFS · Joystick, Collective, Trimwheel</td>
+<td>Custom Simconnect Variable - use “VARNAME” for simvars or “L:VARNAME” for LVARS</td>
+</tr>
+<tr>
+<td>    ↳ Custom Simconnect Y Var Name</td>
+<td>MSFS · Joystick, Collective, Trimwheel</td>
+<td>Custom Simconnect Variable - use “VARNAME” for simvars or “L:VARNAME” for LVARS</td>
+</tr>
+<tr>
+<td>    ↳ Bit Range Y Scaling</td>
+<td>MSFS · Joystick, Collective, Trimwheel</td>
+<td>Bit Range Scaling</td>
+</tr>
+<tr>
+<td>Trim / AP Following</td>
+<td>MSFS, XP · Joystick, Pedals</td>
+<td>Enable physical stick movement with in-game trims and auto-pilot. Note: Not all aircraft types support AP following</td>
+</tr>
+<tr>
+<td>    ↳ Use Calibrated Trim Curve</td>
+<td>MSFS, XP · Joystick</td>
+<td>Use the auto-calibrated elevator trim response curve instead of the static Y Trim Gain Virtual value. Run the calibration (button below) to capture the curve. Recommended for aircraft where the nose drifts as trim is applied even with a tuned static gain.</td>
+</tr>
+<tr>
+<td>        ↳ Trim Curve Calibration</td>
+<td>MSFS, XP · Joystick</td>
+<td>Auto-calibrated elevator trim response curve. Captured by the Elevator Trim Calibration tool; used when ‘Use Calibrated Trim Curve’ is enabled.</td>
+</tr>
+<tr>
+<td>        ↳ Calibrated Trim Stick Travel</td>
+<td>MSFS, XP · Joystick</td>
+<td>How far the stick sits from center for a given amount of out-of-trim - which sets how much force you feel holding against it. 100% is the aircraft’s measured response, exactly as the calibration recorded it. In ‘Stays Centered’ this affects out-of-trim force only; trimmed flight always rests the stick at center. In ‘Follows Trim’ it also scales how far the resting position rides with airspeed. Raise it to exaggerate that trim-position cue, or lower it if the stick sits so far aft in slow flight that you run out of usable travel. It does not change the calibration or the trim curve - trimming with the stick held never moves the nose, at any setting. Away from 100% a released stick delivers a small residual input, so a hands-off aircraft will not follow its trim quite exactly; in ‘Follows Trim’ this also shows up as slow drift when trimmed at the extremes of your calibrated speed range.</td>
+</tr>
+<tr>
+<td>        ↳ Trimmed Stick Position</td>
+<td>MSFS, XP · Joystick</td>
+<td>Where the stick rests when the aircraft is trimmed, with calibrated curves at multiple speeds. ‘Follows Trim’: the rest position rides the measured trim state - aft when trimmed for slow flight, forward when fast - like cable/trim-tab aircraft where the yoke is linked to the control surface. ‘Stays Centered’: trimmed flight always rests the stick at center - like moving-stabilizer, FBW or spring-cartridge aircraft where trim re-rigs the feel datum. Force behavior is identical in both modes (trimmed = zero force, out-of-trim = force); only the resting geometry differs.</td>
+</tr>
+<tr>
+<td>    ↳ X Trim Gain Physical</td>
+<td>MSFS, XP · Joystick</td>
+<td>Amount of trim telemetry movement that will be translated into physical movement of the stick</td>
+</tr>
+<tr>
+<td>    ↳ X Trim Gain Virtual</td>
+<td>MSFS, XP · Joystick</td>
+<td>Amount of physical movement of the stick that will be transmittted to sim</td>
+</tr>
+<tr>
+<td>    ↳ Y Trim Gain Physical</td>
+<td>MSFS, XP · Joystick</td>
+<td>Amount of trim telemetry movement that will be translated into physical movement of the stick</td>
+</tr>
+<tr>
+<td>    ↳ Y Trim Gain Virtual</td>
+<td>MSFS, XP · Joystick</td>
+<td>Amount of physical movement of the stick that will be transmittted to sim Amount of physical movementof the stick that will be transmitted to sim. Adjust virtual y % so that trim ingame does not pitch aircraft when stick held. To configure, slowly apply nose down trim. if the nose goes up, raise the virtual % - if the nose goes down, lower the virtual % - you can go negative.</td>
+</tr>
+<tr>
+<td>    ↳ Rudder Trim Gain (physical)</td>
+<td>MSFS, XP · Pedals</td>
+<td>Rudder physical trim movement scalar</td>
+</tr>
+<tr>
+<td>    ↳ Rudder Trim Gain (virtual)</td>
+<td>MSFS, XP · Pedals</td>
+<td></td>
+</tr>
+<tr>
+<td>    ↳ Autopilot Following</td>
+<td>MSFS, XP · Joystick, Pedals</td>
+<td>Enable physical stick following of autopilot movements</td>
+</tr>
+<tr>
+<td>        ↳ Roll Deadzone</td>
+<td>MSFS · Joystick</td>
+<td>Axis position will not be sent when AP is engaged until physical control exceeds deadzone</td>
+</tr>
+<tr>
+<td>        ↳ AP Roll Physical Gain</td>
+<td>MSFS · Joystick</td>
+<td>Amount of aileron surface deflection translated into physical movement of the stick</td>
+</tr>
+<tr>
+<td>        ↳ AP Roll Virtual Gain</td>
+<td>— ·</td>
+<td>Amount of physical movement of the stick that is transmitted to the sim</td>
+</tr>
+<tr>
+<td>        ↳ Invert Aileron Autopilot Axis</td>
+<td>— ·</td>
+<td>If aircraft becomes unstable with AP Following and wants to flip inverted, try this option</td>
+</tr>
+<tr>
+<td>        ↳ Pitch Deadzone</td>
+<td>MSFS · Joystick</td>
+<td>Axis position will not be sent when AP is engaged until physical control exceeds deadzone</td>
+</tr>
+<tr>
+<td>        ↳ AP Pitch Physical Gain</td>
+<td>MSFS · Joystick</td>
+<td>Amount of elevator trim deflection translated into physical movement of the stick</td>
+</tr>
+<tr>
+<td>        ↳ AP Pitch Virtual Gain</td>
+<td>— ·</td>
+<td>Amount of physical movement of the stick that is transmitted to the sim</td>
+</tr>
+<tr>
+<td>        ↳ AP Pitch - Follow axis instead of trim</td>
+<td>MSFS · Joystick</td>
+<td>Elevator AP will attempt to follow the axis position rather than the trim value</td>
+</tr>
+</tbody>
+</table>
+<h2 id="collective-ap-spring-gain-dampening"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.9</span> Collective AP Spring Gain / Dampening<a class="headerlink" href="#collective-ap-spring-gain-dampening" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Collective</p>
+<p>HPG helicopters: the spring strength applied to the collective while the AFCS/autopilot commands it. See <a href="../msfs-xp-helicopters/#hpg-airbus-helicopters-msfs-only">HPG Airbus Helicopters</a>.</p>
+<h2 id="hpg-pedal-spring-gain"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> HPG Pedal Spring Gain<a class="headerlink" href="#hpg-pedal-spring-gain" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-msfs">MSFS</span> · Pedals</p>
+<p>HPG helicopters: the pedal spring gain used by the AFCS integration, as a percent of the Configurator spring value.</p>
+<h2 id="co-pilotrio-spring-override"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.11</span> Co-Pilot/RIO Spring Override<a class="headerlink" href="#co-pilotrio-spring-override" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-dcs">DCS</span> · Joystick</p>
+<p>DCS multi-crew: temporarily overrides the joystick spring gain when you occupy a seat other than the pilot’s — so the stick is not fighting you while you work the back seat. Optionally active only while a configured button is held.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pilot Seat ID</td>
+<td>—</td>
+<td>Seat ID when sitting in Pilot’s seat. Effect will beome active any time the Seat ID does not match this ID value See the Telemetry monitor page to get the proper value when sitting in the pilots seat</td>
+</tr>
+<tr>
+<td>Spring Gain</td>
+<td>—</td>
+<td>Spring gain while effect is active</td>
+</tr>
+<tr>
+<td>Only on Button Press</td>
+<td>—</td>
+<td>Only activate override if button is held (must configure button in resulting setting once this setting is enabled)</td>
+</tr>
+<tr>
+<td>    ↳ Override Button</td>
+<td>—</td>
+<td>Click to configure the override button</td>
+</tr>
+</tbody>
+</table>
+<h2 id="autopilot-deadzone"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.12</span> Autopilot Deadzone<a class="headerlink" href="#autopilot-deadzone" title="Link to this section">¶</a></h2>
+<p><span class="sim-badge sim-dcs">DCS</span> · Joystick</p>
+<p>DCS: applies a device deadzone while the autopilot is engaged, preventing small FFB stick movements from feeding back into the AP control loop and causing false disconnects or oscillation. Supported on a limited set of modules — see <a href="../sim-dcs/#autopilot-oscillation-with-ffb">Autopilot Oscillation with FFB</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autopilot Deadzone</td>
+<td>—</td>
+<td>Enable a configurator axis deadzone when AutoPilot is active to reduce false disconnects Supported on limited modules</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

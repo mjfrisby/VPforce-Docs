@@ -1,0 +1,111 @@
+/* ============================================================================
+   VPForce Rhino Manual — supplementary styles
+   Loads BEFORE vpforce.css. Only rules not covered by the brand theme belong
+   here. All content selectors are scoped under .md-typeset to avoid bleeding
+   into sidebar, nav, header, or footer.
+   ============================================================================ */
+
+/* ── Blockquotes ─────────────────────────────────────────────────────────── */
+.md-typeset blockquote {
+    border-left: 4px solid var(--vp-brand-accent);
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    background-color: var(--md-default-bg-color--lighter);
+    font-size: 0.95em;
+}
+
+.md-typeset blockquote p {
+    margin: 0.5em 0;
+}
+
+.md-typeset blockquote blockquote {
+    border-left-color: var(--vp-brand-accent-light);
+    background-color: var(--md-default-bg-color--lightest);
+}
+
+.md-typeset blockquote strong {
+    color: var(--vp-brand-accent);
+}
+
+/* ── Definition lists ────────────────────────────────────────────────────── */
+.md-typeset dt {
+    font-weight: bold;
+    margin-top: 1em;
+    color: var(--vp-brand-accent);
+}
+
+.md-typeset dd {
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+/* ── Figure captions ─────────────────────────────────────────────────────── */
+
+/* ── Collapsible h4 TOC items ────────────────────────────────────────────── */
+/* Hide h4 entries in the right-side TOC by default.                         */
+/* Expand them when the user scrolls into the parent h3 section.             */
+[data-md-component="toc"] > li > nav > ul > li > nav {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease-out;
+}
+
+[data-md-component="toc"] > li > nav > ul > li > nav > ul {
+    overflow: hidden;
+}
+
+[data-md-component="toc"] > li > nav > ul > li:has(.md-nav__link--active) > nav {
+    grid-template-rows: 1fr;
+}
+
+.md-typeset figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--md-default-fg-color--light);
+    margin-top: 0.3em;
+    font-style: italic;
+}
+
+/* ── External link indicator ─────────────────────────────────────────────── */
+/* Links processed by mkdocs_external_link_processor get class `external`.   */
+a.external::after {
+    content: "\00a0";
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    margin-left: 0.25em;
+    vertical-align: text-top;
+    background: currentColor;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7M5 5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7H5V7h7V5H5z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7M5 5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h-2v7H5V7h7V5H5z'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+a.external code::after,
+a.external .btn::after {
+    margin-left: 0.15em;
+}
+
+/* Hide external-link icon when the link wraps an image */
+a.external:has(img)::after {
+    display: none;
+}
+
+/* ── Print ───────────────────────────────────────────────────────────────── */
+@media print {
+    blockquote {
+        page-break-inside: avoid;
+    }
+
+    img {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+}
+}

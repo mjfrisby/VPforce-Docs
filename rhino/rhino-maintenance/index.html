@@ -1,0 +1,2095 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/rhino/rhino-maintenance/" rel="canonical"/>
+<link href="../game-specific-troubleshooting/" rel="prev"/>
+<link href="../appendix-a-known-issues/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Maintenance - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#rhino-maintenance">7. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Maintenance
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#re-tightening-the-belts">7.1 
+<span class="md-ellipsis">
+      
+        Re-tightening the Belts
+      
+    </span>
+</a>
+<nav aria-label="Re-tightening the Belts" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-re-tension-belts">7.1.1 
+<span class="md-ellipsis">
+      
+        When to Re-tension Belts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-the-adjustment-mechanism">7.1.2 
+<span class="md-ellipsis">
+      
+        Understanding the Adjustment Mechanism
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-by-step-belt-tensioning-procedure">7.1.3 
+<span class="md-ellipsis">
+      
+        Step-by-Step Belt Tensioning Procedure
+      
+    </span>
+</a>
+<nav aria-label="Step-by-Step Belt Tensioning Procedure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-1-partially-remove-the-belt">
+<span class="md-ellipsis">
+      
+        Step 1: Partially Remove the Belt
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-2-loosen-the-motor-mounting-bolts">
+<span class="md-ellipsis">
+      
+        Step 2: Loosen the Motor Mounting Bolts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-3-adjust-motor-position-to-increase-tension">
+<span class="md-ellipsis">
+      
+        Step 3: Adjust Motor Position to Increase Tension
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-4-secure-and-test-tension">
+<span class="md-ellipsis">
+      
+        Step 4: Secure and Test Tension
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-5-reinstall-the-belt">
+<span class="md-ellipsis">
+      
+        Step 5: Reinstall the Belt
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#step-6-run-auto-calibration">
+<span class="md-ellipsis">
+      
+        Step 6: Run Auto Calibration
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#re-alignment-after-complete-belt-slip-or-belt-removal">7.1.4 
+<span class="md-ellipsis">
+      
+        Re-alignment After Complete Belt Slip or Belt Removal
+      
+    </span>
+</a>
+<nav aria-label="Re-alignment After Complete Belt Slip or Belt Removal" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-1-manual-realignment-more-control">
+<span class="md-ellipsis">
+      
+        Method 1: Manual Realignment (More Control)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#method-2-automatic-motor-recentering-easier-but-less-precise">
+<span class="md-ellipsis">
+      
+        Method 2: Automatic Motor Recentering (Easier but Less Precise)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#troubleshooting-belt-tension-issues">7.1.5 
+<span class="md-ellipsis">
+      
+        Troubleshooting Belt Tension Issues
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stick-drifts-when-trimming-off-center">7.2 
+<span class="md-ellipsis">
+      
+        Stick drifts when trimming off center
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clicking-noise-during-force-reversal">7.3 
+<span class="md-ellipsis">
+      
+        Clicking Noise During Force Reversal
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#replacing-the-grip-mount-head">7.4 
+<span class="md-ellipsis">
+      
+        Replacing the Grip Mount Head
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tightening-the-power-button-e-stop">7.5 
+<span class="md-ellipsis">
+      
+        Tightening the Power button (E-Stop)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-rhino-throw-limiter">7.6 
+<span class="md-ellipsis">
+      
+        Installing RHINO Throw Limiter
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="rhino-maintenance"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.</span> RHINO Maintenance<a class="headerlink" href="#rhino-maintenance" title="Link to this section">¶</a></h1>
+<p>This section covers common maintenance tasks for the Original VPforce Rhino, including belt re-tightening, re-alignment after belt slip, addressing stick drift when trimming off center, resolving clicking noise during force reversal, and replacing the grip mount head.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These maintenance tasks applies to the Original VPforce Rhino only. The DIY versions of the Rhino may have different maintenance procedures.</p>
+</div>
+<h2 id="re-tightening-the-belts"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1</span> Re-tightening the Belts<a class="headerlink" href="#re-tightening-the-belts" title="Link to this section">¶</a></h2>
+<p>Over time, the drive belts connecting the motors to the pulleys may stretch and lose tension, requiring adjustment. Belt tension is critical for accurate position sensing and preventing slippage. Loose belts can cause position tracking errors, leading to <code>FAULT_UNSTABLE</code> errors or unpredictable stick behavior.</p>
+<p>The Rhino’s design makes belt tensioning straightforward: the motor mounting holes are slotted, allowing you to slide the motor to adjust belt tension without removing the belt entirely.</p>
+<h3 id="when-to-re-tension-belts"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.1</span> When to Re-tension Belts<a class="headerlink" href="#when-to-re-tension-belts" title="Link to this section">¶</a></h3>
+<p>You should check belt tension if you experience:</p>
+<ul>
+<li><code>FAULT_UNSTABLE</code> errors during operation</li>
+<li>Position tracking drift or inconsistency</li>
+<li>Audible “thump” or sudden force jumps</li>
+<li>Belt visibly loose or sagging</li>
+</ul>
+<h3 id="understanding-the-adjustment-mechanism"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.2</span> Understanding the Adjustment Mechanism<a class="headerlink" href="#understanding-the-adjustment-mechanism" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Pitch Axis (Y-axis):</strong><br/>
+Motor slots are horizontal. Push the motor <strong>away from the large gear</strong> to increase tension.</p>
+<p class="label-paragraph"><strong>Roll Axis (X-axis):</strong><br/>
+Motor slots are vertical. Push the motor <strong>down</strong> to increase tension.</p>
+<div class="admonition tip">
+<p class="admonition-title">Remember</p>
+<p>Both axes use the same principle: increase distance between motor pulley and large gear to tighten the belt.</p>
+</div>
+<h3 id="step-by-step-belt-tensioning-procedure"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.3</span> Step-by-Step Belt Tensioning Procedure<a class="headerlink" href="#step-by-step-belt-tensioning-procedure" title="Link to this section">¶</a></h3>
+<h4 id="step-1-partially-remove-the-belt"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.3.1</span> Step 1: Partially Remove the Belt<a class="headerlink" href="#step-1-partially-remove-the-belt" title="Link to this section">¶</a></h4>
+<p>Slide the belt <strong>off the large gear only</strong> (leave it on the motor pulley). This provides access to the motor mounting bolts while preserving the motor’s calibrated position relative to the belt.</p>
+<figure class="figure-image"> <img alt="Belt partially removed from large gear" height="335px" src="../media/Pictures/100002010000043E0000028E82C3B3BBF822D631.webp" width="557px"> <figcaption>Belt partially removed from large gear</figcaption></img></figure>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Do NOT remove the belt completely from both pulleys. Keeping it on the motor pulley maintains approximate calibration alignment and makes reinstallation easier.</p>
+</div>
+<h4 id="step-2-loosen-the-motor-mounting-bolts"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.3.2</span> Step 2: Loosen the Motor Mounting Bolts<a class="headerlink" href="#step-2-loosen-the-motor-mounting-bolts" title="Link to this section">¶</a></h4>
+<p>Locate the motor mounting bolts (typically two bolts securing the motor to the frame). Loosen these bolts just enough to allow the motor to move freely within the slotted holes.</p>
+<figure class="figure-image"> <img alt="Motor mounting bolts location" height="186px" src="../media/Pictures/10000201000001EA0000028EE84ABA2CE1675E15.webp" width="276px"> <figcaption>Motor mounting bolts location</figcaption></img></figure>
+<p class="label-paragraph"><strong>Do not remove the bolts completely</strong> - just loosen them enough to allow motor movement.</p>
+<h4 id="step-3-adjust-motor-position-to-increase-tension"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.3.3</span> Step 3: Adjust Motor Position to Increase Tension<a class="headerlink" href="#step-3-adjust-motor-position-to-increase-tension" title="Link to this section">¶</a></h4>
+<p>Gently push the motor to increase the distance between the motor pulley and the large gear:</p>
+<ul>
+<li><strong>Pitch axis (Y):</strong> Push motor horizontally away from large gear</li>
+<li><strong>Roll axis (X):</strong> Push motor downward (vertically)</li>
+</ul>
+<p>A small adjustment of approximately <strong>0.5 mm</strong> is typically sufficient. You’re not trying to make the belt guitar-string tight - just firm.</p>
+<figure class="figure-image"> <img alt="Adjusting motor position" height="172px" src="../media/Pictures/10000201000001EA0000028EB182970886C1829E.webp" width="357px"/> <figcaption>Adjusting motor position</figcaption></figure>
+<h4 id="step-4-secure-and-test-tension"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.3.4</span> Step 4: Secure and Test Tension<a class="headerlink" href="#step-4-secure-and-test-tension" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Option A: Quick Check (Recommended for First Attempt)</strong></p>
+<ol>
+<li>Tighten <strong>one bolt</strong> finger-tight to hold motor position</li>
+<li>
+<p>Test belt tension by pressing on the belt between pulleys:</p>
+<ul>
+<li>Should have slight give but feel firm</li>
+<li>Should not sag or be excessively loose</li>
+<li>Should not be so tight it’s difficult to deflect</li>
+</ul>
+</li>
+<li>
+<p>If tension feels correct, tighten the second bolt</p>
+</li>
+<li>If tension is incorrect, loosen bolt and repeat Step 3</li>
+</ol>
+<p class="label-paragraph"><strong>Option B: Secure Both Bolts</strong></p>
+<ol>
+<li>Tighten both bolts while holding motor in position</li>
+<li>Test belt tension after tightening</li>
+</ol>
+<figure class="figure-image"> <img alt="Tightening motor bolts" height="189px" src="../media/Pictures/10000201000001EA0000028E81F5C028742CB5CD.webp" width="323px"/> <figcaption>Tightening motor bolts</figcaption></figure>
+<h4 id="step-5-reinstall-the-belt"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.3.5</span> Step 5: Reinstall the Belt<a class="headerlink" href="#step-5-reinstall-the-belt" title="Link to this section">¶</a></h4>
+<p>With the motor bolts secured, slide the belt back onto the large gear.</p>
+<p class="label-paragraph"><strong>If the belt won’t slip on easily:</strong></p>
+<ol>
+<li>Slightly loosen the motor bolts</li>
+<li>Move the motor fractionally closer to the large gear (reduce tension slightly)</li>
+<li>Reinstall the belt</li>
+<li>Re-tighten bolts</li>
+<li>Re-check tension</li>
+</ol>
+<p>The belt should slide onto the gear with moderate resistance - not so tight you have to force it, but not so loose it falls on by itself.</p>
+<h4 id="step-6-run-auto-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.3.6</span> Step 6: Run Auto Calibration<a class="headerlink" href="#step-6-run-auto-calibration" title="Link to this section">¶</a></h4>
+<p>After belt tensioning:</p>
+<ol>
+<li>Open <strong>VPforce Configurator</strong></li>
+<li>Navigate to <strong>FFB Axes Setup</strong> tab</li>
+<li>Click <strong>Auto Calibrate</strong></li>
+<li>Move stick through full range of motion in all directions</li>
+<li>Click <strong>Auto Calibrate</strong> again to deactivate</li>
+<li>Click <strong>Apply Settings</strong> to activate the calibration</li>
+<li>Click <strong>Store Settings</strong> if you want to save it permanently</li>
+</ol>
+<p>Verify calibration values are approximately <strong>C:~2000</strong> for both axes.</p>
+<figure class="figure-image"> <img alt="Raw motor position values" height="378px" src="../media/Pictures/100002010000009C0000025C3A699E287D51540D.webp" width="98px"/> <figcaption>Raw motor position values</figcaption></figure>
+<h3 id="re-alignment-after-complete-belt-slip-or-belt-removal"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.4</span> Re-alignment After Complete Belt Slip or Belt Removal<a class="headerlink" href="#re-alignment-after-complete-belt-slip-or-belt-removal" title="Link to this section">¶</a></h3>
+<p>If the belt has slipped off both pulleys completely, or you have removed the belt(s) for any other reason, the motor position relative to the stick position must be realigned before reinstalling the belt. This is critical because the motor’s absolute position encoder needs to match the physical stick position.</p>
+<h4 id="method-1-manual-realignment-more-control"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.4.1</span> Method 1: Manual Realignment (More Control)<a class="headerlink" href="#method-1-manual-realignment-more-control" title="Link to this section">¶</a></h4>
+<ol>
+<li>Start with belt(s) removed</li>
+<li>Open <strong>VPforce Configurator → Settings</strong> tab</li>
+<li>Set the <strong>Spring</strong> gain slider to %0, “<strong>Apply Settings</strong>” </li>
+<li>Manually rotate the motor pulley (by hand) while watching the <strong>raw axis value</strong> (raw_x or raw_y) in the real-time information panel</li>
+<li>Rotate until raw value reads between <strong>2000-2100</strong></li>
+<li>Manually center the stick gimbal physically</li>
+<li>Reinstall the belt on the pulley(s) without changing the position of the motor</li>
+<li>Set the <strong>Spring</strong> gain slider back to previous value, “<strong>Apply Settings</strong>” </li>
+<li>Run <a href="#step-6-run-auto-calibration">Auto Calibration</a></li>
+<li>“<strong>Store Settings</strong>” to save the calibration values permanently.  If you have multiple configurator profiles and if the previous calibration values are saved with them, you will either need to recreate them, or load the profiles individually, perform the recalibration and then save the profile off again.</li>
+</ol>
+<h4 id="method-2-automatic-motor-recentering-easier-but-less-precise"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.4.2</span> Method 2: Automatic Motor Recentering (Easier but Less Precise)<a class="headerlink" href="#method-2-automatic-motor-recentering-easier-but-less-precise" title="Link to this section">¶</a></h4>
+<ol>
+<li>Start with belt(s) removed</li>
+<li>Open <strong>VPforce Configurator → FFB Axes Setup</strong> tab (bottom of the screen)</li>
+<li>
+<p>Manually set the calibration values for whichever axes you are working with:</p>
+<ul>
+<li><strong>Min:</strong> 0</li>
+<li><strong>Max:</strong> 4096</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Apply Settings</strong></p>
+</li>
+<li>Navigate to <strong>Effects</strong> tab</li>
+<li>Enable <strong>Spring</strong> effect with moderate gain (~50%)</li>
+<li>Navigate to <strong>Settings</strong> tab</li>
+<li>Set the <strong>Spring</strong> gain slider to %100</li>
+<li>Click <strong>Apply Settings</strong></li>
+<li>The motor will automatically rotate to center position (2048)</li>
+<li>Manually center the stick gimbal physically to match</li>
+<li>Reinstall the belt on both pulleys</li>
+<li>Run <a href="#step-6-run-auto-calibration">Auto Calibration</a> to restore proper calibration</li>
+<li>“<strong>Store Settings</strong>” to save the calibration values permanently.  If you have multiple configurator profiles and if the previous calibration values are saved with them, you will either need to recreate them, or load the profiles individually, perform the recalibration and then save the profile off again.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Verification</p>
+<p>After realignment and calibration, the final calibrated center value should read approximately <strong>C:~2000</strong>. Values significantly outside this range (below 1900 or above 2200) indicate misalignment.</p>
+</div>
+<h3 id="troubleshooting-belt-tension-issues"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.1.5</span> Troubleshooting Belt Tension Issues<a class="headerlink" href="#troubleshooting-belt-tension-issues" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Belt too loose after adjustment:</strong></p>
+<ul>
+<li>Increase motor adjustment distance (push motor further away from large gear)</li>
+<li>Check if belt has stretched significantly and may need replacement</li>
+</ul>
+<p class="label-paragraph"><strong>Belt too tight (won’t reinstall or feels guitar-string tight):</strong></p>
+<ul>
+<li>Reduce motor adjustment distance slightly</li>
+<li>Belt should be firm but not excessively tight</li>
+</ul>
+<p class="label-paragraph"><strong>Position tracking still inaccurate after tensioning:</strong></p>
+<ul>
+<li>Verify calibration values are approximately C:~2000</li>
+<li>Check for belt damage or wear</li>
+<li>Ensure belt is properly seated on both pulleys (not riding on pulley edges)</li>
+</ul>
+<h2 id="stick-drifts-when-trimming-off-center"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.2</span> Stick drifts when trimming off center<a class="headerlink" href="#stick-drifts-when-trimming-off-center" title="Link to this section">¶</a></h2>
+<p>See section <strong><a href="../using-the-rhino/#balancing-the-grip">3.4 Balancing the Grip</a></strong></p>
+<h2 id="clicking-noise-during-force-reversal"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.3</span> Clicking Noise During Force Reversal<a class="headerlink" href="#clicking-noise-during-force-reversal" title="Link to this section">¶</a></h2>
+<p>If you notice a clicking sound or slight looseness when the force direction reverses, it may be due to mechanical play or backlash in the VPforce Rhino hardware. This is often caused by slight movement between components when force is applied in opposite directions. Common reasons include slightly loose joints.</p>
+<p>Below are typical sources of backlash, listed in order of how easy they are to check and adjust:</p>
+<ol>
+<li><strong>Small 12T Pulley on the Motor Shaft</strong>
+<em>Most common cause of noise due to micro-slippage on the shaft.</em><ul>
+<li>This pulley is secured by three M3 grub screws (2 mm hex) spaced 120° apart. If these are not tightened firmly, the pulley may slip slightly under load changes, causing a click or knock.</li>
+<li>Use a high-quality 2 mm hex key to avoid stripping the screw heads.</li>
+<li>Apply firm torque and ensure all three screws are tightened evenly.</li>
+</ul>
+</li>
+</ol>
+<figure class="figure-image"> <img alt="" height="178px" src="../media/Pictures/100002010000036C000002EBC3AF7E0D5331BB64.webp" width="208px"/> <figcaption></figcaption></figure>
+<ol start="2">
+<li>
+<p class="label-paragraph"><strong>HEX Bolts on the Large Gears</strong>
+<em>Rare source of noise, but very easy to check.</em></p>
+<ul>
+<li>Each large gear (on both axes) is fastened with five M4 HEX bolts.</li>
+<li>Simply check and tighten these bolts. Even if they are not the root cause, this step takes little effort and helps rule them out.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Screws on the Aluminum Gimbal Stem</strong>
+<em>Loose stem screws can cause movement or clicking.</em></p>
+</li>
+</ol>
+<figure class="figure-image"> <img alt="" height="183px" src="../media/Pictures/100000000000050D0000050DEE2D748469A40DC8.webp" width="183px"/> <figcaption></figcaption></figure>
+<ul>
+<li>The aluminum gimbal stem is secured by <strong>eight</strong> screws on all sides.</li>
+<li>Even slight looseness in these screws can cause a click when force is applied or reversed.</li>
+<li>Check and tighten all eight screws (typically PH2 or TX20 depending on the unit version).</li>
+</ul>
+<ol start="4">
+<li><strong>Axis Coupling in the Center of the Gimbal (X and Y Axes)</strong><ul>
+<li>A slightly loose coupling here can cause a “clunk” sound during reversal.</li>
+<li>The X and Y axes are joined via a central bolt that passes through the gimbal and clamps the axes via bearings. If this bolt/nut assembly becomes even slightly loose, the nut may shift slightly under force over the bearing, producing a “clunk”.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the <strong>Y axis</strong>, everything is the same except this axis coupling nut does <strong>not</strong> affect it — force is transferred directly into the gimbal stem, bypassing this joint.</p>
+</div>
+<p class="label-paragraph"><strong>How to access and tighten (relevant to X axis):</strong></p>
+<ol>
+<li><strong>Lift the leather cover</strong> — do not cut the zip tie.</li>
+<li><strong>Remove the grip connector</strong> by unscrewing the two <em>PH1</em> screws, pulling out and disconnecting the grip connector. Insert a tool into a screw hole to aid in pulling the socket out. Simultaneously, push the cable under the leather into the stem. This will help lift the socket out.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Handle with Care</p>
+<p>When unplugging the connector from the socket, be extremely careful. It is very easy to accidentally pull the small Molex Picoblade contacts out of the connector housing if you pull on the wires instead of the connector itself.</p>
+</div>
+<figure class="figure-image"> <img alt="" height="217px" src="../media/Pictures/100000000000050C0000050DC88FE64FFBF87726.webp" width="217px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <img alt="" height="217px" src="../media/Pictures/10000201000002AC000002788835EF2473F6D201.webp" width="235px"/> <figcaption></figcaption></figure>
+<ol start="3">
+<li><strong>Detach the gimbal stem:</strong></li>
+</ol>
+<figure class="figure-image"> <img alt="" height="183px" src="../media/Pictures/100000000000050D0000050DEE2D748469A40DC8.webp" width="183px"/> <figcaption></figcaption></figure>
+<ul>
+<li>On older Rhino units: remove the <strong>four</strong> <em>PH2</em> screws from all sides.</li>
+<li>On newer units: remove the <strong>four</strong> <em>TX20</em> screws from all sides.</li>
+<li>Pull out the aluminum tube.</li>
+</ul>
+<ol start="4">
+<li>Inside the center of the gimbal you’ll find an <strong>M5 nut</strong>. Tighten this nut securely using a socket driver from the top.</li>
+</ol>
+<ul>
+<li>In most cases, tightening from the top is enough.</li>
+<li>If the bolt spins freely (i.e., the nut doesn’t tighten), access the <strong>bottom of the gimbal</strong>:<ul>
+<li>Remove the bottom plate of the unit.</li>
+<li>Hold the PH2 bolt head in place with a screwdriver while tightening the nut from the top.</li>
+</ul>
+</li>
+</ul>
+<figure class="figure-image"> <img alt="" height="317px" src="../media/Pictures/100002010000035B000003C3AE578345D3F12EC7.webp" width="283px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <img alt="Tightening the gimbal center nut" height="316px" src="../media/Pictures/100002010000025E0000028E19A6CC0F9D07DBDD.webp" width="294px"/> <figcaption>Tightening the gimbal center nut</figcaption></figure>
+<h2 id="replacing-the-grip-mount-head"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.4</span> Replacing the Grip Mount Head<a class="headerlink" href="#replacing-the-grip-mount-head" title="Link to this section">¶</a></h2>
+<p>The grip mount head is held by four M4 screws and is easy to replace.</p>
+<p>Tools required:</p>
+<ul>
+<li>TX20 driver/bit or PH2 (for older units)</li>
+<li>TX10 bit</li>
+<li>PH1 driver/bit</li>
+<li>1 pc zip tie</li>
+</ul>
+<p class="label-paragraph"><strong>Instructions:</strong></p>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Remove Dust Boot:</strong></p>
+<ul>
+<li>Remove the 4pcs T10 screws that secure the dust shoe to the base.</li>
+<li>Cut the zip tie that holds the leather in place and then remove the dust boot.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Disconnect Grip Connector Socket:</strong></p>
+<ul>
+<li>
+<p>Remove the 2 PH1 screws that secure the grip connector socket.
+    <figure class="figure-image"> <img alt="" height="217px" src="../media/Pictures/100000000000050C0000050DC88FE64FFBF87726.webp" width="217px"/> <figcaption></figcaption></figure></p>
+</li>
+<li>
+<p>Disconnect and remove the socket.</p>
+<div class="admonition warning">
+<p class="admonition-title">Handle with Care</p>
+<p>When unplugging the connector from the socket, be extremely careful. It is very easy to accidentally pull the small Molex Picoblade contacts out of the connector housing if you pull on the wires instead of the connector itself.</p>
+</div>
+<p><figure class="figure-image"> <img alt="" height="217px" src="../media/Pictures/10000201000002AC000002788835EF2473F6D201.webp" width="235px"/> <figcaption></figcaption></figure></p>
+</li>
+<li>
+<p>Remove the 4 T20/PH2 screws holding the grip mount.</p>
+</li>
+<li>
+<p>Take off the old grip mount, making sure to note the orientation of the star pattern for proper reinstallation.</p>
+</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Install New Grip Mount:</strong></p>
+<ul>
+<li>
+<p>Place the aluminum grip mount in the correct orientation.</p>
+</li>
+<li>
+<p>Reassemble by screwing all components back in the reverse order.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="tightening-the-power-button-e-stop"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.5</span> Tightening the Power button (E-Stop)<a class="headerlink" href="#tightening-the-power-button-e-stop" title="Link to this section">¶</a></h2>
+<p>With regular use, the power button (E-Stop) may gradually loosen from its mounting position. If you notice the button becoming wobbly or loose to the touch, it can be easily secured by tightening the retaining nut from inside the unit. This simple maintenance procedure requires only basic tools and takes just a few minutes to complete. Follow the steps below to restore the power button to its proper, secure position.</p>
+<p class="label-paragraph"><strong>Step 1:</strong> Power off the unit and disconnect all cables. Open the rear panel by removing the Torx screws securing it in place. Set the screws aside in a safe location.</p>
+<figure class="figure-image"> <img alt="" height="410px" src="../media/Pictures/10000000000004210000049EC5ADE2A33E41DBAD.webp" width="367px"/> <figcaption></figcaption></figure>
+<p class="label-paragraph"><strong>Step 2:</strong> Locate the power button (E-Stop) switch from inside the unit. You will see a plastic retaining nut on the threaded shaft of the switch.</p>
+<p class="label-paragraph"><strong>Step 3:</strong> Hold the power button firmly from the outside to prevent it from rotating. Using your fingers or a suitable tool, tighten the plastic nut clockwise until the switch is snug against the panel. Do not overtighten, as this may damage the plastic threads.</p>
+<p class="label-paragraph"><strong>Step 4:</strong> Verify the button feels secure and sits flush against the panel. Replace the rear panel and secure it with the Torx screws, don’t overtighten - very little torque is required.</p>
+<p class="label-paragraph"><strong>Step 5:</strong> Reconnect all cables and test the power button to ensure it functions correctly.</p>
+<h2 id="installing-rhino-throw-limiter"><span class="enumerate-headings-plugin enumerate-heading-plugin">7.6</span> Installing RHINO Throw Limiter<a class="headerlink" href="#installing-rhino-throw-limiter" title="Link to this section">¶</a></h2>
+<p>The RHINO has a significant amount of throw — 22 degrees — and a long shaft compared to most comparable controllers. The long throw does help with accuracy, but especially with extensions the wide movement range can become excessive. It is possible to set limiters in software, but depending on how much force you are using in general, the software limiter may not feel strong enough. The physical throw limiter adapters offer a simple to install alternative solution that sets hard physical limits to the stick’s movement.</p>
+<figure class="figure-image"> <img alt="Throw limiter" src="../images/rhino-maintenance/image.webp" width="600px"/> <figcaption>Throw limiter</figcaption></figure>
+<p>The adapters come in two pieces — front and back. They can be ordered directly from VPforce or 3D printed using the <a class="external" href="https://cad.onshape.com/documents/8addc17e2e80b65a283cbe11/w/f15586aa6951f77b58393a96/e/7795e6a8f7c49e69c519d9a7" target="_blank">parametric CAD model on Onshape</a>. The Onshape model allows you to parametrically adjust the throw angles to your preference before printing. Limiters may have different movement ranges in different directions depending on the configuration chosen. To install the adapter plates,</p>
+<ol>
+<li>
+<p>Unscrew the four Torx T5 screws that connect the dust cover at the base of the stick shaft to the RHINO base and lift the cover slightly - you don’t need to remove it completely. With the cover out of the way, you should now be able to see the opening the stick shaft goes through and the top of the gimbal assembly inside the base.</p>
+</li>
+<li>
+<p>Insert the two limiter plates in the stick shaft opening. <strong>Text side is up</strong> and <strong>FWD is forwards</strong>. When installed correctly, the plates should fit snugly in the opening and stay firmly in place.</p>
+</li>
+<li>
+<p>Place the dust cover plate on top of the limiter plates so that the screw holes align and reattach the screws so that they hold the whole shebang in place. There is no need to go full gorilla on the screws, but do note that they are now holding in place not just the dust cover, but also the limiters that make physical and sometimes somewhat forcible contact with the stick shaft.</p>
+</li>
+<li>
+<p>Recalibrate the controller for the new throw ranges.</p>
+</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

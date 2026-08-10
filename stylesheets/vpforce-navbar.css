@@ -1,0 +1,246 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   vpforce-navbar.css — VPForce global navigation bar
+   Built on Material's .md-header infrastructure (sticky, z-index, bg).
+   Custom layout handled by vpforce-navbar__* BEM classes.
+
+   Requirements:
+     - Space Grotesk font loaded via <link> before this stylesheet
+     - Font Awesome 6 loaded via <link> before this stylesheet
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Design Tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --vpf-dark:             #170b28;
+  --vpf-accent:           #ab37c8;
+  --vpf-accent-hover:     #c050e0;
+  --vpf-surface:          #ffffff;
+  --vpf-surface-tinted:   #faf5ff;
+  --vpf-bg:               #f8fafc;
+  --vpf-border:           #e2e8f0;
+  --vpf-text:             #475569;
+  --vpf-text-muted:       #6b7280;
+  --vpf-shadow-sm:        0 4px 6px rgba(0, 0, 0, 0.05);
+
+  /* Expected navbar height (3px border + 16px pad + 38px brand + 16px pad).
+     Used by vpforce.css for Material header offset and sidebar calculations. */
+  --vpf-navbar-height:    73px;
+}
+
+/* ── VPforce navbar — overrides on top of .md-header ───────────────────────── */
+
+.md-header.vpforce-navbar {
+  top: 0;
+  border-top: 3px solid var(--vpf-accent);
+  z-index: 5;  /* above Material header (z-index: 4) */
+}
+
+/* Override Material's .md-header__inner padding for VPforce layout */
+.vpforce-navbar .md-header__inner {
+  padding: 16px 32px;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+/* ── Brand ─────────────────────────────────────────────────────────────────── */
+
+.vpforce-navbar__brand {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 22.4px;
+  letter-spacing: -0.025em;
+}
+
+.vpforce-navbar__brand:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  opacity: 1;  /* override Material's .md-header__button:hover opacity */
+}
+
+.vpforce-navbar__brand img {
+  height: 38px;
+  width: auto;
+}
+
+/* ── Title slot — receives Material's .md-header__title ────────────────────── */
+
+.vpforce-navbar__title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.vpforce-navbar__title .md-header__title {
+  position: static;
+  font-size: 14.4px;
+  height: 38px;
+  line-height: 38px;
+  margin: 0 6px;
+  letter-spacing: -0.025em;
+}
+
+.vpforce-navbar__title .md-header__ellipsis {
+  height: 38px;
+}
+
+.vpforce-navbar__title .md-header__topic {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Navigation links ──────────────────────────────────────────────────────── */
+
+.vpforce-navbar__links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vpforce-navbar__links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 15.2px;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vpforce-navbar__links a i {
+  width: 1em;
+  display: inline-block;
+  text-align: center;
+}
+
+.vpforce-navbar__links a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.vpforce-navbar__links a[aria-current="page"] {
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+}
+
+.vpforce-navbar__links a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--vpf-accent, #ab37c8);
+  border-radius: 1px;
+}
+
+/* ── CTA button ────────────────────────────────────────────────────────────── */
+
+.vpforce-navbar__cta {
+  background: var(--vpf-accent) !important;
+  color: #ffffff !important;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background-color 0.2s ease;
+}
+
+.vpforce-navbar__cta:hover {
+  background: var(--vpf-accent-hover) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(171, 55, 200, 0.5);
+}
+
+/* ── Mobile hamburger toggle ─────────────────────────────────────────────── */
+
+.vpforce-navbar__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: color 0.2s ease;
+  position: relative;
+  z-index: 999;
+}
+
+.vpforce-navbar__toggle:hover {
+  color: #ffffff;
+}
+
+/* Icon swap: driven by aria-expanded on the button */
+.vpforce-navbar__toggle[aria-expanded="false"] .vpforce-navbar__icon--close { display: none; }
+.vpforce-navbar__toggle[aria-expanded="true"]  .vpforce-navbar__icon--open  { display: none; }
+
+/* ── Responsive ────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .vpforce-navbar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vpforce-navbar .md-header__inner {
+    gap: 0;
+  }
+
+  /* Full-screen overlay nav on mobile */
+  .vpforce-navbar__links {
+    position: fixed;
+    inset: 0;
+    background: rgba(23, 11, 40, 0.98);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 998;
+    transition: opacity 0.2s ease;
+  }
+
+  .vpforce-navbar__links a {
+    font-size: 20.8px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: normal;
+  }
+
+  .vpforce-navbar__links a:hover {
+    color: #ffffff;
+  }
+
+  .vpforce-navbar.is-open .vpforce-navbar__links {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .vpforce-navbar__links li.vpforce-navbar__hide-mobile {
+    display: list-item; /* show all items in overlay mode */
+  }
+}
+
+@media (max-width: 480px) {
+  .vpforce-navbar .md-header__inner {
+    padding: 12px 16px;
+  }
+
+  .vpforce-navbar__brand span {
+    display: none;
+  }
+}

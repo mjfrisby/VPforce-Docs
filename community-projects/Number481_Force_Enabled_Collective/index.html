@@ -1,0 +1,2198 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/community-projects/Number481_Force_Enabled_Collective/" rel="canonical"/>
+<link href="../ffb-yoke/" rel="prev"/>
+<link href="../../third-party-vendors/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Force-Enabled Collective - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#force-enabled-collective-by-number481">9. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Force-Enabled Collective
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../rhino/">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">9.1 
+<span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+</a>
+<nav aria-label="Introduction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-force-enable-a-collective">9.1.1 
+<span class="md-ellipsis">
+      
+        Why Force-Enable a Collective?
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#design-history">9.2 
+<span class="md-ellipsis">
+      
+        Design History
+      
+    </span>
+</a>
+<nav aria-label="Design History" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rev-1-belt-and-pulley-original">9.2.1 
+<span class="md-ellipsis">
+      
+        Rev-1 — Belt-and-Pulley (Original)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rev-2-and-rev-3">9.2.2 
+<span class="md-ellipsis">
+      
+        Rev-2 and Rev-3
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#current-design-planetary-gearbox-recommended">9.2.3 
+<span class="md-ellipsis">
+      
+        Current Design — Planetary Gearbox (Recommended)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-specifications">9.3 
+<span class="md-ellipsis">
+      
+        Key Specifications
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bill-of-materials">9.4 
+<span class="md-ellipsis">
+      
+        Bill of Materials
+      
+    </span>
+</a>
+<nav aria-label="Bill of Materials" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">9.4.1 
+<span class="md-ellipsis">
+      
+        Core Components
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-printed-parts">9.4.2 
+<span class="md-ellipsis">
+      
+        3D-Printed Parts
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assembly-overview">9.5 
+<span class="md-ellipsis">
+      
+        Assembly Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project-resources">9.6 
+<span class="md-ellipsis">
+      
+        Project Resources
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#community-builds-and-variations">9.7 
+<span class="md-ellipsis">
+      
+        Community Builds and Variations
+      
+    </span>
+</a>
+<nav aria-label="Community Builds and Variations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#andre">9.7.1 
+<span class="md-ellipsis">
+      
+        Andre
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mike-t">9.7.2 
+<span class="md-ellipsis">
+      
+        Mike T
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#h145rotor-sims">9.7.3 
+<span class="md-ellipsis">
+      
+        H145Rotor-Sims
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#smitty">9.7.4 
+<span class="md-ellipsis">
+      
+        Smitty
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faq">9.8 
+<span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gallery">9.9 
+<span class="md-ellipsis">
+      
+        Gallery
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">9.1 
+<span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+</a>
+<nav aria-label="Introduction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-force-enable-a-collective">9.1.1 
+<span class="md-ellipsis">
+      
+        Why Force-Enable a Collective?
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#design-history">9.2 
+<span class="md-ellipsis">
+      
+        Design History
+      
+    </span>
+</a>
+<nav aria-label="Design History" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rev-1-belt-and-pulley-original">9.2.1 
+<span class="md-ellipsis">
+      
+        Rev-1 — Belt-and-Pulley (Original)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rev-2-and-rev-3">9.2.2 
+<span class="md-ellipsis">
+      
+        Rev-2 and Rev-3
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#current-design-planetary-gearbox-recommended">9.2.3 
+<span class="md-ellipsis">
+      
+        Current Design — Planetary Gearbox (Recommended)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-specifications">9.3 
+<span class="md-ellipsis">
+      
+        Key Specifications
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bill-of-materials">9.4 
+<span class="md-ellipsis">
+      
+        Bill of Materials
+      
+    </span>
+</a>
+<nav aria-label="Bill of Materials" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">9.4.1 
+<span class="md-ellipsis">
+      
+        Core Components
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-printed-parts">9.4.2 
+<span class="md-ellipsis">
+      
+        3D-Printed Parts
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assembly-overview">9.5 
+<span class="md-ellipsis">
+      
+        Assembly Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project-resources">9.6 
+<span class="md-ellipsis">
+      
+        Project Resources
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#community-builds-and-variations">9.7 
+<span class="md-ellipsis">
+      
+        Community Builds and Variations
+      
+    </span>
+</a>
+<nav aria-label="Community Builds and Variations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#andre">9.7.1 
+<span class="md-ellipsis">
+      
+        Andre
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mike-t">9.7.2 
+<span class="md-ellipsis">
+      
+        Mike T
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#h145rotor-sims">9.7.3 
+<span class="md-ellipsis">
+      
+        H145Rotor-Sims
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#smitty">9.7.4 
+<span class="md-ellipsis">
+      
+        Smitty
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#faq">9.8 
+<span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gallery">9.9 
+<span class="md-ellipsis">
+      
+        Gallery
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="force-enabled-collective-by-number481"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.</span> Force-Enabled Collective by Number481<a class="headerlink" href="#force-enabled-collective-by-number481" title="Link to this section">¶</a></h1>
+<h2 id="introduction"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.1</span> Introduction<a class="headerlink" href="#introduction" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <img alt="Number481's completed force-enabled collective" src="../../images/community-projects/collective/collective_hero.webp"> <figcaption>Number481's completed force-enabled collective</figcaption></img></figure>
+<p>Welcome to the documentation for Number481’s Force-Enabled Collective, a DIY helicopter collective stick project featuring VPforce Rhino force feedback. This page is compiled from the project thread on the VPforce Discord.</p>
+<p>The project is intentionally called <strong>“Force Enabled”</strong> rather than “FFB” because, as of the project’s inception, no flight simulators implement game-driven force feedback for the collective axis. The force feedback here is entirely about tactile quality — precise, smooth, damping-rich control — rather than receiving in-game signals through the stick.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page is compiled from the original project thread by <code>Number481</code> on the VPforce Discord. All credit for the design and development goes to them.<br/>
+For the original discussion, see the <a class="external" href="https://discord.com/channels/965234441511383080/1114276706061123725" target="_blank">Force Enabled Collective thread</a> on the VPforce Discord.</p>
+</div>
+<h3 id="why-force-enable-a-collective"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.1.1</span> Why Force-Enable a Collective?<a class="headerlink" href="#why-force-enable-a-collective" title="Link to this section">¶</a></h3>
+<p>Number481 summarised the two primary motivations:</p>
+<ol>
+<li><strong>Precision and feel</strong> — Friction-based collectives suffer from stiction (static friction spike before movement begins). Force feedback eliminates this entirely, replacing it with smooth, programmable damping and spring feel that mimics the hydraulic resistance of a real collective.</li>
+<li><strong>Grip flexibility</strong> — The Rhino USB board supports commercial grips from VPforce-supported manufacturers, allowing any compatible helicopter grip to be fitted to the collective arm.</li>
+</ol>
+<p>As a bonus, MSFS autopilot integration works well. On the HPG Airbus helicopters in MSFS, the “collective lock” (which holds the collective stationary until you press the trim release) operates correctly at 100% spring force.</p>
+<hr/>
+<h2 id="design-history"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.2</span> Design History<a class="headerlink" href="#design-history" title="Link to this section">¶</a></h2>
+<p>The design went through multiple revisions before reaching its current form.</p>
+<h3 id="rev-1-belt-and-pulley-original"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.2.1</span> Rev-1 — Belt-and-Pulley (Original)<a class="headerlink" href="#rev-1-belt-and-pulley-original" title="Link to this section">¶</a></h3>
+<ul>
+<li><strong>Motor:</strong> 57BLF03</li>
+<li><strong>Drive:</strong> Belt and pulley, <strong>6:1 gear ratio</strong></li>
+<li><strong>Structure:</strong> 3D-printed, adapted from an earlier non-FFB collective design</li>
+<li><strong>Outcome:</strong> Functional, but suffered from slop and backlash in the printed structure. Gearing felt grainy through the handle.</li>
+</ul>
+<figure class="figure-image"> <img alt="Rev-1 belt/pulley design — render 1" src="../../images/community-projects/collective/collective_belt_rev1_1.webp"> <figcaption>Rev-1 belt/pulley design — render 1</figcaption></img></figure>
+<figure class="figure-image"> <img alt="Rev-1 belt/pulley design — render 2" src="../../images/community-projects/collective/collective_belt_rev1_2.webp"/> <figcaption>Rev-1 belt/pulley design — render 2</figcaption></figure>
+<figure class="figure-image"> <img alt="Rev-1 belt/pulley design — render 3" src="../../images/community-projects/collective/collective_belt_rev1_3.webp"/> <figcaption>Rev-1 belt/pulley design — render 3</figcaption></figure>
+<figure class="figure-image"> <img alt="Rev-1 belt/pulley design — render 4" src="../../images/community-projects/collective/collective_belt_rev1_4.webp"/> <figcaption>Rev-1 belt/pulley design — render 4</figcaption></figure>
+<h3 id="rev-2-and-rev-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.2.2</span> Rev-2 and Rev-3<a class="headerlink" href="#rev-2-and-rev-3" title="Link to this section">¶</a></h3>
+<p>Iterative improvements incorporating community feedback. Both designs were shared in the VPforce Discord showcase channel before being superseded.</p>
+<h3 id="current-design-planetary-gearbox-recommended"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.2.3</span> Current Design — Planetary Gearbox (Recommended)<a class="headerlink" href="#current-design-planetary-gearbox-recommended" title="Link to this section">¶</a></h3>
+<p>After discovering low-cost, high-quality planetary gearboxes, Number481 redesigned the collective around a direct-drive planetary reduction. This revision eliminated the backlash and simplified the overall structure.</p>
+<ul>
+<li><strong>Motor:</strong> 57BLF03</li>
+<li><strong>Drive:</strong> Direct drive through a <strong>10:1 planetary gearbox</strong></li>
+<li><strong>Frame:</strong> 2080 aluminium extrusion profile</li>
+<li><strong>Mounting:</strong> Chair-mounted (deskpit integration via ring clamps and the extrusion frame)</li>
+<li><strong>Grip:</strong> Virpil Alpha left-handed grip (works well); modular arm design allows swapping to other grips such as the Apache collective grip</li>
+</ul>
+<figure class="figure-image"> <img alt="Planetary gearbox design — CAD overview" src="../../images/community-projects/collective/collective_gearbox_cad.webp"/> <figcaption>Planetary gearbox design — CAD overview</figcaption></figure>
+<figure class="figure-image"> <img alt="Planetary gearbox design — assembled" src="../../images/community-projects/collective/collective_gearbox_photo.webp"/> <figcaption>Planetary gearbox design — assembled</figcaption></figure>
+<hr/>
+<h2 id="key-specifications"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.3</span> Key Specifications<a class="headerlink" href="#key-specifications" title="Link to this section">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor</td>
+<td>57BLF03 (single motor kit)</td>
+</tr>
+<tr>
+<td>Gearbox ratio</td>
+<td>10:1 planetary</td>
+</tr>
+<tr>
+<td>Gearbox input shaft</td>
+<td>8 mm (matches 57xxx series motors)</td>
+</tr>
+<tr>
+<td>Gearbox output shaft</td>
+<td>16 mm</td>
+</tr>
+<tr>
+<td>Recommended gearbox backlash</td>
+<td>≤ 3 arcmin</td>
+</tr>
+<tr>
+<td>Frame profile</td>
+<td>2080 aluminium extrusion</td>
+</tr>
+<tr>
+<td>Counterbalance method</td>
+<td>Printed box filled with stick-on wheel weights</td>
+</tr>
+<tr>
+<td>Grip connection</td>
+<td>5-pin connector to Rhino USB board (pigtail for easy swap)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Backlash matters</p>
+<p>A gearbox with 12 arcmin of backlash will translate to approximately <strong>½ inch (13 mm) of handle slop</strong> at a 24-inch arm length. Community members strongly recommend staying at <strong>≤ 3 arcmin</strong> for a quality result. The cheaper boxes on AliExpress typically spec 7–15 arcmin — avoid these.</p>
+</div>
+<hr/>
+<h2 id="bill-of-materials"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.4</span> Bill of Materials<a class="headerlink" href="#bill-of-materials" title="Link to this section">¶</a></h2>
+<h3 id="core-components"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.4.1</span> Core Components<a class="headerlink" href="#core-components" title="Link to this section">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VPforce 57BLF03 single motor kit</td>
+<td>Includes Rhino USB board</td>
+</tr>
+<tr>
+<td>10:1 planetary gearbox</td>
+<td>8 mm input shaft, ≤ 3 arcmin backlash — see link below</td>
+</tr>
+<tr>
+<td>Flanged shaft collar</td>
+<td>16 mm bore (to match gearbox output shaft)</td>
+</tr>
+<tr>
+<td>2080 aluminium extrusion</td>
+<td>Length to suit your mounting arrangement</td>
+</tr>
+<tr>
+<td>T-slot nuts and bolts</td>
+<td>For frame assembly</td>
+</tr>
+<tr>
+<td>Stick-on wheel weights</td>
+<td>For counterbalance box</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Recommended gearbox</p>
+<p>Number481 recommends this AliExpress listing (choose <strong>8 mm input</strong>, <strong>ratio 10</strong>, confirm ≤ 3 arcmin backlash spec):<br/>
+<a class="external" href="https://www.aliexpress.us/item/3256801124644081.html" target="_blank">Planetary Gearbox on AliExpress</a><br/>
+This unit is considerably cheaper than equivalent Western-brand gearboxes (~$80 vs $800+) while maintaining sufficient precision.</p>
+</div>
+<h3 id="3d-printed-parts"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.4.2</span> 3D-Printed Parts<a class="headerlink" href="#3d-printed-parts" title="Link to this section">¶</a></h3>
+<p>All custom parts are 3D printed. The STEP assembly file is available via the Discord thread (see <a href="#project-resources">9.6 Project Resources</a> below). Key printed components include:</p>
+<ul>
+<li><strong>Arm mount</strong> — carries the flanged collar and connects the arm to the gearbox output shaft</li>
+<li><strong>Counterbalance weight box</strong> — attaches to the rear of the arm; fill with stick-on wheel weights until the arm is neutrally balanced at its pivot</li>
+<li><strong>Ring clamps</strong> — mount the extrusion frame to the chair (note: these are specific to Number481’s office chair and will require adaptation)</li>
+</ul>
+<figure class="figure-image"> <img alt="Collar and arm mount closeup" src="../../images/community-projects/collective/collective_collar_closeup.webp"/> <figcaption>Collar and arm mount closeup</figcaption></figure>
+<div class="admonition note">
+<p class="admonition-title">Counterbalance tuning</p>
+<p>No special calculation is needed. Print a box, add weights incrementally until the arm rests where you place it with the motor off. Stick-on wheel balancing weights work well as filler.</p>
+</div>
+<hr/>
+<h2 id="assembly-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.5</span> Assembly Overview<a class="headerlink" href="#assembly-overview" title="Link to this section">¶</a></h2>
+<ol>
+<li><strong>Assemble the frame</strong> — Build the motor/gearbox subassembly onto a length of 2080 extrusion using the printed motor mount and T-slot hardware.</li>
+<li><strong>Mount the gearbox</strong> — Secure the planetary gearbox to the extrusion. The motor mounts directly to the gearbox input.</li>
+<li><strong>Fit the arm</strong> — Attach the printed arm mount to the 16 mm output shaft of the gearbox using the flanged collar. Tighten the clamp.</li>
+<li><strong>Balance the collective</strong> — Attach the counterbalance box to the rear of the arm and add stick-on wheel weights until the arm is neutrally balanced.</li>
+<li><strong>Install the grip</strong> — Connect your chosen grip to the arm. Wire the grip buttons to the Rhino USB board using a 5-pin connector. Use a pigtail termination if you want to swap grips later.</li>
+<li><strong>Mount to your rig</strong> — Use ring clamps or appropriate hardware to secure the extrusion to your seat/rig. The clamp geometry will depend on your specific mounting surface.</li>
+<li><strong>Connect to the PC</strong> — Plug in the Rhino USB board and configure using the VPforce Configurator. Collectives typically require minimal spring force — the damping effect is the primary benefit.</li>
+</ol>
+<hr/>
+<h2 id="project-resources"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.6</span> Project Resources<a class="headerlink" href="#project-resources" title="Link to this section">¶</a></h2>
+<p>Design files were shared directly in the Discord thread. There is no public GitHub repository.</p>
+<ul>
+<li><strong><a class="external" href="https://discord.com/channels/965234441511383080/1114276706061123725" target="_blank">Discord thread: Force Enabled Collective Project</a></strong> — the primary source for build photos, discussion, and file sharing</li>
+<li><strong>STEP assembly</strong> — shared as a Discord attachment in <a class="external" href="https://discord.com/channels/965234441511383080/1114276706061123725/1229392831769214977" target="_blank">this message</a> (April 2024). The ring clamps are chair-specific; the remaining parts are reusable as a starting reference.</li>
+</ul>
+<hr/>
+<h2 id="community-builds-and-variations"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.7</span> Community Builds and Variations<a class="headerlink" href="#community-builds-and-variations" title="Link to this section">¶</a></h2>
+<p>Several community members have built collectives based on or inspired by this project:</p>
+<h3 id="andre"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.7.1</span> Andre<a class="headerlink" href="#andre" title="Link to this section">¶</a></h3>
+<p>Built a version with a counterbalance box similar to Number481’s. Chose to solder a 5-pin connector directly to the Rhino USB board, eliminating the need for a separate USB device for the grip electronics.</p>
+<h3 id="mike-t"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.7.2</span> Mike T<a class="headerlink" href="#mike-t" title="Link to this section">¶</a></h3>
+<p>Building a collective with an <strong>AW109SP</strong> (X-Trident) collective head as the centrepiece, focused on the AW109 in X-Plane. Using a belt/pulley drive and a sliding counterweight rod for easier balance adjustment. Printed counterweight box to be filled with lead shot.</p>
+<figure class="figure-image"> <img alt="Mike T's AW109 collective build" src="../../images/community-projects/collective/collective_miket_1.webp"/> <figcaption>Mike T's AW109 collective build</figcaption></figure>
+<figure class="figure-image"> <img alt="Mike T's collective build — side view" src="../../images/community-projects/collective/collective_miket_2.webp"/> <figcaption>Mike T's collective build — side view</figcaption></figure>
+<h3 id="h145rotor-sims"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.7.3</span> H145Rotor-Sims<a class="headerlink" href="#h145rotor-sims" title="Link to this section">¶</a></h3>
+<p>Adapted the design for the <strong>86 series motors</strong>, which have a 22 mm output shaft (vs 16 mm for 57 series gearboxes). Required sourcing an SHF25 collar with a bore reducer to bridge the size difference.</p>
+<h3 id="smitty"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.7.4</span> Smitty<a class="headerlink" href="#smitty" title="Link to this section">¶</a></h3>
+<p>Showed an alternative lightweight approach: a $25 gearbox as the collective pivot, Teflon washer friction pack for damping, and a potentiometer jammed into the motor-side of the gearbox for position sensing. Noted that a 57 series motor could be added to this design to make it force-enabled.</p>
+<figure class="figure-image"> <img alt="Smitty's collective build" src="../../images/community-projects/collective/collective_smitty_1.webp"/> <figcaption>Smitty's collective build</figcaption></figure>
+<figure class="figure-image"> <img alt="Smitty's collective build — detail" src="../../images/community-projects/collective/collective_smitty_2.webp"/> <figcaption>Smitty's collective build — detail</figcaption></figure>
+<hr/>
+<h2 id="faq"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.8</span> FAQ<a class="headerlink" href="#faq" title="Link to this section">¶</a></h2>
+<p class="label-paragraph"><strong>Q: Why not just use friction and a spring like a regular collective?</strong><br/>
+<strong>A:</strong> Friction-based designs suffer from stiction — a noticeable spike in resistance when movement begins. Force feedback eliminates stiction entirely, giving a smooth, hydraulic-like feel that is more pleasant and precise. Damping strength is fully programmable.</p>
+<p class="label-paragraph"><strong>Q: Do any simulators actually send force feedback signals to the collective axis?</strong><br/>
+<strong>A:</strong> Not as of the project’s creation. That is why the project is called “force enabled” rather than “FFB.” The feedback is entirely user-configured (spring, damping, friction effects), not driven by in-sim physics.</p>
+<p class="label-paragraph"><strong>Q: Does autopilot collective movement work in MSFS?</strong><br/>
+<strong>A:</strong> Yes. On HPG Airbus helicopters in MSFS, the collective lock (which holds the collective until the trim release is pressed) functions correctly at 100% spring force.</p>
+<p class="label-paragraph"><strong>Q: How much motor force is needed for a collective?</strong><br/>
+<strong>A:</strong> Much less than for a cyclic. The 57BLF03 at 6:1 or 10:1 is more than adequate. Collectives do not need large spring forces — the primary benefit is smooth, consistent damping.</p>
+<p class="label-paragraph"><strong>Q: Can I use a cheaper gearbox to save money?</strong><br/>
+<strong>A:</strong> Not recommended. Cheaper planetary gearboxes typically have 7–15 arcmin of backlash. At a 24-inch arm, 12 arcmin translates to roughly half an inch of handle slop, which is very noticeable. The recommended AliExpress unit (~$80) offers ≤ 3 arcmin precision for a fraction of the cost of a comparable European or US-made unit.</p>
+<p class="label-paragraph"><strong>Q: Can I use the 86-series motor instead of the 57-series?</strong><br/>
+<strong>A:</strong> Yes, but the gearbox output shaft will differ in size (the 86 series motor with a 10:1 gearbox outputs a 22 mm shaft vs 16 mm for the 57 series). Shaft collars are available in both sizes, but you may need a bore reducer for some collar options.</p>
+<hr/>
+<h2 id="gallery"><span class="enumerate-headings-plugin enumerate-heading-plugin">9.9</span> Gallery<a class="headerlink" href="#gallery" title="Link to this section">¶</a></h2>
+<p>Build photos from Number481’s completed collective.</p>
+<figure class="figure-image"> <img alt="Collective build — photo 1" src="../../images/community-projects/collective/collective_nearly_complete.webp"/> <figcaption>Collective build — photo 1</figcaption></figure>
+<figure class="figure-image"> <img alt="Collective build — photo 2" src="../../images/community-projects/collective/collective_build_1.webp"/> <figcaption>Collective build — photo 2</figcaption></figure>
+<figure class="figure-image"> <img alt="Collective build — photo 3" src="../../images/community-projects/collective/collective_build_2.webp"/> <figcaption>Collective build — photo 3</figcaption></figure>
+<figure class="figure-image"> <img alt="Collective build — photo 4" src="../../images/community-projects/collective/collective_build_3.webp"/> <figcaption>Collective build — photo 4</figcaption></figure>
+<figure class="figure-image"> <img alt="Collective build — photo 5" src="../../images/community-projects/collective/collective_build_4.webp"/> <figcaption>Collective build — photo 5</figcaption></figure>
+<figure class="figure-image"> <img alt="Collective build — photo 6" src="../../images/community-projects/collective/collective_build_5.webp"/> <figcaption>Collective build — photo 6</figcaption></figure>
+<figure class="figure-image"> <img alt="Original non-FFB collective (for reference)" src="../../images/community-projects/collective/collective_original.webp"/> <figcaption>Original non-FFB collective (for reference)</figcaption></figure>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,2838 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/rhino/using-the-rhino/" rel="canonical"/>
+<link href="../getting-started/" rel="prev"/>
+<link href="../game-specific-ffb-settings-tips-and-tricks/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Using the Rhino - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#using-the-rhino">3. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Using the Rhino
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview-and-force-feedback-terminology">3.1 
+<span class="md-ellipsis">
+      
+        Overview and Force Feedback Terminology
+      
+    </span>
+</a>
+<nav aria-label="Overview and Force Feedback Terminology" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ffb-overview">3.1.1 
+<span class="md-ellipsis">
+      
+        FFB Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ffb-effect-types">3.1.2 
+<span class="md-ellipsis">
+      
+        FFB Effect Types
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-vpforce-configurator-software">3.2 
+<span class="md-ellipsis">
+      
+        The VPforce Configurator Software
+      
+    </span>
+</a>
+<nav aria-label="The VPforce Configurator Software" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interface-overview">3.2.1 
+<span class="md-ellipsis">
+      
+        Interface Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#effects-tab">3.2.2 
+<span class="md-ellipsis">
+      
+        Effects Tab
+      
+    </span>
+</a>
+<nav aria-label="Effects Tab" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#available-effects">
+<span class="md-ellipsis">
+      
+        Available Effects
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#settings-tab">3.2.3 
+<span class="md-ellipsis">
+      
+        Settings Tab
+      
+    </span>
+</a>
+<nav aria-label="Settings Tab" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-settings-work">
+<span class="md-ellipsis">
+      
+        How Settings Work
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#key-differences-from-effects-tab">
+<span class="md-ellipsis">
+      
+        Key Differences from Effects Tab
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grip-type-selection-and-calibration">
+<span class="md-ellipsis">
+      
+        Grip Type Selection and Calibration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-the-relationship-effects-tab-vs-settings-tab">
+<span class="md-ellipsis">
+      
+        Understanding the Relationship: Effects Tab vs Settings Tab
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debug-tab">3.2.4 
+<span class="md-ellipsis">
+      
+        Debug Tab
+      
+    </span>
+</a>
+<nav aria-label="Debug Tab" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#main-features">
+<span class="md-ellipsis">
+      
+        Main Features
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#use-cases">
+<span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#button-mapping-tab">3.2.5 
+<span class="md-ellipsis">
+      
+        Button Mapping Tab
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spring-gain-mapping-tab">3.2.6 
+<span class="md-ellipsis">
+      
+        Spring Gain Mapping Tab
+      
+    </span>
+</a>
+<nav aria-label="Spring Gain Mapping Tab" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-the-basics-what-is-dynamic-range">
+<span class="md-ellipsis">
+      
+        Understanding the Basics: What Is Dynamic Range?
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-simulator-problem">
+<span class="md-ellipsis">
+      
+        The Simulator Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-spring-gain-mapping-can-do">
+<span class="md-ellipsis">
+      
+        What Spring Gain Mapping Can Do
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-use-spring-gain-mapping">
+<span class="md-ellipsis">
+      
+        How to Use Spring Gain Mapping
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#practical-tips">
+<span class="md-ellipsis">
+      
+        Practical Tips
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ffb-axes-setup-tab">3.2.7 
+<span class="md-ellipsis">
+      
+        FFB Axes Setup Tab
+      
+    </span>
+</a>
+<nav aria-label="FFB Axes Setup Tab" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#axis-range-configuration">
+<span class="md-ellipsis">
+      
+        Axis Range Configuration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#force-compensation">
+<span class="md-ellipsis">
+      
+        Force Compensation
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calibration-tools">
+<span class="md-ellipsis">
+      
+        Calibration Tools
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#verification-and-testing">
+<span class="md-ellipsis">
+      
+        Verification and Testing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usage-notes-and-best-practices">
+<span class="md-ellipsis">
+      
+        Usage Notes and Best Practices
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-rhinoloopback-application">3.3 
+<span class="md-ellipsis">
+      
+        The RhinoLoopback Application
+      
+    </span>
+</a>
+<nav aria-label="The RhinoLoopback Application" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose-and-overview">3.3.1 
+<span class="md-ellipsis">
+      
+        Purpose and Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-use-cases">3.3.2 
+<span class="md-ellipsis">
+      
+        Common Use Cases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup-instructions">3.3.3 
+<span class="md-ellipsis">
+      
+        Setup Instructions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#command-line-options">3.3.4 
+<span class="md-ellipsis">
+      
+        Command Line Options
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#balancing-the-grip">3.4 
+<span class="md-ellipsis">
+      
+        Balancing the Grip
+      
+    </span>
+</a>
+<nav aria-label="Balancing the Grip" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-the-problem">3.4.1 
+<span class="md-ellipsis">
+      
+        Understanding the Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#balance-spring-feature">3.4.2 
+<span class="md-ellipsis">
+      
+        Balance Spring Feature
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adjusting-balance-spring-settings">3.4.3 
+<span class="md-ellipsis">
+      
+        Adjusting Balance Spring Settings
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adaptive-recentering">3.4.4 
+<span class="md-ellipsis">
+      
+        Adaptive Recentering
+      
+    </span>
+</a>
+<nav aria-label="Adaptive Recentering" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works">
+<span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compatibility">
+<span class="md-ellipsis">
+      
+        Compatibility
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#limitations-and-considerations">
+<span class="md-ellipsis">
+      
+        Limitations and Considerations
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#static-force">3.4.5 
+<span class="md-ellipsis">
+      
+        Static Force
+      
+    </span>
+</a>
+<nav aria-label="Static Force" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use-static-force">
+<span class="md-ellipsis">
+      
+        When to Use Static Force
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+<span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#thermal-management">3.5 
+<span class="md-ellipsis">
+      
+        Thermal Management
+      
+    </span>
+</a>
+<nav aria-label="Thermal Management" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-the-motors-heat-up">3.5.1 
+<span class="md-ellipsis">
+      
+        How the Motors Heat Up
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-cooling-system">3.5.2 
+<span class="md-ellipsis">
+      
+        Built-in Cooling System
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optimizing-cooling-performance">3.5.3 
+<span class="md-ellipsis">
+      
+        Optimizing Cooling Performance
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#managing-thermal-load-during-use">3.5.4 
+<span class="md-ellipsis">
+      
+        Managing Thermal Load During Use
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#leaving-the-rhino-idle">3.6 
+<span class="md-ellipsis">
+      
+        Leaving the RHINO Idle
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="using-the-rhino"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> Using the RHINO<a class="headerlink" href="#using-the-rhino" title="Link to this section">¶</a></h1>
+<p>The <strong>VPforce RHINO</strong> is a capable but configurable device. Different simulators handle force feedback in different ways, some need third-party tools, and advanced behavior often depends on how those layers interact. This guide explains what each part does and how to get predictable results.</p>
+<p>Out of the box, the RHINO usually works well with sensible defaults. Before changing everything, fly a few sessions first. That gives you a baseline for how the stick feels in your preferred simulator and makes later tuning far easier.</p>
+<p>This manual covers the <strong>VPforce FFB Configurator</strong>, the <strong>RhinoLoopback</strong> application, and the basics of <strong>TelemFFB</strong>. It also explains key force-feedback terms, common setup tasks, and the relationship between simulator-controlled and device-controlled effects.</p>
+<p>The goal is simple: help you tune the RHINO with confidence and understand why it feels the way it does.</p>
+<h2 id="overview-and-force-feedback-terminology"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1</span> Overview and Force Feedback Terminology<a class="headerlink" href="#overview-and-force-feedback-terminology" title="Link to this section">¶</a></h2>
+<h3 id="ffb-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.1</span> FFB Overview<a class="headerlink" href="#ffb-overview" title="Link to this section">¶</a></h3>
+<p>Force Feedback - also known as <em>control loading</em> - applies physical resistance and motion to your controls, simulating the forces you would feel in a real aircraft, car, or machine.</p>
+<p>In practice, it means your stick can “push back” when you pull too hard, your pedals can feel like they’re fighting air pressure, and your yoke can suddenly go light when you stall - all thanks to small but surprisingly determined motors.</p>
+<p>Force Feedback can mimic many mechanical sensations: the stiffness of control surfaces, the suspension of a car, or the sluggish momentum of a heavy mechanism. By linking these cues to simulator data, FFB improves both immersion and control feel.</p>
+<p>Combined with motion tracking or telemetry-driven effects, Force Feedback helps simulations feel physically convincing instead of only visually convincing.</p>
+<h3 id="ffb-effect-types"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.1.2</span> FFB Effect Types<a class="headerlink" href="#ffb-effect-types" title="Link to this section">¶</a></h3>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Periodic Effects</strong> Generate repeating waveforms such as sine, triangle, or square waves. By adjusting amplitude, frequency, and phase, they simulate vibrations, oscillations, or pulses - from engine rumble to weapon recoil.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Spring</strong> Provides a centering force that increases with displacement, like stretching a spring. Used to simulate the natural pull toward neutral position - for example, the resistance you feel when deflecting aircraft controls.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Damper</strong> Applies resistance proportional to how fast the control is moving, similar to pushing through oil or honey. The faster you move, the stronger the resistance.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Inertia</strong> Simulates momentum - the tendency of a heavy object to keep moving once it starts. The control feels like it has mass and resists quick direction changes.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Friction</strong> Applies a steady resistance regardless of speed, like dragging the control across sandpaper (or butter, if set lightly). Useful for simulating surface contact or mechanical stiffness.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Constant</strong> Produces a continuous force in a fixed direction. Despite the name, it can be dynamically updated by software, allowing it to simulate everything from sustained aerodynamic pressure to the subtle pull of trim or wind.</p>
+</li>
+</ul>
+<h2 id="the-vpforce-configurator-software"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2</span> The VPforce Configurator Software<a class="headerlink" href="#the-vpforce-configurator-software" title="Link to this section">¶</a></h2>
+<p>The <strong>VPforce FFB Configurator</strong> is the primary tool for configuring your Rhino’s force feedback behavior. This application allows you to fine-tune everything from spring force and damping to button mappings and advanced effects.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some sections below may not fully reflect the latest software version. Always refer to the in-app tooltips and latest release notes for the most up-to-date information.</p>
+</div>
+<h3 id="interface-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.1</span> Interface Overview<a class="headerlink" href="#interface-overview" title="Link to this section">¶</a></h3>
+<p>The Configurator window is divided into two main areas:</p>
+<p class="label-paragraph"><strong>Left Pane - Real-Time Telemetry:</strong>
+Displays live data from your Rhino, including axis positions, force outputs, button states, and other diagnostic information. This real-time feedback is invaluable when tuning effects and troubleshooting issues.</p>
+<p class="label-paragraph"><strong>Right Pane - Configuration Tabs:</strong>
+Contains four main tabs where you can modify the Rhino’s behavior:</p>
+<ul>
+<li><strong>Effects</strong> - Configure individual force feedback effects</li>
+<li><strong>Settings</strong> - Adjust global gain multipliers for all effects</li>
+<li><strong>Debug</strong> - Access diagnostic tools and advanced settings</li>
+<li><strong>Button Mapping</strong> - Configure button assignments and functions</li>
+</ul>
+<h3 id="effects-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.2</span> Effects Tab<a class="headerlink" href="#effects-tab" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="Effects Tab View" height="647px" src="../media/Pictures/100002010000048400000459590D138A40BF582D.webp" width="671px"> <figcaption>Effects Tab View</figcaption></img></figure>
+<p>The <strong>Effects Tab</strong> is where you configure the individual force feedback effects that the Rhino generates locally. Each effect can be independently enabled or disabled using its checkbox. When enabled, the effect becomes part of the force feedback you feel during use.</p>
+<div class="admonition important">
+<p class="admonition-title">Effects Tab vs Simulator Control</p>
+<p>Effects configured here are active when no simulator is running or when a simulator doesn’t override them. When a game or simulator sends its own FFB commands, it can selectively override specific effect types while leaving others active.</p>
+</div>
+<h4 id="available-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.2.1</span> Available Effects<a class="headerlink" href="#available-effects" title="Link to this section">¶</a></h4>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Spring Effect</strong> - Generates a centering force that behaves like a physical spring, pulling the joystick back toward its center position. The further you move from center, the stronger the pull becomes. This is the foundation of most force feedback experiences.</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Common Parameters:</strong></p>
+<ul>
+<li><strong>Gain:</strong> Overall strength multiplier for the effect (0-100%)</li>
+<li><strong>Saturation:</strong> Maximum output level as a percentage of total available force</li>
+<li><strong>Deadband:</strong> Range near the center where no force is applied, useful for creating a “dead zone”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Damper Effect</strong> - Simulates resistance similar to moving the joystick through a viscous fluid like oil or honey. The faster you move the stick, the stronger the opposing force becomes. This effect adds a sense of weight and prevents overly twitchy movements.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Inertia Effect</strong> - Simulates momentum and mass, making the joystick resist changes in motion. When you start moving the stick, it feels like it wants to continue moving in that direction. This creates a sense of physical mass and realistic control inertia.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Friction Effect</strong> - Simulates a constant, static resistance to movement, similar to dragging the joystick through a mechanical friction joint or over a rough surface. Unlike damper, friction force is constant regardless of speed.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Endstops</strong> - Generates a firm resistance when the joystick reaches a defined boundary, preventing further movement. The endstop parameters can be adjusted in the green and red boxes under the <strong>End Stops</strong> section of the page.</p>
+</li>
+</ul>
+<figure class="figure-image"> <img alt="Activated Endstops" height="648px" src="../media/Pictures/100002010000047F00000457A7AC2A5CB7341DC5.webp" width="671px"> <figcaption>Activated Endstops</figcaption></img></figure>
+<p>In the example above, the endstops are configured at <strong>50% of Y-axis travel</strong> in both directions, with <strong>50% of the maximum available force</strong> applied at each endstop. Each direction is represented by a different colored box: <strong>green</strong> for pushing the stick <em>toward</em> you, and <strong>red</strong> for pulling it <em>away from</em> you.</p>
+<p>With this setup, the stick moves freely for about half of its travel in either direction - offering no resistance at all. It feels completely limp until it reaches the halfway point. Once there, a firm resistance begins to build.</p>
+<p>In the small graph at the lower left of the picture, the <strong>red dot</strong> represents stick displacement, while the <strong>blue circle</strong> shows the force vector generated by the motors. In this case, the red dot sits halfway forward (where resistance starts), and the blue dot remains centered, indicating that the motors are just beginning to push back.</p>
+<p>If you continue to push the stick further into the resistance zone, the red dot advances toward the end of its range. The motors respond by applying up to <strong>half of their maximum force</strong>, pushing firmly against your input - just as the graph below illustrates.</p>
+<figure class="figure-image"> <img alt="" height="617px" src="../media/Pictures/100000000000037E000003C56E2E08E715AD8A14.webp" width="572px"/> <figcaption></figcaption></figure>
+<p>If the <strong>Rescale Axes</strong> box is checked, the joystick reports full excursion to the computer when it reaches an endstop. In the example below, the red dot has moved to the limit of the small box. The blue dot remains centered because the motors are not applying force.</p>
+<figure class="figure-image"> <img alt="Effects Tab View" height="671px" src="../media/Pictures/100000000000036B000003AC9332F2BD783D61D6.webp" width="624px"/> <figcaption>Effects Tab View</figcaption></figure>
+<p class="label-paragraph"><strong>Constant Force</strong></p>
+<p>Produces a continuous force in a fixed direction. While the name suggests it’s unchanging, this effect can be dynamically updated by software to simulate sustained forces like aerodynamic pressure, G-forces, or control surface loading.</p>
+<p class="label-paragraph"><strong>Breakout Force</strong></p>
+<p>Simulates the initial resistance or “stiction” that must be overcome before a control begins to move. This mimics mechanical systems where static friction is higher than dynamic friction - like breaking free from a tight bearing or hydraulic valve.</p>
+<p class="label-paragraph"><strong>Hardware Force Trim</strong></p>
+<figure class="figure-image"> <img alt="Hardware Force Trim View" height="315px" src="../media/Pictures/10000201000001180000013BA476006988DB8038.webp" width="280px"/> <figcaption>Hardware Force Trim View</figcaption></figure>
+<p>This setting enables hardware-based force trim functionality, particularly useful for helicopter simulation. When enabled:</p>
+<ul>
+<li>The four fields surrounding the word ‘Trim’ are button assignments for <strong>pitch</strong> and <strong>roll</strong> trim adjustment</li>
+<li>A <strong>trim release</strong> button can be configured to temporarily disable the trim and return control to manual input</li>
+<li>The trim system works by dynamically adjusting the spring center point, allowing you to “hold” a position without constant input</li>
+</ul>
+<p>This is essential for realistic helicopter flight where force trim is a standard feature that allows pilots to reduce control forces during sustained maneuvers.</p>
+<p class="label-paragraph"><strong>Balance Spring</strong></p>
+<p>The Balance Spring feature compensates for grip weight and extension length to prevent the stick from sagging or drifting when trimmed at an angle. This is covered in detail in <strong><a href="#balancing-the-grip">3.4 Balancing the Grip</a></strong>.</p>
+<h3 id="settings-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.3</span> Settings Tab<a class="headerlink" href="#settings-tab" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="Settings Tab View" height="702px" src="../media/Pictures/10000000000004F40000059361AF1DE1EA619835.webp" width="624px"/> <figcaption>Settings Tab View</figcaption></figure>
+<p>The <strong>Settings Tab</strong> provides global gain multipliers for each force feedback effect type. These sliders act as maximum force limiters and apply to <strong>all</strong> effects, whether they come from the Configurator, a game, or TelemFFB.</p>
+<h4 id="how-settings-work"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.3.1</span> How Settings Work<a class="headerlink" href="#how-settings-work" title="Link to this section">¶</a></h4>
+<p>Each slider controls the maximum output percentage for its corresponding effect type. The actual force you feel is calculated as:</p>
+<p class="label-paragraph"><strong>Final Force = (Effect Gain) × (Settings Multiplier)</strong></p>
+<p class="label-paragraph"><strong>Example:</strong>
+- Spring effect set to 50% in Effects tab
+- Spring slider set to 50% in Settings tab
+- <strong>Result:</strong> You will feel 25% of maximum spring force (0.50 × 0.50 = 0.25)</p>
+<h4 id="key-differences-from-effects-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.3.2</span> Key Differences from Effects Tab<a class="headerlink" href="#key-differences-from-effects-tab" title="Link to this section">¶</a></h4>
+<ul>
+<li><strong>Effects Tab:</strong> Configures local effects and their individual parameters</li>
+<li><strong>Settings Tab:</strong> Sets universal maximum limits that <strong>always</strong> apply, regardless of source</li>
+</ul>
+<p>Think of the Effects tab as defining effect behavior, while the Settings tab defines the overall limit for each effect type.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quick Adjustment Strategy</p>
+<p>Use the Settings tab for quick, global adjustments to overall force levels without losing your carefully tuned effect configurations in the Effects tab. This is particularly useful when switching between different aircraft or flight styles.</p>
+</div>
+<h4 id="grip-type-selection-and-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.3.3</span> Grip Type Selection and Calibration<a class="headerlink" href="#grip-type-selection-and-calibration" title="Link to this section">¶</a></h4>
+<figure class="figure-image"> <img alt="Grip Calibration View" src="../media/grip_calibration.webp"/> <figcaption>Grip Calibration View</figcaption></figure>
+<p>Inside the Settings tab, you will find a <strong>Grip Type</strong> dropdown menu. This allows you to select the type of grip connected to your Rhino, such as VKB, Virpil, or another supported model. Select <strong>Loopback</strong> only when using the <a href="#the-rhinoloopback-application">3.3 RhinoLoopback application</a> to bridge buttons from a separate USB device.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Clicking the colored box allows you to set the LED color for the grip if supported.</p>
+</div>
+<p class="label-paragraph"><strong>Accessing Calibration Settings:</strong></p>
+<p>Once you’ve selected a grip type, click on the <strong>“Grip”</strong> label or expander to reveal the calibration interface for that specific grip. This section allows you to calibrate and configure individual axes on your grip.</p>
+<p class="label-paragraph"><strong>Axis Calibration Widget:</strong></p>
+<p>Each axis (brake, rudder, etc.) has its own calibration row with the following components:</p>
+<ul>
+<li><strong>Axis Name:</strong> Identifies which axis is being calibrated (e.g., “Thumb X Axis”, “Thumb Y Axis”, “Brake”)</li>
+<li><strong>Raw Value:</strong> Displays the current raw sensor reading from the axis in real-time. This value updates as you move the control, showing the unprocessed input from the sensor.</li>
+<li><strong>Min:</strong> Sets the minimum calibration value for the axis range. Adjust this to define where 0% begins.</li>
+<li><strong>Max:</strong> Sets the maximum calibration value for the axis range. Adjust this to define where 100% ends.</li>
+<li>
+<p class="label-paragraph"><strong>Calibrate Button:</strong> Activates the automatic calibration mode:</p>
+<ul>
+<li>Click to enable calibration mode</li>
+<li>Move the axis through its full range of motion (from one extreme to the other)</li>
+<li>The min/max values will automatically update to capture the full travel range</li>
+<li>Click again to deactivate the button and exit calibration mode</li>
+<li>Click <strong>Apply Settings</strong> to apply the new calibration</li>
+<li>Click <strong>Store Settings</strong> if you want to save it permanently</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Center Button (C):</strong> Readjusts the calibration values so that the current stick position becomes the new center point. Useful for correcting center offset without recalibrating the entire range.</p>
+</li>
+</ul>
+<p class="label-paragraph"><strong>Calibration Workflow:</strong></p>
+<ol>
+<li><strong>Select your grip type</strong> from the dropdown</li>
+<li><strong>Expand the Grip section</strong> to access calibration controls</li>
+<li><strong>Click “Calibrate”</strong> for the axis you want to calibrate</li>
+<li><strong>Move the axis</strong> through its complete range of motion (full deflection in all directions)</li>
+<li><strong>Verify</strong> that the min/max values have been captured correctly</li>
+<li><strong>Click “Apply Settings”</strong> to apply the calibration</li>
+<li><strong>Click “Store Settings”</strong> if you want to save it permanently</li>
+<li><strong>Test</strong> the axis movement to ensure proper range and centering</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">When to Calibrate</p>
+<ul>
+<li>After installing a new grip</li>
+<li>If you notice reduced axis range or dead zones</li>
+<li>When the center position has drifted</li>
+<li>After swapping between different grips</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Multiple Axes</p>
+<p>Some grips may have additional axes like brake or twist axis. Each axis can be calibrated independently using the same process.</p>
+</div>
+<h4 id="understanding-the-relationship-effects-tab-vs-settings-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.3.4</span> Understanding the Relationship: Effects Tab vs Settings Tab<a class="headerlink" href="#understanding-the-relationship-effects-tab-vs-settings-tab" title="Link to this section">¶</a></h4>
+<p>The interaction between these two tabs determines how the Rhino behaves:</p>
+<p class="label-paragraph"><strong>Effects Tab - Local Effect Configuration:</strong></p>
+<ul>
+<li>Enables and tunes effects generated by the Configurator itself</li>
+<li>Active when no simulator is running</li>
+<li>Individual effects can be selectively overridden by simulators</li>
+<li>Example: If a game creates its own spring effect, only the spring from the Effects tab is disabled - other effects (damper, friction, etc.) remain active</li>
+</ul>
+<p class="label-paragraph"><strong>Settings Tab - Global Force Limiters:</strong></p>
+<ul>
+<li>Sets maximum force output for each effect type as percentage multipliers</li>
+<li>Acts as a global cap on <strong>all</strong> effects, regardless of source</li>
+<li>Always applies, whether effects come from Configurator, simulator, or TelemFFB</li>
+<li>Example: If “Spring” slider is set to 80%, any spring force from any source is limited to 80% of potential strength</li>
+</ul>
+<p class="label-paragraph"><strong>TelemFFB Integration:</strong></p>
+<p>TelemFFB can also override individual effects in the same way a simulator does, replacing only the specific effect types it controls while leaving others active.</p>
+<p class="label-paragraph"><strong>Quick Reference:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Effects Tab</th>
+<th>Settings Tab</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Configure local effects</td>
+<td>Set maximum force limits</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>Only Configurator-generated effects</td>
+<td>All effects from any source</td>
+</tr>
+<tr>
+<td><strong>Override Behavior</strong></td>
+<td>Can be overridden by simulator</td>
+<td>Always applies as final limiter</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>Fine-tune effect behavior</td>
+<td>Quick global adjustments</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Practical Example</p>
+<p>You’ve configured a perfect spring effect at 70% gain in the Effects tab, and set damper at 40%. In the Settings tab, you have Spring at 100% and Damper at 80%.</p>
+<ul>
+<li><strong>No simulator running:</strong> You feel 70% spring and 32% damper</li>
+<li><strong>DCS running with native FFB:</strong> DCS controls the spring (your 70% is ignored), but your 40% damper remains active, limited by the 80% Settings multiplier (= 32% final damper)</li>
+<li><strong>Settings adjustment:</strong> Lower Spring slider to 50% in Settings - now any spring force (DCS or local) is halved</li>
+</ul>
+</div>
+<h3 id="debug-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.4</span> Debug Tab<a class="headerlink" href="#debug-tab" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="Debug Tab View" height="579px" src="../media/Pictures/10000000000004F10000059129B47A07DBD12716.webp" width="514px"/> <figcaption>Debug Tab View</figcaption></figure>
+<p>The <strong>Debug Tab</strong> provides real-time monitoring, diagnostic tools, and troubleshooting information. Use it to see what the device is doing internally and to identify conflicts or faults.</p>
+<h4 id="main-features"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.4.1</span> Main Features<a class="headerlink" href="#main-features" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>1. Device Log Output</strong></p>
+<p>A real-time console displaying messages, warnings, and errors from the Rhino’s firmware. This log is invaluable for:</p>
+<ul>
+<li>Tracking system events and state changes</li>
+<li>Identifying error conditions and faults</li>
+<li>Monitoring USB communication status</li>
+<li>Debugging configuration issues</li>
+</ul>
+<p class="label-paragraph"><strong>2. Effect Monitor</strong></p>
+<p>The Effect Monitor provides a live view of all currently loaded FFB effects, showing:</p>
+<ul>
+<li><strong>Effect Status:</strong> Active or Inactive state for each effect</li>
+<li><strong>Parameter Values:</strong> Real-time display of current gain, saturation, direction, and other parameters</li>
+<li><strong>Source Indicators:</strong> Badge showing the origin of each effect:<ul>
+<li><strong>Configurator:</strong> Effects generated by the VPforce FFB Configurator</li>
+<li><strong>Game:</strong> Effects sent by the simulator or game</li>
+<li><strong>TelemFFB:</strong> Effects generated by the TelemFFB application</li>
+</ul>
+</li>
+</ul>
+<p>This monitor shows which effects are active and where they come from. That makes it useful when force feedback feels wrong or inconsistent.</p>
+<p class="label-paragraph"><strong>3. Diagnostic Tools</strong></p>
+<p>The Debug tab includes several utility functions:</p>
+<ul>
+<li><strong>Fan Test:</strong> Manually activate cooling fans to verify operation</li>
+<li><strong>Data Logging:</strong> Capture detailed telemetry and diagnostic data for support tickets</li>
+<li><strong>Motor Reset:</strong> Reset motor controllers to clear fault states or recover from errors</li>
+<li><strong>Command Pane:</strong> Direct access to low-level device commands for advanced diagnostics and configuration</li>
+</ul>
+<h4 id="use-cases"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.4.2</span> Use Cases<a class="headerlink" href="#use-cases" title="Link to this section">¶</a></h4>
+<ul>
+<li><strong>Troubleshooting FFB Issues:</strong> Check which effects are active and their source when behavior seems wrong</li>
+<li><strong>Performance Monitoring:</strong> Watch effect parameters change in real-time during gameplay</li>
+<li><strong>Support Requests:</strong> Capture logs and diagnostic data to help support teams identify issues</li>
+<li><strong>Effect Conflicts:</strong> Identify when multiple sources, such as a game, TelemFFB, and the Configurator, are trying to control the same effect type</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Advanced Features</p>
+<p>The Command Pane and some diagnostic functions are intended for advanced users or support-guided troubleshooting. Incorrect commands can temporarily affect device behavior until reset.</p>
+</div>
+<h3 id="button-mapping-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.5</span> Button Mapping Tab<a class="headerlink" href="#button-mapping-tab" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="Button Mapping View" height="702px" src="../media/Pictures/10000000000004F6000005957DE0F1D6307E0EC4.webp" width="624px"/> <figcaption>Button Mapping View</figcaption></figure>
+<p>The <strong>Button Mapping Tab</strong> allows you to configure how buttons on your grip are recognized and mapped by the system. This is where you can:</p>
+<ul>
+<li><strong>Assign Button Functions:</strong> Map physical buttons to specific button numbers recognized by games</li>
+<li><strong>Test Inputs:</strong> Verify that button presses are being detected correctly</li>
+</ul>
+<h3 id="spring-gain-mapping-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.6</span> Spring Gain Mapping Tab<a class="headerlink" href="#spring-gain-mapping-tab" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Spring Gain Mapping</strong> is an advanced tuning tool for reshaping spring feel. You can make the stick lighter or heavier at different positions, or remap how simulator force commands translate into actual resistance.</p>
+<p>This is especially useful in simulators like DCS, where native force feedback often saturates early.</p>
+<h4 id="understanding-the-basics-what-is-dynamic-range"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.6.1</span> Understanding the Basics: What Is Dynamic Range?<a class="headerlink" href="#understanding-the-basics-what-is-dynamic-range" title="Link to this section">¶</a></h4>
+<p>Think of the stick motors as a dimmer switch that runs from 0% to 100%:</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>At 100% force setting:</strong> The resistance gradually increases as you move the stick. The motors only hit maximum power when you’ve pushed the stick all the way to the edge. This gives you the full range of feeling - light forces near center, heavy forces at the edges.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>At 300% force setting:</strong> The motors hit maximum power when you’ve only pushed the stick one-third of the way. After that point, you can’t feel any additional increase in force because the motors are already working at full capacity. This is called “saturation.”</p>
+</li>
+</ul>
+<p class="label-paragraph"><strong>Trade-off:</strong> Higher force settings make the stick stiffer, but reduce the amount of subtle force variation you can feel across the full range of motion.</p>
+<h4 id="the-simulator-problem"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.6.2</span> The Simulator Problem<a class="headerlink" href="#the-simulator-problem" title="Link to this section">¶</a></h4>
+<p>Most DCS aircraft send a “set spring to 100%” command very early, often at relatively low airspeeds. After that, stick stiffness no longer increases, even though real aircraft controls would keep getting heavier.</p>
+<p>The F-4 Phantom is a rare exception - it lets you reduce its force feedback saturation range in-game, giving you room to compensate using the Rhino’s settings. But most aircraft don’t offer this option.</p>
+<p class="label-paragraph"><strong>Critical limitation:</strong> Once DCS sends “100%”, the missing force-versus-airspeed information is gone. The simulator is no longer telling the device how much stiffer the controls should become.</p>
+<p class="label-paragraph"><strong>TelemFFB solution:</strong> TelemFFB reads telemetry data directly from DCS and can augment or replace the native force curves. By monitoring airspeed, G-forces, and other flight parameters, it can rebuild a more realistic force-versus-airspeed relationship even after native FFB has saturated.</p>
+<h4 id="what-spring-gain-mapping-can-do"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.6.3</span> What Spring Gain Mapping Can Do<a class="headerlink" href="#what-spring-gain-mapping-can-do" title="Link to this section">¶</a></h4>
+<p>Spring Gain Mapping gives you two powerful tools to work around these limitations:</p>
+<p class="label-paragraph"><strong>1. Force vs Displacement Mapping</strong></p>
+<figure class="figure-image"> <img alt="Force vs Displacement Curve Editor" src="../images/using-the-rhino/image-3.webp" width="671px"/> <figcaption>Force vs Displacement Curve Editor</figcaption></figure>
+<p>This controls how force increases as you move the stick away from center:</p>
+<ul>
+<li><strong>Default (linear):</strong> Force increases evenly with distance. Push the stick halfway, feel 50% force. Push it all the way, feel 100% force.</li>
+<li>
+<p class="label-paragraph"><strong>Custom curves:</strong> You can reshape this relationship:</p>
+<ul>
+<li>Make the stick lighter near center but stronger at the edges</li>
+<li>Boost peak force beyond 100% (say, 150-200%) at full deflection</li>
+<li>Create a progressive feel that ramps up more aggressively as you approach the limits</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>Example:</strong> You want a lighter touch near center for fine control, but stronger resistance at the edges to prevent over-controlling. You’d create a curve that starts shallow and steepens as displacement increases.</p>
+<p class="label-paragraph"><strong>2. Game Gain Remapping</strong></p>
+<figure class="figure-image"> <img alt="Game Gain Remapping Curve Editor" src="../images/using-the-rhino/image-2.webp" width="671px"/> <figcaption>Game Gain Remapping Curve Editor</figcaption></figure>
+<p>This changes how the simulator’s force commands translate into actual force:</p>
+<ul>
+<li><strong>Default (linear):</strong> Simulator says “50% force” → you feel 50% force</li>
+<li>
+<p class="label-paragraph"><strong>Custom curves:</strong> You can amplify or compress the simulator’s commands:</p>
+<ul>
+<li>Boost low-force commands so the stick never feels too limp</li>
+<li>Compress high-force commands to prevent excessive stiffness</li>
+<li>Create your own force progression even when the sim caps out early</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>Example:</strong> DCS sends 100% force at 200 knots and never increases. You create a curve that remaps that “100%” command to 70% actual force, leaving room for additional stiffness later, whether through TelemFFB or manual adjustment.</p>
+<h4 id="how-to-use-spring-gain-mapping"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.6.4</span> How to Use Spring Gain Mapping<a class="headerlink" href="#how-to-use-spring-gain-mapping" title="Link to this section">¶</a></h4>
+<ol>
+<li>Open the VPforce Configurator</li>
+<li>Navigate to the <strong>Spring Gain Mapping Tab</strong></li>
+<li>
+<p>Choose which curve you want to edit:</p>
+<ul>
+<li><strong>Force vs Displacement</strong> - Changes how force builds with stick position</li>
+<li><strong>Gain Remapping</strong> - Changes how simulator commands map to actual force</li>
+</ul>
+</li>
+<li>
+<p>Click points on the curve to adjust the shape</p>
+</li>
+<li>Test in your simulator and refine until it feels right</li>
+</ol>
+<h4 id="practical-tips"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.6.5</span> Practical Tips<a class="headerlink" href="#practical-tips" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Start Simple</strong></p>
+<p>Do not try to fix everything at once. Start with modest adjustments, such as 120-150% peak force, and test.</p>
+<p class="label-paragraph"><strong>Understand the Trade-offs</strong></p>
+<ul>
+<li><strong>Higher peak forces:</strong> More satisfying resistance, but less ability to feel subtle force changes</li>
+<li><strong>Lower saturation:</strong> More dynamic range, but lighter overall feel</li>
+</ul>
+<p class="label-paragraph"><strong>Know the Limitations</strong></p>
+<p>If DCS is sending “100% force” early and staying there, Spring Gain Mapping can redistribute that force in more useful ways, but it cannot create missing information. For more realistic force-versus-airspeed behavior, use TelemFFB or an aircraft like the F-4 that gives you more control over in-game saturation.</p>
+<p class="label-paragraph"><strong>Monitor Heat</strong></p>
+<p>Sustained high forces generate motor heat. If you’re running high gain settings for extended periods, keep an eye on thermal performance.</p>
+<div class="admonition tip">
+<p class="admonition-title">The F-4 Exception</p>
+<p>If you fly the F-4 Phantom in DCS, you’re in luck. You can reduce the in-game force feedback saturation range, then use Spring Gain Mapping to boost the output back up. This gives you much more control over how forces scale with airspeed.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Information Loss</p>
+<p>Once a simulator sends “100%” and stops increasing, there is no way to recover the missing force-versus-airspeed data. Spring Gain Mapping can reshape <em>how</em> that force feels, but it cannot create realism the simulator is not providing. For advanced effects like realistic airspeed-dependent forces, consider using TelemFFB.</p>
+</div>
+<h3 id="ffb-axes-setup-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.7</span> FFB Axes Setup Tab<a class="headerlink" href="#ffb-axes-setup-tab" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="The FFB Axes Setup tab" src="../images/using-the-rhino/image-1.webp"/> <figcaption>The FFB Axes Setup tab</figcaption></figure>
+<p>The <strong>FFB Axes Setup Tab</strong> defines the input limits, logical center position, and behavior of the Rhino’s X and Y axes. Proper axis configuration ensures accurate positional mapping and correct centering when the motors are active.</p>
+<p>Use this tab during initial setup, after hardware replacement, or when troubleshooting calibration issues.</p>
+<h4 id="axis-range-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.7.1</span> Axis Range Configuration<a class="headerlink" href="#axis-range-configuration" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>X min / X max, Y min / Y max</strong> -
+These parameters define the raw values mapping range for each axis.</p>
+<ul>
+<li><strong>Default range:</strong> 0 to 4096</li>
+<li><strong>Expected center:</strong> Near 2048 when the stick is physically centered</li>
+<li><strong>Purpose:</strong> Used for scaling input values and calculating force feedback output</li>
+</ul>
+<p>The center value should read approximately 2048 when the stick is physically at rest in the neutral position. Significant deviation from this value may indicate mechanical misalignment or the need for recalibration.</p>
+<div class="admonition important">
+<p class="admonition-title">Center Value Warning</p>
+<p>If the center value is far from 2048 (e.g., below 1900 or above 2200), the <code>C:xxxx</code> indicator will turn red. This indicates misalignment between the motor encoder values and mechanical position. See <a href="../../community-projects/tips-and-tricks/#the-multi-turn-problem">The Multi-Turn Problem</a> for more information.</p>
+</div>
+<h4 id="force-compensation"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.7.2</span> Force Compensation<a class="headerlink" href="#force-compensation" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Force Comp. (Force Compensation)</strong> —
+Force Compensation corrects for mechanical flex that occurs under high spring force loads.</p>
+<p class="label-paragraph"><strong>The Problem:</strong></p>
+<p>The Rhino uses its motors as position sensors — motor shaft encoders report the logical axis position. Any mechanical flex in the gimbal structure (belts, linkages, frame) that occurs between the grip and the motor shaft is invisible to this measurement. Under high FFB spring forces, the mechanical load causes the system to flex slightly. This means:</p>
+<ul>
+<li>The stick physically reaches or approaches the end of its travel</li>
+<li>But the motor encoder — measuring at the motor shaft — has not registered full deflection</li>
+<li>The logical axis value never reaches the calibrated edge value that was recorded during auto-calibration</li>
+</ul>
+<p>The result is that the axis appears to fall short of its full range under load, even though mechanically the stick is at the stop.</p>
+<p class="label-paragraph"><strong>The Solution:</strong></p>
+<p>Increasing Force Compensation adds an outward positional offset near the axis extremes, effectively extending the reported range to compensate for the lost travel caused by mechanical compliance. This restores accurate input-to-output mapping throughout the full range of motion, even under high spring forces.</p>
+<p class="label-paragraph"><strong>Configuration:</strong></p>
+<ul>
+<li>Adjustable independently for each axis (X and Y)</li>
+<li>Higher values apply a larger correction at the axis extremes</li>
+<li>Typical starting point: values of 5-10 for light setups; increase incrementally until axis extremes read correctly under load</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Not a Gain Parameter</p>
+<p>Force Compensation does not adjust force strength. It adjusts the reported position near axis limits to counteract the effect of mechanical flex under load.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Excessive Flex May Indicate a Hardware Problem</p>
+<p>Some degree of mechanical flex is normal. In light setups, small values may be enough. In heavier setups with strong spring forces, much larger values can still be normal. If you need unusually large compensation, or if the flex is visibly pronounced, this may point to an underlying hardware issue such as loose or slipping belts, worn or broken gimbal components, or a structural problem. Investigate the root cause rather than relying only on software compensation.</p>
+</div>
+<p class="label-paragraph"><strong>Axis Invert</strong> - Reverses the logical direction of axis input and the corresponding force feedback polarity.</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>When to use:</strong></p>
+<ul>
+<li>Mechanical orientation causes inverted behavior (forward stick input registers as backward)</li>
+<li>Matching specific simulator or game expectations</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p class="label-paragraph"><strong>Disable Axis</strong> - Disables processing and FFB output for the selected axis.</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>When to use:</strong></p>
+<ul>
+<li>Single-axis setups (e.g., collective-only configuration)</li>
+<li>Testing hardware individually during troubleshooting</li>
+<li>Isolating issues to determine if one axis is malfunctioning</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Troubleshooting with Disable Axis</p>
+<p>If experiencing calibration errors or erratic behavior, temporarily disable one axis to determine if the issue is isolated to a specific axis or affects the entire system.</p>
+</div>
+<hr/>
+<p class="label-paragraph"><strong>Swap Axes</strong> - Swaps the X and Y axis mappings.</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>When to use:</strong></p>
+<ul>
+<li>Gimbal wiring layout differs from expected configuration</li>
+<li>Mechanical assembly results in rotated axis orientation</li>
+<li>Quick correction without rewiring hardware</li>
+</ul>
+</li>
+</ul>
+<h4 id="calibration-tools"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.7.3</span> Calibration Tools<a class="headerlink" href="#calibration-tools" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Auto Calibrate</strong> - Automatically measures and records the physical limits and center position by sampling the live axis range.</p>
+<p class="label-paragraph"><strong>Calibration process:</strong></p>
+<ol>
+<li>Click <strong>Auto Calibrate</strong></li>
+<li>Move the stick through its full range of motion in all directions</li>
+<li>Ensure the stick reaches all physical stops (forward, back, left, right, and corners)</li>
+<li>The system captures minimum, maximum, and center values for both axes</li>
+<li>Click <strong>Auto Calibrate</strong> to deactivate the button</li>
+<li>Click <strong>Apply Settings</strong> to activate the calibration</li>
+<li>Click <strong>Store Settings</strong> if you want to save it permanently</li>
+</ol>
+<ul>
+<li>
+<p class="label-paragraph"><strong>When to calibrate:</strong></p>
+<ul>
+<li>Initial setup of a new Rhino device</li>
+<li>After replacing gimbal components</li>
+<li>When center position has drifted due to belt slip</li>
+<li>After mechanical maintenance or adjustments</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<p class="label-paragraph"><strong>Factory Reset</strong> - Restores default calibration values, clearing all user modifications.</p>
+<p class="label-paragraph"><strong>Default values restored:</strong></p>
+<ul>
+<li>Range: 0 to 4096</li>
+<li>Center: 2048</li>
+<li>Force Compensation: 0 (disabled)</li>
+</ul>
+<p class="label-paragraph"><strong>When to use:</strong></p>
+<ul>
+<li>Starting fresh after extensive modifications</li>
+<li>Troubleshooting calibration issues by returning to known baseline</li>
+<li>Preparing device for handoff to another user</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Configuration Loss</p>
+<p>Factory Reset clears all axis calibration data. Make note of current settings before resetting if you may want to restore them later.</p>
+</div>
+<h4 id="verification-and-testing"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.7.4</span> Verification and Testing<a class="headerlink" href="#verification-and-testing" title="Link to this section">¶</a></h4>
+<p>After calibration or configuration changes:</p>
+<ol>
+<li><strong>Verify center position:</strong> With the stick physically centered, confirm the raw values read near 2048 for both axes</li>
+<li><strong>Check full range:</strong> Move the stick to each physical stop and verify that logical limits match mechanical stops</li>
+<li><strong>Test FFB response:</strong> Enable a spring effect and confirm that centering force behaves correctly</li>
+</ol>
+<h4 id="usage-notes-and-best-practices"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.2.7.5</span> Usage Notes and Best Practices<a class="headerlink" href="#usage-notes-and-best-practices" title="Link to this section">¶</a></h4>
+<ul>
+<li><strong>Recommended center value:</strong> Approximately 2048 when the stick is physically centered. Deviation of more than ±50 may indicate mechanical issues.</li>
+<li><strong>Disable unused axes:</strong> For single-axis configurations, always disable the unused axis.</li>
+<li><strong>Force Compensation tuning:</strong> Start with low values (5–10) and increase incrementally if the axis does not reach its full calibrated range under high spring forces.</li>
+<li><strong>Regular verification:</strong> After firmware updates or mechanical maintenance, verify that calibration remains accurate.</li>
+</ul>
+<h2 id="the-rhinoloopback-application"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3</span> The RhinoLoopback Application<a class="headerlink" href="#the-rhinoloopback-application" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <img alt="RhinoLoopback Application" src="../images/using-the-rhino/image.webp"/> <figcaption>RhinoLoopback Application</figcaption></figure>
+<h3 id="purpose-and-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.1</span> Purpose and Overview<a class="headerlink" href="#purpose-and-overview" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>RhinoLoopback</strong> bridges button inputs from an external USB controller to the Rhino. It is intended for grips that connect through <strong>passthrough cables</strong>. In that setup, the Rhino does <strong>not</strong> read the grip buttons directly. Another USB device, such as a VKB Gunfighter base, reads them and RhinoLoopback forwards them to the Rhino.</p>
+<div class="admonition important">
+<p class="admonition-title">When You Do NOT Need Loopback</p>
+<p>If your grip connects <strong>directly</strong> to the Rhino’s grip connector (e.g., Virpil, WinWing, or other SPI grips), the Rhino already reads those buttons natively. You do <strong>not</strong> need RhinoLoopback — just select the correct grip type in the Configurator’s <strong>Settings</strong> tab and the buttons will appear.</p>
+</div>
+<h3 id="common-use-cases"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.2</span> Common Use Cases<a class="headerlink" href="#common-use-cases" title="Link to this section">¶</a></h3>
+<ul>
+<li><strong>VKB Grips:</strong> VKB grips connected via passthrough cable — the VKB base handles button input over USB, and Loopback bridges those buttons to the Rhino for use with hardware force trim or other Configurator functions</li>
+<li><strong>External Controllers:</strong> Mapping buttons from a gamepad or secondary USB device to control Rhino functions (e.g., binding a gamepad button to hardware trim release)</li>
+<li><strong>Flexible Configurations:</strong> Using a non-grip USB device to trigger Configurator features without rewiring</li>
+</ul>
+<h3 id="setup-instructions"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.3</span> Setup Instructions<a class="headerlink" href="#setup-instructions" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Step 1: Launch the Application</strong></p>
+<ol>
+<li>Navigate to the folder where you extracted <strong>VPforce_FFB_Configurator_vx.x.xx.zip</strong></li>
+<li>Run <strong>RhinoLoopback.exe</strong> - a configuration window will appear</li>
+</ol>
+<p class="label-paragraph"><strong>Step 2: Configure Devices</strong></p>
+<ol>
+<li><strong>Input Device:</strong> Select the controller whose buttons you want to use (e.g., <em>VKBsim Gunfighter MCG Ultimate</em>, gamepad, or any other HID device)</li>
+<li><strong>Output Device:</strong> Select your Rhino (usually the only device listed)</li>
+</ol>
+<p class="label-paragraph"><strong>Step 3: Enable Loopback Mode</strong></p>
+<ol>
+<li>Keep the RhinoLoopback application <strong>running</strong> - it must stay open for loopback to function</li>
+<li>In the VPforce FFB Configurator, go to the <strong>Settings</strong> tab</li>
+<li>Set <strong>Grip Type</strong> to <strong>Loopback</strong></li>
+</ol>
+<p class="label-paragraph"><strong>Step 4: Configure Button Mappings</strong></p>
+<p>Once loopback is active, the FFB Configurator recognizes buttons from the selected input device. You can then assign them to hardware force trim, mode switches, or other Configurator features.</p>
+<div class="admonition tip">
+<p class="admonition-title">Keep It Running</p>
+<p>RhinoLoopback must remain running in the background for button inputs to be passed through to the Configurator. You can minimize it, but do not close it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Multiple Devices</p>
+<p>If you have multiple Rhino devices or controllers, ensure you select the correct pairing in the dropdowns to avoid confusion.</p>
+</div>
+<h3 id="command-line-options"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.3.4</span> Command Line Options<a class="headerlink" href="#command-line-options" title="Link to this section">¶</a></h3>
+<p><em>RhinoLoopback</em> supports several command line options for advanced users:</p>
+<ul>
+<li><code>--profile &lt;name&gt;</code> : Load a specific configuration profile eg. one could setup different device configurations for joystick and for collective. The default profile is named <code>default</code>.</li>
+</ul>
+<h2 id="balancing-the-grip"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4</span> Balancing the Grip<a class="headerlink" href="#balancing-the-grip" title="Link to this section">¶</a></h2>
+<h3 id="understanding-the-problem"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.1</span> Understanding the Problem<a class="headerlink" href="#understanding-the-problem" title="Link to this section">¶</a></h3>
+<p>When using heavier grips or extension pieces, you may notice the joystick sagging or drifting when trimmed at an angle. This happens because gravity creates additional torque that must be counteracted to hold the stick in position.</p>
+<p class="label-paragraph"><strong>The Physics:</strong></p>
+<ul>
+<li>Standard spring force is proportional to displacement from center</li>
+<li>A heavy grip at an angle creates constant downward torque</li>
+<li>The stick “falls” slightly until spring force balances the weight</li>
+<li>This drift is most noticeable with weaker spring settings</li>
+</ul>
+<h3 id="balance-spring-feature"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.2</span> Balance Spring Feature<a class="headerlink" href="#balance-spring-feature" title="Link to this section">¶</a></h3>
+<p>The <strong>Balance Spring</strong> feature, found in the VPforce Configurator, compensates for grip weight and orientation by applying directional bias forces. This allows you to achieve perfect trim performance regardless of grip weight or extension length.</p>
+<figure class="figure-image"> <img alt="Before balance" height="128px" src="../media/Pictures/1000020100000083000000805C63BB7B7A0F0FF9.webp" width="131px"/> <figcaption>Before balance</figcaption></figure>
+<figure class="figure-image"> <img alt="After balance" height="129px" src="../media/Pictures/100002010000008A00000081D7486D8A7443891D.webp" width="138px"/> <figcaption>After balance</figcaption></figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before adjusting <em>“Balance Spring”</em>, disable Spring, Damper, Friction, and Inertia so the result is not masked by other effects.</p>
+</div>
+<h3 id="adjusting-balance-spring-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.3</span> Adjusting Balance Spring Settings<a class="headerlink" href="#adjusting-balance-spring-settings" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Preparation:</strong></p>
+<p>Before adjusting Balance Spring, disable the following effects in the <strong>Effects</strong> tab:</p>
+<ol>
+<li>
+<p>In the VPforce Configurator <strong>Effects</strong> tab, disable:</p>
+<ul>
+<li>Spring</li>
+<li>Damper</li>
+<li>Friction</li>
+<li>Inertia</li>
+</ul>
+</li>
+</ol>
+<p class="label-paragraph"><strong>Configuration Steps:</strong></p>
+<p>In the “Balance Spring” section, you will see four directional strength controls:</p>
+<figure class="figure-image"> <img alt="Balance Spring Widget" height="149px" src="../media/Pictures/10000201000000F20000009531846FA4DDD4F42B.webp" width="242px"/> <figcaption>Balance Spring Widget</figcaption></figure>
+<p class="label-paragraph"><strong>Directional Adjustments:</strong></p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Left/Right:</strong> Compensates for side-to-side imbalance</p>
+<ul>
+<li>Increase if the stick sags to one side when released at angle</li>
+<li>Typical causes: Offset grip mounting, heavy side panels, or asymmetric extensions</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Forward:</strong> Compensates for front-heavy configurations</p>
+<ul>
+<li>Increase if the stick tilts forward when released</li>
+<li>Common with grips that have heavy front modules or long forward extensions</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Backward:</strong> Compensates for rear-heavy configurations</p>
+<ul>
+<li>Increase if the stick tilts backward when released</li>
+<li>Typical with grips that extend behind the base mounting point</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>Tuning Process:</strong></p>
+<ol>
+<li><strong>Test at Multiple Angles:</strong> Move the stick to various positions (forward, back, left, right, and diagonals)</li>
+<li><strong>Release and Observe:</strong> Let go of the stick and watch which direction it drifts</li>
+<li><strong>Adjust Incrementally:</strong> Make small adjustments to the appropriate directional value</li>
+<li><strong>Re-test:</strong> Repeat steps 1-3 until the stick holds position reliably at all angles</li>
+<li><strong>Re-enable Effects:</strong> Once satisfied, turn your Spring/Damper/Friction/Inertia effects back on</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Finding the Sweet Spot</p>
+<p>Start with small adjustments of 5-10% and work upward. It is easier to add compensation than remove too much. The goal is for the stick to stay where you leave it when released at any angle.</p>
+</div>
+<h3 id="adaptive-recentering"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.4</span> Adaptive Recentering<a class="headerlink" href="#adaptive-recentering" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="Adaptive Recentering Activated" height="201px" src="../media/Pictures/1000020100000109000000C9295E083C2AF56320.webp" width="265px"/> <figcaption>Adaptive Recentering Activated</figcaption></figure>
+<p class="label-paragraph"><strong>Adaptive Recentering</strong> is an intelligent system that works alongside Balance Spring to achieve even more precise trim positions. While Balance Spring provides static compensation, Adaptive Recentering dynamically adjusts forces to minimize positioning errors.</p>
+<h4 id="how-it-works"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.4.1</span> How It Works<a class="headerlink" href="#how-it-works" title="Link to this section">¶</a></h4>
+<p>The system continuously monitors the difference between:</p>
+<ul>
+<li>The <strong>commanded position</strong> (where the trim or spring center is set)</li>
+<li>The <strong>actual stick position</strong> (where the stick physically is)</li>
+</ul>
+<p>When it detects a discrepancy, it slowly applies corrective force to bring the stick exactly to the commanded position. This correction happens gradually to avoid sudden jerks or oscillations.</p>
+<h4 id="compatibility"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.4.2</span> Compatibility<a class="headerlink" href="#compatibility" title="Link to this section">¶</a></h4>
+<p>Adaptive Recentering works with any <strong>Spring-class effects</strong> from:</p>
+<ul>
+<li>DirectX games with native FFB support</li>
+<li>TelemFFB-generated spring effects</li>
+<li>Configurator local spring effects</li>
+</ul>
+<h4 id="limitations-and-considerations"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.4.3</span> Limitations and Considerations<a class="headerlink" href="#limitations-and-considerations" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Authority Limits:</strong></p>
+<ul>
+<li>The system’s corrective force is limited by current spring strength</li>
+<li>At low spring settings (below ~30%), it may lack sufficient authority to fully correct positioning errors</li>
+<li>In these cases, proper Balance Spring configuration is essential</li>
+</ul>
+<p class="label-paragraph"><strong>Best Practice:</strong></p>
+<ul>
+<li>Configure Balance Spring first to handle the majority of static weight compensation</li>
+<li>Enable Adaptive Recentering to handle fine adjustments and dynamic corrections</li>
+<li>Use moderate to high spring strengths for optimal Adaptive Recentering performance</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Complementary Features</p>
+<p>Think of Balance Spring as your coarse adjustment and Adaptive Recentering as your fine tuner. Balance Spring handles the predictable weight-based forces, while Adaptive Recentering corrects for minor errors and dynamic factors.</p>
+</div>
+<h3 id="static-force"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.5</span> Static Force<a class="headerlink" href="#static-force" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="Static Force Widget" height="117px" src="../media/Pictures/100002010000010C00000075A27DB1F4A48BFF34.webp" width="268px"/> <figcaption>Static Force Widget</figcaption></figure>
+<p class="label-paragraph"><strong>Static Force</strong> applies a constant directional force, similar to attaching a rubber band that continuously pulls in one direction. This setting is particularly useful for extreme weight imbalances or specialized applications.</p>
+<h4 id="when-to-use-static-force"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.5.1</span> When to Use Static Force<a class="headerlink" href="#when-to-use-static-force" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Heavy Weight Imbalance:</strong></p>
+<ul>
+<li>Stick is significantly front-heavy or rear-heavy</li>
+<li>Balance Spring alone isn’t providing enough compensation</li>
+<li>You need a constant pull to counteract persistent drift</li>
+</ul>
+<p class="label-paragraph"><strong>Specialized Applications:</strong></p>
+<ul>
+<li>Simulating counterbalance springs in custom FFB collectives</li>
+<li>Creating intentional force bias for specific aircraft types</li>
+<li>Compensating for unusual mounting angles or configurations</li>
+</ul>
+<h4 id="configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.4.5.2</span> Configuration<a class="headerlink" href="#configuration" title="Link to this section">¶</a></h4>
+<p>Static Force can be set to positive or negative values:</p>
+<ul>
+<li><strong>Positive values:</strong> Apply force in the defined direction</li>
+<li><strong>Negative values:</strong> Apply force in the opposite direction</li>
+<li><strong>Magnitude:</strong> Determines the strength of the constant force</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Collective Builders</p>
+<p>When building a custom FFB collective, Static Force is invaluable for simulating the counterbalance springs found in real helicopter collectives. These springs help the collective “float” at a set position rather than falling to the bottom under its own weight.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Use Sparingly</p>
+<p>Static Force applies continuously, which means it’s always consuming motor authority and generating heat. Use only as much as needed and prefer Balance Spring adjustments when possible.</p>
+</div>
+<h2 id="thermal-management"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5</span> Thermal Management<a class="headerlink" href="#thermal-management" title="Link to this section">¶</a></h2>
+<p>The Rhino’s two servo motors generate significant thermal energy during continuous operation, particularly under sustained high forces or extended flight sessions. Understanding how thermal buildup occurs and how to manage it will help you get the most out of your device.</p>
+<h3 id="how-the-motors-heat-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5.1</span> How the Motors Heat Up<a class="headerlink" href="#how-the-motors-heat-up" title="Link to this section">¶</a></h3>
+<p>The Rhino’s motors operate near stall speed, holding torque against your input rather than spinning freely. In that mode, most electrical power becomes heat in the windings rather than mechanical motion.</p>
+<p>Heat generation follows <span class="arithmatex">\(P = I^2R\)</span>. In practical terms, that means small increases in current demand can create much larger increases in heat. Under strong sustained effects or long sessions, motor temperature rises because heat builds faster than it can dissipate.</p>
+<p>As temperature increases, the device gradually reduces available torque to protect itself and reach a sustainable thermal balance. You may notice weaker forces near the thermal limit, but full output returns once the motors cool.</p>
+<h3 id="built-in-cooling-system"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5.2</span> Built-in Cooling System<a class="headerlink" href="#built-in-cooling-system" title="Link to this section">¶</a></h3>
+<p>The Rhino includes an active cooling system with two fans that automatically engage when the motor temperature reaches 50°C. These fans draw air through the base to dissipate heat from the motors and internal components. As long as the fans have adequate airflow, they will effectively manage thermal buildup during normal use.</p>
+<h3 id="optimizing-cooling-performance"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5.3</span> Optimizing Cooling Performance<a class="headerlink" href="#optimizing-cooling-performance" title="Link to this section">¶</a></h3>
+<p>To ensure the cooling system works at its best:</p>
+<ul>
+<li><strong>Maintain clearance around the base:</strong> Leave room around the sides and bottom so air can enter and exit freely.</li>
+<li><strong>Keep vents clear:</strong> Remove dust and debris from the fan vents periodically.</li>
+<li><strong>Ensure proper ventilation:</strong> Avoid hot or enclosed spaces with poor airflow.</li>
+<li><strong>Consider ambient temperature:</strong> In warm rooms, the motors reach operating temperature faster and the fans may run more often.</li>
+</ul>
+<h3 id="managing-thermal-load-during-use"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.5.4</span> Managing Thermal Load During Use<a class="headerlink" href="#managing-thermal-load-during-use" title="Link to this section">¶</a></h3>
+<p>If you find the Rhino is throttling heavily or the fans are running constantly, consider these strategies:</p>
+<ul>
+<li><strong>Reduce Master Gain:</strong> Lower overall output to reduce motor load and heat.</li>
+<li><strong>Take breaks:</strong> Long sessions with high forces naturally accumulate heat.</li>
+<li><strong>Balance effect strengths:</strong> Tune effects individually instead of maximizing everything.</li>
+</ul>
+<p>The built-in cooling and thermal protection are designed for normal use. In most setups, you will only need basic airflow awareness and sensible gain settings.</p>
+<h2 id="leaving-the-rhino-idle"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.6</span> Leaving the RHINO Idle<a class="headerlink" href="#leaving-the-rhino-idle" title="Link to this section">¶</a></h2>
+<p>There is no single required way to leave the Rhino between sessions. The best option depends on how your rig is powered and whether you want the external PSU left energized.</p>
+<p>For most users, these are the practical options:</p>
+<ul>
+<li><strong>Leave USB connected and shut down the PC:</strong> This is the simplest approach. If <strong>USB suspend</strong> is enabled in the VPforce Configurator, the Rhino will go to sleep when the PC powers down and the motors will de-energize.</li>
+<li><strong>Press the E-stop button:</strong> If you want the Rhino to stay connected but want motor power removed immediately, press the E-stop.</li>
+<li><strong>Switch off the full power strip:</strong> If you prefer everything fully off, switch off the strip that powers the PC and the Rhino PSU.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">USB suspend controls sleep behavior</p>
+<p>Automatic sleep only works when <strong>USB suspend</strong> is enabled in the VPforce Configurator. This setting is enabled by default. If you have turned it off, the Rhino may remain awake over USB after the PC shuts down until you press the E-stop or remove power.</p>
+</div>
+<p>In short, leaving the Rhino plugged in is generally fine. If you want a faster start-up next time, leave it connected and let it sleep. If you want the motors positively disabled, use the E-stop. If you want the whole system unpowered, switch off the power strip.</p>
+<div class="admonition tip">
+<p class="admonition-title">Simple rule of thumb</p>
+<p>PC off + <strong>USB suspend enabled</strong> = the Rhino can sleep safely over USB. For an extra layer of reassurance, press the E-stop. For a full electrical shutdown, turn off the power strip.</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

@@ -1,0 +1,2001 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/community-projects/TPR_FFB_Project_Documentation/" rel="canonical"/>
+<link href="../Tiger_TPR_FFB_Mod_Guide/" rel="prev"/>
+<link href="../Number481_Force_Enabled_Collective/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>TPR FFB Pedal Mod - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#tpr-ffb-pedal-mod-by-smitty">8. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              TPR FFB Pedal Mod
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../rhino/">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">8.1 
+<span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+</a>
+<nav aria-label="Introduction" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project-overview">8.1.1 
+<span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#manufacturing-aluminum-vs-3d-printing">8.1.2 
+<span class="md-ellipsis">
+      
+        Manufacturing: Aluminum vs. 3D Printing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#important-this-is-a-diy-project">8.1.3 
+<span class="md-ellipsis">
+      
+        Important: This is a DIY Project
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bill-of-materials-bom">8.2 
+<span class="md-ellipsis">
+      
+        Bill of Materials (BOM)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assembly-steps">8.3 
+<span class="md-ellipsis">
+      
+        Assembly Steps
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frequently-asked-questions-faq">8.4 
+<span class="md-ellipsis">
+      
+        Frequently Asked Questions (FAQ)
+      
+    </span>
+</a>
+<nav aria-label="Frequently Asked Questions (FAQ)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#general">8.4.1 
+<span class="md-ellipsis">
+      
+        General
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-parts-and-manufacturing">8.4.2 
+<span class="md-ellipsis">
+      
+        Hardware, Parts, and Manufacturing
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#assembly-and-build-process">8.4.3 
+<span class="md-ellipsis">
+      
+        Assembly and Build Process
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#software-and-configuration">8.4.4 
+<span class="md-ellipsis">
+      
+        Software and Configuration
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#troubleshooting">8.4.5 
+<span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#related-mod-load-cell-brakes">8.4.6 
+<span class="md-ellipsis">
+      
+        Related Mod: Load Cell Brakes
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="tpr-ffb-pedal-mod-by-smitty"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.</span> TPR FFB Pedal Mod by Smitty<a class="headerlink" href="#tpr-ffb-pedal-mod-by-smitty" title="Link to this section">¶</a></h1>
+<h2 id="introduction"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.1</span> Introduction<a class="headerlink" href="#introduction" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <img alt="TPR Pedal Force-Feedback Mod" src="../images/TPR_FFB_Project_Documentation/image.webp"> <figcaption>TPR Pedal Force-Feedback Mod</figcaption></img></figure>
+<p>Welcome to the DIY guide for converting your Thrustmaster TPR rudder pedals into a full force-feedback (FFB) system. This project replaces the stock spring mechanism with a motor-driven cable system, bringing a new level of immersion and realism to your flight simulation experience.</p>
+<p>The mod does not permanently change anything on the pedals. No cutting is required, and you can revert it back to the original stock configuration if desired.</p>
+<h3 id="project-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.1.1</span> Project Overview<a class="headerlink" href="#project-overview" title="Link to this section">¶</a></h3>
+<p>The core of this conversion is the <strong>86BLF04 FFB motor kit</strong> from VPforce. The custom-designed parts create a precise cable run geometry that ensures the system remains taut and does not go slack in any pedal position, delivering smooth and consistent force effects.</p>
+<p>The 86BLF04 motor can push each foot with approximately <strong>20 lbf (9 kgf)</strong>, so it is essential to bolt the pedals down securely relative to your chair.</p>
+<p class="label-paragraph"><strong>Project Repository:</strong> <a class="external" href="https://github.com/smitty97/Force-Feedback-TPR" target="_blank">https://github.com/smitty97/Force-Feedback-TPR</a></p>
+<h3 id="manufacturing-aluminum-vs-3d-printing"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.1.2</span> Manufacturing: Aluminum vs. 3D Printing<a class="headerlink" href="#manufacturing-aluminum-vs-3d-printing" title="Link to this section">¶</a></h3>
+<p>These parts were originally designed and fabricated from <strong>aluminum</strong> for maximum strength and durability. However, the design has been adapted so that the components can also be <strong>3D printed</strong>, making the project more accessible.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>While a 3D-printed test version can work, <strong>aluminum is the superior choice if available.</strong> The motor pulley, in particular, should be made of metal.</p>
+</div>
+<h3 id="important-this-is-a-diy-project"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.1.3</span> Important: This is a DIY Project<a class="headerlink" href="#important-this-is-a-diy-project" title="Link to this section">¶</a></h3>
+<p>Please be aware that this conversion requires a good level of DIY skill. It is <strong>“not print-and-be-done, but it’s close.”</strong> You will need to be comfortable with mechanical assembly, sourcing parts, and troubleshooting.</p>
+<p>The instructions and models are provided as-is. While some questions can be answered, you are expected to take on this project with a DIY mindset.</p>
+<hr/>
+<h2 id="bill-of-materials-bom"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.2</span> Bill of Materials (BOM)<a class="headerlink" href="#bill-of-materials-bom" title="Link to this section">¶</a></h2>
+<p>This is a partial list of components required for the project.</p>
+<table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>86BLF04 x1 DIY Kit           (Motor + USB Board)</td>
+<td><a class="external" href="https://vpforce.eu/" target="_blank">VPforce Controls</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>24V 350W Power Supply</td>
+<td><a class="external" href="https://www.amazon.com/gp/product/B013ETVO12" target="_blank">Amazon</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pack of 2 Deep U Groove Pulley Bearing</td>
+<td><a class="external" href="https://www.amazon.com/gp/product/B077K7KNX9" target="_blank">Amazon</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pack of 2 Cable Stops</td>
+<td><a class="external" href="https://www.amazon.com/gp/product/B000COCQ06" target="_blank">Amazon</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>McMaster-Carr Vented Hex Bolts</td>
+<td><a class="external" href="https://www.mcmaster.com/catalog/90220A130" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>McMaster-Carr Threaded Hex Standoff, 37 mm Lg, M5</td>
+<td><a class="external" href="https://www.mcmaster.com/catalog/91920A710" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>McMaster-Carr Flanged Sleeve Bearing, 8mm ID, 10mm Lg, 15mm Flange</td>
+<td><a class="external" href="https://www.mcmaster.com/catalog/2705T132" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>McMaster-Carr Aluminum Spacer, 1/2” OD, 1/2” Long, for 1/4” Screw</td>
+<td><a class="external" href="https://www.mcmaster.com/catalog/92510A765" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>McMaster-Carr Thrust Bearing,  8 mm ID, 15 mm OD, 1.5 mm Thick</td>
+<td><a class="external" href="https://www.mcmaster.com/8920N36/" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Box of 100 M5x16 Csink Screws</td>
+<td><a class="external" href="https://www.mcmaster.com/91294A212/" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Box of 50 M5x25 SHCS Screws</td>
+<td><a class="external" href="https://www.mcmaster.com/91290A252/" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Box of 50 1/4-20 x 5/16 Lg Setscrew</td>
+<td><a class="external" href="https://www.mcmaster.com/94105A534/" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Box of 25 M6x60 Csink Screws</td>
+<td><a class="external" href="https://www.mcmaster.com/91294A253/" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Box of 100 M6 Locknut</td>
+<td><a class="external" href="https://www.mcmaster.com/94645A205/" target="_blank">McMaster-Carr</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Stainless Steel 7x7 Wire Rope Kit</td>
+<td><a class="external" href="https://www.amazon.com/USAMILY-Stainless-Aluminum-Sleeves-Thimbles/dp/B0CKPHJG3F" target="_blank">Amazon</a></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="assembly-steps"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.3</span> Assembly Steps<a class="headerlink" href="#assembly-steps" title="Link to this section">¶</a></h2>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Remove the Spring System:</strong></p>
+<ul>
+<li>Unscrew the four M5 flathead screws holding the spring system to the back of the TPRs.  </li>
+<li>Remove the bottom end of the links from the original teeter arm (save the pins, plastic bushings, and e-clips).</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Disconnect Hall Sensor:</strong></p>
+<ul>
+<li>Open the electronics area on the back and remove the wire going to the teeter hall sensor.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Disassemble Teeter Arm:</strong></p>
+<ul>
+<li>The original teeter has a hinge pin and a long bolt. Disassemble it from the spring assembly, as you will need these parts.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Mark Motor Center:</strong></p>
+<ul>
+<li>Hook up the motor and use the VPforce Configurator to set endpoints at 0 to 4096.</li>
+<li>Turn on the spring effect and mark the shaft and base with a sharpie so you can align them when the motor is unpowered.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Assemble the Motor Mount:</strong></p>
+<ul>
+<li>Assemble the motor to the plate and add the long spacers.  </li>
+<li>Put the back plate on loosely so you can slip the teeter hinge pin into its counterbores.  </li>
+<li>Add 2-3 spacer washers on each side of the teeter.  </li>
+<li>Press the new hinge bushings into the teeter.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Mount the Teeter Arm:</strong></p>
+<ul>
+<li>With the teeter in place, fully clamp the long spacers together.</li>
+<li>Use the original long bolt through the teeter hinge tube.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Add Pulleys:</strong></p>
+<ul>
+<li>Add the pulleys and spacers to each side.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Prepare for Tensioning:</strong></p>
+<ul>
+<li>Screw the bolts with the vent hole all the way down into the teeter arm. These will be raised later to tension the cable.  </li>
+<li>If using a 3D-printed part, consider using thin 1/4-20 nuts to prevent the threads from stripping.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Cable Wrapping (The Tricky Part):</strong></p>
+<ul>
+<li>The cable is thick and resistant to bending. This step may require multiple hands.  </li>
+<li>Pass the cable through the hole in the motor pulley so half remains on each side.  </li>
+<li>With the pulley stationary (power it up or use an Allen key to hold it), wind two wraps toward the motor, then to a pulley, and up through the vented arm bolt. Secure it with a cable stop.  </li>
+<li>Repeat on the other side, but wind away from the motor.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Center and Tension:</strong></p>
+<ul>
+<li>Center the motor using your sharpie marks.  </li>
+<li>Tighten/loosen the cable stops so the arm is level with the motor centered.  </li>
+<li>Alternate from side to side, making it tighter each time. Ensure the wrap on the pulley isn’t crossing over itself.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Final Tensioning:</strong></p>
+<ul>
+<li>Fully tighten the cable stops with a wrench.  </li>
+<li>Raise each vented bolt to apply final tension. The cable should be “guitar-string-tight.”</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Mount the FFB Unit:</strong></p>
+<ul>
+<li>Mount the completed FFB unit to the back of the TPRs. A ball-end hex wrench is recommended to access some of the bolts through the holes in the front plate.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Transfer Bushings:</strong></p>
+<ul>
+<li>Transfer the link bushings and pins from the original teeter arm.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>USB Board:</strong></p>
+<ul>
+<li>Print the USB Box &amp; Lid, mount the kit’s USB board inside, and wire it up.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Software Installation:</strong></p>
+<ul>
+<li>Install the <strong>VPforce Configurator</strong> and the WIP version of <strong>VPforce TelemFFB</strong>.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h2 id="frequently-asked-questions-faq"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4</span> Frequently Asked Questions (FAQ)<a class="headerlink" href="#frequently-asked-questions-faq" title="Link to this section">¶</a></h2>
+<p>This information is compiled from a guide and community discussion provided by the project’s creator, Smitty, and other DIY builders.</p>
+<h3 id="general"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4.1</span> General<a class="headerlink" href="#general" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Q: What is the Force-Feedback TPR Mod?</strong><br/>
+<strong>A:</strong> This is a DIY project that converts standard Thrustmaster TPR rudder pedals into a force-feedback system using an 86BLF04 motor kit from VPforce. The design ensures the cable system does not go slack in any pedal position, providing dynamic force effects controlled by software like TelemFFB.</p>
+<p class="label-paragraph"><strong>Q: Is the mod reversible?</strong><br/>
+<strong>A:</strong> Yes. The mod does not permanently change anything on the pedals. No cutting is required, and you can revert it back to the original stock configuration if desired.</p>
+<p class="label-paragraph"><strong>Q: What are the main benefits of this mod?</strong></p>
+<p class="label-paragraph"><strong>A:</strong> Users report a much more stable and immersive flying experience. The mod provides dynamic resistance based on airflow calculations from the simulator, realistic forces during events like engine failures in multi-engine aircraft, and a more authentic feel for takeoff and landing, especially in tailwheel aircraft. It also eliminates the “clank” of the stock spring system.</p>
+<p class="label-paragraph"><strong>Q: What skills and tools are required?</strong></p>
+<p class="label-paragraph"><strong>A:</strong> This is not a simple print-and-install project. It requires solid DIY skills, the ability to assemble mechanical parts, handle wiring, and potentially tap threads into metal. Access to a 3D printer or CNC machining service is necessary.</p>
+<p class="label-paragraph"><strong>Q: Where can I find the design files and official guides?</strong></p>
+<p class="label-paragraph"><strong>A:</strong> The primary project files and a more detailed guide for a related load-cell brake mod are maintained on GitHub:</p>
+<ul>
+<li><strong>FFB Mod:</strong> <a class="external" href="https://github.com/smitty97/Force-Feedback-TPR" target="_blank">https://github.com/smitty97/Force-Feedback-TPR</a></li>
+<li><strong>Load Cell Brakes:</strong> <a class="external" href="https://github.com/smitty97/Load-Cell-Brakes-TPR" target="_blank">https://github.com/smitty97/Load-Cell-Brakes-TPR</a></li>
+</ul>
+<h3 id="hardware-parts-and-manufacturing"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4.2</span> Hardware, Parts, and Manufacturing<a class="headerlink" href="#hardware-parts-and-manufacturing" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Q: Can I 3D print the parts instead of using CNC-machined aluminum?</strong><br/>
+<strong>A:</strong> Yes, but with caveats. The designer notes that aluminum is the ideal material for durability. While a 3D-printed test arm held up for weeks, there are concerns about long-term creep and flex under constant cable tension. If 3D printing, it is recommended to use a strong material like PETG or Nylon Carbon Fiber with a high number of walls (e.g., 10) and significant infill. The motor pulley should be metal.</p>
+<p class="label-paragraph"><strong>Q: Where can I get the custom parts made?</strong><br/>
+<strong>A:</strong> For CNC machining, community members have had success with online services. <code>JLCPCB</code> (based in China) was highly recommended for its affordability (around $100 for the main parts). Other options mentioned include <code>Xometry</code> and <code>Protolabs</code>, though they were quoted at a significantly higher price.</p>
+<p class="label-paragraph"><strong>Q: What motor do I need? Can I use a different one?</strong><br/>
+<strong>A:</strong> You must use a motor kit from VPforce (e.g., 86BLF04) to ensure compatibility with the required VPforce Configurator and TelemFFB software.</p>
+<p class="label-paragraph"><strong>Q: What kind of Power Supply Unit (PSU) is required?</strong>
+<strong>A:</strong> The motor requires a 20-24VDC power supply. A Meanwell 350W/24V PSU has been used successfully.</p>
+<h3 id="assembly-and-build-process"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4.3</span> Assembly and Build Process<a class="headerlink" href="#assembly-and-build-process" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Q: What is the most difficult part of the assembly?</strong><br/>
+<strong>A:</strong> Community members consistently report that wrapping the steel cable around the motor pulley is the trickiest and most frustrating step. It may require multiple hands and patience. Using a zip tie to temporarily hold the cable in place during winding is a helpful tip.</p>
+<p class="label-paragraph"><strong>Q: Can I use Dyneema rope instead of steel cable?</strong><br/>
+<strong>A:</strong> Yes, some users have opted for Dyneema. It is more flexible and may be quieter, but it is also very slippery. This can make it difficult to clamp securely and may require special techniques to prevent it from slipping on the motor pulley, such as pinching it against the motor shaft’s flat section. The creator now recommends a specific stainless steel wire rope that is easier to work with than the original brake cable.</p>
+<p class="label-paragraph"><strong>Q: I broke the tap for the set screw in the teeter arm. Is it still usable?</strong><br/>
+<strong>A:</strong> Possibly. One user reported that even without the set screw, the sharp kink in the cable as it passes through the pulley provides enough friction to hold it securely under tension.</p>
+<h3 id="software-and-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4.4</span> Software and Configuration<a class="headerlink" href="#software-and-configuration" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Q: What software is required to use the FFB pedals?</strong><br/>
+<strong>A:</strong> The primary software is <strong>TelemFFB</strong>, which translates telemetry data from the simulator into force-feedback effects. You will also need the <strong>VPforce FFB Configurator</strong> utility to set up the motor.</p>
+<p class="label-paragraph"><strong>Q: How do I configure TelemFFB if I already have a Rhino FFB Joystick?</strong><br/>
+<strong>A:</strong> You need to run a second instance of TelemFFB specifically for the pedals. This is done by adding a launch option in the TelemFFB system settings: <code>-D FFFF:{your pedal device number} -t pedals</code>. Do not try to manually manage two separate instances.</p>
+<p class="label-paragraph"><strong>Q: My pedals are detected, but the axis is wrong (e.g., showing as Pitch instead of Roll/Rudder). How do I fix this?</strong><br/>
+<strong>A:</strong> In the VPforce Configurator, you need to ensure the correct axis is enabled for the rudder (typically X/Roll) and others are disabled. If this doesn’t work, you may need a firmware utility from the VPforce team to change the motor’s default axis identification.</p>
+<p class="label-paragraph"><strong>Q: Does this mod support pedal trimming in helicopters like the DCS Mi-24 Hind?</strong><br/>
+<strong>A:</strong> No. The developer of TelemFFB noted that due to the way DCS implements the autopilot’s yaw channel and foot-switch logic for that specific helicopter, it is not currently possible to create a functional FFB trim system.</p>
+<h3 id="troubleshooting"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4.5</span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Q: My game freezes when the FFB pedals are connected. What’s wrong?</strong><br/>
+<strong>A:</strong> This is almost always a USB issue. Users have solved it by:</p>
+<ol>
+<li>Connecting the pedals to a high-quality, externally powered USB 3.0 hub.</li>
+<li>Plugging the device directly into a USB port on the back of the motherboard, bypassing any front-panel ports or passive hubs.</li>
+<li>Avoiding unpowered or older USB 2.0 hubs, which may not have sufficient bandwidth or power.</li>
+</ol>
+<p class="label-paragraph"><strong>Q: How do I connect the brakes? Do I still use the original TPR electronics?</strong><br/>
+<strong>A:</strong> You can. The standard FFB mod only replaces the rudder axis. The toe brakes continue to function through the original Thrustmaster USB connection. This means you will have two separate joystick devices for your pedals: one for the FFB rudder axis (VPforce) and one for the brakes (Thrustmaster). A small internal USB hub can be used to combine these into a single external cable.  Optionally, you can use the 2 analog inputs on the VPForce USB board and set them as axes in Configurator.</p>
+<h3 id="related-mod-load-cell-brakes"><span class="enumerate-headings-plugin enumerate-heading-plugin">8.4.6</span> Related Mod: Load Cell Brakes<a class="headerlink" href="#related-mod-load-cell-brakes" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Q: What is the load cell brake mod?</strong><br/>
+<strong>A:</strong> This is a popular secondary modification that replaces the position-based stock toe brakes with pressure-sensitive load cells. This provides a more realistic braking feel, where the amount of braking force is determined by how hard you press, not how far the pedal travels.</p>
+<p class="label-paragraph"><strong>Q: How do the load cells connect to the PC?</strong><br/>
+<strong>A:</strong> You have two main options:</p>
+<ol>
+<li><strong>Via VPforce Board:</strong> Connect the load cells to an amplifier (like the Leo Bodnar Load Cell Amplifier), and wire the amplifier’s output to the two free potentiometer inputs on the VPforce controller board.</li>
+<li><strong>Via Separate USB Board:</strong> Connect the load cells and amplifiers to a dedicated USB controller board (like the Leo Bodnar BU0836A), which will appear as a separate joystick device.</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

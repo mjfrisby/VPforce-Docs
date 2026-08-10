@@ -1,0 +1,2571 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/rhino/troubleshooting-maintenance/" rel="canonical"/>
+<link href="../game-specific-ffb-settings-tips-and-tricks/" rel="prev"/>
+<link href="../game-specific-troubleshooting/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Troubleshooting - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#troubleshooting">5. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Troubleshooting
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#general-troubleshooting-steps">5.1 
+<span class="md-ellipsis">
+      
+        General Troubleshooting Steps
+      
+    </span>
+</a>
+<nav aria-label="General Troubleshooting Steps" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reset-to-factory-defaults">5.1.1 
+<span class="md-ellipsis">
+      
+        Reset to Factory Defaults
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#power-issues">5.2 
+<span class="md-ellipsis">
+      
+        Power Issues
+      
+    </span>
+</a>
+<nav aria-label="Power Issues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#base-does-not-power-on-at-all">5.2.1 
+<span class="md-ellipsis">
+      
+        Base Does Not Power On At All
+      
+    </span>
+</a>
+<nav aria-label="Base Does Not Power On At All" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quick-troubleshooting-checklist">
+<span class="md-ellipsis">
+      
+        Quick Troubleshooting Checklist
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-causes-and-solutions">
+<span class="md-ellipsis">
+      
+        Common Causes and Solutions
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#device-powers-on-but-motors-have-no-power">5.2.2 
+<span class="md-ellipsis">
+      
+        Device Powers On But Motors Have No Power
+      
+    </span>
+</a>
+<nav aria-label="Device Powers On But Motors Have No Power" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quick-troubleshooting-checklist_1">
+<span class="md-ellipsis">
+      
+        Quick Troubleshooting Checklist
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-causes-and-solutions_1">
+<span class="md-ellipsis">
+      
+        Common Causes and Solutions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#verification-after-repairs">
+<span class="md-ellipsis">
+      
+        Verification After Repairs
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usb-connection-issues">5.3 
+<span class="md-ellipsis">
+      
+        USB Connection Issues
+      
+    </span>
+</a>
+<nav aria-label="USB Connection Issues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-causes-solutions">5.3.1 
+<span class="md-ellipsis">
+      
+        Common Causes &amp; Solutions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-usb-hubs-cause-problems-with-ffb-devices">5.3.2 
+<span class="md-ellipsis">
+      
+        Why USB Hubs Cause Problems with FFB Devices
+      
+    </span>
+</a>
+<nav aria-label="Why USB Hubs Cause Problems with FFB Devices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-transaction-translator-tt-bottleneck">
+<span class="md-ellipsis">
+      
+        The Transaction Translator (TT) Bottleneck
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hid-interrupt-transfers-under-load">
+<span class="md-ellipsis">
+      
+        HID Interrupt Transfers Under Load
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#buffer-overflows-and-dropped-packets">
+<span class="md-ellipsis">
+      
+        Buffer Overflows and Dropped Packets
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#power-fluctuations-and-micro-disconnects">
+<span class="md-ellipsis">
+      
+        Power Fluctuations and Micro-Disconnects
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#recommendations-if-you-must-use-a-hub">
+<span class="md-ellipsis">
+      
+        Recommendations if You Must Use a Hub
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disable-usb-selective-suspend">5.3.3 
+<span class="md-ellipsis">
+      
+        Disable USB Selective Suspend
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usb-isolator-recommendation">5.3.4 
+<span class="md-ellipsis">
+      
+        USB Isolator Recommendation
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#winusb-webusb-firmware-update-issues">5.4 
+<span class="md-ellipsis">
+      
+        WinUSB / WebUSB Firmware Update Issues
+      
+    </span>
+</a>
+<nav aria-label="WinUSB / WebUSB Firmware Update Issues" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#legacy-firmware-webusb-issue-1016-and-older">5.4.1 
+<span class="md-ellipsis">
+      
+        Legacy Firmware WebUSB Issue (1.0.16 and older)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#winusb-driver-conflicts-and-cleanup">5.4.2 
+<span class="md-ellipsis">
+      
+        WinUSB Driver Conflicts and Cleanup
+      
+    </span>
+</a>
+<nav aria-label="WinUSB Driver Conflicts and Cleanup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quick-reset-try-this-first">
+<span class="md-ellipsis">
+      
+        Quick Reset (try this first)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#full-driver-cleanup-procedure">
+<span class="md-ellipsis">
+      
+        Full Driver Cleanup Procedure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#forcing-windows-to-use-winusb-if-automatic-installation-fails">
+<span class="md-ellipsis">
+      
+        Forcing Windows to Use WinUSB (if automatic installation fails)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#browser-cleanup">
+<span class="md-ellipsis">
+      
+        Browser Cleanup
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motor-led-indicators">5.5 
+<span class="md-ellipsis">
+      
+        Motor LED Indicators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motor-faults">5.6 
+<span class="md-ellipsis">
+      
+        Motor faults
+      
+    </span>
+</a>
+<nav aria-label="Motor faults" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fault_unstable">5.6.1 
+<span class="md-ellipsis">
+      
+        FAULT_UNSTABLE
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fault_undervoltage">5.6.2 
+<span class="md-ellipsis">
+      
+        FAULT_UNDERVOLTAGE
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-get-effective-support">5.7 
+<span class="md-ellipsis">
+      
+        How to Get Effective Support
+      
+    </span>
+</a>
+<nav aria-label="How to Get Effective Support" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#required-screenshots">5.7.1 
+<span class="md-ellipsis">
+      
+        Required Screenshots
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#describe-the-problem-clearly">5.7.2 
+<span class="md-ellipsis">
+      
+        Describe the Problem Clearly
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-information">5.7.3 
+<span class="md-ellipsis">
+      
+        System Information
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#real-time-troubleshooting">5.7.4 
+<span class="md-ellipsis">
+      
+        Real-Time Troubleshooting
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#common-pitfalls-to-avoid">5.7.5 
+<span class="md-ellipsis">
+      
+        Common Pitfalls to Avoid
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#where-to-get-support">5.7.6 
+<span class="md-ellipsis">
+      
+        Where to Get Support
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="troubleshooting"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.</span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this section">¶</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Need Help? Getting Effective Support</p>
+<p>Before asking for help, see <strong><a class="autorefs autorefs-internal" href="#how-to-get-effective-support">5.7 How to Get Effective Support</a></strong> at the end of this document for guidance on providing complete information that leads to faster diagnosis and resolution.</p>
+</div>
+<h2 id="general-troubleshooting-steps"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1</span> General Troubleshooting Steps<a class="headerlink" href="#general-troubleshooting-steps" title="Link to this section">¶</a></h2>
+<p>Before diving into specific issues, try these general troubleshooting steps that resolve many common problems:</p>
+<h3 id="reset-to-factory-defaults"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.1</span> Reset to Factory Defaults<a class="headerlink" href="#reset-to-factory-defaults" title="Link to this section">¶</a></h3>
+<p>If you’re experiencing unexpected behavior, instability, or effects issues, resetting to factory defaults is an excellent first troubleshooting step:</p>
+<ol>
+<li>Open <strong>VPforce Configurator</strong></li>
+<li>Click <strong>“Factory Reset”</strong> button</li>
+<li>Click <strong>“Import Rhino Defaults”</strong> button</li>
+<li>Click <strong>“Store Settings”</strong> to save</li>
+</ol>
+<p>This ensures you’re working with known-good baseline settings and eliminates configuration issues as a potential cause.</p>
+<div class="admonition tip">
+<p class="admonition-title">When to Factory Reset</p>
+<p>Factory reset is particularly useful when:</p>
+<ul>
+<li>Effects feel wrong or inconsistent</li>
+<li>After firmware updates</li>
+<li>Before testing new configurations</li>
+<li>When troubleshooting stability issues</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Simulator-Specific Issues</p>
+<p>Some issues are specific to certain simulators. If your problem only occurs in a particular game, see the <a href="../game-specific-troubleshooting/">Game Specific Troubleshooting</a> page and the <a href="../appendix-a-known-issues/">Known Issues</a> appendix for simulator-specific guidance.</p>
+</div>
+<h2 id="power-issues"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2</span> Power Issues<a class="headerlink" href="#power-issues" title="Link to this section">¶</a></h2>
+<h3 id="base-does-not-power-on-at-all"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.1</span> Base Does Not Power On At All<a class="headerlink" href="#base-does-not-power-on-at-all" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Issue:</strong><br/>
+The Rhino base shows no signs of life - no LED indicators, no response when connected, and does not appear in Windows Device Manager or VPforce Configurator.</p>
+<p class="label-paragraph"><strong>Understanding Rhino’s Power System:</strong></p>
+<p>The Rhino has two separate power systems:</p>
+<ol>
+<li><strong>USB Power (5V):</strong> Powers the control electronics, USB communication, and status LEDs</li>
+<li><strong>DC Power (20V):</strong> Powers the motors and drive electronics</li>
+</ol>
+<p>If the base does not power on at all, the USB power path is the most likely culprit.</p>
+<h4 id="quick-troubleshooting-checklist"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.1.1</span> Quick Troubleshooting Checklist<a class="headerlink" href="#quick-troubleshooting-checklist" title="Link to this section">¶</a></h4>
+<p>Before diving into detailed diagnostics, try these essential steps:</p>
+<ol>
+<li><strong>Verify USB connection</strong> - Ensure the USB cable is firmly seated and try a different USB cable if available</li>
+<li><strong>Try different USB ports</strong> - Test multiple USB ports (rear panel preferred over front panel)</li>
+<li><strong>Eliminate USB hubs</strong> - Disconnect any USB hubs and connect the Rhino directly to a motherboard USB port</li>
+<li><strong>Check Device Manager</strong> - Press <code>Win + X</code> and open <strong>Device Manager</strong> to verify Windows detects the device</li>
+<li><strong>Test DC power connection</strong> - Verify the DC barrel jack is firmly seated on the back of the Rhino</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For more detailed USB troubleshooting steps and solutions, see the <strong><a href="#usb-connection-issues">5.3 USB Connection Issues</a></strong> section below. This section covers comprehensive diagnostic procedures and explains common causes for each symptom.</p>
+</div>
+<h4 id="common-causes-and-solutions"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.1.2</span> Common Causes and Solutions<a class="headerlink" href="#common-causes-and-solutions" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>1. Faulty USB Cable</strong></p>
+<p>USB cables are a frequent point of failure, particularly if subjected to repeated bending or tension:</p>
+<ul>
+<li><strong>Verification:</strong> Test the cable with another USB device (mouse, keyboard, etc.)</li>
+<li><strong>Solution:</strong> Replace with a high-quality USB cable (USB 2.0 is sufficient; keep cable under 3 meters)</li>
+</ul>
+<p class="label-paragraph"><strong>2. USB Port Issues</strong></p>
+<p>Some motherboard USB ports have poor power delivery or signal integrity:</p>
+<ul>
+<li><strong>Solution:</strong> Test multiple USB ports systematically and prefer motherboard rear-panel USB ports over front-panel ports</li>
+<li>Front-panel ports often have longer internal cables and higher insertion losses</li>
+</ul>
+<p class="label-paragraph"><strong>3. USB Hub Power Delivery</strong></p>
+<p>USB hubs, especially unpowered hubs, can fail to provide adequate power:</p>
+<ul>
+<li><strong>Solution:</strong> Always connect the Rhino directly to a motherboard USB port</li>
+<li>If a hub is absolutely necessary, use a powered USB hub with external power supply</li>
+</ul>
+<p class="label-paragraph"><strong>4. Electrical Noise or Ground Loops</strong></p>
+<p>Electrical noise from the PC’s USB bus can prevent proper device recognition:</p>
+<ul>
+<li><strong>Solution:</strong> Use a <strong>USB isolator</strong> to eliminate noise (see <strong><a href="#usb-isolator-recommendation">5.3.4 USB Isolator Recommendation</a></strong> section)</li>
+<li>This is particularly effective in systems with many high-power devices</li>
+</ul>
+<p class="label-paragraph"><strong>5. DC Power Connection Issue</strong></p>
+<p>Even with USB detection, a loose DC connection can prevent the device from initializing:</p>
+<ul>
+<li><strong>Solution:</strong> Firmly reseat the DC barrel jack connector on the back of the Rhino</li>
+<li>Ensure DC power is being supplied to the board (the board should initialize after USB detection)</li>
+</ul>
+<p class="label-paragraph"><strong>6. Mainboard Damage (Rare)</strong></p>
+<p>In rare circumstances, the Rhino mainboard can be damaged by:</p>
+<ul>
+<li>Electrostatic discharge (ESD) during handling</li>
+<li>Ground loops between PC and power supply — especially when reconnecting power or if the DC ground connection is unstable (see <strong><a href="#usb-isolator-recommendation">5.3.4 USB Isolator Recommendation</a></strong>)</li>
+<li>
+<p>Voltage transients on the USB bus</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Solution:</strong> If all troubleshooting steps fail and you’ve verified the USB cable, ports, and DC connection are good, the mainboard may be damaged</p>
+</li>
+<li>Contact VPforce support for further diagnostics and potential RMA</li>
+</ul>
+<hr/>
+<h3 id="device-powers-on-but-motors-have-no-power"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.2</span> Device Powers On But Motors Have No Power<a class="headerlink" href="#device-powers-on-but-motors-have-no-power" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Issue:</strong><br/>
+The Rhino appears in Windows and VPforce Configurator shows the device connected, but the motors remain unpowered. The stick feels completely limp, and FFB effects have no effect. Motor status may show <code>OFFLINE</code> or <code>FAULT_UNDERVOLTAGE</code>.</p>
+<p class="label-paragraph"><strong>Understanding the Problem:</strong></p>
+<p>This scenario indicates the <strong>USB power path is working</strong> (electronics are powered), but the <strong>DC power path (20V) is faulty</strong>. The motors require 20V DC to operate, supplied by an external power supply.</p>
+<h4 id="quick-troubleshooting-checklist_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.2.1</span> Quick Troubleshooting Checklist<a class="headerlink" href="#quick-troubleshooting-checklist_1" title="Link to this section">¶</a></h4>
+<ol>
+<li><strong>Check power supply LED</strong> - Verify the PSU is powered and LED is illuminated</li>
+<li><strong>Measure PSU output</strong> - Using a multimeter (if available), measure ~20V at the PSU DC connector</li>
+<li><strong>Inspect DC connections</strong> - Ensure the DC barrel jack on the Rhino is firmly seated</li>
+<li><strong>Check DC cable</strong> - Look for visible damage, kinks, or loose connectors</li>
+<li><strong>Test with known-good PSU</strong> - If available, try a different 20V power supply to isolate the problem</li>
+</ol>
+<h4 id="common-causes-and-solutions_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.2.2</span> Common Causes and Solutions<a class="headerlink" href="#common-causes-and-solutions_1" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>1. Faulty Power Supply</strong></p>
+<p>Power supplies can fail over time, particularly under sustained high-current loads:</p>
+<ul>
+<li><strong>Symptoms:</strong> No voltage output, voltage significantly below 20V, or voltage drops dramatically under load</li>
+<li><strong>Verification:</strong> Measure PSU output with multimeter (should read ~20V DC)</li>
+<li><strong>Solution:</strong> Replace with a known-good 20V power supply (6-8A minimum capacity recommended)</li>
+</ul>
+<p class="label-paragraph"><strong>2. Poor DC Connector Contact</strong></p>
+<p>The DC barrel jack can become loose or develop poor contact over time:</p>
+<ul>
+<li><strong>Symptoms:</strong> Intermittent motor power, motors work sometimes but not others, vibrations cause power loss</li>
+<li><strong>Verification:</strong> Ensure connector is firmly seated; wiggle it gently to check for play</li>
+<li><strong>Solution:</strong> Reseat the DC connector firmly; if problem persists, replace the DC cable or jack</li>
+</ul>
+<p class="label-paragraph"><strong>3. Faulty DC Cable</strong></p>
+<p>DC cables can develop internal breaks or high resistance:</p>
+<ul>
+<li><strong>Symptoms:</strong> Voltage present at PSU but not at Rhino, intermittent operation depending on cable position</li>
+<li><strong>Verification:</strong> Measure voltage at both PSU output and Rhino DC input to compare</li>
+<li><strong>Solution:</strong> Replace DC cable with a known-good cable (18AWG or heavier recommended)</li>
+</ul>
+<p class="label-paragraph"><strong>4. Failing E-Stop Switch</strong></p>
+<p>E-Stop switches can develop high internal resistance or fail to make contact:</p>
+<ul>
+<li><strong>Symptoms:</strong> <code>FAULT_UNDERVOLTAGE</code> errors, motors intermittently lose power, voltage sag under load</li>
+<li><strong>Verification:</strong> Check if E-Stop is engaged or bypass it temporarily to test</li>
+<li><strong>Solution:</strong> Replace E-Stop switch if bypassing resolves the issue</li>
+</ul>
+<p class="label-paragraph"><strong>5. Insufficient PSU Capacity</strong></p>
+<p>Power supply may not provide sufficient current for high-torque FFB operation:</p>
+<ul>
+<li><strong>Symptoms:</strong> Voltage correct at idle but drops under load, motors work at low forces but fault at high forces, <code>FAULT_UNDERVOLTAGE</code> during intense FFB</li>
+<li><strong>Verification:</strong> Measure voltage while activating test FFB effects in Configurator</li>
+<li><strong>Solution:</strong> Upgrade to higher-capacity power supply (8A or higher recommended)</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Ground Loops and Electrical Noise</p>
+<p>Poor DC connections can introduce ground loops that cause both power delivery issues and USB instability. If you experience both motor power issues and USB connection issues simultaneously, inspect DC connections first—fixing the DC path often resolves USB issues as well.</p>
+</div>
+<h4 id="verification-after-repairs"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.2.3</span> Verification After Repairs<a class="headerlink" href="#verification-after-repairs" title="Link to this section">¶</a></h4>
+<p>After applying a fix, verify the solution:</p>
+<ol>
+<li><strong>Measure DC voltage</strong> - Should read ~20V with no load, remain above 18V under typical FFB load</li>
+<li><strong>Check motor status in Configurator</strong> - Should show <code>RUNNING</code>, not <code>OFFLINE</code> or <code>FAULT_UNDERVOLTAGE</code></li>
+<li><strong>Test FFB effects</strong> - Activate test effects and verify motors respond consistently with appropriate force</li>
+</ol>
+<h2 id="usb-connection-issues"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3</span> USB Connection Issues<a class="headerlink" href="#usb-connection-issues" title="Link to this section">¶</a></h2>
+<p class="label-paragraph"><strong>Issue:</strong></p>
+<p>The Rhino exhibits intermittent connection problems, instability, or appears to disconnect and reconnect frequently. This typically manifests as effects stuttering, dropping out momentarily, or the device appearing offline in VPforce Configurator.</p>
+<p class="label-paragraph"><strong>Why USB Communication Matters for FFB:</strong></p>
+<p>The Rhino FFB joystick communicates using high-frequency bidirectional data. Unlike a standard joystick that just sends “X and Y” coordinates, an FFB stick is constantly receiving “Force” instructions from the sim while sending “Position” data back. Any interruption in this communication—even brief pauses from USB throttling or power management—can cause jerky motion, lag, freezing, or complete sim lockup. This is why USB connection quality is critical for smooth FFB operation.</p>
+<h3 id="common-causes-solutions"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.1</span> Common Causes &amp; Solutions<a class="headerlink" href="#common-causes-solutions" title="Link to this section">¶</a></h3>
+<p>Check the following items in order:</p>
+<ol>
+<li>
+<p class="label-paragraph"><strong>USB Hub</strong></p>
+<ul>
+<li>If you are currently using a USB hub, disconnect it and connect the Rhino directly to your PC</li>
+<li>USB hubs can introduce latency, power delivery issues, and signal integrity problems — see <strong><a href="#why-usb-hubs-cause-problems-with-ffb-devices">5.3.2 Why USB Hubs Cause Problems with FFB Devices</a></strong> below for a technical explanation</li>
+<li>Test the direct connection for stability</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>USB Port</strong></p>
+<ul>
+<li>Try a different USB port on your PC</li>
+<li>Some USB ports have better power delivery or less electrical noise than others</li>
+<li>Test multiple ports to identify if the issue is port-specific</li>
+<li>If available, try USB 3.0/3.1 ports (blue ports) rather than USB 2.0 (black ports)</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>USB Cable</strong></p>
+<ul>
+<li>Try a different USB cable if possible</li>
+<li>USB cables can degrade over time or have internal damage</li>
+<li>A faulty cable is a common cause of intermittent connection issues</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>DC Power Plug</strong></p>
+<ul>
+<li>Inspect the DC power connector on the back of the Rhino</li>
+<li>If the DC power plug pulls out easily or feels loose, vibrations during operation might be causing intermittent power connection loss</li>
+<li>Poor DC connections can also introduce ground loops, causing electrical noise and instability</li>
+<li>Ensure the power plug is firmly seated and making good contact</li>
+<li>This is a frequent cause of instability during intense FFB effects</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have access to multiple USB cables and ports, systematically test each combination. Document which configuration is most stable—this can help identify whether the issue is related to your specific port, cable, or something else entirely.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Once you have confirmed a stable connection with direct PC connection and a known-good cable/port, the instability is likely resolved. If problems persist, the device itself may have a hardware issue and should be checked by support.</p>
+</div>
+<h3 id="why-usb-hubs-cause-problems-with-ffb-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.2</span> Why USB Hubs Cause Problems with FFB Devices<a class="headerlink" href="#why-usb-hubs-cause-problems-with-ffb-devices" title="Link to this section">¶</a></h3>
+<p>The standard advice is “never plug your FFB joystick into a USB hub” — but rarely does anyone explain why. When you push heavy HID input/output traffic, especially the kind required by a high-refresh-rate FFB device, you start hitting the physical and architectural limits of how USB hubs manage data.</p>
+<h4 id="the-transaction-translator-tt-bottleneck"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.2.1</span> The Transaction Translator (TT) Bottleneck<a class="headerlink" href="#the-transaction-translator-tt-bottleneck" title="Link to this section">¶</a></h4>
+<p>This is the most common culprit. Many FFB devices operate at USB Full-Speed (12 Mbps) rather than High-Speed (480 Mbps), because 12 Mbps is generally plenty of bandwidth for HID data.</p>
+<p>When a 12 Mbps device is plugged into a High-Speed USB 2.0 or 3.0 hub, the hub must translate that traffic using a hardware component called a <strong>Transaction Translator (TT)</strong>:</p>
+<ul>
+<li><strong>Single-TT (STT) hubs</strong> — Most cheap hubs are Single-TT. One 12 Mbps translator is shared across all ports. If you plug in your FFB joystick, a mouse, a keyboard, and a button box, they all fight for that same narrow pipe. FFB data gets delayed or dropped.</li>
+<li><strong>Multi-TT (MTT) hubs</strong> — High-end hubs have a dedicated TT per port. Each Full-Speed device gets its own 12 Mbps lane up to the hub’s High-Speed uplink. FFB devices perform significantly better on MTT hubs.</li>
+</ul>
+<h4 id="hid-interrupt-transfers-under-load"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.2.2</span> HID Interrupt Transfers Under Load<a class="headerlink" href="#hid-interrupt-transfers-under-load" title="Link to this section">¶</a></h4>
+<p>USB HID devices use <strong>Interrupt Transfers</strong> — they guarantee a specific polling rate (for example, every 1 ms). When you introduce a hub, scheduling complexity increases. Cheap hub silicon may miss polling windows.</p>
+<p>FFB devices are particularly demanding because they rely heavily on <strong>Interrupt OUT</strong> transfers (data from PC to device) to command the motors. Continuous Interrupt OUT traffic at high rates is notoriously hard on cheap hub controllers, causing micro-stutters or completely dropped FFB commands.</p>
+<h4 id="buffer-overflows-and-dropped-packets"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.2.3</span> Buffer Overflows and Dropped Packets<a class="headerlink" href="#buffer-overflows-and-dropped-packets" title="Link to this section">¶</a></h4>
+<p>FFB generates bursty traffic. When you hit turbulence or a surface in a sim, the PC sends a rapid sequence of OUT reports while the joystick simultaneously sends back rapid position data.</p>
+<p>Cheap hubs have very little internal buffer RAM. If the hub is waiting to send data upstream, packets that overflow the buffer are simply discarded. Unlike bulk transfers (used for storage), <strong>HID Interrupt transfers have no guaranteed retry mechanism</strong> — dropped packets are gone forever. The result is a dead spot or micro-freeze in your FFB.</p>
+<h4 id="power-fluctuations-and-micro-disconnects"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.2.4</span> Power Fluctuations and Micro-Disconnects<a class="headerlink" href="#power-fluctuations-and-micro-disconnects" title="Link to this section">¶</a></h4>
+<p>Even if your FFB joystick has its own external power supply for the motors, the USB logic board still relies on the 5V line from the USB cable to maintain its data connection. An unpowered or poorly powered hub can sag the 5V line under combined load, causing the USB logic to brownout and trigger a re-enumeration. Windows will silently recover, but you will experience a momentary FFB freeze while the device reconnects.</p>
+<h4 id="recommendations-if-you-must-use-a-hub"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.2.5</span> Recommendations if You Must Use a Hub<a class="headerlink" href="#recommendations-if-you-must-use-a-hub" title="Link to this section">¶</a></h4>
+<p>If direct connection to a motherboard port is not possible:</p>
+<ul>
+<li><strong>Use a Multi-TT (MTT) hub</strong> — This is the single most important factor. Some manufacturers (such as StarTech) and industrial USB hub brands explicitly advertise MTT support.</li>
+<li><strong>Use an externally powered hub</strong> — never rely on bus power (from the PC) to run a hub that handles an FFB device.</li>
+<li><strong>Isolate high-bandwidth devices</strong> — Put your FFB joystick on a separate physical USB root hub on your motherboard from VR headsets or webcams. VR headsets and cameras use Isochronous transfers, which reserve large, non-negotiable blocks of USB bandwidth and can crowd out FFB data.</li>
+</ul>
+<h3 id="disable-usb-selective-suspend"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.3</span> Disable USB Selective Suspend<a class="headerlink" href="#disable-usb-selective-suspend" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Issue:</strong></p>
+<p>Windows can automatically suspend USB ports to save power, causing the USB port to be “throttled” and resulting in system performance issues. Symptoms include jerky motion in VPforce Configurator, sim freezes or lockups, and system sluggishness when the Rhino is connected.</p>
+<p class="label-paragraph"><strong>Solution:</strong></p>
+<p>Windows USB Selective Suspend can be disabled through Power Options. Follow these steps:</p>
+<ol>
+<li>
+<p>Open <strong>Power Options</strong>:</p>
+<ul>
+<li>Right-click the battery/power icon in the taskbar</li>
+<li>Select <strong>Power settings</strong> or go to <strong>Settings</strong> → <strong>System</strong> → <strong>Power &amp; battery</strong></li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Advanced power settings</strong> (or <strong>Power Options</strong> if in classic settings)</p>
+</li>
+<li>
+<p>Click <strong>Change plan settings</strong> for your current power plan</p>
+</li>
+<li>
+<p>Click <strong>Change advanced power settings</strong></p>
+</li>
+<li>
+<p>Expand <strong>USB settings</strong> in the list</p>
+</li>
+<li>
+<p>Expand <strong>USB selective suspend setting</strong></p>
+</li>
+<li>
+<p>Set the value to <strong>Disabled</strong> for both “On battery” and “Plugged in”</p>
+</li>
+<li>
+<p>Click <strong>Apply</strong> → <strong>OK</strong></p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Restart your PC</strong> for the change to take effect</p>
+</li>
+<li>
+<p>Reconnect the Rhino and verify the issue is resolved</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have multiple power plans (Balanced, High Performance, Power Saver), ensure you disable USB Selective Suspend for all of them, or switch to a plan where it is already disabled.</p>
+</div>
+<h3 id="usb-isolator-recommendation"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.3.4</span> USB Isolator Recommendation<a class="headerlink" href="#usb-isolator-recommendation" title="Link to this section">¶</a></h3>
+<p>A <strong>USB isolator</strong> is strongly recommended for all RHINO setups. It sits between the PC and the RHINO, physically breaking the electrical ground path between them. This eliminates ground loop noise, reduces EMI, and — critically — <strong>prevents hardware damage</strong> from ground faults.</p>
+<figure class="figure-image"> <img alt="AduM3160 based USB isolator" src="../images/troubleshooting-maintenance/image.webp" width="250"> <figcaption>AduM3160 based USB isolator</figcaption></img></figure>
+<div class="admonition warning">
+<p class="admonition-title">Ground Loops Can Destroy Boards</p>
+<p>Without isolation, the PC and the RHINO share a common ground through the USB cable. If the main DC power ground connection is interrupted — even briefly during a reconnection — high motor currents will attempt to flow through the USB cable, into the PC ground, through the power strip, and back to the PSU. This surge can destroy the TVS protection diodes on the RHINO board, or worse, damage the board itself.</p>
+<p>In multi-device setups sharing a USB hub, a single ground fault can propagate through the shared USB ground and take out multiple boards simultaneously — even if they use separate power supplies. See <a href="../../community-projects/tips-and-tricks/#powering-multiple-ffb-devices-from-a-single-psu">Powering Multiple FFB Devices from a Single PSU</a> for detailed wiring guidance.</p>
+</div>
+<p class="label-paragraph"><strong>Benefits of a USB isolator:</strong></p>
+<ul>
+<li><strong>Prevents hardware damage</strong> from ground faults and power surges through the USB path</li>
+<li>Eliminates ground loops between the PC and the RHINO</li>
+<li>Protects electronics from voltage spikes and transient faults on the USB bus</li>
+<li>Resolves connection instability in systems with high electrical noise</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Ground Connection Best Practices</p>
+<p>Always ensure the DC ground (GND) connection is the <strong>first to make contact</strong> and remains stable at all times. When connecting or reconnecting power, plug in the DC barrel jack firmly before connecting USB. If your ground path is unreliable, all high-current return paths will route through the USB cable — a recipe for board damage.</p>
+<p>An alternative to a USB isolator is using an <strong>ungrounded power strip</strong> to break the ground loop path. However, a USB isolator is the safer and more targeted solution.</p>
+</div>
+<p class="label-paragraph"><strong>Where to Find USB Isolators:</strong></p>
+<p>Search for <strong>AduM3160</strong> isolator boards on AliExpress, Amazon, or other electronics retailers. The AduM3160 is a popular, affordable USB 2.0 isolator IC commonly available on ready-made isolator boards. When searching, look for:</p>
+<ul>
+<li>“AduM3160 isolator board” or “USB isolator AduM3160”</li>
+<li>Pre-assembled USB isolator modules (no soldering required)</li>
+<li>Boards with both USB-A connectors or USB-A to USB-C options</li>
+</ul>
+<p>Cost is typically low (under $10-20 USD), making it a worthwhile investment to protect your hardware.</p>
+<h2 id="winusb-webusb-firmware-update-issues"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4</span> WinUSB / WebUSB Firmware Update Issues<a class="headerlink" href="#winusb-webusb-firmware-update-issues" title="Link to this section">¶</a></h2>
+<h3 id="legacy-firmware-webusb-issue-1016-and-older"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.1</span> Legacy Firmware WebUSB Issue (1.0.16 and older)<a class="headerlink" href="#legacy-firmware-webusb-issue-1016-and-older" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Issue:</strong></p>
+<p>On <strong>Windows 10/11</strong> with <strong>firmware 1.0.16 and older</strong>, the Rhino may appear correctly in Windows, but <strong>WinUSB fails to operate</strong>, preventing firmware updates through WebUSB. Users may see <code>network error</code>s in the WebUSB tool. This problem is fixed in newer firmwares.</p>
+<p>You can apply a simple registry fix to restore WebUSB functionality. This requires administrative privileges.</p>
+<p class="label-paragraph"><strong>Steps:</strong></p>
+<ul>
+<li>Press <strong>Start</strong>, type PowerShell, right-click <strong>Windows PowerShell</strong>, and select <strong>Run as administrator</strong>.</li>
+<li>
+<p>Paste the following command and press <strong>Enter</strong>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="nb">Set-ItemProperty</span> <span class="n">-Path</span> <span class="s2">"HKLM:\SYSTEM\CurrentControlSet\Enum\USB\VID_FFFF&amp;PID_2055&amp;MI_03\*\Device Parameters"</span> <span class="n">-Name</span> <span class="s2">"DeviceInterfaceGUID"</span> <span class="n">-Value</span> <span class="s2">"{DA10CDEF-26A6-47D9-970E-B3D561A277FA}"</span>
+</code></pre></div>
+- <strong>Unplug</strong> the Rhino from the USB port and <strong>plug it back in</strong>.
+- Test the connection in the WebUSB tool - firmware updates should now work as expected.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>This workaround only applies to <strong>firmware 1.0.16 and older</strong>. Updating the latest firmware will remove the need for this registry modification.</li>
+<li>Only run the command exactly as provided; editing the registry incorrectly can cause system issues.</li>
+</ul>
+</div>
+<h3 id="winusb-driver-conflicts-and-cleanup"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.2</span> WinUSB Driver Conflicts and Cleanup<a class="headerlink" href="#winusb-driver-conflicts-and-cleanup" title="Link to this section">¶</a></h3>
+<p>Many Windows systems handle Rhino’s WebUSB interface without any special setup. Others don’t. The difference usually comes down to what Windows has stored from past hardware or software. Windows keeps old USB drivers in its internal driver store, and sometimes it silently reuses those drivers for new devices. If one of those older drivers isn’t compatible with WebUSB, Rhino may get matched to the wrong driver and the browser will show connection or “network” errors even though the device is working correctly in Configurator or game itself. The steps below clear out these leftover drivers so Windows can load the correct Microsoft WinUSB driver that WebUSB needs.</p>
+<p>If you encounter WebUSB connection issues, driver conflicts from previous installations (particularly from Zadig or other USB tools) may be preventing proper WinUSB operation. Follow these steps to clean up conflicting drivers and restore proper WebUSB functionality.</p>
+<h4 id="quick-reset-try-this-first"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.2.1</span> Quick Reset (try this first)<a class="headerlink" href="#quick-reset-try-this-first" title="Link to this section">¶</a></h4>
+<ol>
+<li>Disconnect Rhino from the PC</li>
+<li>Reboot Windows</li>
+<li>Connect Rhino directly to a USB port on the PC (not a hub)</li>
+<li>Test WebUSB connection</li>
+</ol>
+<p>If errors persist, continue with the full driver cleanup procedure below.</p>
+<h4 id="full-driver-cleanup-procedure"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.2.2</span> Full Driver Cleanup Procedure<a class="headerlink" href="#full-driver-cleanup-procedure" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Step 1: Remove old Rhino drivers from Device Manager</strong></p>
+<ol>
+<li>Open Device Manager (Win + X)</li>
+<li>View → Show hidden devices</li>
+<li>Expand “Universal Serial Bus devices”, “USB devices”, “Other devices”, and “LibUSB” (if present)</li>
+<li>Right-click every entry related to “Rhino DFU” or showing your device’s VID/PID → Uninstall device</li>
+<li>If Windows shows a checkbox “Delete the driver software for this device”, enable it before uninstalling</li>
+</ol>
+<p>Leave Device Manager open for now.</p>
+<p class="label-paragraph"><strong>Step 2: Clean driver packages from Windows driver store (optional)</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Advanced Procedure</p>
+<p>The following driver cleanup steps involve modifying Windows driver store using command-line tools. <strong>This procedure is intended for advanced users</strong> who are comfortable with administrative command-line operations. Incorrectly removing driver packages can affect other USB devices on your system. If you are not confident with these steps, you can skip to step 3.</p>
+</div>
+<ol>
+<li>Open Start → type “cmd” → right-click → Run as administrator</li>
+<li>List all driver packages:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>pnputil /enum-drivers &gt; %temp%\drivers.txt
+</code></pre></div>
+<ol start="3">
+<li>Open the file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>notepad %temp%\drivers.txt
+</code></pre></div>
+<ol start="4">
+<li>In the list, look for driver entries that mention:<ul>
+<li>Rhino</li>
+<li>Your device VID_FFFF / PID_205<em>x</em></li>
+<li>WinUSB</li>
+<li>libusb</li>
+<li>libusbK</li>
+<li>libwdi</li>
+</ul>
+</li>
+</ol>
+<p>Each entry shows something like <code>Published name: oem47.inf</code>.</p>
+<ol start="5">
+<li>For each matching driver, run:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>pnputil /delete-driver oem47.inf /force /uninstall
+</code></pre></div>
+<p>Replace <code>oem47.inf</code> with the actual name. If Windows says “driver is in use”, unplug the device and run the command again.</p>
+<p class="label-paragraph"><strong>Step 3: Remove ghost interfaces</strong></p>
+<p>Back in Device Manager:</p>
+<ol>
+<li>View → Show hidden devices</li>
+<li>Remove any greyed-out duplicates of “Rhino DFU” or anything matching VID/PID</li>
+<li>Unplug the device after cleaning</li>
+</ol>
+<p class="label-paragraph"><strong>Step 4: Reboot Windows</strong></p>
+<p>A clean reboot ensures Windows forgets cached bindings.</p>
+<p class="label-paragraph"><strong>Step 5: Reconnect Rhino and verify WinUSB installation</strong></p>
+<p>Plug in Rhino. Windows should now load Microsoft’s built-in WinUSB (winusb.sys) automatically.</p>
+<p>Verify correct driver:</p>
+<ol>
+<li>Device Manager → open “Rhino DFU” device → Properties</li>
+<li>Driver tab should show:<ul>
+<li>Provider: Microsoft</li>
+<li>Driver file: winusb.sys</li>
+</ul>
+</li>
+</ol>
+<h4 id="forcing-windows-to-use-winusb-if-automatic-installation-fails"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.2.3</span> Forcing Windows to Use WinUSB (if automatic installation fails)<a class="headerlink" href="#forcing-windows-to-use-winusb-if-automatic-installation-fails" title="Link to this section">¶</a></h4>
+<p>If Windows picks the wrong driver, manually bind WinUSB:</p>
+<ol>
+<li>Right-click “Rhino DFU” in Device Manager → Update driver</li>
+<li>Choose “Browse my computer for drivers”</li>
+<li>Choose “Let me pick from a list of available drivers”</li>
+<li>Select “Universal Serial Bus devices”</li>
+<li>Pick “WinUSB Device” or “USB Device (WinUSB)” depending on Windows version</li>
+<li>Install</li>
+</ol>
+<p>This uses Microsoft’s own signed WinUSB and does <strong>not</strong> require Zadig or third-party tools.</p>
+<h4 id="browser-cleanup"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.4.2.4</span> Browser Cleanup<a class="headerlink" href="#browser-cleanup" title="Link to this section">¶</a></h4>
+<p>After correcting the driver:</p>
+<ol>
+<li>Chrome/Edge → Settings → Privacy → Site settings → USB devices → Clear permissions for WebUSB tool</li>
+<li>Clear site data for the WebUSB domain</li>
+<li>Test connection in a fresh tab or Incognito window</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Important: Avoid Zadig for Rhino</p>
+<p>Zadig and similar USB driver replacement tools can cause persistent driver conflicts with the Rhino. These tools leave fingerprints in the Windows driver store that can prevent proper WinUSB operation even after uninstalling. If you previously used Zadig with Rhino, follow the full driver cleanup procedure above to remove all traces.</p>
+</div>
+<h2 id="motor-led-indicators"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.5</span> Motor LED Indicators<a class="headerlink" href="#motor-led-indicators" title="Link to this section">¶</a></h2>
+<p>Each motor has an integrated driver with a status LED that provides diagnostic information through flash patterns:</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Green flashes</strong> — indicate the assigned <strong>motor ID</strong>:</p>
+<ul>
+<li><strong>1 flash</strong> = Motor ID 0 (pitch / Y-axis)</li>
+<li><strong>2 flashes</strong> = Motor ID 1 (roll / X-axis)</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Red flashes</strong> — indicate a <strong>fault condition</strong>. Check the Configurator status bar for the specific fault code (see <a href="#motor-faults">5.6 Motor Faults</a> below).</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>LED normally OFF, brief blink every few seconds</strong> — the motor has power but is not actively communicating with the Rhino main board. </p>
+</li>
+</ul>
+<h2 id="motor-faults"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.6</span> Motor faults<a class="headerlink" href="#motor-faults" title="Link to this section">¶</a></h2>
+<h3 id="fault_unstable"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.6.1</span> FAULT_UNSTABLE<a class="headerlink" href="#fault_unstable" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Issue:</strong></p>
+<p>The Rhino reports a <code>FAULT_UNSTABLE</code> error. This fault typically occurs suddenly, often preceded by an audible thump or impact sensation from the device.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The device’s fault message usually identifies which motor (or axis) triggered the fault. Check the indicated motor/axis first — it typically points straight to the side that needs inspection.</p>
+</div>
+<p class="label-paragraph"><strong>Cause:</strong></p>
+<p>This fault is most commonly caused by <strong>belt slippage</strong> on either the X-axis or Y-axis. When the belt connecting a motor to its pulley loses tension or alignment, the motor and pulley can slip relative to each other. The sudden slip causes the Rhino to detect an unexpected position change that doesn’t match the expected motor command, triggering the stability check and generating the fault. The audible thump is often the moment when slippage occurs.</p>
+<p class="label-paragraph"><strong>Resolution:</strong></p>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Check belt tension:</strong> Inspect the axis belt which produced the fault. The belts should be firm but not over-tightened.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Re-tighten if necessary:</strong> If either belt is loose, carefully tighten it to restore proper tension. See the <strong><a class="autorefs autorefs-internal" href="../rhino-maintenance/#re-tightening-the-belts" title="Re-tightening the Belts">Belt Tensioning Guide</a></strong> for detailed instructions.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Run Auto Calibration:</strong> After adjusting tension and alignment, launch the VPforce FFB Configurator and run <strong>Auto Calibration</strong> from the <strong>Settings</strong> tab.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Verify calibration values:</strong> Once calibration completes, check the calibration values. You should see values around <strong>C:~2000</strong> for both axes. If the values are significantly different, the belts may need further adjustment.</p>
+</li>
+</ol>
+<h3 id="fault_undervoltage"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.6.2</span> FAULT_UNDERVOLTAGE<a class="headerlink" href="#fault_undervoltage" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Issue:</strong><br/>
+The Rhino reports a <code>FAULT_UNDERVOLTAGE</code> error when supply voltage drops below 8 volts.</p>
+<p class="label-paragraph"><strong>Cause:</strong><br/>
+This fault protects motor drivers by halting operation when voltage is insufficient. The 8V threshold ensures reliable operation and prevents damage.</p>
+<p class="label-paragraph"><strong>Under load</strong> (during active force feedback or high-torque movements):</p>
+<ul>
+<li>Poor electrical connection (loose or corroded power connector, high resistance in power path)</li>
+<li>Failing power supply (unable to maintain voltage during peak current draw)</li>
+<li>Insufficient PSU capacity (power supply rated below recommended specifications)</li>
+<li>Failing E-Stop switch (high internal resistance or intermittent disconnection)</li>
+</ul>
+<p class="label-paragraph"><strong>At idle</strong> (no force feedback active):</p>
+<ul>
+<li>E-Stop pressed (normal behavior: motor power cut momentarily shows fault until capacitors discharge, then motor status shows <code>OFFLINE</code>)</li>
+<li>Faulty PSU (unable to maintain stable output without load)</li>
+</ul>
+<p class="label-paragraph"><strong>Resolution:</strong></p>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Check power connections:</strong> Inspect PSU cables and connectors. Ensure tight, clean, corrosion-free connections.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Verify PSU output voltage:</strong> Measure PSU output voltage with multimeter under no load. Should match rated voltage.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Test under load:</strong> Monitor PSU voltage during typical Rhino operation. Significant voltage sag indicates insufficient PSU capacity or poor connections.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Replace or upgrade PSU:</strong> If power supply cannot maintain adequate voltage under load, replace with higher-capacity unit. </p>
+</li>
+</ol>
+<h2 id="how-to-get-effective-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.7</span> How to Get Effective Support<a class="headerlink" href="#how-to-get-effective-support" title="Link to this section">¶</a></h2>
+<p>Providing complete information up front dramatically speeds up diagnosis and resolution. Follow this guide to get help as quickly as possible.</p>
+<h3 id="required-screenshots"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.7.1</span> Required Screenshots<a class="headerlink" href="#required-screenshots" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Always include screenshots of your VPforce Configurator:</strong></p>
+<ol>
+<li><strong>Effects Tab</strong> — shows current FFB effect settings and active effects</li>
+<li><strong>Settings Tab</strong> — shows global gain multipliers and force settings</li>
+<li><strong>Debug Tab</strong> — particularly useful when the issue is occuring as it shows all active effects on the device</li>
+<li><strong>Button Mapping Tab</strong> — if your issue involves buttons or inputs</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Screenshots are essential</p>
+<p>Without Configurator screenshots, the support team cannot diagnose your issue effectively. These screenshots provide most of the information needed for troubleshooting.</p>
+</div>
+<h3 id="describe-the-problem-clearly"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.7.2</span> Describe the Problem Clearly<a class="headerlink" href="#describe-the-problem-clearly" title="Link to this section">¶</a></h3>
+<p>Include the following in your support request:</p>
+<ul>
+<li><strong>What exactly happens?</strong> — describe the specific behavior (e.g. “stick goes limp with no centering force” rather than “FFB doesn’t work”)</li>
+<li><strong>When does it occur?</strong> — specific simulator, aircraft, action, or situation</li>
+<li><strong>Is it consistent or intermittent?</strong> — every time, or only sometimes?</li>
+<li><strong>When did it start?</strong> — new issue, or always been this way?</li>
+<li><strong>What have you tried?</strong> — prevents suggesting steps you’ve already completed</li>
+</ul>
+<h3 id="system-information"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.7.3</span> System Information<a class="headerlink" href="#system-information" title="Link to this section">¶</a></h3>
+<ul>
+<li><strong>Rhino firmware version</strong> (visible in Configurator)</li>
+<li><strong>Simulator name and version</strong> (e.g. DCS World 2.9.8, IL-2 v5.201)</li>
+<li><strong>Grip type and extensions</strong> (e.g. VKB, Virpil, extension length)</li>
+<li><strong>Recent changes</strong> (firmware updates, new hardware, configuration changes)</li>
+</ul>
+<h3 id="real-time-troubleshooting"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.7.4</span> Real-Time Troubleshooting<a class="headerlink" href="#real-time-troubleshooting" title="Link to this section">¶</a></h3>
+<p>While the issue is occurring:</p>
+<ol>
+<li><strong>Watch the Debug tab Loaded Effects panel</strong> — game-created effects appear in real-time and force values change dynamically while flying</li>
+<li><strong>Check the Debug tab</strong> — look for error messages, connection issues, or motor faults</li>
+<li>
+<p class="label-paragraph"><strong>TelemFFB Users (if applicable):</strong></p>
+<ul>
+<li>Check TelemFFB log window for connection errors or warnings</li>
+<li>Verify TelemFFB is connected to simulator</li>
+<li>Post or screenshot TelemFFB log output when reporting issues</li>
+<li>Check the monitor tab telemetry window to verify data reception</li>
+<li>Check the active effects panel on the monitor tab to understand what is playing </li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<div class="admonition tip">
+<p class="admonition-title">One problem at a time</p>
+  If you have multiple issues, describe each one separately. Mixing several unrelated problems in one request makes diagnosis much harder.</div>
+</li>
+</ul>
+<h3 id="common-pitfalls-to-avoid"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.7.5</span> Common Pitfalls to Avoid<a class="headerlink" href="#common-pitfalls-to-avoid" title="Link to this section">¶</a></h3>
+<ol>
+<li><strong>“It doesn’t work” without details</strong> - Define exactly what doesn’t work</li>
+<li><strong>Missing screenshots</strong> - Without Configurator screenshots, diagnosis is guesswork</li>
+<li><strong>No troubleshooting steps</strong> - Mention what you’ve already tried</li>
+<li><strong>Incomplete system info</strong> - Firmware version and simulator details are essential</li>
+<li><strong>Vague timing</strong> - “Sometimes” isn’t helpful - describe exact conditions</li>
+<li><strong>Assuming others know your setup</strong> - Describe your full configuration</li>
+</ol>
+<h3 id="where-to-get-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.7.6</span> Where to Get Support<a class="headerlink" href="#where-to-get-support" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>VPforce Discord Community:</strong></p>
+<ul>
+<li>Most active support channel</li>
+<li>Community and developers respond quickly</li>
+<li>Real-time troubleshooting assistance</li>
+<li>Type <code>!support</code> in Discord for quick reminder of required info</li>
+</ul>
+<p class="label-paragraph"><strong>Documentation Resources:</strong></p>
+<ul>
+<li><a class="external" href="https://docs.vpforce.eu" target="_blank">VPforce Documentation</a></li>
+<li><a class="external" href="https://docs.vpforce.eu/rhino/6-troubleshooting-maintenance/" target="_blank">Troubleshooting Guide</a></li>
+<li><a class="external" href="https://vpforce.eu/usb/rhino/" target="_blank">Firmware Updates</a></li>
+</ul>
+<p class="label-paragraph"><strong>Before Asking:</strong></p>
+<ol>
+<li>Check this troubleshooting guide for your specific issue</li>
+<li>Try factory reset and verify problem persists</li>
+<li>Gather all required screenshots and information</li>
+<li>Prepare clear problem description</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Getting Faster Help</p>
+<p>The more complete your initial support request, the faster you’ll get help. Take 5 minutes to gather screenshots and details up front - it saves hours of back-and-forth questions later.</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

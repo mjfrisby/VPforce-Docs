@@ -1,0 +1,667 @@
+/* ============================================================================
+   VPForce brand theme — zensical modern variant, light mode
+   Brings the vpforce.eu landing page look to the documentation site.
+
+   Design tokens:
+     Background  #f8fafc  (VPForce light bg)
+     Header bg   #170b28  (VPForce dark purple)
+     Accent      #ab37c8  (VPForce purple, links / active nav / buttons)
+   ============================================================================ */
+
+/* ── Light colour scheme ─────────────────────────────────────────────────── */
+:root,
+[data-md-color-scheme="default"] {
+  --md-hue: 220;
+
+  /* ── Brand palette tokens ─────────────────────────────────────────────── */
+  --vp-brand-dark:           #170b28;
+  --vp-brand-dark-deep:      #0e0619;
+  --vp-brand-dark-mid:       #1f0e38;
+  --vp-brand-dark-light:     #1d0e35;
+  --vp-brand-accent:         #ab37c8;
+  --vp-brand-accent-light:   #c456de;
+  --vp-brand-accent-dark:    #8a2ba3;
+  --vp-brand-accent-hover:   #c050e0;
+  --vp-brand-link:           #7b1fa2;
+  --vp-brand-heading:        #170b28;
+  --vp-brand-code-fg:        #2d1b3d;
+  --vp-brand-table-heading:  #1e0040;
+
+  /* Background opacity variants of brand-dark */
+  --vp-dark-70:  rgba(23, 11, 40, 0.70);
+  --vp-dark-50:  rgba(23, 11, 40, 0.50);
+
+  /* Accent at common opacities — use instead of hardcoded rgba() */
+  --vp-accent-06:  rgba(171, 55, 200, 0.06);
+  --vp-accent-08:  rgba(171, 55, 200, 0.08);
+  --vp-accent-10:  rgba(171, 55, 200, 0.10);
+  --vp-accent-15:  rgba(171, 55, 200, 0.15);
+  --vp-accent-20:  rgba(171, 55, 200, 0.20);
+  --vp-accent-22:  rgba(196, 86, 222, 0.22);
+
+  /* Page and surface backgrounds */
+  --md-default-bg-color:           #f8fafc;
+  --md-default-bg-color--light:    rgba(248, 250, 252, 0.74);
+  --md-default-bg-color--lighter:  rgba(248, 250, 252, 0.42);
+  --md-default-bg-color--lightest: rgba(248, 250, 252, 0.12);
+
+  /* Text */
+  --md-default-fg-color:           rgba(15, 10, 28, 0.87);
+  --md-default-fg-color--light:    rgba(15, 10, 28, 0.54);
+  --md-default-fg-color--lighter:  rgba(15, 10, 28, 0.32);
+  --md-default-fg-color--lightest: rgba(15, 10, 28, 0.10);
+
+  /* Code blocks */
+  --md-code-fg-color:              #1e1035;
+  --md-code-bg-color:              #e8e3f2;
+  --md-code-bg-color--light:       rgba(232, 227, 242, 0.9);
+  --md-code-bg-color--lighter:     rgba(232, 227, 242, 0.54);
+
+  /* Links */
+  --md-typeset-a-color:            var(--vp-brand-link);
+
+  /* Admonitions and tables */
+  --md-typeset-color:              rgba(15, 10, 28, 0.87);
+  --md-typeset-table-color:        rgba(15, 10, 28, 0.08);
+  --md-typeset-table-color--light: rgba(15, 10, 28, 0.035);
+
+  /* Footer — stays dark for VPForce identity */
+  --md-footer-bg-color:            var(--vp-brand-dark);
+  --md-footer-bg-color--dark:      var(--vp-brand-dark-deep);
+
+  /* Shadows — lighter for white bg */
+  --md-shadow-z1: 0 0.2rem 0.5rem rgba(0,0,0,0.08), 0 0 0.05rem rgba(0,0,0,0.08);
+  --md-shadow-z2: 0 0.2rem 0.5rem rgba(0,0,0,0.15), 0 0 0.05rem rgba(0,0,0,0.1);
+  --md-shadow-z3: 0 0.5rem 2rem  rgba(0,0,0,0.20), 0 0 0.05rem rgba(0,0,0,0.1);
+
+  /* Internal colour tokens used by modern variant */
+  --color-foreground:         15 10 28;
+  --color-background:         248 250 252;
+  --color-background-subtle:  241 244 251;
+  --color-backdrop:           226 229 240;
+}
+
+/* ── Primary = VPForce accent purple ─────────────────────────────────────── */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color:        var(--vp-brand-accent);
+  --md-primary-fg-color--light: var(--vp-brand-accent-light);
+  --md-primary-fg-color--dark:  var(--vp-brand-accent-dark);
+  --md-primary-bg-color:        #ffffff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.72);
+}
+
+/* ── Accent = same purple for hover / active states ─────────────────────── */
+[data-md-color-accent="custom"] {
+  --md-accent-fg-color:              var(--vp-brand-accent);
+  --md-accent-fg-color--transparent: var(--vp-accent-10);
+  --md-accent-bg-color:              #ffffff;
+  --md-accent-bg-color--light:       rgba(255, 255, 255, 0.72);
+}
+
+/* ── Header: dark VPForce brand bar with purple accent ───────────────────── */
+/* Scope CSS vars so all child elements (search button, Ctrl+K badge, etc.)  */
+/* resolve to dark-context values rather than the light page defaults.        */
+.md-header {
+  --md-default-bg-color:           var(--vp-brand-dark);
+  --md-default-bg-color--light:    rgba(255, 255, 255, 0.08);
+  --md-default-bg-color--lighter:  rgba(255, 255, 255, 0.13);
+  --md-default-bg-color--lightest: rgba(255, 255, 255, 0.05);
+  --md-default-fg-color:           rgba(255, 255, 255, 0.85);
+  --md-default-fg-color--light:    rgba(255, 255, 255, 0.60);
+  --md-default-fg-color--lighter:  rgba(255, 255, 255, 0.45);
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.08);
+
+  background-color: var(--vp-brand-dark) !important;
+  border-top: 3px solid var(--vp-brand-accent);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.md-header__title,
+.md-header__button,
+.md-header__topic,
+.md-header .md-search__input {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.md-header .md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+/* Logo: dark SVG → white on dark header */
+.md-header .md-logo img,
+.md-header .md-logo svg {
+  filter: brightness(0) invert(1);
+  height: 1.8rem;
+}
+
+/* ── Navigation tabs (below header) ─────────────────────────────────────── */
+/* zensical uses opacity for inactive state — links inherit color from .md-tabs.
+   Set explicit color here so `color: inherit` resolves to white, not dark body
+   color. Also override --md-default-fg-color for the active tab border-bottom. */
+.md-tabs {
+  background-color: var(--vp-brand-dark-mid);
+  border-bottom: 1px solid var(--vp-accent-20);
+  color: rgba(255, 255, 255, 0.85);
+  --md-default-fg-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Active tab underline indicator ── use accent purple instead of white */
+.md-tabs__item--active {
+  border-bottom-color: var(--vp-brand-accent-light) !important;
+}
+
+/* Active and hover/focus ── accent purple.
+   Main.css rule specificity (0,2,0): .md-tabs__item--active .md-tabs__link
+   We match it so our later-loaded rule wins. */
+.md-tabs__item--active .md-tabs__link,
+.md-tabs__link:focus,
+.md-tabs__link:hover {
+  color: var(--vp-brand-accent-light);
+  opacity: 1;
+}
+
+/* Keyboard focus indicator for tab links (WCAG 2.4.7) */
+.md-tabs__link:focus-visible {
+  outline: 2px solid var(--vp-brand-accent-light);
+  outline-offset: -2px;
+}
+
+/* ── Typeset font size normalisation ─────────────────────────────────────── */
+/* 0.875 rem = 14 px — matches ReadTheDocs density, tighter than the marketing-
+   calibrated 0.9 rem that made the page feel oversized */
+.md-typeset {
+  font-size: 0.875rem;
+  /* 1.5 is the technical-docs sweet spot: comfortable but not airy */
+  line-height: 1.5;
+  /* Reset negative tracking from zensical — body text needs normal spacing */
+  letter-spacing: 0;
+}
+
+/* Prose content column: ~70 chars / line — matches ReadTheDocs prose width */
+.md-content__inner {
+  max-width: 50rem;
+  padding-bottom: 4rem;
+}
+
+/* Literature-style paragraph indent on all paragraphs */
+.md-typeset p {
+  text-indent: 1.5em;
+  text-align: justify;
+}
+
+/* No indent when paragraph leads with a bold label (e.g. "Email: …") */
+.md-typeset p.label-paragraph {
+  text-indent: 0;
+}
+
+/* Procedure step labels — for numbered sequential steps that shouldn't be
+   headings (avoids enumerate-headings numbering + TOC entries). Sized larger
+   than body bold so nested bold sub-items read as subordinate. */
+.md-typeset p.procedure-step {
+  text-indent: 0;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--vp-brand-heading);
+  letter-spacing: -0.01em;
+  margin-top: 1.7em;
+  margin-bottom: 0.6em;
+}
+
+/* No indent inside admonitions */
+.md-typeset .admonition p {
+  text-indent: 0;
+}
+
+/* No indent inside list items */
+.md-typeset li p {
+  text-indent: 0;
+}
+
+/* Indent lists to match paragraph indentation */
+.md-typeset ul,
+.md-typeset ol {
+  padding-left: 1.5em;
+}
+
+/* Space Grotesk for headings only — Inter for prose */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* H4: must be visually distinct from body — zensical gives it no size */
+.md-typeset h4 {
+  font-size: 1.05em;
+}
+
+/* H5/H6: floor at 0.85em to avoid sub-12px rendering */
+.md-typeset h5,
+.md-typeset h6 {
+  font-size: 0.85em;
+}
+
+/* H5 is uppercase in zensical — tighten tracking slightly for all-caps */
+.md-typeset h5 {
+  letter-spacing: 0.04em;
+}
+
+/* Tables and admonitions: inherit from typeset base */
+.md-typeset table:not([class]) {
+  font-size: inherit;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: inherit;
+}
+
+.md-typeset .footnote {
+  font-size: 0.8rem;
+}
+
+/* ── Release notes: collapsible <details> per version ────────────────────── */
+.md-typeset details.release {
+  border: 1px solid var(--vp-accent-15);
+  border-radius: 0.3rem;
+  margin: 0.6em 0;
+  box-shadow: none;
+}
+
+.md-typeset details.release > summary {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 1.0rem;
+  color: var(--vp-brand-heading);
+  background-color: var(--vp-accent-06);
+  padding: 0.5em 0.6em 0.5em 2.0em;
+}
+
+/* Newest release: accent the header so it stands out at the top of the page */
+.md-typeset details.release--latest {
+  border-color: var(--vp-brand-accent);
+}
+
+.md-typeset details.release--latest > summary {
+  background-color: var(--vp-accent-15);
+}
+
+/* "latest" pill — an explicit <span> in the summary (Material owns ::after) */
+.md-typeset .latest-badge {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vp-brand-accent-dark);
+  background-color: var(--md-default-bg-color);
+  border: 1px solid var(--vp-brand-accent);
+  border-radius: 0.6rem;
+  padding: 0.05rem 0.5rem;
+  margin-left: 0.6em;
+  vertical-align: 0.1em;
+}
+
+/* Sim/category bold labels inside a release read as sub-headers */
+.md-typeset details.release > p > strong:first-child {
+  color: var(--vp-brand-heading);
+}
+
+/* ── Link colours ────────────────────────────────────────────────────────── */
+.md-typeset a {
+  color: var(--vp-brand-link);
+  /* Lift underline off baseline for improved scannability */
+  text-underline-offset: 0.18em;
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus {
+  color: var(--vp-brand-accent);
+}
+
+/* ── Inline code ─────────────────────────────────────────────────────────── */
+.md-typeset code {
+  background-color: var(--md-code-bg-color);
+  color: var(--vp-brand-code-fg);
+  padding: 0.1em 0.4em;
+  border-radius: 0.2rem;
+  font-size: 0.875em;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────────────── */
+.md-typeset table:not([class]) th {
+  background-color: var(--vp-accent-20);
+  color: var(--vp-brand-table-heading);
+  border-bottom: 2px solid var(--vp-brand-accent);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: var(--vp-accent-06);
+}
+
+/* Technical docs need clear cell borders for spec tables */
+.md-typeset table:not([class]) {
+  --md-typeset-table-color: var(--vp-accent-15);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────── */
+.md-typeset .md-button {
+  border-color: var(--vp-brand-accent);
+  color: var(--vp-brand-accent-dark);
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background-color: var(--vp-accent-08);
+  border-color: var(--vp-brand-accent-light);
+  color: var(--vp-brand-accent);
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--vp-brand-accent);
+  border-color: var(--vp-brand-accent);
+  /* Tinted white — never pure #fff */
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background-color: var(--vp-brand-accent-hover);
+  border-color: var(--vp-brand-accent-hover);
+  color: rgba(255, 255, 255, 0.96);
+}
+
+/* ── Search ──────────────────────────────────────────────────────────────── */
+.md-search-result mark {
+  background-color: var(--vp-accent-20);
+  color: inherit;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+/* zensical uses var(--md-default-bg-color) — must specify bg explicitly here */
+/* so white text isn't rendered on the light page background.                 */
+.md-footer {
+  background-color: var(--vp-brand-dark);
+  color: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid var(--vp-accent-20);
+}
+
+.md-footer-meta {
+  background-color: var(--vp-brand-dark-deep);
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.md-footer a {
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 150ms ease;
+}
+
+.md-footer a:hover {
+  color: var(--vp-brand-accent-light);
+}
+
+/* ── Headings ───────────────────────────────────────────────────────────── */
+/* Depth hierarchy: H1 full brand dark, H2 body-strength, H3 steps back    */
+.md-typeset h1 {
+  color: var(--vp-brand-heading);
+  font-weight: 700;
+  border-bottom: 2px solid var(--vp-accent-20);
+  padding-bottom: 0.3em;
+}
+
+.md-typeset h2 {
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.25em;
+}
+
+.md-typeset h3 {
+  color: var(--md-default-fg-color);
+  font-weight: 500;
+}
+
+/* Dimmed section numbers from enumerate-headings plugin */
+.md-typeset .enumerate-headings-plugin {
+  opacity: 0.55;
+}
+
+/* Anchor links (¶) — recede behind content links */
+.md-typeset .headerlink {
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* ── Scroll offset fix ──────────────────────────────────────────────────── */
+/* With navigation.tabs.sticky, total sticky height = header (2.4rem) +      */
+/* tabs (2.4rem) = 4.8rem. Set scroll-padding-top on html (the scroll        */
+/* container) so anchor links always land below the sticky bars.             */
+/* scroll-margin-top on :target from zensical is 6rem when header is lifted, */
+/* but scroll-padding is the reliable cross-browser mechanism.               */
+html {
+  /* Lock root font-size — Material modern variant steps 125%→137.5%→150% at  */
+  /* 100em and 125em breakpoints, causing abrupt text reflow on resize. Fix   */
+  /* by setting one constant value that our stylesheet wins in the cascade.   */
+  font-size: 125%;
+  scroll-padding-top: 2.8rem;
+}
+
+.md-typeset :target {
+  --md-scroll-offset: 0rem;
+}
+
+/* ── Sidebar: dark brand theme ────────────────────────────────────────────── */
+/* Strategy: override CSS tokens at .md-sidebar scope so all inherited rules  */
+/* (including main.css high-specificity hover/active selectors) resolve to    */
+/* dark-theme values without specificity fights.                              */
+/*                                                                            */
+/* Root cause of the previous glitch: .md-sidebar--primary (specificity 0,2,0) */
+/* uses var(--md-default-bg-color--light) for its background — overriding our  */
+/* plain .md-sidebar { background-color: #170b28 } (0,1,0). Fixing by         */
+/* redefining the token at the .md-sidebar scope instead.                     */
+.md-sidebar {
+  /* Background tokens ── primary sidebar resolves --light for its bg */
+  --md-default-bg-color:           var(--vp-brand-dark);
+  --md-default-bg-color--light:    var(--vp-brand-dark);
+  --md-default-bg-color--lighter:  var(--vp-dark-70);
+  --md-default-bg-color--lightest: var(--vp-dark-50);
+
+  /* Text tokens ── muted white baseline; full-white on hover (see below) */
+  --md-default-fg-color:           rgba(255, 255, 255, 0.70);
+  --md-default-fg-color--light:    rgba(255, 255, 255, 0.48);
+  --md-default-fg-color--lighter:  rgba(255, 255, 255, 0.26);
+  --md-default-fg-color--lightest: rgba(255, 255, 255, 0.07);
+
+  /* Accent ── purple active/hover inside sidebar */
+  --md-typeset-a-color:              var(--vp-brand-accent-light);
+  --md-accent-fg-color:              var(--vp-brand-accent-light);
+  --md-accent-fg-color--transparent: var(--vp-accent-22);
+
+  background-color: var(--vp-brand-dark);
+
+  /* CSS color inheritance propagates COMPUTED values, not variable refs.     */
+  /* Setting color explicitly here ensures all nav descendants inherit white. */
+  color: rgba(255, 255, 255, 0.70);
+}
+
+/* At desktop (min-width:76.25em), Material sets .md-sidebar { height:0 }    */
+/* meaning the sidebar element only paints background over its padding area   */
+/* (2.2rem total). The scrollwrap renders as overflow on the white page bg.  */
+/* Fix: apply dark background directly to the scrollwrap which has full       */
+/* content height and is always visible.                                      */
+.md-sidebar .md-sidebar__scrollwrap {
+  background-color: var(--vp-brand-dark);
+  scrollbar-gutter: auto;
+  margin: 0;
+}
+
+/* Expand nav content to fill the full sidebar width */
+.md-sidebar .md-sidebar__inner {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* At desktop, extend the primary sidebar scrollwrap to full viewport height  */
+/* so the dark region connects to the tab bar above and fills to page bottom. */
+/* 4.8rem = header (2.4rem) + tabs bar (2.4rem) when navigation.tabs.sticky  */
+/* is enabled. 2.2rem = sidebar padding (1.1rem top + 1.1rem bottom) from    */
+/* Material's base .md-sidebar { padding: 1.1rem 0 }. The scrollwrap starts  */
+/* after padding-top, so max-height must subtract padding to avoid extending  */
+/* below the viewport and clipping the last nav items.                        */
+/*                                                                            */
+/* Material's .md-main__inner has margin-top:1.5rem, which creates a visible  */
+/* light gap between the dark tabs bar and the dark sidebar. We zero it out   */
+/* and move the spacing to .md-content so that the sidebar connects flush     */
+/* against the tabs.                                                          */
+@media screen and (min-width: 76.25em) {
+  /* Pull .md-main up by 5rem with matching padding-top so content and sidebars
+     stay at the same visual position. This increases the JS scroll-spy gap
+     (md-main__inner.offsetTop − md-main.offsetTop) from 0 to 5rem, raising
+     the threshold p = headerHeight + 0.8×5rem above the full sticky height
+     (navbar 73px + tabs 2.4rem). Using rem ensures the gap scales with font
+     size the same way the tabs bar does. Without this fix, zeroing
+     md-main__inner margin-top (done below for visual reasons) left p = 73px,
+     causing headings to only activate after sliding past the tabs bar. */
+  [data-md-component="main"] {
+    margin-top: -5rem;
+    padding-top: 5rem;
+  }
+
+  .md-main__inner {
+    margin-top: 0;
+  }
+
+  .md-content {
+    margin-top: 1.5rem;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    max-height: calc(100vh - 4.8rem - 2.2rem);
+    overflow-y: auto;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+}
+
+/* main.css hover rule: .md-nav--primary .md-nav__link[href]:hover:not(.md-nav__link--active)
+   specificity (0,4,0) → hardcodes color: var(--md-default-fg-color).
+   We want full-white on hover, not 65% white. Re-declare at .md-sidebar scope
+   with (0,5,0) to win the cascade cleanly.                                   */
+.md-sidebar .md-nav--primary .md-nav__link[href]:hover:not(.md-nav__link--active),
+.md-sidebar .md-nav--primary .md-nav__link[for]:hover:not(.md-nav__link--active),
+.md-sidebar .md-nav--primary .md-nav__link[href]:focus:not(.md-nav__link--active),
+.md-sidebar .md-nav--primary .md-nav__link[for]:focus:not(.md-nav__link--active) {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.94);
+}
+
+/* Keyboard focus indicator — visible ring for a11y (WCAG 2.4.7) */
+.md-sidebar .md-nav__link:focus-visible {
+  outline: 2px solid var(--vp-brand-accent-light);
+  outline-offset: -2px;
+}
+
+/* Active nav link — accent purple + bold, instant wayfinding */
+.md-sidebar .md-nav__link--active {
+  font-weight: 700;
+  color: var(--vp-brand-accent-light);
+}
+
+/* Nav tree ── transparent so sidebar bg shows through */
+.md-nav {
+  background-color: transparent;
+  line-height: 1.35;
+}
+
+/* Title bar (sticky at top of nav pane) */
+.md-nav__title {
+  background-color: transparent !important;
+  color: var(--vp-brand-accent-light);
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  opacity: 0.5;
+}
+
+/* Section group labels ── small caps, subdued but WCAG AA compliant */
+.md-nav__item--section > .md-nav__link {
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  /* Visual breathing room between sections */
+  margin-top: 0.75rem;
+}
+
+/* ToC ── accent-coloured left border */
+.md-nav--secondary {
+  border-left-color: var(--vp-brand-accent) !important;
+}
+
+/* ── Nav/ToC spacing: compact vertical rhythm ────────────────────────────── */
+/* Reduce from zensical's generous 0.35rem → 0.22rem top/bottom              */
+.md-nav__link {
+  padding-top: 0.22rem;
+  padding-bottom: 0.22rem;
+}
+
+/* ToC links ── top-level (H2) entries: quieter weight for less distraction */
+.md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  padding-top: 0.22rem;
+  padding-bottom: 0.22rem;
+  letter-spacing: 0.01em;
+  transition: background-color 0.15s ease;
+}
+
+/* ToC H2 hover — subtle accent background tint */
+.md-nav--secondary > .md-nav__list > .md-nav__item > .md-nav__link:hover {
+  background-color: var(--vp-accent-08);
+}
+
+/* ToC links ── nested (H3+) entries: lighter, smaller for contrast */
+.md-nav--secondary .md-nav__link {
+  font-size: 0.70rem;
+  padding-top: 0.18rem;
+  padding-bottom: 0.18rem;
+}
+
+/* Flatten ToC indentation — reduce nested padding to keep items left-aligned */
+[dir=ltr] .md-nav--primary .md-nav--secondary .md-nav .md-nav__link {
+  padding-left: 1.0rem;
+}
+[dir=ltr] .md-nav--primary .md-nav--secondary .md-nav .md-nav .md-nav__link {
+  padding-left: 1.4rem;
+}
+[dir=ltr] .md-nav--primary .md-nav--secondary .md-nav .md-nav .md-nav .md-nav__link {
+  padding-left: 1.8rem;
+}
+
+/* Third-level TOC items (H3) ── tighter spacing */
+.md-nav--secondary .md-nav .md-nav__link {
+  font-size: 0.65rem;
+  padding-top: 0.20rem;
+  padding-bottom: 0.20rem;
+}
+
+
+/* ── TelemFFB effects reference: simulator badges ─────────────────── */
+.sim-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  padding: 0.12rem 0.5rem;
+  margin-right: 0.15rem;
+  border-radius: 0.7rem;
+  color: #fff;
+  vertical-align: middle;
+}
+.sim-badge.sim-dcs    { background-color: #607d8b; }
+.sim-badge.sim-il2    { background-color: #a1554e; }
+.sim-badge.sim-bms    { background-color: #4e8f6a; }
+.sim-badge.sim-msfs   { background-color: #4a7ab5; }
+.sim-badge.sim-xplane { background-color: #8a5fa8; }

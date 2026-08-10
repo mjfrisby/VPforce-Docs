@@ -1,0 +1,2744 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/telemffb/release-notes/" rel="canonical"/>
+<link href="../troubleshooting/" rel="prev"/>
+<link href="../../community-projects/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Release Notes - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#telemffb-release-notes">1. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Release Notes
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../rhino/">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<!--
+  GENERATED FILE - do not edit by hand; changes will be overwritten.
+  Regenerate with:  py tools/update-release-notes.py
+  (see that script's docstring for the release process and the
+  _RELEASE_NOTES.txt banner format)
+-->
+<h1 id="telemffb-release-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> TelemFFB Release Notes<a class="headerlink" href="#telemffb-release-notes" title="Link to this section">¶</a></h1>
+<p>New, improved, and changed functionality for each TelemFFB release, newest first. This is a curated summary of user-facing changes — for the complete commit history see <a class="external" href="https://github.com/walmis/VPforce-TelemFFB" target="_blank">GitHub</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Version names match the release tag on the <code>wip</code> branch. The most recent release is expanded below; click any older version to expand it.</p>
+</div>
+<details class="release release--latest" id="latest" open="open">
+<summary>2.0.260807 — August 7, 2026 <span class="latest-badge">latest</span></summary>
+<p class="label-paragraph"><strong>Platform</strong></p>
+<ul>
+<li>Exception tracking and reporting system<ul>
+<li>New runtime exception tracker with UI viewer showing recent error history</li>
+<li>Support bundle improvements: now includes DCS logs and Export.lua; switched to LZMA compression for smaller archives</li>
+<li>Automatic error deduplication prevents repeated alerts for the same issue</li>
+<li>Child instance exceptions are forwarded to the master instance so all errors are visible in one place</li>
+</ul>
+</li>
+<li><strong>NEW: Aircraft profile notes</strong><ul>
+<li>Many curated aircraft profiles now ship with notes explaining their quirks - why certain effects are disabled, control-system oddities, and custom-class aircraft where liveries must be cloned from the default profile rather than created new</li>
+<li>You can also add your own notes to any profile</li>
+<li>A notes button lives next to the Active Profile display and flashes green when the loaded aircraft has notes - click it to view/edit</li>
+</ul>
+</li>
+<li>Settings page usability improvements<ul>
+<li>The settings page no longer creeps/jumps its scroll position when you change a setting - the row you are working on now stays put under your mouse across the form refresh</li>
+</ul>
+</li>
+<li>Application Status panel stability<ul>
+<li>The panel no longer resizes and shifts around when switching between device scopes</li>
+<li>Any active ‘vpconf profile’ or ‘configurator gain override’ for a child instance device are now displayed when you change the config scope to that device</li>
+</ul>
+</li>
+<li>The Settings tab now shows helpful guidance when it is empty (start a sim and load an aircraft, or open the offline editor) instead of a blank page - including a scope explainer when using the offline editor</li>
+<li>Settings QoL: changing a setting back to its inherited/default value now automatically removes the user override (and the circle-x revert button) instead of leaving a redundant entry in your config</li>
+<li>Master instance now mirrors child device status (active vpconf profile / configurator overrides) when switching the device config scope</li>
+<li>Curve editor usability improvements (Advanced Spring / Advanced G-Force widgets): smarter curve bounds checking, fixed point-insert resetting the first point, better endpoint drag behavior</li>
+<li>Fix: configurator gain overrides not being applied when TelemFFB started with the sim already loaded into an aircraft</li>
+<li>Fix: master instance was incorrectly validating child device PID when selecting per-aircraft vpconf profiles</li>
+<li>Fix: IPC telemetry datagrams could be dropped under load in multi-device setups causing erroneous device icon failure status changes</li>
+<li>FFB Device Management enhancements<ul>
+<li>Auto-assign device paths for unconfigured slots on startup; selections are persisted in system settings</li>
+<li>Improved USB device selector in System Settings — prevents duplicate device assignments across slots</li>
+</ul>
+</li>
+<li>UI: Fix cyclic spring gain not displaying in settings panel</li>
+<li>Fix error condition on app exit and SimConnect session halt</li>
+<li>Fix error handling when launching VPforce Configurator from the app</li>
+<li>In-app updater rewritten for reliability: per-phase progress (download/backup/extract), live status log, and auto-close-and-launch option</li>
+<li>Fix crash when telemetry startup is interrupted by a plugin update prompt</li>
+<li>TelemFFB now detects when a sim process exits and automatically resets telemetry listeners and UI state</li>
+</ul>
+<p class="label-paragraph"><strong>XPlane</strong></p>
+<ul>
+<li>Updated plugin adhering to new stricter coding requirements</li>
+<li><strong>NEW: X-Trident AW109 special implementation - WIP Implementation</strong><ul>
+<li>KNOWN ISSUE: Must map controls in-game and disable “Axis Control” in TelemFFB - Aircraft does not honor axis override dataref nor properly accept external axis control inputs</li>
+<li>4-Axis AFCS integration: cyclic trim rate control, force trim release, and autopilot following</li>
+<li>Pedal/rudder trim integration<ul>
+<li>KNOWN ISSUE: Pedal AFCS is not as active as would be expected in real aircraft.. this is due to telemetry limitations from the aircraft</li>
+</ul>
+</li>
+<li>Collective spring gain and force trim release</li>
+</ul>
+</li>
+<li>X-Plane plugin: Added dataref write and command write support for expanded aircraft control</li>
+<li>X-Plane plugin: now exports vertical speed and pitch/roll rate data (used by the new trim calibration and future effects)</li>
+<li>New 3-axis turbulence physics model with pitch/roll/yaw decomposition (shared with MSFS)</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS / X-Plane</strong></p>
+<ul>
+<li><strong>NEW: Automated Elevator Trim-Following Calibration</strong> (fixed wing)<ul>
+<li>Trim following has always assumed a 1:1 relationship between trim position and the elevator input needed to stay level - many aircraft (especially 3rd party) are far from 1:1, causing the nose to wander when trimming with the stick held</li>
+<li>The new calibration tool flies a short automated routine (trim neutralization, then a sweep across the trim range) and measures the actual elevator input required to hold level flight at each trim position</li>
+<li>Produces a calibrated non-linear trim-following curve plus a (legacy) equivalent static gain value - with the curve enabled, the virtual stick tracks your aircraft’s real trim response across the whole band</li>
+<li>Multi-speed calibration: run the routine at more than one airspeed and the results are blended into a single curve for better trim response across the speed range</li>
+<li>Trimmed stick position modes: choose how the stick rests when the aircraft is trimmed - ‘Follows Trim’ (cable/trim-tab aircraft: the stick rides the trim position like the real linkage) or ‘Stays Centered’ (airliners, FBW, and boosted-control aircraft: trimmed flight always re-centers the stick). Jets default to centered automatically; either way, out-of-trim force behavior is identical</li>
+<li>Glider support: gliders can’t hold level flight, so the calibration holds a steady descent instead - pick a target sink rate, and adjust it live while the assistant holds to change your test airspeed (a glider’s speed follows its sink rate)</li>
+<li>Results are plotted in the dialog; you can Apply and test live in the sim before saving to the aircraft profile</li>
+<li>Wizard-style guided flow walks you through the whole calibration process step by step, with step indicators showing when TelemFFB is flying and when it’s waiting on you</li>
+<li>Review and manage your stored calibration speeds from the dialog - page through them on the graph, delete individual speeds, or clear the set</li>
+<li>Suggested calibration speeds are derived automatically from the aircraft’s own speed envelope (guidance only, not required calibration speed)</li>
+<li>Calibration sets can be exported/imported for sharing between users</li>
+<li>When an aircraft with no stored calibration loads, a prompt appears in the main window offering one-click access to the calibration tool</li>
+<li>Factory calibrations included out of the box for several default aircraft (MSFS 2024: C172, C152, C208B, SR22T, Citation, Vision Jet, DG-1001E Neo | X-Plane 12: C172, SR22, RV-10)</li>
+<li>Control Response selector (Normal/Reduced/Minimal) tames the routine on pitch-sensitive aircraft</li>
+<li>NOTE: Some advanced or quirky aircraft have proven to be non-calibratable - e.g. trim authority that overpowers full elevator deflection, or extreme trim sensitivity or enbedded computer systems which manipulate the trim automatically and can not be disabled.</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li><strong>NEW: Control lock feature added for Fixed wing and Helicopter aircraft:</strong><ul>
+<li>Saab 340, PC-6 Porter, Wilga, Beechcraft A36 Bonanza, Beechcraft B58 Baron, A2A Comanche PA-24, Cessna 414, Beechcraft Duke</li>
+<li>Taog H500</li>
+</ul>
+</li>
+<li><strong>NEW: Taog H500/OH6 special implementation with optimized spring and trim configuration</strong></li>
+<li>CowanSim S76: Updated default profile; added option to disable ROTOR TRIM RESET command</li>
+<li>FlyInsideHeli: Engine vibrations now mapped to pedals and collective axes</li>
+<li><strong>NEW: 3-axis turbulence physics model with pitch/roll/yaw decomposition (shared with X-Plane)</strong></li>
+<li>HPG Pedals: Added force trim button option</li>
+<li>HPG Collective: Sends axis position while vertical mode is active to avoid an axis snap when disengaging the autopilot</li>
+<li>Fix: the ‘AP Pitch - Follow axis instead of trim’ setting had no effect (broken since mid-2025) - when enabled, autopilot following now correctly moves the stick with the elevator position instead of the trim</li>
+<li>Fix: restored CowanSim and Taog H500 helicopter features that had been inadvertently dropped</li>
+<li>Fix heli trim following issue (MSFS/X-Plane)</li>
+<li>Fix: intermittent stale/missing aircraft display when starting TelemFFB while the sim was already running (telemetry frame arriving during startup could be silently dropped)</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Export DLL updates<ul>
+<li>Added C-130 Hercules</li>
+<li>Added AH-6 / MH-6 Little Bird</li>
+<li>Added F100D</li>
+<li>Fixed rudder control surface telemetry</li>
+</ul>
+</li>
+<li>DCS start/stop event handling: TelemFFB UI now responds earlier when the DCS export module loads or unloads</li>
+<li>TelemFFB will now log a (non blocking) exception if DCS Realistic or SimHaptic are installed with the autostart feature enabled in export.lua (breaks DCS FFB)</li>
+</ul>
+<p class="label-paragraph"><strong>IL2</strong></p>
+<ul>
+<li><strong>NEW: IL-2 Korea support</strong><ul>
+<li>KNOWN ISSUE:  IL-2 Korea is not outputting any engine RPM info, therefore the RPM-based engine rumble effects are non-functional (see the new alternative engine shake effect below)</li>
+</ul>
+</li>
+<li>IL-2 Korea: default aircraft profiles included with starter Advanced Spring curves</li>
+<li>IL-2 Korea: new spring override option leveraging the ‘ffbdevice’ telemetry stream (stream is configured automatically by auto-setup)</li>
+<li>Advanced Spring Override enhancements<ul>
+<li>Game-supplied spring center (‘ffb telemetry’) can now stack with a custom spring gain curve - the sim controls the center while your curve controls the force</li>
+<li>New trim reset button binding</li>
+</ul>
+</li>
+<li><strong>NEW: Alternative engine shake effect driven by raw engine shake frequency/amplitude data from the FFB telemetry stream</strong><ul>
+<li>provides engine vibration feel on aircraft/titles where RPM telemetry is unavailable</li>
+</ul>
+</li>
+<li><strong>NEW: forward raw IL-2 telemetry, motion, and FFB UDP streams to one or more external IP/port destinations, with each destination independently choosing which stream(s) to receive (System Settings &gt; IL2)</strong></li>
+<li>Fix telemetry pause/flicker during multiplayer menus; removed unreliable window-focus-based pause detection</li>
+<li>Fix airborne deceleration effect</li>
+<li>Fix g-force effect activating incorrectly on aircraft that report weight-on-wheels while airborne (now treated as airborne when all gear are retracted)</li>
+</ul>
+<p class="label-paragraph"><strong>Effects</strong></p>
+<ul>
+<li>New envelope and detent effect support in HapticEffect<ul>
+<li>Attack envelope on constant force effects — reduces the risk of jarring axis slam on initial activation</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>2.0.251029_p1 — October 29, 2025</summary>
+<p class="label-paragraph"><strong>Platform</strong></p>
+<ul>
+<li>Fix hard crash when TelemFFB started with no device connected</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Update export dll to get correct telemetry for pedal trimming feature</li>
+</ul>
+<p class="label-paragraph"><strong>IL2</strong></p>
+<ul>
+<li>Fix g-force effect conversion and selection issue</li>
+</ul>
+</details>
+<details class="release">
+<summary>2.0.251007 — October 7, 2025</summary>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Update export dll package<ul>
+<li>Fix crash on slot changing</li>
+<li>Add FF Mig-29 Damage model support</li>
+</ul>
+</li>
+<li>Enhance DCS Export script logic</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Fix issue with erratic force trim behavior on HPG Helicopters</li>
+<li>Added experimental force based hands on/off detection for HPG Helicopters.
+        - Uses force output data from Rhino rather than axis deflection to determine hands on/off state
+        - Recommend to <strong>disable</strong> Adaptive Recentering in configurator for best results (previous recommendation for deflection based detection was to enable Adaptive Recentering)</li>
+</ul>
+</details>
+<details class="release">
+<summary>2.0.100525 — October 5, 2025</summary>
+<p class="label-paragraph"><strong>Hot Fix Oct 6, 2025</strong></p>
+<ul>
+<li>Fix issue with helicopter class for XPlane</li>
+<li>Add device firmware version warning on startup if not 1.0.18+</li>
+<li>Minor updates to DCS A/P deadzone logic - ensure device is left in clean state on aircraft change/application exit</li>
+</ul>
+<p class="label-paragraph"><strong>Big TelemFFB 2.0 Update</strong></p>
+<p class="label-paragraph"><strong>Platform</strong></p>
+<ul>
+<li>Updated UI framework leveraging the latest PyQt6 libraries</li>
+<li>Brand new look and feel<ul>
+<li>Settings are categorized for easier access</li>
+<li>New, better management of multiple devices with easy to see icons compared to legacy clickable device labels</li>
+<li>Easier to switch between various effect mode settings (like different spring or g-effect types)<ul>
+<li>relevant sub-options are displayed only if mode is active</li>
+</ul>
+</li>
+<li>Detachable Monitor tab<ul>
+<li>Now you can see the ‘Active Effects’ and edit settings at the same time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Support for Dark Mode theme<ul>
+<li>Light-mode, Dark-mode or system-controlled setting can be configured in System settings<ul>
+<li>Defaults to system controlled so will pick up your current windows theme setting</li>
+</ul>
+</li>
+<li>Can force light/dark mode with ‘–lightmode’ or ‘–darkmode’ runtime flags</li>
+</ul>
+</li>
+<li>All new Offline &amp; Sim/Class default editor<ul>
+<li>Same interface as typical real-time configuration</li>
+<li>Legacy offline interface has been retired</li>
+<li>Easily move a model setting into a class/sim default by right-clicking on the delete button and selecting ‘move to’</li>
+</ul>
+</li>
+<li>New Profile Manager capability<ul>
+<li>Easily create additional settings profiles for any aircraft.</li>
+<li>Profiles can be created as new or cloned from an existing one</li>
+<li>Easily switch between profiles in the Profile Manager window or in real-time from the main App.</li>
+<li>Profiles can be exported/imported individually or en masse with or without supporting class/sim default settings</li>
+<li>Previously exported profiles can be imported.  Options to include, exclude or rename profiles in the import file are available</li>
+<li>** On first load of new version, your existing configurations will be converted to a new profile based config.  Legacy config will be retained for use with previous versions of TelemFFB.<ul>
+<li>All of your existing settings will be converted into ‘Auto User’ profiles for each aircraft</li>
+<li>Please READ THE MANUAL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>All Sims</strong></p>
+<ul>
+<li>New ‘Advanced Spring Override’<ul>
+<li>New custom widget allows precise smoothed curve definition with multiple points</li>
+<li>You can now define a custom spring curve over a given airspeed envelope</li>
+<li>Separate defitions for X/Y axes</li>
+<li>Supported on Pedals and Joystick</li>
+<li>Curve configurations are exportable/importable for easier sharing between users.</li>
+</ul>
+</li>
+<li>New ‘Advanced G-Effect’<ul>
+<li>Leverages the same custom curve widget as the new advanced spring curve</li>
+<li>Defines the effect force over a given G-loading range</li>
+<li>Supports two effect modes<ul>
+<li>Constant Force:  Similar to legacy G-effect</li>
+<li>Spring Offset:  Uses new firmware capabilities to drive the spring-center forward/back to create a strengthening effect on the spring when the stick is held still</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>BMS (Beta)</strong></p>
+<ul>
+<li>Newly added support for Falcon BMS<ul>
+<li>Support is considered Beta at this time.  Basic effects (engine rumble, afterburner, gunfire, etc) are tested.  Many effects are untested.</li>
+<li>Use it and report found issues/non-working effects please</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Support added for F4U-Corsair</li>
+<li>New high-performance compiled telemetry exporter.<ul>
+<li>Performs same function as legacy lua script, but with a fraction of the overhead</li>
+<li>Reduces likelyhood of potential negative interactions with (or from) other DCS export scripts</li>
+</ul>
+</li>
+<li>Dynamic ‘Autopilot Deadzone’ - Can dynamically apply a axis deadzone via the configurator API when AP is activated<ul>
+<li>Requires new DLL based telemetry export</li>
+<li>Available on select aircraft currently:  F-14, F-18, A-10, F-4</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Steering Friction<ul>
+<li>Adds a small to moderate amount of friction effect while on the ground and below a speed threshold.  Friction will increase as airspeed decreases</li>
+</ul>
+</li>
+<li>New Turbulence Effect<ul>
+<li>Monitors relative wind data and reacts to gusts, providing a small to moderate constant force effect based on the wind data in the x/y polar axes</li>
+</ul>
+</li>
+<li>New ‘FlyInsideHelicopter’ sub-type to support effects leveraging FFB specific data available from Fly Inside helicopters<ul>
+<li>Currently includes shake type effects for things like blade slap, ETL and VRS.</li>
+</ul>
+</li>
+<li>Fix case in MSFS24 where aircraft with ‘electric’ engine types were not properly being processed</li>
+<li>Helicopters -  Simvar based force trim toggle<ul>
+<li>Enable ‘Force Trim Switch’ while Force Trim spring mode is selected</li>
+<li>Toggle “L:TelemFFBHeliFT” with Spad.nExt, AoA or other external tool</li>
+<li>If heli has force trim switch in cockpit, replace the L:Var config with the applicable L:Var to control using in-cockpit switch</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>IL2</strong></p>
+<ul>
+<li>Enhanced telemetry based gunfire effect<ul>
+<li>Gun data (mass, velocity) is read from telementry and used to create a dynamic intensity/fire rate effect</li>
+<li>Smaller/faster rounds will produce a higher frequency effect while larger/slower rounds will pack more of a punch at a lower rate</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>20250506 — May 6, 2025</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Several bug fixes<ul>
+<li>Fixed Certain simconnect override types could lead to corrupted user xml</li>
+<li>Fixed main setup window popping up every time if a joystick PID was not entered (e.g. if user had <em>only</em> pedals)</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS/XPLANE</strong></p>
+<ul>
+<li>New device type capability “Trim Wheel” has been added to TelemFFB<ul>
+<li>Reads from and writes to trim axis.</li>
+<li>Syncs with aircraft trim position on load-in to aircraft</li>
+<li>Follows elevator trim during autopilot engagement</li>
+<li>Follows elevator trim if trim buttons are used as well</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Improved autopilot following logic<ul>
+<li>New “Deadzone” per axis setting for autopilot following.  Input will not register until deadzone area is exceeded - improves behavior on autopilots that do not tolerate any input</li>
+<li>New settings to increase/decrease the amount of physical movement of the stick that the AP inputs will produce</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>20250309 — March 9, 2025</summary>
+<p class="label-paragraph"><strong>MSFS 2024</strong></p>
+<ul>
+<li>Use simvar CAMERA STATE to avoid playing telemetry while in menus (pause unless value is 2-5).  Workaround required due to simconnect pause state bugs in FS2024</li>
+</ul>
+</details>
+<details class="release">
+<summary>20250101 — January 1, 2025</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>It is now possible to bind and use button presses from the master instance to control force trim functions in the pedal/collective instances<ul>
+<li>In the force trim settings for the respective device, enable the “use buttons from master” option and then bind your button(s).</li>
+</ul>
+</li>
+<li>Fix some UI sizing issues</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>(FS24) Fixed state detection during avatar walkaround for telemetry/effect pausing</li>
+</ul>
+</details>
+<details class="release">
+<summary>20241213 — December 13, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>General UI optimization<ul>
+<li>Lighter weight UI theme</li>
+<li>Effect IDs visible in effects monitor (to match effect IDs visible in configurator debug tab)</li>
+<li>More robust geometry saving</li>
+</ul>
+</li>
+<li>“Keep forces on Pause” feature now honors all active spring/damper/inertia/friction effects</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Option added in system settings to disable export script checking/auto-install for those using non-standard save games locations</li>
+</ul>
+<p class="label-paragraph"><strong>IL-2</strong></p>
+<ul>
+<li>Improved effect management during IL2 game window focus loss</li>
+<li>Added IL-2 system settings option to leave effects running during window focus loss.  Can assist with effect tuning but may lead to odd behavior and/or stuck effects</li>
+<li>Added discrete effect settings for gunfire/rocket/bomb (was previously a single “weapon release” effect)</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Work around <em>some</em> of the active telemetry issues in MSFS2024 when in menus, avatar mode and cinematic cut scenes</li>
+<li>Added many basic profiles for default MSFS2024 aircraft</li>
+<li>“Axis Control” now enabled by default</li>
+</ul>
+</details>
+<details class="release">
+<summary>20241103 — November 3, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Fix device PID/Ident check when selecting configurator profiles for child devices from the master instance window</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Fix collective initialization in HPGHelicopter type</li>
+</ul>
+</details>
+<details class="release">
+<summary>20241031 — October 31, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li><strong><em>Soft require firmware v 1.0.17</em></strong><ul>
+<li>MSFS Dynamic forces effect and “new” g-force effect (all sims) are now using features introduced in the 1.0.17 firmware</li>
+</ul>
+</li>
+<li>Fixes<ul>
+<li>Fix crash on startup when device PID is wrong or device is disconnected</li>
+<li>Fix device gains read during startup being pushed to device on every settings change</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>All Sims</strong></p>
+<ul>
+<li>Enhanced “new g-force” effect<ul>
+<li>Effect now uses the spring center, rather than true center to determine applied gain.  Works better in aircraft with displaced centers and helicopters.  Also accounts for offset center due to trim</li>
+</ul>
+</li>
+<li>New generic “Collective Force Trim”<ul>
+<li>Available in helicopters for MSFS/X-Plane/DCS</li>
+<li>Trim release/reset and hat trim bindings available</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Improved dynamic forces effect.  Eliminated issue that was producing oscillations due to g-force component of the effect</li>
+</ul>
+</details>
+<details class="release">
+<summary>20241006 — October 6, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Updated many effects to work properly with pedals axis.  “Direction” was hard coded for y axis which does not exist for pedals.</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Remove bad damage telemetry from Mi-24 causing random activation of the damage effect</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Fix issue that would cause trouble with cyclic spring initialization when the sim freezes or pauses while the trim release button is being held.</li>
+<li>Improve AFCS following logic for HPGHelicopter class</li>
+<li>New ‘SASHelicopter’ class to support 2-axis SAS that will be supported on upcoming ‘heliSAS’ mods from SimFocus.</li>
+</ul>
+</details>
+<details class="release">
+<summary>20240908 — September 8, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Configurator gains learned at startup no longer restored upon exit unless enabled in system settings</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>CH47 - Enable door gunner to trigger weapons effect</li>
+<li>Add G-Force effect as optional for helicopters (was not previously available)</li>
+</ul>
+<p class="label-paragraph"><strong>DCS/IL2/MSFS/XPLANE</strong></p>
+<ul>
+<li>New G-Force effect for fixed wing aircraft<ul>
+<li>The original effect worked OK, but the “curvature” of the applied force would often lead to oscillations or a jerky feeling</li>
+<li>The new effect uses a linear calculation based on the min/max G settings to determine the primary force factor</li>
+<li>The physical stick deflection is then used as a factor to determine the final applied force.  For any given g-loading, “the harder you are pulling, the more force you will feel”</li>
+<li>The range of stick deflection that results in %100 applied force is adjustable</li>
+<li>Allows for negative G effect also.</li>
+<li>For DCS/IL2, If both the <em>new</em> and <em>old</em> effects are enabled at the same time, the new effect takes precedence.  The legacy effect was not previously available for MSFS/XPLANE.</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>20240811 — August 11, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Avoid placing TelemFFB window off screen if saved location is from a disconnected monitor</li>
+<li>Button binds in TelemFFB now support PoV Hats when “use hats as buttons” is disabled in configurator</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Add rotor RPM + damage telemetry for CH-47</li>
+</ul>
+<p class="label-paragraph"><strong>DCS/MSFS/X-Plane</strong></p>
+<ul>
+<li>Add Hardware Force Trim for pedals in Helos</li>
+</ul>
+</details>
+<details class="release">
+<summary>20240726 — July 26, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Avoid playing decel or g-force effect if telemetry is spiking violently (aka crash)</li>
+<li>Tone down oscillation transition/timing for jet engine rumble effect</li>
+</ul>
+<p class="label-paragraph"><strong>X-Plane</strong></p>
+<ul>
+<li>Fix X-Plane plugin to support new IAS based auto-gain</li>
+</ul>
+<p class="label-paragraph"><strong>IL-2</strong></p>
+<ul>
+<li>Fix weapons/buffet effects to play on correct axis for pedals</li>
+</ul>
+</details>
+<details class="release">
+<summary>20240705 — July 5, 2024</summary>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>SA342 - Capture pylon mounted cannon shell count such that it activates the gunfire effect when fired</li>
+<li>CH-47F - Add basic support</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Default profile for Taog UH-1 + variants</li>
+<li>Enable in-cockpit toggling of force trim for a/c such as Taog UH-1 with FT switch. (requires force trim feature enabled in TelemFFB)</li>
+</ul>
+</details>
+<details class="release">
+<summary>20240622 — June 22, 2024</summary>
+<p class="label-paragraph"><strong>Patch 2 June 26, 2024</strong></p>
+<div class="highlight"><pre><span></span><code>- Filter model list when selecting aircraft class in offline/sim/class editor
+</code></pre></div>
+<p class="label-paragraph"><strong>Patch 1 June 25, 2024</strong></p>
+<div class="highlight"><pre><span></span><code>- Fix vpconf/gain override profile loading issue when switching between aircraft
+- Fix vpconf profile issue when subsequent aircraft use same vpconf file
+- Fix vpconf browse button not updating text
+</code></pre></div>
+<p class="label-paragraph"><strong>Release - June 22, 2024</strong></p>
+<p class="label-paragraph"><strong>QoL Improvements</strong></p>
+<ul>
+<li>New system tray implementation (see manual)<ul>
+<li>TelemFFB can now be sent to system tray on startup and/or close button.  Window can be recalled by double-clicking the tray icon or from the icon right-click context menu</li>
+<li>System tray icon color indicates simulator run/pause/error state like the existing status icons</li>
+<li>Configuration errors (such as enabling MSFS force trim and having no binding configured) now present the error message in the UI, and generate a system tray notification for easier recognition of the issue.</li>
+</ul>
+</li>
+<li>Real-time settings usability improvements<ul>
+<li>Values update in near real-time when manipulating sliders</li>
+<li>Manipulating sliders no longer causes a form re-load</li>
+<li>-/+ buttons added to left/right of slider for single step adjustments<ul>
+<li>Shift+Scroll wheel or left/right up/down arrow keys while hovering mouse of the slider is also supported</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Minor UI overhaul<ul>
+<li>Look and feel updates with on/off sliders in lieu of checkboxes and improved icons.</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Configurator effect slider overrides (see manual)<ul>
+<li>Now you can directly modify, in real-time, the slider gain setting for any of the effect types <em>without</em> creating and pushing a separate vpconf file</li>
+<li>Can be overridden on a per Sim/Aircraft Class/Specific Aircraft basis</li>
+</ul>
+</li>
+<li>Minor enhancement to gear and canopy movement effects.  You will feel a bump/clunk when the gear fully extend/retract or when the canopy (when applicable) closes</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Improved/Simplified settings for adjusting dynamic spring forces (see manual)<ul>
+<li>Prior “Gain” setting is removed and the “Max Force” setting is now affixed to the aircraft “Vne” speed (learned via telemetry) while maintaining true dynamic forces based on aerodynamic conditions.</li>
+<li>“Expo” adjustment to adjust the rate at which the force falls off at low speeds.</li>
+<li>RTFM for the best experience using these new settings.</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Added tail-hook movement effect (supported on a/c with tailhooks)</li>
+<li>Added wing-fold effect (F/A-18, F-14)</li>
+<li>Added fuel-boom effect (supported on all a/c with fuel boom/door)</li>
+<li>Added Co-Pilot/RIO Spring Override feature<ul>
+<li>Can temporarily override/disable spring force when user has moved away from pilots seat.  Optionally can bind a button that must also be held down.</li>
+<li>Note that seat data is not available at this time for some aircraft (like the F-4E).</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>20240605 — June 5, 2024</summary>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Telemetry will now stop when user has ejected or pilot is dead</li>
+<li>Add real rotor RPM for AH-64</li>
+<li>Add basic support for OH-58D</li>
+</ul>
+</details>
+<details class="release">
+<summary>20240526 — May 24-26, 2024</summary>
+<p class="label-paragraph"><strong>Patch 3 - May 26, 2025</strong></p>
+<ul>
+<li>Fix stick shaker is enabled by default.  Causing it to activate for helicopters (which have no mechanism in UI to turn it off since the effect does not apply to helicopters)</li>
+</ul>
+<p class="label-paragraph"><strong>Patch 2 - May 25, 2024</strong></p>
+<ul>
+<li>Fix issue with stick shaker effect playing on ground with DCS F-4E</li>
+</ul>
+<p class="label-paragraph"><strong>Patch 1 - May 25, 2024</strong></p>
+<ul>
+<li>Fix issue loading app when device disconnected or configured/default PID is incorrect</li>
+</ul>
+<p class="label-paragraph"><strong>Release - May 24, 2024</strong></p>
+<p class="label-paragraph"><strong>DCS F-4E Maintenance Release</strong></p>
+<ul>
+<li>Added telemetry hooks needed to enable the damage effect</li>
+<li>Added ‘stick/pedal’ shaker effect<ul>
+<li>Disabled by default but set-up in F-4E profile to activate at 22.3deg AoA</li>
+<li>Is only a pedal feature IRL for the F-4E, but can be enabled on joystick and/or pedals</li>
+</ul>
+</li>
+<li>Disabled for default F-4E profile as they conflict with HB’s native implementation of each:<ul>
+<li>G-force effect</li>
+<li>Gear Buffeting</li>
+<li>Stall Buffeting</li>
+<li>Speedbrake Buffeting</li>
+<li>Afterburner Rumble</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>May 19, 2024</summary>
+<p class="label-paragraph"><strong>General/System</strong></p>
+<ul>
+<li>
+<p>Major code refactoring and re-organization of code</p>
+<ul>
+<li>NOTE: *** Users running from python natively will need to re-run the requirements.txt pip install or manually install the “stransi” python library ***</li>
+<li>NOTE: *** The format of the system settings in the registry has changed, thus you will need to re-configure your TelemFFB system settings. ***</li>
+<li>Distribution structure has been changed.  You will again notice some subfolders that contain the compiled python libraries and other supporting files.  This was done to aid in reducing false positive malware detection.</li>
+</ul>
+</li>
+<li>
+<p>New Global “vpconf” profile option</p>
+<ul>
+<li>Can set the “startup profile” in system settings to use as a default configurator profile if the profile was changed by an aircraft and there is no profile defined for the newly loaded aircraft</li>
+<li>See manual section 4.2.10</li>
+</ul>
+</li>
+<li>New option to prune log archive zips after a configurable time threshold</li>
+</ul>
+<p class="label-paragraph"><strong>IL-2</strong></p>
+<ul>
+<li>Fixed issue where sim constantly sends stale telemetry after crash or in MP map, causing effects to play forever</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Added <strong>basic</strong> support and default profile for the F-4E</li>
+<li>New “Spring Override” feature to better support popular community mods or other aircraft that do not support FFB<ul>
+<li>Implements identical functionality to what is traditionally accomplished with “Sticky Spring” and “Hardware Trim” in configurator</li>
+<li>Supports force trim and hat/button based trim.</li>
+<li>See manual section 4.2.6.2.5</li>
+</ul>
+</li>
+<li>Add damage effect support for OH-6 and A-4 community mods</li>
+</ul>
+<p class="label-paragraph"><strong>DCS/MSFS</strong></p>
+<ul>
+<li>New acceleration vector based “touch down” effect.  Creates a sharp forward force on the stick when touching down.  The harder you hit, the more force is applied (with configurable limits)</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Nosewheel Shimmy effect enhancements:<ul>
+<li>Fixed effect playing while applying brakes while airborn</li>
+<li>Fixed effect playing while stationary on the ground with a headwind</li>
+<li>Enhanced nosewheel shimmy so the shake frequency is higher at higher speeds and reduces as speed decreases</li>
+</ul>
+</li>
+<li>Enhanced dynamic simconnect subscription capabilities<ul>
+<li>A2A Comanche now uses acceleration vector data directly from the AccuSim flight model.  This should fix the long-standing “shifting stick position” issue.</li>
+<li>Requires latest update from A2A (v1.5.0 or later)</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>May 3, 2024</summary>
+<p class="label-paragraph"><strong>Hotpatch</strong></p>
+<ul>
+<li>DCS | Add basic support for OH-6A Community Mod</li>
+</ul>
+</details>
+<details class="release">
+<summary>April 1, 2024</summary>
+<p class="label-paragraph"><strong>Hotpatch</strong></p>
+<ul>
+<li>MSFS | Fix AP Following still active if axis control is disabled</li>
+<li>MSFS | swap Eng1_RPM for ThrustZ var for A2A Comanche simconnect override</li>
+<li>Fix lateral force effect showing enabled when it isn’t</li>
+</ul>
+</details>
+<details class="release">
+<summary>March 31, 2024</summary>
+<ul>
+<li><strong>“Run Anything”</strong><ul>
+<li>New feature that will allow you to kick off any shell command when an aircraft loads (or SIM or Aircraft Category).</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li><strong>Dynamic SimConnect Subscriptions</strong><ul>
+<li>Some 3rd party aircraft use alternate “L:Vars” for certain pieces of data that various effects use.  This renders the applicable effects either inoperable or inaccurate.</li>
+<li>This new functionality allows us to dynamically replace a given piece of telemetry with the L:var that is needed to retrieve the applicable data from a given aircraft.</li>
+<li>The only <em>known</em> aircraft today are the A2A Comanche and the B206/B47 from FlyInside.  These simconnect re-subscriptions are baked into this release, however this new feature will allow us to accommodate more aircraft in the future without the need to modify the underlying effects code.</li>
+</ul>
+</li>
+<li><strong>[HPG Helicopters] - Trim Release Damper for the Collective Axis</strong><ul>
+<li>Similar to the Cyclic trim release damper setting that was in the previous release, this adds the same concept for the HPG collective axis when the TR button is depressed.</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li><strong>New, more accurate Airspeed Telemetry</strong><ul>
+<li>It was recently discovered that both the ‘TAS’ and ‘IAS’ data that comes directly from the sim is inaccurate in several ways.  The ‘TAS’ data seems to be more in line with ground speed.  Th “IAS” data, while more accurate, seems to include a fixed value, regardless of heading, that is somewhere around 2x the current wind speed.</li>
+<li>Given the above inaccuracies, with most effects leveraging the ‘TAS’ data, you may have noticed odd behavior of effects like ETL.</li>
+<li>In this version, we are calculating the “true” TAS by using the aircraft velocity vectors and the wind vectors to determine the aircraft’s actual speed through the air mass.  This has given us a much more accurate data set than was previously available from the sim.</li>
+</ul>
+</li>
+<li><strong>Helicopter Trim Release Damper</strong><ul>
+<li>This is <strong>not</strong> a replacement of the in-game trim release functionality.  It is a simple spring based dampening effect, identical to the one for MSFS.</li>
+<li>To configure, simply enable the effect and bind the same button that you have configured for TR in the sim.  While the button is depressed, TelemFFB will add the dampening effect and will remove it when the button is released.  The actual trimming and centering offset is still completely handled by DCS.</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>IL-2</strong></p>
+<ul>
+<li><strong>Improved effects handling when game window loses focus</strong><ul>
+<li>IL-2 does some strange things, including a “kill all” when the window loses focus.  This update improves on the TelemFFB handling of this scenario</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>March 16, 2024</summary>
+<p class="label-paragraph"><strong>Hotpatch1 - Fix issue with older rhino firmware and ‘GetGain’ call to Rhino API</strong></p>
+<p class="label-paragraph"><strong>Hotpatch2 - Fix issue when ‘restore window size/position’ and ‘restore last tab’ are enabled in system settings</strong></p>
+<p class="label-paragraph"><strong>Hotpatch3 - adjust VRS effect for DCS to leverage better data for determining VRS condition based on airspeed and descent rate</strong></p>
+</details>
+<details class="release">
+<summary>March 15, 2024</summary>
+<p class="label-paragraph"><strong>Fixes</strong></p>
+<ul>
+<li>ALL | Helicopter Overspeed shake was missing from settings UI</li>
+<li>IL2 | Increased intensity setting range and boosted read values for buffeting “Shaker” effect</li>
+<li>DCS | Fixed F/A-18 flaps deployment causing pedal trim offset</li>
+<li>MSFS | Fixed axis snapping to 0,0 during cyclic position initialization after un-pausing</li>
+</ul>
+<p class="label-paragraph"><strong>Enhancements</strong></p>
+<ul>
+<li>MSFS | Disable individual device axis sending when global “Axis Control” is enabled for MSFS</li>
+<li>MSFS | Add “Don’t Send” option in custom simvar config for axis control in MSFS</li>
+<li>MSFS/X-Plane | Configurable dampening force when force trim release button is held</li>
+<li>IL2 | Dynamic pedal forces now supported</li>
+</ul>
+<p class="label-paragraph"><strong>New Effects</strong></p>
+<ul>
+<li><strong>Generic ‘Stick Shaker’ effect</strong> (MSFS)</li>
+<li><strong><em>Beta</em></strong> <strong>Pedal AFCS integration for HPG H145/H160</strong><ul>
+<li>Requires latest dev builds from the HPG discord</li>
+</ul>
+</li>
+<li><strong><em>Experimental</em></strong> <strong>VRS effect for helicopters</strong><ul>
+<li>Define the airspeed threshold below which VRS can occur</li>
+<li>Define the “onset” and “full” vertical descent rates where VRS will occur if under the airspeed threshold</li>
+<li>Define the max intensity of the rumble effect.  Effect will start low at the onset v/s rate and linearly increase in intensity up to max at the “full” v/s rate</li>
+</ul>
+</li>
+<li><strong>Configurable damper/friction/inertia effect override sliders</strong><ul>
+<li>Ability to enable and configure damper/friction/inertia for any given aircraft profile.  Sliders max is bound by active configurator profile settings</li>
+</ul>
+</li>
+<li><strong><em>Experimental</em></strong> <strong>Low Hydraulics effect</strong><ul>
+<li>In concert with the above damper/friction/inertia overrides, you can define heavier settings to emulate low or loss of hydraulic pressure</li>
+<li>See sections the manual for details..  <strong><em>seriously</em></strong>… you need to RTFM before you play with this effect</li>
+<li>Supported Sims/Aircraft:</li>
+<li>MSFS - TelemFFB reads the “Hydraulic System” simvar, so theoretically any aircraft where that data is representative of a low/failure condition is supported.</li>
+<li>DCS - Unique pressure gauge and/or warning light data must be tracked on a per-aircraft basis.  Limited aircraft are supported currently<ul>
+<li>Supported:<ul>
+<li>UH-1, SA342, Mi-8, Mi-24, KA-50</li>
+<li>A-10C, AV-8B, F-14, F15ESE</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>New App Features</strong></p>
+<ul>
+<li><strong>Startup/Shutdown Configurator Profiles</strong><ul>
+<li>Ability to select configurator profiles that will load when TelemFFB starts or exits (Configured in the system settings dialog)</li>
+</ul>
+</li>
+<li><strong>Configurator Profile compatibility checking</strong><ul>
+<li>Validates the PID for the chosen profile matches the device you are selecting it for.  Validation is done when selecting profile and at time of push</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>February 2, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Several bug fixes</li>
+</ul>
+<p class="label-paragraph"><strong>IL2</strong></p>
+<ul>
+<li>Add missing elevator droop effect setting to UI interface</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Add missing ‘trim workaround’ setting to UI interface</li>
+</ul>
+<p class="label-paragraph"><strong>X-Plane</strong></p>
+<ul>
+<li>Add support for X-Plane 11/12 (earlier versions not tested but may work)</li>
+<li>New X-Plane plugin to support telemetry export is installed automatically by TelemFFB when you enable via system settings</li>
+<li>Support is based on the same TelemFFB effects library that MSFS uses
+        - Dynamic Control Forces
+        - Helicopter Force Trim
+        - Trim following *<em>
+        - Autopilot following (fixed wing only) *</em>
+        - DIY FFB Pedal support
+        - DIY Collective support
+    ** Unlike MSFS, you <strong>do not</strong> need to unbind your axes in X-Plane</li>
+</ul>
+</details>
+<details class="release">
+<summary>January 27, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<p class="label-paragraph"><strong>Bug Fixes</strong></p>
+<ul>
+<li>real time update aircraft class in telem manager when creating new aircraft config (previously required restart TelemFFB)</li>
+<li>remove invalid settings from helicopter configs</li>
+<li>Fix issue with aircraft name pattern matching in DCS export script</li>
+</ul>
+</details>
+<details class="release">
+<summary>January 14, 2024</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Changing vpconf file now supports hot-changing</li>
+<li>Fix null character making its way into a/c ascii name in IL2 decoder</li>
+<li>Fix decel effect missing from MSFS settings</li>
+</ul>
+</details>
+<details class="release">
+<summary>January 12, 2024</summary>
+<p class="label-paragraph"><strong>General fixes</strong></p>
+<ul>
+<li>fix settings slider snapping to wrong % value after settings change</li>
+<li>fix GitHub issues 21, 22, 23, 27<ul>
+<li>
+<h1 id="23-fix-shifting-of-settings-tab-layout-when-changing-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> 23 - fix shifting of settings tab layout when changing settings<a class="headerlink" href="#23-fix-shifting-of-settings-tab-layout-when-changing-settings" title="Link to this section">¶</a></h1>
+</li>
+<li>
+<h1 id="21-22-add-tooltips-to-status-icons-and-setting-revert-button"><span class="enumerate-headings-plugin enumerate-heading-plugin">3.</span> 21, #22 - add tooltips to status icons and setting revert button<a class="headerlink" href="#21-22-add-tooltips-to-status-icons-and-setting-revert-button" title="Link to this section">¶</a></h1>
+</li>
+<li>
+<h1 id="27-fix-sm-interface-returning-to-top-after-changing-setting"><span class="enumerate-headings-plugin enumerate-heading-plugin">4.</span> 27 - fix SM interface returning to top after changing setting<a class="headerlink" href="#27-fix-sm-interface-returning-to-top-after-changing-setting" title="Link to this section">¶</a></h1>
+</li>
+</ul>
+</li>
+<li>other ui/operation/settings enhancement/cleanup</li>
+</ul>
+</details>
+<details class="release">
+<summary>January 9, 2024</summary>
+<p class="label-paragraph"><strong>General fixes</strong></p>
+<ul>
+<li>patched several issues raised on github</li>
+<li>fixed missing elevator droop effect for DCS</li>
+<li>increased max setting range for runway rumble effect</li>
+<li>fixed new aircraft clone from existing issue</li>
+<li>fixed file access issue with repetitive successive config write/reloads</li>
+<li>fixed issue with selecting vpconf profile from Settings Manager interface</li>
+<li>better handle malformed user configs during legacy config conversion</li>
+</ul>
+<p class="label-paragraph"><strong>previous version…</strong></p>
+<ul>
+<li>enable PyQT high DPI scaling to avoid mangled UI with high resolution/window scale values</li>
+<li>disallow invalid auto-launch setup configurations</li>
+</ul>
+</details>
+<details class="release">
+<summary>January 8, 2024</summary>
+<p class="label-paragraph"><strong>Big TelemFFB Update!</strong></p>
+<ul>
+<li>Completely UI driven config (<strong>no more ini files!</strong>)<ul>
+<li>Only valid/applicable settings are shown when modifying a sim/aircraft category/aircraft (<strong>no more guessing</strong>)</li>
+<li>Live effect management for active aircraft right from the TelemFFB window</li>
+<li>Manage any sim / aircraft category / specific aircraft default settings through the settings manager interface</li>
+<li>Simple, wizard-based creation of settings for new aircraft (either ‘new’ or ‘clone from existing’)</li>
+</ul>
+</li>
+<li>Easy operation for multiple FFB devices (i.e. joystick plus pedals and/or collective)<ul>
+<li>Built in Auto-launch setup for multiple devices (<strong>no more need for command line arguments!</strong>)</li>
+<li>Dynamically manage unique config for any device from single master window</li>
+</ul>
+</li>
+<li>Automatic management of user settings override for all sims and FFB devices</li>
+<li>Automated, built-in,  legacy user override file (.ini) conversion</li>
+<li>much more!!</li>
+</ul>
+</details>
+<details class="release">
+<summary>January 2, 2024</summary>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Fix elevator trim following not working when ‘aoa effect’ is disabled</li>
+<li>Fix issue with the ‘return to last position’ logic when returning from pause or slew mode when force trim is enabled in a helicopter</li>
+</ul>
+</details>
+<details class="release">
+<summary>December 14, 2023</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Move the version/update checking to a separate thread to avoid extended loading times when update server can not be reached</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Avoid error condition when prop thrust is a negative value (reverse thrust)</li>
+</ul>
+</details>
+<details class="release">
+<summary>December 2, 2023</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Fix engine rumble(s) not stopping if setting is disabled while sim is active</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Add legacy bindings option when TelemFFB controls the axes for helicopters that still use the fixed-wing bindings</li>
+<li>Allow sending of axes information if Helicopter is configured without force-trim enabled</li>
+<li>Fix ‘deceleration effect’ not working in MSFS</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 23, 2023</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>New integrated updater app!<ul>
+<li>Upon startup, TelemFFB will check for available updates and, if available, prompt you to download and install.  If you proceed, TelemFFB will quit and the updater app will launch and allow you to install the update with the push of a button<ul>
+<li>You may optionally restart TelemFFB automatically when the update is complete</li>
+</ul>
+</li>
+<li>If you canceled the update, you can also update from the Utilities menu, or you will be prompted again the next time TelemFFB starts</li>
+<li>If you find the popup annoying and <em>dont</em> want to update, you may disable the auto update prompt in your user config file by setting <code>ignore_auto_updates=True</code><ul>
+<li>If you have disabled the update notifications, you may still update via the Utilities Menu</li>
+</ul>
+</li>
+<li><strong>Caution</strong> - The update process will <strong><em>overwrite</em></strong> config.ini!  If you are not yet making use of a user config file, now would be a good time to start.</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 17, 2023</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Bug fixes and cleanup<ul>
+<li>Remove erroneous FC3 ‘F-15E’ default aircraft config</li>
+<li>Don’t print warning when vpconf setting is in config</li>
+<li>Log additional info when loading vpconf dynamically</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 14, 2023</summary>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Patch issue with auto-classification when loading into an aircraft which is not in the config file</li>
+<li>Change pause behavior to allow aircraft change to update TelemFFB while in the hangar</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 13, 2023</summary>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Patch for aoa effect playing while aircraft is on the ground with no airspeed resulting in bad behavior of spring offset for aircraft with “aircraft_is_spring_centered” enabled</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 12, 2023</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Added menu option to force an effects reset.  This can be useful if an effect gets stuck for some reason (sim crash for example) as an alternative to starting TelemFFB with the -r (reset) flag.  Use with caution in DCS and IL-2 as it is destructuve to any effects generated by the sim itself.</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li><strong>Cyclic hat-trim following for generic helicopters</strong><ul>
+<li>Follows the same setup as the trim following for fixed wing aircraft</li>
+<li>Read this section in the manual for a refresher: <a class="external" href="https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y/edit#heading=h.gebv2sue64zj" target="_blank">https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y/edit#heading=h.gebv2sue64zj</a></li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<p>As more people have started building DIY pedals, there are some enhancements to the handling of FFB pedals in DCS with this release of TelemFFB.
+Please read this section of the manual the detailed documentation which also links to a separate section of the document for tips on setting
+up DCS to avoid getting trim events meant for your joystick sent to your pedals:  <a class="external" href="https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y/edit#heading=h.bamrt98l8wd5" target="_blank">https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y/edit#heading=h.bamrt98l8wd5</a></p>
+<p>New pedal features for DCS:
+- <strong>Rudder trim for fixed wing aircraft</strong>
+- <strong>Auto spring mode switching for Heli/Jet/Prop aircraft types (or per aircraft)</strong></p>
+<p>Default Behavior is as follows:
+- ‘JetAircraft’
+    - Pedal trimming enabled
+    - Spring mode = Static
+    - Static spring based on configurable spring and dampening gain</p>
+<ul>
+<li>
+<p>‘PropellerAircraft’</p>
+<ul>
+<li>Pedal trimming enabled</li>
+<li>Spring mode = Dynamic</li>
+<li>Dynamic force based on configurable spring and dampening gain.  Force will be applied linearly with 0 at rest, %25 at the published Vs speed and %100 at the published Vne speed.</li>
+<li>In an effort to keep as much complexity out of the config as possible, these Vs and Vne values are currently hard coded for the DCS warbirds, but instructions exist in the manual for overriding or for setting up a different aircraft to use dynamic pedal forces.</li>
+</ul>
+</li>
+<li>
+<p>‘Helicopter’</p>
+<ul>
+<li>Pedal trimming not supported (sorry,  I tried multiple ways but DCS is too broken in this regard for helicopters that even have pedal trimming)</li>
+<li>Spring mode = Disabled<ul>
+<li>Configurable dampening gain is available</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 8, 2023</summary>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Add setting <code>center_spring_on_pause</code> to center with springs during pause/slew conditions<ul>
+<li>If true the stick will center with spring force when the simulator enters pause or slew</li>
+</ul>
+</li>
+<li>TelemFFB will now auto-detect the aircraft category and engine type for all aircraft and load the appropriate default settings if no aircraft specific entry is found<ul>
+<li>Still possible for data from simconnect to be inaccurate</li>
+</ul>
+</li>
+<li>Added engine/prop and jet (turbine) rumble effects to ‘TurbopropAircraft’ type</li>
+<li>Fixed jet engine rumble not playing for JetAircraft type</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 6, 2023</summary>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Extended the damage effect to support all FC3 aircraft</li>
+<li>Add setting to enable disable basic AoA forces effect <code>aoa_effect_enabled</code> (default=yes)</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Added VRS effect to HPG Helicopter class
+        - new setting <code>vrs_effect_intensity</code> (%0-100, default %20)
+        - will lightly shudder when on verge of VRS conditions, medium shudder when slightly into VRS, maximum shudder when VRS fully developed</li>
+<li>Fixed config.ini so gear/flaps/spoiler(speedbrake) effects are in the default configuration for MSFS aircraft</li>
+<li>Toned down the dynamic force effect on rudder pedals in non-FBW fixed wing aircraft.</li>
+</ul>
+</details>
+<details class="release">
+<summary>November 1, 2023</summary>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>Hot patch for HPG H145/H160 implementation which greatly improves the hands on detection<ul>
+<li>There is a new <code>hands_off_deadzone</code> setting that will dictate when TelemFFB will notify the helicopter that spring override is no longer active</li>
+<li>previously the hands on/hands off point was a single deadzone around the center of the stick</li>
+<li>now a smaller “hands off deadzone” will prevent flapping of hands on detection as the stick will need to be much closer to center to trigger “hands off” than it did to trigger “hands on”</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>October 31, 2023</summary>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>New special integration with the Hype Performance Group Airbus H145 and H160 Helicopters<ul>
+<li>Full FFB integration with the AFCS for both the Cyclic and Collective axes (Tail rotor axis is planned)</li>
+<li>Tight integration with the AFCS data provides a true-to-life experience with the Rhino</li>
+<li>This was a 2-sided project with support from HPG to add necessary capabilities for TelemFFB to communicate the state of the axes for proper implementation!</li>
+<li>Requires a minimum of Build 43 Patch 2 for the H160 and Build420 Patch 3 for the H145.  These patches are available in the HPG Discord.</li>
+</ul>
+</li>
+<li>For a full breakdown of the capabilities and tips on setup, check out the VPforce user guide: <a class="external" href="https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y/edit#heading=h.f30c77lc61iq" target="_blank">https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y/edit#heading=h.f30c77lc61iq</a></li>
+<li>NOTE:  If you are running from python source instead of the exe release file, we have switched to a forked version of pysimconenct to support reading/writing of L:VARS in MSFS.  As such, you will need to <code>pip uninstall pysimconnect</code> and then re-run <code>pip install -r requirements.txt</code></li>
+</ul>
+</details>
+<details class="release">
+<summary>October 19, 2023</summary>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<p>** Please read the full documentation in the VPForce Manual **
+** <a class="external" href="https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y" target="_blank">https://docs.google.com/document/d/1YL5DLkiTxlaNx_zKHEYSs25PjmGtQ6_WZDk58_SGt8Y</a> **</p>
+<ul>
+<li>
+<p>New option to send joystick/pedal axis position to MSFS via simconnect.  Requires un-binding axes from MSFS</p>
+<ul>
+<li>telemffb_controls_axes           - Master control for simconnect axis sending (true/false)</li>
+<li>joystick_x_axis_scale          - Scale joystick x axis output (0-%100)</li>
+<li>joystick_y_axis_scale          - Scale joystick y axis output (0-%100)</li>
+<li>rudder_x_axis_scale            - Scale pedal axis output (0-%100)</li>
+</ul>
+</li>
+<li>
+<p>New trim and AP following functionality for fixed wing aircraft.  REQUIRES <code>telemffb_controls_axes = True</code></p>
+<ul>
+<li>trim_following = True                            - Master control for trim/ap following (true/false)</li>
+<li>ap_following                                   - Enable/disable ap following (only disables aileron/rudder) (true/false)</li>
+<li>invert_ap_x_axis                               - Invert the x axis AP follow behavior (req’d for some AC like the default C172)</li>
+<li>joystick_trim_follow_gain_physical_x           - Physical stick x axis movement as a percentage of the trim value (0-100%)</li>
+<li>joystick_trim_follow_gain_physical_y           - Physical stick y axis movement as a percentage of the trim value (0-100%)</li>
+<li>joystick_trim_follow_gain_virtual_x            - Virtual stick x axis movement as a percentage of the physical stick movement (0-100%)</li>
+<li>joystick_trim_follow_gain_virtual_y            - Virtual stick y axis movement as a percentage of the physical stick movement (0-100%)</li>
+<li>rudder_trim_follow_gain_physical_x             - Physical pedal x axis movement as a percentage of the trim value (0-100%)</li>
+<li>rudder_trim_follow_gain_virtual_x              - Virtual pedal x axis movement as a percentage of the physical pedal movement (0-100%)</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="release">
+<summary>October 6, 2023</summary>
+<p class="label-paragraph"><strong>General</strong></p>
+<ul>
+<li>Added release notes for tracking updates</li>
+<li>Added link in UI to release notes file</li>
+</ul>
+<p class="label-paragraph"><strong>DCS</strong></p>
+<ul>
+<li>Added intensity and scaling variables for the ‘wind’ effect
+    -wind_effect_scaling    - adjusts the overall strength of the effect
+    -wind_effect_max_intensity    - sets an upper threshold vor the wind effect</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li>
+<p>Auto detect Helicopter and Jet aircraft based on simconnect variable ‘CATEGORY’ to avoid executing
+    effects that are incompatible with certain aircraft types if the module does not have a definition
+    in the config file</p>
+</li>
+<li>
+<p>Added glider ‘force trim’ function which will allow a button binding to relieve and re-center the joystick elevator spring force, similar
+    to many modern gliders</p>
+<p>-force_trim_enabled             - enable/disable the effect
+-elevator_force_trim            - enable/disable on the elevator axis
+-aileron_force_trim             - enable/disable on the aileron axis
+-force_trim_button              - Button number to treat as force trim button
+-force_trim_reset_button        - Button number to treat as trim reset button</p>
+</li>
+</ul>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

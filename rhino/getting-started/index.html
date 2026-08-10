@@ -1,0 +1,1899 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/rhino/getting-started/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../using-the-rhino/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Getting Started - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#getting-started">2. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technical-specifications">2.1 
+<span class="md-ellipsis">
+      
+        Technical Specifications
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#physical-setup">2.2 
+<span class="md-ellipsis">
+      
+        Physical Setup
+      
+    </span>
+</a>
+<nav aria-label="Physical Setup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-vkb-adapter">2.2.1 
+<span class="md-ellipsis">
+      
+        The VKB Adapter
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-winwing-adapter">2.2.2 
+<span class="md-ellipsis">
+      
+        The WinWing Adapter
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-rhino-throw-limiter-adapters">2.2.3 
+<span class="md-ellipsis">
+      
+        The RHINO Throw Limiter Adapters
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#initial-connection-and-updating-the-firmware">2.3 
+<span class="md-ellipsis">
+      
+        Initial Connection and Updating the Firmware
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-the-software-and-basic-operation">2.4 
+<span class="md-ellipsis">
+      
+        Installing the Software and Basic Operation
+      
+    </span>
+</a>
+<nav aria-label="Installing the Software and Basic Operation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-and-using-the-vpforce-ffb-configurator">2.4.1 
+<span class="md-ellipsis">
+      
+        Installing and Using the VPforce FFB Configurator
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-configuration-profiles-and-personalization">2.5 
+<span class="md-ellipsis">
+      
+        Understanding Configuration Profiles and Personalization
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="getting-started"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Getting Started<a class="headerlink" href="#getting-started" title="Link to this section">¶</a></h1>
+<p>Force feedback is a fascinating but occasionally tricky subject. The complexity doesn’t come from the Rhino itself so much as from the sheer number of ways this technology can be used. Every simulator, every software layer, and every user’s setup brings its own flavor to the mix. The good news is that once you understand the basics, it all starts to make sense - and you can eat Rhinos the same way you eat elephants: <em>one bite at a time</em>.</p>
+<p>This section of the manual is designed to guide you through that first meal. We’ll start with the essentials - getting your Rhino physically installed, connected, and recognized by the system - and move on to configuring the software so that you can experience your first proper force feedback flight or drive. By the end of this section, you’ll have a fully functional controller, ready to use with any simulator that supports FFB. The finer details, like tuning response curves, effect strengths, and simulator integrations, will come later once you’re ready for more.</p>
+<p>Before diving in, it’s helpful to know what you’re actually working with. The Rhino isn’t just a joystick base with motors; it’s a high-precision control loading system capable of recreating complex physical sensations - from aerodynamic forces to mechanical friction - in real time. Each motor in the Rhino responds to both software commands and your own inputs, constantly adjusting torque to simulate how a real control stick behaves under load. That means correct setup and calibration are key to unlocking its full potential.</p>
+<p>In this section, we’ll cover:</p>
+<ul>
+<li><strong>Mounting and physical setup:</strong> How to secure the Rhino safely and give it the stability it deserves (and demands).</li>
+<li><strong>Connecting and powering up:</strong> What to check before plugging it in and how to avoid common pitfalls.</li>
+<li><strong>Basic software configuration:</strong> Installing and launching the FFB Configurator, testing motor response, and ensuring everything communicates correctly.</li>
+<li><strong>Initial calibration and safety:</strong> How to center, verify movement, and use the safety stop effectively before your first live test.</li>
+</ul>
+<p>Once these steps are complete, you’ll have a working Rhino that’s ready to stretch its legs - or, more accurately, its torque. You’ll be able to jump straight into a simulator like <em>DCS World</em> or <em>IL-2 Great Battles</em> and feel genuine aerodynamic resistance, not just spring tension.</p>
+<p>The deeper sections of this manual will then show you how to fine-tune those sensations - how to make it feel heavier, smoother, lighter, or more “alive” depending on what you’re flying or driving. But for now, take it slow, enjoy the process, and remember: taming a Rhino isn’t difficult. You just have to start with one careful bite.</p>
+<h2 id="technical-specifications"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Technical Specifications<a class="headerlink" href="#technical-specifications" title="Link to this section">¶</a></h2>
+<p class="label-paragraph"><strong>Physical:</strong></p>
+<ul>
+<li>Weight: 5.2 kg</li>
+<li>Base dimensions: 205mm × 180mm</li>
+<li>Height to grip connector: 290mm</li>
+<li>Gimbal: 3D printed PETG/aluminum with bearings</li>
+<li>Transmission: 1:6.2 ratio belt drive</li>
+<li>Maximum throw: 22° each direction (44° total)</li>
+</ul>
+<p class="label-paragraph"><strong>Motors:</strong></p>
+<ul>
+<li>Two 57BLF03 NEMA servo motors</li>
+<li>Maximum torque: 9 N‧m per axis</li>
+<li>Maximum drive current: 30A per motor</li>
+<li>Typical power consumption: 150W</li>
+<li>Resolution: 14-bit per revolution, 13-bit effective stick resolution (12-bit per revolution, 11-bit effective for units before 2023 Q2)</li>
+</ul>
+<p class="label-paragraph"><strong>Power &amp; Cooling:</strong></p>
+<ul>
+<li>Power supply: 180W, 20V (included)</li>
+<li>Cooling: Dual-fan active cooling (activates at 50°C motor temperature)</li>
+</ul>
+<p class="label-paragraph"><strong>Safety &amp; Controls:</strong></p>
+<ul>
+<li>Emergency stop button (cuts all motor power when pressed)</li>
+<li>Built-in rotary encoder (1 bindable axis, defaults to spring force adjustment)</li>
+<li>Gear Covers are included</li>
+</ul>
+<p class="label-paragraph"><strong>Grip Compatibility:</strong></p>
+<ul>
+<li><strong>Thrustmaster-style:</strong> Direct mount (Cougar, Warthog, F/A-18C)</li>
+<li><strong>Virpil:</strong> Direct mount (MongoosT-50, WarBRD, Constellation Alpha, Alpha Prime, VFX, AH-64, UH-60, FLNKR), LEDs supported</li>
+<li><strong>VKB:</strong> Adapter required (+ VKB main controller/black box for grip operation)</li>
+<li><strong>WinWing:</strong> Adapter required</li>
+</ul>
+<h2 id="physical-setup"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Physical Setup<a class="headerlink" href="#physical-setup" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <img alt="" height="274px" src="../media/Pictures/10000201000008000000068638AB768B99FDE16D.webp" width="336px"> <figcaption></figcaption></img></figure>
+<p>The VPforce Rhino can be attached to any suitably durable and rigid mounting with four 6mm bolts (see schematic).</p>
+<p>Due to the weight and strength of the hardware, the mounting structure needs to be designed accordingly. Also note that the gear and belt drives are on the outside of the base structure and it is important to make sure that they do not make any contact with other parts of the mounting system or the person in the pilot’s seat.</p>
+<p>Attach the power cable and the included USB cable to the Rhino base and then connect them to the power socket and computer respectively.</p>
+<p>The big red button is an important safety feature, make sure that you have unrestricted access to it at all times. To facilitate this you can rotate the Rhino and reverse the axis in software (see 2.4 for details).</p>
+<p>To cut off all power to the motors, simply push down on the big red button until it locks.</p>
+<p>To reset, rotate clockwise and let the button pop up.</p>
+<p>The rotating knob can be used to control different features of the Rhino (see software sections for details), by default it controls the spring force.</p>
+<p>The Rhino supports Thrustmaster (Cougar, Warthog, F/A-18C) and Virpil grips directly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Rotating Thrustmaster grips requires the use of an extension. For VKB and WinWing see below.</p>
+</div>
+<figure class="figure-image"> <img alt="Rhino Grip mount head" src="../images/getting-started/grip-compatibility.webp" width="300"> <figcaption>Rhino Grip mount head</figcaption></img></figure>
+<h3 id="the-vkb-adapter"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.1</span> The VKB Adapter<a class="headerlink" href="#the-vkb-adapter" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="The VKB Adapter" src="../media/Pictures/1000020100000727000008001DBCB6BB2E3883E3.webp" width="300px"/> <figcaption>The VKB Adapter</figcaption></figure>
+<p>The VKB Adapter is available in separate rev. B and rev. C variants. Choose the adapter that matches your grip socket. In addition to the Adapter, you will need a VKB main controller (black box) to operate VKB grips with the Rhino.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The adapter has an external cable that attaches to the black box (see picture).</p>
+</div>
+<p>To connect the adapter to your VKB grip, push the connector into the grip until it makes contact and secure with the little screw thing - basically exactly as with a normal VKB base.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the connector is tight and doesn’t want to go in easily, DO NOT apply force to the rotating lower part. This can pinch and mangle the wire coming out of the adapter. Sitting on the adapter is also highly not recommended.</p>
+</div>
+<p>There is no electrical connection between the adapter and the Rhino, so you can simply place the adapter on the Rhino connector, rotate the grip freely into a suitably ergonomic position and screw the adapter’s lower part in until the connection is secure enough to hold the grip without rotating under stress. Re-tighten if necessary.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The black box will blink a red light, because it doesn’t see any axis (only the grip connects to the black box). This is normal and will not hamper the operation of the device.</p>
+</div>
+<p>To use a VKB grip’s buttons for force trim or other functions in the Rhino software, run the included RhinoLoopback app and set Grip Type to Loopback. See details in the relevant section.</p>
+<h3 id="the-winwing-adapter"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.2</span> The WinWing Adapter<a class="headerlink" href="#the-winwing-adapter" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="The WinWing Adapter" src="../media/Pictures/10000000000004E200000539F6FC95994BDEBD44.webp" width="300px"/> <figcaption>The WinWing Adapter</figcaption></figure>
+<p>The WinWing adapter adapts the WinWing grips to the Rhino interface both mechanically and electrically. Tested and working correctly with the WinWing F-16EX and F-18 grips.</p>
+<p>It converts the proprietary WinWing protocol to a TM standard 5-pin interface and also passes analog axis data such as brake lever and thumbsticks. It should be compatible with TM/Virpil bases, but without the analog axis functionality and possibly limited to 24 buttons.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In some rare cases a WinWing grip will not report analog axis data, in that case a calibration of the grip analog functions needs to be performed via WinWing software on a WinWing base.</p>
+</div>
+<p>To use the full grip functionality on the Rhino base the <em>“WinWing adapter”</em> grip type needs to be selected in the drop down menu.</p>
+<figure class="figure-image"> <img alt="WinWing Grip Type Selected" height="27px" src="../media/Pictures/100002010000029C0000001C8EB99BF61ACD2EA1.webp" width="624px"/> <figcaption>WinWing Grip Type Selected</figcaption></figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On newer revisions of the WinWing adapter firmware, button number 32 will illuminate if the Grip connection with the WinWing grip is not functioning/disconnected.</p>
+</div>
+<figure class="figure-image"> <img alt="Button 32 Active, indicating an error" height="77px" src="../media/Pictures/100002010000003600000068B5D6998D65E731A8.webp" width="40px"/> <figcaption>Button 32 Active, indicating an error</figcaption></figure>
+<h3 id="the-rhino-throw-limiter-adapters"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2.3</span> The RHINO Throw Limiter Adapters<a class="headerlink" href="#the-rhino-throw-limiter-adapters" title="Link to this section">¶</a></h3>
+<p>The RHINO’s 22-degree throw can feel excessive, especially with extensions. Physical throw limiter adapters set hard limits on stick movement. They can be ordered from VPforce or 3D printed from a <a class="external" href="https://cad.onshape.com/documents/8addc17e2e80b65a283cbe11/w/f15586aa6951f77b58393a96/e/7795e6a8f7c49e69c519d9a7" target="_blank">parametric CAD model</a> that lets you adjust the throw angles to your preference.</p>
+<p>For detailed installation instructions, see <a href="../rhino-maintenance/#installing-rhino-throw-limiter">Installing RHINO Throw Limiter</a>.</p>
+<h2 id="initial-connection-and-updating-the-firmware"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> Initial Connection and Updating the Firmware<a class="headerlink" href="#initial-connection-and-updating-the-firmware" title="Link to this section">¶</a></h2>
+<p>When you connect the <strong>Rhino</strong> to your computer for the first time, a popup should appear with a link to the <strong>VPforce WebUSB Tool</strong>. If you miss the popup, you can visit the site directly: <a class="external" href="https://vpforce.eu/usb/rhino/" target="_blank"><em>https://vpforce.eu/usb/rhino/</em></a>.</p>
+<p>On the website, click <strong>“Connect”</strong> to access firmware updates and basic configuration utilities. Select the correct Rhino from the list (for most users, it will be the only one shown) and click <strong>“Connect”</strong> again to establish the connection.</p>
+<figure class="figure-image"> <img alt="The Rhino WebUSB Interface" height="286px" src="../media/Pictures/10000201000002B7000001ED6823A57A905CB1E9.webp" width="403px"/> <figcaption>The Rhino WebUSB Interface</figcaption></figure>
+<p>If the system detects that a newer firmware version is available, it will give you the option to update it - unsurprisingly labeled <strong>“Update Firmware”</strong>.</p>
+<p>The same website also provides access to download the <strong>Rhino Desktop Software</strong> package for more advanced configuration and control.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>WebUSB requires a Chromium-based browser to function. Supported browsers include <strong>Google Chrome, Brave, Microsoft Edge, Opera</strong>, and similar. <strong>Firefox and other non-Chromium browsers do not support WebUSB</strong>, so the connection will not work in them.</p>
+</div>
+<h2 id="installing-the-software-and-basic-operation"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Installing the Software and Basic Operation<a class="headerlink" href="#installing-the-software-and-basic-operation" title="Link to this section">¶</a></h2>
+<h3 id="installing-and-using-the-vpforce-ffb-configurator"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> Installing and Using the VPforce FFB Configurator<a class="headerlink" href="#installing-and-using-the-vpforce-ffb-configurator" title="Link to this section">¶</a></h3>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Download and Install the Software</strong><br/>
+Go to <a class="external" href="https://vpforce.eu/usb/rhino/" target="_blank">https://vpforce.eu/usb/rhino/</a> and download the latest <strong>Rhino Desktop Software package</strong>. While older versions are available, it’s recommended to use the latest release. The software comes as a simple ZIP file - unpack it to a folder of your choice. To start the configurator, double-click <strong>“VPforce_FFB_Configurator.exe”</strong> inside the folder.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Verify Connection</strong><br/>
+Once open, you should see values like <strong>raw_x</strong> and <strong>raw_y</strong> react as you move the stick, along with <strong>curr_x</strong>, <strong>curr_y</strong>, and other parameters. If nothing appears:</p>
+<ul>
+<li>Check that the <strong>Power supply</strong> and <strong>USB cable</strong> are connected.</li>
+<li>Make sure the <strong>big red button</strong> is not pressed in (rotate clockwise to reset if needed).</li>
+</ul>
+</li>
+<li>
+<p>Additional troubleshooting tips can be found in the relevant sections of this manual.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Calibrate the Sensors</strong></p>
+<ul>
+<li><strong>This step is not required for production units, since they are calibrated before shipping</strong></li>
+<li>Go to the <strong>Settings tab</strong> and click <strong>“Auto Calibrate”</strong>.</li>
+<li>Move the stick to all extremes to allow the software to detect the full range of motion.</li>
+<li>Turn off <strong>Auto Calibrate</strong>, then click <strong>“Apply Settings”</strong> to make the calibration active.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Saving the Configuration:</strong></p>
+<ul>
+<li><strong>Apply Settings:</strong> Activates the current configuration temporarily; it will be lost on device restart.</li>
+<li><strong>Store Settings:</strong> Saves the configuration permanently to the Rhino’s flash memory.</li>
+<li><strong>Read Config:</strong> Loads the stored device configuration back into the software.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If the stick’s movement feels excessive, see the <strong>“Endstops”</strong> section in the main software chapter. Or a <strong>physical limiter</strong> can be placed.</p>
+</div>
+<ol start="7">
+<li>
+<p class="label-paragraph"><strong>Basic Settings Overview</strong></p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Master Gain (Settings tab):</strong> This is the main power slider for the Rhino. Start at 100% to explore the full range, or lower it to suit your setup.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Periodic Effects (below Master Gain):</strong> Used for in-game events like stall shakes, gunfire, or engine vibrations.</p>
+</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Testing the Controller</strong></p>
+<ul>
+<li>Go to the <strong>Effects tab</strong> and select <strong>“Spring”</strong>, setting its gain to 100%.</li>
+<li>Ensure the <strong>Spring slider</strong> in the Settings tab is not at zero.</li>
+<li>The stick will otherwise feel limp until it receives input from a game or software. The <strong>Spring effect</strong> in the configurator provides basic centering so you can feel the Rhino and experiment with other settings.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not select <strong>“Sticky”</strong> at this point. Keeping it active will override other software and prevent your simulator from controlling the force feedback properly.</p>
+</div>
+<ol start="10">
+<li>
+<p class="label-paragraph"><strong>Next Steps</strong><br/>
+    Once calibration and basic settings are complete, you’re ready to start testing the Rhino in your simulator. For detailed configuration options, advanced effects, and game-specific setups, see the main sections of this manual.</p>
+<p>With this setup, you’re now ready to begin your journey into the subtle art, and raw power, of Rhino force feedback.</p>
+</li>
+</ol>
+<h2 id="understanding-configuration-profiles-and-personalization"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> Understanding Configuration Profiles and Personalization<a class="headerlink" href="#understanding-configuration-profiles-and-personalization" title="Link to this section">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Why Profile Sharing Is Rare in the Rhino Community</p>
+<p>Unlike traditional gaming peripherals, Rhino setups vary significantly from user to user. Profile sharing is uncommon in the Rhino community for several practical reasons:</p>
+<p class="label-paragraph"><strong>Hardware Diversity:</strong> The Rhino ecosystem includes stock bases, numerous DIY builds, and fully custom designs. Each configuration behaves differently due to variations in mechanical construction, grip weight, extension length, and material choices.</p>
+<p class="label-paragraph"><strong>Grip and Extension Variations:</strong> Even stock Rhino bases differ substantially depending on the attached grip (full metal vs plastic) and extension length. A configuration that feels perfect on one setup may be completely unusable on another with different physical characteristics.</p>
+<p class="label-paragraph"><strong>Individual Preference:</strong> Force feedback is highly subjective. What feels “realistic” or “comfortable” to one pilot may feel too stiff, too loose, or simply wrong to another.</p>
+</div>
+<p class="label-paragraph"><strong>Recommended Approach - Build Your Own Baseline:</strong></p>
+<p>Rather than searching for pre-made profiles, invest time learning the Config software and building your own baseline configuration from scratch. This approach ensures your settings match your specific hardware and personal preferences.</p>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Start Simple - No Effects:</strong> Begin with just the fundamental feel of the stick before adding complex effects.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Tune Core Forces First:</strong> Focus on damping, inertia, minimal friction (use sparingly), and spring force. These form the foundation of your force feedback experience.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Set Spring to Maximum Safe Level:</strong> Adjust the spring force to the highest setting your hardware can handle without exceeding current limits, then bind it to the rotary potentiometer for easy adjustment during flight.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Add Telemetry Effects Last:</strong> Once you have a solid baseline, start with default TelemFFB settings and adjust them on-the-fly during gameplay to match your taste.</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Why This Matters</p>
+<p>Taking time to understand the Config software and build your own baseline may seem more demanding than loading someone else’s profile, but it results in a configuration perfectly matched to your unique hardware and flying style. This foundation makes all future adjustments easier and more effective.</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

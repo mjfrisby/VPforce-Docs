@@ -1,0 +1,2121 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/rhino/game-specific-troubleshooting/" rel="canonical"/>
+<link href="../troubleshooting-maintenance/" rel="prev"/>
+<link href="../rhino-maintenance/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Game-Specific Troubleshooting - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#game-specific-troubleshooting">6. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Game-Specific Troubleshooting
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../telemffb/">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dcs-world">6.0.1 
+<span class="md-ellipsis">
+      
+        DCS World
+      
+    </span>
+</a>
+<nav aria-label="DCS World" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ffb-not-working">
+<span class="md-ellipsis">
+      
+        FFB Not Working
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#not-receiving-telemetry">
+<span class="md-ellipsis">
+      
+        Not Receiving Telemetry
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autopilot-misbehaving-or-disengaging-unexpectedly">
+<span class="md-ellipsis">
+      
+        Autopilot Misbehaving or Disengaging Unexpectedly
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#joystick-y-axis-is-very-far-forward">
+<span class="md-ellipsis">
+      
+        Joystick Y Axis Is Very Far Forward
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microsoft-flight-simulator-msfs-fs2024">6.0.2 
+<span class="md-ellipsis">
+      
+        Microsoft Flight Simulator (MSFS / FS2024)
+      
+    </span>
+</a>
+<nav aria-label="Microsoft Flight Simulator (MSFS / FS2024)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-feature-doesnt-work-with-a-specific-aircraft">
+<span class="md-ellipsis">
+      
+        A Feature Doesn’t Work With a Specific Aircraft
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controls-not-responding-correctly-axis-flutter">
+<span class="md-ellipsis">
+      
+        Controls Not Responding Correctly / Axis Flutter
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hpg-h145-helicopter-fs2024">
+<span class="md-ellipsis">
+      
+        HPG H145 Helicopter (FS2024)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#il-2-sturmovik">6.0.3 
+<span class="md-ellipsis">
+      
+        IL-2 Sturmovik
+      
+    </span>
+</a>
+<nav aria-label="IL-2 Sturmovik" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#not-receiving-telemetry_1">
+<span class="md-ellipsis">
+      
+        Not Receiving Telemetry
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#x-plane">6.0.4 
+<span class="md-ellipsis">
+      
+        X-Plane
+      
+    </span>
+</a>
+<nav aria-label="X-Plane" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#not-receiving-telemetry_2">
+<span class="md-ellipsis">
+      
+        Not Receiving Telemetry
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-feature-doesnt-work-with-a-specific-aircraft_1">
+<span class="md-ellipsis">
+      
+        A Feature Doesn’t Work With a Specific Aircraft
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#falcon-bms">6.0.5 
+<span class="md-ellipsis">
+      
+        Falcon BMS
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../telemffb/release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="game-specific-troubleshooting"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.</span> Game Specific Troubleshooting<a class="headerlink" href="#game-specific-troubleshooting" title="Link to this section">¶</a></h1>
+<p>Various items can cause issues with FFB depending on the sim in question. This section covers common issues and troubleshooting steps for each supported simulator. This is a living list that will be updated as new issues, causes, and solutions are identified.</p>
+<hr/>
+<h3 id="dcs-world"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.1</span> DCS World<a class="headerlink" href="#dcs-world" title="Link to this section">¶</a></h3>
+<h4 id="ffb-not-working"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.1.1</span> FFB Not Working<a class="headerlink" href="#ffb-not-working" title="Link to this section">¶</a></h4>
+<p>By default, the Spring effect — the primary FFB effect type — is owned and managed by DCS. The TelemFFB application does not alter the spring effect unless one of the several override options are enabled.</p>
+<p>If FFB is not working, work through the following steps in order. Each step narrows down the cause, starting with DCS’s own settings and moving on to TelemFFB, the Configurator, and finally third-party applications.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This procedure assumes you have already confirmed that your Rhino is connected and working properly with VPforce Configurator and that you can feel FFB effects when using the Configurator’s test effects.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>DCS does not generate any active FFB effects until you are loaded into an aircraft. Simply being in the main menu or mission editor will deactivate any <em>Spring</em> effect set in the <em>VP Configurator</em> — therefore the joystick will remain limp.</p>
+</div>
+<p class="procedure-step label-paragraph"><strong>Step 1 — Ensure FFB is enabled in the DCS Misc. settings</strong></p>
+<p>Even with FFB disabled, DCS will create a disabled FFB effect (which renders the joystick limp). However, it will never ‘start’ the effect, so it remains limp even after loading into an aircraft.</p>
+<figure class="figure-image"> <img alt="" height="193px" src="../media/Pictures/10000000000002E4000001B190CAE179096BC625.webp" width="330px"> <figcaption></figcaption></img></figure>
+<p>Next, ensure the ‘FF Tune’ settings for the axes are non-zero and at the value you intend (default is 100% and recommended to keep it at 100%). To reach these settings, go into a module’s axis settings, ensure ‘<strong>Foldable View</strong>’ is disabled, <strong>select the axis binding</strong>, and then choose the <strong>‘FF Tune’</strong> button at the bottom.</p>
+<figure class="figure-image"> <img alt="" height="330px" src="../media/Pictures/100000000000076700000457F84F5FD3291D9858.webp" width="563px"> <figcaption></figcaption></img></figure>
+<p>‘FF Tune’ is the ‘strength’ of the spring effect that DCS will use for that axis for that aircraft. Recommended to leave it at 100%.</p>
+<p class="procedure-step label-paragraph"><strong>Step 2 — Test without TelemFFB running</strong></p>
+<p>Close TelemFFB and test again.</p>
+<ul>
+<li><strong>If the issue persists</strong>, TelemFFB is not at fault. Proceed to Step 3.</li>
+<li><strong>If the issue goes away</strong>, a TelemFFB configuration is likely the cause. Work through the checks below:</li>
+</ul>
+<ol>
+<li>
+<p>Check the ‘<strong>Active Effects</strong>’ panel on the TelemFFB <strong>Monitor</strong> page. Look for any spring override type effects and disable any which are active.</p>
+<p><figure class="figure-image"> <img alt="" height="127px" src="../media/Pictures/1000000000000174000000BC120619318D732D8E.webp" width="251px"/> <figcaption></figcaption></figure></p>
+</li>
+<li>
+<p>If the cause is one of the effects, please read the documentation for the effect and ensure you understand its use and purpose. All of the TelemFFB override type effects have very specific use cases.</p>
+</li>
+<li>
+<p>If no active effects are causing the issue, check to see if you are pushing a VPforce Configurator profile or are using the Configurator Gains override feature.</p>
+<p><figure class="figure-image"> <img alt="" height="227px" src="../media/Pictures/10000000000001EB00000135D1501E27D3966190.webp" width="361px"/> <figcaption></figcaption></figure></p>
+<p>Both of these options could make it seem like FFB is not working. If you are setting the <strong>master gain</strong> or <strong>spring gain</strong> to 0 with configurator overrides, or you are pushing a configurator profile with ‘sticky spring’ or the spring gain slider turned down, it will seem as if “FFB is not working”.</p>
+</li>
+<li>
+<p>If TelemFFB has been determined to be the cause but the above steps did not reveal the issue, reach out to the <strong>#TelemFFB-User</strong> channel on the VPforce Discord.</p>
+</li>
+</ol>
+<p class="procedure-step label-paragraph"><strong>Step 3 — Check your Configurator settings</strong></p>
+<ol>
+<li>
+<p>Make sure that your master gain and spring gain sliders are non-zero and high enough that you feel the spring force you are expecting. These sliders define the maximum force the Rhino can generate — if they are low or zero, it does not matter what the game sets the spring effect at, it will be no stronger than the combination of those sliders.</p>
+<p><figure class="figure-image"> <img alt="" height="181px" src="../media/Pictures/100000000000036A000001EFC90C9CFFE8CF22DC.webp" width="319px"/> <figcaption></figcaption></figure></p>
+</li>
+<li>
+<p>Make sure you do not have <strong>‘Sticky’</strong> enabled in the spring effect on the VPforce Configurator <strong>‘Effects’</strong> tab. This option tells the Rhino to ignore the spring effect from the game and use the one configured in the Effects tab.</p>
+<p><figure class="figure-image"> <img alt="" height="184px" src="../media/Pictures/100000000000015E0000010B2550517A4501EE8D.webp" width="242px"/> <figcaption></figcaption></figure></p>
+</li>
+<li>
+<p>If the issue is with in-game trimming, ensure you do not have <strong>‘Override Trim’</strong> enabled in the hardware force trim section of the VPforce Configurator <strong>Effects</strong> tab. This option tells the Rhino to ignore the spring center information from the game and control the spring center using the hardware trim bindings in the Effects tab.</p>
+<p><figure class="figure-image"> <img alt="" height="214px" src="../media/Pictures/1000000000000130000001104C509358CB3EC220.webp" width="239px"/> <figcaption></figcaption></figure></p>
+</li>
+<li>
+<p>Check your <strong>potentiometer settings</strong>. Make sure Pot#1 (and Pot#2, if applicable) are configured as you intend and that the current values are what you expect. If your Pot is configured for Master Gain or Spring Gain and turned all the way down, FFB will seem to <em>not work</em>.</p>
+<p><figure class="figure-image"> <img alt="" height="383px" src="../media/Pictures/1000000000000374000002AE7C4FC959873320DB.webp" width="493px"/> <figcaption></figcaption></figure></p>
+</li>
+</ol>
+<p class="procedure-step label-paragraph"><strong>Step 4 — Check for 3rd party app issues</strong></p>
+<p class="label-paragraph"><strong>vJoy</strong></p>
+<p>vJoy is known to cause issues with FFB, particularly if the FFB options are enabled — which they typically are by default when vJoy is installed.</p>
+<figure class="figure-image"> <img alt="" height="191px" src="../media/Pictures/10000000000001A50000010DF11606F6D888B57D.webp" width="299px"/> <figcaption></figcaption></figure>
+<p>For resolution steps, see <strong><a href="../appendix-a-known-issues/#dcs-world">Known Issues — vJoy / DCS World</a></strong>.</p>
+<p class="label-paragraph"><strong>SimHaptics by rKApps</strong></p>
+<p>SimHaptics has an ‘<strong>Auto Start</strong>’ feature that is known to break FFB for DCS. The app tries to start at the same time the aircraft in DCS is loading and this somehow interferes with DCS starting the FFB Spring effect.</p>
+<p class="label-paragraph"><strong>DCS Force Feedback Fix — dinput8 wrapper</strong></p>
+<p>A community-developed, open-source DirectInput wrapper DLL that solves two persistent DCS FFB problems:</p>
+<ul>
+<li><strong>FFB sent to wrong devices</strong> — DCS can route force feedback commands to unintended devices such as vJoy, pedals, a collective axis, or a steering wheel. The wrapper lets you block FFB for specific devices by name, so only your actual FFB joystick receives forces.</li>
+<li><strong>FFB dies after USB reconnect</strong> — If the FFB joystick disconnects mid-mission (USB replug, firmware update, etc.), DCS re-creates the device but does not restart the force effects. Spring centering and trim forces go dead until the mission is restarted. The wrapper tracks active effects and automatically restores them after reconnect.</li>
+</ul>
+<p>Setup:</p>
+<ol>
+<li>Download <code>dinput8.dll</code> and <code>dinput8.ini</code> from the <a class="external" href="https://github.com/walmis/dcs-force-feedback-fix/releases" target="_blank">releases page</a>.</li>
+<li>Drop both files into your DCS <code>bin-mt</code> folder (next to <code>DCS.exe</code>).</li>
+<li>Edit <code>dinput8.ini</code> to block unwanted devices.</li>
+<li>Launch DCS — check <code>dinput8_wrapper.log</code> for detected device names and details.</li>
+</ol>
+<p>Example <code>dinput8.ini</code> configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[FFBDevices]</span>
+<span class="na">vJoy</span><span class="o">=</span><span class="s">block</span><span class="w">          </span><span class="c1">; Block all FFB for any device with "vJoy" in the name</span>
+<span class="na">Pedals</span><span class="o">=</span><span class="s">block</span><span class="w">        </span><span class="c1">; Block FFB for any device with "Pedals" in the name</span>
+<span class="na">Collective</span><span class="o">=</span><span class="s">block</span><span class="w">    </span><span class="c1">; Block collective FFB for helicopters</span>
+</code></pre></div>
+<p>Source code and releases: <a class="external" href="https://github.com/walmis/dcs-force-feedback-fix" target="_blank">github.com/walmis/dcs-force-feedback-fix</a></p>
+<p class="label-paragraph"><strong>The Nuclear Test</strong></p>
+<p>If all of the above fails to reveal the issue, try with a fresh <code>Saved Games/DCS</code> folder. This will remove any active mods or 3rd party apps that make use of the DCS export environment as a potential cause.</p>
+<ol>
+<li>
+<p>Close DCS and rename your <code>Saved Games/DCS</code> folder to something like <code>Saved Games/DCS.backup</code>.</p>
+</li>
+<li>
+<p>Start DCS. It will create a completely clean <code>Saved Games/DCS</code> folder with no mods, export scripts, or even bindings.</p>
+</li>
+</ol>
+<p>You can choose to copy your bindings from the <code>config/input</code> folder in your real <code>Saved Games/DCS.backup</code> folder over to the new test folder. Restart DCS after doing so.</p>
+<hr/>
+<h4 id="not-receiving-telemetry"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.1.2</span> Not Receiving Telemetry<a class="headerlink" href="#not-receiving-telemetry" title="Link to this section">¶</a></h4>
+<p>TelemFFB receives telemetry data from DCS via a native DLL loaded through the DCS export system. If TelemFFB shows as connected but no telemetry data is being received — effects are absent, the telemetry window shows no data, or the status indicator remains idle — the DLL export hook is typically the cause.</p>
+<p class="procedure-step label-paragraph"><strong>Step 1 — Verify the Export.lua entries</strong></p>
+<p>TelemFFB requires two specific lines to be present in your DCS export script:</p>
+<div class="highlight"><pre><span></span><code>Saved Games\DCS\Scripts\Export.lua
+</code></pre></div>
+<p>The file must contain the following entries:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">package.cpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">package.cpath</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="s2">";"</span><span class="o">..</span><span class="nb">require</span><span class="p">(</span><span class="s1">'lfs'</span><span class="p">).</span><span class="nf">writedir</span><span class="p">()..</span><span class="s2">"</span><span class="se">\\</span><span class="s2">Scripts</span><span class="se">\\</span><span class="s2">?.dll"</span>
+<span class="nb">require</span><span class="p">(</span><span class="s2">"telemffb"</span><span class="p">)</span>
+</code></pre></div>
+<p>If either line is missing or malformed, DCS will not load the TelemFFB DLL and no telemetry data will be received.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have an <code>Export.lua</code> from another application (such as Helios, SRS, or VoiceAttack), the TelemFFB entries must be added to the existing file — not used as a replacement. See the <a href="../../telemffb/installation/">TelemFFB installation documentation</a> for instructions.</p>
+</div>
+<p class="procedure-step label-paragraph"><strong>Step 2 — Check the DCS log for successful DLL load</strong></p>
+<p>The most reliable way to confirm TelemFFB is loading correctly is to check the DCS log file after launching a mission:</p>
+<div class="highlight"><pre><span></span><code>Saved Games\DCS\Logs\dcs.log
+</code></pre></div>
+<p>Search the log for the string:</p>
+<div class="highlight"><pre><span></span><code>telemffb installed
+</code></pre></div>
+<p>If this entry is present, the DLL has been successfully loaded by DCS and the export hook is active. If it is absent, DCS did not load the TelemFFB DLL — proceed to the remediation steps below.</p>
+<p class="procedure-step label-paragraph"><strong>Step 3 — Check for errors from other export modules</strong></p>
+<p>While reviewing <code>dcs.log</code>, also look for any errors related to other export scripts that are loaded alongside TelemFFB in <code>Export.lua</code> (such as Helios, SRS, or VAICOM). An error in another module that runs before the TelemFFB entries can halt execution of the export script entirely, preventing TelemFFB from loading even if its own entries are correct.</p>
+<p class="procedure-step label-paragraph"><strong>Step 4 — Remediation: adjust load order in Export.lua</strong></p>
+<p>A common cause of the DLL failing to load is a conflict with the load order of other entries in <code>Export.lua</code>. If <code>telemffb installed</code> does not appear in the DCS log:</p>
+<ol>
+<li>Open <code>Saved Games\DCS\Scripts\Export.lua</code> in a text editor.</li>
+<li>Move the TelemFFB lines to the <strong>very top</strong> of the file, before all other entries.</li>
+<li>Save the file, restart DCS, and load into a mission.</li>
+<li>Check <code>dcs.log</code> again for <code>telemffb installed</code>.</li>
+<li>If it still does not appear, try moving the TelemFFB lines to the <strong>very bottom</strong> of the file instead and repeat.</li>
+</ol>
+<p>Changing the load order resolves the majority of cases where the DLL fails to initialize due to interactions with other export modules.</p>
+<p>If the above steps do not resolve the issue, reach out to the <strong>#TelemFFB-User</strong> channel on the VPforce Discord.</p>
+<div class="admonition tip">
+<p class="admonition-title">Support bundle</p>
+<p>TelemFFB can create a support bundle (<strong>Help → Create Support Bundle</strong>) — a timestamped zip containing logs, system settings, and your user config. Attach it when requesting help; it usually contains everything needed for diagnosis.</p>
+</div>
+<hr/>
+<h4 id="autopilot-misbehaving-or-disengaging-unexpectedly"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.1.3</span> Autopilot Misbehaving or Disengaging Unexpectedly<a class="headerlink" href="#autopilot-misbehaving-or-disengaging-unexpectedly" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Issue:</strong></p>
+<p>Autopilot systems (altitude hold, heading hold, or other AP modes) behave erratically, continuously pitch/roll in one direction, or disengage unexpectedly shortly after engagement. This problem occurs frequently but may occasionally work correctly, making diagnosis difficult. Common in the F-14 Tomcat, but can affect any aircraft with autopilot.</p>
+<p class="label-paragraph"><strong>Root Cause:</strong></p>
+<p>Many aircraft autopilot systems interpret a mismatch between the in-game trim point and the physical stick position as a <strong>hands-on override</strong> — the pilot intentionally taking control. When the physical stick position doesn’t match the trimmed neutral point, the autopilot computer detects this as pilot input and either fights the stick position or disengages entirely.</p>
+<p>Aircraft with offset control mechanics (like the F-14 Tomcat, which has forward-offset by design) are particularly susceptible. When autopilot engages or commands trim adjustments, any offset between trim point and stick position causes the autopilot to treat it as active pilot input, leading to erratic behavior or immediate disengagement.</p>
+<p class="label-paragraph"><strong>Diagnostic Steps:</strong></p>
+<ol>
+<li>
+<p>Enable the <strong>Input Overlay</strong> in DCS:</p>
+<ul>
+<li>Press <code>RCtrl + Enter</code> (Right Control + Enter)</li>
+<li>This displays stick position and trim offset in real-time</li>
+<li>The overlay shows the physical stick position and the current trim point</li>
+</ul>
+</li>
+<li>
+<p>Observe stick position vs. trim point:</p>
+<ul>
+<li>Watch the input overlay while the issue occurs</li>
+<li>Check if the stick closely follows the trimmed point offset</li>
+<li>If the stick lags behind the trim point → autopilot interprets the mismatch as pilot override</li>
+<li>The autopilot sees this offset as intentional pilot input and either fights it or disengages</li>
+</ul>
+</li>
+</ol>
+<p class="label-paragraph"><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Enable Adaptive Recentering</strong> (Recommended)</p>
+<ul>
+<li>Open <strong>VPforce Configurator</strong></li>
+<li>Locate <strong>Adaptive Recentering</strong> in the Effects tab</li>
+<li>This automatically balances the stick to the current trim point, eliminating offset mismatch</li>
+<li>Prevents autopilot from detecting false pilot override</li>
+<li>Provides smoother stick behavior overall</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Manual Stick Adjustment</strong></p>
+<ul>
+<li>Before activating autopilot, manually adjust stick position to match the trimmed point (use Input Overlay to verify alignment)</li>
+<li>Once synchronized, activate autopilot</li>
+<li>Less convenient but demonstrates the root cause</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Configure Input Deadzone</strong></p>
+<ul>
+<li>Open <strong>VPforce Configurator</strong> → <strong>Axes</strong> tab</li>
+<li>Add a small circular deadzone (e.g., 1–3%)</li>
+<li>VPforce uses a circular deadzone that affects both axes simultaneously</li>
+<li>Creates a tolerance zone where minor stick position variations won’t register as pilot input</li>
+<li>Allows autopilot to maintain control despite small trim offset differences</li>
+<li>Trade-off: Reduces precision for manual control</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Disable DCS Input Curves</strong></p>
+<ul>
+<li>Open DCS axis settings for the affected aircraft</li>
+<li>Check if curves are enabled for pitch/roll axes</li>
+<li>Curves cause the physical stick position and in-game trim position to mismatch increasingly as you move away from center</li>
+<li>Disable curves by setting the curve to a straight line (linear response)</li>
+<li>Linear response ensures physical stick position always matches in-game trim position</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>TelemFFB Dynamic Deadzone</strong> (Aircraft-Specific)</p>
+<ul>
+<li>TelemFFB supports automatic dynamic deadzone activation when autopilot is engaged for certain aircraft</li>
+<li>When AP engages, TelemFFB automatically adds deadzone to prevent false override detection</li>
+<li>Deadzone is removed when AP disengages, restoring full control precision</li>
+<li>Check TelemFFB documentation for aircraft-specific AP deadzone support</li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Related Issue</p>
+<p>The F-14 also exhibits a <strong>forward stick drift at 50% position</strong> when loading into the aircraft (same as the A-10). This is intentional module design. The forward offset is part of the FFB implementation and is why trim synchronization is important for autopilot functionality.</p>
+</div>
+<p>If the issue still persists, reach out to the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#support</a></strong> channel on the VPforce Discord.</p>
+<hr/>
+<h4 id="joystick-y-axis-is-very-far-forward"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.1.4</span> Joystick Y Axis Is Very Far Forward<a class="headerlink" href="#joystick-y-axis-is-very-far-forward" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Issue:</strong></p>
+<p>After loading into certain aircraft — most notably the <strong>F-14 Tomcat</strong> and <strong>A-10 Warthog</strong> — the joystick sits significantly forward of center, even though the aircraft considers that position its neutral/trimmed point.</p>
+<p class="label-paragraph"><strong>This is not a bug.</strong> These aircraft model the real-world asymmetric stick geometry of the actual airframe. In the real F-14 and A-10, the control stick has substantially more forward throw than aft throw, and the neutral/trim point sits forward of the physical midpoint of the stick’s travel. DCS faithfully reproduces this in its native FFB implementation.</p>
+<p>On a legacy desktop FFB joystick like the Microsoft Sidewinder, which has a short throw and sits on a desk, this forward offset is barely noticeable. On a modern FFB base with a long extension, the same offset translates to a pronounced and uncomfortable forward lean that makes the stick difficult to use.</p>
+<p class="label-paragraph"><strong>Resolution — Axis Rescaling in VPforce Configurator:</strong></p>
+<p>The only way to compensate for this is to use the <strong>Rescale Axes</strong> feature in VPforce Configurator to shift the effective neutral point closer to the physical center of the stick’s travel.</p>
+<figure class="figure-image"> <img alt="Axis rescaling example for the A-10" src="../images/troubleshooting-maintenance/axis-rescale-a10.webp" width="260"/> <figcaption>Axis rescaling example for the A-10</figcaption></figure>
+<p>The screenshot above shows a starting point configuration for the A-10. The <strong>Y Axis Forward Max Position</strong> is reduced to approximately <strong>35%</strong>, which moves the forward neutral point back toward the center of physical stick travel.</p>
+<p>To configure this:</p>
+<ol>
+<li>Open <strong>VPforce Configurator</strong> and navigate to the <strong>Axes</strong> tab.</li>
+<li>Enable <strong>Rescale Axes</strong>.</li>
+<li>Reduce the <strong>Y Axis Forward Max Position</strong> value until the stick sits comfortably near center when the aircraft considers it neutral. The A-10 is around 35% as a starting point — adjust to taste.</li>
+<li>Click <strong>Apply Settings</strong> to test, and <strong>Store Settings</strong> when satisfied.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With this configuration the stick’s physical travel is no longer symmetric — you will have less forward throw available than aft. This reflects the actual aircraft geometry and is expected. The goal is simply to place the neutral point at a comfortable physical position rather than eliminating the asymmetry entirely.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Automate per-aircraft axis scaling with TelemFFB</p>
+<p>Once you have dialed in a rescaled axis profile for a specific aircraft, you can save it as a VPforce Configurator profile and have TelemFFB automatically push it to the device every time that aircraft loads. See <strong><a href="../../telemffb/vpconf-profiles/#assigning-a-configurator-profile-to-a-specific-aircraft">Dynamic VPforce Configurator Profile Assignment</a></strong> for instructions.</p>
+</div>
+<hr/>
+<h3 id="microsoft-flight-simulator-msfs-fs2024"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.2</span> Microsoft Flight Simulator (MSFS / FS2024)<a class="headerlink" href="#microsoft-flight-simulator-msfs-fs2024" title="Link to this section">¶</a></h3>
+<h4 id="a-feature-doesnt-work-with-a-specific-aircraft"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.2.1</span> A Feature Doesn’t Work With a Specific Aircraft<a class="headerlink" href="#a-feature-doesnt-work-with-a-specific-aircraft" title="Link to this section">¶</a></h4>
+<p>TelemFFB interacts with MSFS using standard published <strong>SimConnect</strong> variables to retrieve the telemetry data that drives FFB effects — things like airspeed, G-load, angle of attack, surface deflections, trim position, autopilot state, and so on.</p>
+<p>Many high-fidelity third-party aircraft implement their own internal flight models and systems without writing data back to the standard SimConnect variables that MSFS exposes. In these cases, TelemFFB may receive missing, zero, or incorrect values for certain parameters, causing specific effects to behave incorrectly or not at all for that aircraft.</p>
+<p class="label-paragraph"><strong>Possible workaround — aircraft L:Vars:</strong></p>
+<p>Many third-party developers expose their internal data via <strong>L:Vars</strong> (local variables), which are aircraft-specific SimConnect variables that can be read by external applications. If an L:Var exists that provides the affected data, it can generally be used in a custom TelemFFB aircraft profile to substitute for the missing standard variable.</p>
+<div class="admonition warning">
+<p class="admonition-title">Not Yet User-Accessible</p>
+<p>The interface for mapping custom L:Vars to TelemFFB effects is not yet fully documented or easily accessible to end users. If you encounter an aircraft where a specific effect is not working correctly, reach out on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord — the community or developers may be able to assist with a custom profile.</p>
+</div>
+<p class="label-paragraph"><strong>Known limitation — PMDG and SDK-only aircraft:</strong></p>
+<p>Some aircraft, such as those by <strong>PMDG</strong>, do not expose their internal data through L:Vars and instead rely on a proprietary SDK for third-party integrations. TelemFFB does not currently have the capability to incorporate these aircraft-specific SDKs. For these aircraft, effects that depend on data the aircraft does not expose through standard channels will not function correctly, and there is no available workaround at this time.</p>
+<hr/>
+<h4 id="controls-not-responding-correctly-axis-flutter"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.2.2</span> Controls Not Responding Correctly / Axis Flutter<a class="headerlink" href="#controls-not-responding-correctly-axis-flutter" title="Link to this section">¶</a></h4>
+<p class="label-paragraph"><strong>Background:</strong></p>
+<p>For certain features — such as trim-following — TelemFFB needs to send axis position data directly to MSFS via SimConnect as part of how it manages the relationship between the physical stick position and what the simulator sees. This is a deliberate design approach, not a fault.</p>
+<p>SimConnect does not provide any mechanism for an external application to override a physical device binding — there is no “take priority” or “exclusive source” option. When TelemFFB sends an axis value via SimConnect, MSFS receives it alongside the physical device input at the same time.</p>
+<p>If the physical axis is still bound in MSFS’s control settings, the simulator will see two conflicting inputs simultaneously — the physical stick position and the value TelemFFB is sending — resulting in flutter, fighting, or unresponsive behavior on that axis. This is a SimConnect design limitation, not a bug in TelemFFB or the Rhino.</p>
+<p class="label-paragraph"><strong>Required Setup:</strong></p>
+<p>For any axis that TelemFFB is actively managing, the physical binding for that axis must be removed from MSFS’s control settings so that TelemFFB’s SimConnect input is the sole source.</p>
+<ol>
+<li>Open <strong>MSFS Options → Controls</strong>.</li>
+<li>Select your joystick (or pedals/collective) profile.</li>
+<li>Locate the binding for the affected axis (e.g. Aileron Axis, Elevator Axis, Rudder Axis, Collective Axis).</li>
+<li>Clear/delete the binding so the physical device is no longer assigned to that axis.</li>
+<li>TelemFFB will continue to send the correct axis position to the sim via SimConnect.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This only applies to axes where TelemFFB is actively managing the position (typically pitch, roll, and any axis with trim-following or Force Mode enabled). Axes that TelemFFB is not managing should remain bound as normal.</p>
+</div>
+<hr/>
+<h4 id="hpg-h145-helicopter-fs2024"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.2.3</span> HPG H145 Helicopter (FS2024)<a class="headerlink" href="#hpg-h145-helicopter-fs2024" title="Link to this section">¶</a></h4>
+<p>The HPG H145 helicopter in Microsoft Flight Simulator 2024 uses the AFCS (Automatic Flight Control System) which requires precise hands-on/hands-off detection for proper operation. Improper configuration can cause the AFCS to oscillate or behave erratically.</p>
+<p class="label-paragraph"><strong>Prerequisites:</strong></p>
+<ul>
+<li>Use <strong>build 500 or newer</strong> of the H145 (patch available in pinned messages in the HPG Discord)</li>
+<li>Ensure TelemFFB is configured and running properly with the Rhino</li>
+</ul>
+<p class="label-paragraph"><strong>Required Configuration Steps:</strong></p>
+<ol>
+<li>
+<p class="label-paragraph"><strong>Configure Tablet Settings for Cyclic</strong></p>
+<ul>
+<li>Set tablet cyclic sensitivity according to the recommended configuration</li>
+<li>In FS2024, reduced cyclic sensitivity is necessary to prevent AFCS overshoot and oscillation</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Configure Hands-On Detection</strong></p>
+<p>You have two options for hands-on detection:</p>
+<p class="label-paragraph"><strong>Option A: Deadzone-Based Detection (Default)</strong></p>
+<p>With deadzone-based hands-on detection, the joystick must center properly, regardless of where that center point is:</p>
+<ul>
+<li>Enable <strong>“Adaptive Recentering”</strong> in VPforce Configurator (required for reliable operation)</li>
+<li>Adaptive Recentering ensures the stick tracks the trim point, providing proper centering behavior</li>
+<li>Adjust hands-on/hands-off deadzone values in TelemFFB until you get reliable detection results</li>
+<li>Test the detection by engaging AFCS and verifying it doesn’t disengage unexpectedly</li>
+</ul>
+<p class="label-paragraph"><strong>Option B: Force-Based Detection (Recommended)</strong></p>
+<p>Force-based detection is more reliable than deadzone-based detection:</p>
+<ul>
+<li>Enable <strong>“Axis Control → Force Mode”</strong> setting in TelemFFB</li>
+<li><strong>Disable</strong> Adaptive Recentering when using Force Mode</li>
+<li>Adjust the <strong>Force Threshold</strong> setting in TelemFFB (rather than standard deadzone settings) to configure when hands-on is detected</li>
+<li>This mode detects pilot input based on force applied to the stick rather than position offset</li>
+</ul>
+</li>
+</ol>
+<p class="label-paragraph"><strong>Troubleshooting:</strong></p>
+<ul>
+<li>If AFCS oscillates or overshoots: Reduce cyclic sensitivity in tablet settings</li>
+<li>If hands-on detection is unreliable: Adjust deadzone (Option A) or Force Threshold (Option B) values</li>
+<li>If stick doesn’t center properly: Verify Adaptive Recentering is enabled (only for Option A)</li>
+</ul>
+<hr/>
+<h3 id="il-2-sturmovik"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.3</span> IL-2 Sturmovik<a class="headerlink" href="#il-2-sturmovik" title="Link to this section">¶</a></h3>
+<h4 id="not-receiving-telemetry_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.3.1</span> Not Receiving Telemetry<a class="headerlink" href="#not-receiving-telemetry_1" title="Link to this section">¶</a></h4>
+<p>TelemFFB receives telemetry data from IL-2 Sturmovik over a local UDP connection between the sim and TelemFFB running on the same machine.</p>
+<p class="label-paragraph"><strong>Check 1 — Disable any active VPN connection</strong></p>
+<p>An active VPN connection is one of the most common causes of telemetry not reaching TelemFFB. VPN software can intercept, reroute, or block local loopback and LAN UDP traffic even when communicating within the same machine. If you have a VPN running, disconnect it and test again before proceeding with any other troubleshooting steps.</p>
+<p class="label-paragraph"><strong>Check 2 — Verify TelemFFB auto-setup and IL-2 telemetry configuration</strong></p>
+<p>TelemFFB includes an auto-setup feature that configures IL-2’s built-in telemetry output and points it at the correct local port. Verify the following:</p>
+<ol>
+<li>In TelemFFB, confirm that <strong>Auto IL-2 Telemetry Setup</strong> is enabled and that the <strong>IL-2 Install Path</strong> is set correctly. See <strong><a href="../../telemffb/sim-setup/#il-2-sturmovik">IL-2 Sturmovik configuration</a></strong> for details on these settings.</li>
+<li>If auto-setup is enabled and the path is correct, allow TelemFFB to perform the setup and restart IL-2.</li>
+<li>If you have manually edited your IL-2 telemetry configuration, verify that the settings match what TelemFFB expects. Incorrect port numbers or IP addresses are a common cause of failure.</li>
+</ol>
+<p>If telemetry is still not received after these checks, reach out on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord.</p>
+<hr/>
+<h3 id="x-plane"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.4</span> X-Plane<a class="headerlink" href="#x-plane" title="Link to this section">¶</a></h3>
+<h4 id="not-receiving-telemetry_2"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.4.1</span> Not Receiving Telemetry<a class="headerlink" href="#not-receiving-telemetry_2" title="Link to this section">¶</a></h4>
+<p>TelemFFB receives telemetry data from X-Plane via a plugin that sends data over a local UDP connection between the sim and TelemFFB running on the same machine.</p>
+<p class="label-paragraph"><strong>Check 1 — Disable any active VPN connection</strong></p>
+<p>An active VPN connection is one of the most common causes of telemetry not reaching TelemFFB. VPN software can intercept, reroute, or block local loopback and LAN UDP traffic even when communicating within the same machine. If you have a VPN running, disconnect it and test again before proceeding with any other troubleshooting steps.</p>
+<p class="label-paragraph"><strong>Check 2 — Verify TelemFFB auto-setup and X-Plane plugin installation</strong></p>
+<p>TelemFFB includes an auto-setup feature that installs the required X-Plane plugin and configures it to send telemetry to the correct local port. Verify the following:</p>
+<ol>
+<li>In TelemFFB, confirm that <strong>auto-setup for X-Plane</strong> is enabled in the TelemFFB system settings.</li>
+<li>If it is enabled, allow TelemFFB to perform the setup and restart X-Plane.</li>
+<li>Verify the TelemFFB plugin is present and enabled in X-Plane’s plugin manager. If it is listed but disabled, enable it and restart X-Plane.</li>
+</ol>
+<p>If telemetry is still not received after these checks, reach out on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord.</p>
+<hr/>
+<h4 id="a-feature-doesnt-work-with-a-specific-aircraft_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.4.2</span> A Feature Doesn’t Work With a Specific Aircraft<a class="headerlink" href="#a-feature-doesnt-work-with-a-specific-aircraft_1" title="Link to this section">¶</a></h4>
+<p>TelemFFB interacts with X-Plane using standard published <strong>datarefs</strong> to retrieve the telemetry data that drives FFB effects — things like airspeed, G-load, angle of attack, surface deflections, trim position, and autopilot state.</p>
+<p>Some third-party aircraft for X-Plane implement custom systems without writing data back to the standard datarefs that X-Plane exposes. In these cases, TelemFFB may receive missing, zero, or incorrect values for certain parameters, causing specific effects to behave incorrectly or not at all for that aircraft. This is less commonly reported in X-Plane than in MSFS given the smaller user base, but the same underlying issue applies.</p>
+<p class="label-paragraph"><strong>Possible workaround — custom datarefs:</strong></p>
+<p>Many third-party X-Plane developers expose internal data through custom datarefs. If a custom dataref exists that provides the affected data, it may be possible to use it in a custom TelemFFB aircraft profile as a substitute.</p>
+<div class="admonition warning">
+<p class="admonition-title">Not Yet User-Accessible</p>
+<p>The interface for mapping custom datarefs to TelemFFB effects is not yet fully documented or easily accessible to end users. If you encounter an aircraft where a specific effect is not working correctly, reach out on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord — the community or developers may be able to assist with a custom profile.</p>
+</div>
+<hr/>
+<h3 id="falcon-bms"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.0.5</span> Falcon BMS<a class="headerlink" href="#falcon-bms" title="Link to this section">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Beta Support</p>
+<p>Falcon BMS support in TelemFFB is currently in beta with limited usage and testing by the development team. Some effects may not work correctly or at all. If you encounter broken functionality or effects that don’t behave as expected, please reach out on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord so the development team can track and investigate issues.</p>
+</div>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

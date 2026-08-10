@@ -1,0 +1,2109 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/telemffb/ui-overview/" rel="canonical"/>
+<link href="../settings-model/" rel="prev"/>
+<link href="../configuration/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>UI Overview - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#application-ui-overview">1. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              UI Overview
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../rhino/">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#general-application-overview">1.1 
+<span class="md-ellipsis">
+      
+        General Application Overview
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-menus">1.2 
+<span class="md-ellipsis">
+      
+        The Menus
+      
+    </span>
+</a>
+<nav aria-label="The Menus" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-menu">1.2.1 
+<span class="md-ellipsis">
+      
+        System Menu
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#profiles-menu">1.2.2 
+<span class="md-ellipsis">
+      
+        Profiles Menu
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#utilities-menu">1.2.3 
+<span class="md-ellipsis">
+      
+        Utilities Menu
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#window-menu">1.2.4 
+<span class="md-ellipsis">
+      
+        Window Menu
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#log-menu">1.2.5 
+<span class="md-ellipsis">
+      
+        Log Menu
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#help-menu">1.2.6 
+<span class="md-ellipsis">
+      
+        Help Menu
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application-main-window">1.3 
+<span class="md-ellipsis">
+      
+        Application Main Window
+      
+    </span>
+</a>
+<nav aria-label="Application Main Window" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#active-devices-area">1.3.1 
+<span class="md-ellipsis">
+      
+        Active Devices Area
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#switching-between-devices">1.3.2 
+<span class="md-ellipsis">
+      
+        Switching Between Devices:
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deviceinstance-status-indications">1.3.3 
+<span class="md-ellipsis">
+      
+        Device/Instance Status Indications
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#application-status-area">1.3.4 
+<span class="md-ellipsis">
+      
+        Application Status Area
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#profile-notes">1.3.5 
+<span class="md-ellipsis">
+      
+        Profile Notes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitor-tab">1.3.6 
+<span class="md-ellipsis">
+      
+        Monitor Tab
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hide-tab">1.3.7 
+<span class="md-ellipsis">
+      
+        Hide Tab
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#settings-tab">1.3.8 
+<span class="md-ellipsis">
+      
+        Settings Tab
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modifying-settings-in-real-time">1.3.9 
+<span class="md-ellipsis">
+      
+        Modifying settings in real time
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-tray">1.4 
+<span class="md-ellipsis">
+      
+        System Tray
+      
+    </span>
+</a>
+<nav aria-label="System Tray" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#system-tray-context-menu">1.4.1 
+<span class="md-ellipsis">
+      
+        System Tray Context Menu
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_5_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="application-ui-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Application UI Overview<a class="headerlink" href="#application-ui-overview" title="Link to this section">¶</a></h1>
+<h2 id="general-application-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> General Application Overview<a class="headerlink" href="#general-application-overview" title="Link to this section">¶</a></h2>
+<p>TelemFFB is laid out with a menu bar, the application status area, device status/selection area and the various tabs at the bottom. Refer to the sections below for details on each.</p>
+<figure class="figure-image"> <img alt="" height="600px" src="../images/ui-overview/main-window.webp" width="565px"> <figcaption></figcaption></img></figure>
+<h2 id="the-menus"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> The Menus<a class="headerlink" href="#the-menus" title="Link to this section">¶</a></h2>
+<h3 id="system-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> System Menu<a class="headerlink" href="#system-menu" title="Link to this section">¶</a></h3>
+<ul>
+<li>
+<p class="label-paragraph"><strong>System Settings</strong> - covered <strong><em>here</em></strong></p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Open Config/Log directory</strong> - opens the folder in your user local appdata where logs and settings are stored</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Reset Window Size/Position</strong> - resets the window sizes to default. TelemFFB will remember and store the window size and position across executions of the application.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Quit TelemFFB</strong> - closes the application and stops all effects.</p>
+</li>
+</ul>
+<h3 id="profiles-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Profiles Menu<a class="headerlink" href="#profiles-menu" title="Link to this section">¶</a></h3>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Profile Manager</strong></p>
+<ul>
+<li>
+<p>Launches the aircraft profile manager. From here you can add, clone, rename, export, import, edit or delete user created aircraft profiles</p>
+</li>
+<li>
+<p>See <strong><em>Profile Manager</em></strong> documentation</p>
+</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Offline Profile\Sim Default\Class Default editor</strong></p>
+<ul>
+<li>
+<p>Puts the application into offline editing mode. While in offline editing mode, telemetry is paused.</p>
+</li>
+<li>
+<p>See <strong><em>Offline Manager</em></strong> documentation</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="utilities-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.3</span> Utilities Menu<a class="headerlink" href="#utilities-menu" title="Link to this section">¶</a></h3>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Reset all Effects</strong> - Reset the VPforce device and clean up any lingering effects.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Destructive to any active effects being generated by a simulator.</p>
+</div>
+</li>
+<li>
+<p class="label-paragraph"><strong>Install Latest TelemFFB</strong> - Start the auto-update process. Only active if an update is available and the update prompt is disabled or was dismissed on startup.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Download Other Versions</strong> - opens a webpage where you can select legacy versions to download.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Reset User Config</strong> - Removes all user configured settings from TelemFFB and reverts to ‘factory defaults’ for all effects settings. Note that when this is executed, a date-time stamped backup of the existing user configuration is saved in the TelemFFB folder in AppData/Local</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Launch VPForce Configurator</strong> - Cross launches the VPforce
+    configurator app to set up your device</p>
+</li>
+</ul>
+<h3 id="window-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.4</span> Window Menu<a class="headerlink" href="#window-menu" title="Link to this section">¶</a></h3>
+<p>The window menu only shows if the TelemFFB instance is acting as the master instance for other VPforce devices (pedals, collective, etc)</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Show Child Instance Windows</strong></p>
+<ul>
+<li>Forces the child instance device windows to become visible if they are hidden/minimized</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Hide Child Instance Windows</strong></p>
+<ul>
+<li>Re-hides the child instance device windows.</li>
+</ul>
+</li>
+</ul>
+<h3 id="log-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.5</span> Log Menu<a class="headerlink" href="#log-menu" title="Link to this section">¶</a></h3>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Open Console Log</strong></p>
+<ul>
+<li>Open the log window for the instance of TelemFFB</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Open Child Console</strong> (if more than one VPforce device is in use)</p>
+<ul>
+<li>Opens the log window for the selected child device instance of TelemFFB</li>
+</ul>
+</li>
+</ul>
+<h3 id="help-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.6</span> Help Menu<a class="headerlink" href="#help-menu" title="Link to this section">¶</a></h3>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Release Notes</strong> - shows any release notes for this version of TelemFFB</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Documentation</strong> - opens this manual</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Create Support Bundle</strong> - Opens a file dialog and creates a zip file containing your TelemFFB system settings, any user settings you have stored, and your Log folder..</p>
+</li>
+</ul>
+<h2 id="application-main-window"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Application Main Window<a class="headerlink" href="#application-main-window" title="Link to this section">¶</a></h2>
+<h3 id="active-devices-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Active Devices Area<a class="headerlink" href="#active-devices-area" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="" height="137px" src="../images/ui-overview/active-devices.webp" width="371px"> <figcaption></figcaption></img></figure>
+<p>The active devices area is both a way to switch the master instance configuration scope between devices as well as a device/instance status tracker for the primary and child devices and their TelemFFB instances.</p>
+<h3 id="switching-between-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Switching Between Devices:<a class="headerlink" href="#switching-between-devices" title="Link to this section">¶</a></h3>
+<p>To switch between devices for configuration, simply click on the appropriate device icon. When clicked, the configuration elements in the settings page below will update to reflect the settings for that device.</p>
+<figure class="figure-image"> <img alt="" height="329px" src="../images/ui-overview/device-switching.gif" width="329px"/> <figcaption></figcaption></figure>
+<h3 id="deviceinstance-status-indications"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Device/Instance Status Indications<a class="headerlink" href="#deviceinstance-status-indications" title="Link to this section">¶</a></h3>
+<p>The device icons serve the dual purpose of displaying the status of both the device connection as well as the individual TelemFFB instances which are ultimately controlling the multiple devices.</p>
+<p class="label-paragraph"><strong>Green Status Icon:</strong></p>
+<figure class="figure-image"> <img alt="" height="55px" src="../images/ui-overview/status-running.webp" width="55px"/> <figcaption></figcaption></figure>
+<p>A green status icon indicates that the device is properly connected to its instance of TelemFFB and the child instance of TelemFFB is healthy</p>
+<p class="label-paragraph"><strong>Yellow Status Icon:</strong></p>
+<figure class="figure-image"> <img alt="" height="53px" src="../images/ui-overview/status-paused.webp" width="47px"/> <figcaption></figcaption></figure>
+<p>A yellow status icon indicates that the device is no longer connected to its instance of TelemFFB</p>
+<p class="label-paragraph"><strong>Red Status Icon:</strong></p>
+<figure class="figure-image"> <img alt="" height="54px" src="../images/ui-overview/status-error.webp" width="54px"/> <figcaption></figcaption></figure>
+<p>A red status icon indicates that the child instance of TelemFFB has crashed, or there is an error condition present for that instance.</p>
+<h3 id="application-status-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.4</span> Application Status Area<a class="headerlink" href="#application-status-area" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <img alt="" height="264px" src="../images/ui-overview/status-area.webp" width="304px"/> <figcaption></figcaption></figure>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Sim Status</strong></p>
+<ul>
+<li>
+<p>Shows the currently connected simulator and the active status</p>
+</li>
+<li>
+<p>Possible Status’</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Waiting </strong>- No telemetry has been received from any enabled simulator</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Running </strong>- Sim is connected and Telemetry is flowing</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Paused </strong>- Telemetry is no longer being received from the connected simulator and/or the simulator is in a paused state</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Error </strong>- A configuration error condition is present.
+    Generally, there will be an error status message displayed indicating what the error is and how to resolve it.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Current Aircraft</strong></p>
+<ul>
+<li>Displays the name of the aircraft as received in the telemetry and the profile</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Matched Model</strong></p>
+<ul>
+<li>Displays the match string that correlates to the aircraft profile that has been loaded for the detected aircraft</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Active Profile</strong></p>
+<ul>
+<li>Displays the actively selected user profile name</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>VPconf File (if dynamic VPconf files are in use):</strong></p>
+<ul>
+<li>Displays the name of the last vpconf file that was pushed to the device</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Gains Ovd:</strong></p>
+<ul>
+<li>Shows active status if the Configurator Gains Override setting is in use and active.</li>
+</ul>
+</li>
+</ul>
+<h3 id="profile-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.5</span> Profile Notes<a class="headerlink" href="#profile-notes" title="Link to this section">¶</a></h3>
+<p>The status area includes a <strong>notes button</strong> for the loaded aircraft profile.</p>
+<figure class="figure-image"> <img alt="The Profile Notes dialog showing shipped notes and the editable profile note" src="../images/ui-overview/profile-notes.webp" width="550px"/> <figcaption>The Profile Notes dialog showing shipped notes and the editable profile note</figcaption></figure>
+<ul>
+<li>Some shipped default profiles carry <strong>curated notes</strong> — special considerations for the aircraft, or an explanation of why its default settings differ from otherwise similar aircraft.</li>
+<li>You can <strong>add your own notes</strong> to any aircraft profile. The dialog shows the inherited notes read-only (shipped notes and any user-default note), with an editable section for the active profile’s own note.</li>
+<li>When you load an aircraft that has notes to read, the notes icon <strong>flashes green</strong> — click it to view or edit.</li>
+</ul>
+<h3 id="monitor-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.6</span> Monitor Tab<a class="headerlink" href="#monitor-tab" title="Link to this section">¶</a></h3>
+<p>The Monitor tab shows received telemetry data and effects that are
+currently active:</p>
+<figure class="figure-image"> <img alt="" height="548px" src="../images/ui-overview/monitor-tab.webp" width="516px"/> <figcaption></figcaption></figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also detach the monitor tab from the main window and display it separately along side the main TelemFFB window. This can be useful for monitoring the active effects while you are making adjustments on the settings tab.</p>
+</div>
+<h3 id="hide-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.7</span> Hide Tab<a class="headerlink" href="#hide-tab" title="Link to this section">¶</a></h3>
+<p>The Hide tab is the simplest and reduces information shown to the bare minimum:</p>
+<figure class="figure-image"> <img alt="" height="291px" src="../images/ui-overview/hide-tab.webp" width="525px"/> <figcaption></figcaption></figure>
+<h3 id="settings-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8</span> Settings Tab<a class="headerlink" href="#settings-tab" title="Link to this section">¶</a></h3>
+<p>The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface; every effect and setting is documented in the <a href="../effects-overview/">Effects Reference</a>, which mirrors the Settings tab section for section. Changing any setting has an immediate effect.</p>
+<figure class="figure-image"> <img alt="" height="644px" src="../images/ui-overview/settings-tab.webp" width="606px"/> <figcaption></figcaption></figure>
+<p>The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows — each links to its reference page:</p>
+<ul>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-basic/">Basic</a></strong></p>
+<ul>
+<li>Basic effects primarily consist of spring related configurations. This is where you will find settings like the joystick spring mode and various in-game spring override settings</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-aerodynamics/">Aerodynamics</a></strong></p>
+<ul>
+<li>These effects are typically related to aerodynamic conditions such as AoA, stall buffeting, elevator droop, ETL, VRS, overspeed, etc.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-inertial/">Inertial</a></strong></p>
+<ul>
+<li>Inertial effects are those that are related to acceleration vector data such as the g-force effect, and deceleration effect</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-ground/">Ground</a></strong></p>
+<ul>
+<li>Ground effect types will be related to the aircraft interaction with the surface. Effects such as ground rumble and the touchdown effect can be found here</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-mechanical/">Mechanical\Airframe</a></strong></p>
+<ul>
+<li>These effects typically are related to mechanical aspects of the aircraft such as gear, flaps, canopy motion.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-weapons/">Weapons</a></strong></p>
+<ul>
+<li>Here you will find the settings for weapon based effects for combat simulators</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-ffb/">Basic FFB Effects</a></strong></p>
+<ul>
+<li>These effects are not telemetry driven. In this section you can enable and configure basic FFB effects such as dampening, friction and inertia</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong><a href="../effects-system/">System</a></strong></p>
+<ul>
+<li>The system section has non-effect based configurations such as configurator gain overrides, dynamic vpconf profile selection and other settings that can be configured per-aircraft.</li>
+</ul>
+</li>
+</ul>
+<h3 id="modifying-settings-in-real-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.9</span> Modifying settings in real time<a class="headerlink" href="#modifying-settings-in-real-time" title="Link to this section">¶</a></h3>
+<p>Effect sliders have a toggle to enable or disable that effect. You can quickly toggle on/off an effect. When the setting is off, your intensity setting is retained. <strong>The handle will also turn green when that effect is active</strong>.</p>
+<p>Example</p>
+<figure class="figure-image"> <img alt="" height="45px" src="../images/ui-overview/slider-toggle.webp" width="594px"/> <figcaption></figcaption></figure>
+<p>Some settings have additional parameters. You will see an expander button next to them and a clickable hyperlink for the effect name. <strong>Click the expander</strong> <strong>or the hyperlink</strong> to see additional settings, and again to collapse:</p>
+<figure class="figure-image"> <img alt="" height="106px" src="../images/ui-overview/expander.gif" width="628px"/> <figcaption></figcaption></figure>
+<p>Any setting you have modified will show a ‘x’ icon on the right side. You can <strong>click this icon</strong> to return the setting to the default:</p>
+<figure class="figure-image"> <img alt="" height="115px" src="../images/ui-overview/revert-x.gif" width="629px"/> <figcaption></figcaption></figure>
+<p>If you have a setting that you would like to apply to all aircraft of the same class, or for the entire sim, you can right-click on the delete button and choose to move the setting up to the class default or the sim default level. Once you have done so, an information icon will be visible where the delete button was, indicating that the setting has an override from defaults at the sim or class level. Hovering over the information icon will display the override level.</p>
+<figure class="figure-image"> <img alt="" height="75px" src="../images/ui-overview/promote-override.gif" width="680px"/> <figcaption></figcaption></figure>
+<p>For settings where a unit is used, there is a dropdown of acceptable units:</p>
+<figure class="figure-image"> <img alt="" height="106px" src="../images/ui-overview/unit-dropdown.webp" width="566px"/> <figcaption></figcaption></figure>
+<p>Some settings require a grip button assignment before use. <strong>Click the button</strong> on the screen and then press the desired grip button before the timer expires:</p>
+<figure class="figure-image"> <img alt="" height="105px" src="../images/ui-overview/button-capture.gif" width="638px"/> <figcaption></figcaption></figure>
+<p>Once the button is set, you can right-click on the X to apply to class or sim as shown above if you use the same grip and button for other aircraft.</p>
+<h2 id="system-tray"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> System Tray<a class="headerlink" href="#system-tray" title="Link to this section">¶</a></h2>
+<p>When TelemFFB starts, a system tray icon with a context menu is added to the windows taskbar. By default, the icon will be accessible from the expander button in the system tray. You may choose to drag the icon into the pinned icon areas of your task bar so that it is always visible.</p>
+<figure class="figure-image"> <img alt="" height="166px" src="../images/ui-overview/system-tray.webp" width="247px"/> <figcaption></figcaption></figure>
+<p>You can force the TelemFFB window to show by double-clicking the icon or from the context menu.</p>
+<p>When you start a simulator, the system tray icon will change colors to indicate the current status of the sim, very similar to the status indicator icons in the main TelemFFB window.</p>
+<p><em><figure class="figure-image"> <img alt="Sim is running, receiving telemetry" height="20px" src="../images/ui-overview/tray-status-running.webp" width="20px"/> <figcaption>Sim is running, receiving telemetry</figcaption></figure></em></p>
+<p><em><figure class="figure-image"> <img alt="Sim is paused" height="20px" src="../images/ui-overview/tray-status-paused.webp" width="20px"/> <figcaption>Sim is paused</figcaption></figure></em></p>
+<p><em><figure class="figure-image"> <img alt="Error condition." height="20px" src="../images/ui-overview/tray-status-error.webp" width="20px"/> <figcaption>Error condition.</figcaption></figure></em></p>
+<center>There will also be a system
+    tray notification with the error information and the error message
+    will be visible on the TelemFFB main window.</center>
+<h3 id="system-tray-context-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> System Tray Context Menu<a class="headerlink" href="#system-tray-context-menu" title="Link to this section">¶</a></h3>
+<p>Right-clicking on the system tray icon will open the context window. There are several items.</p>
+<figure class="figure-image"> <img alt="" height="131px" src="../images/ui-overview/tray-menu.webp" width="163px"/> <figcaption></figcaption></figure>
+<ul>
+<li>
+<p class="label-paragraph"><strong>Show Window</strong></p>
+<ul>
+<li>Forces the TelemFFB window to show itself if it is hidden and also come to the front if it is minimized or hidden by other windows.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Options</strong></p>
+<ul>
+<li>Provides options for toggling the Start to / Close to tray options. These toggles are identical to the checkboxes in the system settings page. If you change the options here, they will take effect immediately and you will see the change reflected in the system settings.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Instances</strong></p>
+<ul>
+<li>If you are running with multiple VPforce devices, this menu will have options to explicitly show the window for each of the additional instances of TelemFFB</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Quit TelemFFB</strong></p>
+<ul>
+<li>Exits the application</li>
+</ul>
+</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>
