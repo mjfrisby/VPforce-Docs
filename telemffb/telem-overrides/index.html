@@ -7,12 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
 <meta content="VPforce" name="author"/>
-<link href="https://docs.vpforce.eu/telemffb/settings-model/" rel="canonical"/>
-<link href="../sim-setup/" rel="prev"/>
-<link href="../ui-overview/" rel="next"/>
+<link href="https://docs.vpforce.eu/telemffb/telem-overrides/" rel="canonical"/>
+<link href="../msfs-xp-helicopters/" rel="prev"/>
+<link href="../sim-dcs/" rel="next"/>
 <link href="../../assets/images/favicon.webp" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>How Settings Work - VPforce Documentation</title>
+<title>Telemetry Overrides - VPforce Documentation</title>
 <link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -29,7 +29,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#how-settings-work">1. 
+<a class="md-skip" href="#telemetry-overrides">1. 
           Skip to content
         </a>
 </div>
@@ -53,7 +53,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              How Settings Work
+              Telemetry Overrides
             
           </span>
 </div>
@@ -444,8 +444,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
 <span class="md-ellipsis">
     
@@ -457,7 +457,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_4">
 <span class="md-nav__icon md-icon"></span>
             
@@ -467,20 +467,8 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    How Settings Work
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../settings-model/">
 <span class="md-ellipsis">
     
   
@@ -490,59 +478,6 @@
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#where-settings-are-stored">1.1 
-<span class="md-ellipsis">
-      
-        Where settings are stored
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#the-layers">1.2 
-<span class="md-ellipsis">
-      
-        The layers
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reading-the-settings-tab">1.3 
-<span class="md-ellipsis">
-      
-        Reading the Settings tab
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#profiles">1.4 
-<span class="md-ellipsis">
-      
-        Profiles
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#adding-an-aircraft-that-has-no-profile">1.5 
-<span class="md-ellipsis">
-      
-        Adding an aircraft that has no profile
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../ui-overview/">
@@ -595,8 +530,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
 <span class="md-ellipsis">
     
@@ -608,7 +543,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_4_5">
 <span class="md-nav__icon md-icon"></span>
             
@@ -618,8 +553,8 @@
 
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -631,7 +566,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
+<nav aria-expanded="true" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_4_5_1">
 <span class="md-nav__icon md-icon"></span>
             
@@ -713,8 +648,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../telem-overrides/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Telemetry Overrides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
   
@@ -724,6 +671,59 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-it-exists">1.1 
+<span class="md-ellipsis">
+      
+        Why it exists
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works">1.2 
+<span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-editor-fields">1.3 
+<span class="md-ellipsis">
+      
+        The editor fields
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-the-example">1.4 
+<span class="md-ellipsis">
+      
+        Reading the example
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cautions">1.5 
+<span class="md-ellipsis">
+      
+        Cautions
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1627,49 +1627,75 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="how-settings-work"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> How Settings Work<a class="headerlink" href="#how-settings-work" title="Link to this section">¶</a></h1>
-<p>TelemFFB separates <strong>system settings</strong> (how the application runs) from <strong>aircraft settings</strong> (how each aircraft feels). Understanding how aircraft settings are resolved makes the rest of the manual — and the Settings tab — much easier to follow.</p>
-<h2 id="where-settings-are-stored"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Where settings are stored<a class="headerlink" href="#where-settings-are-stored" title="Link to this section">¶</a></h2>
-<p class="label-paragraph"><strong>System settings</strong> are stored in the registry at:</p>
+<h1 id="telemetry-overrides"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Telemetry Overrides<a class="headerlink" href="#telemetry-overrides" title="Link to this section">¶</a></h1>
+<p>An advanced MSFS/X-Plane feature: change <strong>where a telemetry item’s data comes from</strong>, or subscribe to <strong>additional</strong> telemetry items, per aircraft. Open the editor from <strong>Utilities → SimConnect/Dataref Overrides Editor</strong>, with an aircraft loaded (or selected in the offline editor). Overrides are stored against the aircraft’s match pattern, and changes are saved — and applied — immediately.</p>
+<figure class="figure-image"> <img alt="The SimConnect/Dataref Overrides Editor entry in the Utilities menu" src="../images/telem-overrides/overrides_menu.webp" width="427px"> <figcaption>The SimConnect/Dataref Overrides Editor entry in the Utilities menu</figcaption></img></figure>
+<figure class="figure-image"> <img alt="The SimConnect/Dataref Overrides editor showing several source overrides for an A2A aircraft, with the overridden values visible in the Monitor tab" src="../images/telem-overrides/overrides_example.webp" width="760px"> <figcaption>The SimConnect/Dataref Overrides editor showing several source overrides for an A2A aircraft, with the overridden values visible in the Monitor tab</figcaption></img></figure>
+<h2 id="why-it-exists"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Why it exists<a class="headerlink" href="#why-it-exists" title="Link to this section">¶</a></h2>
+<p>TelemFFB’s effects consume a fixed set of telemetry items (the names you see in the Monitor tab). Normally each item is wired to a standard SimConnect variable or X-Plane dataref — but not every aircraft populates the standard sources:</p>
 <ul>
-<li><code>HKEY_CURRENT_USER\Software\VPforce\TelemFFB</code></li>
+<li><strong>Source overrides.</strong> Sophisticated addon aircraft often implement their own systems in custom variables and leave the standard ones stale. The classic case is the <strong>autopilot indication</strong>: an addon whose AP never drives the standard <code>AUTOPILOT MASTER</code> simvar breaks every AP-aware TelemFFB feature — until you override <code>APMaster</code> to read the addon’s own variable. The same applies to custom engine and flight models (RPM, thrust, accelerations).</li>
+<li><strong>Additional subscriptions.</strong> An override whose Telem Property is a <em>new</em> name creates a brand-new telemetry item. This is how the special aircraft implementations (the HPG helicopters, for example) receive their custom <code>L:Var</code>s — their shipped default profiles include the required overrides out of the box.</li>
 </ul>
-<p>Everything configured in the System→<a href="../configuration/">System Settings</a> dialog lives here. Do not edit the registry by hand — but it is useful to know where the settings are if you ever migrate machines.</p>
-<p class="label-paragraph"><strong>Aircraft settings</strong> are stored in the user appdata folder:</p>
+<h2 id="how-it-works"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> How it works<a class="headerlink" href="#how-it-works" title="Link to this section">¶</a></h2>
 <ul>
-<li><code>%LOCALAPPDATA%\VPForce-TelemFFB</code></li>
+<li><strong>MSFS</strong> — the override replaces (or adds) the variable in TelemFFB’s SimConnect subscription set. The Variable field takes a SimVar name (<code>VARNAME</code>) or an LVar (<code>L:VARNAME</code>); the Unit is the SimConnect unit to request (<code>bool</code>, <code>enum</code>, <code>number</code>, <code>Percent Over 100</code>, <code>degrees</code>, <code>meters/second</code>).</li>
+<li><strong>X-Plane</strong> — TelemFFB instructs its X-Plane plugin to subscribe to the given dataref (Unit: <code>int</code> or <code>float</code>) and export it under the telemetry item’s name.</li>
 </ul>
-<p>The user configuration file here holds only your changes. The full catalog of settings and their default values ships inside the application as a defaults file.</p>
-<h2 id="the-layers"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> The layers<a class="headerlink" href="#the-layers" title="Link to this section">¶</a></h2>
-<p>When an aircraft loads, every setting is resolved through layers. The most specific layer that defines a value wins:</p>
-<ol>
-<li><strong>Application defaults</strong> — the bundled defaults file defines every available setting for every simulator and device type, with sensible baseline values.</li>
-<li><strong>Class defaults</strong> — defaults per aircraft class (PropellerAircraft, JetAircraft, TurbopropAircraft, GliderAircraft, Helicopter, and so on). A helicopter and a jet start from different baselines automatically.</li>
-<li><strong>Shipped aircraft profiles</strong> — TelemFFB ships tuned profiles for many specific aircraft across all supported sims. Aircraft are matched by a name pattern, so different liveries of the same aircraft match the same profile. The <strong>Matched Model</strong> field in the status area shows which pattern matched.</li>
-<li><strong>Your overrides</strong> — anything you change, at whatever level you choose: for the specific aircraft (the normal case), or promoted to apply class-wide or sim-wide.</li>
-</ol>
-<p>Your configuration file is a <strong>delta</strong>: it stores only the settings you changed, at the level you changed them. Everything else continues to follow the layers below.</p>
-<div class="admonition tip">
-<p class="admonition-title">Why the delta model is good news</p>
-<p>Because unmodified settings follow the application defaults, updating TelemFFB automatically picks up improved default values and newly added settings — without touching anything you tuned yourself. And any change you make can be reverted to the inherited value with one click, so experimenting is always safe.</p>
+<p>Either way, the result flows into the same telemetry item the effects already consume — verify it live in the <strong>Monitor tab</strong>. When an aircraft with active overrides loads, the status area shows a <strong>Telem Ovd</strong> pill with counts by tier (shipped default vs your own); hovering it lists every active override.</p>
+<div class="admonition important">
+<p class="admonition-title">Additional profiles: clone, don’t create from scratch</p>
+<p>Overrides belong to the matched model profile. If you need an additional profile — a livery whose name does not match the shipped pattern, for example — you must <strong>clone it from the default profile</strong> so the overrides carry over. An entry created from scratch will <em>not</em> pick them up, and every effect that depends on the overridden telemetry silently loses its data. (This is the general form of the rule the <a href="../msfs-xp-helicopters/#hpg-airbus-helicopters-msfs-only">HPG helicopters</a> document for their <code>L:Var</code> subscriptions.) See <a href="../aircraft-profiles/">Aircraft Profiles</a> for cloning.</p>
 </div>
-<h2 id="reading-the-settings-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Reading the Settings tab<a class="headerlink" href="#reading-the-settings-tab" title="Link to this section">¶</a></h2>
-<p>The Settings tab shows the <em>resolved</em> value of every setting for the loaded aircraft, whichever layer it came from. The interface tells you where a value comes from:</p>
+<h2 id="the-editor-fields"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> The editor fields<a class="headerlink" href="#the-editor-fields" title="Link to this section">¶</a></h2>
 <ul>
-<li>A setting you changed for this aircraft shows an <strong>x</strong> icon. Click it to remove your override and fall back to the inherited value.</li>
-<li><strong>Right-click the x</strong> icon to promote your value to the <strong>class</strong> or <strong>sim</strong> level, so it applies to every aircraft of that class or sim. An information icon then marks the setting; hover it to see which level the override lives at.</li>
+<li><strong>Telem Property</strong> — the telemetry item to feed. The dropdown lists the standard overridable items, but the field is editable, which enables two more forms:<ul>
+<li><code>Name:index</code> targets one element of a <em>list</em> telemetry item — the screenshot overrides <code>AccBody:0/1/2</code> (the X/Y/Z body accelerations) individually.</li>
+<li>A name not in the list creates a <strong>new</strong> telemetry item under that name.</li>
 </ul>
-<p>See <a href="../ui-overview/#modifying-settings-in-real-time">Modifying settings in real time</a> for a visual walkthrough of these controls.</p>
-<p>To edit class- or sim-level defaults directly — without an aircraft loaded — use the offline editor described in <a href="../aircraft-profiles/#offlineglobal-simclass-configuration">Aircraft Profiles</a>.</p>
-<h2 id="profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Profiles<a class="headerlink" href="#profiles" title="Link to this section">¶</a></h2>
-<p>An aircraft can have more than one settings profile. The <strong>Active Profile</strong> field in the status area shows which one is loaded.</p>
+</li>
+<li><strong>Variable</strong> — the SimVar/LVar (MSFS) or dataref path (X-Plane) to read.</li>
+<li><strong>Unit</strong> — the unit/type to request, per sim as above.</li>
+<li><strong>Transform/Scale</strong> — converts the raw value into the range the telemetry item expects. Leave blank for the raw value, enter a <strong>number</strong> for a simple multiplier, or (MSFS) a <strong>math expression</strong> using <code>x</code> as the input — e.g. <code>(x - 50) * 0.02</code> maps 0–100 onto −1–1. Standard operators and parentheses only; for X-Plane the conversion is a numeric multiplier applied by the plugin.</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">The transform must make the value equivalent to the original</p>
+<p>TelemFFB’s effects expect each telemetry item in the <strong>units, range, and sign of its original standard source</strong> — an override changes where the data comes from, not what the consumers expect. Whatever format the replacement variable uses natively, it is your job (via the Transform/Scale) to deliver an equivalent value. In the example below, the addon’s body accelerations arrive in m/s² where the standard item is in g — hence the 0.102 (≈1/9.81) scale. An override that “works” but skips this conversion feeds every dependent effect distorted data.</p>
+</div>
+<p>Rows shown <strong>greyed out</strong> come from the aircraft’s shipped default profile — they document what the curated profile already subscribes and cannot be deleted here. Your own rows (source “user”) can be selected and deleted.</p>
+<h2 id="reading-the-example"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Reading the example<a class="headerlink" href="#reading-the-example" title="Link to this section">¶</a></h2>
+<p>The screenshot shows a curated set for the A2A Comanche — an addon with its own physics and systems model:</p>
+<table>
+<thead>
+<tr>
+<th>Override</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>APMaster</code> ← <code>L:ApDisableAileron</code></td>
+<td>The addon’s AP state lives in its own LVar; the standard AP simvar would read stale. Restores AP-aware behavior.</td>
+</tr>
+<tr>
+<td><code>AccBody:0/1/2</code> ← <code>L:FM_BodyAcceleration X/Y/Z</code>, scale <code>0.102</code></td>
+<td>The addon computes its own body accelerations; 0.102 ≈ 1/9.81 converts m/s² to g, the range the effects expect.</td>
+</tr>
+<tr>
+<td><code>PropRPM</code> ← <code>L:Eng1_PropRPM</code></td>
+<td>The custom engine model’s RPM, not the standard prop simvar.</td>
+</tr>
+<tr>
+<td><code>PropThrust</code> ← <code>L:Eng1_ForceZ</code>, scale <code>4.45</code></td>
+<td>Thrust from the custom model, scaled into the expected units.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cautions"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Cautions<a class="headerlink" href="#cautions" title="Link to this section">¶</a></h2>
 <ul>
-<li>Every aircraft has a base profile; you can create additional named profiles for the same aircraft — for example an aerobatics setup and a cruise setup — and switch between them.</li>
-<li>Profiles can be exported and imported for sharing.</li>
+<li>An override changes the input for <strong>every effect</strong> that consumes that telemetry item — a wrong variable or scale can quietly distort several effects at once. Sanity-check the value in the Monitor tab against what you expect (units and sign included).</li>
+<li>Core flight-dynamics items (attitude, airspeed, AoA and similar) are deliberately absent from the dropdown — overriding the fundamentals is rarely the right fix.</li>
 </ul>
-<p>Profile creation, selection, import and export are covered in <a href="../aircraft-profiles/">Aircraft Profiles</a>.</p>
-<h2 id="adding-an-aircraft-that-has-no-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Adding an aircraft that has no profile<a class="headerlink" href="#adding-an-aircraft-that-has-no-profile" title="Link to this section">¶</a></h2>
-<p>If TelemFFB does not recognize a loaded aircraft, it still works: the aircraft gets the defaults for its simulator, and you can create a proper profile for it — choosing the aircraft class that determines its baseline — with the <a href="../aircraft-profiles/#adding-new-aircraft-support">Add New Aircraft wizard</a>. Picking the right class matters: it decides which spring model, effect set, and class defaults apply.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

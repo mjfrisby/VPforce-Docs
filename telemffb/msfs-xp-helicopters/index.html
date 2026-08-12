@@ -9,7 +9,7 @@
 <meta content="VPforce" name="author"/>
 <link href="https://docs.vpforce.eu/telemffb/msfs-xp-helicopters/" rel="canonical"/>
 <link href="../msfs-xp-trim-manual/" rel="prev"/>
-<link href="../sim-dcs/" rel="next"/>
+<link href="../telem-overrides/" rel="next"/>
 <link href="../../assets/images/favicon.webp" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
 <title>Helicopters - VPforce Documentation</title>
@@ -725,6 +725,18 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../telem-overrides/">
+<span class="md-ellipsis">
+    
+  
+    Telemetry Overrides
+  
+
+    
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -1732,7 +1744,7 @@
 <p>As part of this implementation, there are certain requirements and recommended settings in the MSFS control bindings, the HPG Helicopter settings (iPad) and in TelemFFB.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Because of the unique aspects of this implementation, when either the H145 or H160 profiles are loaded, a series of aircraft specific <code>L:Vars</code> are subscribed to. These <code>L:Vars</code> are part of the default profiles for the H145 and H160 aircraft. As such, it is important that if you load a livery that does not match the default profiles, that you <strong>clone</strong> from the existing default profile. If you simply create a new entry of type “HPGHelicopter”, it will not work properly.</p>
+<p>Because of the unique aspects of this implementation, when either the H145 or H160 profiles are loaded, a series of aircraft specific <code>L:Vars</code> are subscribed to (via <a href="../telem-overrides/">Telemetry Overrides</a> shipped in the default profiles). These <code>L:Vars</code> are part of the default profiles for the H145 and H160 aircraft. As such, it is important that if you load a livery that does not match the default profiles, that you <strong>clone</strong> from the existing default profile. If you simply create a new entry of type “HPGHelicopter”, it will not work properly.</p>
 </div>
 <p class="label-paragraph"><strong>VPForce Configurator Settings:</strong></p>
 <ol>
