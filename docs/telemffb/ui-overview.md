@@ -154,6 +154,10 @@ A red status icon indicates that the child instance of TelemFFB has crashed, or 
 
     -   Shows active status if the Configurator Gains Override setting is in use and active.
 
+-   **Telem Ovd:**
+
+    -   Shown when the loaded aircraft has active [telemetry overrides](telem-overrides.md), with counts by tier — e.g. "Default (4) + User (2)" for four overrides from the shipped profile plus two of your own. Hover for the full override list. Note that additional profiles for such an aircraft must be **cloned** from the default profile to pick up the overrides — see the [overrides guide](telem-overrides.md).
+
 ### Profile Notes
 
 The status area includes a **notes button** for the loaded aircraft profile.

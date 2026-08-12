@@ -15,3 +15,5 @@ This guide is split into chapters. For a first-time setup, read them in order:
 4.  **[Helicopters](msfs-xp-helicopters.md)** — force trim emulation, plus the HPG and FlyInside integrations.
 
 Sim-specific effect settings (buffeting, turbulence, engine rumble, and the rest) are covered in the [Effects Reference](effects-overview.md) — see the full per-sim directories for [MSFS](effects-sim-msfs.md) and [X-Plane](effects-sim-xplane.md).
+
+For advanced per-aircraft integration — re-sourcing a telemetry item from an addon's custom variables, or subscribing to additional ones — see [Telemetry Overrides](telem-overrides.md).

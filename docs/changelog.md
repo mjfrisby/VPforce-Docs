@@ -6,6 +6,7 @@
     - Documented **device auto-assignment** and the per-role device selector pulldowns in [Devices & Instances](telemffb/devices-instances.md), and updated the Quick Start and Troubleshooting pages to match
     - Documented **[Profile Notes](telemffb/ui-overview.md#profile-notes)** — curated notes on shipped profiles, adding your own notes, and the flashing notes icon
     - Rewrote **[VPforce Configurator Integration](telemffb/vpconf-profiles.md)** around a four-rule model of how TelemFFB manages device gains, with a precedence table and the worked examples reformatted as state timelines
+    - Documented **[Telemetry Overrides](telemffb/telem-overrides.md)** — re-sourcing telemetry items from an addon's custom variables (the autopilot-indication case), overriding individual list elements, transform expressions, and subscribing to additional telemetry, with a worked A2A example
 
 - **August 8, 2026:**
 
