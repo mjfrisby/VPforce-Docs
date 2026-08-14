@@ -649,6 +649,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-special-aircraft/">
+<span class="md-ellipsis">
+    
+  
+    Special Aircraft
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../telem-overrides/">
 <span class="md-ellipsis">
     
@@ -982,7 +994,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#getting-help">1.3 
+<a class="md-nav__link" href="#exception-tracking-reporting">1.3 
+<span class="md-ellipsis">
+      
+        Exception Tracking &amp; Reporting
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#getting-help">1.4 
 <span class="md-ellipsis">
       
         Getting help
@@ -991,7 +1012,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#faq">1.4 
+<a class="md-nav__link" href="#faq">1.5 
 <span class="md-ellipsis">
       
         FAQ
@@ -1637,7 +1658,18 @@
 <li><strong>X-Plane</strong> — <a href="../../rhino/game-specific-troubleshooting/#not-receiving-telemetry_2">Not receiving telemetry</a></li>
 <li><strong>BMS</strong> — <a href="../../rhino/game-specific-troubleshooting/#falcon-bms">Falcon BMS</a></li>
 </ul>
-<h2 id="getting-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Getting help<a class="headerlink" href="#getting-help" title="Link to this section">¶</a></h2>
+<h2 id="exception-tracking-reporting"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Exception Tracking &amp; Reporting<a class="headerlink" href="#exception-tracking-reporting" title="Link to this section">¶</a></h2>
+<p>TelemFFB tracks runtime errors as they happen. When an error is logged, a red <strong>Errors</strong> counter appears in the status bar along the bottom edge of the main window — it is hidden when there is nothing to see. Click it to open the <strong>Logged Exceptions</strong> viewer:</p>
+<figure class="figure-image"> <img alt="The Logged Exceptions viewer, opened from the Errors indicator in the status bar" src="../images/troubleshooting/exception-window.webp" width="700px"> <figcaption>The Logged Exceptions viewer, opened from the Errors indicator in the status bar</figcaption></img></figure>
+<p>The left pane lists the errors from this session (up to 100); selecting one shows the full detail — timestamp, module, message, and complete traceback — in the right pane. Two behaviors keep the list readable:</p>
+<ul>
+<li><strong>Deduplication</strong> — repeated occurrences of the same error collapse into a single entry with an occurrence count, rather than flooding the list.</li>
+<li><strong>Child forwarding</strong> — in multi-device setups, errors raised by child instances are forwarded to the master, so every device’s errors are visible in one place. The module prefix on each entry tells you which instance raised it.</li>
+</ul>
+<p>The buttons along the bottom: <strong>Copy Selected</strong> / <strong>Copy All</strong> put the error text on the clipboard (handy for pasting into a Discord post), <strong>Clear All</strong> empties the list and hides the status-bar counter, and <strong>Report Exceptions</strong> submits the errors to VPforce directly:</p>
+<figure class="figure-image"> <img alt="The Report Exceptions confirmation dialog" src="../images/troubleshooting/report-exception.webp" width="650px"> <figcaption>The Report Exceptions confirmation dialog</figcaption></img></figure>
+<p class="label-paragraph"><strong>Report Exceptions</strong> builds a support bundle — the exception details and tracebacks, your system configuration, and the application logs — and uploads it to VPforce support. After the upload, a verification page opens in your browser; the report is only submitted once you complete the challenge there.</p>
+<h2 id="getting-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Getting help<a class="headerlink" href="#getting-help" title="Link to this section">¶</a></h2>
 <p>The single most important factor in getting your problem solved quickly is <strong>how you ask</strong>. Read <strong><a href="../../rhino/troubleshooting-maintenance/#how-to-get-effective-support">How to Get Effective Support</a></strong> — it is short, and following it usually turns a multi-day back-and-forth into a single exchange. The essentials:</p>
 <ul>
 <li><strong>Describe exactly what happens and when</strong> — “stick goes limp with no centering force in the F-16 after AP engage”, not “FFB doesn’t work”. One problem per request, and say what you have already tried.</li>
@@ -1646,7 +1678,7 @@
 <li>Post on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel of the VPforce Discord.</li>
 </ul>
 <p>For reference: <strong>System → Open Config/Log directory</strong> opens the folder holding logs and your settings (<code>%LOCALAPPDATA%\VPForce-TelemFFB</code>); older logs are archived into daily zip files.</p>
-<h2 id="faq"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> FAQ<a class="headerlink" href="#faq" title="Link to this section">¶</a></h2>
+<h2 id="faq"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> FAQ<a class="headerlink" href="#faq" title="Link to this section">¶</a></h2>
 <p class="label-paragraph"><strong>Q: Does DCS native force feedback need TelemFFB running?</strong><br/>
 <strong>A:</strong> No. DCS sends its native FFB effects directly to the device. TelemFFB adds supplemental effects on top — see <a href="../sim-dcs/#understanding-native-dcs-ffb-telemffb-and-vpforce-configurator">the DCS guide</a>.</p>
 <p class="label-paragraph"><strong>Q: My antivirus flags the TelemFFB executable. Is it safe?</strong><br/>
