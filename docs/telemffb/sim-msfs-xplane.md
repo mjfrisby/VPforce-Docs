@@ -13,7 +13,9 @@ This guide is split into chapters. For a first-time setup, read them in order:
 2.  **[Trim & Autopilot Following](msfs-xp-trim-following.md)** — the stick follows the aircraft's trim and autopilot, relieving control pressure like a real aircraft.
 3.  **[Automatic Trim Calibration](msfs-xp-trim-calibration.md)** — TelemFFB flies the aircraft briefly and measures the correct trim-following gains.
 4.  **[Helicopters](msfs-xp-helicopters.md)** — force trim emulation, plus the HPG and FlyInside integrations.
+5.  **[Aircraft with Special Treatment](msfs-xp-special-aircraft.md)** — the roster of addon aircraft with dedicated classes or curated profiles, and why their profiles must be cloned rather than created from scratch.
 
 Sim-specific effect settings (buffeting, turbulence, engine rumble, and the rest) are covered in the [Effects Reference](effects-overview.md) — see the full per-sim directories for [MSFS](effects-sim-msfs.md) and [X-Plane](effects-sim-xplane.md).
 
 For advanced per-aircraft integration — re-sourcing a telemetry item from an addon's custom variables, or subscribing to additional ones — see [Telemetry Overrides](telem-overrides.md).
+

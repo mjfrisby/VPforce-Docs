@@ -55,6 +55,7 @@ nav:
         - Automatic Trim Calibration: telemffb/msfs-xp-trim-calibration.md
         - Manual Trim Tuning (Legacy): telemffb/msfs-xp-trim-manual.md
         - Helicopters: telemffb/msfs-xp-helicopters.md
+        - Special Aircraft: telemffb/msfs-xp-special-aircraft.md
         - Telemetry Overrides: telemffb/telem-overrides.md
       - DCS: telemffb/sim-dcs.md
       - IL-2: telemffb/sim-il2.md
