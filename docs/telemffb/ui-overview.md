@@ -253,6 +253,16 @@ Some settings require a grip button assignment before use. **Click the button** 
 
 Once the button is set, you can right-click on the X to apply to class or sim as shown above if you use the same grip and button for other aircraft.
 
+## Status Bar
+
+Along the very bottom edge of the main window:
+
+![The status bar showing the firmware version, the Errors counter, and the version status](images/ui-overview/status-bar.png){ width="700px" }
+
+-   **Rhino Firmware** — the firmware version of the connected device (or "Device Disconnected").
+-   **Errors** — a red counter that appears only when TelemFFB has logged runtime errors. Click it to open the exceptions viewer — see [Exception Tracking & Reporting](troubleshooting.md#exception-tracking-reporting).
+-   **Version Status** — whether this TelemFFB build is up to date; when an update is available, the text becomes a clickable link.
+
 ## System Tray
 
 When TelemFFB starts, a system tray icon with a context menu is added to the windows taskbar. By default, the icon will be accessible from the expander button in the system tray. You may choose to drag the icon into the pinned icon areas of your task bar so that it is always visible.

@@ -22,6 +22,28 @@ Verify the sim is enabled in [Connecting Your Simulator](sim-setup.md), then use
 -   **X-Plane** — [Not receiving telemetry](../rhino/game-specific-troubleshooting.md#not-receiving-telemetry_2)
 -   **BMS** — [Falcon BMS](../rhino/game-specific-troubleshooting.md#falcon-bms)
 
+## Exception Tracking & Reporting
+
+TelemFFB tracks runtime errors as they happen. When an error is logged, a red **Errors** counter appears in the status bar along the bottom edge of the main window — it is hidden when there is nothing to see. Click it to open the **Logged Exceptions** viewer:
+
+![The Logged Exceptions viewer, opened from the Errors indicator in the status bar](images/troubleshooting/exception-window.png){ width="700px" }
+
+The left pane lists the errors from this session (up to 100); selecting one shows the full detail — timestamp, module, message, and complete traceback — in the right pane. Two behaviors keep the list readable:
+
+-   **Deduplication** — repeated occurrences of the same error collapse into a single entry with an occurrence count, rather than flooding the list.
+-   **Child forwarding** — in multi-device setups, errors raised by child instances are forwarded to the master, so every device's errors are visible in one place. The module prefix on each entry tells you which instance raised it.
+
+The buttons along the bottom: **Copy Selected** / **Copy All** put the error text on the clipboard (handy for pasting into a Discord post), **Clear All** empties the list and hides the status-bar counter, and **Report Exceptions** submits the errors to VPforce directly:
+
+![The Report Exceptions confirmation dialog](images/troubleshooting/report-exception.png){ width="650px" }
+
+The dialog has two optional fields:
+
+-   **Discord username** — lets support match your uploaded bundle to you on the VPforce Discord. The name also becomes part of the uploaded file name, so it is visible right in the support channel. TelemFFB remembers it until you close the application; it is never saved to disk.
+-   **Additional information** — describe what you were doing when the problem occurred, or anything else support should know. Your notes travel inside the bundle, where support reads them before digging into the logs.
+
+**Report Exceptions** builds a support bundle — the exception details and tracebacks, your system configuration, the application logs, and anything you entered above — and uploads it to VPforce support. After the upload, a verification page opens in your browser; the report is only submitted once you complete the challenge there.
+
 ## Getting help
 
 The single most important factor in getting your problem solved quickly is **how you ask**. Read **[How to Get Effective Support](../rhino/troubleshooting-maintenance.md#how-to-get-effective-support)** — it is short, and following it usually turns a multi-day back-and-forth into a single exchange. The essentials:
