@@ -1,4 +1,12 @@
 # Changelog
+- **August 15, 2026:**
+
+    - Added **[Aircraft with Special Treatment](telemffb/msfs-xp-special-aircraft.md)** — a dedicated page cataloguing every MSFS/X-Plane addon aircraft with a dedicated class or curated default profile (HPG H145/H160, FlyInside B206/B47, the ten-model CowanSim fleet, Taog's Hangar H500C/OH6A and UH-1H/205-A1B, Simfocus Bell 407, A2A Comanche, X-Trident AW109SP), what each integration does, and why additional profiles for these aircraft must be cloned from the default rather than created from scratch
+    - Renamed the SimConnect/Dataref Overrides page to **[Telemetry Overrides](telemffb/telem-overrides.md)** to match the application, and documented the status-area **Telem Ovd** indicator with its Default/User tier counts
+    - Added **[How the Axis Positions Reach the Sim](telemffb/msfs-xp-axis-spring.md#how-the-axis-positions-reach-the-sim)** to Axis Control & Spring Modes — the default SimConnect axis events per aircraft class, the input range and sensitivity notes, and the X-Plane plugin's override and position datarefs (including the sim's designated prop-ratio collective mapping)
+    - Added **[Exception Tracking & Reporting](telemffb/troubleshooting.md#exception-tracking-reporting)** — the status-bar Errors counter, the Logged Exceptions viewer with deduplication and child-instance forwarding, and the Report Exceptions upload flow — plus a [Status Bar](telemffb/ui-overview.md#status-bar) section in the UI overview
+    - Updated **[Exception Tracking & Reporting](telemffb/troubleshooting.md#exception-tracking-reporting)** for the new report dialog: the optional Discord username (session-only, shown in the uploaded file name) and the additional-information field, with a refreshed screenshot
+
 - **August 8, 2026 (later):**
 
     - Added a **[Troubleshooting & Getting Help](telemffb/troubleshooting.md)** page for the TelemFFB Manual: status-area triage, links to the per-sim troubleshooting checklists, log and support-bundle locations, and a short FAQ
