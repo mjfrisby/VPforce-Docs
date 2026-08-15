@@ -2,8 +2,7 @@
 
 TelemFFB is an open source community-driven Python/Qt based application which takes telemetry from a simulator and uses that telemetry to produce various effects.
 
-The latest version can always be downloaded from the repository release page here:
-[https://github.com/walmis/VPforce-TelemFFB/releases](https://github.com/walmis/VPforce-TelemFFB/releases)
+The latest version can always be downloaded from the [GitHub releases page](https://github.com/walmis/VPforce-TelemFFB/releases).
 
 Supported simulators:
 
