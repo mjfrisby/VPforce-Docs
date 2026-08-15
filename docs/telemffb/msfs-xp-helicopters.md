@@ -37,7 +37,7 @@ Helicopter force trim emulation is supported for both MSFS and X-Plane. To enabl
         enable/disable the hardware force trim based on the 0/1 state
         of said variable.
 
-    -   Some aircraft (like the Taug UH-1) have a switch in the cockpit.
+    -   Some aircraft (like the Taog's Hangar UH-1) have a switch in the cockpit.
         The default profile for this aircraft already has the correct
         L:Var mapped.
 

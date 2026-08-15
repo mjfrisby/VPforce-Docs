@@ -21,7 +21,7 @@ TelemFFB's effects consume a fixed set of telemetry items (the names you see in 
 Either way, the result flows into the same telemetry item the effects already consume — verify it live in the **Monitor tab**. When an aircraft with active overrides loads, the status area shows a **Telem Ovd** pill with counts by tier (shipped default vs your own); hovering it lists every active override.
 
 !!! important "Additional profiles: clone, don't create from scratch"
-    Overrides belong to the matched model profile. If you need an additional profile — a livery whose name does not match the shipped pattern, for example — you must **clone it from the default profile** so the overrides carry over. An entry created from scratch will *not* pick them up, and every effect that depends on the overridden telemetry silently loses its data. (This is the general form of the rule the [HPG helicopters](msfs-xp-helicopters.md#hpg-airbus-helicopters-msfs-only) document for their `L:Var` subscriptions.) See [Aircraft Profiles](aircraft-profiles.md) for cloning.
+    Overrides belong to the matched model profile. If you need an additional profile — a livery whose name does not match the shipped pattern, for example — you must **clone it from the default profile** so the overrides carry over. An entry created from scratch will *not* pick them up, and every effect that depends on the overridden telemetry silently loses its data. (This is the general form of the rule the [HPG helicopters](msfs-xp-helicopters.md#hpg-airbus-helicopters-msfs-only) document for their `L:Var` subscriptions — see the full roster of [Aircraft with Special Treatment](msfs-xp-special-aircraft.md).) See [Aircraft Profiles](aircraft-profiles.md) for cloning.
 
 ## The editor fields
 
