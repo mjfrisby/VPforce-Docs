@@ -42,7 +42,7 @@ After accessing the wizard via one of the two methods above, simply follow the s
 1. Select the appropriate aircraft class for the aircraft you are adding.
 
     - Note that for MSFS, the aircraft type will be auto-detected based on telemetry data. However, you should validate that the selection is correct.
-    - This is particularly important for aircraft types with special treatment in MSFS, such as those from **HPG**, **FlyInside**, **CowanSim**, and others — see [Aircraft with Special Treatment](msfs-xp-special-aircraft.md) for the full roster. These will be auto-detected as their base aircraft type, but the TelemFFB aircraft class needs to be configured properly to achieve full functionality for these aircraft.
+    - This is particularly important for aircraft types with special treatment in MSFS, such as those from **HPG**, **FlyInside**, **CowanSim**, and others - see [Aircraft with Special Treatment](msfs-xp-special-aircraft.md) for the full roster. These will be auto-detected as their base aircraft type, but the TelemFFB aircraft class needs to be configured properly to achieve full functionality for these aircraft.
 
 **Page 3:**
 

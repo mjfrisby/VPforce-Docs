@@ -117,7 +117,7 @@ To isolate and observe native DCS FFB effects without TelemFFB interference:
 2. Open VPforce Configurator and navigate to the debug tab
 3. Start DCS and load the aircraft/module you want to test
 4. In the debug tab, you will see effects appearing in real-time as you fly
-5. Look for effects with the **game** badge—these are native DCS effects that demonstrate what the simulator provides by default
+5. Look for effects with the **game** badge - these are native DCS effects that demonstrate what the simulator provides by default
 6. Reproduce specific flight conditions (stall, high-G maneuvers, gunfire, landing) to observe corresponding effects
 7. Note which DCS effects are active and their behavior with your current VPforce Configurator settings
 
@@ -137,20 +137,20 @@ When you restart TelemFFB after completing your DCS-only testing:
 
 Several different spring modes are available. Different options will be available depending on the selection
 
--   **None (Game Managed)** - (Default)
+- **None (Game Managed)** - (Default)
 
-    -   No Spring effect is supplied by TelemFFB. The game is left to manage its own spring
+    - No Spring effect is supplied by TelemFFB. The game is left to manage its own spring
 
--   **Static Override w/ Hardware Trim**
+- **Static Override w/ Hardware Trim**
 
-    -   A static spring with configurable gain is started and will override the game spring effect.
-    -   Hardware force trim settings are available
+    - A static spring with configurable gain is started and will override the game spring effect.
+    - Hardware force trim settings are available
 
 ![](images/sim-dcs/dcs-spring-override.png){ width="469px" height="260px" }
 
--   **Advanced Dynamic**
+- **Advanced Dynamic**
 
-    -   See the ***Advanced Dynamic Spring** documentation
+    - See the ***Advanced Dynamic Spring** documentation
 
 ## Pedal Spring Mode
 
@@ -158,40 +158,40 @@ DCS does not natively support FFB pedals. TelemFFB has implemented basic FFB cap
 
 The following modes are supported
 
--   **None (Game Managed) - NOT RECOMMENDED as the game does not support pedal FFB**
+- **None (Game Managed) - NOT RECOMMENDED as the game does not support pedal FFB**
 
--   **No Spring - (Helicopter default)**
+- **No Spring - (Helicopter default)**
 
-    -   A "zero gain" spring effect will be started to override the game spring effect
+    - A "zero gain" spring effect will be started to override the game spring effect
 
--   **Static Spring (Jet default)**
+- **Static Spring (Jet default)**
 
-    -   A configurable static gain spring effect will be started.
+    - A configurable static gain spring effect will be started.
 
--   **Dynamic Spring (Prop/Turboprop default)**
+- **Dynamic Spring (Prop/Turboprop default)**
 
-    -   A spring effect will be started that stiffens as airspeed increases. The speed range at which the spring stiffens is pre-defined based on published aircraft speed envelope data
+    - A spring effect will be started that stiffens as airspeed increases. The speed range at which the spring stiffens is pre-defined based on published aircraft speed envelope data
 
--   **Dynamic w/ Custom Speeds**
+- **Dynamic w/ Custom Speeds**
 
-    -   Same as Dynamic but with configurable speed ranges
+    - Same as Dynamic but with configurable speed ranges
 
--   **Advanced Dynamic**
+- **Advanced Dynamic**
 
-    -   See [Advanced Spring & G-Force Curves](spring-curves.md)
+    - See [Advanced Spring & G-Force Curves](spring-curves.md)
 
 In Dynamic Spring mode, the pedal force builds from the *Pedal Spring Gain* setting: the first 25% of the force accumulates between 0 and the aircraft's V~S~ (stall) speed, and the remaining 75% between V~S~ and V~NE~. All of the DCS warbirds have default V-speed values built into the application; the V-speeds and gains can be overridden per aircraft in the **Advanced Pedal Mode Settings** (Stall Speed V~S~, V~S~ Gain, Never Exceed Speed V~NE~, V~NE~ Gain).
 
-**Pedal trimming** is supported for fixed-wing aircraft that have rudder trimmers (default ON for propeller and jet aircraft). Helicopter pedal trimming is not supported: the "instant trim" options in the sims produce a double-input effect that cannot be reconciled with FFB trim following, and modules like the Mi-24 emulate a foot microswitch whose modes do not integrate with it either. In practice this does not matter — helicopters default to the springless pedal mode, which makes pedal trimming unnecessary.
+**Pedal trimming** is supported for fixed-wing aircraft that have rudder trimmers (default ON for propeller and jet aircraft). Helicopter pedal trimming is not supported: the "instant trim" options in the sims produce a double-input effect that cannot be reconciled with FFB trim following, and modules like the Mi-24 emulate a foot microswitch whose modes do not integrate with it either. In practice this does not matter - helicopters default to the springless pedal mode, which makes pedal trimming unnecessary.
 
 ## Collective Spring Mode
 
 For a VPforce-powered collective, two modes are available for helicopters:
 
--   **No Spring** — the collective moves freely, held only by the friction/damper forces in your VPforce Configurator profile.
--   **Hardware Force Trim** — a spring holds the collective at its trimmed position; hold the trim release button to move it and it locks where you let go.
+- **No Spring** - the collective moves freely, held only by the friction/damper forces in your VPforce Configurator profile.
+- **Hardware Force Trim** - a spring holds the collective at its trimmed position; hold the trim release button to move it and it locks where you let go.
 
-The behavior and button configuration are identical to the MSFS/X-Plane implementation — see [Collective Spring Mode](msfs-xp-helicopters.md#collective-spring-mode) for details.
+The behavior and button configuration are identical to the MSFS/X-Plane implementation - see [Collective Spring Mode](msfs-xp-helicopters.md#collective-spring-mode) for details.
 
 ## Low Hydraulic Pressure Effect
 
@@ -199,9 +199,9 @@ See the [Low Hydraulic Pressure Effect documentation](effects-mechanical.md#low-
 
 Support is currently limited to:
 
--   UH-1, SA342, Mi-8, Mi-24, KA-50
+- UH-1, SA342, Mi-8, Mi-24, KA-50
 
--   A-10C, AV-8B, F-14, F15ESE
+- A-10C, AV-8B, F-14, F15ESE
 
 The primary difference is that for each DCS aircraft, the telemetry must be individually sourced in a unique way per aircraft. As such, the supported aircraft are limited at this time. See the TelemFFB release notes for the supported aircraft.
 
@@ -209,7 +209,7 @@ For DCS Aircraft, the Hydraulic System Threshold setting has already been coarse
 
 ## Autopilot Oscillation with FFB
 
-Some DCS aircraft experience pitch or roll oscillations when engaging autopilot modes (attitude hold, altitude hold, etc.) with an FFB joystick connected. This is caused by a mismatch between the physical stick position and the virtual stick position in the simulator — the autopilot commands a stick position through the spring effect, the FFB device overshoots or lags slightly, and the autopilot overcorrects. DCS has inherent lag in its virtual control loop that amplifies this feedback loop, producing several oscillation cycles before stabilizing — or in some cases, never fully stabilizing.
+Some DCS aircraft experience pitch or roll oscillations when engaging autopilot modes (attitude hold, altitude hold, etc.) with an FFB joystick connected. This is caused by a mismatch between the physical stick position and the virtual stick position in the simulator - the autopilot commands a stick position through the spring effect, the FFB device overshoots or lags slightly, and the autopilot overcorrects. DCS has inherent lag in its virtual control loop that amplifies this feedback loop, producing several oscillation cycles before stabilizing - or in some cases, never fully stabilizing.
 
 This behavior is a DCS-side limitation in how the simulator's autopilot interacts with DirectInput force feedback. It is not caused by the Rhino hardware, VPforce Configurator, or TelemFFB.
 
@@ -221,14 +221,14 @@ This behavior is a DCS-side limitation in how the simulator's autopilot interact
 
 **What you can try:**
 
-- Ensure **DCS Axis Tune deadzone** is set to `0` — do not stack the DCS deadzone on top of a firmware deadzone, as this can make the oscillation worse
-- **Enable Adaptive Recentering** in VPforce Configurator (Effects tab) — this automatically adjusts the stick center to match the current trim point, reducing the position mismatch that drives the oscillation
+- Ensure **DCS Axis Tune deadzone** is set to `0` - do not stack the DCS deadzone on top of a firmware deadzone, as this can make the oscillation worse
+- **Enable Adaptive Recentering** in VPforce Configurator (Effects tab) - this automatically adjusts the stick center to match the current trim point, reducing the position mismatch that drives the oscillation
   
 !!! warning "Adaptive Recentering Exception"
     If using **HPG Force Mode** (experimental), ensure Adaptive Recentering is **disabled** in the VPforce Configurator, as it can interfere with the force-based hands-on detection hysteresis.
 
 - For supported aircraft, TelemFFB's **Dynamic Deadzone** automatically activates a deadzone when the autopilot engages, preventing the stick from feeding small position errors back into the AP control loop. The deadzone is removed when the AP disengages, restoring full precision
-- Not all aircraft are affected equally — the behavior depends on how each module implements autopilot control surfaces
+- Not all aircraft are affected equally - the behavior depends on how each module implements autopilot control surfaces
 
 For detailed troubleshooting steps including input deadzone configuration and manual stick synchronization, see [Autopilot Misbehaving or Disengaging Unexpectedly](../rhino/troubleshooting-maintenance.md#autopilot-misbehaving-or-disengaging-unexpectedly).
 

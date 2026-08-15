@@ -10,80 +10,80 @@ Enable each simulator you fly. For the sims that need an export script or plugin
 
 ## DCS
 
--   **Enable**
+- **Enable**
 
-    -   Enable/disable support for DCS
+    - Enable/disable support for DCS
 
--   **Auto DCS Setup**
+- **Auto DCS Setup**
 
-    -   When enabled, TelemFFB will automatically add entries into the DCS export script in the users save games folder structure. It will also copy the export script DLL package into the DCS save games folder
+    - When enabled, TelemFFB will automatically add entries into the DCS export script in the users save games folder structure. It will also copy the export script DLL package into the DCS save games folder
 
 ## Microsoft Flight Simulator (20/24)
 
--   **Enable**
+- **Enable**
 
-    -   Enable/disable support for MSFS.
+    - Enable/disable support for MSFS.
 
-    -   No further configuration is required
+    - No further configuration is required
 
 ## X-Plane (11/12)
 
--   **Enable**
+- **Enable**
 
-    -   Enable/disable support for X-Plane
+    - Enable/disable support for X-Plane
 
--   **Auto X-Plane setup**
+- **Auto X-Plane setup**
 
-    -   When enabled, TelemFFB will automatically install the custom telemetry plugin to the configured X-Plane installation path
+    - When enabled, TelemFFB will automatically install the custom telemetry plugin to the configured X-Plane installation path
 
--   **X-Plane Install Path**
+- **X-Plane Install Path**
 
-    -   As there is no registry entry to discover the installed path for X-Plane, browse for and select the root X-Plane install path. This is required for the auto setup script to succeed
+    - As there is no registry entry to discover the installed path for X-Plane, browse for and select the root X-Plane install path. This is required for the auto setup script to succeed
 
 ## IL-2 Sturmovik
 
 Both **IL-2 Great Battles** and **IL-2 Korea** are supported, each with its own options group on the IL2 tab.
 
--   **Enable**
+- **Enable**
 
-    -   Enable/disable support for IL-2
+    - Enable/disable support for IL-2
 
--   **IL-2 Telemetry Port**
+- **IL-2 Telemetry Port**
 
-    -   The UDP port TelemFFB listens on for IL-2 telemetry (default: 34385)
+    - The UDP port TelemFFB listens on for IL-2 telemetry (default: 34385)
 
 ### IL2 Sturmovik Options / IL2 Korea Options
 
 Each game has a discrete configuration group with the same two settings:
 
--   **Auto Telemetry Setup**
+- **Auto Telemetry Setup**
 
-    -   If enabled, TelemFFB will automatically set up the required configuration in that game to support telemetry export
+    - If enabled, TelemFFB will automatically set up the required configuration in that game to support telemetry export
 
--   **IL-2 Install Path**
+- **IL-2 Install Path**
 
-    -   As there is no registry entry to discover the installed path, browse for and select the root install path for that game. This is required for the auto setup script to succeed
+    - As there is no registry entry to discover the installed path, browse for and select the root install path for that game. This is required for the auto setup script to succeed
 
 ### Telemetry Forwarding
 
 TelemFFB can forward the telemetry streams it receives from IL-2 to additional destinations, so other applications (for example, motion software) can consume the same data while TelemFFB owns the telemetry port.
 
--   **Enable**
+- **Enable**
 
-    -   Enable/disable telemetry forwarding
+    - Enable/disable telemetry forwarding
 
--   **Destinations**
+- **Destinations**
 
-    -   Use **Add** and **Delete Entry** to manage one or more forwarding destinations. Each entry has an **IP**, a **UDP Port**, and a selection of which streams to forward:
+    - Use **Add** and **Delete Entry** to manage one or more forwarding destinations. Each entry has an **IP**, a **UDP Port**, and a selection of which streams to forward:
 
-        -   **Telemetry** - the IL-2 `telemetrydevice` stream
-        -   **Motion** - the IL-2 `motiondevice` stream
-        -   **FFB** - the IL-2 `ffbdevice` stream (IL-2 Korea only)
+        - **Telemetry** - the IL-2 `telemetrydevice` stream
+        - **Motion** - the IL-2 `motiondevice` stream
+        - **FFB** - the IL-2 `ffbdevice` stream (IL-2 Korea only)
 
 ## BMS (Beta support)
 
--   **Enable**
+- **Enable**
 
-    -   Enable/disable support for BMS.
+    - Enable/disable support for BMS.
 
-    -   No further configuration is required
+    - No further configuration is required

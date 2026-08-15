@@ -6,11 +6,11 @@ The latest version can always be downloaded from the [GitHub releases page](http
 
 Supported simulators:
 
--   DCS World
--   Microsoft Flight Simulator
--   IL-2 Sturmovik
--   X-Plane 11/12
--   Beta support for Falcon BMS (4.38+)
+- DCS World
+- Microsoft Flight Simulator
+- IL-2 Sturmovik
+- X-Plane 11/12
+- Beta support for Falcon BMS (4.38+)
 
 For **DCS** and **IL-2**, which support native FFB, the TelemFFB app is primarily leveraged to implement certain effects like gunfire, engine rumble and helicopter ETL shaking (among many others). However, there are some additional 'FFB type' effects which are implemented such as deceleration force and g-loading effect.
 
@@ -30,13 +30,13 @@ In practice, it is more complicated and depends largely on the simulator. Howeve
 
 **Sims with native FFB**
 
--   This includes **DCS**, **IL-2** and, to some extent, **BMS**. For these simulators, TelemFFB is primarily a haptics and supplemental effects generator. While there are overrides that a user can implement to use TelemFFB to manage the dynamic spring effect, the native game-supplied spring effect is typically used most of the time. This means that the game is managing the spring effect, while TelemFFB would be adding additional effects on top.
+- This includes **DCS**, **IL-2** and, to some extent, **BMS**. For these simulators, TelemFFB is primarily a haptics and supplemental effects generator. While there are overrides that a user can implement to use TelemFFB to manage the dynamic spring effect, the native game-supplied spring effect is typically used most of the time. This means that the game is managing the spring effect, while TelemFFB would be adding additional effects on top.
 
--   For these simulators, by default, the spring effect, including trim/autopilot following is managed wholly by the game itself.
+- For these simulators, by default, the spring effect, including trim/autopilot following is managed wholly by the game itself.
 
 **Sims without native FFB**
 
--   This includes both **Microsoft Flight Simulator** as well as **X-Plane**. Fortunately both of these titles have much more rich telemetry than the others and have sufficient data to implement not just simple speed based dynamic spring, but spring loading that is based on calculated dynamic pressure throughout the aircraft speed envelope as defined by the telemetry data.
--   For these simulators, the **entire** FFB implementation is handled by the TelemFFB application
+- This includes both **Microsoft Flight Simulator** as well as **X-Plane**. Fortunately both of these titles have much more rich telemetry than the others and have sufficient data to implement not just simple speed based dynamic spring, but spring loading that is based on calculated dynamic pressure throughout the aircraft speed envelope as defined by the telemetry data.
+- For these simulators, the **entire** FFB implementation is handled by the TelemFFB application
 
 For a detailed look at how native simulator FFB, TelemFFB, and VPforce Configurator device settings interact, see [Understanding Native DCS FFB, TelemFFB, and VPforce Configurator](sim-dcs.md#understanding-native-dcs-ffb-telemffb-and-vpforce-configurator) in the DCS guide.

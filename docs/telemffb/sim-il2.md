@@ -21,18 +21,18 @@ The IL2 Shake Master settings
 
 Each setting individually controls the intensity of that effect type:
 
--   **Buffeting** - Controls the intensity of AoA Stall Buffeting
+- **Buffeting** - Controls the intensity of AoA Stall Buffeting
 
--   **Runway Rumble** - Controls the intensity of bumping induced while taxiing
+- **Runway Rumble** - Controls the intensity of bumping induced while taxiing
 
--   **Weapons Effects (Master Toggle)**
+- **Weapons Effects (Master Toggle)**
 
-    -   **Dynamic Gunfire Mode**
+    - **Dynamic Gunfire Mode**
 
-        -   When Enabled, the shell size and weight are used to calculate a dynamic effect frequency. In general, smaller lighter rounds will produce a higher frequency effect than larger, slower rounds.
+        - When Enabled, the shell size and weight are used to calculate a dynamic effect frequency. In general, smaller lighter rounds will produce a higher frequency effect than larger, slower rounds.
 
-            -   Direct "rounds per second" telemetry is not available from the sim
+            - Direct "rounds per second" telemetry is not available from the sim
 
-    -   **Gunfire** - Controls the intensity of the gunfire/canon effect
-    -   **Bombs** - Controls the intensity of the bomb-drop effect
-    -   **Rockets** - Controls the intensity of the rocket firing effect
+    - **Gunfire** - Controls the intensity of the gunfire/canon effect
+    - **Bombs** - Controls the intensity of the bomb-drop effect
+    - **Rockets** - Controls the intensity of the rocket firing effect
