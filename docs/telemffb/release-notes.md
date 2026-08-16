@@ -62,6 +62,7 @@ New, improved, and changed functionality for each TelemFFB release, newest first
 **MSFS / X-Plane**
 
 - **NEW: Automated Elevator Trim-Following Calibration** (fixed wing)
+    - See a full demo/walkthrough of the calibration feature here:  https://www.youtube.com/watch?v=otveS5mgbu0 
     - Trim following has always assumed a 1:1 relationship between trim position and elevator - many aircraft (especially 3rd party) are far from 1:1, causing the nose to wander when trimming with the stick held
     - A wizard-style assistant flies a short automated routine, measures your aircraft's real trim response, and produces a calibrated trim-following curve you can apply and test live in the sim before saving
     - Run it at multiple airspeeds and the results blend into a single speed-aware curve; review, delete, export, and import stored calibrations from the dialog
