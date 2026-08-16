@@ -194,6 +194,20 @@
   text-indent: 0;
 }
 
+/* Procedure step labels — for numbered sequential steps that shouldn't be
+   headings (avoids enumerate-headings numbering + TOC entries). Sized larger
+   than body bold so nested bold sub-items read as subordinate. */
+.md-typeset p.procedure-step {
+  text-indent: 0;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: var(--vp-brand-heading);
+  letter-spacing: -0.01em;
+  margin-top: 1.7em;
+  margin-bottom: 0.6em;
+}
+
 /* No indent inside admonitions */
 .md-typeset .admonition p {
   text-indent: 0;
@@ -247,6 +261,53 @@
 
 .md-typeset .footnote {
   font-size: 0.8rem;
+}
+
+/* ── Release notes: collapsible <details> per version ────────────────────── */
+.md-typeset details.release {
+  border: 1px solid var(--vp-accent-15);
+  border-radius: 0.3rem;
+  margin: 0.6em 0;
+  box-shadow: none;
+}
+
+.md-typeset details.release > summary {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 1.0rem;
+  color: var(--vp-brand-heading);
+  background-color: var(--vp-accent-06);
+  padding: 0.5em 0.6em 0.5em 2.0em;
+}
+
+/* Newest release: accent the header so it stands out at the top of the page */
+.md-typeset details.release--latest {
+  border-color: var(--vp-brand-accent);
+}
+
+.md-typeset details.release--latest > summary {
+  background-color: var(--vp-accent-15);
+}
+
+/* "latest" pill — an explicit <span> in the summary (Material owns ::after) */
+.md-typeset .latest-badge {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--vp-brand-accent-dark);
+  background-color: var(--md-default-bg-color);
+  border: 1px solid var(--vp-brand-accent);
+  border-radius: 0.6rem;
+  padding: 0.05rem 0.5rem;
+  margin-left: 0.6em;
+  vertical-align: 0.1em;
+}
+
+/* Sim/category bold labels inside a release read as sub-headers */
+.md-typeset details.release > p > strong:first-child {
+  color: var(--vp-brand-heading);
 }
 
 /* ── Link colours ────────────────────────────────────────────────────────── */
@@ -585,3 +646,22 @@ html {
   padding-bottom: 0.20rem;
 }
 
+
+/* ── TelemFFB effects reference: simulator badges ─────────────────── */
+.sim-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  padding: 0.12rem 0.5rem;
+  margin-right: 0.15rem;
+  border-radius: 0.7rem;
+  color: #fff;
+  vertical-align: middle;
+}
+.sim-badge.sim-dcs    { background-color: #607d8b; }
+.sim-badge.sim-il2    { background-color: #a1554e; }
+.sim-badge.sim-bms    { background-color: #4e8f6a; }
+.sim-badge.sim-msfs   { background-color: #4a7ab5; }
+.sim-badge.sim-xplane { background-color: #8a5fa8; }

@@ -1,4 +1,58 @@
 # Changelog
+- **August 16, 2026:**
+
+    - Added **[Blade Slap](telemffb/effects-aerodynamics.md#blade-slap)** to the Aerodynamic Effects reference - the new helicopter blade-vortex interaction effect (MSFS, X-Plane, DCS): sharp blade-passage kicks in descents, flares, and loaded turns, with X-Plane's native slap signal (and the *Use Native Slap Telemetry* toggle) or the inferred flight-state method with *Band Center* and *G-Induced Slap Factor* tuning
+    - Re-vendored the settings reference data so the new Blade Slap settings appear in the generated tables
+    - Added **[X-Trident AW109](telemffb/msfs-xp-helicopters.md#x-trident-aw109-x-plane-only)** setup guide to the Helicopters chapter: the aircraft's required Configurations-page settings (servo motors, per-axis toggles, non-centering options, force-trim release modes, recommended input gains) with an annotated screenshot, and the pedal-following AFCS Threshold / Response Rate tuning notes
+    - Updated the [Aircraft with Special Treatment](telemffb/msfs-xp-special-aircraft.md#x-trident-aw109sp) AW109SP entry: the pedals now actively track the anti-torque requirement (the "pedal AFCS less active than the real aircraft" known issue is resolved)
+
+- **August 15, 2026:**
+
+    - Added **[Aircraft with Special Treatment](telemffb/msfs-xp-special-aircraft.md)** - a dedicated page cataloguing every MSFS/X-Plane addon aircraft with a dedicated class or curated default profile (HPG H145/H160, FlyInside B206/B47, the ten-model CowanSim fleet, Taog's Hangar H500C/OH6A and UH-1H/205-A1B, Simfocus Bell 407, A2A Comanche, X-Trident AW109SP), what each integration does, and why additional profiles for these aircraft must be cloned from the default rather than created from scratch
+    - Renamed the SimConnect/Dataref Overrides page to **[Telemetry Overrides](telemffb/telem-overrides.md)** to match the application, and documented the status-area **Telem Ovd** indicator with its Default/User tier counts
+    - Added **[How the Axis Positions Reach the Sim](telemffb/msfs-xp-axis-spring.md#how-the-axis-positions-reach-the-sim)** to Axis Control & Spring Modes - the default SimConnect axis events per aircraft class, the input range and sensitivity notes, and the X-Plane plugin's override and position datarefs (including the sim's designated prop-ratio collective mapping)
+    - Added **[Exception Tracking & Reporting](telemffb/troubleshooting.md#exception-tracking-reporting)** - the status-bar Errors counter, the Logged Exceptions viewer with deduplication and child-instance forwarding, and the Report Exceptions upload flow - plus a [Status Bar](telemffb/ui-overview.md#status-bar) section in the UI overview
+    - Updated **[Exception Tracking & Reporting](telemffb/troubleshooting.md#exception-tracking-reporting)** for the new report dialog: the optional Discord username (session-only, shown in the uploaded file name) and the additional-information field, with a refreshed screenshot
+
+- **August 8, 2026 (later):**
+
+    - Added a **[Troubleshooting & Getting Help](telemffb/troubleshooting.md)** page for the TelemFFB Manual: status-area triage, links to the per-sim troubleshooting checklists, log and support-bundle locations, and a short FAQ
+    - Added a **[Falcon BMS guide](telemffb/sim-bms.md)** covering setup, how TelemFFB augments the F-16's fly-by-wire stick, and the beta integration's limitations
+    - Documented **device auto-assignment** and the per-role device selector pulldowns in [Devices & Instances](telemffb/devices-instances.md), and updated the Quick Start and Troubleshooting pages to match
+    - Documented **[Profile Notes](telemffb/ui-overview.md#profile-notes)** - curated notes on shipped profiles, adding your own notes, and the flashing notes icon
+    - Rewrote **[VPforce Configurator Integration](telemffb/vpconf-profiles.md)** around a four-rule model of how TelemFFB manages device gains, with a precedence table and the worked examples reformatted as state timelines
+    - Documented **[Telemetry Overrides](telemffb/telem-overrides.md)** - re-sourcing telemetry items from an addon's custom variables (the autopilot-indication case), overriding individual list elements, transform expressions, and subscribing to additional telemetry, with a worked A2A example
+
+- **August 8, 2026:**
+
+    - Reorganized the **[TelemFFB](telemffb/index.md)** section into task-focused groups: Setup, Core Concepts, Simulator Guides, and Reference
+    - Added **[Connecting Your Simulator](telemffb/sim-setup.md)** page collecting the per-simulator enable and auto-setup steps in one place
+    - Added **[Devices & Instances](telemffb/devices-instances.md)** page combining multi-device setup with the instance launch options
+    - Added **[How Settings Work](telemffb/settings-model.md)** page explaining where settings are stored and how the delta-based configuration model resolves defaults
+    - Moved **Understanding Native DCS FFB, TelemFFB, and VPforce Configurator** from the overview into the **[DCS guide](telemffb/sim-dcs.md)**, keeping the overview focused on what TelemFFB does per simulator
+    - Repaired heading hierarchy on the simulator guide pages so section numbering and the table of contents render correctly
+    - Clarified in **[Running TelemFFB from Source](telemffb/installation.md#running-telemffb-from-source)** that Python 3.12 is required - newer versions are incompatible with the pinned numpy release
+    - Updated **[IL-2 setup](telemffb/sim-setup.md#il-2-sturmovik)** for the current System Settings layout: discrete configuration groups for IL-2 Great Battles and IL-2 Korea, the telemetry port setting, and the new Telemetry Forwarding feature for sending Telemetry/Motion/FFB streams to additional destinations; removed the retired "Pause IL-2 Effects on Focus Loss" setting
+    - Added a **[Quick Start](telemffb/quick-start.md)** walkthrough covering install, first launch, simulator connection, verifying telemetry, and live tuning
+    - Rewrote **[How Settings Work](telemffb/settings-model.md)** to explain the layered defaults model - application defaults, class defaults, shipped aircraft profiles, and user overrides - and how the Settings tab shows where each value comes from
+    - Split the **[MSFS & X-Plane guide](telemffb/sim-msfs-xplane.md)** into ordered chapters: [Axis Control & Spring Modes](telemffb/msfs-xp-axis-spring.md), [Trim & Autopilot Following](telemffb/msfs-xp-trim-following.md), [Automatic Trim Calibration](telemffb/msfs-xp-trim-calibration.md), and [Helicopters](telemffb/msfs-xp-helicopters.md)
+    - Automatic Trim Calibration is now the headlined way to set the trim-following gains; the hand-tuning procedure moved to **[Manual Trim Tuning (Legacy)](telemffb/msfs-xp-trim-manual.md)**
+    - Documented the **[Collective Spring Mode](telemffb/msfs-xp-helicopters.md#collective-spring-mode)** (No Spring / Hardware Force Trim) for MSFS, X-Plane, and DCS, including the trim release, reset, and trim up/down button behavior
+    - Documented **[Cyclic Trim Following](telemffb/msfs-xp-helicopters.md#cyclic-trim-following)** for helicopters, including how its rotor-trim data source and simpler model differ from the fixed-wing implementation
+    - Redesigned the entire Effects Reference around per-effect entries in the same order as the Settings tab - simulator badges, a written explanation of every effect, its sub-settings (grouped by spring/g-force mode where applicable), and per-sim behavior notes - across all eight section pages: [Basic Settings](telemffb/effects-basic.md), [Aerodynamics](telemffb/effects-aerodynamics.md), [Inertial](telemffb/effects-inertial.md), [Ground](telemffb/effects-ground.md), [Mechanical & Airframe](telemffb/effects-mechanical.md), [Weapons](telemffb/effects-weapons.md), [Basic FFB Effects](telemffb/effects-ffb.md), and [System](telemffb/effects-system.md)
+    - Added per-simulator settings directories - [DCS](telemffb/effects-sim-dcs.md), [IL-2](telemffb/effects-sim-il2.md), [BMS](telemffb/effects-sim-bms.md), [MSFS](telemffb/effects-sim-msfs.md), [X-Plane](telemffb/effects-sim-xplane.md) - listing everything available in each sim with links to the full documentation
+    - Fixed the "Overpeed Shake" typo (now Overspeed Shake) in the application's setting labels
+    - Retired the "What's New in 2.0" page - version history lives in the Release Notes
+    - Moved the **[Advanced Curve Editor](telemffb/spring-curves.md)** into the Effects Reference (it documents the editor behind the Advanced Dynamic spring and G-force curve options) and **[VPforce Configurator Integration](telemffb/vpconf-profiles.md)** into Core Concepts
+    - Expanded **[Devices & Instances](telemffb/devices-instances.md)** with an explanation of the master/child instance model and how to work with child instances
+    - Added a connection-verification note to **[Connecting Your Simulator](telemffb/sim-setup.md)**
+    - Rebuilt the Effects Reference as categorized pages with setting tables generated directly from the application's settings catalog: **[Overview](telemffb/effects-overview.md)** (including how effects differ between simulators), **[Basic & Spring](telemffb/effects-basic.md)**, **[Aerodynamic](telemffb/effects-aerodynamics.md)**, **[Inertial](telemffb/effects-inertial.md)**, **[Ground](telemffb/effects-ground.md)**, **[Mechanical & Airframe](telemffb/effects-mechanical.md)**, **[Weapons](telemffb/effects-weapons.md)**, **[Basic FFB Effects](telemffb/effects-ffb.md)**, and **[System](telemffb/effects-system.md)**; the legacy A-Z page now redirects to the new overview, with its remaining unique content migrated into the category pages (G-force effect deep-dive, propeller rumble tuning, glider force trim, DCS pedal spring V-speed behavior, SimConnect axis events) and its troubleshooting content consolidated into [Game-Specific Troubleshooting](rhino/game-specific-troubleshooting.md)
+    - Moved the Turbulence and Low Hydraulic Pressure effect documentation from the MSFS & X-Plane overview into their effects-reference categories, keeping the overview focused on the guide chapters
+
+- **August 7, 2026:**
+
+    - Added a **[TelemFFB Release Notes](telemffb/release-notes.md)** page - full version history (newest first) in collapsible sections, with a stable `/telemffb/latest/` link that always points to the most recent release for the in-app update notification
+
 - **June 28, 2026:**
 
     - Added **Running TelemFFB from Source** section to the **[Installation](telemffb/installation.md)** page, covering Python setup, cloning the repository, checking out a specific branch, installing dependencies, and launching the app
@@ -21,7 +75,7 @@
 - **April 19, 2026:**
 
     - Restructured **[TelemFFB Application Guide](telemffb/index.md)** into separate focused pages: [Installation](telemffb/installation.md), [UI Overview](telemffb/ui-overview.md), [Configuration](telemffb/configuration.md), [Aircraft Profiles](telemffb/aircraft-profiles.md), [Effects Reference](telemffb/effects-reference.md), [Spring Curves](telemffb/spring-curves.md), [VPconf Profiles](telemffb/vpconf-profiles.md), [Multi-Device](telemffb/multi-device.md), [What's New](telemffb/whats-new.md), and sim-specific pages for [DCS](telemffb/sim-dcs.md), [IL-2](telemffb/sim-il2.md), and [MSFS/X-Plane](telemffb/sim-msfs-xplane.md)
-    - Added **[Virpil ACE Pedal FFB Mod by Number481](community-projects/VirpilACE_FFB_Mod_Guide.md)** community project — belt-driven 6:1 ratio FFB conversion for Virpil ACE rudder pedals using the 86BLF-03 motor kit, fully reversible with no permanent modifications required
+    - Added **[Virpil ACE Pedal FFB Mod by Number481](community-projects/VirpilACE_FFB_Mod_Guide.md)** community project - belt-driven 6:1 ratio FFB conversion for Virpil ACE rudder pedals using the 86BLF-03 motor kit, fully reversible with no permanent modifications required
 
 - **April 17, 2026:**
 
@@ -65,12 +119,12 @@
 
 - **March 16, 2026:**
 
-    - Added **[Autopilot Oscillation with FFB](telemffb/index.md#autopilot-oscillation-with-ffb)** section documenting DCS autopilot pitch/roll oscillation caused by the simulator's autopilot-FFB feedback loop, with diagnostic steps and workarounds
+    - Added **[Autopilot Oscillation with FFB](telemffb/sim-dcs.md#autopilot-oscillation-with-ffb)** section documenting DCS autopilot pitch/roll oscillation caused by the simulator's autopilot-FFB feedback loop, with diagnostic steps and workarounds
 
 - **February 27, 2026:**
 
     - Added **Technical Specifications** section to the [Monster Rhino Kitbase](third-party-vendors/winger-kits/monster-rhino.md) page with motor torque constant (Kt), drive current limit, computed motor shaft torque, and per-gear-ratio peak torque at the stick (~15.2 N·m at 60T/15T, ~18.3 N·m at 72T/15T)
-    - Updated **[TheAmazinGreat 86 Motor FFB Base](community-projects/theamazingreat-rhino.md)** torque section with a full per-motor, per-gear-ratio table including 86BLF03 (Kt 0.110 N·m/A, ~13–16 N·m) and 86BLF04 (Kt 0.127 N·m/A, ~15–18 N·m) calculated from motor specs
+    - Updated **[TheAmazinGreat 86 Motor FFB Base](community-projects/theamazingreat-rhino.md)** torque section with a full per-motor, per-gear-ratio table including 86BLF03 (Kt 0.110 N·m/A, ~13-16 N·m) and 86BLF04 (Kt 0.127 N·m/A, ~15-18 N·m) calculated from motor specs
 
 - **February 24, 2026:**
 

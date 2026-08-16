@@ -17,17 +17,17 @@ If you are actively using a simulator and you load into an aircraft that does no
 
 Simply click on the "Create/clone config for new aircraft" button to launch the new aircraft wizard.
 
-![](../rhino/media/Pictures/10000000000002BC000001D33AE7D847D884AA57.png){ width="396px" height="264px" }
+![](images/aircraft-profiles/new-aircraft-main.png){ width="650px" }
 
 #### Adding new Aircraft via Profile Manager (not recommended)
 
 Open the Profile Manager.
 
-![](../rhino/media/Pictures/100002010000018D000000963FAA0E53A9019457.png){ width="335px" height="126px" }
+![](images/aircraft-profiles/wizard-1.png){ width="335px" height="126px" }
 
 In the resulting Profile Manager window, select the "New Aircraft Wizard" button. Again, this method of adding new aircraft is **NOT** recommended as it is difficult to know the exact string that TelemFFB will ultimately receive via the telemetry from a given simulator.
 
-![](../rhino/media/Pictures/10000000000002B00000024970AA70B818D31C94.png){ width="415px" height="353px" }
+![](images/aircraft-profiles/wizard-2.png){ width="415px" height="353px" }
 
 ### The Add New Aircraft Wizard
 
@@ -42,7 +42,7 @@ After accessing the wizard via one of the two methods above, simply follow the s
 1. Select the appropriate aircraft class for the aircraft you are adding.
 
     - Note that for MSFS, the aircraft type will be auto-detected based on telemetry data. However, you should validate that the selection is correct.
-    - This is particularly important for aircraft types with special treatment in MSFS, such as those from **HPG**, **FlyInside**, **CowanSim**, and others. These will be auto-detected as their base aircraft type, but the TelemFFB aircraft class needs to be configured properly to achieve full functionality for these aircraft.
+    - This is particularly important for aircraft types with special treatment in MSFS, such as those from **HPG**, **FlyInside**, **CowanSim**, and others - see [Aircraft with Special Treatment](msfs-xp-special-aircraft.md) for the full roster. These will be auto-detected as their base aircraft type, but the TelemFFB aircraft class needs to be configured properly to achieve full functionality for these aircraft.
 
 **Page 3:**
 
@@ -62,7 +62,7 @@ After accessing the wizard via one of the two methods above, simply follow the s
 
 TelemFFB 2.0 offers a vastly improved offline and sim/class override configuration system. Rather than the clunky old offline manager, configuration is done in the main window just like the real-time per-aircraft configurations. To access the offline mode, choose the **Offline/Class Default/Sim Default** option from the **Profiles** menu.
 
-![](../rhino/media/Pictures/10000000000002BD0000036908E428F620BE2004.png){ width="467px" height="581px" }
+![](images/aircraft-profiles/offline-editor.png){ width="467px" height="581px" }
 
 Use the selection boxes in the Offline Editor Setup area to select a sim, class, aircraft or user profile to modify.
 
@@ -78,11 +78,11 @@ In the main window of the profile manager is a tree list of all of the built-in 
 
 Only aircraft for simulators that are enabled in the ***system settings*** will be shown in the list.
 
-![](../rhino/media/Pictures/100000000000030B00000308C2E367E6376E475E.png){ width="568px" height="565px" }
+![](images/aircraft-profiles/profile-manager.png){ width="568px" height="565px" }
 
 There is a series of radio buttons that will change the scope of the displayed profiles.
 
-![](../rhino/media/Pictures/1000000000000186000000785804F8C8EC74EA24.png){ width="390px" height="120px" }
+![](images/aircraft-profiles/profile-manager-context.png){ width="390px" height="120px" }
 
 - **Active\\Inactive checkboxes**
 
@@ -145,7 +145,7 @@ To edit a profile, select the desired profile entry and press the Edit action bu
 
 To export one or more profiles, first select the profiles that you would like to export and then choose the Export action button. This will load the export wizard dialog:
 
-![](../rhino/media/Pictures/10000000000001920000023BE93C764D07E11788.png){ width="334px" height="474px" }
+![](images/aircraft-profiles/export-dialog.png){ width="334px" height="474px" }
 
 The resulting window will display the profiles to be exported along with the export options:
 
@@ -173,7 +173,7 @@ The resulting window will display the profiles to be exported along with the exp
 
 The import wizard provides a comprehensive set of options and information for the incoming settings in the selected export file.
 
-![](../rhino/media/Pictures/1000000000000390000002FAA1B000CD200039AF.png){ width="680px" height="568px" }
+![](images/aircraft-profiles/import-1.png){ width="680px" height="568px" }
 
 Any line highlighted in **red** indicates a conflict that must be resolved before importing.
 
@@ -182,7 +182,7 @@ There are three main sections:
 - **Detected Models**  
     This section lists all aircraft models and profiles found in the imported file.
 
-    ![](../rhino/media/Pictures/100002010000038500000114B077F36D304B30F5.png){ width="629px" height="192px" }
+    ![](images/aircraft-profiles/import-2.png){ width="629px" height="192px" }
 
     - The **Action** column pulldown lets you change the import behavior. You can **import** as is, **rename**, **skip**, or, if there is a profile name conflict, **overwrite** your existing profile of the same name.
     - To resolve a conflict, either set the action to **rename** and enter a new name in the "**imported name**" field, or choose to skip or overwrite.
@@ -190,7 +190,7 @@ There are three main sections:
 - **Detected Overrides**  
     This section displays any simulator or class-level overrides included in the incoming settings file.
 
-    ![](../rhino/media/Pictures/10000000000003880000011401CABA4DB6BAF064.png){ width="618px" height="189px" }
+    ![](images/aircraft-profiles/import-3.png){ width="618px" height="189px" }
 
     - Conflicting settings are highlighted in **red**. These are settings where a matching override already exists in your configuration. The current user value and the incoming value are shown in their respective columns. You can choose to **overwrite** or **exclude** the setting using the **actions** dropdown.
     - Settings marked as "**match**" in the conflict column are identical to your existing override and will be ignored.
@@ -201,4 +201,4 @@ There are three main sections:
 
     If a device type is disabled, any override settings or profiles that only contain settings for that device will be excluded from the import.
 
-    ![](../rhino/media/Pictures/100000000000016F000000A58DE4E5FA8E9C68DE.png){ width="367px" height="165px" }
+    ![](images/aircraft-profiles/import-4.png){ width="367px" height="165px" }

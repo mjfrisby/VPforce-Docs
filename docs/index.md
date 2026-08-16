@@ -21,12 +21,12 @@ The comprehensive guide to the VPforce Rhino FFB joystick base, covering everyth
 The TelemFFB application bridges your simulator's telemetry data to the Rhino, enabling dynamic force feedback effects that respond to in-game physics.
 
 - [Installation](telemffb/installation.md) — downloading, installing, and first-run setup
-- [Configuration](telemffb/configuration.md) — connecting TelemFFB to your simulator and device
+- [Connecting Your Simulator](telemffb/sim-setup.md) — enabling and auto-configuring each supported simulator
+- [Devices & Instances](telemffb/devices-instances.md) — using TelemFFB with one or more FFB devices
 - [UI Overview](telemffb/ui-overview.md) — walkthrough of the application interface
 - [Aircraft Profiles](telemffb/aircraft-profiles.md) — per-aircraft FFB tuning and profile management
-- [VPconf Profiles & Gain Overrides](telemffb/vpconf-profiles.md) — pushing Configurator profiles per aircraft
-- [Multiple VPforce Devices](telemffb/multi-device.md) — using TelemFFB with more than one FFB device
-- Sim-specific guides: [DCS](telemffb/sim-dcs.md) · [MSFS & X-Plane](telemffb/sim-msfs-xplane.md) · [IL-2](telemffb/sim-il2.md)
+- [VPforce Configurator Integration](telemffb/vpconf-profiles.md) — pushing Configurator profiles and gain overrides per aircraft
+- Simulator guides: [DCS](telemffb/sim-dcs.md) · [MSFS & X-Plane](telemffb/sim-msfs-xplane.md) · [IL-2](telemffb/sim-il2.md)
 
 ### [Community Projects](community-projects/index.md)
 

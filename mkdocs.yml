@@ -12,6 +12,13 @@ docs_dir: docs
 # Output directory
 site_dir: site
 
+# Redirect-only stubs — intentionally excluded from the nav
+not_in_nav: |
+  telemffb/latest.md
+  telemffb/multi-device.md
+  telemffb/effects-reference.md
+  telemffb/whats-new.md
+
 # Navigation structure (ordered by relevance)
 nav:
   - Homepage: https://vpforce.eu
@@ -27,6 +34,51 @@ nav:
     - Maintenance: rhino/rhino-maintenance.md
     - Known Issues: rhino/appendix-a-known-issues.md
     #- Legacy TelemFFB Docs: rhino/appendix-b-legacy-telemffb-documentation.md
+  - TelemFFB Manual:
+    - Overview: telemffb/index.md
+    - Quick Start: telemffb/quick-start.md
+    - Setup:
+      - Installation: telemffb/installation.md
+      - Devices & Instances: telemffb/devices-instances.md
+      - Connecting Your Simulator: telemffb/sim-setup.md
+    - Core Concepts:
+      - How Settings Work: telemffb/settings-model.md
+      - UI Overview: telemffb/ui-overview.md
+      - System Settings: telemffb/configuration.md
+      - Aircraft Profiles: telemffb/aircraft-profiles.md
+      - VPforce Configurator Integration: telemffb/vpconf-profiles.md
+    - Simulator Guides:
+      - MSFS & X-Plane:
+        - Overview: telemffb/sim-msfs-xplane.md
+        - Axis Control & Spring Modes: telemffb/msfs-xp-axis-spring.md
+        - Trim & Autopilot Following: telemffb/msfs-xp-trim-following.md
+        - Automatic Trim Calibration: telemffb/msfs-xp-trim-calibration.md
+        - Manual Trim Tuning (Legacy): telemffb/msfs-xp-trim-manual.md
+        - Helicopters: telemffb/msfs-xp-helicopters.md
+        - Special Aircraft: telemffb/msfs-xp-special-aircraft.md
+        - Telemetry Overrides: telemffb/telem-overrides.md
+      - DCS: telemffb/sim-dcs.md
+      - IL-2: telemffb/sim-il2.md
+      - Falcon BMS: telemffb/sim-bms.md
+    - Effects Reference:
+      - Overview: telemffb/effects-overview.md
+      - Basic Settings: telemffb/effects-basic.md
+      - Aerodynamics: telemffb/effects-aerodynamics.md
+      - Inertial: telemffb/effects-inertial.md
+      - Ground: telemffb/effects-ground.md
+      - Mechanical & Airframe: telemffb/effects-mechanical.md
+      - Weapons: telemffb/effects-weapons.md
+      - Basic FFB Effects: telemffb/effects-ffb.md
+      - System: telemffb/effects-system.md
+      - Advanced Curve Editor: telemffb/spring-curves.md
+      - By Simulator:
+        - DCS: telemffb/effects-sim-dcs.md
+        - IL-2: telemffb/effects-sim-il2.md
+        - BMS: telemffb/effects-sim-bms.md
+        - MSFS: telemffb/effects-sim-msfs.md
+        - X-Plane: telemffb/effects-sim-xplane.md
+    - Troubleshooting & Getting Help: telemffb/troubleshooting.md
+    - Release Notes: telemffb/release-notes.md
   - Community Projects:
     - Introduction: community-projects/index.md
     - Tips and Tricks: community-projects/tips-and-tricks.md
@@ -60,21 +112,6 @@ nav:
       - Pedals > RhinoACE: third-party-vendors/kaltokri-kits/rhinoace.md
       - Pedals > RhinoOrion: third-party-vendors/kaltokri-kits/rhinoorion.md
       - Pedals > RhinoR1: third-party-vendors/kaltokri-kits/rhinor1.md
-  - TelemFFB:
-    - Overview: telemffb/index.md
-    - What's New in 2.0: telemffb/whats-new.md
-    - Installation: telemffb/installation.md
-    - Configuration: telemffb/configuration.md
-    - UI Overview: telemffb/ui-overview.md
-    - Aircraft Profiles: telemffb/aircraft-profiles.md
-    - Multiple VPforce Devices: telemffb/multi-device.md
-    - VPconf Profiles & Gain Overrides: telemffb/vpconf-profiles.md
-    - Advanced Spring & G-Force Curves: telemffb/spring-curves.md
-    - Sim-Specific Guides:
-      - MSFS & X-Plane: telemffb/sim-msfs-xplane.md
-      - DCS: telemffb/sim-dcs.md
-      - IL-2: telemffb/sim-il2.md
-    - Effects Reference: telemffb/effects-reference.md
   - Products:
     - Overview: products/index.md
     - Rhino FFB Base: products/rhino-ffb-base.md
@@ -85,6 +122,8 @@ nav:
 
 watch:
   - docs
+  - hooks.py
+  - data
 
 theme:
   name: material
@@ -109,7 +148,7 @@ theme:
 extra_css:
   - https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap
   - stylesheets/extra.css?v=1.1
-  - stylesheets/vpforce.css
+  - stylesheets/vpforce.css?v=1.1
   - https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css
 
 # Extra JavaScript for custom functionality
@@ -171,18 +210,42 @@ plugins:
         - community-projects/index.md
         - third-party-vendors/index.md
         - telemffb/index.md
-        - telemffb/whats-new.md
+        - telemffb/quick-start.md
         - telemffb/installation.md
-        - telemffb/configuration.md
+        - telemffb/devices-instances.md
+        - telemffb/sim-setup.md
+        - telemffb/settings-model.md
         - telemffb/ui-overview.md
+        - telemffb/configuration.md
         - telemffb/aircraft-profiles.md
-        - telemffb/multi-device.md
-        - telemffb/vpconf-profiles.md
-        - telemffb/spring-curves.md
         - telemffb/sim-msfs-xplane.md
+        - telemffb/msfs-xp-axis-spring.md
+        - telemffb/msfs-xp-trim-following.md
+        - telemffb/msfs-xp-trim-calibration.md
+        - telemffb/msfs-xp-trim-manual.md
+        - telemffb/msfs-xp-helicopters.md
+        - telemffb/telem-overrides.md
         - telemffb/sim-dcs.md
         - telemffb/sim-il2.md
-        - telemffb/effects-reference.md
+        - telemffb/sim-bms.md
+        - telemffb/effects-overview.md
+        - telemffb/effects-basic.md
+        - telemffb/effects-aerodynamics.md
+        - telemffb/effects-inertial.md
+        - telemffb/effects-ground.md
+        - telemffb/effects-mechanical.md
+        - telemffb/effects-weapons.md
+        - telemffb/effects-ffb.md
+        - telemffb/effects-system.md
+        - telemffb/spring-curves.md
+        - telemffb/effects-sim-dcs.md
+        - telemffb/effects-sim-il2.md
+        - telemffb/effects-sim-bms.md
+        - telemffb/effects-sim-msfs.md
+        - telemffb/effects-sim-xplane.md
+        - telemffb/vpconf-profiles.md
+        - telemffb/troubleshooting.md
+        - telemffb/release-notes.md
         - products/index.md
         - changelog.md
         
