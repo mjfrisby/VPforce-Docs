@@ -65,7 +65,16 @@ Helicopters: Vortex Ring State rumble. The effect arms only below the *Airspeed 
 
 <!-- telemffb-effect name=vrs_effect_enable part=table -->
 
-## AoA/Stall Buffeting
+## Blade Slap
+
+<!-- telemffb-effect name=blade_slap_enable part=badges -->
+
+Helicopters: the signature 'wop-wop' of blade-vortex interaction, rendered as sharp kicks through the controls at blade-passage rate (rotor RPM x blade count). The effect fires where you hear blade slap in the sim: shallow descents at moderate speed, decelerating approaches, flares, and loaded turns - and stays silent in level cruise, climbs, and on the ground. Two-bladed teetering rotors slap hardest; higher blade counts produce a faster, softer texture.
+
+<!-- telemffb-effect name=blade_slap_enable part=table -->
+
+!!! note "Per-sim behavior"
+    **X-Plane** computes blade slap natively, and by default the effect is driven exclusively by that signal (including tail rotor slap). Disabling *Use Native Slap Telemetry* switches to the inferred method and activates the tuning sliders. **MSFS** and **DCS** have no native signal, so the effect infers slap from flight state: an airspeed band centered on *Blade Slap Band Center* (higher for heavily disc-loaded helicopters, lower for light rotors), a descent-gradient gate that matches wake re-entry geometry, and a G-loading term weighted by the *G-Induced Slap Factor* (set it to 0 for slap from descent geometry only). Per-model tuning ships for the default helicopter profiles.
 
 <!-- telemffb-effect name=aoa_buffeting_enabled part=badges -->
 

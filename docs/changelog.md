@@ -1,6 +1,8 @@
 # Changelog
 - **August 16, 2026:**
 
+    - Added **[Blade Slap](telemffb/effects-aerodynamics.md#blade-slap)** to the Aerodynamic Effects reference - the new helicopter blade-vortex interaction effect (MSFS, X-Plane, DCS): sharp blade-passage kicks in descents, flares, and loaded turns, with X-Plane's native slap signal (and the *Use Native Slap Telemetry* toggle) or the inferred flight-state method with *Band Center* and *G-Induced Slap Factor* tuning
+    - Re-vendored the settings reference data so the new Blade Slap settings appear in the generated tables
     - Added **[X-Trident AW109](telemffb/msfs-xp-helicopters.md#x-trident-aw109-x-plane-only)** setup guide to the Helicopters chapter: the aircraft's required Configurations-page settings (servo motors, per-axis toggles, non-centering options, force-trim release modes, recommended input gains) with an annotated screenshot, and the pedal-following AFCS Threshold / Response Rate tuning notes
     - Updated the [Aircraft with Special Treatment](telemffb/msfs-xp-special-aircraft.md#x-trident-aw109sp) AW109SP entry: the pedals now actively track the anti-torque requirement (the "pedal AFCS less active than the real aircraft" known issue is resolved)
 
