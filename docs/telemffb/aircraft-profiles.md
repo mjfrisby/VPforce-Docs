@@ -19,13 +19,13 @@ Simply click on the "Create/clone config for new aircraft" button to launch the 
 
 ![](images/aircraft-profiles/new-aircraft-main.png){ width="650px" }
 
-#### Adding new Aircraft via Profile Manager (not recommended)
+#### Adding New Aircraft via Profile Manager
 
 Open the Profile Manager.
 
 ![](images/aircraft-profiles/wizard-1.png){ width="335px" height="126px" }
 
-In the resulting Profile Manager window, select the "New Aircraft Wizard" button. Again, this method of adding new aircraft is **NOT** recommended as it is difficult to know the exact string that TelemFFB will ultimately receive via the telemetry from a given simulator.
+In the resulting Profile Manager window, select the "New Aircraft Wizard" button. This method is not recommended — it is difficult to know the exact name string TelemFFB will receive via telemetry from a given simulator.
 
 ![](images/aircraft-profiles/wizard-2.png){ width="415px" height="353px" }
 

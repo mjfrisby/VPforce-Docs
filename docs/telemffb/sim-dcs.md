@@ -156,11 +156,13 @@ Several different spring modes are available. Different options will be availabl
 
 DCS does not natively support FFB pedals. TelemFFB has implemented basic FFB capabilities.
 
-The following modes are supported
+The following modes are supported:
 
-- **None (Game Managed) - NOT RECOMMENDED as the game does not support pedal FFB**
+- **None (Game Managed)**
 
-- **No Spring - (Helicopter default)**
+    - Do not use. DCS does not send pedal FFB, so pedals will have no centering force.
+
+- **No Spring** (Helicopter default)
 
     - A "zero gain" spring effect will be started to override the game spring effect
 

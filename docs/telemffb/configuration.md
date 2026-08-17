@@ -34,7 +34,7 @@ These settings are unique per device instance of TelemFFB
     The Theme Options are global and are only visible in the Master instance of TelemFFB
 
 - **Light** - Use the light color palette theme
-- **Dark**- Use the dark color palette theme
+- **Dark** - Use the dark color palette theme
 - **System** (default) - Use the Windows system defined app theme dark/light mode
 
 ## Startup Behavior Page

@@ -128,11 +128,8 @@ As part of this implementation, there are certain requirements and recommended s
 
 **MSFS Settings**:
 
-- You must **UNBIND **your Cyclic axes in MSFS to prevent conflicts with TelemFFB sending the axis position
-- If using a VPforce powered Collective,
-
-    - You must **UNBIND **your Collective axis in MSFS to prevent conflicts with TelemFFB sending the axis position
-    - You must **BIND** a button on your collective to act as collective trim release. Pressing the trim release is required to manipulate the real helicopters collective and that is modeled in TelemFFB. The binding in MSFS is `AUTOTHROTTLE DISCONNECT`
+- Unbind your Cyclic axes (and Collective axis, if applicable) in MSFS to prevent conflicts with TelemFFB axis control — see [Axis Control & Spring Modes](msfs-xp-axis-spring.md).
+- If using a VPforce powered Collective, bind a button on the collective to act as trim release. The binding in MSFS is `AUTOTHROTTLE DISCONNECT`.
 
 **HPG H160/H145 Settings:**
 
@@ -187,7 +184,7 @@ Rather than a hard hands-off threshold, it uses a time based hysteresis. This pr
 - **Hands Off Hysteresis Time:**
 
     - Recommended value - 500ms
-    - The time, in milliseconds that, after hands-on has been triggered, that the force must be ***below***** **the force threshold in order to trigger hands-off
+    - The time, in milliseconds, after hands-on has been triggered, that the force must be ***below*** the force threshold in order to trigger hands-off
 
 - **Debug Logging:**
 

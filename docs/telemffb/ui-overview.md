@@ -10,7 +10,7 @@ TelemFFB is laid out with a menu bar, the application status area, device status
 
 ### System Menu
 
-- **System Settings** - covered ***here***
+- **System Settings** - see [System Settings](configuration.md)
 
 - **Open Config/Log directory** - opens the folder in your user local appdata where logs and settings are stored
 
@@ -87,7 +87,7 @@ The window menu only shows if the TelemFFB instance is acting as the master inst
 
 The active devices area is both a way to switch the master instance configuration scope between devices as well as a device/instance status tracker for the primary and child devices and their TelemFFB instances.
 
-###  Switching Between Devices:
+### Switching Between Devices
 
 To switch between devices for configuration, simply click on the appropriate device icon. When clicked, the configuration elements in the settings page below will update to reflect the settings for that device.
 
@@ -279,9 +279,8 @@ When you start a simulator, the system tray icon will change colors to indicate 
 
 *![Error condition.](images/ui-overview/tray-status-error.png){ width="20px" height="20px" }*
 
-<center>There will also be a system
-    tray notification with the error information and the error message
-    will be visible on the TelemFFB main window.</center>
+!!! note
+    An error also triggers a system tray notification. The error message appears on the TelemFFB main window.
 
 ### System Tray Context Menu
 
