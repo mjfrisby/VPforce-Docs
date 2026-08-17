@@ -1,6 +1,6 @@
 # Manual Trim Tuning (Legacy)
 
-Before [Automatic Trim Calibration](msfs-xp-trim-calibration.md) existed, the trim-following gains were tuned by hand using the procedure below. The calibration tool is the recommended way to set the elevator values - it measures the aircraft's actual trim response and computes them for you. This page is kept for reference, for the aileron and rudder gains (which the calibration tool does not cover), and for anyone who prefers to tune manually.
+Before [Automatic Trim Calibration](msfs-xp-trim-calibration.md) existed, users tuned the trim-following gains manually using the procedure below. The calibration tool is the recommended method — it measures the aircraft's actual trim response and computes the values for you. This page remains for reference, for aileron and rudder gains (which the calibration tool does not cover), and for those who prefer manual tuning.
 
 ## Suggested Starting Points
 

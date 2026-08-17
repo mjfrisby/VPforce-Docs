@@ -1,6 +1,6 @@
 # VPforce Configurator Integration
 
-Different aircraft often want different VPforce Configurator settings on the device. Doing that by hand - open Configurator, load a profile, apply - works, but it is tedious. TelemFFB automates it, in two ways that can be used together or separately:
+Different aircraft often need different VPforce Configurator settings on the device. Doing that manually — open Configurator, load a profile, apply — works, but it is tedious. TelemFFB automates this with two methods that you can use together or separately:
 
 - **Profile assignment** - push a whole Configurator profile (a `.vpconf` file, hereafter "vpconf profile") to the device when an aircraft loads.
 - **Gain overrides** - adjust individual effect-type gains per aircraft, as if you had moved the sliders in Configurator yourself.

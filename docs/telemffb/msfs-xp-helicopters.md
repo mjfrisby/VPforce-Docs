@@ -53,7 +53,7 @@ Helicopter force trim emulation is supported for both MSFS and X-Plane. To enabl
 - **What it does.** The trim values shift the cyclic's spring center - on top of wherever the force trim has placed it - scaled by the *physical* gains, and the *virtual* gains decide what fraction of that movement is passed to the simulator, exactly as for fixed wing.
 - **What it lacks.** There is no calibrated trim curve for helicopters - the flat gains are the whole model, and the [Automatic Trim Calibration](msfs-xp-trim-calibration.md) tool does not apply.
 
-Trim-following updates pause while the force-trim release button is held (the force trim owns the cyclic center while you re-trim by hand), and on aircraft with a modeled cockpit force-trim switch, switching it off zeroes the trim offsets.
+Trim-following updates pause while you hold the force-trim release button. The force trim controls the cyclic center while you re-trim manually. On aircraft with a modeled cockpit force-trim switch, switching it off clears the trim offsets.
 
 ## Collective Spring Mode
 

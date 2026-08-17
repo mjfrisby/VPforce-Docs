@@ -11,7 +11,7 @@ An advanced MSFS/X-Plane feature: change **where a telemetry item's data comes f
 TelemFFB's effects consume a fixed set of telemetry items (the names you see in the Monitor tab). Normally each item is wired to a standard SimConnect variable or X-Plane dataref - but not every aircraft populates the standard sources:
 
 - **Source overrides.** Sophisticated addon aircraft often implement their own systems in custom variables and leave the standard ones stale. The classic case is the **autopilot indication**: an addon whose AP never drives the standard `AUTOPILOT MASTER` simvar breaks every AP-aware TelemFFB feature - until you override `APMaster` to read the addon's own variable. The same applies to custom engine and flight models (RPM, thrust, accelerations).
-- **Additional subscriptions.** An override whose Telem Property is a *new* name creates a brand-new telemetry item. This is how the special aircraft implementations (the HPG helicopters, for example) receive their custom `L:Var`s - their shipped default profiles include the required overrides out of the box.
+- **Additional subscriptions.** An override whose Telem Property is a *new* name creates a new telemetry item. This is how the special aircraft implementations (the HPG helicopters, for example) receive their custom `L:Var`s — their shipped default profiles include the required overrides by default.
 
 ## How it works
 

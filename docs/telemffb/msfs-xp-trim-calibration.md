@@ -1,6 +1,6 @@
 # Automatic Trim Calibration
 
-Tuning the elevator trim gain by hand works, but it is slow and easy to get slightly wrong. The **Elevator Trim Calibration** tool automates it: TelemFFB briefly flies the aircraft for you, sweeps the elevator trim through its range while holding the aircraft level, measures exactly how much stick input each trim setting requires, and computes the correct *Y Trim Gain Virtual* value - or a full response **curve** for aircraft that need one.
+Manual tuning of the elevator trim gain is slow and error prone. The **Elevator Trim Calibration** tool automates it: TelemFFB flies the aircraft briefly, sweeps the elevator trim through its range while holding the aircraft level, measures the stick input for each trim setting, and computes the correct *Y Trim Gain Virtual* value — or a full response **curve** for aircraft that need one.
 
 !!! warning
     While a calibration is running, **TelemFFB is actively flying your aircraft** - it manipulates the trim and the elevator/aileron axes to hold the aircraft level. Keep your **hands off the controls**, keep the **autopilot off**, and be **ready to take over** and press **Abort** at any time. Only run it with safe altitude and airspace.
@@ -42,7 +42,7 @@ When the sweep finishes, the graph shows the measured data points and the fit. T
 ![A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared](images/msfs-xp-trim-following/example_calibration.png){ width="480px" }
 
 - **Recommended: calibrated curve** - for most aircraft the curve is recommended, because it holds the nose level across the entire trim range even when the response is not a straight line.
-- **Static fit** - the single *Y Trim Gain Virtual* value that best fits the data. This is what you would set by hand. It is shown alongside the curve for reference (and for comparison with your current profile value).
+- **Static fit** — the single *Y Trim Gain Virtual* value that best fits the data. TelemFFB displays it alongside the curve for reference and comparison with your current profile value.
 - **Linearity (R²)** - how straight the measured response is. A value close to 1.00 means the aircraft responds almost linearly and the static value alone will work well; a lower value means the response is curved and the calibrated curve is worth using.
 - **Use calibrated curve (recommended)** - the checkbox that decides which is applied and saved. It defaults to the recommendation.
 

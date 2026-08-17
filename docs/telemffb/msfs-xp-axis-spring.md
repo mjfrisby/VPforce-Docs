@@ -51,57 +51,46 @@ Because these overrides are part of the X-Plane SDK, no unbinding is required - 
 
 ## Spring Modes
 
-There are multiple ways the axis spring gains can be configured for
-aircraft in MSFS/X-Plane.
+You can configure axis spring gains using one of these modes:
 
-**Basic Dynamic** - Spring gain changes based on increasing/decreasing dynamic pressure as airspeed changes, includes additional dynamic forces related to slip, AoA and g-forces.
+**Basic Dynamic** — Spring gain changes with dynamic pressure as airspeed changes. Includes additional forces for slip, AoA, and g-loading.
 
-**Basic Dynamic with Spring Centering** - Adds a fixed gain centering force to the Dynamic spring effects. Where the standard Dynamic effect can reach 0 spring and 0 airspeed, the addition of the base centering force will set the lower boundary of the spring effect to the configured value
+**Basic Dynamic with Spring Centering** — Adds a fixed centering force to the Dynamic spring effects. The base centering force sets the minimum spring value when airspeed is zero.
 
-**FlyByWire (FBW)** - Static spring force is configured per axis based on the settings.
+**FlyByWire (FBW)** — Set a static spring force for each axis.
 
-**Advanced Dynamic** - Define the spring gain mapping as a visual curve over the aircraft's speed envelope. See [Advanced Spring & G-Force Curves](spring-curves.md)
+**Advanced Dynamic** — Define the spring gain mapping as a visual curve over the aircraft's speed envelope. See [Advanced Spring & G-Force Curves](spring-curves.md)
 
 ![](images/msfs-xp-axis-spring/spring-mode-select.png){ width="520px" height="144px" }
 
 ### Dynamic
 
-There are settings which directly affect the max force per axis as well as an "exponent" setting which affects the curve at which the gain will be applied over the speed envelope of the aircraft.
+These settings control the maximum force per axis and the curve for gain application across the aircraft speed envelope.
 
 ![](images/msfs-xp-axis-spring/dynamic-settings.png){ width="482px" height="186px" }
 
 **Max Force Settings**
 
-The "Max Force" settings will effectively set the spring gain that will be achieved at the V~NE~ (never exceed) speed of the aircraft, although the calculation is more sophisticated than a basic linear gain-to-speed mapping. It uses the known aircraft info to determine the dynamic pressure (Q) that should be achieved at V~NE~ for the aircraft and then feeds that information into the dynamic forces calculation to determine the final spring gain at any given point in time.
+The Max Force settings define the spring gain at V~NE~ (never exceed speed). The calculation uses the aircraft's known data to determine dynamic pressure (Q) at V~NE~, then applies that value to the dynamic forces formula. This produces a non-linear gain-to-speed mapping.
 
-100% of the configured **Max Force** is achieved at the aircraft's V~NE~ speed as read from telemetry. In the event that the V speeds defined in the aircraft's configuration files are incorrect, or if you want to override the value, it can be changed with the **V**~**NE**~** Override **setting.
+The configured **Max Force** reaches 100% at the aircraft's V~NE~ speed from telemetry. If the V-speed values in the aircraft configuration are incorrect, use the **V**~**NE**~** Override** setting to change them.
 
-The Max Force adjustment slider handle will fade from gray to green as Max Force is reached, and the handle will show a percentage of dynamic force applied.
+The Max Force slider handle fades from gray to green as the maximum force approaches. The handle displays the percentage of dynamic force applied.
 
 **Expo Settings**
 
-Since Rhino cannot produce the actual real-life forces that could be reached, Expo amplifies those forces at lower speeds, where the feeling of control authority is quickly lost at stall speeds for example. An Expo value of 0.5 doubles stick forces at 25% of V~NE~. For some jets, you might want diminished forces until closer to V~NE~, so you can set a negative Expo value.
+Rhino cannot reproduce real-world control forces. Expo amplifies forces at lower speeds to compensate for reduced stick pressure near stall speed. An Expo value of 0.5 doubles stick forces at 25% of V~NE~. For jets that need weaker forces until higher speeds, set a negative Expo value.
 
 ![](images/msfs-xp-axis-spring/expo-curve.png){ width="513px" height="320px" }
 
 ### Dynamic + Spring Centered
 
-The "Spring Centered" option will still leverage the Dynamic
-adjustments mentioned above, however there will be a minimum spring
-gain set on a given axis based on the sliders.
-
-With this configured, the dynamic spring gain will range from a
-low-point of the "Spring Centered" gain value to a high-point of the
-Max Force setting in the dynamic adjustment settings.
+Spring Centered uses the same dynamic adjustments described above, with a fixed minimum spring gain for each axis. The dynamic spring gain ranges from the Spring Centered value at low speed to the Max Force value at high speed.
 
 ![](images/msfs-xp-axis-spring/spring-centered.png){ width="576px" height="102px" }
 
 ### Fly By Wire (FBW)
 
-Enabling the FBW option will override any configurations in the
-Dynamic and/or Spring Centered settings and apply a fixed gain value
-on a given axis. When this mode is active, the spring gain is static
-and will not vary based on airspeed or any other aerodynamic
-conditions.
+FBW mode replaces all Dynamic and Spring Centered settings with a fixed gain for each axis. The spring gain does not change with airspeed or aerodynamic conditions.
 
 ![](images/msfs-xp-axis-spring/fbw-gains.png){ width="573px" height="127px" }

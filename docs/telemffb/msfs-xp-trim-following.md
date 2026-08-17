@@ -28,7 +28,7 @@ Trim following is tuned with two gains per axis (X = aileron, Y = elevator):
 - **X / Y Trim Gain Virtual** - how much of that physical movement is passed on to the simulator. At 20%, only 20% of the stick's trim-induced movement is reported to the sim as control input. **This is the setting that determines whether the aircraft pitches when you trim** - if it is too high the nose follows the trim too strongly, too low (or too negative) and it fights the trim.
 
 !!! tip "Let TelemFFB measure it"
-    Do not tune the elevator values by hand - run the **[Automatic Trim Calibration](msfs-xp-trim-calibration.md)**. TelemFFB flies the aircraft briefly, measures its actual trim response, and computes the correct elevator gain - or a full calibrated curve where the response is not a straight line. The aileron and rudder gains can usually stay at their defaults.
+    Do not tune the elevator values manually — run the **[Automatic Trim Calibration](msfs-xp-trim-calibration.md)**. TelemFFB flies the aircraft briefly, measures its actual trim response, and computes the correct elevator gain — or a full calibrated curve where the response is not linear. The aileron and rudder gains can usually stay at their defaults.
 
 ## Calibrated Trim Curve *(elevator only)*
 
@@ -75,4 +75,4 @@ Two settings govern how your hands and the autopilot share the controls:
     If an aircraft becomes unstable with autopilot following engaged and tries to roll inverted, enable the *Invert Aileron Autopilot Axis* option.
 
 !!! note "Legacy manual tuning"
-    Before automatic calibration existed, the gains were tuned by hand. The procedure and suggested starting values are preserved in [Manual Trim Tuning (Legacy)](msfs-xp-trim-manual.md).
+    Before automatic calibration existed, users tuned the gains manually. The procedure and suggested starting values appear in [Manual Trim Tuning (Legacy)](msfs-xp-trim-manual.md).

@@ -8,7 +8,7 @@ TelemFFB separates **system settings** (how the application runs) from **aircraf
 
 - `HKEY_CURRENT_USER\Software\VPforce\TelemFFB`
 
-Everything configured in the System→[System Settings](configuration.md) dialog lives here. Do not edit the registry by hand - but it is useful to know where the settings are if you ever migrate machines.
+Everything configured in the System→[System Settings](configuration.md) dialog lives here. Do not edit the registry manually — knowing the path helps when you migrate machines.
 
 **Aircraft settings** are stored in the user appdata folder:
 

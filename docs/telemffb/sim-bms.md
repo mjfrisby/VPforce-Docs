@@ -13,7 +13,7 @@ Enable BMS on the **Sim Setup** page ([Connecting Your Simulator](sim-setup.md#b
 
 BMS sits between the sim categories. The game supports native FFB with a limited set of effects - and the primary F-16 is fly-by-wire, so its side-stick has no traditional force-feel to model in the first place. TelemFFB's role is therefore mostly **haptic augmentation**: gunfire, buffeting, touchdown, and similar event and state effects layered on top, the same way it supplements DCS.
 
-Under the hood, BMS uses the same aircraft effect implementations as DCS, driven by the shared-memory telemetry. The [BMS settings directory](effects-sim-bms.md) lists everything available.
+Internally, BMS uses the same aircraft effect implementations as DCS, driven by the shared-memory telemetry. The [BMS settings directory](effects-sim-bms.md) lists everything available.
 
 ## Notes and limitations
 

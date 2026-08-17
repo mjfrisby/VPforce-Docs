@@ -1,8 +1,8 @@
 # VPforce TelemFFB Application
 
-TelemFFB is an open source community-driven Python/Qt based application which takes telemetry from a simulator and uses that telemetry to produce various effects.
+TelemFFB is an open source community-driven Python/Qt application. It receives telemetry from a simulator and uses that data to produce force feedback effects.
 
-The latest version can always be downloaded from the [GitHub releases page](https://github.com/walmis/VPforce-TelemFFB/releases).
+Download the latest version from the [GitHub releases page](https://github.com/walmis/VPforce-TelemFFB/releases).
 
 Supported simulators:
 
@@ -12,31 +12,28 @@ Supported simulators:
 - X-Plane 11/12
 - Beta support for Falcon BMS (4.38+)
 
-For **DCS** and **IL-2**, which support native FFB, the TelemFFB app is primarily leveraged to implement certain effects like gunfire, engine rumble and helicopter ETL shaking (among many others). However, there are some additional 'FFB type' effects which are implemented such as deceleration force and g-loading effect.
+For **DCS** and **IL-2**, which support native FFB, TelemFFB adds supplemental effects: gunfire, engine rumble, helicopter ETL shaking, deceleration force, and g-loading.
 
-For **MSFS** and **X-Plane**, which ***do not*** have native FFB support, TelemFFB also implements dynamic axis FFB in addition to most of the effects previously mentioned for DCS.
+For **MSFS** and **X-Plane**, which do not have native FFB support, TelemFFB provides the complete force feedback implementation: dynamic axis spring forces plus all supplemental effects listed above.
 
-**Falcon BMS** sits somewhere in between. While the game does support native FFB with limited native effects, the primary F-16 aircraft is fly-by-wire and as such does not have any traditional "force feedback" on its flight stick. TelemFFB implements several haptic style effects (gunfire, buffeting, etc) to augment immersion.
+**Falcon BMS** falls between these categories. The game supports limited native FFB, but its primary F-16 aircraft is fly-by-wire and has no traditional force feedback on the side-stick. TelemFFB adds haptic effects such as gunfire and buffeting.
 
 ## How it works
 
-TelemFFB started out its life as not much more than a haptic effect generator driven by telemetry, originally only for DCS. It started out by adding supplemental effects such as engine rumble and gunfire on top of the native force feedback effects supported directly by the simulator.
+TelemFFB began as a simple haptic effect generator for DCS. It added supplemental effects such as engine rumble and gunfire on top of the simulator's native force feedback.
 
-It has grown since then into a highly configurable, feature rich application supporting not only supplemental haptic effects but also full dynamic FFB modeling for simulators such as Microsoft Flight Simulator (20/24) and X-Plane that do not have **any **native FFB support.
+The application now supports full dynamic FFB modeling for simulators without any native FFB support, plus all supplemental haptic effects.
 
-TelemFFB leverages telemetry that is available from a given simulator and uses that telemetry to create various types of effects based on real-time analysis of said telemetry.
-
-In practice, it is more complicated and depends largely on the simulator. However, it can be mostly broken down into two categories: Simulators ***with ***native FFB support and those ***without***.
+TelemFFB receives telemetry from your simulator and creates effects from real-time analysis of that data. The exact behavior depends on whether the simulator has native FFB support.
 
 **Sims with native FFB**
 
-- This includes **DCS**, **IL-2** and, to some extent, **BMS**. For these simulators, TelemFFB is primarily a haptics and supplemental effects generator. While there are overrides that a user can implement to use TelemFFB to manage the dynamic spring effect, the native game-supplied spring effect is typically used most of the time. This means that the game is managing the spring effect, while TelemFFB would be adding additional effects on top.
-
-- For these simulators, by default, the spring effect, including trim/autopilot following is managed wholly by the game itself.
+- This includes **DCS**, **IL-2** and, to some extent, **BMS**. TelemFFB adds supplemental effects on top of the simulator's native spring effect. You can configure overrides to let TelemFFB manage the dynamic spring effect instead.
+- By default, the game manages the spring effect, including trim and autopilot following.
 
 **Sims without native FFB**
 
-- This includes both **Microsoft Flight Simulator** as well as **X-Plane**. Fortunately both of these titles have much more rich telemetry than the others and have sufficient data to implement not just simple speed based dynamic spring, but spring loading that is based on calculated dynamic pressure throughout the aircraft speed envelope as defined by the telemetry data.
-- For these simulators, the **entire** FFB implementation is handled by the TelemFFB application
+- This includes **Microsoft Flight Simulator** and **X-Plane**. Both provide rich telemetry data that supports spring forces based on calculated dynamic pressure across the aircraft speed envelope.
+- TelemFFB handles the entire FFB implementation for these simulators.
 
 For a detailed look at how native simulator FFB, TelemFFB, and VPforce Configurator device settings interact, see [Understanding Native DCS FFB, TelemFFB, and VPforce Configurator](sim-dcs.md#understanding-native-dcs-ffb-telemffb-and-vpforce-configurator) in the DCS guide.
