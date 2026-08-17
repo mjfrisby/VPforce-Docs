@@ -2,14 +2,14 @@
 
 This walkthrough takes you from download to feeling your first effects. Each step links to the page with full detail.
 
-## 1. Install TelemFFB
+## Install TelemFFB
 
 Download the latest release zip from the [GitHub Releases](https://github.com/walmis/VPforce-TelemFFB/releases) page and extract it where you want the application to live. There is no installer - run `TelemFFB.exe` from the extracted folder.
 
 !!! note
     If your antivirus flags the executable, see [TelemFFB and Antivirus Software](installation.md#telemffb-and-antivirus-software). This is a known false-positive pattern with PyInstaller-packaged applications.
 
-## 2. First launch: System Settings
+## First launch: System Settings
 
 The first time you start TelemFFB, the System Settings window opens automatically.
 
@@ -20,7 +20,7 @@ The first time you start TelemFFB, the System Settings window opens automaticall
 
 Save the settings. TelemFFB connects to your device and sits ready for telemetry.
 
-## 3. Fly
+## Fly
 
 Start your simulator and load a flight. TelemFFB detects the aircraft from the telemetry, matches it to a profile, and applies the settings automatically. Many aircraft ship with tuned default profiles; anything unmatched gets sensible defaults for its aircraft class.
 
@@ -32,7 +32,7 @@ Start your simulator and load a flight. TelemFFB detects the aircraft from the t
 
 See the [UI Overview](ui-overview.md) for what everything on the main window means.
 
-## 4. Tune
+## Tune
 
 Open the **Settings tab** while flying. Every change applies immediately - no restart, no save-and-reload:
 
@@ -40,7 +40,7 @@ Open the **Settings tab** while flying. Every change applies immediately - no re
 - Toggle an effect off and on to isolate it.
 - Made a mess? Click the **x** icon next to any modified setting to return it to the default. See [How Settings Work](settings-model.md).
 
-## 5. Go deeper
+## Go deeper
 
 - **MSFS or X-Plane**: TelemFFB provides your entire force feedback implementation - spring forces, trim, autopilot. Read the [MSFS & X-Plane guide](sim-msfs-xplane.md) next; it is the most important page for these sims.
 - **DCS**: the sim provides native FFB; TelemFFB layers additional effects on top. The [DCS guide](sim-dcs.md) explains how the two interact.
