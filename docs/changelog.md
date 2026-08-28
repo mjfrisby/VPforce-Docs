@@ -1,4 +1,13 @@
 # Changelog
+- **August 27, 2026:**
+
+    - Added **[The DirectInput Tap](telemffb/dinput-tap.md)** - a new page covering the game-side capture wrapper for DCS, IL-2, and Falcon BMS: what it does, per-sim setup from System Settings, the **Game Managed (DirectInput Tap)** spring modes (including IL-2 Korea's FFB pedals), per-effect-type toggles and gains for the game's own effects, the start-order rule, misconfiguration warnings, the configuration file, and updates/removal
+    - Documented **[multiple joysticks and per-aircraft device selection](telemffb/devices-instances.md#multiple-joysticks-msfs-x-plane)** for MSFS and X-Plane: alternate device rows on the joystick card, the primary marker, live switching at save, and the per-aircraft **Device** section
+    - Updated [System Settings](telemffb/configuration.md) for the reduced restart requirements (most changes now apply live; a restart is prompted only for master-device, auto-launch, or theme changes) and the **Enable DirectInput Devices** toggle with its bridge status line
+    - Added DirectInput Tap cross-references and the tap spring mode to the [DCS](telemffb/sim-dcs.md), [IL-2](telemffb/sim-il2.md) (including Korea pedal FFB), and [BMS](telemffb/sim-bms.md) guides
+    - Documented the System Settings [File menu](telemffb/configuration.md#import-export-and-reset) - settings export/import for backup and machine migration, and Reset to Defaults, none of which commit until Save
+    - Rewrote [System Settings](telemffb/configuration.md) for the reorganized dialog - three tabs (Devices / System / Simulator Setup), the per-device Device Settings panels that replace the retired Startup Behavior page, the now-global update prompt setting, and the master-only dialog that configures every instance - with matching updates to [Devices & Instances](telemffb/devices-instances.md) (device cards carry the launch controls), the Quick Start, and [Connecting Your Simulator](telemffb/sim-setup.md)
+
 - **August 16, 2026:**
 
     - Added **[Blade Slap](telemffb/effects-aerodynamics.md#blade-slap)** to the Aerodynamic Effects reference - the new helicopter blade-vortex interaction effect (MSFS, X-Plane, DCS): sharp blade-passage kicks in descents, flares, and loaded turns, with X-Plane's native slap signal (and the *Use Native Slap Telemetry* toggle) or the inferred flight-state method with *Band Center* and *G-Induced Slap Factor* tuning

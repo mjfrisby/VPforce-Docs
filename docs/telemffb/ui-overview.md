@@ -156,7 +156,7 @@ A red status icon indicates that the child instance of TelemFFB has crashed, or 
 
 - **Telem Ovd:**
 
-    - Shown when the loaded aircraft has active [telemetry overrides](telem-overrides.md), with counts by tier - e.g. "Default (4) + User (2)" for four overrides from the shipped profile plus two of your own. Hover for the full override list. Note that additional profiles for such an aircraft must be **cloned** from the default profile to pick up the overrides - see the [overrides guide](telem-overrides.md).
+    - Shown when the loaded aircraft has active [telemetry overrides](telem-overrides.md), with counts by tier, e.g. "Default (4) + User (2)" for four overrides from the shipped profile plus two of your own. Hover for the full override list. Note that additional profiles for such an aircraft must be **cloned** from the default profile to pick up the overrides; see the [overrides guide](telem-overrides.md).
 
 ### Profile Notes
 
@@ -164,9 +164,9 @@ The status area includes a **notes button** for the loaded aircraft profile.
 
 ![The Profile Notes dialog showing shipped notes and the editable profile note](images/ui-overview/profile-notes.png){ width="550px" }
 
-- Some shipped default profiles carry **curated notes** - special considerations for the aircraft, or an explanation of why its default settings differ from otherwise similar aircraft.
+- Some shipped default profiles carry **curated notes**: special considerations for the aircraft, or an explanation of why its default settings differ from otherwise similar aircraft.
 - You can **add your own notes** to any aircraft profile. The dialog shows the inherited notes read-only (shipped notes and any user-default note), with an editable section for the active profile's own note.
-- When you load an aircraft that has notes to read, the notes icon **flashes green** - click it to view or edit.
+- When you load an aircraft that has notes to read, the notes icon **flashes green**; click it to view or edit.
 
 ### Monitor Tab
 
@@ -189,7 +189,7 @@ The Settings tab allows you to edit all possible forces and effects for the curr
 
 ![](images/ui-overview/settings-tab.png){ width="606px" height="644px" }
 
-The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows - each links to its reference page:
+The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows; each links to its reference page:
 
 - **[Basic](effects-basic.md)**
 
@@ -260,7 +260,7 @@ Along the very bottom edge of the main window:
 ![The status bar showing the firmware version, the Errors counter, and the version status](images/ui-overview/status-bar.png){ width="700px" }
 
 - **Rhino Firmware** - the firmware version of the connected device (or "Device Disconnected").
-- **Errors** - a red counter that appears only when TelemFFB has logged runtime errors. Click it to open the exceptions viewer - see [Exception Tracking & Reporting](troubleshooting.md#exception-tracking-reporting).
+- **Errors** - a red counter that appears only when TelemFFB has logged runtime errors. Click it to open the exceptions viewer; see [Exception Tracking & Reporting](troubleshooting.md#exception-tracking-reporting).
 - **Version Status** - whether this TelemFFB build is up to date; when an update is available, the text becomes a clickable link.
 
 ## System Tray

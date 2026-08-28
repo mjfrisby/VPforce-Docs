@@ -42,7 +42,7 @@ After accessing the wizard via one of the two methods above, simply follow the s
 1. Select the appropriate aircraft class for the aircraft you are adding.
 
     - Note that for MSFS, the aircraft type will be auto-detected based on telemetry data. However, you should validate that the selection is correct.
-    - This is particularly important for aircraft types with special treatment in MSFS, such as those from **HPG**, **FlyInside**, **CowanSim**, and others - see [Aircraft with Special Treatment](msfs-xp-special-aircraft.md) for the full roster. These will be auto-detected as their base aircraft type, but the TelemFFB aircraft class needs to be configured properly to achieve full functionality for these aircraft.
+    - This is particularly important for aircraft types with special treatment in MSFS, such as those from **HPG**, **FlyInside**, **CowanSim**, and others; see [Aircraft with Special Treatment](msfs-xp-special-aircraft.md) for the full roster. These will be auto-detected as their base aircraft type, but the TelemFFB aircraft class needs to be configured properly to achieve full functionality for these aircraft.
 
 **Page 3:**
 
@@ -58,21 +58,9 @@ After accessing the wizard via one of the two methods above, simply follow the s
     !!! note
         For some aircraft with special treatment in TelemFFB (such as HPG helicopters), it is mandatory to clone the configuration from one of the default profiles.
 
-## Offline/Global Sim/Class Configuration
-
-TelemFFB 2.0 offers a vastly improved offline and sim/class override configuration system. Rather than the clunky old offline manager, configuration is done in the main window just like the real-time per-aircraft configurations. To access the offline mode, choose the **Offline/Class Default/Sim Default** option from the **Profiles** menu.
-
-![](images/aircraft-profiles/offline-editor.png){ width="467px" height="581px" }
-
-Use the selection boxes in the Offline Editor Setup area to select a sim, class, aircraft or user profile to modify.
-
-- To modify the default settings for the entire simulator, only select the desired Sim from the pulldown.
-- To modify the class defaults for a given sim, select both the simulator and the class.
-- Further, you can choose a specific aircraft and profile to modify offline as well.
-
 ## Profile Manager
 
-TelemFFB 2.0 adds the ability to create multiple settings profiles for any given aircraft and centrally manage all of your profiles through the Profile Manager.
+TelemFFB supports multiple settings profiles for any given aircraft, all centrally managed through the Profile Manager.
 
 In the main window of the profile manager is a tree list of all of the built-in default, user created default and individual profiles. Built-in profiles are fixed and can not be deleted, exported or modified. They can be cloned into new profiles, but the original built-in settings will be retained in the built-in profile.
 

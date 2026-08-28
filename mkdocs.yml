@@ -47,6 +47,7 @@ nav:
       - System Settings: telemffb/configuration.md
       - Aircraft Profiles: telemffb/aircraft-profiles.md
       - VPforce Configurator Integration: telemffb/vpconf-profiles.md
+    - DirectInput Tap (DCS, IL-2, BMS): telemffb/dinput-tap.md
     - Simulator Guides:
       - MSFS & X-Plane:
         - Overview: telemffb/sim-msfs-xplane.md

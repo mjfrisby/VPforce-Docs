@@ -2,12 +2,12 @@
 
 Several addon aircraft receive treatment beyond the standard aircraft classes. This takes one or more of three forms:
 
-- A **dedicated aircraft class** - a deeper integration written specifically for that aircraft's systems (AFCS following, cockpit control locks, flight-model vibration data).
-- **Class or profile defaults** tailored to the aircraft - spring modes, force trim, or non-standard axis variables pre-configured to match how the addon works.
-- **[Telemetry overrides](telem-overrides.md)** in the shipped default profile - telemetry items re-sourced from the addon's custom variables, or additional items subscribed.
+- A **dedicated aircraft class**: a deeper integration written specifically for that aircraft's systems (AFCS following, cockpit control locks, flight-model vibration data).
+- **Class or profile defaults** tailored to the aircraft: spring modes, force trim, or non-standard axis variables pre-configured to match how the addon works.
+- **[Telemetry overrides](telem-overrides.md)** in the shipped default profile: telemetry items re-sourced from the addon's custom variables, or additional items subscribed.
 
 !!! important "Additional profiles for these aircraft: clone, don't create from scratch"
-    Everything on this page is carried by the aircraft's shipped default profile - the class assignment, the curated settings, and any telemetry overrides. If you need an additional profile (a livery whose name does not match the default pattern, for example), you must **clone it from the default profile**. A profile created from scratch will not carry the special treatment, and the integration silently stops working. See [Aircraft Profiles](aircraft-profiles.md) for cloning.
+    Everything on this page is carried by the aircraft's shipped default profile: the class assignment, the curated settings, and any telemetry overrides. If you need an additional profile (a livery whose name does not match the default pattern, for example), you must **clone it from the default profile**. A profile created from scratch will not carry the special treatment, and the integration silently stops working. See [Aircraft Profiles](aircraft-profiles.md) for cloning.
 
 | Aircraft | Sim | Class |
 |---|---|---|
@@ -44,21 +44,21 @@ The `TaogH500Helicopter` class honors the aircraft's **cockpit control locks**: 
 
 ## Taog's Hangar UH-1H / Bell 205-A1B
 
-These use the standard `Helicopter` class, but the default profiles wire the cockpit **force-trim switch** (`L:switchForceTrim`) to the [Force Trim Switch Simvar](msfs-xp-helicopters.md#helicopter-force-trim) feature - hardware force trim engages and disengages with the switch in the cockpit, as in the real aircraft.
+These use the standard `Helicopter` class, but the default profiles wire the cockpit **force-trim switch** (`L:switchForceTrim`) to the [Force Trim Switch Simvar](msfs-xp-helicopters.md#helicopter-force-trim) feature: hardware force trim engages and disengages with the switch in the cockpit, as in the real aircraft.
 
 ## Simfocus Bell 407
 
-The `SASHelicopter` class provides an SAS/AFCS integration in the HPG style: the stick slowly follows the SEMA actuator positions (subscribed via telemetry overrides), with hands-on detection so the AFCS yields while you fly. The class defaults set Hardware Force Trim on the cyclic and disable ordinary trim following - the AFCS integration moves the stick instead. Requires Axis Control with the cyclic axes unbound in MSFS.
+The `SASHelicopter` class provides an SAS/AFCS integration in the HPG style: the stick slowly follows the SEMA actuator positions (subscribed via telemetry overrides), with hands-on detection so the AFCS yields while you fly. The class defaults set Hardware Force Trim on the cyclic and disable ordinary trim following; the AFCS integration moves the stick instead. Requires Axis Control with the cyclic axes unbound in MSFS.
 
 ## A2A Comanche (PA-24)
 
-A standard `PropellerAircraft` - the special treatment is entirely in the default profile's telemetry overrides, which re-source the autopilot state, prop RPM, prop thrust, and body accelerations from A2A's Accu-Sim variables (the standard simvars read stale on this aircraft). This is the [worked example](telem-overrides.md#reading-the-example) on the Telemetry Overrides page.
+A standard `PropellerAircraft`; the special treatment is entirely in the default profile's telemetry overrides, which re-source the autopilot state, prop RPM, prop thrust, and body accelerations from A2A's Accu-Sim variables (the standard simvars read stale on this aircraft). This is the [worked example](telem-overrides.md#reading-the-example) on the Telemetry Overrides page.
 
 ## X-Trident AW109SP
 
-An X-Plane implementation via the `XAW109Helicopter` class, developed with input from the aircraft's developer: 4-axis AFCS integration (cyclic trim-rate control, force trim release, autopilot following), pedals that actively track the anti-torque requirement as power and airspeed change (a TelemFFB-side model of the parallel trim actuator, compensating for the limited yaw-servo telemetry the aircraft exports), and collective spring gain with force trim release - driven by a large set of AW109 datarefs subscribed through telemetry overrides. The class defaults set Hardware Force Trim spring mode on all axes.
+An X-Plane implementation via the `XAW109Helicopter` class, developed with input from the aircraft's developer: 4-axis AFCS integration (cyclic trim-rate control, force trim release, autopilot following), pedals that actively track the anti-torque requirement as power and airspeed change (a TelemFFB-side model of the parallel trim actuator, compensating for the limited yaw-servo telemetry the aircraft exports), and collective spring gain with force trim release, driven by a large set of AW109 datarefs subscribed through telemetry overrides. The class defaults set Hardware Force Trim spring mode on all axes.
 
-Full setup requirements - including the aircraft's own Configurations page settings, which must match the integration - are covered in [X-Trident AW109](msfs-xp-helicopters.md#x-trident-aw109-x-plane-only).
+Full setup requirements, including the aircraft's own Configurations page settings (which must match the integration), are covered in [X-Trident AW109](msfs-xp-helicopters.md#x-trident-aw109-x-plane-only).
 
 !!! warning "Known issue"
-    The aircraft does not honor the axis-override dataref nor properly accept external axis control - **map your controls in-game and leave Axis Control disabled in TelemFFB** (the default profile ships with it disabled).
+    The aircraft does not honor the axis-override dataref nor properly accept external axis control: **map your controls in-game and leave Axis Control disabled in TelemFFB** (the default profile ships with it disabled).

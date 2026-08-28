@@ -21,7 +21,7 @@ Helicopter force trim emulation is supported for both MSFS and X-Plane. To enabl
 
 - **Force Trim Reset Button**
 
-    - (Optional) - Configure a button to reset the trim to center
+    - (Optional) Configure a button to reset the trim to center
 
 - **Trim Release Damper**
 
@@ -50,14 +50,14 @@ Helicopter force trim emulation is supported for both MSFS and X-Plane. To enabl
 [Trim following](msfs-xp-trim-following.md) works for helicopter cyclics too, in a much simpler form than the fixed-wing implementation. The same **Trim Following** setting and the same physical/virtual gains apply, but the data source and behavior differ:
 
 - **What it reads.** Fixed-wing trim following reads the aileron and elevator trim positions. The helicopter cyclic path reads the **rotor trim** instead: in MSFS, the `ROTOR LATERAL TRIM PCT` and `ROTOR LONGITUDINAL TRIM PCT` SimVars; in X-Plane, the same roll and pitch trim datarefs the fixed-wing path uses.
-- **What it does.** The trim values shift the cyclic's spring center - on top of wherever the force trim has placed it - scaled by the *physical* gains, and the *virtual* gains decide what fraction of that movement is passed to the simulator, exactly as for fixed wing.
-- **What it lacks.** There is no calibrated trim curve for helicopters - the flat gains are the whole model, and the [Automatic Trim Calibration](msfs-xp-trim-calibration.md) tool does not apply.
+- **What it does.** The trim values shift the cyclic's spring center, on top of wherever the force trim has placed it, scaled by the *physical* gains, and the *virtual* gains decide what fraction of that movement is passed to the simulator, exactly as for fixed wing.
+- **What it lacks.** There is no calibrated trim curve for helicopters; the flat gains are the whole model, and the [Automatic Trim Calibration](msfs-xp-trim-calibration.md) tool does not apply.
 
 Trim-following updates pause while you hold the force-trim release button. The force trim controls the cyclic center while you re-trim manually. On aircraft with a modeled cockpit force-trim switch, switching it off clears the trim offsets.
 
 ## Collective Spring Mode
 
-If you fly with a VPforce-powered collective, the **Collective Spring Mode** setting (Basic Settings, collective device) selects how the collective behaves. The implementation is deliberately simple - two modes:
+If you fly with a VPforce-powered collective, the **Collective Spring Mode** setting (Basic Settings, collective device) selects how the collective behaves. The implementation is deliberately simple, with two modes:
 
 ![Collective Spring Mode selection showing the No Spring and Hardware Force Trim options](images/msfs-xp-helicopters/collective-spring-mode.png){ width="600px" }
 
@@ -71,7 +71,7 @@ If you fly with a VPforce-powered collective, the **Collective Spring Mode** set
     - The spring hold strength and the release damper level are configurable.
 
 !!! important
-    In Hardware Force Trim mode, the **trim release button is mandatory** - without one, the collective could never be moved against the locked spring, so TelemFFB raises an error until a button is configured.
+    In Hardware Force Trim mode, the **trim release button is mandatory**: without one, the collective could never be moved against the locked spring, so TelemFFB raises an error until a button is configured.
 
 !!! note
     Aircraft that model a cockpit force-trim switch can drive the hold via the force trim switch variable: while the switch is off, the spring follows the collective without locking.
@@ -183,7 +183,7 @@ Rather than a hard hands-off threshold, it uses a time based hysteresis. This pr
 
 - **Hands Off Hysteresis Time:**
 
-    - Recommended value - 500ms
+    - Recommended value: 500ms
     - The time, in milliseconds, after hands-on has been triggered, that the force must be ***below*** the force threshold in order to trigger hands-off
 
 - **Debug Logging:**
@@ -198,7 +198,7 @@ In collaboration with FlyInside, TelemFFB uses vibration variables from the flig
 
 ## X-Trident AW109 (X-Plane only)
 
-Developed in collaboration with X-Trident, this implementation integrates all four axes with the AW109's AFCS. The cyclic follows the autopilot's trim commands, the collective follows the AFCS in the vertical modes, and the pedals actively track the anti-torque requirement as power and airspeed change - tuned against flight-test observations from a real-world AW109 pilot. Force trim release is supported on all three controls.
+Developed in collaboration with X-Trident, this implementation integrates all four axes with the AW109's AFCS. The cyclic follows the autopilot's trim commands, the collective follows the AFCS in the vertical modes, and the pedals actively track the anti-torque requirement as power and airspeed change, tuned against flight-test observations from a real-world AW109 pilot. Force trim release is supported on all three controls.
 
 !!! warning "Map your controls in the sim"
     Unlike other TelemFFB helicopter implementations, the AW109 does not accept external axis control. **Axis Control must remain disabled in TelemFFB** and your cyclic, collective, and pedal axes must be mapped in X-Plane as normal. TelemFFB moves the physical controls; X-Plane reads them.
@@ -211,11 +211,11 @@ The AW109's own settings page must be configured to match the TelemFFB integrati
 
 - **Servo motors** must be **On**, and beneath the slider:
 
-    - **Cyclic** and **Pedals** must be *checked* - this makes the aircraft publish its servo commands for those axes
-    - **Collective** must be *unchecked* - TelemFFB drives the physical collective itself; enabling the aircraft's collective servo as well will cause the two to fight
+    - **Cyclic** and **Pedals** must be *checked*; this makes the aircraft publish its servo commands for those axes
+    - **Collective** must be *unchecked*; TelemFFB drives the physical collective itself; enabling the aircraft's collective servo as well will cause the two to fight
 
 - **Non centering cyclic** must be *checked* when using a Rhino joystick
-- **Non centering pedals** must be *unchecked* when using VPforce FFB pedals - that mode exists for passive, non-centering pedal hardware and works against actively driven pedals
+- **Non centering pedals** must be *unchecked* when using VPforce FFB pedals; that mode exists for passive, non-centering pedal hardware and works against actively driven pedals
 - **Coll. FT rel. mode** should be set to **Command**, with the same button bound in both X-Plane and TelemFFB's collective force trim configuration
 
     - Alternatively, set it to **Follow cyclic** and use TelemFFB's *"use buttons from master"* option to trigger it from the joystick's force trim button
@@ -237,4 +237,4 @@ The AW109's own settings page must be configured to match the TelemFFB integrati
     - **AFCS Response Rate** - how quickly the pedals move when they do
 
 !!! note
- With your feet resting on the pedals (force trim release active), the AFCS stops driving them and yaw is yours - the same convention as the real aircraft, which is flown feet-on below roughly 60 knots.
+ With your feet resting on the pedals (force trim release active), the AFCS stops driving them and yaw is yours, the same convention as the real aircraft, which is flown feet-on below roughly 60 knots.
