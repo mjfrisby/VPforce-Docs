@@ -530,9 +530,21 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dinput-tap/">
+<span class="md-ellipsis">
+    
+  
+    DirectInput Tap (DCS, IL-2, BMS)
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -543,8 +555,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_5">
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -554,8 +566,8 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -566,8 +578,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_5_1">
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_1">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -780,8 +792,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -792,8 +804,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_6">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -923,8 +935,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7_11" id="__nav_4_7_11_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -935,8 +947,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_6_11">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_7_11">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1640,10 +1652,10 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="automatic-trim-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Automatic Trim Calibration<a class="headerlink" href="#automatic-trim-calibration" title="Link to this section">¶</a></h1>
-<p>Tuning the elevator trim gain by hand works, but it is slow and easy to get slightly wrong. The <strong>Elevator Trim Calibration</strong> tool automates it: TelemFFB briefly flies the aircraft for you, sweeps the elevator trim through its range while holding the aircraft level, measures exactly how much stick input each trim setting requires, and computes the correct <em>Y Trim Gain Virtual</em> value — or a full response <strong>curve</strong> for aircraft that need one.</p>
+<p>Manual tuning of the elevator trim gain is slow and error prone. The <strong>Elevator Trim Calibration</strong> tool automates it: TelemFFB flies the aircraft briefly, sweeps the elevator trim through its range while holding the aircraft level, measures the stick input for each trim setting, and computes the correct <em>Y Trim Gain Virtual</em> value — or a full response <strong>curve</strong> for aircraft that need one.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>While a calibration is running, <strong>TelemFFB is actively flying your aircraft</strong> — it manipulates the trim and the elevator/aileron axes to hold the aircraft level. Keep your <strong>hands off the controls</strong>, keep the <strong>autopilot off</strong>, and be <strong>ready to take over</strong> and press <strong>Abort</strong> at any time. Only run it with safe altitude and airspace.</p>
+<p>While a calibration is running, <strong>TelemFFB is actively flying your aircraft</strong>: it manipulates the trim and the elevator/aileron axes to hold the aircraft level. Keep your <strong>hands off the controls</strong>, keep the <strong>autopilot off</strong>, and be <strong>ready to take over</strong> and press <strong>Abort</strong> at any time. Only run it with safe altitude and airspace.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1661,28 +1673,28 @@
 <figure class="figure-image"> <img alt="The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons" src="../images/msfs-xp-trim-following/calibration_dialog.webp" width="480px"> <figcaption>The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons</figcaption></img></figure>
 <p>The window shows:</p>
 <ul>
-<li><strong>Instructions</strong> and a <strong>live status</strong> panel — airspeed, pitch, vertical speed, bank, current trim, and the engine’s current state. A <strong>status light</strong> turns green when the aircraft meets the preconditions and the run is ready to begin.</li>
-<li>A <strong>result graph</strong> — plotting the elevator axis required to hold level (vertical) against elevator trim (horizontal). It fills in as the sweep progresses.</li>
+<li><strong>Instructions</strong> and a <strong>live status</strong> panel: airspeed, pitch, vertical speed, bank, current trim, and the engine’s current state. A <strong>status light</strong> turns green when the aircraft meets the preconditions and the run is ready to begin.</li>
+<li>A <strong>result graph</strong>, plotting the elevator axis required to hold level (vertical) against elevator trim (horizontal). It fills in as the sweep progresses.</li>
 <li><strong>Start / Abort</strong> and, once a result is available, <strong>Apply / Save</strong>.</li>
 </ul>
 <h2 id="running-a-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Running a Calibration<a class="headerlink" href="#running-a-calibration" title="Link to this section">¶</a></h2>
-<p>With the aircraft trimmed, level and stable — and the readiness light green — press <strong>Start</strong>. TelemFFB takes over: it makes a few small control inputs to learn the aircraft’s response, settles it into level flight, finds the natural trim point, then sweeps the trim while recording the stick input needed at each step. A red banner reminds you it is in control, and the status line reports the current phase.</p>
+<p>With the aircraft trimmed, level and stable, with the readiness light green, press <strong>Start</strong>. TelemFFB takes over: it makes a few small control inputs to learn the aircraft’s response, settles it into level flight, finds the natural trim point, then sweeps the trim while recording the stick input needed at each step. A red banner reminds you it is in control, and the status line reports the current phase.</p>
 <figure class="figure-image"> <img a="" aircraft"="" alt="A calibration in progress, showing the red " and="" banner,="" being="" controlling="" data="" is="" live="" plotted"="" point="" src="../images/msfs-xp-trim-following/calibration_in_progress.webp" status,="" sweep="" telemetry,="" telemffb="" the="" width="480px" your=""> <figcaption>A calibration in progress, showing the red "TelemFFB is controlling your aircraft" banner, live telemetry, the SWEEP status, and a data point being plotted</figcaption></img></figure>
 <p>The whole process usually takes one to a few minutes depending on the aircraft. If the aircraft diverges, the airspeed drifts too far, the autopilot is re-engaged, or you take the controls, the run <strong>aborts safely</strong> and hands control back.</p>
 <h2 id="reading-the-result"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Reading the Result<a class="headerlink" href="#reading-the-result" title="Link to this section">¶</a></h2>
 <p>When the sweep finishes, the graph shows the measured data points and the fit. The tool computes both a single static gain and a full curve, and tells you which it recommends.</p>
 <figure class="figure-image"> <img alt="A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared" src="../images/msfs-xp-trim-following/example_calibration.webp" width="480px"/> <figcaption>A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared</figcaption></figure>
 <ul>
-<li><strong>Recommended: calibrated curve</strong> — for most aircraft the curve is recommended, because it holds the nose level across the entire trim range even when the response is not a straight line.</li>
-<li><strong>Static fit</strong> — the single <em>Y Trim Gain Virtual</em> value that best fits the data. This is what you would set by hand. It is shown alongside the curve for reference (and for comparison with your current profile value).</li>
-<li><strong>Linearity (R²)</strong> — how straight the measured response is. A value close to 1.00 means the aircraft responds almost linearly and the static value alone will work well; a lower value means the response is curved and the calibrated curve is worth using.</li>
-<li><strong>Use calibrated curve (recommended)</strong> — the checkbox that decides which is applied and saved. It defaults to the recommendation.</li>
+<li><strong>Recommended: calibrated curve</strong> - for most aircraft the curve is recommended, because it holds the nose level across the entire trim range even when the response is not a straight line.</li>
+<li><strong>Static fit</strong> — the single <em>Y Trim Gain Virtual</em> value that best fits the data. TelemFFB displays it alongside the curve for reference and comparison with your current profile value.</li>
+<li><strong>Linearity (R²)</strong> - how straight the measured response is. A value close to 1.00 means the aircraft responds almost linearly and the static value alone will work well; a lower value means the response is curved and the calibrated curve is worth using.</li>
+<li><strong>Use calibrated curve (recommended)</strong> - the checkbox that decides which is applied and saved. It defaults to the recommendation.</li>
 </ul>
-<p>The tool may also note things worth knowing — for example that the trim response is <strong>asymmetric</strong> (stronger on one side of neutral than the other), or that the <strong>airspeed drifted</strong> during the sweep and the run should be repeated with steadier power.</p>
+<p>The tool may also note things worth knowing, for example that the trim response is <strong>asymmetric</strong> (stronger on one side of neutral than the other), or that the <strong>airspeed drifted</strong> during the sweep and the run should be repeated with steadier power.</p>
 <h2 id="applying-and-saving"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Applying and Saving<a class="headerlink" href="#applying-and-saving" title="Link to this section">¶</a></h2>
 <ul>
-<li><strong>Apply (test in sim)</strong> loads the result live <strong>without saving it</strong>, so you can fly-test it immediately. To test: fly straight and level, <strong>hold the stick still</strong>, and slowly run the trim nose-up then nose-down through its range. With a good value the <strong>nose stays level</strong> as you trim — the stick relieves under force feedback but the aircraft does not pitch. If the nose drifts, re-run the calibration or toggle the curve on/off to compare.</li>
-<li><strong>Save</strong> writes the result to the current aircraft’s profile — the static <em>Y Trim Gain Virtual</em> value, the calibrated curve, and the <strong>Use Calibrated Trim Curve</strong> setting all together — so you can switch between the curve and the static value at any time from the settings.</li>
+<li><strong>Apply (test in sim)</strong> loads the result live <strong>without saving it</strong>, so you can fly-test it immediately. To test: fly straight and level, <strong>hold the stick still</strong>, and slowly run the trim nose-up then nose-down through its range. With a good value the <strong>nose stays level</strong> as you trim: the stick relieves under force feedback but the aircraft does not pitch. If the nose drifts, re-run the calibration or toggle the curve on/off to compare.</li>
+<li><strong>Save</strong> writes the result to the current aircraft’s profile: the static <em>Y Trim Gain Virtual</em> value, the calibrated curve, and the <strong>Use Calibrated Trim Curve</strong> setting all together, so you can switch between the curve and the static value at any time from the settings.</li>
 </ul>
 <p>A saved curve is shown (read-only, with its capture date and airspeed) whenever you re-open the calibration tool for that aircraft.</p>
 <div class="admonition note">

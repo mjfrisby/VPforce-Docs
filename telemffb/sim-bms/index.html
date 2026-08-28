@@ -530,9 +530,21 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dinput-tap/">
+<span class="md-ellipsis">
+    
+  
+    DirectInput Tap (DCS, IL-2, BMS)
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -543,8 +555,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_5">
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -554,8 +566,8 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -566,8 +578,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_5_1">
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_1">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -762,8 +774,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -774,8 +786,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_6">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -905,8 +917,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7_11" id="__nav_4_7_11_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -917,8 +929,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_6_11">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_7_11">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1627,15 +1639,16 @@
 </div>
 <p>TelemFFB supports Falcon BMS 4.38 and later as a <strong>beta</strong> integration.</p>
 <h2 id="setup"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Setup<a class="headerlink" href="#setup" title="Link to this section">¶</a></h2>
-<p>Enable BMS on the <strong>Sim Setup</strong> page (<a href="../sim-setup/#bms-beta-support">Connecting Your Simulator</a>). No export script or plugin is required — TelemFFB reads the BMS shared-memory telemetry directly, so BMS and TelemFFB must run on the same PC.</p>
+<p>Enable BMS on the <strong>Simulator Setup</strong> tab (<a href="../sim-setup/#bms-beta-support">Connecting Your Simulator</a>). No export script or plugin is required; TelemFFB reads the BMS shared-memory telemetry directly, so BMS and TelemFFB must run on the same PC.</p>
 <h2 id="how-telemffb-fits-with-bms"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> How TelemFFB fits with BMS<a class="headerlink" href="#how-telemffb-fits-with-bms" title="Link to this section">¶</a></h2>
-<p>BMS sits between the sim categories. The game supports native FFB with a limited set of effects — and the primary F-16 is fly-by-wire, so its side-stick has no traditional force-feel to model in the first place. TelemFFB’s role is therefore mostly <strong>haptic augmentation</strong>: gunfire, buffeting, touchdown, and similar event and state effects layered on top, the same way it supplements DCS.</p>
-<p>Under the hood, BMS uses the same aircraft effect implementations as DCS, driven by the shared-memory telemetry. The <a href="../effects-sim-bms/">BMS settings directory</a> lists everything available.</p>
+<p>BMS sits between the sim categories. The game supports native FFB with a limited set of effects, and the primary F-16 is fly-by-wire, so its side-stick has no traditional force-feel to model in the first place. TelemFFB’s role is therefore mostly <strong>haptic augmentation</strong>: gunfire, buffeting, touchdown, and similar event and state effects layered on top, the same way it supplements DCS.</p>
+<p>Internally, BMS uses the same aircraft effect implementations as DCS, driven by the shared-memory telemetry. The <a href="../effects-sim-bms/">BMS settings directory</a> lists everything available.</p>
+<p>BMS’s own native FFB effects can also be captured and rendered through TelemFFB with the <a href="../dinput-tap/">DirectInput Tap</a>, which adds a per-type enable and gain for each of the game’s effects.</p>
 <h2 id="notes-and-limitations"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Notes and limitations<a class="headerlink" href="#notes-and-limitations" title="Link to this section">¶</a></h2>
 <ul>
-<li><strong>Afterburner detection is estimated</strong> — BMS does not export afterburner state directly, so TelemFFB infers it from nozzle position and fuel flow.</li>
+<li><strong>Afterburner detection is estimated</strong> - BMS does not export afterburner state directly, so TelemFFB infers it from nozzle position and fuel flow.</li>
 <li>Some effect settings may not behave as expected where the shared-memory telemetry is limited or absent for a given value.</li>
-<li>The integration has had comparatively little field testing. If something does not work or feels wrong, feedback genuinely improves it — report on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord.</li>
+<li>The integration has had comparatively little field testing. If something does not work or feels wrong, feedback genuinely improves it; report on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord.</li>
 </ul>
 <p>For connection problems, see the <a href="../../rhino/game-specific-troubleshooting/#falcon-bms">Falcon BMS troubleshooting section</a>.</p>
 </article>

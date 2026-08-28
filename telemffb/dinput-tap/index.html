@@ -1,0 +1,1879 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
+<meta content="VPforce" name="author"/>
+<link href="https://docs.vpforce.eu/telemffb/dinput-tap/" rel="canonical"/>
+<link href="../vpconf-profiles/" rel="prev"/>
+<link href="../sim-msfs-xplane/" rel="next"/>
+<link href="../../assets/images/favicon.webp" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>DirectInput Tap (DCS, IL-2, BMS) - VPforce Documentation</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../stylesheets/extra.css?v=1.1" rel="stylesheet"/>
+<link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#the-directinput-tap">2. 
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="VPforce Documentation" class="md-header__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            VPforce Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              DirectInput Tap (DCS, IL-2, BMS)
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://vpforce.eu">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Welcome
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../rhino/">
+          
+  
+  
+  Rhino Manual
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  TelemFFB Manual
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../community-projects/">
+          
+  
+  
+  Community Projects
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../third-party-vendors/">
+          
+  
+  
+  Third-Party Vendors
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../products/">
+          
+  
+  
+  Products
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../changelog/">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="VPforce Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="VPforce Documentation">
+<img alt="logo" src="../../images/vpforcelogo_dark.svg"/>
+</a>
+    VPforce Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://vpforce.eu">
+<span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Rhino Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Rhino Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/getting-started/">
+<span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/using-the-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Using the Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-ffb-settings-tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific FFB Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/troubleshooting-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/game-specific-troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Game-Specific Troubleshooting
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/rhino-maintenance/">
+<span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rhino/appendix-a-known-issues/">
+<span class="md-ellipsis">
+    
+  
+    Known Issues
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    TelemFFB Manual
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    TelemFFB Manual
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../quick-start/">
+<span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Setup
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/">
+<span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../devices-instances/">
+<span class="md-ellipsis">
+    
+  
+    Devices &amp; Instances
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-setup/">
+<span class="md-ellipsis">
+    
+  
+    Connecting Your Simulator
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Core Concepts
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../settings-model/">
+<span class="md-ellipsis">
+    
+  
+    How Settings Work
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../ui-overview/">
+<span class="md-ellipsis">
+    
+  
+    UI Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configuration/">
+<span class="md-ellipsis">
+    
+  
+    System Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../aircraft-profiles/">
+<span class="md-ellipsis">
+    
+  
+    Aircraft Profiles
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../vpconf-profiles/">
+<span class="md-ellipsis">
+    
+  
+    VPforce Configurator Integration
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    DirectInput Tap (DCS, IL-2, BMS)
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    DirectInput Tap (DCS, IL-2, BMS)
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-use-it">2.1 
+<span class="md-ellipsis">
+      
+        Why use it
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supported-simulators">2.2 
+<span class="md-ellipsis">
+      
+        Supported simulators
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-it-works">2.3 
+<span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-it-up">2.4 
+<span class="md-ellipsis">
+      
+        Setting it up
+      
+    </span>
+</a>
+<nav aria-label="Setting it up" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#if-a-dinput8dll-is-already-installed">2.4.1 
+<span class="md-ellipsis">
+      
+        If a dinput8.dll is already installed
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fresh-install-or-existing-configuration">2.4.2 
+<span class="md-ellipsis">
+      
+        Fresh install or existing configuration
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rendering-the-games-spring">2.5 
+<span class="md-ellipsis">
+      
+        Rendering the game’s spring
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-games-other-effects">2.6 
+<span class="md-ellipsis">
+      
+        The game’s other effects
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-something-is-misconfigured">2.7 
+<span class="md-ellipsis">
+      
+        When something is misconfigured
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-configuration-file">2.8 
+<span class="md-ellipsis">
+      
+        The configuration file
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updates-and-removal">2.9 
+<span class="md-ellipsis">
+      
+        Updates and removal
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Simulator Guides
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulator Guides
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    MSFS &amp; X-Plane
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MSFS &amp; X-Plane
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-msfs-xplane/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-axis-spring/">
+<span class="md-ellipsis">
+    
+  
+    Axis Control &amp; Spring Modes
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-following/">
+<span class="md-ellipsis">
+    
+  
+    Trim &amp; Autopilot Following
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-calibration/">
+<span class="md-ellipsis">
+    
+  
+    Automatic Trim Calibration
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-trim-manual/">
+<span class="md-ellipsis">
+    
+  
+    Manual Trim Tuning (Legacy)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-helicopters/">
+<span class="md-ellipsis">
+    
+  
+    Helicopters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../msfs-xp-special-aircraft/">
+<span class="md-ellipsis">
+    
+  
+    Special Aircraft
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../telem-overrides/">
+<span class="md-ellipsis">
+    
+  
+    Telemetry Overrides
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    Falcon BMS
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Effects Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Effects Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-overview/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-basic/">
+<span class="md-ellipsis">
+    
+  
+    Basic Settings
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-aerodynamics/">
+<span class="md-ellipsis">
+    
+  
+    Aerodynamics
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-inertial/">
+<span class="md-ellipsis">
+    
+  
+    Inertial
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ground/">
+<span class="md-ellipsis">
+    
+  
+    Ground
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-mechanical/">
+<span class="md-ellipsis">
+    
+  
+    Mechanical &amp; Airframe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-weapons/">
+<span class="md-ellipsis">
+    
+  
+    Weapons
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-ffb/">
+<span class="md-ellipsis">
+    
+  
+    Basic FFB Effects
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-system/">
+<span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spring-curves/">
+<span class="md-ellipsis">
+    
+  
+    Advanced Curve Editor
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7_11" id="__nav_4_7_11_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    By Simulator
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_7_11">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    By Simulator
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-dcs/">
+<span class="md-ellipsis">
+    
+  
+    DCS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-il2/">
+<span class="md-ellipsis">
+    
+  
+    IL-2
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-bms/">
+<span class="md-ellipsis">
+    
+  
+    BMS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-msfs/">
+<span class="md-ellipsis">
+    
+  
+    MSFS
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../effects-sim-xplane/">
+<span class="md-ellipsis">
+    
+  
+    X-Plane
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../troubleshooting/">
+<span class="md-ellipsis">
+    
+  
+    Troubleshooting &amp; Getting Help
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../release-notes/">
+<span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Community Projects
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Community Projects
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/tips-and-tricks/">
+<span class="md-ellipsis">
+    
+  
+    Tips and Tricks
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Joysticks
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Joysticks
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/community-rhino-builds/">
+<span class="md-ellipsis">
+    
+  
+    Community Rhino Builds
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/theamazingreat-rhino/">
+<span class="md-ellipsis">
+    
+  
+    TheAmazinGreat 86 Motor Base
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pedals
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pedals
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/VirpilACE_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Virpil ACE Pedal FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/MFG_Crosswind_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    MFG Crosswind FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Tiger_TPR_FFB_Mod_Guide/">
+<span class="md-ellipsis">
+    
+  
+    Tiger TPR FFB Mod
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/TPR_FFB_Project_Documentation/">
+<span class="md-ellipsis">
+    
+  
+    TPR FFB Pedal Mod
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Collectives
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Collectives
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Other
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Other
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/FFB_TrimWheel/">
+<span class="md-ellipsis">
+    
+  
+    FFB Trim Wheel
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/ffb-yoke/">
+<span class="md-ellipsis">
+    
+  
+    FFB Yoke
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../community-projects/Number481_Force_Enabled_Collective/">
+<span class="md-ellipsis">
+    
+  
+    Force-Enabled Collective
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Third-Party Vendors
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Third-Party Vendors
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/">
+<span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Winger Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Winger Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/winger-kits/monster-rhino/">
+<span class="md-ellipsis">
+    
+  
+    Monster Rhino
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Kaltokri DIY Kits
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Kaltokri DIY Kits
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/general-faq/">
+<span class="md-ellipsis">
+    
+  
+    General FAQ
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinojoystick/">
+<span class="md-ellipsis">
+    
+  
+    Rhino Joystick
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinomfg86/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoMFG86
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-inside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Inside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinotpr-outside/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoTPR Outside
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoace/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoACE
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinoorion/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoOrion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../third-party-vendors/kaltokri-kits/rhinor1/">
+<span class="md-ellipsis">
+    
+  
+    Pedals &gt; RhinoR1
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/">
+<span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/rhino-ffb-base/">
+<span class="md-ellipsis">
+    
+  
+    Rhino FFB Base
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/diy-kits/">
+<span class="md-ellipsis">
+    
+  
+    DIY Motor Kits
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/grip-adapters/">
+<span class="md-ellipsis">
+    
+  
+    Grip Adapters
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../products/throw-limiters/">
+<span class="md-ellipsis">
+    
+  
+    Throw Limiters
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../changelog/">
+<span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="the-directinput-tap"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> The DirectInput Tap<a class="headerlink" href="#the-directinput-tap" title="Link to this section">¶</a></h1>
+<p>DCS, IL-2, and Falcon BMS compute their own force feedback and send it to the stick over DirectInput. TelemFFB has no involvement in the game-generated forces and effects being played on the device: the game drives the device directly, and TelemFFB adds its telemetry-driven effects on top.</p>
+<p>The <strong>DirectInput Tap</strong> captures the effects the game computes and sends them to TelemFFB, which renders them on the device. The game cannot detect the difference: it continues to compute its effects, and everything it exports continues to work.</p>
+<h2 id="why-use-it"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Why use it<a class="headerlink" href="#why-use-it" title="Link to this section">¶</a></h2>
+<p>With the tap active, the game’s own effects become visible and adjustable in TelemFFB:</p>
+<ul>
+<li>Each game effect type gets an <strong>enable toggle and a gain slider</strong> - controls the games themselves do not offer.</li>
+<li>The game’s spring can be corrected per axis: swap axes, invert, and scale, with a live force readout on the sliders.</li>
+<li>The game’s effects appear in the effects monitor by name, so you can see exactly what the game is sending at any moment.</li>
+</ul>
+<h2 id="supported-simulators"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Supported simulators<a class="headerlink" href="#supported-simulators" title="Link to this section">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Simulator</th>
+<th>Joystick</th>
+<th>Pedals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DCS</td>
+<td>Yes</td>
+<td>-</td>
+</tr>
+<tr>
+<td>IL-2 Great Battles</td>
+<td>Yes</td>
+<td>-</td>
+</tr>
+<tr>
+<td>IL-2 Korea</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Falcon BMS</td>
+<td>Yes</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>IL-2 Korea is the only simulator in this group that renders force feedback to pedals.</p>
+<h2 id="how-it-works"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> How it works<a class="headerlink" href="#how-it-works" title="Link to this section">¶</a></h2>
+<p>TelemFFB places a small wrapper library (<code>dinput8.dll</code>) in the game’s folder, and the game loads it in place of the system DirectInput library. The wrapper passes everything through unchanged, with one exception: the force-feedback effects of the devices you choose to capture. Those effects go to TelemFFB instead of the device.</p>
+<div class="admonition important">
+<p class="admonition-title">Start TelemFFB before the game</p>
+<p>The wrapper decides once, when the game starts, whether to engage. It only engages if TelemFFB is already running. If you start the game first, the wrapper stays inactive for that session; restart the game with TelemFFB running.</p>
+<p>This check is the <code>RequireTelemFFB</code> setting in <code>dinput8.ini</code>, and it is <code>true</code> by default for a reason: it makes the wrapper fail safe. Captured devices only work while TelemFFB is running to render their forces, so a wrapper that engaged unconditionally would leave those devices with no force feedback at all in any session without TelemFFB. With the check in place, the wrapper goes inert instead, and the game’s own force feedback works normally; this prevents FFB from appearing “broken” if you happen to run the simulator without TelemFFB for any reason.</p>
+<p>Setting it to <code>false</code> removes the start-order requirement, at exactly that risk: whenever the game runs without TelemFFB, the captured devices’ forces are swallowed with nothing re-rendering them, and nothing on screen says why. Leave it <code>true</code> unless you accept that trade.</p>
+</div>
+<h2 id="setting-it-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Setting it up<a class="headerlink" href="#setting-it-up" title="Link to this section">¶</a></h2>
+<ol>
+<li>Open <strong>System → System Settings</strong> and go to the simulator’s page on the <strong>Simulator Setup</strong> tab.</li>
+<li>
+<p>Enable the <strong>DirectInput Tap</strong> toggle. A status panel appears below it. The panel locates the game install automatically (from the configured path, the registry, or a Steam library scan) and shows the wrapper state for each of the game’s executable folders.</p>
+<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/tap-section-fresh.webp" width="650px"> <figcaption></figcaption></img></figure></p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Choose which devices the tap captures in the device dialog that opens.</p>
+<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/device-dialog.webp" width="550px"> <figcaption></figcaption></img></figure></p>
+</li>
+<li>
+<p>TelemFFB writes both files beside each of the game’s executables (for DCS, both <code>bin</code> and <code>bin-mt</code>): the <code>dinput8.dll</code> wrapper, and a <code>dinput8.ini</code> configuration carrying capture rules for the devices you chose. Setup is complete; nothing further is required. The panel then shows the installed state, with each folder’s wrapper version and configuration:</p>
+<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/tap-section.webp" width="650px"/> <figcaption></figcaption></figure></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Games installed under Program Files</p>
+<p>Windows may deny writes to the game’s folder for a game installed under <code>Program Files</code>. TelemFFB tells you when this is the cause. Run TelemFFB as administrator once to install, or grant the folder write access.</p>
+</div>
+<h3 id="if-a-dinput8dll-is-already-installed"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> If a dinput8.dll is already installed<a class="headerlink" href="#if-a-dinput8dll-is-already-installed" title="Link to this section">¶</a></h3>
+<p>Some game folders already carry a <code>dinput8.dll</code> wrapper. TelemFFB recognizes the common case, the community <strong>dcs-force-feedback-fix</strong> wrapper that the tap is built from: the panel reports it as an ffb-fix wrapper, and Install offers an upgrade.</p>
+<figure class="figure-image"> <img alt="" src="../images/dinput-tap/ffbfix-dll.webp" width="620px"/> <figcaption></figcaption></figure>
+<p>TelemFFB’s wrapper is a <strong>superset</strong> of the original ffb-fix wrapper: every rule in the existing <code>dinput8.ini</code> (per-device <code>block</code>, <code>allow</code>, and scaling rules, <code>[DeviceOrder]</code>) keeps working exactly as before, so the upgrade is safe. The file is kept as it is, with two exceptions: TelemFFB adds a <code>tap</code> rule for the joystick device selected in TelemFFB, and offers <code>block</code> rules for any configured pedal or collective devices the file does not already cover. Rules you already wrote are recognized, not duplicated - a name rule that already blocks your pedals is left alone.</p>
+<p>A <code>dinput8.dll</code> that TelemFFB cannot identify is reported as “another dinput8.dll installed”, and Install asks the more careful question. If the DLL belongs to a different mod or utility, replacing it will stop that tool from working.</p>
+<figure class="figure-image"> <img alt="" src="../images/dinput-tap/another-dll.webp" width="620px"/> <figcaption></figcaption></figure>
+<h3 id="fresh-install-or-existing-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.2</span> Fresh install or existing configuration<a class="headerlink" href="#fresh-install-or-existing-configuration" title="Link to this section">¶</a></h3>
+<p>Which path Install takes depends on whether the game’s folders already hold a <code>dinput8.ini</code>:</p>
+<ul>
+<li>On a <strong>fresh install</strong> (no configuration anywhere), the device dialog opens automatically as part of Install, as in the steps above.</li>
+<li>Where a configuration <strong>already exists</strong> (an earlier install, or a file you wrote yourself), Install and Reinstall lay down only the wrapper and leave the file alone. To choose or change the captured devices, use <strong>Configure Devices…</strong> on the panel.</li>
+</ul>
+<p class="label-paragraph"><strong>Configure Devices…</strong> opens the same device dialog over the existing configuration. <strong>Preview</strong> shows the proposed changes as a side-by-side diff of each folder’s <code>dinput8.ini</code> before anything is written; <strong>OK</strong> applies them immediately. Only the lines you were asked about change; every rule and comment you wrote yourself is kept.</p>
+<figure class="figure-image"> <img alt="" src="../images/dinput-tap/diff-preview.webp" width="650px"/> <figcaption></figcaption></figure>
+<h2 id="rendering-the-games-spring"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> Rendering the game’s spring<a class="headerlink" href="#rendering-the-games-spring" title="Link to this section">¶</a></h2>
+<p>The tap relays the game’s spring, but rendering it is a per-aircraft choice. On the <strong>Settings</strong> tab, set <strong>Joystick Spring Mode</strong> to <strong>Game Managed (DirectInput Tap)</strong>.</p>
+<figure class="figure-image"> <img alt="" src="../images/dinput-tap/spring-mode.webp" width="450px"/> <figcaption></figcaption></figure>
+<p>For IL-2 Korea pedals, the pedals instance offers the same mode as <strong>Game Managed (DirectInput Tap, Korea Only)</strong>.</p>
+<p>You do not have to select the mode aircraft by aircraft. Set it at the <strong>simulator or aircraft-class level</strong> with the <a href="../settings-model/#offlineglobal-simclass-configuration">offline settings editor</a>, and it becomes the default spring mode for every aircraft in that simulator or class. Individual aircraft can still override it. Setting a class or sim-wide value also works from a loaded aircraft: right-click the <strong>x</strong> icon on the setting and promote it, as described in <a href="../settings-model/#reading-the-settings-tab">How Settings Work</a>.</p>
+<p>Selecting the mode reveals the <strong>Tap: Axis Corrections and Gain</strong> group:</p>
+<ul>
+<li><strong>Tap: Swap X/Y FFB Axes</strong> - swap which game axis lands on which device axis.</li>
+<li><strong>Tap: Invert X Axis FFB</strong> / <strong>Tap: Invert Y Axis FFB</strong> - reverse an axis whose forces push the wrong way.</li>
+<li><strong>Tap: X Axis Spring Gain</strong> / <strong>Tap: Y Axis Spring Gain</strong> - scale the game’s spring force. 100% renders it exactly as the game commanded. The percentage on the slider handle is the current rendered force; pinned at 100% means the gain is clipping at the device’s maximum.</li>
+</ul>
+<h2 id="the-games-other-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.6</span> The game’s other effects<a class="headerlink" href="#the-games-other-effects" title="Link to this section">¶</a></h2>
+<p>The <strong>Tap: Additional Game Effects</strong> group controls everything else the game sends, each type with its own enable toggle and gain:</p>
+<ul>
+<li><strong>Tap: Constant Forces</strong> - stick kicks, recoil, and similar pushes.</li>
+<li><strong>Tap: Periodic Vibrations</strong> - rumble, buffet, and other oscillations.</li>
+<li><strong>Tap: Damper Effects</strong>, <strong>Tap: Inertia Effects</strong>, <strong>Tap: Friction Effects</strong> - the game’s condition effects.</li>
+</ul>
+<figure class="figure-image"> <img alt="" src="../images/dinput-tap/tap-settings.webp" width="650px"/> <figcaption></figcaption></figure>
+<p>Captured effects appear in the effects monitor as <strong>Game Spring (DirectInput Tap)</strong>, <strong>Game Periodic (DirectInput Tap)</strong>, and so on, alongside TelemFFB’s own effects.</p>
+<figure class="figure-image"> <img alt="" src="../images/dinput-tap/effects-monitor.webp" width="650px"/> <figcaption></figcaption></figure>
+<div class="admonition warning">
+<p class="admonition-title">Doubled effects</p>
+<p>A game effect and the equivalent TelemFFB telemetry effect can both be enabled at once (the game’s gunfire rumble plus TelemFFB’s gunfire effect, for example). If an effect feels doubled, disable one of the pair.</p>
+</div>
+<h2 id="when-something-is-misconfigured"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.7</span> When something is misconfigured<a class="headerlink" href="#when-something-is-misconfigured" title="Link to this section">¶</a></h2>
+<p>TelemFFB reports tap misconfigurations on the error line of the effects area while you fly, with the cause and the fix:</p>
+<ul>
+<li>Spring mode is <strong>None (Game Managed)</strong> while the tap is capturing the device. The tap prevents the game’s spring from reaching the device, so this combination leaves no spring at all. Select the tap spring mode, or remove the device from the capture list.</li>
+<li>The tap spring mode is selected but the tap is not capturing, usually because you started the game before TelemFFB.</li>
+</ul>
+<p>The System Settings dialog also warns at configuration time when a selected device needs a tap rule that no enabled simulator provides.</p>
+<h2 id="the-configuration-file"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.8</span> The configuration file<a class="headerlink" href="#the-configuration-file" title="Link to this section">¶</a></h2>
+<p>TelemFFB writes a <code>dinput8.ini</code> configuration beside the wrapper in each game folder. It generates the file once, in the wrapper’s own documented format, and afterwards only <strong>adds</strong> to it (when your device selection changes, for example). It never rewrites existing content, so you can edit the file freely.</p>
+<ul>
+<li>Device rules are keyed by USB ids (<code>FFFF:2054=tap</code>), so they survive device renames.</li>
+<li>The wrapper writes a log for each game to <code>%LOCALAPPDATA%\VPForce-TelemFFB\log\tap</code>, one file per game executable.</li>
+</ul>
+<h2 id="updates-and-removal"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.9</span> Updates and removal<a class="headerlink" href="#updates-and-removal" title="Link to this section">¶</a></h2>
+<p>TelemFFB ships the wrapper and knows which version each game folder holds:</p>
+<ul>
+<li>The status panel marks an outdated copy with “→ v<em>X</em> available”; <strong>Reinstall</strong> updates it in place, keeping the configuration.</li>
+<li>
+<p>At startup, TelemFFB offers to update every outdated wrapper across your simulators in a single prompt, each simulator deselectable.</p>
+<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/update-offer.webp" width="500px"/> <figcaption></figcaption></figure></p>
+</li>
+<li>
+<p>The same update is available any time from the simulator’s tap status panel, which flags the out-of-date copy:</p>
+<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/update-offer_sim-settings.webp" width="650px"/> <figcaption></figcaption></figure></p>
+</li>
+</ul>
+<p class="label-paragraph"><strong>Remove</strong> deletes only TelemFFB’s own wrapper. TelemFFB never removes a <code>dinput8.dll</code> that another program installed, and never removes your configuration file. When you disable the tap or the simulator, TelemFFB offers the same cleanup.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../javascripts/figure-numbering.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+<script src="../../javascripts/katex-config.js"></script>
+</body>
+</html>

@@ -530,9 +530,21 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dinput-tap/">
+<span class="md-ellipsis">
+    
+  
+    DirectInput Tap (DCS, IL-2, BMS)
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -543,8 +555,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_5">
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -554,8 +566,8 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -566,8 +578,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_5_1">
+<nav aria-expanded="false" aria-labelledby="__nav_4_6_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_1">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -856,8 +868,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -868,8 +880,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_6">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -999,8 +1011,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7_11" id="__nav_4_7_11_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -1011,8 +1023,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_6_11">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_7_11">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1732,6 +1744,10 @@
 <p class="admonition-title">Important</p>
 <p>DCS native FFB effects will work even if TelemFFB is not running, provided your device driver and VPforce Configurator are properly installed.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Rendering DCS’s native effects through TelemFFB</p>
+<p>The <a href="../dinput-tap/">DirectInput Tap</a> captures the effects DCS computes and renders them through TelemFFB instead, with a per-type enable and gain for each of the game’s effects, and axis corrections for its spring. See that page for setup.</p>
+</div>
 <p>Module-specific FFB implementation varies. Eagle Dynamics does not publish a comprehensive list of native FFB effects per-module, so discovery typically requires testing in the aircraft itself or consulting module-specific community resources and forums.</p>
 <h3 id="telemffb-effects-supplemental-vs-override"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.2</span> TelemFFB Effects: Supplemental vs. Override<a class="headerlink" href="#telemffb-effects-supplemental-vs-override" title="Link to this section">¶</a></h3>
 <p>TelemFFB operates in one of two ways relative to native DCS FFB:</p>
@@ -1815,7 +1831,7 @@ TelemFFB (if running)
 <li>Open VPforce Configurator and navigate to the debug tab</li>
 <li>Start DCS and load the aircraft/module you want to test</li>
 <li>In the debug tab, you will see effects appearing in real-time as you fly</li>
-<li>Look for effects with the <strong>game</strong> badge—these are native DCS effects that demonstrate what the simulator provides by default</li>
+<li>Look for effects with the <strong>game</strong> badge; these are native DCS effects that demonstrate what the simulator provides by default</li>
 <li>Reproduce specific flight conditions (stall, high-G maneuvers, gunfire, landing) to observe corresponding effects</li>
 <li>Note which DCS effects are active and their behavior with your current VPforce Configurator settings</li>
 </ol>
@@ -1841,6 +1857,12 @@ TelemFFB (if running)
 </ul>
 </li>
 <li>
+<p class="label-paragraph"><strong>Game Managed (DirectInput Tap)</strong></p>
+<ul>
+<li>The game’s own spring, captured by the <a href="../dinput-tap/">DirectInput Tap</a> and rendered by TelemFFB, with per-axis corrections and gain. Requires the tap to be installed and capturing the device.</li>
+</ul>
+</li>
+<li>
 <p class="label-paragraph"><strong>Static Override w/ Hardware Trim</strong></p>
 <ul>
 <li>A static spring with configurable gain is started and will override the game spring effect.</li>
@@ -1859,13 +1881,16 @@ TelemFFB (if running)
 </ul>
 <h2 id="pedal-spring-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Pedal Spring Mode<a class="headerlink" href="#pedal-spring-mode" title="Link to this section">¶</a></h2>
 <p>DCS does not natively support FFB pedals. TelemFFB has implemented basic FFB capabilities.</p>
-<p>The following modes are supported</p>
+<p>The following modes are supported:</p>
 <ul>
 <li>
-<p class="label-paragraph"><strong>None (Game Managed) - NOT RECOMMENDED as the game does not support pedal FFB</strong></p>
+<p class="label-paragraph"><strong>None (Game Managed)</strong></p>
+<ul>
+<li>Do not use. DCS does not send pedal FFB, so pedals will have no centering force.</li>
+</ul>
 </li>
 <li>
-<p class="label-paragraph"><strong>No Spring - (Helicopter default)</strong></p>
+<p class="label-paragraph"><strong>No Spring</strong> (Helicopter default)</p>
 <ul>
 <li>A “zero gain” spring effect will be started to override the game spring effect</li>
 </ul>
@@ -1896,14 +1921,14 @@ TelemFFB (if running)
 </li>
 </ul>
 <p>In Dynamic Spring mode, the pedal force builds from the <em>Pedal Spring Gain</em> setting: the first 25% of the force accumulates between 0 and the aircraft’s V<sub>S</sub> (stall) speed, and the remaining 75% between V<sub>S</sub> and V<sub>NE</sub>. All of the DCS warbirds have default V-speed values built into the application; the V-speeds and gains can be overridden per aircraft in the <strong>Advanced Pedal Mode Settings</strong> (Stall Speed V<sub>S</sub>, V<sub>S</sub> Gain, Never Exceed Speed V<sub>NE</sub>, V<sub>NE</sub> Gain).</p>
-<p class="label-paragraph"><strong>Pedal trimming</strong> is supported for fixed-wing aircraft that have rudder trimmers (default ON for propeller and jet aircraft). Helicopter pedal trimming is not supported: the “instant trim” options in the sims produce a double-input effect that cannot be reconciled with FFB trim following, and modules like the Mi-24 emulate a foot microswitch whose modes do not integrate with it either. In practice this does not matter — helicopters default to the springless pedal mode, which makes pedal trimming unnecessary.</p>
+<p class="label-paragraph"><strong>Pedal trimming</strong> is supported for fixed-wing aircraft that have rudder trimmers (default ON for propeller and jet aircraft). Helicopter pedal trimming is not supported: the “instant trim” options in the sims produce a double-input effect that cannot be reconciled with FFB trim following, and modules like the Mi-24 emulate a foot microswitch whose modes do not integrate with it either. In practice this does not matter; helicopters default to the springless pedal mode, which makes pedal trimming unnecessary.</p>
 <h2 id="collective-spring-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Collective Spring Mode<a class="headerlink" href="#collective-spring-mode" title="Link to this section">¶</a></h2>
 <p>For a VPforce-powered collective, two modes are available for helicopters:</p>
 <ul>
-<li><strong>No Spring</strong> — the collective moves freely, held only by the friction/damper forces in your VPforce Configurator profile.</li>
-<li><strong>Hardware Force Trim</strong> — a spring holds the collective at its trimmed position; hold the trim release button to move it and it locks where you let go.</li>
+<li><strong>No Spring</strong> - the collective moves freely, held only by the friction/damper forces in your VPforce Configurator profile.</li>
+<li><strong>Hardware Force Trim</strong> - a spring holds the collective at its trimmed position; hold the trim release button to move it and it locks where you let go.</li>
 </ul>
-<p>The behavior and button configuration are identical to the MSFS/X-Plane implementation — see <a href="../msfs-xp-helicopters/#collective-spring-mode">Collective Spring Mode</a> for details.</p>
+<p>The behavior and button configuration are identical to the MSFS/X-Plane implementation; see <a href="../msfs-xp-helicopters/#collective-spring-mode">Collective Spring Mode</a> for details.</p>
 <h2 id="low-hydraulic-pressure-effect"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Low Hydraulic Pressure Effect<a class="headerlink" href="#low-hydraulic-pressure-effect" title="Link to this section">¶</a></h2>
 <p>See the <a href="../effects-mechanical/#low-hydraulic-pressure-effect">Low Hydraulic Pressure Effect documentation</a>. The effect works largely the same way for DCS.</p>
 <p>Support is currently limited to:</p>
@@ -1918,7 +1943,7 @@ TelemFFB (if running)
 <p>The primary difference is that for each DCS aircraft, the telemetry must be individually sourced in a unique way per aircraft. As such, the supported aircraft are limited at this time. See the TelemFFB release notes for the supported aircraft.</p>
 <p>For DCS Aircraft, the Hydraulic System Threshold setting has already been coarsely configured for each of the supported aircraft, depending on how the data is being read and what the normal values are.</p>
 <h2 id="autopilot-oscillation-with-ffb"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Autopilot Oscillation with FFB<a class="headerlink" href="#autopilot-oscillation-with-ffb" title="Link to this section">¶</a></h2>
-<p>Some DCS aircraft experience pitch or roll oscillations when engaging autopilot modes (attitude hold, altitude hold, etc.) with an FFB joystick connected. This is caused by a mismatch between the physical stick position and the virtual stick position in the simulator — the autopilot commands a stick position through the spring effect, the FFB device overshoots or lags slightly, and the autopilot overcorrects. DCS has inherent lag in its virtual control loop that amplifies this feedback loop, producing several oscillation cycles before stabilizing — or in some cases, never fully stabilizing.</p>
+<p>Some DCS aircraft experience pitch or roll oscillations when engaging autopilot modes (attitude hold, altitude hold, etc.) with an FFB joystick connected. This is caused by a mismatch between the physical stick position and the virtual stick position in the simulator: the autopilot commands a stick position through the spring effect, the FFB device overshoots or lags slightly, and the autopilot overcorrects. DCS has inherent lag in its virtual control loop that amplifies this feedback loop, producing several oscillation cycles before stabilizing, or in some cases never fully stabilizing.</p>
 <p>This behavior is a DCS-side limitation in how the simulator’s autopilot interacts with DirectInput force feedback. It is not caused by the Rhino hardware, VPforce Configurator, or TelemFFB.</p>
 <p class="label-paragraph"><strong>Diagnostic check:</strong></p>
 <ol>
@@ -1928,8 +1953,8 @@ TelemFFB (if running)
 </ol>
 <p class="label-paragraph"><strong>What you can try:</strong></p>
 <ul>
-<li>Ensure <strong>DCS Axis Tune deadzone</strong> is set to <code>0</code> — do not stack the DCS deadzone on top of a firmware deadzone, as this can make the oscillation worse</li>
-<li><strong>Enable Adaptive Recentering</strong> in VPforce Configurator (Effects tab) — this automatically adjusts the stick center to match the current trim point, reducing the position mismatch that drives the oscillation</li>
+<li>Ensure <strong>DCS Axis Tune deadzone</strong> is set to <code>0</code>; do not stack the DCS deadzone on top of a firmware deadzone, as this can make the oscillation worse</li>
+<li><strong>Enable Adaptive Recentering</strong> in VPforce Configurator (Effects tab); this automatically adjusts the stick center to match the current trim point, reducing the position mismatch that drives the oscillation</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Adaptive Recentering Exception</p>
@@ -1937,7 +1962,7 @@ TelemFFB (if running)
 </div>
 <ul>
 <li>For supported aircraft, TelemFFB’s <strong>Dynamic Deadzone</strong> automatically activates a deadzone when the autopilot engages, preventing the stick from feeding small position errors back into the AP control loop. The deadzone is removed when the AP disengages, restoring full precision</li>
-<li>Not all aircraft are affected equally — the behavior depends on how each module implements autopilot control surfaces</li>
+<li>Not all aircraft are affected equally; the behavior depends on how each module implements autopilot control surfaces</li>
 </ul>
 <p>For detailed troubleshooting steps including input deadzone configuration and manual stick synchronization, see <a href="../../rhino/troubleshooting-maintenance/#autopilot-misbehaving-or-disengaging-unexpectedly">Autopilot Misbehaving or Disengaging Unexpectedly</a>.</p>
 <div class="admonition note">

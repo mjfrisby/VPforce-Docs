@@ -530,9 +530,21 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dinput-tap/">
+<span class="md-ellipsis">
+    
+  
+    DirectInput Tap (DCS, IL-2, BMS)
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -543,8 +555,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_5">
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_6">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -554,8 +566,8 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_5_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4_6_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -566,8 +578,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_4_5_1_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_5_1">
+<nav aria-expanded="true" aria-labelledby="__nav_4_6_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_6_1">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -780,8 +792,8 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
 <span class="md-ellipsis">
     
   
@@ -792,8 +804,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_4_6">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_7">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -923,8 +935,8 @@
 </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4_6_11" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4_6_11" id="__nav_4_6_11_label" tabindex="0">
+<input class="md-nav__toggle md-toggle" id="__nav_4_7_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4_7_11" id="__nav_4_7_11_label" tabindex="0">
 <span class="md-ellipsis">
     
   
@@ -935,8 +947,8 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_4_6_11_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_4_6_11">
+<nav aria-expanded="false" aria-labelledby="__nav_4_7_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_7_11">
 <span class="md-nav__icon md-icon"></span>
             
   
@@ -1640,19 +1652,19 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="trim-autopilot-following"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Trim &amp; Autopilot Following<a class="headerlink" href="#trim-autopilot-following" title="Link to this section">¶</a></h1>
-<p>TelemFFB can move your stick and pedals in response to the simulator’s trim and autopilot, so that trimming the aircraft relieves control pressure and relocates the stick’s resting position — just like in a real aircraft.</p>
+<p>TelemFFB can move your stick and pedals in response to the simulator’s trim and autopilot, so that trimming the aircraft relieves control pressure and relocates the stick’s resting position, just like in a real aircraft.</p>
 <p>Because neither MSFS nor X-Plane has any concept of force feedback, they treat <em>any</em> axis movement as a deliberate control-surface command. If TelemFFB simply let the stick move with the trim and reported that movement to the sim, the sim would read it as <strong>additional elevator input</strong> stacked on top of its own trim, and the aircraft would pitch far more than it should. To prevent this, TelemFFB controls the axis position the sim receives, delivering only a fraction of the physical stick’s movement. Getting that fraction right is what the settings below (and the <a href="../msfs-xp-trim-calibration/">automatic calibration</a>) are for.</p>
 <div class="admonition important">
 <p class="admonition-title">Prerequisite: Axis Control</p>
-<p>Trim and autopilot following require <strong>Axis Control</strong> — TelemFFB must be the source of the axis positions the sim receives. Set that up first, including <strong>unbinding your axes in MSFS</strong>. See <a href="../msfs-xp-axis-spring/">Axis Control &amp; Spring Modes</a>.</p>
+<p>Trim and autopilot following require <strong>Axis Control</strong>: TelemFFB must be the source of the axis positions the sim receives. Set that up first, including <strong>unbinding your axes in MSFS</strong>. See <a href="../msfs-xp-axis-spring/">Axis Control &amp; Spring Modes</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Trim and autopilot following in MSFS should be considered an <strong><em>advanced feature</em></strong>. It works well across a wide range of aircraft but often benefits from per-aircraft tuning of the elevator gains — see <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a>.</p>
+<p>Trim and autopilot following in MSFS should be considered an <strong><em>advanced feature</em></strong>. It works well across a wide range of aircraft but often benefits from per-aircraft tuning of the elevator gains; see <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Helicopters</p>
-<p>This page describes the fixed-wing implementation. Helicopter cyclics have a simpler trim-following model that reads the rotor trim instead — see <a href="../msfs-xp-helicopters/#cyclic-trim-following">Cyclic Trim Following</a>.</p>
+<p>This page describes the fixed-wing implementation. Helicopter cyclics have a simpler trim-following model that reads the rotor trim instead; see <a href="../msfs-xp-helicopters/#cyclic-trim-following">Cyclic Trim Following</a>.</p>
 </div>
 <h2 id="enabling-the-feature"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Enabling the Feature<a class="headerlink" href="#enabling-the-feature" title="Link to this section">¶</a></h2>
 <p>Enable <strong>Axis Control</strong> (<code>telemffb_controls_axes</code>), then in the sub-settings enable <strong>Trim Following</strong> and/or <strong>Autopilot Following</strong> as desired.</p>
@@ -1661,24 +1673,24 @@
 <p>Trim following is tuned with two gains per axis (X = aileron, Y = elevator):</p>
 <ul>
 <li>
-<p class="label-paragraph"><strong>X / Y Trim Gain Physical</strong> — how far the physical stick moves in response to trim. At 100%, full trim travel moves the stick through its full travel. This is a <em>feel</em> setting — it controls how much the stick relocates as you trim.</p>
+<p class="label-paragraph"><strong>X / Y Trim Gain Physical</strong> - how far the physical stick moves in response to trim. At 100%, full trim travel moves the stick through its full travel. This is a <em>feel</em> setting; it controls how much the stick relocates as you trim.</p>
 </li>
 <li>
-<p class="label-paragraph"><strong>X / Y Trim Gain Virtual</strong> — how much of that physical movement is passed on to the simulator. At 20%, only 20% of the stick’s trim-induced movement is reported to the sim as control input. <strong>This is the setting that determines whether the aircraft pitches when you trim</strong> — if it is too high the nose follows the trim too strongly, too low (or too negative) and it fights the trim.</p>
+<p class="label-paragraph"><strong>X / Y Trim Gain Virtual</strong> - how much of that physical movement is passed on to the simulator. At 20%, only 20% of the stick’s trim-induced movement is reported to the sim as control input. <strong>This is the setting that determines whether the aircraft pitches when you trim</strong>: if it is too high the nose follows the trim too strongly, too low (or too negative) and it fights the trim.</p>
 </li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Let TelemFFB measure it</p>
-<p>Do not tune the elevator values by hand — run the <strong><a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a></strong>. TelemFFB flies the aircraft briefly, measures its actual trim response, and computes the correct elevator gain — or a full calibrated curve where the response is not a straight line. The aileron and rudder gains can usually stay at their defaults.</p>
+<p>Do not tune the elevator values manually — run the <strong><a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a></strong>. TelemFFB flies the aircraft briefly, measures its actual trim response, and computes the correct elevator gain — or a full calibrated curve where the response is not linear. The aileron and rudder gains can usually stay at their defaults.</p>
 </div>
 <h2 id="calibrated-trim-curve-elevator-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Calibrated Trim Curve <em>(elevator only)</em><a class="headerlink" href="#calibrated-trim-curve-elevator-only" title="Link to this section">¶</a></h2>
 <p>Some aircraft do not respond to trim in a simple, straight-line fashion, and a single <em>Y Trim Gain Virtual</em> value cannot hold the nose steady across the whole trim range. For these, TelemFFB can measure the aircraft’s actual trim response and store a <strong>curve</strong> instead of a single value.</p>
 <ul>
 <li>
-<p class="label-paragraph"><strong>Use Calibrated Trim Curve</strong> — when enabled, the calibrated curve is used for the elevator axis in place of the static <em>Y Trim Gain Virtual</em> value. Leave it off to use the single value.</p>
+<p class="label-paragraph"><strong>Use Calibrated Trim Curve</strong> - when enabled, the calibrated curve is used for the elevator axis in place of the static <em>Y Trim Gain Virtual</em> value. Leave it off to use the single value.</p>
 </li>
 <li>
-<p class="label-paragraph"><strong>Trim Curve Calibration → Calibrate…</strong> — opens the calibration tool, which flies the aircraft and measures the curve for you. See <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a>.</p>
+<p class="label-paragraph"><strong>Trim Curve Calibration → Calibrate…</strong> - opens the calibration tool, which flies the aircraft and measures the curve for you. See <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a>.</p>
 </li>
 </ul>
 <div class="admonition note">
@@ -1692,13 +1704,13 @@
 <p class="label-paragraph"><strong>TelemFFB reads the new trim position</strong> from the simulator.</p>
 </li>
 <li>
-<p class="label-paragraph"><strong>The stick’s spring center relocates</strong> by the trim amount, scaled by the <em>physical</em> gain. If you were holding pressure against the spring, that pressure relieves as the center moves toward your hand — exactly what trimming does in a real aircraft.</p>
+<p class="label-paragraph"><strong>The stick’s spring center relocates</strong> by the trim amount, scaled by the <em>physical</em> gain. If you were holding pressure against the spring, that pressure relieves as the center moves toward your hand, exactly what trimming does in a real aircraft.</p>
 </li>
 <li>
-<p class="label-paragraph"><strong>An axis value is sent to the simulator.</strong> Your own stick input passes through normally, but the trim-induced part of the stick’s movement is first scaled by the <em>virtual</em> gain — or replaced by the calibrated curve. This is the critical step: the simulator still applies its own trim internally, so if the stick’s full trim movement were reported as control input, it would stack on top of the sim’s trim and the aircraft would pitch away from where you trimmed it. The virtual gain delivers only the fraction that keeps the two in balance.</p>
+<p class="label-paragraph"><strong>An axis value is sent to the simulator.</strong> Your own stick input passes through normally, but the trim-induced part of the stick’s movement is first scaled by the <em>virtual</em> gain, or replaced by the calibrated curve. This is the critical step: the simulator still applies its own trim internally, so if the stick’s full trim movement were reported as control input, it would stack on top of the sim’s trim and the aircraft would pitch away from where you trimmed it. The virtual gain delivers only the fraction that keeps the two in balance.</p>
 </li>
 </ol>
-<p>When the balance is right, trimming while holding the stick still does not change the aircraft’s pitch: the force in your hand relieves and the nose stays put. Where that balance point sits differs per aircraft — which is exactly what the <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a> measures.</p>
+<p>When the balance is right, trimming while holding the stick still does not change the aircraft’s pitch: the force in your hand relieves and the nose stays put. Where that balance point sits differs per aircraft, which is exactly what the <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a> measures.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Some aircraft report trim in a way that does not map cleanly to a position. If elevator trim following behaves erratically, try the <em>use axis position instead of trim position</em> toggle.</p>
@@ -1712,8 +1724,8 @@
 </ul>
 <p>Two settings govern how your hands and the autopilot share the controls:</p>
 <ul>
-<li><strong>Deadzone</strong> — you must move the control further than this before your input is sent to the sim. This lets the autopilot fly without your resting hand fighting it.</li>
-<li><strong>Gain</strong> — the ratio of physical control movement to in-sim control movement once you do move past the deadzone.</li>
+<li><strong>Deadzone</strong> - you must move the control further than this before your input is sent to the sim. This lets the autopilot fly without your resting hand fighting it.</li>
+<li><strong>Gain</strong> - the ratio of physical control movement to in-sim control movement once you do move past the deadzone.</li>
 </ul>
 <figure class="figure-image"> <img alt="Autopilot Following sub-settings for deadzone and gain" height="192px" src="../images/msfs-xp-trim-following/ap-following-settings.webp" width="629px"> <figcaption>Autopilot Following sub-settings for deadzone and gain</figcaption></img></figure>
 <div class="admonition note">
@@ -1722,7 +1734,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Legacy manual tuning</p>
-<p>Before automatic calibration existed, the gains were tuned by hand. The procedure and suggested starting values are preserved in <a href="../msfs-xp-trim-manual/">Manual Trim Tuning (Legacy)</a>.</p>
+<p>Before automatic calibration existed, users tuned the gains manually. The procedure and suggested starting values appear in <a href="../msfs-xp-trim-manual/">Manual Trim Tuning (Legacy)</a>.</p>
 </div>
 </article>
 </div>
