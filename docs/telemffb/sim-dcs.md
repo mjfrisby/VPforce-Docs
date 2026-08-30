@@ -146,7 +146,7 @@ Several different spring modes are available. Different options will be availabl
 
 - **Game Managed (DirectInput Tap)**
 
-    - The game's own spring, captured by the [DirectInput Tap](dinput-tap.md) and rendered by TelemFFB, with per-axis corrections and gain. Requires the tap to be installed and capturing the device.
+    - The game's own spring, captured by the [DirectInput Tap](dinput-tap.md) and rendered by TelemFFB, with per-axis corrections and gain. Requires the tap to be installed and capturing the device - not available if the wrapper is installed in [FFB-Fix only mode](dinput-tap.md#ffb-fix-only-mode-dcs), which captures nothing. Use **None (Game Managed)** there.
 
 - **Static Override w/ Hardware Trim**
 

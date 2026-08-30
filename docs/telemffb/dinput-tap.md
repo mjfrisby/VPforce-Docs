@@ -41,6 +41,8 @@ TelemFFB places a small wrapper library (`dinput8.dll`) in the game's folder, an
 
     ![](images/dinput-tap/tap-section-fresh.png){ width="650px" }
 
+    The screenshots on this page are from DCS, whose section is labelled **DirectInput Tap/FFB-Fix** and carries one control the others do not: the **FFB-Fix only mode (no tap)** toggle, described under [FFB-Fix only mode](#ffb-fix-only-mode-dcs). Leave it off for the tap.
+
 3. Click **Install**.
 4. Choose which devices the tap captures in the device dialog that opens.
 
@@ -61,6 +63,8 @@ Some game folders already carry a `dinput8.dll` wrapper. TelemFFB recognizes the
 
 TelemFFB's wrapper is a **superset** of the original ffb-fix wrapper: every rule in the existing `dinput8.ini` (per-device `block`, `allow`, and scaling rules, `[DeviceOrder]`) keeps working exactly as before, so the upgrade is safe. The file is kept as it is, with two exceptions: TelemFFB adds a `tap` rule for the joystick device selected in TelemFFB, and offers `block` rules for any configured pedal or collective devices the file does not already cover. Rules you already wrote are recognized, not duplicated - a name rule that already blocks your pedals is left alone.
 
+After a confirmed upgrade, the device configuration opens by itself with the proposed additions pre-selected - the same dialog and **Preview** as [Configure Devices](#fresh-install-or-existing-configuration) - and nothing is added to the file until you confirm it there. Cancelling leaves the file exactly as it was.
+
 A `dinput8.dll` that TelemFFB cannot identify is reported as "another dinput8.dll installed", and Install asks the more careful question. If the DLL belongs to a different mod or utility, replacing it will stop that tool from working.
 
 ![](images/dinput-tap/another-dll.png){ width="620px" }
@@ -70,11 +74,52 @@ A `dinput8.dll` that TelemFFB cannot identify is reported as "another dinput8.dl
 Which path Install takes depends on whether the game's folders already hold a `dinput8.ini`:
 
 - On a **fresh install** (no configuration anywhere), the device dialog opens automatically as part of Install, as in the steps above.
-- Where a configuration **already exists** (an earlier install, or a file you wrote yourself), Install and Reinstall lay down only the wrapper and leave the file alone. To choose or change the captured devices, use **Configure Devices...** on the panel.
+- Where a configuration **already exists** (an earlier install, or a file you wrote yourself), Install and Reinstall lay down only the wrapper and leave the file alone. To choose or change the captured devices, use **Configure Devices...** on the panel. The one exception is a recognized ffb-fix upgrade, which opens the device configuration for you as described above.
 
 **Configure Devices...** opens the same device dialog over the existing configuration. **Preview** shows the proposed changes as a side-by-side diff of each folder's `dinput8.ini` before anything is written; **OK** applies them immediately. Only the lines you were asked about change; every rule and comment you wrote yourself is kept.
 
 ![](images/dinput-tap/diff-preview.png){ width="650px" }
+
+## FFB-Fix only mode (DCS)
+
+DCS hands force feedback to the devices it enumerates **first**, and Windows caches that order. A vJoy device or a set of FFB pedals reported ahead of your stick can take the effects the stick should have received - the game creates them on the wrong device, and your stick stays quiet. This is the problem the community **dcs-force-feedback-fix** wrapper was written to solve, and TelemFFB's wrapper is built from it.
+
+The tap solves it as a side effect, because captured effects are routed by device rather than by enumeration order. **FFB-Fix only mode** offers the other half on its own: the wrapper blocks the devices DCS should not drive and puts your joystick first, and then stays out of the way. DCS drives the stick directly, exactly as it would with no wrapper present at all.
+
+Choose it if you want your stick's force feedback fixed while leaving the game's forces entirely to the game.
+
+![](images/dinput-tap/dcs-ffb-fix.png){ width="620px" }
+
+Only DCS offers this. IL-2 and Falcon BMS identify devices by their configured position rather than by enumeration order, so there is nothing for the fix to do there and no toggle appears.
+
+### What you give up
+
+FFB-Fix only mode installs no capture rules, so everything the tap makes possible is unavailable:
+
+- No per-effect enable toggles or gain sliders for the game's effects.
+- No axis corrections for the game's spring, and no live force readout.
+- The game's effects do not appear in the effects monitor.
+- **Joystick Spring Mode** must stay on a TelemFFB mode or **None (Game Managed)**. **Game Managed (DirectInput Tap)** needs a tap that is capturing the device, and in this mode nothing is captured.
+
+TelemFFB's own telemetry-driven effects are unaffected and continue to work.
+
+### Choosing and changing the mode
+
+Set the toggle **before** installing: it decides which configuration **Install** writes.
+
+Afterwards the toggle still moves, but flipping it changes nothing on its own - it states an intent, and the panel says what is actually installed underneath it: *installed as: DirectInput Tap - use Configure Devices to change it*. Switching is a rewrite of the configuration, so **Configure Devices...** is where it happens.
+
+![](images/dinput-tap/tap-to-fix-switch.png){ width="620px" }
+
+In FFB-Fix only mode the dialog offers no capture rules at all. Instead it proposes exactly what the fix needs, each already ticked:
+
+- **Make the game detect this joystick before any other device** - the `[DeviceOrder]` entry that puts your stick first.
+- **Remove the tap rule** for any device still carrying one. Removing them is the reason to be in this mode; untick one to keep it.
+- **Block** the pedals and collective, so the game stops counting them as force-feedback devices at all.
+
+Moving the other way, back to the tap, the dialog offers capture rules as usual.
+
+What the panel reports is read back from `dinput8.ini` itself, not from the toggle. A file you hand-edited, or one left behind by an earlier choice, is described as it actually is.
 
 ## Rendering the game's spring
 
@@ -114,7 +159,7 @@ Captured effects appear in the effects monitor as **Game Spring (DirectInput Tap
 TelemFFB reports tap misconfigurations on the error line of the effects area while you fly, with the cause and the fix:
 
 - Spring mode is **None (Game Managed)** while the tap is capturing the device. The tap prevents the game's spring from reaching the device, so this combination leaves no spring at all. Select the tap spring mode, or remove the device from the capture list.
-- The tap spring mode is selected but the tap is not capturing, usually because you started the game before TelemFFB.
+- The tap spring mode is selected but the tap is not capturing, usually because you started the game before TelemFFB - or, on DCS, because the wrapper is installed in [FFB-Fix only mode](#ffb-fix-only-mode-dcs), which captures nothing by design.
 
 The System Settings dialog also warns at configuration time when a selected device needs a tap rule that no enabled simulator provides.
 
@@ -129,7 +174,7 @@ TelemFFB writes a `dinput8.ini` configuration beside the wrapper in each game fo
 
 TelemFFB ships the wrapper and knows which version each game folder holds:
 
-- The status panel marks an outdated copy with "→ v*X* available"; **Reinstall** updates it in place, keeping the configuration.
+- The status panel marks an outdated copy with "→ v*X* available"; **Reinstall** updates it in place, keeping the configuration. It is available only when there is an update to apply - against a copy already at the shipped version it is greyed out, and the version reads "(current)".
 - At startup, TelemFFB offers to update every outdated wrapper across your simulators in a single prompt, each simulator deselectable.
 
     ![](images/dinput-tap/update-offer.png){ width="500px" }
