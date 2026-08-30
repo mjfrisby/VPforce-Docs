@@ -137,7 +137,7 @@
 
 - **February 24, 2026:**
 
-    - Added **[DCS Force Feedback Fix (dinput8 wrapper)][dcs-force-feedback-fix-dinput8-wrapper]** section in troubleshooting documenting the community dinput8 wrapper that fixes FFB being sent to wrong devices (vJoy, pedals, collective) and FFB effects dying after a USB reconnect mid-mission
+    - Added **[DCS Force Feedback Fix (dinput8 wrapper)](rhino/game-specific-troubleshooting.md#ffb-not-working)** section in troubleshooting documenting the community dinput8 wrapper that fixes FFB being sent to wrong devices (vJoy, pedals, collective) and FFB effects dying after a USB reconnect mid-mission
 
 - **February 7, 2026:**
 
