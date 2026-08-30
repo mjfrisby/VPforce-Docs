@@ -84,10 +84,6 @@ Below the cards, the **Device Settings** area has one tab per configured device.
 
     - Suppress the new-update prompt at startup. The master instance performs the update check, so this is a global setting.
 
-- **Enable DirectInput Devices**
-
-    - List generic DirectInput force-feedback devices (shown with a `[DI]` prefix) alongside VPforce hardware in the device selectors. Requires **DirectLink for TelemFFB**, distributed separately; a status line below the toggle reports the installed DirectLink version. Most VPforce users can leave this off; it exists to drive non-VPforce hardware.
-
 ### Startup Behavior
 
 - **Start with Windows**
@@ -111,6 +107,12 @@ Below the cards, the **Device Settings** area has one tab per configured device.
 - **Closing App Sends to Tray**
 
     - The window close button minimizes the application to the system tray instead of exiting. Exit TelemFFB from the System menu or from the tray icon's right-click context menu.
+
+### Integrations
+
+- **DirectLink for TelemFFB**
+
+    - List DirectInput Force Feedback devices (shown with a `[DI]` prefix) alongside VPforce hardware in the device selectors, so they can be assigned to any role. Requires **DirectLink**, a separate product distributed on its own; a status line below the toggle reports the installed version. Most VPforce users can leave this off - it exists to drive non-VPforce hardware.
 
 ## Simulator Setup Tab
 
