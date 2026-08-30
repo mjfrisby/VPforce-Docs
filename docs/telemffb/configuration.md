@@ -86,7 +86,7 @@ Below the cards, the **Device Settings** area has one tab per configured device.
 
 - **Enable DirectInput Devices**
 
-    - List generic DirectInput force-feedback devices (shown with a `[DI]` prefix) alongside VPforce hardware in the device selectors. Requires the separately distributed **DirectLink** DLL; a status line below the toggle reports the installed DirectLink version. Most VPforce users can leave this off; it exists to drive non-VPforce hardware.
+    - List generic DirectInput force-feedback devices (shown with a `[DI]` prefix) alongside VPforce hardware in the device selectors. Requires **DirectLink for TelemFFB**, distributed separately; a status line below the toggle reports the installed DirectLink version. Most VPforce users can leave this off; it exists to drive non-VPforce hardware.
 
 ### Startup Behavior
 
