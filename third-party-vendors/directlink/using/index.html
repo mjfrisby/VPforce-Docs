@@ -1595,16 +1595,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-devices-own-centering-spring">15.4 
-<span class="md-ellipsis">
-      
-        The device’s own centering spring
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#game-force-feedback-the-directinput-tap">15.5 
+<a class="md-nav__link" href="#game-force-feedback-the-directinput-tap">15.4 
 <span class="md-ellipsis">
       
         Game force feedback: the DirectInput Tap
@@ -1742,7 +1733,8 @@
 <p>Select the <code>[DI]</code>-marked device as an instance’s device on the <strong>Devices</strong> tab of TelemFFB’s System Settings, the same way a VPforce device is selected. From that point on, TelemFFB treats it as its device for that role: every aircraft profile, every effect setting, and every simulator integration in the <a href="../../../telemffb/">TelemFFB manual</a> applies.</p>
 <h2 id="pedals-collectives-and-trim-wheels"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.1</span> Pedals, collectives, and trim wheels<a class="headerlink" href="#pedals-collectives-and-trim-wheels" title="Link to this section">¶</a></h2>
 <p>A DirectInput device can serve any of TelemFFB’s device roles, not just
-the joystick: select it in that role’s selector the same way.
+the joystick.</p>
+<p>Select the desired device in that role’s selector the same way.
 Third-party FFB pedals work as pedals, and a spare force-feedback stick
 makes a serviceable collective or trim wheel.</p>
 <h3 id="the-ffb-axis-choice"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.1.1</span> The FFB Axis choice<a class="headerlink" href="#the-ffb-axis-choice" title="Link to this section">¶</a></h3>
@@ -1768,12 +1760,7 @@ force-capable:</p>
 effects move to the new axis within a moment, no restart.  The choice
 belongs to the selected device: picking a different device starts over
 at Auto, uninverted.</p>
-<p>Two boundaries worth knowing: the joystick role has no axis choice - it
-is always the device’s own X and Y - and the choice governs what
-TelemFFB renders and reads, not what the simulator sees.  The game
-reads the pedal or collective position through its own controller
-bindings, so an axis that reads backwards <em>in the cockpit</em> is fixed in
-the game’s own axis assignment, same as any non-FFB controller.</p>
+<p>Two boundaries worth knowing: the joystick role has no axis choice - it is always the device’s own X and Y - and the choice governs what TelemFFB renders and reads, not what the simulator sees.  The game reads the pedal or collective position through its own controller bindings, so an axis that reads backwards <em>in the cockpit</em> is fixed in the game’s own axis assignment, same as any non-FFB controller.</p>
 <h2 id="what-works"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.2</span> What works<a class="headerlink" href="#what-works" title="Link to this section">¶</a></h2>
 <p>The full TelemFFB effect suite: condition effects (spring, damper, inertia, friction), constant forces, periodic effects, and everything built on them - the MSFS/X-Plane dynamic spring modes, trim and autopilot following, and the per-sim effect libraries.</p>
 <h2 id="what-is-different-from-vpforce-hardware"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.3</span> What is different from VPforce hardware<a class="headerlink" href="#what-is-different-from-vpforce-hardware" title="Link to this section">¶</a></h2>
@@ -1784,16 +1771,14 @@ the game’s own axis assignment, same as any non-FFB controller.</p>
 <li><strong>Force telemetry</strong> from the device is unavailable; features that read it fall back or disable themselves.</li>
 <li>The status bar shows <strong>“DirectInput device”</strong> where a VPforce device would show a firmware version.</li>
 </ul>
-<h2 id="the-devices-own-centering-spring"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.4</span> The device’s own centering spring<a class="headerlink" href="#the-devices-own-centering-spring" title="Link to this section">¶</a></h2>
-<p>Most DirectInput FFB devices apply their own centering spring when no application is in charge. DirectLink switches it off for the session - TelemFFB’s rendered forces would otherwise fight it - and restores it when TelemFFB exits or the device is released, so the device behaves normally for other software afterward. The log states how the handover went.</p>
-<h2 id="game-force-feedback-the-directinput-tap"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.5</span> Game force feedback: the DirectInput Tap<a class="headerlink" href="#game-force-feedback-the-directinput-tap" title="Link to this section">¶</a></h2>
+<h2 id="game-force-feedback-the-directinput-tap"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.4</span> Game force feedback: the DirectInput Tap<a class="headerlink" href="#game-force-feedback-the-directinput-tap" title="Link to this section">¶</a></h2>
 <p>DCS, IL-2, and Falcon BMS compute their own force feedback. TelemFFB holds a DirectLink device exclusively, so those forces can only reach it through the <strong><a href="../../../telemffb/dinput-tap/">DirectInput Tap</a></strong> - for a DirectLink device the Tap is required, not optional. Install it for each simulator you fly, and select the <strong>Game Managed (DirectInput Tap)</strong> spring mode to render the game’s spring. TelemFFB warns in-flight when the configuration would leave the device without a spring.</p>
 <p>IL-2 Korea renders force feedback to pedals as well: a DirectInput pedal set receives the game’s pedal forces through the Tap the same way, with the <strong>Game Managed (DirectInput Tap, Korea Only)</strong> pedal spring mode.</p>
 <figure class="figure-image"> <img alt="" src="../images/tap-panel.webp" width="650px"> <figcaption></figcaption></img></figure>
 <div class="admonition note">
-<p class="admonition-title">DCS: <strong>FFB-Fix only mode</strong> is not for a DirectLink device</p>
-<p>The DCS panel offers an <strong>FFB-Fix only mode (no tap)</strong> toggle. It installs the wrapper with no capture rules at all, so that DCS drives the device itself - which a DirectLink device cannot do, because TelemFFB is holding it exclusively. The game’s forces would reach nothing: not TelemFFB, which was given no rules, and not the device, which the game cannot open.</p>
-<p>TelemFFB refuses the mode while a DirectInput joystick is selected. The switch explains itself and springs back off - that is the refusal, not a fault. The mode exists for VPforce hardware, where the game can drive the device directly.</p>
+<p class="admonition-title">DCS: <strong>FFB-Fix only mode</strong> is not for DirectLink devices</p>
+<p>The DCS panel offers an <strong>FFB-Fix only mode (no tap)</strong> toggle. It installs the wrapper with no capture rules, in a way that “fixes” deficiencies in the way DCS behaves in the presence of multiple FFB devices.  This is only useful for VPforce devices using the traditional game-managed FFB effects.</p>
+<p>TelemFFB refuses the mode while a DirectInput joystick is selected: the switch explains itself and springs back off - that is the refusal, not a fault.</p>
 <p><figure class="figure-image"> <img alt="" src="../images/ffb-fix-toggle.webp" width="620px"/> <figcaption></figcaption></figure></p>
 </div>
 </article>

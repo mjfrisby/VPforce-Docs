@@ -1585,7 +1585,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#no-forces-in-dcs-il-2-or-bms">16.3 
+<a class="md-nav__link" href="#my-device-goes-limp-when-i-start-telemffb">16.3 
+<span class="md-ellipsis">
+      
+        My device goes limp when I start TelemFFB
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#no-forces-in-dcs-il-2-or-bms">16.4 
 <span class="md-ellipsis">
       
         No forces in DCS, IL-2, or BMS
@@ -1594,7 +1603,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#captured-game-effects-feel-wrong-dcs-il-2-bms">16.4 
+<a class="md-nav__link" href="#captured-game-effects-feel-wrong-dcs-il-2-bms">16.5 
 <span class="md-ellipsis">
       
         Captured game effects feel wrong (DCS, IL-2, BMS)
@@ -1603,7 +1612,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#forces-on-the-wrong-axis-or-pushing-the-wrong-way-pedals-collective-trim-wheel">16.5 
+<a class="md-nav__link" href="#forces-on-the-wrong-axis-or-pushing-the-wrong-way-pedals-collective-trim-wheel">16.6 
 <span class="md-ellipsis">
       
         Forces on the wrong axis, or pushing the wrong way (pedals, collective, trim wheel)
@@ -1612,7 +1621,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-device-fights-telemffbs-forces">16.6 
+<a class="md-nav__link" href="#the-device-fights-telemffbs-forces">16.7 
 <span class="md-ellipsis">
       
         The device fights TelemFFB’s forces
@@ -1621,7 +1630,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#where-the-logs-are">16.7 
+<a class="md-nav__link" href="#where-the-logs-are">16.8 
 <span class="md-ellipsis">
       
         Where the logs are
@@ -1746,7 +1755,7 @@
 <h1 id="troubleshooting"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.</span> Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this section">¶</a></h1>
 <h2 id="my-device-is-not-listed"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.1</span> My device is not listed<a class="headerlink" href="#my-device-is-not-listed" title="Link to this section">¶</a></h2>
 <ul>
-<li><strong>DirectLink for TelemFFB</strong> must be on (System Settings, System tab, under <strong>Integrations</strong>), and the status line below it must report an installed DirectLink - not a problem.</li>
+<li><strong>DirectLink for TelemFFB</strong> must be enabled (System Settings, System tab, under <strong>Integrations</strong>), and the status line below it must report an installed DirectLink.</li>
 <li>DirectLink lists devices that expose <strong>force feedback</strong> through DirectInput. A device without FFB, or one whose FFB arrives through a vendor driver rather than DirectInput, will not appear.</li>
 <li>Close other software that may hold the device exclusively.</li>
 </ul>
@@ -1756,7 +1765,9 @@
 <li><strong>The DLL could not be loaded</strong> - DirectLink is missing or damaged; the message says where TelemFFB looked. Reinstall DirectLink.</li>
 <li><strong>The installed DirectLink is too old</strong> - this TelemFFB needs a newer build; both versions are named. Install a current DirectLink.</li>
 </ul>
-<h2 id="no-forces-in-dcs-il-2-or-bms"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.3</span> No forces in DCS, IL-2, or BMS<a class="headerlink" href="#no-forces-in-dcs-il-2-or-bms" title="Link to this section">¶</a></h2>
+<h2 id="my-device-goes-limp-when-i-start-telemffb"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.3</span> My device goes limp when I start TelemFFB<a class="headerlink" href="#my-device-goes-limp-when-i-start-telemffb" title="Link to this section">¶</a></h2>
+<p>This is by design.  Most DirectInput FFB devices apply their own centering spring when no application is in charge. DirectLink disables it when TelemFFB starts and restores it on exit. TelemFFB’s rendered forces would otherwise fight it.</p>
+<h2 id="no-forces-in-dcs-il-2-or-bms"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.4</span> No forces in DCS, IL-2, or BMS<a class="headerlink" href="#no-forces-in-dcs-il-2-or-bms" title="Link to this section">¶</a></h2>
 <p>The game’s forces reach a DirectLink device only through the <a href="../../../telemffb/dinput-tap/">DirectInput Tap</a>. TelemFFB reports the usual causes on the error line of the effects area while you fly:</p>
 <ul>
 <li>The Tap is not installed or not capturing the device - set it up on the simulator’s page in System Settings.</li>
@@ -1769,7 +1780,7 @@
 </ul>
 <figure class="figure-image"> <img alt="" src="../images/tap-error-springmode.webp" width="650px"> <figcaption></figcaption></img></figure>
 <p>There is no working arrangement without the Tap for these simulators: DirectInput force feedback is exclusive, so whichever program opens the device first - the game or TelemFFB - locks the other out entirely. The Tap removes that conflict, which is why it is required rather than optional for a DirectLink device.</p>
-<h2 id="captured-game-effects-feel-wrong-dcs-il-2-bms"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.4</span> Captured game effects feel wrong (DCS, IL-2, BMS)<a class="headerlink" href="#captured-game-effects-feel-wrong-dcs-il-2-bms" title="Link to this section">¶</a></h2>
+<h2 id="captured-game-effects-feel-wrong-dcs-il-2-bms"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.5</span> Captured game effects feel wrong (DCS, IL-2, BMS)<a class="headerlink" href="#captured-game-effects-feel-wrong-dcs-il-2-bms" title="Link to this section">¶</a></h2>
 <p>Everything in this section applies to the game’s own effects as captured by the <a href="../../../telemffb/dinput-tap/">DirectInput Tap</a> - it does not apply to MSFS or X-Plane, where TelemFFB generates all forces itself and the <a href="../../../telemffb/msfs-xp-axis-spring/">spring modes</a> carry their own controls.</p>
 <ul>
 <li><strong>An effect feels doubled.</strong> A captured game effect and the equivalent TelemFFB telemetry effect may both be enabled - the game’s gunfire rumble plus TelemFFB’s gunfire effect, for example. Disable one of the pair.</li>
@@ -1780,7 +1791,7 @@
 <li><strong>Forces are too weak or too strong.</strong> Every captured effect has a gain slider, adjustable from 0% (the effect is disabled) to 200%: the game spring per axis (<strong>Tap: X Axis Spring Gain</strong> / <strong>Tap: Y Axis Spring Gain</strong>) and each other effect type - constant forces, periodic vibrations, damper, inertia, friction - in the <strong>Tap: Additional Game Effects</strong> group. 100% renders the force exactly as the game commanded. The slider handle shows the force being rendered right now; pinned at 100% means the gain is clipping at the device’s maximum.</li>
 </ul>
 <p>TelemFFB’s own telemetry-driven effects, in every simulator, carry their own intensity settings per effect - see the <a href="../../../telemffb/effects-overview/">Effects Reference</a>.</p>
-<h2 id="forces-on-the-wrong-axis-or-pushing-the-wrong-way-pedals-collective-trim-wheel"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.5</span> Forces on the wrong axis, or pushing the wrong way (pedals, collective, trim wheel)<a class="headerlink" href="#forces-on-the-wrong-axis-or-pushing-the-wrong-way-pedals-collective-trim-wheel" title="Link to this section">¶</a></h2>
+<h2 id="forces-on-the-wrong-axis-or-pushing-the-wrong-way-pedals-collective-trim-wheel"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.6</span> Forces on the wrong axis, or pushing the wrong way (pedals, collective, trim wheel)<a class="headerlink" href="#forces-on-the-wrong-axis-or-pushing-the-wrong-way-pedals-collective-trim-wheel" title="Link to this section">¶</a></h2>
 <p>For a <code>[DI]</code> device in a non-joystick role, the <strong>FFB Axis</strong> selector beside the device selection decides which of the device’s axes TelemFFB drives, and <strong>Invert</strong> reverses its direction - see <a href="../using/#the-ffb-axis-choice">The FFB Axis choice</a>.</p>
 <ul>
 <li><strong>The spring holds an axis that does not move</strong> - the wrong axis is selected. Pick the one your feet (or hand) actually move; the list only offers axes the device can render force on.</li>
@@ -1788,9 +1799,9 @@
 <li>Changes apply when settings are saved, simulator running or not.</li>
 </ul>
 <p>This is the device-level control and applies to everything TelemFFB renders. The per-aircraft <strong>Tap: Axis Corrections</strong> settings above are separate: they correct the <em>game’s captured effects</em> specifically, for titles that emit them with a different convention.</p>
-<h2 id="the-device-fights-telemffbs-forces"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.6</span> The device fights TelemFFB’s forces<a class="headerlink" href="#the-device-fights-telemffbs-forces" title="Link to this section">¶</a></h2>
+<h2 id="the-device-fights-telemffbs-forces"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.7</span> The device fights TelemFFB’s forces<a class="headerlink" href="#the-device-fights-telemffbs-forces" title="Link to this section">¶</a></h2>
 <p>If the device’s built-in centering spring never switched off, every rendered force works against it. The log says whether the handover succeeded; if it did not, check the device driver’s own centering or spring setting.</p>
-<h2 id="where-the-logs-are"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.7</span> Where the logs are<a class="headerlink" href="#where-the-logs-are" title="Link to this section">¶</a></h2>
+<h2 id="where-the-logs-are"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.8</span> Where the logs are<a class="headerlink" href="#where-the-logs-are" title="Link to this section">¶</a></h2>
 <p>TelemFFB’s logs live in <code>%LOCALAPPDATA%\VPForce-TelemFFB\log</code>. DirectLink’s activity is part of the TelemFFB log; the Tap writes per-game logs to the <code>tap</code> subfolder. <strong>Help → Create Support Bundle</strong> in TelemFFB collects everything.</p>
 </article>
 </div>

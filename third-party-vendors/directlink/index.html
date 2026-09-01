@@ -1540,10 +1540,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#what-makes-directlink-for-telemffb-different">13.2 
+<a class="md-nav__link" href="#what-makes-directlink-for-telemffb-different-than-other-companion-software">13.2 
 <span class="md-ellipsis">
       
-        What makes DirectLink for TelemFFB different?
+        What makes DirectLink for TelemFFB different than other companion software?
       
     </span>
 </a>
@@ -1708,8 +1708,8 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="directlink-for-telemffb"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.</span> DirectLink for TelemFFB<a class="headerlink" href="#directlink-for-telemffb" title="Link to this section">¶</a></h1>
-<p><a href="../../telemffb/">TelemFFB</a> is widely regarded as the most mature, feature-rich force-feedback companion software in flight simulation. It has traditionally been limited to the VPforce Rhino joystick and the DIY FFB devices built on VPforce electronics, such as pedals, collectives, and even trim wheels.</p>
-<p>DirectLink removes that limit and enables TelemFFB to connect to force-feedback devices from any manufacturer. With DirectLink installed, a generic DirectInput force-feedback device appears in TelemFFB’s device selectors and can be assigned to any role: joystick, pedals, collective, or trim wheel. Users can customize the device axis interpretation with a per-role axis choice and inversion for hardware that renders force on a different axis. The device then receives the full effect suite: dynamic spring forces, trim and autopilot following, buffeting, weapons effects, and the rest. Every aircraft profile, tuned effect, and simulator integration in the <a href="../../telemffb/">TelemFFB manual</a> applies to your device from the moment you select it.</p>
+<p><a href="../../telemffb/">TelemFFB</a> is widely regarded as the most mature, feature-rich force-feedback companion software in flight simulation. But, it has traditionally been limited to the VPforce Rhino joystick and the DIY FFB devices built on VPforce electronics, such as pedals, collectives, and trim-wheels.</p>
+<p>DirectLink removes that limit by enabling TelemFFB to connect to force-feedback devices from any manufacturer. With DirectLink installed, a generic DirectInput force-feedback device appears in TelemFFB’s device selectors and can be assigned to any role: joystick, pedals, collective, or trim-wheel. The device then receives the full effect suite including dynamic spring forces, trim and autopilot following, buffeting, weapons effects, and much more. Every aircraft profile, tuned effect, and simulator integration in the <a href="../../telemffb/">TelemFFB manual</a> is enabled for DirectInput devices.</p>
 <p>DirectLink is not a standalone application. TelemFFB computes the effects; DirectLink carries them to the device.</p>
 <h2 id="every-simulator-telemffb-supports"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.1</span> Every simulator TelemFFB supports<a class="headerlink" href="#every-simulator-telemffb-supports" title="Link to this section">¶</a></h2>
 <table>
@@ -1754,9 +1754,10 @@
 </tbody>
 </table>
 <p>The game’s spring via the Tap is one choice among several in DCS, IL-2, and BMS: all of TelemFFB’s own spring modes - static, dynamic, and the advanced dynamic model - are available as well, selectable per aircraft. And the ancillary effects - buffeting, weapons, runway rumble, and the rest - run regardless of which spring is in charge.</p>
-<h2 id="what-makes-directlink-for-telemffb-different"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2</span> What makes DirectLink for TelemFFB different?<a class="headerlink" href="#what-makes-directlink-for-telemffb-different" title="Link to this section">¶</a></h2>
-<p class="label-paragraph"><strong>No other vendor-agnostic, DirectInput-based companion software supports DCS, IL-2, or BMS.</strong> Via DirectInput, these simulators take exclusive control of a force-feedback device when they load, so an external application cannot reach the device to add effects. Device vendors work around this by speaking to their own hardware through private protocols, a route that does not exist for generic DirectInput hardware.</p>
-<p>DirectLink and the <a href="../../telemffb/dinput-tap/">DirectInput Tap</a> solve it together. The Tap captures the force feedback the game computes, and TelemFFB renders it on the device alongside its own effects, with per-effect controls the games themselves do not offer.</p>
+<h2 id="what-makes-directlink-for-telemffb-different-than-other-companion-software"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2</span> What makes DirectLink for TelemFFB different than other companion software?<a class="headerlink" href="#what-makes-directlink-for-telemffb-different-than-other-companion-software" title="Link to this section">¶</a></h2>
+<p class="label-paragraph"><strong>No other vendor-agnostic, DirectInput-based companion software supports DCS, IL-2, or BMS.</strong></p>
+<p>Via DirectInput, these simulators take exclusive control of a force-feedback device when they load, so an external application cannot reach the device to add effects. Device vendors work around this by speaking to their own hardware through private protocols, a route that does not exist for generic DirectInput hardware.</p>
+<p>DirectLink combined with the <a href="../../telemffb/dinput-tap/">DirectInput Tap</a> TelemFFB feature solve that limitation. The Tap captures the force feedback the game computes, and TelemFFB renders it on the device alongside its own effects, with per-effect controls the games themselves do not offer.</p>
 <h2 id="what-you-need"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3</span> What you need<a class="headerlink" href="#what-you-need" title="Link to this section">¶</a></h2>
 <ul>
 <li><strong>DirectLink</strong> itself. See <a href="installation/">Installation</a>.</li>
