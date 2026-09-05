@@ -1600,7 +1600,80 @@
 <p>Version names match the release tag on the <code>wip</code> branch. The most recent release is expanded below; click any older version to expand it.</p>
 </div>
 <details class="release release--latest" id="latest" open="open">
-<summary>2.1.260815 — August 15, 2026 <span class="latest-badge">latest</span></summary>
+<summary>DRAFT RELEASE NOTES - September 2026 <span class="latest-badge">latest</span></summary>
+<p class="label-paragraph"><strong>Platform</strong></p>
+<ul>
+<li><strong>NEW: Multiple joystick devices, with per-aircraft switching (MSFS / X-Plane)</strong><ul>
+<li>Configure more than one joystick - a stick and a yoke, for example.  Switch between them by changing the primary device in the settings</li>
+<li>MSFS/X-Plane (where we externally provide the control input) get dynamic, per class/aircraft switching of the active joystick device</li>
+</ul>
+</li>
+<li><strong>NEW: The DirectInput Tap (DCS / IL-2 / Falcon BMS)</strong><ul>
+<li>Based on the “dcs-force-feedback-fix” wrapper project</li>
+<li>“The tap” intercepts the games own FFB effects and lets TelemFFB render them locally.  The game is unaware</li>
+<li>New <strong>Game Managed (DirectInput Tap)</strong> spring mode re-renders the game’s spring: trim center follow and force-trim collapse reproduce exactly. IL-2 Korea gets the matching pedal spring mode<ul>
+<li>Per-axis spring and the other five effect types a game may generate get an enable and a gain slider, with the live output strength shown on the slider bar</li>
+</ul>
+</li>
+<li>Per-sim setup in System Settings finds your sims, installs the wrapper and keeps its config in step with your devices. An existing community ffb-fix install is recognized and upgraded in place; DCS can also run the wrapper in <strong>FFB-Fix only mode</strong>, without the tap</li>
+</ul>
+</li>
+<li><strong>NEW: “DCS FFB Fix” installer (DCS)</strong><ul>
+<li>Installs the DirectInput Tap wrapper without the tap - in the same way the “dcs-force-feedback-fix” wrapper is used today</li>
+<li>An option inside the DirectInput Tap configuration section on the DCS settings page</li>
+</ul>
+</li>
+<li><strong>NEW: DirectLink - force feedback devices from any manufacturer</strong><ul>
+<li>An optional integration that lets TelemFFB drive any device exposing force feedback through DirectInput</li>
+<li>Usable in any role</li>
+<li>Enabled in System Settings &gt; Integrations; DirectLink is a separate free download. VPforce-only features (Configurator, firmware effects, force telemetry) degrade cleanly</li>
+</ul>
+</li>
+</ul>
+<p class="label-paragraph"><strong>UI</strong></p>
+<ul>
+<li><strong>NEW: Device configuration UI re-work</strong><ul>
+<li>Device cards with pull-down selection of detected devices</li>
+<li>More logical integration of the old “auto launch” configuration options</li>
+</ul>
+</li>
+<li><strong>NEW: All settings (master and child instances) are now configurable through the master instance system settings</strong><ul>
+<li>The master’s System Settings now carries a panel for each configured device (joystick, pedals, collective, trim wheel) - per-device options are set there and written to that device’s settings directly</li>
+<li>Child instances no longer need (or have) a settings page of their own; they exist to drive their device and process telemetry</li>
+<li>VPforce Configurator (.vpconf) profiles are validated against the device they are selected for, not against whichever instance you happened to open the dialog from</li>
+<li>The USB Product ID column is gone; the device selector is the source. A slot with no device assigned can no longer be made the master or given launch options</li>
+</ul>
+</li>
+<li><strong>NEW: Backup and restore system settings</strong>, from a new File menu on the System Settings dialog</li>
+</ul>
+<p class="label-paragraph"><strong>General fixes</strong></p>
+<ul>
+<li>Fix: exiting TelemFFB could take up to ten seconds before its processes actually closed, and a restart in that window was refused as “already running”</li>
+<li>Fix: effects are now properly freed when the sim exits and when TelemFFB exits preventing scenarios that may result in hung effects on the device</li>
+<li>Fix: resetting the device’s effects no longer strands the effects that were running on it</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS / X-Plane</strong></p>
+<ul>
+<li>Fix: the Advanced G-Force ‘offset’ mode never actually ran on MSFS or X-Plane (it worked on DCS and IL-2) - the dispatch was swallowed on the way to the effect. It runs now</li>
+<li>Fix: the offset-mode G effect’s spring adjuster is back on its original, field-proven parameters - the spring no longer collapses when the offset kicks in</li>
+</ul>
+<p class="label-paragraph"><strong>X-Plane</strong></p>
+<ul>
+<li>Fix: the axis override is released when the FFB device disconnects, and a per-device axis disable is honored</li>
+</ul>
+<p class="label-paragraph"><strong>MSFS</strong></p>
+<ul>
+<li><strong>NEW: In-sim settings panel (toolbar window)</strong><ul>
+<li>View and change the current aircraft’s TelemFFB settings from a toolbar window inside MSFS - toggles, choice pills, and sliders sized for VR laser-pointer/controller use, so you don’t have to leave the cockpit or pull up the desktop app</li>
+<li>System Settings &gt; MSFS now detects your installed MSFS 2020/2024 copies (Microsoft Store or Steam) and installs or updates the panel into the right Community folder with one click, showing the installed version alongside what’s available</li>
+<li>Backed by a local HTTP server that only runs while MSFS is the active sim; can be turned off in System Settings &gt; MSFS &gt; Options if you don’t use the panel</li>
+</ul>
+</li>
+</ul>
+<hr/>
+</details>
+<details class="release">
+<summary>2.1.260815 — August 15,  2026</summary>
 <p class="label-paragraph"><strong>Platform</strong></p>
 <ul>
 <li><strong>NEW: Aircraft profile notes</strong><ul>
@@ -1662,7 +1735,7 @@
 <p class="label-paragraph"><strong>MSFS / X-Plane</strong></p>
 <ul>
 <li><strong>NEW: Automated Elevator Trim-Following Calibration</strong> (fixed wing)<ul>
-<li>See a full demo/walkthrough of the calibration feature here:  <a class="external" href="https://www.youtube.com/watch?v=otveS5mgbu0" target="_blank">https://www.youtube.com/watch?v=otveS5mgbu0</a> </li>
+<li>See a full demo/walkthrough of the calibration feature here: <a class="external" href="https://www.youtube.com/watch?v=otveS5mgbu0" target="_blank">https://www.youtube.com/watch?v=otveS5mgbu0</a></li>
 <li>Trim following has always assumed a 1:1 relationship between trim position and elevator - many aircraft (especially 3rd party) are far from 1:1, causing the nose to wander when trimming with the stick held</li>
 <li>A wizard-style assistant flies a short automated routine, measures your aircraft’s real trim response, and produces a calibrated trim-following curve you can apply and test live in the sim before saving</li>
 <li>Run it at multiple airspeeds and the results blend into a single speed-aware curve; review, delete, export, and import stored calibrations from the dialog</li>
