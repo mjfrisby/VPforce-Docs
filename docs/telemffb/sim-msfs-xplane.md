@@ -19,3 +19,5 @@ Sim-specific effect settings (buffeting, turbulence, engine rumble, and the rest
 
 For advanced per-aircraft integration (re-sourcing a telemetry item from an addon's custom variables, or subscribing to additional ones), see [Telemetry Overrides](telem-overrides.md).
 
+**MSFS only**: TelemFFB also offers an [In-Sim Toolbar Panel](msfs-toolbar-panel.md) that shows and edits the current aircraft's settings from inside the cockpit, without switching to the desktop app.
+

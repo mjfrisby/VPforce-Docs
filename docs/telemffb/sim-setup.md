@@ -26,9 +26,11 @@ Enable each simulator you fly. For the sims that need an export script or plugin
 
 - **Enable**
 
-    - Enable/disable support for MSFS.
+    - Enable/disable support for MSFS. No further configuration is required to connect TelemFFB to MSFS.
 
-    - No further configuration is required
+- **Start in-sim settings panel server**
+
+    - Starts a local HTTP server, active only while MSFS is the connected sim, that powers the optional [In-Sim Toolbar Panel](msfs-toolbar-panel.md). Enabled by default.
 
 ## X-Plane (11/12)
 
