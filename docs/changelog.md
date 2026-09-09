@@ -1,4 +1,8 @@
 # Changelog
+- **September 9, 2026:**
+
+    - Added **[Black Box Not Reading the Grip](products/grip-adapters.md#black-box-not-reading-the-grip)** to the [Grip Adapters](products/grip-adapters.md) page - community-sourced fixes for when a VKB grip is not detected or its buttons do not reach the Rhino: flashing the correct Black Box firmware and pressing Default, running the Black Box in standalone mode, the Gunfighter Mk4 firmware-before-v2.20 requirement, and a continuity check of the connector's three contacts (with a pinout photo) to isolate wiring faults
+
 - **August 16, 2026:**
 
     - Added **[Blade Slap](telemffb/effects-aerodynamics.md#blade-slap)** to the Aerodynamic Effects reference - the new helicopter blade-vortex interaction effect (MSFS, X-Plane, DCS): sharp blade-passage kicks in descents, flares, and loaded turns, with X-Plane's native slap signal (and the *Use Native Slap Telemetry* toggle) or the inferred flight-state method with *Band Center* and *G-Induced Slap Factor* tuning
