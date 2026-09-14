@@ -301,6 +301,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../effect-preview/">
+<span class="md-ellipsis">
+    
+  
+    Effect Preview
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../vpconf-profiles/">
 <span class="md-ellipsis">
     
@@ -681,7 +693,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#overspeed-shake">1.10 
+<a class="md-nav__link" href="#aoastall-buffeting">1.10 
+<span class="md-ellipsis">
+      
+        AoA/Stall Buffeting
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overspeed-shake">1.11 
 <span class="md-ellipsis">
       
         Overspeed Shake
@@ -690,7 +711,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#turbulence-effect-experimental">1.11 
+<a class="md-nav__link" href="#turbulence-effect-experimental">1.12 
 <span class="md-ellipsis">
       
         Turbulence Effect (Experimental)
@@ -699,7 +720,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#wind-effect">1.12 
+<a class="md-nav__link" href="#wind-effect">1.13 
 <span class="md-ellipsis">
       
         Wind Effect
@@ -1106,6 +1127,7 @@
 <p class="admonition-title">Per-sim behavior</p>
 <p class="label-paragraph"><strong>X-Plane</strong> computes blade slap natively, and by default the effect is driven exclusively by that signal (including tail rotor slap). Disabling <em>Use Native Slap Telemetry</em> switches to the inferred method and activates the tuning sliders. <strong>MSFS</strong> and <strong>DCS</strong> have no native signal, so the effect infers slap from flight state: an airspeed band centered on <em>Blade Slap Band Center</em> (higher for heavily disc-loaded helicopters, lower for light rotors), a descent-gradient gate that matches wake re-entry geometry, and a G-loading term weighted by the <em>G-Induced Slap Factor</em> (set it to 0 for slap from descent geometry only). Per-model tuning ships for the default helicopter profiles.</p>
 </div>
+<h2 id="aoastall-buffeting"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> AoA/Stall Buffeting<a class="headerlink" href="#aoastall-buffeting" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>Shakes the stick as the aircraft approaches the stall. Intensity builds from the buffet-onset angle of attack to the stall AoA, and scales with dynamic pressure relative to the aircraft’s <em>own</em> stall speed, so a slow trainer buffets as fully at its stall as a jet does at its, and an accelerated stall at higher speed buffets harder.</p>
 <table>
@@ -1149,7 +1171,7 @@
 <p>The AoA thresholds come from different places per sim. <strong>MSFS</strong> reads the aircraft’s stall AoA directly from telemetry. <strong>X-Plane</strong> reports the aircraft’s stall-warning threshold, and TelemFFB estimates the band around it. <strong>DCS/BMS</strong> provide neither, so the manual <em>Buffet Onset AoA</em> and <em>Stall AoA</em> settings define the band.</p>
 </div>
 <p class="label-paragraph"><strong>Buffet Style</strong> (MSFS/X-Plane): <em>Classic</em> is a steady single-frequency shake, the original effect. <em>Dynamic</em> is irregular and gusty, surging and ebbing like real separated-flow buffet and growing heavier and slower as the stall deepens. The <em>Buffeting Frequency</em> slider applies in both styles; in Dynamic it anchors the character sweep.</p>
-<h2 id="overspeed-shake"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> Overspeed Shake<a class="headerlink" href="#overspeed-shake" title="Link to this section">¶</a></h2>
+<h2 id="overspeed-shake"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.11</span> Overspeed Shake<a class="headerlink" href="#overspeed-shake" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>Airframe shake when the aircraft exceeds safe speed: the effect ramps up from the <em>Start Speed</em> toward maximum intensity as speed continues to build.</p>
 <table>
@@ -1173,7 +1195,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="turbulence-effect-experimental"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.11</span> Turbulence Effect (Experimental)<a class="headerlink" href="#turbulence-effect-experimental" title="Link to this section">¶</a></h2>
+<h2 id="turbulence-effect-experimental"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.12</span> Turbulence Effect (Experimental)<a class="headerlink" href="#turbulence-effect-experimental" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Joystick</p>
 <p>Simulates the small, rapid wind disturbances of turbulent air. The simulator’s relative-wind telemetry is analyzed for short-term fluctuations; rapid wind shifts are isolated through a high-pass filter and converted into randomized force impulses on the stick, a tactile “gusty air” feel. In calm weather the effect is minimal by design, since it works from real wind data.</p>
 <table>
@@ -1211,7 +1233,7 @@
 <p class="admonition-title">Tip</p>
 <p>Start with moderate values: Gust Memory 70%, Attack Speed 40%, Sensitivity 50%, Intensity 30%. Raising <strong>Intensity</strong> without balancing <strong>Sensitivity</strong> makes turbulence feel harsh and random.</p>
 </div>
-<h2 id="wind-effect"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.12</span> Wind Effect<a class="headerlink" href="#wind-effect" title="Link to this section">¶</a></h2>
+<h2 id="wind-effect"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.13</span> Wind Effect<a class="headerlink" href="#wind-effect" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-bms">BMS</span> · Joystick</p>
 <p>Wind-driven forces on the controls for the native-FFB sims, scaled between the overall scaling factor and the maximum intensity cap.</p>
 <table>
