@@ -46,7 +46,9 @@ See [Modifying settings in real time](ui-overview.md#modifying-settings-in-real-
 
 ## Offline/Global Sim/Class Configuration
 
-The offline editor edits sim defaults, class defaults, or a specific aircraft and profile without that aircraft being loaded, using the same main-window settings interface as real-time per-aircraft configuration. To open it, choose the **Offline/Class Default/Sim Default** option from the **Profiles** menu.
+The offline editor edits sim defaults, class defaults, or a specific aircraft and profile without that aircraft being loaded, using the same main-window settings interface as real-time per-aircraft configuration. To open it, choose **Offline Editor/Effect Preview** from the **Profiles** menu. With an aircraft loaded, the **Offline/Preview Mode** button on the Settings tab opens the editor on that aircraft directly.
+
+In the offline editor, most effects can be played on the device at their configured strength. See [Effect Preview](effect-preview.md).
 
 ![](images/aircraft-profiles/offline-editor.png){ width="467px" height="581px" }
 

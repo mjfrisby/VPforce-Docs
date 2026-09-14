@@ -46,6 +46,7 @@ nav:
       - UI Overview: telemffb/ui-overview.md
       - System Settings: telemffb/configuration.md
       - Aircraft Profiles: telemffb/aircraft-profiles.md
+      - Effect Preview: telemffb/effect-preview.md
       - VPforce Configurator Integration: telemffb/vpconf-profiles.md
     - DirectInput Tap (DCS, IL-2, BMS): telemffb/dinput-tap.md
     - Simulator Guides:

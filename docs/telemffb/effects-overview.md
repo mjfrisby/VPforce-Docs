@@ -13,6 +13,10 @@ This reference documents every effect and setting on the Settings tab. The pages
 - **[Basic FFB Effects](effects-ffb.md)** - damper, inertia, friction, deadzone (not telemetry-driven)
 - **[System](effects-system.md)** - per-aircraft VPconf profiles, gain overrides, command runner, pause behavior
 
+## Feel an effect before you fly
+
+Most effects in this reference can be played on your device from the offline editor, at the strength your settings give them, with no simulator running. See [Effect Preview](effect-preview.md) for how it works and which effects have a preview.
+
 ## Browse by simulator
 
 A directory of everything available in your sim, linking into the pages above:

@@ -26,11 +26,13 @@ TelemFFB is laid out with a menu bar, the application status area, device status
 
     - See ***Profile Manager*** documentation
 
-- **Offline Profile\\Sim Default\\Class Default editor**
+- **Offline Editor/Effect Preview**
 
     - Puts the application into offline editing mode. While in offline editing mode, telemetry is paused.
 
-    - See ***Offline Manager*** documentation
+    - Edits sim defaults, class defaults, or a specific aircraft and profile without that aircraft being loaded. See [Offline/Global Sim/Class Configuration](settings-model.md#offlineglobal-simclass-configuration).
+
+    - Effects can be played on the device from here. See [Effect Preview](effect-preview.md).
 
 
 ### Utilities Menu
@@ -188,6 +190,8 @@ The Hide tab is the simplest and reduces information shown to the bare minimum:
 The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface; every effect and setting is documented in the [Effects Reference](effects-overview.md), which mirrors the Settings tab section for section. Changing any setting has an immediate effect.
 
 ![](images/ui-overview/settings-tab.png){ width="606px" height="644px" }
+
+With an aircraft loaded, an **Offline/Preview Mode** button sits in the corner of the tab. It opens the offline editor on that aircraft, where each effect can be played on the device with a **▶** button. See [Effect Preview](effect-preview.md).
 
 The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows; each links to its reference page:
 

@@ -1,4 +1,10 @@
 # Changelog
+- **September 13, 2026:**
+
+    - Added **[Effect Preview](telemffb/effect-preview.md)** - a new page on playing an effect on the device from the offline editor with no simulator running: the two ways into the editor (the Profiles menu and the **Offline/Preview Mode** button for a loaded aircraft), the **▶** and **▶▶** buttons, the tooltip that states what each preview represents, the confirmation for constant-force previews, and a table of every effect that can be previewed with what its preview plays
+    - Updated the [Profiles menu](telemffb/ui-overview.md#profiles-menu) and [Settings tab](telemffb/ui-overview.md#settings-tab) descriptions and the [offline editor](telemffb/settings-model.md#offlineglobal-simclass-configuration) section for the renamed **Offline Editor/Effect Preview** entry and the new corner button
+    - Restored the missing **AoA/Stall Buffeting** heading in the [Aerodynamics](telemffb/effects-aerodynamics.md#aoastall-buffeting) reference, so the entry no longer appears under Blade Slap and links to it resolve
+
 - **September 9, 2026:**
 
     - Added **[Black Box Not Reading the Grip](products/grip-adapters.md#black-box-not-reading-the-grip)** to the [Grip Adapters](products/grip-adapters.md) page - community-sourced fixes for when a VKB grip is not detected or its buttons do not reach the Rhino: flashing the correct Black Box firmware and pressing Default, running the Black Box in standalone mode, the Gunfighter Mk4 firmware-before-v2.20 requirement, and a continuity check of the connector's three contacts (with a pinout photo) to isolate wiring faults
