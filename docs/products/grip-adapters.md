@@ -97,6 +97,28 @@ This allows DIY builders to wire their own button matrices using shift registers
 **Cause:** The controller does not see any axis inputs (expected behavior as Rhino handles axes).  
 **Resolution:** This is normal operation. No action is required. If the cable from the Black Box to the grip is loose or disconnected, reconnect it.
 
+### Black Box Not Reading the Grip
+
+A single blinking LED because the Black Box sees no axis input is normal (see [Axis Issues](#axis-issues)). The entries below cover the grip being **not detected at all** or its **buttons not reaching the Rhino**. Most of these trace to the Black Box, not the Rhino.
+
+!!! tip "First check: does the Black Box see the grip?"
+
+    Open the VKB software (DevConfig) and press the buttons and hats. If they light up, the Black Box and grip are fine - the problem is the bridge to the Rhino (see [RhinoLoopback](#connectivity)). If they do not, the Black Box is not reading the grip - continue below.
+
+**Symptom:** The Black Box blinks all three red LEDs, or the VKB software shows the Black Box but not the grip.  
+**Cause:** Wrong firmware for the grip, or the Black Box is not in standalone mode, or initialization was not finished after flashing. Each grip needs the firmware that matches its exact model and the Black Box color (orange or black).  
+**Resolution:** Flash the firmware for your specific grip in the VKB software, then press **Default** to initialize. In the VKB configurator, disable the base so the Black Box runs **standalone**. If you swap grips, press **Default** after each swap.
+
+**Symptom:** A Gunfighter **Mk4** grip is not recognized on the Rhino but works on the original VKB base.  
+**Cause:** Black Box firmware released **after v2.20** is incompatible with a Gunfighter Mk4 grip on a non-VKB base.  
+**Resolution:** Downgrade the Black Box firmware to a version **before v2.20**; the grip then initializes on the Rhino adapter.
+
+**Symptom:** The Black Box still does not detect the grip after the correct firmware.  
+**Cause:** A broken or poor connection at the grip-to-Black-Box connector, or a loose internal cable.  
+**Resolution:** Verify **continuity** of the three contacts at that connector - **VCC (3.3 V)**, **Signal (SIG)**, and **GND** - from the Black Box side to the grip side, using a multimeter in continuity mode. Each contact should read through; an open contact is the fault. The connector and its pinout are shown below. Reseat the grip's internal cable and the adapter connection, and re-tighten the adapter screws (raised screw heads can lift the small PCB and cause intermittent contact).
+
+![Black Box to grip connector - the three signal contacts (VCC, SIG, GND) and the shield](images/vkb-blackbox-connector.png){ width="400px" }
+
 ---
 
 ## Further Reading

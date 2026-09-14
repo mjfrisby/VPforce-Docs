@@ -1,4 +1,8 @@
 # Changelog
+- **September 9, 2026:**
+
+    - Added **[Black Box Not Reading the Grip](products/grip-adapters.md#black-box-not-reading-the-grip)** to the [Grip Adapters](products/grip-adapters.md) page - community-sourced fixes for when a VKB grip is not detected or its buttons do not reach the Rhino: flashing the correct Black Box firmware and pressing Default, running the Black Box in standalone mode, the Gunfighter Mk4 firmware-before-v2.20 requirement, and a continuity check of the connector's three contacts (with a pinout photo) to isolate wiring faults
+
 - **August 27, 2026:**
 
     - Added **[The DirectInput Tap](telemffb/dinput-tap.md)** - a new page covering the game-side capture wrapper for DCS, IL-2, and Falcon BMS: what it does, per-sim setup from System Settings, the **Game Managed (DirectInput Tap)** spring modes (including IL-2 Korea's FFB pedals), per-effect-type toggles and gains for the game's own effects, the start-order rule, misconfiguration warnings, the configuration file, and updates/removal
@@ -137,7 +141,7 @@
 
 - **February 24, 2026:**
 
-    - Added **[DCS Force Feedback Fix (dinput8 wrapper)](rhino/game-specific-troubleshooting.md#ffb-not-working)** section in troubleshooting documenting the community dinput8 wrapper that fixes FFB being sent to wrong devices (vJoy, pedals, collective) and FFB effects dying after a USB reconnect mid-mission
+    - Added **[DCS Force Feedback Fix (dinput8 wrapper)][dcs-force-feedback-fix-dinput8-wrapper]** section in troubleshooting documenting the community dinput8 wrapper that fixes FFB being sent to wrong devices (vJoy, pedals, collective) and FFB effects dying after a USB reconnect mid-mission
 
 - **February 7, 2026:**
 
