@@ -969,7 +969,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="effect-preview"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> Effect Preview<a class="headerlink" href="#effect-preview" title="Link to this section">¶</a></h1>
-<p>Effect Preview plays one effect on your device with no simulator running. TelemFFB feeds the effect a short script of synthetic telemetry for the condition it responds to, and you feel the result based on the strength if your current setting. That lets you tune an effect on its own, without having to load into a flight and reproduce the conditions that generate the effect via real telemetry.</p>
+<p>Effect Preview plays one effect on your device with no simulator running. TelemFFB feeds the effect a short script of synthetic telemetry for the condition it responds to, and you feel the result based on the strength of your current setting. That lets you tune an effect on its own, without having to load into a flight and reproduce the conditions that generate the effect via real telemetry.</p>
 <p>Settings are not adjustable while the preview is running.  If you want to adjust the intensity, stop the effect first, then make your adjustment and re-run the preview.</p>
 <p>Previews are available in the offline editor mode only. A <strong>▶</strong> button sits next to the intensity slider of every effect that can be previewed.</p>
 <figure class="figure-image"> <img alt="" src="../images/effect-preview/play-buttons.webp" width="650px"> <figcaption></figcaption></img></figure>
@@ -978,7 +978,7 @@
 <p>When no aircraft is loaded, the offline editor can be accessed via the <strong>Profiles → Offline Editor/Effect Preview</strong> menu item or from the button in the unpopulated settings area.  Once opened, select the sim, class, aircraft and profile you want to target in the <strong>Offline Editor Setup</strong> area.</p>
 <figure class="figure-image"> <img alt="" src="../images/effect-preview/access-menu.webp" width="650px"> <figcaption></figcaption></img></figure>
 <h3 id="from-a-loaded-aircraft"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1.2</span> From a loaded aircraft<a class="headerlink" href="#from-a-loaded-aircraft" title="Link to this section">¶</a></h3>
-<p>With an aircraft loaded in the sim, there is a <strong>Offline/Preview Mode</strong> button above the settings area that will open the offline editor already set to that aircraft and profile.  From their you can directly access the previews for the effects and adjust your settings as desired.</p>
+<p>With an aircraft loaded in the sim, there is an <strong>Offline/Preview Mode</strong> button above the settings area that will open the offline editor already set to that aircraft and profile.  From there you can directly access the previews for the effects and adjust your settings as desired.</p>
 <figure class="figure-image"> <img alt="" src="../images/effect-preview/access-button.webp" width="650px"/> <figcaption></figcaption></figure>
 <div class="admonition note">
 <p class="admonition-title">Telemetry pauses in offline mode</p>
@@ -1010,7 +1010,7 @@
 <p>A constant-force preview asks you to confirm before it starts. Grasp the controls firmly before you click <strong>OK</strong>. The preview adds a light centering spring so the axis has something to push against, and no other spring.</p>
 </div>
 <h2 id="what-can-be-previewed"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> What can be previewed<a class="headerlink" href="#what-can-be-previewed" title="Link to this section">¶</a></h2>
-<p>Each preview is scripted to reach the effect’s configured intensity and stay there long enough to judge it: sweeps hold at each end, holds run at the peak, motion effects run the full travel and land the end clunk, and weapon effects fire a short burst. Rotor effects assume a rotor turning at 300 rpm with the profile’s <strong>Rotor Blade Count</strong>.</p>
+<p>Each preview is scripted to reach the effect’s configured intensity and stay there long enough to judge it: sweeps hold at each end, holds run at the peak, motion effects run the full travel and land the end clunk, and weapon effects fire short bursts or single releases. Rotor effects assume a rotor turning at 300 rpm with the profile’s <strong>Rotor Blade Count</strong>.</p>
 <p>Each effect links to its entry in the <a href="../effects-overview/">Effects Reference</a>.</p>
 <h3 id="aerodynamics"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> Aerodynamics<a class="headerlink" href="#aerodynamics" title="Link to this section">¶</a></h3>
 <table>
@@ -1238,7 +1238,7 @@
 <tr>
 <td><a href="../effects-weapons/#gunfire">Gunfire</a></td>
 <td>DCS, BMS</td>
-<td>a 2 s gun burst</td>
+<td>three 2 s bursts with pauses between, slow to fast: a 600 rpm cannon, a 1500 rpm cannon, then a 6000 rpm rotary cannon</td>
 </tr>
 <tr>
 <td><a href="../effects-weapons/#weapons-release">Weapons Release</a></td>
@@ -1276,7 +1276,7 @@
 <tr>
 <td>Weapons: gunfire</td>
 <td>IL2</td>
-<td>a 2 s gun burst (basic gunfire mode)</td>
+<td>three 2 s bursts with pauses between; in dynamic gunfire mode a 30 mm cannon, a 20 mm cannon, then a 7.92 mm machine gun, in basic mode the fixed-rate shake three times</td>
 </tr>
 <tr>
 <td>Weapons: bomb release</td>
