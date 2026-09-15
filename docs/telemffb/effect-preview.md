@@ -1,6 +1,6 @@
 # Effect Preview
 
-Effect Preview plays one effect on your device with no simulator running. TelemFFB feeds the effect a short script of synthetic telemetry for the condition it responds to, and you feel the result based on the strength if your current setting. That lets you tune an effect on its own, without having to load into a flight and reproduce the conditions that generate the effect via real telemetry.
+Effect Preview plays one effect on your device with no simulator running. TelemFFB feeds the effect a short script of synthetic telemetry for the condition it responds to, and you feel the result based on the strength of your current setting. That lets you tune an effect on its own, without having to load into a flight and reproduce the conditions that generate the effect via real telemetry.
 
 Settings are not adjustable while the preview is running.  If you want to adjust the intensity, stop the effect first, then make your adjustment and re-run the preview.
 
@@ -18,7 +18,7 @@ When no aircraft is loaded, the offline editor can be accessed via the **Profile
 
 ### From a loaded aircraft
 
-With an aircraft loaded in the sim, there is a **Offline/Preview Mode** button above the settings area that will open the offline editor already set to that aircraft and profile.  From their you can directly access the previews for the effects and adjust your settings as desired.
+With an aircraft loaded in the sim, there is an **Offline/Preview Mode** button above the settings area that will open the offline editor already set to that aircraft and profile.  From there you can directly access the previews for the effects and adjust your settings as desired.
 
 ![](images/effect-preview/access-button.png){ width="650px" }
 
@@ -56,7 +56,7 @@ Constant force effects have the potential to fling the stick around and move in 
 
 ## What can be previewed
 
-Each preview is scripted to reach the effect's configured intensity and stay there long enough to judge it: sweeps hold at each end, holds run at the peak, motion effects run the full travel and land the end clunk, and weapon effects fire a short burst. Rotor effects assume a rotor turning at 300 rpm with the profile's **Rotor Blade Count**.
+Each preview is scripted to reach the effect's configured intensity and stay there long enough to judge it: sweeps hold at each end, holds run at the peak, motion effects run the full travel and land the end clunk, and weapon effects fire short bursts or single releases. Rotor effects assume a rotor turning at 300 rpm with the profile's **Rotor Blade Count**.
 
 Each effect links to its entry in the [Effects Reference](effects-overview.md).
 
@@ -117,7 +117,7 @@ Each effect links to its entry in the [Effects Reference](effects-overview.md).
 
 | Effect | Sims | The preview plays |
 |---|---|---|
-| [Gunfire](effects-weapons.md#gunfire) | DCS, BMS | a 2 s gun burst |
+| [Gunfire](effects-weapons.md#gunfire) | DCS, BMS | three 2 s bursts with pauses between, slow to fast: a 600 rpm cannon, a 1500 rpm cannon, then a 6000 rpm rotary cannon |
 | [Weapons Release](effects-weapons.md#weapons-release) | DCS, BMS | three weapon releases a second apart |
 | [Countermeasures](effects-weapons.md#countermeasures) | DCS, BMS | four flares half a second apart |
 
@@ -129,7 +129,7 @@ IL-2's replacement shake effects live under [IL2 Shake Master](effects-basic.md#
 |---|---|---|
 | Buffet | IL2 | the sim's stall buffet at full amplitude and 12 Hz, scaled by the profile's factor, 5 s |
 | Runway Rumble | IL2 | rolling on a rough surface for 4 s (constant force) |
-| Weapons: gunfire | IL2 | a 2 s gun burst (basic gunfire mode) |
+| Weapons: gunfire | IL2 | three 2 s bursts with pauses between; in dynamic gunfire mode a 30 mm cannon, a 20 mm cannon, then a 7.92 mm machine gun, in basic mode the fixed-rate shake three times |
 | Weapons: bomb release | IL2 | one bomb release |
 | Weapons: rocket launch | IL2 | one rocket launch |
 
