@@ -7,7 +7,7 @@ TelemFFB emulates helicopter force trim for both MSFS and X-Plane, and provides 
 Helicopter force trim emulation is supported for both MSFS and X-Plane. To enable this feature of TelemFFB, enable the Force Trim checkbox and then in the sub-settings, configure a button on your joystick to serve as the trim release button.
 
 !!! note
-    If you enable force trim, but do not set a button, you will see an error indication for the simulator. The Trim Release button is **mandatory**, the Trim Reset button is **optional**.
+    If you enable force trim, but do not set a button, you will see an error indication for the simulator. Until a button is set, the cyclic falls back to the no-spring behavior, so the aircraft stays controllable. The Trim Release button is **mandatory**, the Trim Reset button is **optional**.
 
 ![](images/msfs-xp-helicopters/force-trim-settings.png){ width="539px" height="166px" }
 
@@ -33,9 +33,14 @@ Helicopter force trim emulation is supported for both MSFS and X-Plane. To enabl
 
 - **Force Trim Switch Simvar**
 
-    - When enabled, TelemFFB will watch the configured L:Var and
+    - When enabled, TelemFFB will watch the configured variable and
       enable/disable the hardware force trim based on the 0/1 state
       of said variable.
+
+    - The variable can be an `L:Var`, a SimVar, or an MSFS 2024 input
+      event written as `B:EVENT_NAME`. See
+      [Input events](telem-overrides.md#input-events-b-variables) for
+      how to find the name of a cockpit switch.
 
     - Some aircraft (like the Taog's Hangar UH-1) have a switch in the cockpit.
       The default profile for this aircraft already has the correct

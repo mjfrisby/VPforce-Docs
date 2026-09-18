@@ -6,19 +6,27 @@ Several addon aircraft receive treatment beyond the standard aircraft classes. T
 - **Class or profile defaults** tailored to the aircraft: spring modes, force trim, or non-standard axis variables pre-configured to match how the addon works.
 - **[Telemetry overrides](telem-overrides.md)** in the shipped default profile: telemetry items re-sourced from the addon's custom variables, or additional items subscribed.
 
-!!! important "Additional profiles for these aircraft: clone, don't create from scratch"
-    Everything on this page is carried by the aircraft's shipped default profile: the class assignment, the curated settings, and any telemetry overrides. If you need an additional profile (a livery whose name does not match the default pattern, for example), you must **clone it from the default profile**. A profile created from scratch will not carry the special treatment, and the integration silently stops working. See [Aircraft Profiles](aircraft-profiles.md) for cloning.
+!!! important "A new profile for one of these aircraft"
 
-| Aircraft | Sim | Class |
-|---|---|---|
-| [HPG Airbus H145 / H160](#hpg-airbus-h145-h160) | MSFS | `HPGHelicopter` |
-| [FlyInside B206 / B47](#flyinside-b206-b47) | MSFS | `FlyInsideHelicopter` |
-| [CowanSim fleet](#cowansim-helicopters) (10 models) | MSFS | `CowanSimHelicopter` |
-| [Taog's Hangar H500C / OH6A](#taogs-hangar-h500c-oh6a) | MSFS | `TaogH500Helicopter` |
-| [Taog's Hangar UH-1H / Bell 205-A1B](#taogs-hangar-uh-1h-bell-205-a1b) | MSFS | `Helicopter` (standard) |
-| [Simfocus Bell 407](#simfocus-bell-407) | MSFS | `SASHelicopter` |
-| [A2A Comanche (PA-24)](#a2a-comanche-pa-24) | MSFS | `PropellerAircraft` (standard) |
-| [X-Trident AW109SP](#x-trident-aw109sp) | X-Plane | `XAW109Helicopter` |
+    You may need a profile of your own, for example for a livery whose name the built-in match string does not fit. What the new profile needs depends on where the aircraft's special treatment lives:
+
+    - **On the class.** The class carries its own code, its class defaults and its telemetry overrides. Select the class in the New Aircraft Wizard and the integration works.
+    - **In the built-in profile.** Tuned settings and some telemetry overrides belong to one built-in profile. A new profile gets them only if you **clone it from that built-in profile**.
+
+    The table says which applies. When in doubt, clone: a clone always carries everything. See [Aircraft Profiles](aircraft-profiles.md) for the wizard, and [Telemetry Overrides](telem-overrides.md#where-an-aircrafts-overrides-come-from) for how the tiers combine.
+
+| Aircraft | Sim | Class | A new profile needs |
+|---|---|---|---|
+| [HPG Airbus H145 / H160](#hpg-airbus-h145-h160) | MSFS | `HPGHelicopter` | A clone. The wizard enforces it. |
+| [FlyInside B206 / B47](#flyinside-b206-b47) | MSFS | `FlyInsideHelicopter` | A clone. The wizard enforces it. |
+| [CowanSim fleet](#cowansim-helicopters) (10 models) | MSFS | `CowanSimHelicopter` | The class. Clone for the R66. |
+| [Taog's Hangar H500C / OH6A](#taogs-hangar-h500c-oh6a) | MSFS | `TaogH500Helicopter` | The class |
+| [Taog's Hangar UH-1H / Bell 205-A1B](#taogs-hangar-uh-1h-bell-205-a1b) | MSFS | `Helicopter` (standard) | A clone |
+| [Simfocus Bell 407](#simfocus-bell-407) | MSFS | `SASHelicopter` | The class |
+| [A2A Comanche (PA-24)](#a2a-comanche-pa-24) | MSFS | `PropellerAircraft` (standard) | A clone |
+| [X-Trident AW109SP](#x-trident-aw109sp) | X-Plane | `XAW109Helicopter` | The class |
+
+For HPG and FlyInside, some of the variables differ between the aircraft of the class, so they stay in each built-in profile. The UH-1H and the Comanche use a standard class, so everything special about them is in the profile.
 
 ## HPG Airbus H145 / H160
 
@@ -36,7 +44,7 @@ See [FlyInside Helicopters](msfs-xp-helicopters.md#flyinside-helicopters-msfs-on
 
 The entire CowanSim fleet has default profiles with the `CowanSimHelicopter` class: **206B3, 206L3, 222B, 222UT, 500E, H125, H130, R22, R66, and S-76C++**. (The H125 match pattern deliberately excludes the stock Asobo H125 variants.)
 
-What's different: with Axis Control enabled, the cyclic positions are sent through **CowanSim's own axis variables** (`L:COWANSIM_CYCLIC_X_POSITION` / `L:COWANSIM_CYCLIC_Y_POSITION`) rather than the standard cyclic events, pre-configured via the Custom Axis Variables feature in the class defaults. The R66 profile additionally re-sources the hydraulic-switch telemetry from CowanSim's custom variable.
+What's different: with Axis Control enabled, the cyclic positions are sent through **CowanSim's own axis variables** (`L:COWANSIM_CYCLIC_X_POSITION` / `L:COWANSIM_CYCLIC_Y_POSITION`) rather than the standard cyclic events, pre-configured via the Custom Axis Variables feature in the class defaults. The R66 profile additionally re-sources the hydraulic-switch telemetry from CowanSim's custom variable. That override belongs to the R66 profile, not to the class, so a new R66 profile must be cloned from the built-in one.
 
 ## Taog's Hangar H500C / OH6A
 

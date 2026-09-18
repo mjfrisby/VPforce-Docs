@@ -24,7 +24,7 @@ When an aircraft loads, every setting is resolved through layers. The most speci
 2. **Class defaults** - defaults per aircraft class (PropellerAircraft, JetAircraft, TurbopropAircraft, GliderAircraft, Helicopter, and so on). A helicopter and a jet start from different baselines automatically.
 3. **Your sim-wide overrides** - values you configured at the sim level in the offline editor, or promoted to a sim-level override. They apply to every aircraft in that simulator.
 4. **Your class-wide overrides** - values you configured at the class level in the offline editor, or promoted to a class-level override. They apply to every aircraft of that class.
-5. **Shipped aircraft profiles** - TelemFFB ships tuned profiles for many specific aircraft across all supported sims. Aircraft are matched by a name pattern, so different liveries of the same aircraft match the same profile. The **Matched Model** field in the status area shows which pattern matched.
+5. **Shipped aircraft profiles** - TelemFFB ships tuned profiles for many specific aircraft across all supported sims. Aircraft are matched by a match string, so different liveries of the same aircraft match the same profile. When several match strings fit an aircraft, the most specific one wins, and only that one profile contributes. The **Matched Model** field in the status area shows which match string won. See [How TelemFFB Matches an Aircraft](aircraft-profiles.md#how-telemffb-matches-an-aircraft).
 6. **Your aircraft overrides** - changes you make for the specific aircraft. These always win.
 
 Note where the shipped profiles sit: a shipped profile's aircraft-specific tuning takes precedence over your sim-wide and class-wide overrides. Only an override for the specific aircraft outranks it.
@@ -71,4 +71,6 @@ Profile creation, selection, import and export are covered in [Aircraft Profiles
 
 ## Adding an aircraft that has no profile
 
-If TelemFFB does not recognize a loaded aircraft, it gets only the simulator's base defaults, which is not a working effect setup. The aircraft class decides which spring model, effect set, and class defaults apply, and TelemFFB cannot know the class until you choose it. Create a profile for the aircraft, choosing its class, with the [Add New Aircraft wizard](aircraft-profiles.md#adding-new-aircraft-support).
+If TelemFFB does not recognize a loaded aircraft, it gets only default settings, which is rarely a good effect setup. The aircraft class decides which spring model, effect set, and class defaults apply. MSFS reports a basic aircraft type, so an unknown MSFS aircraft starts with the defaults of that class; a helicopter gets the Helicopter class defaults, for example. In the other simulators TelemFFB cannot know the class until you choose it.
+
+The controls on the Settings tab are disabled for an unknown aircraft, because it has no profile to store a change in. Create a profile for the aircraft, choosing its class, with the [Add New Aircraft wizard](aircraft-profiles.md#adding-new-aircraft-support).

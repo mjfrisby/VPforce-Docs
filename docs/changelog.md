@@ -1,4 +1,13 @@
 # Changelog
+- **September 17, 2026:**
+
+    - Rewrote **[Aircraft Profiles](telemffb/aircraft-profiles.md)** for the new profile matching: [how an aircraft is matched](telemffb/aircraft-profiles.md#how-telemffb-matches-an-aircraft), the [Multiple matching profiles](telemffb/aircraft-profiles.md#when-your-profile-and-a-built-in-both-match) prompt and merge, and the [split button](telemffb/aircraft-profiles.md#giving-the-loaded-aircraft-its-own-profile). Updated the New Aircraft Wizard steps and screenshots.
+    - Updated **[Telemetry Overrides](telemffb/telem-overrides.md)** with the [Class, Default and User tiers](telemffb/telem-overrides.md#where-an-aircrafts-overrides-come-from), the editor's Source column, and [input events](telemffb/telem-overrides.md#input-events-b-variables) (`B:` variables).
+    - Corrected the cloning guidance in **[Aircraft with Special Treatment](telemffb/msfs-xp-special-aircraft.md)**: only some of these aircraft need a cloned profile, and the roster now says which.
+    - Added **[Device recovery](telemffb/devices-instances.md#device-recovery)** and updated the [device status indications](telemffb/ui-overview.md#deviceinstance-status-indications).
+    - Added **Device problems** and **[Reading the log](telemffb/troubleshooting.md#reading-the-log)** to Troubleshooting.
+    - Updated [UI Overview](telemffb/ui-overview.md), [How Settings Work](telemffb/settings-model.md) and the [helicopter force trim](telemffb/msfs-xp-helicopters.md#helicopter-force-trim) notes to match.
+
 - **September 13, 2026:**
 
     - Added **[Effect Preview](telemffb/effect-preview.md)** - a new page on playing an effect on the device from the offline editor with no simulator running: the two ways into the editor (the Profiles menu and the **Offline/Preview Mode** button for a loaded aircraft), the **▶** and **▶▶** buttons, the tooltip that states what each preview represents, the confirmation for constant-force previews, and a table of every effect that can be previewed with what its preview plays

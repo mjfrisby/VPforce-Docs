@@ -75,6 +75,17 @@ With more than one joystick configured, aircraft settings gain a **Device** sect
 
 If you later replace a configured device in System Settings, TelemFFB offers to update the aircraft settings that reference the old one.
 
+## Device recovery
+
+A device can drop off while TelemFFB runs: a cable gets pulled, a hub resets, or the device is power cycled. TelemFFB recovers without a restart.
+
+- **A device that drops off** shows a yellow icon. TelemFFB looks for it by its USB identity, not by the port it was on, so plugging it into a different port or hub works. The retries slow down the longer the device stays away.
+- **A device that is missing at startup** shows a red icon. TelemFFB keeps checking and opens the device when it appears.
+- **After a power cycle** the firmware has lost what it held in memory. TelemFFB sends the active [VPforce Configurator profile](vpconf-profiles.md), the gain overrides and the configured deadzone again. The effects that were running resume.
+- **If a different VPforce device is connected** while the configured one is missing, TelemFFB asks once whether to use it instead. Answer Yes and the selection is saved, the same as choosing it on the device card.
+
+Changing a device on the Devices tab also takes effect at once. See [System Settings](configuration.md).
+
 ## Working with child instances
 
 After starting TelemFFB with auto-launch enabled, all of the device icons appear in the master instance's **Active Devices** area. From there you can monitor each device's status and switch between devices to configure their settings; each device has its own settings for every aircraft, so your pedals and joystick are tuned independently. See [Active Devices Area](ui-overview.md#active-devices-area) for details.

@@ -34,6 +34,10 @@ TelemFFB is laid out with a menu bar, the application status area, device status
 
     - Effects can be played on the device from here. See [Effect Preview](effect-preview.md).
 
+- **Reset Dismissed Profile Prompts**
+
+    - Brings back every **Multiple matching profiles** prompt that you answered with "Keep mine" or "Don't ask again". Your configuration does not change. The item is greyed out when there is nothing to reset. See [When Your Profile and a Built-In Both Match](aircraft-profiles.md#when-your-profile-and-a-built-in-both-match).
+
 
 ### Utilities Menu
 
@@ -99,6 +103,8 @@ To switch between devices for configuration, simply click on the appropriate dev
 
 The device icons serve the dual purpose of displaying the status of both the device connection as well as the individual TelemFFB instances which are ultimately controlling the multiple devices.
 
+The label under each icon names the hardware that holds the role. The icon pulses when its state changes. Hover an icon to read its current state.
+
 **Green Status Icon:**
 
 ![](images/ui-overview/status-running.png){ width="55px" height="55px" }
@@ -109,13 +115,13 @@ A green status icon indicates that the device is properly connected to its insta
 
 ![](images/ui-overview/status-paused.png){ width="47px" height="53px" }
 
-A yellow status icon indicates that the device is no longer connected to its instance of TelemFFB
+A yellow status icon indicates that the device was connected and has dropped off. TelemFFB looks for it again on its own, so no restart is needed. See [Device recovery](devices-instances.md#device-recovery).
 
 **Red Status Icon:**
 
 ![](images/ui-overview/status-error.png){ width="54px" height="54px" }
 
-A red status icon indicates that the child instance of TelemFFB has crashed, or there is an error condition present for that instance.
+A red status icon indicates one of three things: the configured device was not found when TelemFFB started, the child instance of TelemFFB has crashed, or there is an error condition present for that instance. A device that was not found is picked up as soon as it appears.
 
 ### Application Status Area
 
@@ -142,7 +148,9 @@ A red status icon indicates that the child instance of TelemFFB has crashed, or 
 
 - **Matched Model**
 
-    - Displays the match string that correlates to the aircraft profile that has been loaded for the detected aircraft
+    - Displays the match string of the aircraft profile that matched the detected aircraft. When several match strings fit, the most specific one wins; see [How TelemFFB Matches an Aircraft](aircraft-profiles.md#how-telemffb-matches-an-aircraft).
+
+    - The **split button** beside it gives the loaded aircraft a more specific profile of its own. See [Giving the Loaded Aircraft Its Own Profile](aircraft-profiles.md#giving-the-loaded-aircraft-its-own-profile).
 
 - **Active Profile**
 
@@ -158,7 +166,7 @@ A red status icon indicates that the child instance of TelemFFB has crashed, or 
 
 - **Telem Ovd:**
 
-    - Shown when the loaded aircraft has active [telemetry overrides](telem-overrides.md), with counts by tier, e.g. "Default (4) + User (2)" for four overrides from the shipped profile plus two of your own. Hover for the full override list. Note that additional profiles for such an aircraft must be **cloned** from the default profile to pick up the overrides; see the [overrides guide](telem-overrides.md).
+    - Shown when the loaded aircraft has active [telemetry overrides](telem-overrides.md), with a count for each tier. "Class (4) + Default (2) + User (1)" means four overrides from the aircraft class, two from the built-in profile and one of your own. Hover for the full list. The [overrides guide](telem-overrides.md#where-an-aircrafts-overrides-come-from) explains the tiers.
 
 ### Profile Notes
 
@@ -190,6 +198,11 @@ The Hide tab is the simplest and reduces information shown to the bare minimum:
 The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface; every effect and setting is documented in the [Effects Reference](effects-overview.md), which mirrors the Settings tab section for section. Changing any setting has an immediate effect.
 
 ![](images/ui-overview/settings-tab.png){ width="606px" height="644px" }
+
+Two prompts can appear above the tab:
+
+- **No Profile Found for** (red) - the loaded aircraft matches no profile. The controls on the tab are disabled until you create one, because there is no profile to store a change in. Click the prompt to open the [New Aircraft Wizard](aircraft-profiles.md#adding-new-aircraft-support).
+- **Multiple matching profiles detected** (teal) - one of your own profiles and a built-in profile both match the aircraft. Click the prompt to [choose what to do](aircraft-profiles.md#when-your-profile-and-a-built-in-both-match).
 
 With an aircraft loaded, an **Offline/Preview Mode** button sits in the corner of the tab. It opens the offline editor on that aircraft, where each effect can be played on the device with a **▶** button. See [Effect Preview](effect-preview.md).
 

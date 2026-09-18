@@ -8,6 +8,8 @@ Effects driven by the mechanical state of the aircraft (engine vibration, moving
 
 For aircraft with a control lock (gust lock): while the configured sim variable reports the lock engaged, TelemFFB holds the controls firmly in place.
 
+The variable can be an `L:Var`, a SimVar, or an MSFS 2024 input event written as `B:EVENT_NAME`. See [Input events](telem-overrides.md#input-events-b-variables) for how to find the name of a cockpit control.
+
 <!-- telemffb-effect name=controls_lock_enable part=table -->
 
 ## Heli Engine/Rotor Rumble
