@@ -203,6 +203,7 @@ markdown_extensions:
 
 # Plugins
 plugins:
+  - glightbox
   - autorefs:
       link_titles: true
   - search
