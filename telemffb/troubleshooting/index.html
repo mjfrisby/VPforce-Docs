@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -806,7 +813,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#simulator-connection-problems">1.2 
+<a class="md-nav__link" href="#device-problems">1.2 
+<span class="md-ellipsis">
+      
+        Device problems
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#simulator-connection-problems">1.3 
 <span class="md-ellipsis">
       
         Simulator connection problems
@@ -815,7 +831,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exception-tracking-reporting">1.3 
+<a class="md-nav__link" href="#exception-tracking-reporting">1.4 
 <span class="md-ellipsis">
       
         Exception Tracking &amp; Reporting
@@ -824,7 +840,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#getting-help">1.4 
+<a class="md-nav__link" href="#reading-the-log">1.5 
+<span class="md-ellipsis">
+      
+        Reading the log
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#getting-help">1.6 
 <span class="md-ellipsis">
       
         Getting help
@@ -833,7 +858,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#faq">1.5 
+<a class="md-nav__link" href="#faq">1.7 
 <span class="md-ellipsis">
       
         FAQ
@@ -876,7 +901,15 @@
 <li><strong>Error</strong> - a configuration problem. The error message shown alongside describes the condition and how to resolve it.</li>
 </ul>
 <p>See <a href="../ui-overview/#deviceinstance-status-indications">Device/Instance Status Indications</a> for details. The <strong>Monitor tab</strong> shows the raw telemetry and every active effect in real time, useful for confirming what TelemFFB is actually receiving and playing.</p>
-<h2 id="simulator-connection-problems"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Simulator connection problems<a class="headerlink" href="#simulator-connection-problems" title="Link to this section">¶</a></h2>
+<h2 id="device-problems"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Device problems<a class="headerlink" href="#device-problems" title="Link to this section">¶</a></h2>
+<p>The icons in the <strong>Active Devices</strong> area show the state of each device:</p>
+<ul>
+<li><strong>Yellow</strong> - the device dropped off. TelemFFB retries on its own and recovers when the device returns, on the same USB port or a different one.</li>
+<li><strong>Red</strong> - the configured device was not found at startup, or the instance has an error. Check the USB connection and the device’s power. TelemFFB picks the device up as soon as it appears; a restart is not needed.</li>
+</ul>
+<p>After a power cycle the firmware has lost everything it held in memory. TelemFFB sends the active VPforce Configurator profile, the gain overrides and the deadzone again. See <a href="../devices-instances/#device-recovery">Device recovery</a>.</p>
+<p>If another VPforce device is connected while the configured one is missing, TelemFFB asks once whether to use that device instead.</p>
+<h2 id="simulator-connection-problems"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Simulator connection problems<a class="headerlink" href="#simulator-connection-problems" title="Link to this section">¶</a></h2>
 <p>Verify the sim is enabled in <a href="../sim-setup/">Connecting Your Simulator</a>, then use the detailed per-sim checklists:</p>
 <ul>
 <li><strong>DCS</strong> - <a href="../../rhino/game-specific-troubleshooting/#ffb-not-working">FFB not working</a> · <a href="../../rhino/game-specific-troubleshooting/#not-receiving-telemetry">Not receiving telemetry</a> · <a href="../../rhino/game-specific-troubleshooting/#autopilot-misbehaving-or-disengaging-unexpectedly">Autopilot misbehaving</a></li>
@@ -885,23 +918,33 @@
 <li><strong>X-Plane</strong> - <a href="../../rhino/game-specific-troubleshooting/#not-receiving-telemetry_2">Not receiving telemetry</a></li>
 <li><strong>BMS</strong> - <a href="../../rhino/game-specific-troubleshooting/#falcon-bms">Falcon BMS</a></li>
 </ul>
-<h2 id="exception-tracking-reporting"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Exception Tracking &amp; Reporting<a class="headerlink" href="#exception-tracking-reporting" title="Link to this section">¶</a></h2>
+<h2 id="exception-tracking-reporting"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Exception Tracking &amp; Reporting<a class="headerlink" href="#exception-tracking-reporting" title="Link to this section">¶</a></h2>
 <p>TelemFFB tracks runtime errors as they happen. When an error is logged, a red <strong>Errors</strong> counter appears in the status bar along the bottom edge of the main window; it is hidden when there is nothing to see. Click it to open the <strong>Logged Exceptions</strong> viewer:</p>
-<figure class="figure-image"> <img alt="The Logged Exceptions viewer, opened from the Errors indicator in the status bar" src="../images/troubleshooting/exception-window.webp" width="700px"> <figcaption>The Logged Exceptions viewer, opened from the Errors indicator in the status bar</figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/troubleshooting/exception-window.webp"><img alt="The Logged Exceptions viewer, opened from the Errors indicator in the status bar" src="../images/troubleshooting/exception-window.webp" width="700px"/></a> <figcaption>The Logged Exceptions viewer, opened from the Errors indicator in the status bar</figcaption></figure>
 <p>The left pane lists the errors from this session (up to 100); selecting one shows the full detail (timestamp, module, message, and complete traceback) in the right pane. Two behaviors keep the list readable:</p>
 <ul>
 <li><strong>Deduplication</strong> - repeated occurrences of the same error collapse into a single entry with an occurrence count, rather than flooding the list.</li>
 <li><strong>Child forwarding</strong> - in multi-device setups, errors raised by child instances are forwarded to the master, so every device’s errors are visible in one place. The module prefix on each entry tells you which instance raised it.</li>
 </ul>
 <p>The buttons along the bottom: <strong>Copy Selected</strong> / <strong>Copy All</strong> put the error text on the clipboard (handy for pasting into a Discord post), <strong>Clear All</strong> empties the list and hides the status-bar counter, and <strong>Report Exceptions</strong> submits the errors to VPforce directly:</p>
-<figure class="figure-image"> <img alt="The Report Exceptions confirmation dialog" src="../images/troubleshooting/report-exception.webp" width="650px"> <figcaption>The Report Exceptions confirmation dialog</figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/troubleshooting/report-exception.webp"><img alt="The Report Exceptions confirmation dialog" src="../images/troubleshooting/report-exception.webp" width="650px"/></a> <figcaption>The Report Exceptions confirmation dialog</figcaption></figure>
+<div class="admonition important">
+<p class="admonition-title">A report is not a request for help</p>
+<p>Uploading a bundle does not open a conversation. Nobody at VPforce watches the uploads and reaches out. The bundle exists so that when you post your problem on the <a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a> channel, support can pull up the logs that go with your message. Post on Discord, and mention that you uploaded a bundle.</p>
+</div>
 <p>The dialog has two optional fields:</p>
 <ul>
 <li><strong>Discord username</strong> - lets support match your uploaded bundle to you on the VPforce Discord. The name also becomes part of the uploaded file name, so it is visible right in the support channel. TelemFFB remembers it until you close the application; it is never saved to disk.</li>
 <li><strong>Additional information</strong> - describe what you were doing when the problem occurred, or anything else support should know. Your notes travel inside the bundle, where support reads them before digging into the logs.</li>
 </ul>
 <p class="label-paragraph"><strong>Report Exceptions</strong> builds a support bundle (the exception details and tracebacks, your system configuration, the application logs, and anything you entered above) and uploads it to VPforce support. After the upload, a verification page opens in your browser; the report is only submitted once you complete the challenge there.</p>
-<h2 id="getting-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Getting help<a class="headerlink" href="#getting-help" title="Link to this section">¶</a></h2>
+<h2 id="reading-the-log"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Reading the log<a class="headerlink" href="#reading-the-log" title="Link to this section">¶</a></h2>
+<p class="label-paragraph"><strong>Log → Open Console Log</strong> shows the live log. Two kinds of entries help with specific problems:</p>
+<ul>
+<li><strong><code>Main thread stalled</code></strong> - the main window stopped responding for three seconds. TelemFFB writes what every part of the application was doing at that moment, once per stall, and notes when the window recovers. Include the log in a support request; these entries name the cause. Dragging a window or holding a title-bar button does not trigger them.</li>
+<li><strong><code>axis contention</code></strong> (MSFS) - with <a href="../msfs-xp-axis-spring/">Axis Control</a> enabled, TelemFFB checks whether something else is also moving the axis it drives. A line marked <code>CONTENDED</code> names an axis that a second source is writing, which is usually a control binding left mapped inside MSFS, or an external tool. A line marked <code>clean</code> means no second source was seen. An <code>unverified</code> line asks you to move the control through its range first.</li>
+</ul>
+<h2 id="getting-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Getting help<a class="headerlink" href="#getting-help" title="Link to this section">¶</a></h2>
 <p>The single most important factor in getting your problem solved quickly is <strong>how you ask</strong>. Read <strong><a href="../../rhino/troubleshooting-maintenance/#how-to-get-effective-support">How to Get Effective Support</a></strong>; it is short, and following it usually turns a multi-day back-and-forth into a single exchange. The essentials:</p>
 <ul>
 <li><strong>Describe exactly what happens and when</strong> - “stick goes limp with no centering force in the F-16 after AP engage”, not “FFB doesn’t work”. One problem per request, and say what you have already tried.</li>
@@ -910,7 +953,7 @@
 <li>Post on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel of the VPforce Discord.</li>
 </ul>
 <p>For reference: <strong>System → Open Config/Log directory</strong> opens the folder holding logs and your settings (<code>%LOCALAPPDATA%\VPForce-TelemFFB</code>); older logs are archived into daily zip files.</p>
-<h2 id="faq"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> FAQ<a class="headerlink" href="#faq" title="Link to this section">¶</a></h2>
+<h2 id="faq"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> FAQ<a class="headerlink" href="#faq" title="Link to this section">¶</a></h2>
 <p class="label-paragraph"><strong>Q: Does DCS native force feedback need TelemFFB running?</strong><br/>
 <strong>A:</strong> No. DCS sends its native FFB effects directly to the device. TelemFFB adds supplemental effects on top; see <a href="../sim-dcs/#understanding-native-dcs-ffb-telemffb-and-vpforce-configurator">the DCS guide</a>.</p>
 <p class="label-paragraph"><strong>Q: My antivirus flags the TelemFFB executable. Is it safe?</strong><br/>
@@ -945,5 +988,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

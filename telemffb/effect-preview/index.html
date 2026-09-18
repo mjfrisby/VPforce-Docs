@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -972,14 +979,14 @@
 <p>Effect Preview plays one effect on your device with no simulator running. TelemFFB feeds the effect a short script of synthetic telemetry for the condition it responds to, and you feel the result based on the strength of your current setting. That lets you tune an effect on its own, without having to load into a flight and reproduce the conditions that generate the effect via real telemetry.</p>
 <p>Settings are not adjustable while the preview is running.  If you want to adjust the intensity, stop the effect first, then make your adjustment and re-run the preview.</p>
 <p>Previews are available in the offline editor mode only. A <strong>▶</strong> button sits next to the intensity slider of every effect that can be previewed.</p>
-<figure class="figure-image"> <img alt="" src="../images/effect-preview/play-buttons.webp" width="650px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/effect-preview/play-buttons.webp"><img alt="" src="../images/effect-preview/play-buttons.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <h2 id="accessing-the-offline-editor-preview-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Accessing the offline editor / preview mode<a class="headerlink" href="#accessing-the-offline-editor-preview-mode" title="Link to this section">¶</a></h2>
 <h3 id="from-the-profiles-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1.1</span> From the Profiles menu<a class="headerlink" href="#from-the-profiles-menu" title="Link to this section">¶</a></h3>
 <p>When no aircraft is loaded, the offline editor can be accessed via the <strong>Profiles → Offline Editor/Effect Preview</strong> menu item or from the button in the unpopulated settings area.  Once opened, select the sim, class, aircraft and profile you want to target in the <strong>Offline Editor Setup</strong> area.</p>
-<figure class="figure-image"> <img alt="" src="../images/effect-preview/access-menu.webp" width="650px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/effect-preview/access-menu.webp"><img alt="" src="../images/effect-preview/access-menu.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <h3 id="from-a-loaded-aircraft"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1.2</span> From a loaded aircraft<a class="headerlink" href="#from-a-loaded-aircraft" title="Link to this section">¶</a></h3>
 <p>With an aircraft loaded in the sim, there is an <strong>Offline/Preview Mode</strong> button above the settings area that will open the offline editor already set to that aircraft and profile.  From there you can directly access the previews for the effects and adjust your settings as desired.</p>
-<figure class="figure-image"> <img alt="" src="../images/effect-preview/access-button.webp" width="650px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/effect-preview/access-button.webp"><img alt="" src="../images/effect-preview/access-button.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <div class="admonition note">
 <p class="admonition-title">Telemetry pauses in offline mode</p>
 <p>While the offline editor is open, TelemFFB pauses telemetry. Previews use their own effect table, so a paused sim session in the background is not disturbed. Click <strong>Exit Offline Mode</strong> to resume.</p>
@@ -991,7 +998,7 @@
 <li>Adjust the slider and play again.</li>
 </ol>
 <p>Hover over the <strong>▶</strong> button for a description of what the preview does: the flight condition it plays, the reference speeds or RPM it uses, and how long each phase lasts.</p>
-<figure class="figure-image"> <img alt="" src="../images/effect-preview/tooltip.webp" width="415px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/effect-preview/tooltip.webp"><img alt="" src="../images/effect-preview/tooltip.webp" width="415px"/></a> <figcaption></figcaption></figure>
 <div class="admonition important">
 <p class="admonition-title">Preview versus flight</p>
 <p>A preview synthesizes its telemetry and plays the effect at its current intensity setting. In flight the same effect follows the real telemetry, so it can feel weaker or stronger than the preview depending on the flight conditions.</p>
@@ -1334,5 +1341,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

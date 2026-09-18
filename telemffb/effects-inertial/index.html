@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -856,8 +863,8 @@
 <ul>
 <li>
 <p class="label-paragraph"><strong>Exponential Curve (legacy)</strong> - force ramps between <em>Minimum Gs</em> and <em>Maximum Gs</em>, shaped by the <em>G Force Curvature</em>: 1.0 is linear across the g range; higher values flatten the onset and steepen the force toward the top (default 2.2).</p>
-<p><figure class="figure-image"> <img alt="Example curvature values and the resulting force curves" height="320px" src="../images/effects-inertial/gforce-curvature-plot.webp" width="411px"> <figcaption>Example curvature values and the resulting force curves</figcaption></img></figure>
-- <strong>Custom Curve</strong> - a force is calculated from the current g-loading between the min and max G settings, and the <strong>physical stick deflection</strong> determines how much of it applies. Example: g-loading halfway between min and max gives a 50% calculated force; with the stick pulled back 50%, the output is 0.5 × 0.5 = 25%. As you pull harder, both factors rise. The <em>Y-Axis Max Point</em> sets the deflection at which 100% of the calculated force applies; negative-g support has mirrored settings. The <em>Advanced</em> option maps the response through a visual curve editor; see <a href="../spring-curves/">Advanced Spring &amp; G-Force Curves</a>.</p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/effects-inertial/gforce-curvature-plot.webp"><img alt="Example curvature values and the resulting force curves" height="320px" src="../images/effects-inertial/gforce-curvature-plot.webp" width="411px"/></a> <figcaption>Example curvature values and the resulting force curves</figcaption></figure>
+- <strong>Custom Curve</strong> - a force is calculated from the current g-loading between the min and max G settings, and the <strong>physical stick deflection</strong> determines how much of it applies. Example: g-loading halfway between min and max gives a 50% calculated force; with the stick pulled back 50%, the output is 0.5 × 0.5 = 25%. As you pull harder, both factors rise. The <em>Y-Axis Max Point</em> sets the deflection at which 100% of the calculated force applies; negative-g support has mirrored settings. The <em>Advanced</em> option maps the response through a visual curve editor; see <a href="../spring-curves/">Advanced Spring &amp; G-Force Curves</a>.<p></p>
 </li>
 </ul>
 <p class="label-paragraph"><strong>In mode: Exponential Curve (legacy)</strong></p>
@@ -1045,5 +1052,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

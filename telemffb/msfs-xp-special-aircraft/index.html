@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -901,8 +908,13 @@
 <li><strong><a href="../telem-overrides/">Telemetry overrides</a></strong> in the shipped default profile: telemetry items re-sourced from the addon’s custom variables, or additional items subscribed.</li>
 </ul>
 <div class="admonition important">
-<p class="admonition-title">Additional profiles for these aircraft: clone, don’t create from scratch</p>
-<p>Everything on this page is carried by the aircraft’s shipped default profile: the class assignment, the curated settings, and any telemetry overrides. If you need an additional profile (a livery whose name does not match the default pattern, for example), you must <strong>clone it from the default profile</strong>. A profile created from scratch will not carry the special treatment, and the integration silently stops working. See <a href="../aircraft-profiles/">Aircraft Profiles</a> for cloning.</p>
+<p class="admonition-title">A new profile for one of these aircraft</p>
+<p>You may need a profile of your own, for example for a livery whose name the built-in match string does not fit. What the new profile needs depends on where the aircraft’s special treatment lives:</p>
+<ul>
+<li><strong>On the class.</strong> The class carries its own code, its class defaults and its telemetry overrides. Select the class in the New Aircraft Wizard and the integration works.</li>
+<li><strong>In the built-in profile.</strong> Tuned settings and some telemetry overrides belong to one built-in profile. A new profile gets them only if you <strong>clone it from that built-in profile</strong>.</li>
+</ul>
+<p>The table says which applies. When in doubt, clone: a clone always carries everything. See <a href="../aircraft-profiles/">Aircraft Profiles</a> for the wizard, and <a href="../telem-overrides/#where-an-aircrafts-overrides-come-from">Telemetry Overrides</a> for how the tiers combine.</p>
 </div>
 <table>
 <thead>
@@ -910,6 +922,7 @@
 <th>Aircraft</th>
 <th>Sim</th>
 <th>Class</th>
+<th>A new profile needs</th>
 </tr>
 </thead>
 <tbody>
@@ -917,44 +930,53 @@
 <td><a href="#hpg-airbus-h145-h160">2.1 HPG Airbus H145 / H160</a></td>
 <td>MSFS</td>
 <td><code>HPGHelicopter</code></td>
+<td>A clone. The wizard enforces it.</td>
 </tr>
 <tr>
 <td><a href="#flyinside-b206-b47">2.2 FlyInside B206 / B47</a></td>
 <td>MSFS</td>
 <td><code>FlyInsideHelicopter</code></td>
+<td>A clone. The wizard enforces it.</td>
 </tr>
 <tr>
 <td><a href="#cowansim-helicopters">2.3 CowanSim fleet</a> (10 models)</td>
 <td>MSFS</td>
 <td><code>CowanSimHelicopter</code></td>
+<td>The class. Clone for the R66.</td>
 </tr>
 <tr>
 <td><a href="#taogs-hangar-h500c-oh6a">2.4 Taog’s Hangar H500C / OH6A</a></td>
 <td>MSFS</td>
 <td><code>TaogH500Helicopter</code></td>
+<td>The class</td>
 </tr>
 <tr>
 <td><a href="#taogs-hangar-uh-1h-bell-205-a1b">2.5 Taog’s Hangar UH-1H / Bell 205-A1B</a></td>
 <td>MSFS</td>
 <td><code>Helicopter</code> (standard)</td>
+<td>A clone</td>
 </tr>
 <tr>
 <td><a href="#simfocus-bell-407">2.6 Simfocus Bell 407</a></td>
 <td>MSFS</td>
 <td><code>SASHelicopter</code></td>
+<td>The class</td>
 </tr>
 <tr>
 <td><a href="#a2a-comanche-pa-24">2.7 A2A Comanche (PA-24)</a></td>
 <td>MSFS</td>
 <td><code>PropellerAircraft</code> (standard)</td>
+<td>A clone</td>
 </tr>
 <tr>
 <td><a href="#x-trident-aw109sp">2.8 X-Trident AW109SP</a></td>
 <td>X-Plane</td>
 <td><code>XAW109Helicopter</code></td>
+<td>The class</td>
 </tr>
 </tbody>
 </table>
+<p>For HPG and FlyInside, some of the variables differ between the aircraft of the class, so they stay in each built-in profile. The UH-1H and the Comanche use a standard class, so everything special about them is in the profile.</p>
 <h2 id="hpg-airbus-h145-h160"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> HPG Airbus H145 / H160<a class="headerlink" href="#hpg-airbus-h145-h160" title="Link to this section">¶</a></h2>
 <p>The deepest integration in TelemFFB, developed in collaboration with HPG: the stick works with the AFCS as the real auto-trim motor does, with force trim release, hands-on detection, and collective/pedal integration. The default profiles subscribe to a set of HPG SDK <code>L:Var</code>s (SEMA positions, AFCS state, trim release, hands-on) via telemetry overrides, and the class defaults set Hardware Force Trim spring mode on all axes.</p>
 <p>Full setup requirements and settings are covered in <a href="../msfs-xp-helicopters/#hpg-airbus-helicopters-msfs-only">HPG Airbus Helicopters</a>.</p>
@@ -963,7 +985,7 @@
 <p>See <a href="../msfs-xp-helicopters/#flyinside-helicopters-msfs-only">FlyInside Helicopters</a>.</p>
 <h2 id="cowansim-helicopters"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> CowanSim Helicopters<a class="headerlink" href="#cowansim-helicopters" title="Link to this section">¶</a></h2>
 <p>The entire CowanSim fleet has default profiles with the <code>CowanSimHelicopter</code> class: <strong>206B3, 206L3, 222B, 222UT, 500E, H125, H130, R22, R66, and S-76C++</strong>. (The H125 match pattern deliberately excludes the stock Asobo H125 variants.)</p>
-<p>What’s different: with Axis Control enabled, the cyclic positions are sent through <strong>CowanSim’s own axis variables</strong> (<code>L:COWANSIM_CYCLIC_X_POSITION</code> / <code>L:COWANSIM_CYCLIC_Y_POSITION</code>) rather than the standard cyclic events, pre-configured via the Custom Axis Variables feature in the class defaults. The R66 profile additionally re-sources the hydraulic-switch telemetry from CowanSim’s custom variable.</p>
+<p>What’s different: with Axis Control enabled, the cyclic positions are sent through <strong>CowanSim’s own axis variables</strong> (<code>L:COWANSIM_CYCLIC_X_POSITION</code> / <code>L:COWANSIM_CYCLIC_Y_POSITION</code>) rather than the standard cyclic events, pre-configured via the Custom Axis Variables feature in the class defaults. The R66 profile additionally re-sources the hydraulic-switch telemetry from CowanSim’s custom variable. That override belongs to the R66 profile, not to the class, so a new R66 profile must be cloned from the built-in one.</p>
 <h2 id="taogs-hangar-h500c-oh6a"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Taog’s Hangar H500C / OH6A<a class="headerlink" href="#taogs-hangar-h500c-oh6a" title="Link to this section">¶</a></h2>
 <p>The <code>TaogH500Helicopter</code> class honors the aircraft’s <strong>cockpit control locks</strong>: engaging the cyclic or collective friction lock (or the pedal lock) stops TelemFFB’s axis-position sends for that control, so the locked control stays put in the sim no matter how the physical axis moves. Tail-rotor damage in the flight model also cuts pedal control. The lock states arrive via telemetry overrides on Taog’s <code>L:Var</code>s, and the class defaults use the No Spring mode on all axes.</p>
 <h2 id="taogs-hangar-uh-1h-bell-205-a1b"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> Taog’s Hangar UH-1H / Bell 205-A1B<a class="headerlink" href="#taogs-hangar-uh-1h-bell-205-a1b" title="Link to this section">¶</a></h2>
@@ -1005,5 +1027,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

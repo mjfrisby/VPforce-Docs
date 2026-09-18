@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -818,7 +825,7 @@
 <li><strong><a href="../msfs-xp-trim-following/">Trim &amp; Autopilot Following</a></strong> - the stick follows the aircraft’s trim and autopilot, relieving control pressure like a real aircraft.</li>
 <li><strong><a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a></strong> - TelemFFB flies the aircraft briefly and measures the correct trim-following gains.</li>
 <li><strong><a href="../msfs-xp-helicopters/">Helicopters</a></strong> - force trim emulation, plus the HPG and FlyInside integrations.</li>
-<li><strong><a href="../msfs-xp-special-aircraft/">Aircraft with Special Treatment</a></strong> - the roster of addon aircraft with dedicated classes or curated profiles, and why their profiles must be cloned rather than created from scratch.</li>
+<li><strong><a href="../msfs-xp-special-aircraft/">Aircraft with Special Treatment</a></strong> - the roster of addon aircraft with dedicated classes or curated profiles, and which of them need a cloned profile.</li>
 </ol>
 <p>Sim-specific effect settings (buffeting, turbulence, engine rumble, and the rest) are covered in the <a href="../effects-overview/">Effects Reference</a>; see the full per-sim directories for <a href="../effects-sim-msfs/">MSFS</a> and <a href="../effects-sim-xplane/">X-Plane</a>.</p>
 <p>For advanced per-aircraft integration (re-sourcing a telemetry item from an addon’s custom variables, or subscribing to additional ones), see <a href="../telem-overrides/">Telemetry Overrides</a>.</p>
@@ -849,5 +856,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -290,7 +297,16 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#working-with-child-instances">1.5 
+<a class="md-nav__link" href="#device-recovery">1.5 
+<span class="md-ellipsis">
+      
+        Device recovery
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#working-with-child-instances">1.6 
 <span class="md-ellipsis">
       
         Working with child instances
@@ -907,7 +923,7 @@
 <p>To assign devices manually, or fix an auto-assignment, each device role has a <strong>selector pulldown</strong> on its card on the <strong>Devices</strong> tab, listing the connected VPforce devices. Pick the device for each role directly. If you pick a device that is already assigned to another role, TelemFFB asks whether to override the other assignment or cancel.</p>
 <h2 id="the-devices-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> The Devices tab<a class="headerlink" href="#the-devices-tab" title="Link to this section">¶</a></h2>
 <p>These settings are found on the <strong>Devices</strong> tab of <strong>System → System Settings</strong>. They control which device each instance connects to and which instances start automatically.</p>
-<figure class="figure-image"> <img alt="" src="../images/devices-instances/devices-tab.webp" width="650px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/devices-instances/devices-tab.webp"><img alt="" src="../images/devices-instances/devices-tab.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <p>The tab holds one <strong>card per device role</strong>: joystick, pedals, collective, trim wheel. Each card carries:</p>
 <ul>
 <li>
@@ -940,7 +956,7 @@
 <p>If you fly with more than one stick (a center stick, a yoke, and a side stick, for example), the joystick slot can hold up to three configured devices, and each aircraft can choose which one it uses.</p>
 <h3 id="configuring-alternate-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Configuring alternate devices<a class="headerlink" href="#configuring-alternate-devices" title="Link to this section">¶</a></h3>
 <p>On the <strong>Devices</strong> tab, the joystick card has a <strong>+ add device</strong> button. Each added row gets its own device selector and icon.</p>
-<figure class="figure-image"> <img alt="" src="../images/devices-instances/joystick-alternates.webp" width="650px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/devices-instances/joystick-alternates.webp"><img alt="" src="../images/devices-instances/joystick-alternates.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <ul>
 <li>The radio marker on a row marks the <strong>primary</strong> device. The primary is the default: every aircraft and class uses it unless its own <a href="#choosing-a-device-per-aircraft">1.4.2 Device selection</a> says otherwise, and it is the device the joystick instance connects to on startup.</li>
 <li>Selecting the marker on another row makes that device the primary when you save. The switch applies immediately; no restart is required.</li>
@@ -948,7 +964,7 @@
 </ul>
 <h3 id="choosing-a-device-per-aircraft"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Choosing a device per aircraft<a class="headerlink" href="#choosing-a-device-per-aircraft" title="Link to this section">¶</a></h3>
 <p>With more than one joystick configured, aircraft settings gain a <strong>Device</strong> section with a <strong>Joystick Device</strong> selector.</p>
-<figure class="figure-image"> <img alt="" src="../images/devices-instances/aircraft-device.webp" width="550px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/devices-instances/aircraft-device.webp"><img alt="" src="../images/devices-instances/aircraft-device.webp" width="550px"/></a> <figcaption></figcaption></figure>
 <ul>
 <li><strong>Primary (default)</strong> uses whichever device is marked primary in System Settings. The <code>*</code> in the list shows which named device that currently is.</li>
 <li>Picking a named device switches to it while that aircraft is loaded, and back to the primary afterward. Nothing changes in System Settings.</li>
@@ -958,7 +974,16 @@
 <p>The Device section only appears when more than one joystick device is configured. With a single stick there is nothing to choose, and the section stays hidden.</p>
 </div>
 <p>If you later replace a configured device in System Settings, TelemFFB offers to update the aircraft settings that reference the old one.</p>
-<h2 id="working-with-child-instances"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Working with child instances<a class="headerlink" href="#working-with-child-instances" title="Link to this section">¶</a></h2>
+<h2 id="device-recovery"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Device recovery<a class="headerlink" href="#device-recovery" title="Link to this section">¶</a></h2>
+<p>A device can drop off while TelemFFB runs: a cable gets pulled, a hub resets, or the device is power cycled. TelemFFB recovers without a restart.</p>
+<ul>
+<li><strong>A device that drops off</strong> shows a yellow icon. TelemFFB looks for it by its USB identity, not by the port it was on, so plugging it into a different port or hub works. The retries slow down the longer the device stays away.</li>
+<li><strong>A device that is missing at startup</strong> shows a red icon. TelemFFB keeps checking and opens the device when it appears.</li>
+<li><strong>After a power cycle</strong> the firmware has lost what it held in memory. TelemFFB sends the active <a href="../vpconf-profiles/">VPforce Configurator profile</a>, the gain overrides and the configured deadzone again. The effects that were running resume.</li>
+<li><strong>If a different VPforce device is connected</strong> while the configured one is missing, TelemFFB asks once whether to use it instead. Answer Yes and the selection is saved, the same as choosing it on the device card.</li>
+</ul>
+<p>Changing a device on the Devices tab also takes effect at once. See <a href="../configuration/">System Settings</a>.</p>
+<h2 id="working-with-child-instances"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Working with child instances<a class="headerlink" href="#working-with-child-instances" title="Link to this section">¶</a></h2>
 <p>After starting TelemFFB with auto-launch enabled, all of the device icons appear in the master instance’s <strong>Active Devices</strong> area. From there you can monitor each device’s status and switch between devices to configure their settings; each device has its own settings for every aircraft, so your pedals and joystick are tuned independently. See <a href="../ui-overview/#active-devices-area">Active Devices Area</a> for details.</p>
 <p>To bring up the window of a minimized or headless child instance:</p>
 <ul>
@@ -991,5 +1016,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

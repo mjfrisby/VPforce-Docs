@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -895,7 +902,7 @@
 <li><strong>Class defaults</strong> - defaults per aircraft class (PropellerAircraft, JetAircraft, TurbopropAircraft, GliderAircraft, Helicopter, and so on). A helicopter and a jet start from different baselines automatically.</li>
 <li><strong>Your sim-wide overrides</strong> - values you configured at the sim level in the offline editor, or promoted to a sim-level override. They apply to every aircraft in that simulator.</li>
 <li><strong>Your class-wide overrides</strong> - values you configured at the class level in the offline editor, or promoted to a class-level override. They apply to every aircraft of that class.</li>
-<li><strong>Shipped aircraft profiles</strong> - TelemFFB ships tuned profiles for many specific aircraft across all supported sims. Aircraft are matched by a name pattern, so different liveries of the same aircraft match the same profile. The <strong>Matched Model</strong> field in the status area shows which pattern matched.</li>
+<li><strong>Shipped aircraft profiles</strong> - TelemFFB ships tuned profiles for many specific aircraft across all supported sims. Aircraft are matched by a match string, so different liveries of the same aircraft match the same profile. When several match strings fit an aircraft, the most specific one wins, and only that one profile contributes. The <strong>Matched Model</strong> field in the status area shows which match string won. See <a href="../aircraft-profiles/#how-telemffb-matches-an-aircraft">How TelemFFB Matches an Aircraft</a>.</li>
 <li><strong>Your aircraft overrides</strong> - changes you make for the specific aircraft. These always win.</li>
 </ol>
 <p>Note where the shipped profiles sit: a shipped profile’s aircraft-specific tuning takes precedence over your sim-wide and class-wide overrides. Only an override for the specific aircraft outranks it.</p>
@@ -914,7 +921,7 @@
 <h2 id="offlineglobal-simclass-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Offline/Global Sim/Class Configuration<a class="headerlink" href="#offlineglobal-simclass-configuration" title="Link to this section">¶</a></h2>
 <p>The offline editor edits sim defaults, class defaults, or a specific aircraft and profile without that aircraft being loaded, using the same main-window settings interface as real-time per-aircraft configuration. To open it, choose <strong>Offline Editor/Effect Preview</strong> from the <strong>Profiles</strong> menu. With an aircraft loaded, the <strong>Offline/Preview Mode</strong> button on the Settings tab opens the editor on that aircraft directly.</p>
 <p>In the offline editor, most effects can be played on the device at their configured strength. See <a href="../effect-preview/">Effect Preview</a>.</p>
-<figure class="figure-image"> <img alt="" height="581px" src="../images/aircraft-profiles/offline-editor.webp" width="467px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/offline-editor.webp"><img alt="" height="581px" src="../images/aircraft-profiles/offline-editor.webp" width="467px"/></a> <figcaption></figcaption></figure>
 <p>Use the selection boxes in the Offline Editor Setup area to select a sim, class, aircraft or user profile to modify.</p>
 <ul>
 <li>To modify the default settings for the entire simulator, only select the desired Sim from the pulldown.</li>
@@ -930,7 +937,8 @@
 </ul>
 <p>Profile creation, selection, import and export are covered in <a href="../aircraft-profiles/">Aircraft Profiles</a>.</p>
 <h2 id="adding-an-aircraft-that-has-no-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Adding an aircraft that has no profile<a class="headerlink" href="#adding-an-aircraft-that-has-no-profile" title="Link to this section">¶</a></h2>
-<p>If TelemFFB does not recognize a loaded aircraft, it gets only the simulator’s base defaults, which is not a working effect setup. The aircraft class decides which spring model, effect set, and class defaults apply, and TelemFFB cannot know the class until you choose it. Create a profile for the aircraft, choosing its class, with the <a href="../aircraft-profiles/#adding-new-aircraft-support">Add New Aircraft wizard</a>.</p>
+<p>If TelemFFB does not recognize a loaded aircraft, it gets only default settings, which is rarely a good effect setup. The aircraft class decides which spring model, effect set, and class defaults apply. MSFS reports a basic aircraft type, so an unknown MSFS aircraft starts with the defaults of that class; a helicopter gets the Helicopter class defaults, for example. In the other simulators TelemFFB cannot know the class until you choose it.</p>
+<p>The controls on the Settings tab are disabled for an unknown aircraft, because it has no profile to store a change in. Create a profile for the aircraft, choosing its class, with the <a href="../aircraft-profiles/#adding-new-aircraft-support">Add New Aircraft wizard</a>.</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -957,5 +965,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -1011,7 +1018,7 @@
 <li>Open <strong>System → System Settings</strong> and go to the simulator’s page on the <strong>Simulator Setup</strong> tab.</li>
 <li>
 <p>Enable the <strong>DirectInput Tap</strong> toggle. A status panel appears below it. The panel locates the game install automatically (from the configured path, the registry, or a Steam library scan) and shows the wrapper state for each of the game’s executable folders.</p>
-<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/tap-section-fresh.webp" width="650px"> <figcaption></figcaption></img></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/tap-section-fresh.webp"><img alt="" src="../images/dinput-tap/tap-section-fresh.webp" width="650px"/></a> <figcaption></figcaption></figure><p></p>
 <p>The screenshots on this page are from DCS, whose section is labelled <strong>DirectInput Tap/FFB-Fix</strong> and carries one control the others do not: the <strong>FFB-Fix only mode (no tap)</strong> toggle, described under <a href="#ffb-fix-only-mode-dcs">2.5 FFB-Fix only mode</a>. Leave it off for the tap.</p>
 </li>
 <li>
@@ -1019,11 +1026,11 @@
 </li>
 <li>
 <p>Choose which devices the tap captures in the device dialog that opens.</p>
-<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/device-dialog.webp" width="550px"> <figcaption></figcaption></img></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/device-dialog.webp"><img alt="" src="../images/dinput-tap/device-dialog.webp" width="550px"/></a> <figcaption></figcaption></figure><p></p>
 </li>
 <li>
 <p>TelemFFB writes both files beside each of the game’s executables (for DCS, both <code>bin</code> and <code>bin-mt</code>): the <code>dinput8.dll</code> wrapper, and a <code>dinput8.ini</code> configuration carrying capture rules for the devices you chose. Setup is complete; nothing further is required. The panel then shows the installed state, with each folder’s wrapper version and configuration:</p>
-<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/tap-section.webp" width="650px"/> <figcaption></figcaption></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/tap-section.webp"><img alt="" src="../images/dinput-tap/tap-section.webp" width="650px"/></a> <figcaption></figcaption></figure><p></p>
 </li>
 </ol>
 <div class="admonition note">
@@ -1032,11 +1039,11 @@
 </div>
 <h3 id="if-a-dinput8dll-is-already-installed"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> If a dinput8.dll is already installed<a class="headerlink" href="#if-a-dinput8dll-is-already-installed" title="Link to this section">¶</a></h3>
 <p>Some game folders already carry a <code>dinput8.dll</code> wrapper. TelemFFB recognizes the common case, the community <strong>dcs-force-feedback-fix</strong> wrapper that the tap is built from: the panel reports it as an ffb-fix wrapper, and Install offers an upgrade.</p>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/ffbfix-dll.webp" width="620px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/ffbfix-dll.webp"><img alt="" src="../images/dinput-tap/ffbfix-dll.webp" width="620px"/></a> <figcaption></figcaption></figure>
 <p>TelemFFB’s wrapper is a <strong>superset</strong> of the original ffb-fix wrapper: every rule in the existing <code>dinput8.ini</code> (per-device <code>block</code>, <code>allow</code>, and scaling rules, <code>[DeviceOrder]</code>) keeps working exactly as before, so the upgrade is safe. The file is kept as it is, with two exceptions: TelemFFB adds a <code>tap</code> rule for the joystick device selected in TelemFFB, and offers <code>block</code> rules for any configured pedal or collective devices the file does not already cover. Rules you already wrote are recognized, not duplicated - a name rule that already blocks your pedals is left alone.</p>
 <p>After a confirmed upgrade, the device configuration opens by itself with the proposed additions pre-selected - the same dialog and <strong>Preview</strong> as <a href="#fresh-install-or-existing-configuration">2.4.2 Configure Devices</a> - and nothing is added to the file until you confirm it there. Cancelling leaves the file exactly as it was.</p>
 <p>A <code>dinput8.dll</code> that TelemFFB cannot identify is reported as “another dinput8.dll installed”, and Install asks the more careful question. If the DLL belongs to a different mod or utility, replacing it will stop that tool from working.</p>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/another-dll.webp" width="620px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/another-dll.webp"><img alt="" src="../images/dinput-tap/another-dll.webp" width="620px"/></a> <figcaption></figcaption></figure>
 <h3 id="fresh-install-or-existing-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.2</span> Fresh install or existing configuration<a class="headerlink" href="#fresh-install-or-existing-configuration" title="Link to this section">¶</a></h3>
 <p>Which path Install takes depends on whether the game’s folders already hold a <code>dinput8.ini</code>:</p>
 <ul>
@@ -1044,12 +1051,12 @@
 <li>Where a configuration <strong>already exists</strong> (an earlier install, or a file you wrote yourself), Install and Reinstall lay down only the wrapper and leave the file alone. To choose or change the captured devices, use <strong>Configure Devices…</strong> on the panel. The one exception is a recognized ffb-fix upgrade, which opens the device configuration for you as described above.</li>
 </ul>
 <p class="label-paragraph"><strong>Configure Devices…</strong> opens the same device dialog over the existing configuration. <strong>Preview</strong> shows the proposed changes as a side-by-side diff of each folder’s <code>dinput8.ini</code> before anything is written; <strong>OK</strong> applies them immediately. Only the lines you were asked about change; every rule and comment you wrote yourself is kept.</p>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/diff-preview.webp" width="650px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/diff-preview.webp"><img alt="" src="../images/dinput-tap/diff-preview.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <h2 id="ffb-fix-only-mode-dcs"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> FFB-Fix only mode (DCS)<a class="headerlink" href="#ffb-fix-only-mode-dcs" title="Link to this section">¶</a></h2>
 <p>DCS hands force feedback to the devices it enumerates <strong>first</strong>, and Windows caches that order. A vJoy device or a set of FFB pedals reported ahead of your stick can take the effects the stick should have received - the game creates them on the wrong device, and your stick stays quiet. This is the problem the community <strong>dcs-force-feedback-fix</strong> wrapper was written to solve, and TelemFFB’s wrapper is built from it.</p>
 <p>The tap solves it as a side effect, because captured effects are routed by device rather than by enumeration order. <strong>FFB-Fix only mode</strong> offers the other half on its own: the wrapper blocks the devices DCS should not drive and puts your joystick first, and then stays out of the way. DCS drives the stick directly, exactly as it would with no wrapper present at all.</p>
 <p>Choose it if you want your stick’s force feedback fixed while leaving the game’s forces entirely to the game.</p>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/dcs-ffb-fix.webp" width="620px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/dcs-ffb-fix.webp"><img alt="" src="../images/dinput-tap/dcs-ffb-fix.webp" width="620px"/></a> <figcaption></figcaption></figure>
 <p>Only DCS offers this. IL-2 and Falcon BMS identify devices by their configured position rather than by enumeration order, so there is nothing for the fix to do there and no toggle appears.</p>
 <h3 id="what-you-give-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5.1</span> What you give up<a class="headerlink" href="#what-you-give-up" title="Link to this section">¶</a></h3>
 <p>FFB-Fix only mode installs no capture rules, so everything the tap makes possible is unavailable:</p>
@@ -1063,7 +1070,7 @@
 <h3 id="choosing-and-changing-the-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5.2</span> Choosing and changing the mode<a class="headerlink" href="#choosing-and-changing-the-mode" title="Link to this section">¶</a></h3>
 <p>Set the toggle <strong>before</strong> installing: it decides which configuration <strong>Install</strong> writes.</p>
 <p>Afterwards the toggle still moves, but flipping it changes nothing on its own - it states an intent, and the panel says what is actually installed underneath it: <em>installed as: DirectInput Tap - use Configure Devices to change it</em>. Switching is a rewrite of the configuration, so <strong>Configure Devices…</strong> is where it happens.</p>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/tap-to-fix-switch.webp" width="620px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/tap-to-fix-switch.webp"><img alt="" src="../images/dinput-tap/tap-to-fix-switch.webp" width="620px"/></a> <figcaption></figcaption></figure>
 <p>In FFB-Fix only mode the dialog offers no capture rules at all. Instead it proposes exactly what the fix needs, each already ticked:</p>
 <ul>
 <li><strong>Make the game detect this joystick before any other device</strong> - the <code>[DeviceOrder]</code> entry that puts your stick first.</li>
@@ -1074,7 +1081,7 @@
 <p>What the panel reports is read back from <code>dinput8.ini</code> itself, not from the toggle. A file you hand-edited, or one left behind by an earlier choice, is described as it actually is.</p>
 <h2 id="rendering-the-games-spring"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.6</span> Rendering the game’s spring<a class="headerlink" href="#rendering-the-games-spring" title="Link to this section">¶</a></h2>
 <p>The tap relays the game’s spring, but rendering it is a per-aircraft choice. On the <strong>Settings</strong> tab, set <strong>Joystick Spring Mode</strong> to <strong>Game Managed (DirectInput Tap)</strong>.</p>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/spring-mode.webp" width="450px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/spring-mode.webp"><img alt="" src="../images/dinput-tap/spring-mode.webp" width="450px"/></a> <figcaption></figcaption></figure>
 <p>For IL-2 Korea pedals, the pedals instance offers the same mode as <strong>Game Managed (DirectInput Tap, Korea Only)</strong>.</p>
 <p>You do not have to select the mode aircraft by aircraft. Set it at the <strong>simulator or aircraft-class level</strong> with the <a href="../settings-model/#offlineglobal-simclass-configuration">offline settings editor</a>, and it becomes the default spring mode for every aircraft in that simulator or class. Individual aircraft can still override it. Setting a class or sim-wide value also works from a loaded aircraft: right-click the <strong>x</strong> icon on the setting and promote it, as described in <a href="../settings-model/#reading-the-settings-tab">How Settings Work</a>.</p>
 <p>Selecting the mode reveals the <strong>Tap: Axis Corrections and Gain</strong> group:</p>
@@ -1090,9 +1097,9 @@
 <li><strong>Tap: Periodic Vibrations</strong> - rumble, buffet, and other oscillations.</li>
 <li><strong>Tap: Damper Effects</strong>, <strong>Tap: Inertia Effects</strong>, <strong>Tap: Friction Effects</strong> - the game’s condition effects.</li>
 </ul>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/tap-settings.webp" width="650px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/tap-settings.webp"><img alt="" src="../images/dinput-tap/tap-settings.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <p>Captured effects appear in the effects monitor as <strong>Game Spring (DirectInput Tap)</strong>, <strong>Game Periodic (DirectInput Tap)</strong>, and so on, alongside TelemFFB’s own effects.</p>
-<figure class="figure-image"> <img alt="" src="../images/dinput-tap/effects-monitor.webp" width="650px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/effects-monitor.webp"><img alt="" src="../images/dinput-tap/effects-monitor.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <div class="admonition warning">
 <p class="admonition-title">Doubled effects</p>
 <p>A game effect and the equivalent TelemFFB telemetry effect can both be enabled at once (the game’s gunfire rumble plus TelemFFB’s gunfire effect, for example). If an effect feels doubled, disable one of the pair.</p>
@@ -1116,11 +1123,11 @@
 <li>The status panel marks an outdated copy with “→ v<em>X</em> available”; <strong>Reinstall</strong> updates it in place, keeping the configuration. It is available only when there is an update to apply - against a copy already at the shipped version it is greyed out, and the version reads “(current)”.</li>
 <li>
 <p>At startup, TelemFFB offers to update every outdated wrapper across your simulators in a single prompt, each simulator deselectable.</p>
-<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/update-offer.webp" width="500px"/> <figcaption></figcaption></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/update-offer.webp"><img alt="" src="../images/dinput-tap/update-offer.webp" width="500px"/></a> <figcaption></figcaption></figure><p></p>
 </li>
 <li>
 <p>The same update is available any time from the simulator’s tap status panel, which flags the out-of-date copy:</p>
-<p><figure class="figure-image"> <img alt="" src="../images/dinput-tap/update-offer_sim-settings.webp" width="650px"/> <figcaption></figcaption></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/update-offer_sim-settings.webp"><img alt="" src="../images/dinput-tap/update-offer_sim-settings.webp" width="650px"/></a> <figcaption></figcaption></figure><p></p>
 </li>
 </ul>
 <p class="label-paragraph"><strong>Remove</strong> deletes only TelemFFB’s own wrapper. TelemFFB never removes a <code>dinput8.dll</code> that another program installed, and never removes your configuration file. When you disable the tap or the simulator, TelemFFB offers the same cleanup.</p>
@@ -1150,5 +1157,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

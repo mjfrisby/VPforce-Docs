@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -517,7 +524,16 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-editor-fields">1.3 
+<a class="md-nav__link" href="#where-an-aircrafts-overrides-come-from">1.3 
+<span class="md-ellipsis">
+      
+        Where an aircraft’s overrides come from
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-editor-fields">1.4 
 <span class="md-ellipsis">
       
         The editor fields
@@ -526,16 +542,38 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#reading-the-example">1.4 
+<a class="md-nav__link" href="#a-worked-example">1.5 
 <span class="md-ellipsis">
       
-        Reading the example
+        A worked example
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#cautions">1.5 
+<a class="md-nav__link" href="#input-events-b-variables">1.6 
+<span class="md-ellipsis">
+      
+        Input events (B: variables)
+      
+    </span>
+</a>
+<nav aria-label="Input events (B: variables)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#finding-the-variable-for-a-cockpit-control">1.6.1 
+<span class="md-ellipsis">
+      
+        Finding the variable for a cockpit control
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cautions">1.7 
 <span class="md-ellipsis">
       
         Cautions
@@ -867,26 +905,42 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="telemetry-overrides"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Telemetry Overrides<a class="headerlink" href="#telemetry-overrides" title="Link to this section">¶</a></h1>
-<p>An advanced MSFS/X-Plane feature: change <strong>where a telemetry item’s data comes from</strong>, or subscribe to <strong>additional</strong> telemetry items, per aircraft. Open the editor from <strong>Utilities → SimConnect/Dataref Overrides Editor</strong>, with an aircraft loaded (or selected in the offline editor). Overrides are stored against the aircraft’s match pattern, and changes are saved and applied immediately.</p>
-<figure class="figure-image"> <img alt="The SimConnect/Dataref Overrides Editor entry in the Utilities menu" src="../images/telem-overrides/overrides_menu.webp" width="427px"> <figcaption>The SimConnect/Dataref Overrides Editor entry in the Utilities menu</figcaption></img></figure>
-<figure class="figure-image"> <img alt="The SimConnect/Dataref Overrides editor showing several source overrides for an A2A aircraft, with the overridden values visible in the Monitor tab" src="../images/telem-overrides/overrides_example.webp" width="760px"> <figcaption>The SimConnect/Dataref Overrides editor showing several source overrides for an A2A aircraft, with the overridden values visible in the Monitor tab</figcaption></img></figure>
+<p>An advanced MSFS/X-Plane feature: change <strong>where a telemetry item’s data comes from</strong>, or subscribe to <strong>additional</strong> telemetry items. Open the editor from <strong>Utilities → SimConnect/Dataref Overrides Editor</strong>, with an aircraft loaded (or selected in the offline editor). Your overrides are stored against the aircraft’s match string, and changes are saved and applied immediately. TelemFFB also ships overrides of its own, for single aircraft and for whole aircraft classes.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/telem-overrides/overrides_menu.webp"><img alt="The SimConnect/Dataref Overrides Editor entry in the Utilities menu" src="../images/telem-overrides/overrides_menu.webp" width="427px"/></a> <figcaption>The SimConnect/Dataref Overrides Editor entry in the Utilities menu</figcaption></figure>
 <h2 id="why-it-exists"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Why it exists<a class="headerlink" href="#why-it-exists" title="Link to this section">¶</a></h2>
 <p>TelemFFB’s effects consume a fixed set of telemetry items (the names you see in the Monitor tab). Normally each item is wired to a standard SimConnect variable or X-Plane dataref, but not every aircraft populates the standard sources:</p>
 <ul>
 <li><strong>Source overrides.</strong> Sophisticated addon aircraft often implement their own systems in custom variables and leave the standard ones stale. The classic case is the <strong>autopilot indication</strong>: an addon whose AP never drives the standard <code>AUTOPILOT MASTER</code> simvar breaks every AP-aware TelemFFB feature until you override <code>APMaster</code> to read the addon’s own variable. The same applies to custom engine and flight models (RPM, thrust, accelerations).</li>
-<li><strong>Additional subscriptions.</strong> An override whose Telem Property is a <em>new</em> name creates a new telemetry item. This is how the special aircraft implementations (the HPG helicopters, for example) receive their custom <code>L:Var</code>s — their shipped default profiles include the required overrides by default.</li>
+<li><strong>Additional subscriptions.</strong> An override whose Telem Property is a <em>new</em> name creates a new telemetry item. This is how the special aircraft implementations (the HPG helicopters, for example) receive their custom <code>L:Var</code>s. The aircraft class or the shipped profile carries the required overrides.</li>
 </ul>
 <h2 id="how-it-works"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> How it works<a class="headerlink" href="#how-it-works" title="Link to this section">¶</a></h2>
 <ul>
-<li><strong>MSFS</strong> - the override replaces (or adds) the variable in TelemFFB’s SimConnect subscription set. The Variable field takes a SimVar name (<code>VARNAME</code>) or an LVar (<code>L:VARNAME</code>); the Unit is the SimConnect unit to request (<code>bool</code>, <code>enum</code>, <code>number</code>, <code>Percent Over 100</code>, <code>degrees</code>, <code>meters/second</code>).</li>
+<li><strong>MSFS</strong> - the override replaces (or adds) the variable in TelemFFB’s SimConnect subscription set. The Variable field takes a SimVar name (<code>VARNAME</code>), an LVar (<code>L:VARNAME</code>) or an <a href="#input-events-b-variables">1.6 input event</a> (<code>B:EVENT_NAME</code>); the Unit is the SimConnect unit to request (<code>bool</code>, <code>enum</code>, <code>number</code>, <code>Percent Over 100</code>, <code>degrees</code>, <code>meters/second</code>).</li>
 <li><strong>X-Plane</strong> - TelemFFB instructs its X-Plane plugin to subscribe to the given dataref (Unit: <code>int</code> or <code>float</code>) and export it under the telemetry item’s name.</li>
 </ul>
-<p>Either way, the result flows into the same telemetry item the effects already consume; verify it live in the <strong>Monitor tab</strong>. When an aircraft with active overrides loads, the status area shows a <strong>Telem Ovd</strong> pill with counts by tier (shipped default vs your own); hovering it lists every active override.</p>
+<p>Either way, the result flows into the same telemetry item the effects already consume; verify it live in the <strong>Monitor tab</strong>. When an aircraft with active overrides loads, the status area shows a <strong>Telem Ovd</strong> pill with a count for each tier, for example <code>Class (6) + Default (6) + User (1)</code>. Hover it to list every active override and the tier it comes from.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/telem-overrides/telem_ovd_tooltip.webp"><img alt="The Telem Ovd pill and its tooltip, listing each override with its tier" src="../images/telem-overrides/telem_ovd_tooltip.webp" width="500px"/></a> <figcaption>The Telem Ovd pill and its tooltip, listing each override with its tier</figcaption></figure>
+<h2 id="where-an-aircrafts-overrides-come-from"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Where an aircraft’s overrides come from<a class="headerlink" href="#where-an-aircrafts-overrides-come-from" title="Link to this section">¶</a></h2>
+<p>An aircraft’s overrides are built from three tiers. A later tier replaces an earlier one where both name the same telemetry item:</p>
+<ol>
+<li><strong>Class</strong> - overrides that ship with the aircraft’s class. A special class reads telemetry items that only it needs, so it carries them itself. Every aircraft assigned to the class gets them.</li>
+<li><strong>Default</strong> - overrides that ship with the built-in profile that matched the aircraft.</li>
+<li><strong>User</strong> - your own overrides, stored under that same match string.</li>
+</ol>
+<p>Only the profile that matched contributes. A broader profile that also fits the aircraft name adds nothing, the same as for settings. See <a href="../aircraft-profiles/#how-telemffb-matches-an-aircraft">How TelemFFB Matches an Aircraft</a>.</p>
+<p>An override belongs to the simulator it was made for. An MSFS override never reaches an X-Plane aircraft that happens to share the name.</p>
+<p>The <strong>Source</strong> column of the editor names the tier of each row.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/telem-overrides/overrides_class_rows.webp"><img alt="The overrides editor for the FlyInside B206. The Source column shows four rows from its class and two from its built-in profile" src="../images/telem-overrides/overrides_class_rows.webp" width="760px"/></a> <figcaption>The overrides editor for the FlyInside B206. The Source column shows four rows from its class and two from its built-in profile</figcaption></figure>
 <div class="admonition important">
-<p class="admonition-title">Additional profiles: clone, don’t create from scratch</p>
-<p>Overrides belong to the matched model profile. If you need an additional profile (a livery whose name does not match the shipped pattern, for example), you must <strong>clone it from the default profile</strong> so the overrides carry over. An entry created from scratch will <em>not</em> pick them up, and every effect that depends on the overridden telemetry silently loses its data. (This is the general form of the rule the <a href="../msfs-xp-helicopters/#hpg-airbus-helicopters-msfs-only">HPG helicopters</a> document for their <code>L:Var</code> subscriptions; see the full roster of <a href="../msfs-xp-special-aircraft/">Aircraft with Special Treatment</a>.) See <a href="../aircraft-profiles/">Aircraft Profiles</a> for cloning.</p>
+<p class="admonition-title">A new profile for a special aircraft</p>
+<p>You may need a profile of your own for a special aircraft, for example for a livery whose name the built-in match string does not fit.</p>
+<ul>
+<li><strong>Class</strong> overrides come with the class. Select the correct class in the New Aircraft Wizard and the new profile has them.</li>
+<li><strong>Default</strong> overrides belong to one built-in profile. A new profile gets them only if you <strong>clone it from that built-in profile</strong>. A profile made from scratch does not have them, and every effect that depends on those telemetry items silently loses its data.</li>
+</ul>
+<p><a href="../msfs-xp-special-aircraft/">Aircraft with Special Treatment</a> lists which aircraft need the clone. The wizard enforces it for HPG and FlyInside aircraft.</p>
 </div>
-<h2 id="the-editor-fields"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> The editor fields<a class="headerlink" href="#the-editor-fields" title="Link to this section">¶</a></h2>
+<h2 id="the-editor-fields"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> The editor fields<a class="headerlink" href="#the-editor-fields" title="Link to this section">¶</a></h2>
 <ul>
 <li><strong>Telem Property</strong> - the telemetry item to feed. The dropdown lists the standard overridable items, but the field is editable, which enables two more forms:<ul>
 <li><code>Name:index</code> targets one element of a <em>list</em> telemetry item; the screenshot overrides <code>AccBody:0/1/2</code> (the X/Y/Z body accelerations) individually.</li>
@@ -901,9 +955,16 @@
 <p class="admonition-title">The transform must make the value equivalent to the original</p>
 <p>TelemFFB’s effects expect each telemetry item in the <strong>units, range, and sign of its original standard source</strong>: an override changes where the data comes from, not what the consumers expect. Whatever format the replacement variable uses natively, it is your job (via the Transform/Scale) to deliver an equivalent value. In the example below, the addon’s body accelerations arrive in m/s² where the standard item is in g, hence the 0.102 (≈1/9.81) scale. An override that “works” but skips this conversion feeds every dependent effect distorted data.</p>
 </div>
-<p>Rows shown <strong>greyed out</strong> come from the aircraft’s shipped default profile; they document what the curated profile already subscribes and cannot be deleted here. Your own rows (source “user”) can be selected and deleted.</p>
-<h2 id="reading-the-example"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Reading the example<a class="headerlink" href="#reading-the-example" title="Link to this section">¶</a></h2>
-<p>The screenshot shows a curated set for the A2A Comanche, an addon with its own physics and systems model:</p>
+<p>The table below the fields lists every override in effect for the aircraft. Its <strong>Source</strong> column reads <strong>Class</strong>, <strong>Default</strong> or <strong>User</strong>, the <a href="#where-an-aircrafts-overrides-come-from">1.3 three tiers</a>. Hover a Source cell for a reminder of what the tier means.</p>
+<p>Rows from the Class and Default tiers ship with TelemFFB and are shown <strong>greyed out</strong>. They show what the aircraft already subscribes, and they cannot be deleted.</p>
+<ul>
+<li>To change a shipped override, select its row, edit the fields and click <strong>Add</strong>. Your row replaces the shipped one for this aircraft. Delete your row to return to the shipped value.</li>
+<li>Your own rows can be selected and deleted. A deleted override stops being subscribed at once.</li>
+<li>The editor adds and removes rows for the selected aircraft only. With only a class selected in the offline editor, it shows the class rows for reference.</li>
+</ul>
+<h2 id="a-worked-example"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> A worked example<a class="headerlink" href="#a-worked-example" title="Link to this section">¶</a></h2>
+<p>The A2A Comanche is an addon with its own physics and systems model, so its built-in profile re-sources several telemetry items from the addon’s variables. This is how such a set looks in the editor and in the Monitor tab:</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/telem-overrides/overrides_example.webp"><img alt="The SimConnect/Dataref Overrides editor showing several source overrides for an A2A aircraft, with the overridden values visible in the Monitor tab" src="../images/telem-overrides/overrides_example.webp" width="760px"/></a> <figcaption>The SimConnect/Dataref Overrides editor showing several source overrides for an A2A aircraft, with the overridden values visible in the Monitor tab</figcaption></figure>
 <table>
 <thead>
 <tr>
@@ -930,7 +991,36 @@
 </tr>
 </tbody>
 </table>
-<h2 id="cautions"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Cautions<a class="headerlink" href="#cautions" title="Link to this section">¶</a></h2>
+<h2 id="input-events-b-variables"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Input events (<code>B:</code> variables)<a class="headerlink" href="#input-events-b-variables" title="Link to this section">¶</a></h2>
+<p>Many MSFS 2024 cockpit controls do not exist as a SimVar or an LVar. The simulator exposes them as <strong>input events</strong>. TelemFFB reads an input event wherever it takes a variable, when the name is written with a <code>B:</code> prefix, for example <code>B:LIGHTING_NAVIGATION_LIGHT</code>.</p>
+<p>The most common use is a cockpit switch setting: the <a href="../msfs-xp-helicopters/#helicopter-force-trim">Force Trim Switch Simvar</a> on helicopters, or the <a href="../effects-mechanical/#controls-lock">Controls Lock</a> variable. A telemetry override can read one as well.</p>
+<h3 id="finding-the-variable-for-a-cockpit-control"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6.1</span> Finding the variable for a cockpit control<a class="headerlink" href="#finding-the-variable-for-a-cockpit-control" title="Link to this section">¶</a></h3>
+<ol>
+<li>Turn on the simulator’s developer mode and open the <strong>Behaviors</strong> window from the developer menu.</li>
+<li>With the window open, point the mouse at the control in the cockpit and press <strong>Ctrl+G</strong>. The <strong>Inspector</strong> tab shows that control.</li>
+<li>
+<p>Read the Inspector from the top down:</p>
+<ul>
+<li>Ignore the <strong>ID</strong>, <strong>Path</strong> and <strong>Node</strong> lines. They name parts of the 3D model, not variables.</li>
+<li>If there is an <strong>InputEvents</strong> section, expand it. The name in its header is the input event, shown with its current value beside it. Enter it with the <code>B:</code> prefix, for example <code>B:HANDLING_FORCETRIMSWITCH</code>.</li>
+<li>Use that header name only. The names under <strong>Binding(s)</strong>, and any <code>B:</code> name in the mouse code, end in <code>_Toggle</code>, <code>_Set</code>, <code>_Inc</code>, <code>_On</code> and so on. Those are actions the aircraft accepts, not values it reports, and reading one returns nothing.</li>
+<li>If there is no InputEvents section, the control is written the older way. Expand the code shown under <strong>Mouserect</strong> or <strong>Tooltips</strong> and look for the <code>L:</code> variable it writes, for example <code>(&gt;L:switchForceTrim, bool)</code>. Enter that variable as it appears, <code>L:switchForceTrim</code>.</li>
+</ul>
+</li>
+</ol>
+<p>The same switch on two versions of one aircraft shows both cases. On the 2024 built-in UH-1H the Inspector has an InputEvents section, so the variable is <code>B:HANDLING_FORCETRIMSWITCH</code>. The event’s own code still drives the older <code>L:switchForceTrim</code> underneath, so that variable works on this version too. Prefer the input event where one exists: it is the interface the aircraft publishes, while the L:var behind it may change in an update.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/telem-overrides/sim-behaviors-2024.webp"><img alt="The Behaviors window inspecting the force trim switch of the 2024 built-in UH-1H. The boxed InputEvents header, HANDLING_FORCETRIMSWITCH, is the variable to use; the B: name with the Toggle suffix in the mouse code above it is an action, not a value" src="../images/telem-overrides/sim-behaviors-2024.webp" width="760px"/></a> <figcaption>The Behaviors window inspecting the force trim switch of the 2024 built-in UH-1H. The boxed InputEvents header, HANDLING_FORCETRIMSWITCH, is the variable to use; the B: name with the Toggle suffix in the mouse code above it is an action, not a value</figcaption></figure>
+<p>On the 2020 version of the same helicopter there is no InputEvents section. The code under Tooltips writes an L:var, so the variable is <code>L:switchForceTrim</code>, and that is the only choice:</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/telem-overrides/sim-behaviors.webp"><img alt="The Behaviors window inspecting the force trim switch of the 2020 UH-1H. There is no InputEvents section; the code writes L:switchForceTrim" src="../images/telem-overrides/sim-behaviors.webp" width="760px"/></a> <figcaption>The Behaviors window inspecting the force trim switch of the 2020 UH-1H. There is no InputEvents section; the code writes L:switchForceTrim</figcaption></figure>
+<ul>
+<li>Set the unit to <code>number</code>. An input event always reports a number. The Transform/Scale field works as it does for any other variable.</li>
+<li>Several settings and telemetry items can read the same input event.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Input events belong to the loaded aircraft. If the aircraft does not define the event you named, TelemFFB logs a warning that names it, and the telemetry item stays empty.</p>
+</div>
+<h2 id="cautions"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Cautions<a class="headerlink" href="#cautions" title="Link to this section">¶</a></h2>
 <ul>
 <li>An override changes the input for <strong>every effect</strong> that consumes that telemetry item; a wrong variable or scale can quietly distort several effects at once. Sanity-check the value in the Monitor tab against what you expect (units and sign included).</li>
 <li>Core flight-dynamics items (attitude, airspeed, AoA and similar) are deliberately absent from the dropdown; overriding the fundamentals is rarely the right fix.</li>
@@ -961,5 +1051,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

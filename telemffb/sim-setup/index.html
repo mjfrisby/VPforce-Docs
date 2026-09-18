@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -868,7 +875,7 @@
 <article class="md-content__inner md-typeset">
 <h1 id="connecting-your-simulator"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Connecting Your Simulator<a class="headerlink" href="#connecting-your-simulator" title="Link to this section">¶</a></h1>
 <p>These settings are found on the <strong>Simulator Setup</strong> tab of <strong>System → System Settings</strong> and are global for any instance of TelemFFB. Each simulator has its own page on the tab.</p>
-<figure class="figure-image"> <img alt="The Simulator Setup tab with per-simulator enable and auto-setup options" src="../images/sim-setup/simulator-setup.webp" width="650px"> <figcaption>The Simulator Setup tab with per-simulator enable and auto-setup options</figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/sim-setup/simulator-setup.webp"><img alt="The Simulator Setup tab with per-simulator enable and auto-setup options" src="../images/sim-setup/simulator-setup.webp" width="650px"/></a> <figcaption>The Simulator Setup tab with per-simulator enable and auto-setup options</figcaption></figure>
 <p>Enable each simulator you fly. For the sims that need an export script or plugin (DCS, X-Plane, IL-2), the auto-setup options install it for you.</p>
 <p class="label-paragraph"><strong>Verifying the connection:</strong> start the simulator and load a flight. The TelemFFB status area should show <strong>Running</strong> with the detected aircraft name, and the Monitor tab should show live telemetry values. See <a href="../ui-overview/#deviceinstance-status-indications">Device/Instance Status Indications</a> if it does not.</p>
 <h2 id="dcs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> DCS<a class="headerlink" href="#dcs" title="Link to this section">¶</a></h2>
@@ -1045,5 +1052,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

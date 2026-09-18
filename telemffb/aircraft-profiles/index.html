@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -318,7 +325,29 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#adding-new-aircraft-support">1.1 
+<a class="md-nav__link" href="#how-telemffb-matches-an-aircraft">1.1 
+<span class="md-ellipsis">
+      
+        How TelemFFB Matches an Aircraft
+      
+    </span>
+</a>
+<nav aria-label="How TelemFFB Matches an Aircraft" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#which-match-string-wins">1.1.1 
+<span class="md-ellipsis">
+      
+        Which match string wins
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adding-new-aircraft-support">1.2 
 <span class="md-ellipsis">
       
         Adding New Aircraft Support
@@ -328,7 +357,7 @@
 <nav aria-label="Adding New Aircraft Support" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#accessing-the-new-aircraft-dialog">1.1.1 
+<a class="md-nav__link" href="#accessing-the-new-aircraft-dialog">1.2.1 
 <span class="md-ellipsis">
       
         Accessing the New Aircraft Dialog
@@ -359,7 +388,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-add-new-aircraft-wizard">1.1.2 
+<a class="md-nav__link" href="#the-add-new-aircraft-wizard">1.2.2 
 <span class="md-ellipsis">
       
         The Add New Aircraft Wizard
@@ -371,7 +400,65 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#profile-manager">1.2 
+<a class="md-nav__link" href="#when-your-profile-and-a-built-in-both-match">1.3 
+<span class="md-ellipsis">
+      
+        When Your Profile and a Built-In Both Match
+      
+    </span>
+</a>
+<nav aria-label="When Your Profile and a Built-In Both Match" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-the-dialog">1.3.1 
+<span class="md-ellipsis">
+      
+        Reading the dialog
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#your-choices">1.3.2 
+<span class="md-ellipsis">
+      
+        Your choices
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-a-merge-does">1.3.3 
+<span class="md-ellipsis">
+      
+        What a merge does
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#changing-your-mind">1.3.4 
+<span class="md-ellipsis">
+      
+        Changing your mind
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#giving-the-loaded-aircraft-its-own-profile">1.4 
+<span class="md-ellipsis">
+      
+        Giving the Loaded Aircraft Its Own Profile
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#profile-manager">1.5 
 <span class="md-ellipsis">
       
         Profile Manager
@@ -381,7 +468,7 @@
 <nav aria-label="Profile Manager" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#managing-profiles">1.2.1 
+<a class="md-nav__link" href="#managing-profiles">1.5.1 
 <span class="md-ellipsis">
       
         Managing Profiles
@@ -439,7 +526,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#exporting-profiles">1.2.2 
+<a class="md-nav__link" href="#exporting-profiles">1.5.2 
 <span class="md-ellipsis">
       
         Exporting Profile(s)
@@ -448,7 +535,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#importing-profiles">1.2.3 
+<a class="md-nav__link" href="#importing-profiles">1.5.3 
 <span class="md-ellipsis">
       
         Importing Profile(s)
@@ -964,24 +1051,43 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="aircraft-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Aircraft Profiles<a class="headerlink" href="#aircraft-profiles" title="Link to this section">¶</a></h1>
-<h2 id="adding-new-aircraft-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Adding New Aircraft Support<a class="headerlink" href="#adding-new-aircraft-support" title="Link to this section">¶</a></h2>
+<h2 id="how-telemffb-matches-an-aircraft"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> How TelemFFB Matches an Aircraft<a class="headerlink" href="#how-telemffb-matches-an-aircraft" title="Link to this section">¶</a></h2>
+<p>Every aircraft profile has a <strong>match string</strong>. When an aircraft loads, TelemFFB compares each match string with the aircraft name the simulator reports. That name is shown as <strong>Current Aircraft</strong> in the status area. The match string that wins is shown as <strong>Matched Model</strong>.</p>
+<p>A match string is a regular expression, and matching starts at the beginning of the name. <code>Cessna 172</code> therefore matches <code>Cessna 172</code>, <code>Cessna 172 Skyhawk</code> and any livery whose name starts that way. <code>Cessna 172</code> and <code>Cessna 172.*</code> behave the same. Only <code>^Cessna 172$</code> matches that one name and nothing longer.</p>
+<h3 id="which-match-string-wins"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> Which match string wins<a class="headerlink" href="#which-match-string-wins" title="Link to this section">¶</a></h3>
+<p>Several match strings can fit the same aircraft. The most specific one wins:</p>
+<ol>
+<li>An exact match string, written as <code>^Name$</code>, beats every other form.</li>
+<li>Otherwise, the match string with the longer run of fixed text wins. <code>737-600.*</code> beats <code>737.*</code>.</li>
+<li>If two match strings fix the same text, the one that requires it at the start of the name wins. <code>C-17.*</code> beats <code>.*C-17.*</code>.</li>
+<li>If they are still equal, the built-in profile wins over yours. Within one file, the earlier entry wins.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Only the winning profile applies</p>
+<p>Settings and <a href="../telem-overrides/">telemetry overrides</a> come from the one profile that matched. A broader profile that also fits the name adds nothing. The Settings tab shows what is in effect.</p>
+<p>Anything the winning profile leaves unset comes from your class and sim overrides, then from the shipped defaults. See <a href="../settings-model/">How Settings Work</a>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Checking a match</p>
+<p>The log line <code>Pattern Match:</code> names the winning match string each time an aircraft loads.</p>
+</div>
+<h2 id="adding-new-aircraft-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Adding New Aircraft Support<a class="headerlink" href="#adding-new-aircraft-support" title="Link to this section">¶</a></h2>
 <p>While TelemFFB has default profiles for many aircraft already, there are many hundreds of possible aircraft between all of the simulators that are supported. So, inevitably you will run into an aircraft that does not already have a built-in profile.</p>
 <p>There are two ways to add support for new or unknown aircraft to TelemFFB:</p>
 <ul>
 <li>Dynamically when a new aircraft is loaded in a simulator</li>
 <li>Via the Profile Manager, independent of any running sim</li>
 </ul>
-<h3 id="accessing-the-new-aircraft-dialog"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> Accessing the New Aircraft Dialog<a class="headerlink" href="#accessing-the-new-aircraft-dialog" title="Link to this section">¶</a></h3>
-<h4 id="dynamically-from-main-window-recommended"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1.1</span> Dynamically from Main Window (Recommended)<a class="headerlink" href="#dynamically-from-main-window-recommended" title="Link to this section">¶</a></h4>
-<p>If you are actively using a simulator and you load into an aircraft that does not have a default settings profile, you will see a reduced set of effects and a large “create new aircraft” button will appear. This method is preferred over the offline editor since TelemFFB will already know the proper name string for the aircraft.</p>
-<p>Simply click on the “Create/clone config for new aircraft” button to launch the new aircraft wizard.</p>
-<figure class="figure-image"> <img alt="" src="../images/aircraft-profiles/new-aircraft-main.webp" width="650px"> <figcaption></figcaption></img></figure>
-<h4 id="adding-new-aircraft-via-profile-manager"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1.2</span> Adding New Aircraft via Profile Manager<a class="headerlink" href="#adding-new-aircraft-via-profile-manager" title="Link to this section">¶</a></h4>
-<p>Open the Profile Manager.</p>
-<figure class="figure-image"> <img alt="" height="126px" src="../images/aircraft-profiles/wizard-1.webp" width="335px"> <figcaption></figcaption></img></figure>
-<p>In the resulting Profile Manager window, select the “New Aircraft Wizard” button. This method is not recommended — it is difficult to know the exact name string TelemFFB will receive via telemetry from a given simulator.</p>
-<figure class="figure-image"> <img alt="" height="353px" src="../images/aircraft-profiles/wizard-2.webp" width="415px"/> <figcaption></figcaption></figure>
-<h3 id="the-add-new-aircraft-wizard"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.2</span> The Add New Aircraft Wizard<a class="headerlink" href="#the-add-new-aircraft-wizard" title="Link to this section">¶</a></h3>
+<h3 id="accessing-the-new-aircraft-dialog"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Accessing the New Aircraft Dialog<a class="headerlink" href="#accessing-the-new-aircraft-dialog" title="Link to this section">¶</a></h3>
+<h4 id="dynamically-from-main-window-recommended"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1.1</span> Dynamically from Main Window (Recommended)<a class="headerlink" href="#dynamically-from-main-window-recommended" title="Link to this section">¶</a></h4>
+<p>When you load an aircraft that matches no profile, the main window shows a red <strong>No Profile Found for</strong> prompt that names the aircraft. Click it to open the New Aircraft Wizard. Use this method where you can, because TelemFFB already knows the exact name the simulator sends.</p>
+<p>Until the profile exists, the controls on the Settings tab are disabled. An unknown aircraft has no profile to store a change in. The aircraft still gets the sim defaults and, where the simulator reports the aircraft type, the defaults for that class.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/new-aircraft-main.webp"><img alt="" src="../images/aircraft-profiles/new-aircraft-main.webp" width="650px"/></a> <figcaption></figcaption></figure>
+<h4 id="adding-new-aircraft-via-profile-manager"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1.2</span> Adding New Aircraft via Profile Manager<a class="headerlink" href="#adding-new-aircraft-via-profile-manager" title="Link to this section">¶</a></h4>
+<p>Open the Profile Manager and select the “New Aircraft Wizard” button. This method is not recommended, because it is difficult to know the exact name TelemFFB will receive from a given simulator.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/wizard-1.webp"><img alt="" height="126px" src="../images/aircraft-profiles/wizard-1.webp" width="335px"/></a> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/wizard-2.webp"><img alt="" height="353px" src="../images/aircraft-profiles/wizard-2.webp" width="415px"/></a> <figcaption></figcaption></figure>
+<h3 id="the-add-new-aircraft-wizard"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> The Add New Aircraft Wizard<a class="headerlink" href="#the-add-new-aircraft-wizard" title="Link to this section">¶</a></h3>
 <p>After accessing the wizard via one of the two methods above, simply follow the steps in the wizard to add the new aircraft.</p>
 <p class="label-paragraph"><strong>Page 1:</strong></p>
 <ol>
@@ -993,7 +1099,7 @@
 <p>Select the appropriate aircraft class for the aircraft you are adding.</p>
 <ul>
 <li>Note that for MSFS, the aircraft type will be auto-detected based on telemetry data. However, you should validate that the selection is correct.</li>
-<li>This is particularly important for aircraft types with special treatment in MSFS, such as those from <strong>HPG</strong>, <strong>FlyInside</strong>, <strong>CowanSim</strong>, and others; see <a href="../msfs-xp-special-aircraft/">Aircraft with Special Treatment</a> for the full roster. These will be auto-detected as their base aircraft type, but the TelemFFB aircraft class needs to be configured properly to achieve full functionality for these aircraft.</li>
+<li>This matters most for aircraft with special treatment, such as those from <strong>HPG</strong>, <strong>FlyInside</strong> and <strong>CowanSim</strong>. The simulator reports them as plain helicopters. They need their own TelemFFB class to work fully. See <a href="../msfs-xp-special-aircraft/">Aircraft with Special Treatment</a> for the full roster.</li>
 </ul>
 </li>
 </ol>
@@ -1004,29 +1110,146 @@
 <ul>
 <li>
 <p>If auto-detected, this will already be filled out for you.
-2. Enter a regex match string for the aircraft. TelemFFB uses regex to match the aircraft string and apply the matching profile. Many aircraft, particularly in MSFS, have a base string followed by per-livery or variant text. To use the same profile for multiple variations or liveries, the match string must encompass all possible variations of the name.</p>
+2. Choose a match string for the aircraft. See <a href="#how-telemffb-matches-an-aircraft">1.1 How TelemFFB Matches an Aircraft</a> for the rules.</p>
 </li>
 <li>
-<p>You may manually enter a match string, or choose from one of the recommended pre-built match strings.
-3. Optional: Clone from existing aircraft.</p>
+<p>The wizard suggests match strings built from the aircraft name, most specific first. The list starts with the exact form, <code>^Full Name$</code>. It continues with the whole name followed by <code>.*</code>, then drops one word at a time from the end.</p>
+</li>
+<li>The wizard preselects the suggestion that drops the last word. The last word of a name is usually the livery, the variant or the registration, and a match string that includes it fits only that one aircraft. If dropping a word would leave only the manufacturer, the wizard keeps the whole name.</li>
+<li>Pick a shorter suggestion to cover a family of liveries or variants with one profile. Pick the exact form to cover one aircraft only.</li>
+<li>You can also type your own match string. The field turns red when the string does not match the aircraft name.</li>
+</ul>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/wizard-match-string.webp"><img alt="The match string page of the New Aircraft Wizard, with the suggestions listed most specific first" src="../images/aircraft-profiles/wizard-match-string.webp" width="600px"/></a> <figcaption>The match string page of the New Aircraft Wizard, with the suggestions listed most specific first</figcaption></figure><p></p>
 </li>
 <li>
-<p>You may choose to clone the new aircraft from an existing aircraft already known by TelemFFB.</p>
-</li>
+<p>Optional: clone from an existing aircraft.</p>
+<ul>
+<li>The new aircraft starts with a copy of the chosen profile’s settings and telemetry overrides.</li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For some aircraft with special treatment in TelemFFB (such as HPG helicopters), it is mandatory to clone the configuration from one of the default profiles.</p>
+<p class="admonition-title">Classes that must be cloned</p>
+<p>For <strong>HPG</strong> and <strong>FlyInside</strong> aircraft, cloning from one of the built-in profiles is mandatory. Some of the telemetry sources those classes read differ per aircraft, so they live in the aircraft’s profile.</p>
+<p>The other special classes carry their telemetry sources on the class itself. For those, selecting the correct class on Page 2 is enough.</p>
 </div>
 </li>
 </ol>
-<h2 id="profile-manager"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Profile Manager<a class="headerlink" href="#profile-manager" title="Link to this section">¶</a></h2>
+<h2 id="when-your-profile-and-a-built-in-both-match"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> When Your Profile and a Built-In Both Match<a class="headerlink" href="#when-your-profile-and-a-built-in-both-match" title="Link to this section">¶</a></h2>
+<p>TelemFFB updates ship new built-in profiles. One of them may cover an aircraft that you already made a profile for. Both then match the aircraft, and TelemFFB asks you what to do.</p>
+<p>The main window shows a <strong>Multiple matching profiles detected</strong> prompt. If the window is hidden or minimized, a tray notification appears as well. Click the prompt to open the dialog.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/multi-match-prompt.webp"><img alt="The Multiple matching profiles prompt on the main window" src="../images/aircraft-profiles/multi-match-prompt.webp" width="650px"/></a> <figcaption>The Multiple matching profiles prompt on the main window</figcaption></figure>
+<p>The more specific of the two match strings names the aircraft, and the built-in wins a tie. The dialog says which one matched and why.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/multi-match-dialog.webp"><img alt="The Multiple matching profiles dialog, showing the built-in, your profile and the merged result side by side" src="../images/aircraft-profiles/multi-match-dialog.webp" width="760px"/></a> <figcaption>The Multiple matching profiles dialog, showing the built-in, your profile and the merged result side by side</figcaption></figure>
+<h3 id="reading-the-dialog"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Reading the dialog<a class="headerlink" href="#reading-the-dialog" title="Link to this section">¶</a></h3>
+<p>The table lists every setting and telemetry override that either profile holds. It has three value columns:</p>
+<ul>
+<li><strong>Built-in</strong> - what the built-in profile sets.</li>
+<li><strong>Yours</strong> - what your active profile sets.</li>
+<li><strong>Post Merge</strong> - what would be in effect after a merge.</li>
+</ul>
+<p>Each column heading names its match string and profile. The heading also says whether that side is applied today.</p>
+<ul>
+<li>Rows that a merge would change are shown in bold.</li>
+<li>A row where the two profiles set the same thing to different values is a conflict, shown in amber. Your value stands after a merge, as it does on any built-in profile.</li>
+<li>Values are compared by meaning. <code>0.5</code> and <code>0.50</code> are the same value, and so are <code>10kt</code> and <code>5.1444m/s</code>.</li>
+<li>If the built-in profile ships with notes, they appear above the table.</li>
+</ul>
+<p>Hover any button to see exactly what it does.</p>
+<h3 id="your-choices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Your choices<a class="headerlink" href="#your-choices" title="Link to this section">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Which profile names the aircraft</th>
+<th>Your settings today</th>
+<th>Buttons offered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yours, because it is more specific</td>
+<td>In effect</td>
+<td>Merge, Keep mine, Not now</td>
+</tr>
+<tr>
+<td>The built-in, with the identical match string</td>
+<td>In effect, on top of the built-in</td>
+<td>Merge, Don’t ask again, Not now</td>
+</tr>
+<tr>
+<td>The built-in, in every other case</td>
+<td>Not in effect</td>
+<td>Merge, Not now</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Merge into the built-in</strong> - your profiles become user profiles of the built-in, which then names the aircraft. Nothing you set is lost.</li>
+<li><strong>Keep mine</strong> and <strong>Don’t ask again</strong> - leave everything as it is. TelemFFB remembers the answer.</li>
+<li><strong>Not now</strong> - close without deciding. The prompt returns the next time the aircraft loads. Closing the dialog window does the same.</li>
+</ul>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/multi-match-yours-wins.webp"><img alt="The dialog when your profile is the more specific one, offering Keep mine" src="../images/aircraft-profiles/multi-match-yours-wins.webp" width="700px"/></a> <figcaption>The dialog when your profile is the more specific one, offering Keep mine</figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/multi-match-same-string.webp"><img alt="The dialog when both profiles use the identical match string, offering Don't ask again" src="../images/aircraft-profiles/multi-match-same-string.webp" width="700px"/></a> <figcaption>The dialog when both profiles use the identical match string, offering Don't ask again</figcaption></figure>
+<p>A permanent “no” is offered only while your settings still reach the aircraft. In the last row of the table they reach nothing, so a permanent “no” would hide that. The prompt stays until you merge.</p>
+<h3 id="what-a-merge-does"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> What a merge does<a class="headerlink" href="#what-a-merge-does" title="Link to this section">¶</a></h3>
+<ul>
+<li>Every profile under your match string moves to the built-in, not only the active one.</li>
+<li><strong>User Default</strong>, the base profile of an aircraft you added, becomes <strong>Auto User</strong>. That is the profile a slider change on a built-in aircraft creates. Your other profiles keep their names. If the built-in already has a profile of the same name, the incoming one gets a suffix that says where it came from.</li>
+<li>Your telemetry overrides move with the profiles.</li>
+<li>Each moved profile’s notes record the match string it came from.</li>
+<li>The profile that was active stays active.</li>
+</ul>
+<p>What happens to your old match string depends on how much it covered:</p>
+<ul>
+<li>If it covered exactly what the built-in covers, it is removed. <code>AH-6J</code> and <code>AH-6J.*</code> are such a pair.</li>
+<li>If it was broader, it stays in place. It may be the only profile that names your other aircraft, so the merge copies from it.</li>
+<li>If it was the identical string, nothing moves. Your separate aircraft entry is dropped and its settings become a user profile of the built-in. The values in effect do not change.</li>
+</ul>
+<h3 id="changing-your-mind"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.4</span> Changing your mind<a class="headerlink" href="#changing-your-mind" title="Link to this section">¶</a></h3>
+<p>TelemFFB remembers an answer for the pair of match strings, not for one aircraft. The answer covers every aircraft that both match strings fit.</p>
+<ul>
+<li>A “Keep mine” or “Don’t ask again” answer lapses when a later release changes what the built-in profile does. TelemFFB then asks again, so a built-in that gains something useful is not hidden by an old answer. A change to the built-in’s notes alone does not count.</li>
+<li>To be asked again now, choose <strong>Profiles → Reset Dismissed Profile Prompts</strong>. The prompt returns at once for the loaded aircraft, and on the next load for the others. Your configuration does not change. The item is greyed out when there is nothing to reset.</li>
+<li>A merge cannot be reset, because it changed your configuration. The moved profiles stay where they are.</li>
+</ul>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/reset-dismissed-prompts.webp"><img alt="The Reset Dismissed Profile Prompts item in the Profiles menu" src="../images/aircraft-profiles/reset-dismissed-prompts.webp" width="400px"/></a> <figcaption>The Reset Dismissed Profile Prompts item in the Profiles menu</figcaption></figure>
+<p>The answers are kept in <code>match_history.json</code>, beside your user configuration in <code>%LOCALAPPDATA%\VPForce-TelemFFB</code>. The file is not part of an exported profile. A configuration reset clears it.</p>
+<h2 id="giving-the-loaded-aircraft-its-own-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Giving the Loaded Aircraft Its Own Profile<a class="headerlink" href="#giving-the-loaded-aircraft-its-own-profile" title="Link to this section">¶</a></h2>
+<p>A broad profile can cover many liveries or variants of an aircraft. Sometimes one of them needs settings of its own. The <strong>split button</strong> beside <strong>Matched Model</strong> in the status area does this without any hand-editing.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/split-button.webp"><img alt="The status area, with the split button beside the Matched Model row" src="../images/aircraft-profiles/split-button.webp" width="400px"/></a> <figcaption>The status area, with the split button beside the Matched Model row</figcaption></figure>
+<p>The button is available once a profile names the loaded aircraft. It is disabled on child instances and in the offline editor. When nothing matches, the <strong>No Profile Found for</strong> prompt takes its place.</p>
+<p>Click the button to open the New Aircraft Wizard, already filled in for the loaded aircraft:</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/split-wizard.webp"><img alt="The New Aircraft Wizard opened from the split button" src="../images/aircraft-profiles/split-wizard.webp" width="600px"/></a> <figcaption>The New Aircraft Wizard opened from the split button</figcaption></figure>
+<ol>
+<li>
+<p>Check the aircraft class. It is preselected from the profile in effect now. Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Choose the match string.</p>
+<ul>
+<li>The wizard offers only match strings that are more specific than the current one. A broader or equal match string would lose to the current profile, and the new profile would never apply.</li>
+<li>If you type your own match string and it is not specific enough, the field turns red and its tooltip says why.</li>
+</ul>
+</li>
+<li>
+<p>Choose what the new profile starts from.</p>
+<ul>
+<li><strong>Inherit settings from the current match / profile</strong> copies the settings and telemetry overrides of the profile in effect now. Use this when the aircraft is close to its neighbors and needs a few changes. The <strong>Clone From</strong> list shows the profile it copies.</li>
+<li><strong>Create a new model with no inherited settings</strong> starts with the aircraft class and nothing else. Use this when the aircraft matched the wrong profile. This choice is not available for classes that must be cloned.</li>
+</ul>
+</li>
+</ol>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/split-wizard-choice.webp"><img alt="The match string page when opened from the split button, with the choice between inheriting and starting new" src="../images/aircraft-profiles/split-wizard-choice.webp" width="600px"/></a> <figcaption>The match string page when opened from the split button, with the choice between inheriting and starting new</figcaption></figure>
+<p>After you finish, the new profile names the aircraft at once. The other aircraft that the broader profile covers are not affected.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A profile made this way does not trigger the <strong>Multiple matching profiles</strong> prompt. Both profiles are yours, and the wizard already asked what to copy.</p>
+</div>
+<h2 id="profile-manager"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Profile Manager<a class="headerlink" href="#profile-manager" title="Link to this section">¶</a></h2>
 <p>TelemFFB supports multiple settings profiles for any given aircraft, all centrally managed through the Profile Manager.</p>
 <p>In the main window of the profile manager is a tree list of all of the built-in default, user created default and individual profiles. Built-in profiles are fixed and can not be deleted, exported or modified. They can be cloned into new profiles, but the original built-in settings will be retained in the built-in profile.</p>
 <p>Only aircraft for simulators that are enabled in the <strong><em>system settings</em></strong> will be shown in the list.</p>
-<figure class="figure-image"> <img alt="" height="565px" src="../images/aircraft-profiles/profile-manager.webp" width="568px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/profile-manager.webp"><img alt="" height="565px" src="../images/aircraft-profiles/profile-manager.webp" width="568px"/></a> <figcaption></figcaption></figure>
 <p>There is a series of radio buttons that will change the scope of the displayed profiles.</p>
-<figure class="figure-image"> <img alt="" height="120px" src="../images/aircraft-profiles/profile-manager-context.webp" width="390px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/profile-manager-context.webp"><img alt="" height="120px" src="../images/aircraft-profiles/profile-manager-context.webp" width="390px"/></a> <figcaption></figcaption></figure>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Active\Inactive checkboxes</strong></p>
@@ -1075,7 +1298,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="managing-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> Managing Profiles<a class="headerlink" href="#managing-profiles" title="Link to this section">¶</a></h3>
+<h3 id="managing-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1</span> Managing Profiles<a class="headerlink" href="#managing-profiles" title="Link to this section">¶</a></h3>
 <p>There are various buttons along the right side of the window that are used for managing the profiles. It is possible to multi-select profiles either by click-dragging or by ctrl+click on individual profiles. The action buttons on the right will enable or disable depending on what is available based on the combination of profiles that are selected.</p>
 <p>When multiple profiles are selected:</p>
 <ul>
@@ -1083,19 +1306,19 @@
 <li>If there are no built-in profiles selected, only the Delete and Export actions are available.</li>
 <li>All other actions are only available when a single profile is selected.</li>
 </ul>
-<h4 id="deleting-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1.1</span> Deleting Profile(s)<a class="headerlink" href="#deleting-profiles" title="Link to this section">¶</a></h4>
+<h4 id="deleting-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1.1</span> Deleting Profile(s)<a class="headerlink" href="#deleting-profiles" title="Link to this section">¶</a></h4>
 <p>To delete one or more profiles, select the profile(s) that you would like to delete and then press the delete action button. If any of the profiles being deleted are the active profile, you will be prompted to select a new active profile for that aircraft.</p>
-<h4 id="cloning-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1.2</span> Cloning a Profile<a class="headerlink" href="#cloning-a-profile" title="Link to this section">¶</a></h4>
+<h4 id="cloning-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1.2</span> Cloning a Profile<a class="headerlink" href="#cloning-a-profile" title="Link to this section">¶</a></h4>
 <p>To clone a profile, select the single source profile and press the clone action button. Enter a new name for the profile. Optionally, set the “make active” flag in the window to make the newly created profile active for that aircraft.</p>
-<h4 id="activating-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1.3</span> Activating a Profile<a class="headerlink" href="#activating-a-profile" title="Link to this section">¶</a></h4>
+<h4 id="activating-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1.3</span> Activating a Profile<a class="headerlink" href="#activating-a-profile" title="Link to this section">¶</a></h4>
 <p>To make a profile active, select the desired profile and press the Activate action button.</p>
-<h4 id="renaming-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1.4</span> Renaming a Profile<a class="headerlink" href="#renaming-a-profile" title="Link to this section">¶</a></h4>
+<h4 id="renaming-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1.4</span> Renaming a Profile<a class="headerlink" href="#renaming-a-profile" title="Link to this section">¶</a></h4>
 <p>To rename a profile, select the desired settings profile and press the Rename action button. Note that Built-in and User Aircraft profile types cannot be renamed.</p>
-<h4 id="editing-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1.5</span> Editing a Profile<a class="headerlink" href="#editing-a-profile" title="Link to this section">¶</a></h4>
+<h4 id="editing-a-profile"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1.5</span> Editing a Profile<a class="headerlink" href="#editing-a-profile" title="Link to this section">¶</a></h4>
 <p>To edit a profile, select the desired profile entry and press the Edit action button. This will put TelemFFB into offline editing mode and load that aircraft profile in the editor window.</p>
-<h3 id="exporting-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Exporting Profile(s)<a class="headerlink" href="#exporting-profiles" title="Link to this section">¶</a></h3>
+<h3 id="exporting-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.2</span> Exporting Profile(s)<a class="headerlink" href="#exporting-profiles" title="Link to this section">¶</a></h3>
 <p>To export one or more profiles, first select the profiles that you would like to export and then choose the Export action button. This will load the export wizard dialog:</p>
-<figure class="figure-image"> <img alt="" height="474px" src="../images/aircraft-profiles/export-dialog.webp" width="334px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/export-dialog.webp"><img alt="" height="474px" src="../images/aircraft-profiles/export-dialog.webp" width="334px"/></a> <figcaption></figcaption></figure>
 <p>The resulting window will display the profiles to be exported along with the export options:</p>
 <ul>
 <li>
@@ -1129,16 +1352,16 @@
   These options will include or exclude settings for specific devices. If you have multiple devices but only want to export your Joystick settings, disable the checkboxes for the other devices.</p>
 </li>
 </ul>
-<h3 id="importing-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.3</span> Importing Profile(s)<a class="headerlink" href="#importing-profiles" title="Link to this section">¶</a></h3>
+<h3 id="importing-profiles"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.3</span> Importing Profile(s)<a class="headerlink" href="#importing-profiles" title="Link to this section">¶</a></h3>
 <p>The import wizard provides a comprehensive set of options and information for the incoming settings in the selected export file.</p>
-<figure class="figure-image"> <img alt="" height="568px" src="../images/aircraft-profiles/import-1.webp" width="680px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/import-1.webp"><img alt="" height="568px" src="../images/aircraft-profiles/import-1.webp" width="680px"/></a> <figcaption></figcaption></figure>
 <p>Any line highlighted in <strong>red</strong> indicates a conflict that must be resolved before importing.</p>
 <p>There are three main sections:</p>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Detected Models</strong><br/>
     This section lists all aircraft models and profiles found in the imported file.</p>
-<p><figure class="figure-image"> <img alt="" height="192px" src="../images/aircraft-profiles/import-2.webp" width="629px"/> <figcaption></figcaption></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/import-2.webp"><img alt="" height="192px" src="../images/aircraft-profiles/import-2.webp" width="629px"/></a> <figcaption></figcaption></figure><p></p>
 <ul>
 <li>The <strong>Action</strong> column pulldown lets you change the import behavior. You can <strong>import</strong> as is, <strong>rename</strong>, <strong>skip</strong>, or, if there is a profile name conflict, <strong>overwrite</strong> your existing profile of the same name.</li>
 <li>To resolve a conflict, either set the action to <strong>rename</strong> and enter a new name in the “<strong>imported name</strong>” field, or choose to skip or overwrite.</li>
@@ -1147,7 +1370,7 @@
 <li>
 <p class="label-paragraph"><strong>Detected Overrides</strong><br/>
     This section displays any simulator or class-level overrides included in the incoming settings file.</p>
-<p><figure class="figure-image"> <img alt="" height="189px" src="../images/aircraft-profiles/import-3.webp" width="618px"/> <figcaption></figcaption></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/import-3.webp"><img alt="" height="189px" src="../images/aircraft-profiles/import-3.webp" width="618px"/></a> <figcaption></figcaption></figure><p></p>
 <ul>
 <li>Conflicting settings are highlighted in <strong>red</strong>. These are settings where a matching override already exists in your configuration. The current user value and the incoming value are shown in their respective columns. You can choose to <strong>overwrite</strong> or <strong>exclude</strong> the setting using the <strong>actions</strong> dropdown.</li>
 <li>Settings marked as “<strong>match</strong>” in the conflict column are identical to your existing override and will be ignored.</li>
@@ -1158,7 +1381,7 @@
 <p class="label-paragraph"><strong>Device Options</strong><br/>
     This section allows you to filter out settings for specific device types. If a device type is not present in the incoming file, its toggle will be disabled.</p>
 <p>If a device type is disabled, any override settings or profiles that only contain settings for that device will be excluded from the import.</p>
-<p><figure class="figure-image"> <img alt="" height="165px" src="../images/aircraft-profiles/import-4.webp" width="367px"/> <figcaption></figcaption></figure></p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/aircraft-profiles/import-4.webp"><img alt="" height="165px" src="../images/aircraft-profiles/import-4.webp" width="367px"/></a> <figcaption></figcaption></figure><p></p>
 </li>
 </ul>
 </article>
@@ -1187,5 +1410,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

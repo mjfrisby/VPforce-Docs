@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -885,7 +892,7 @@
 </ul>
 <h2 id="opening-the-tool"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Opening the Tool<a class="headerlink" href="#opening-the-tool" title="Link to this section">¶</a></h2>
 <p>Open the calibration tool from the <strong>Trim Curve Calibration → Calibrate…</strong> button in the Trim Following settings, or from the <strong>Utilities</strong> menu (<em>Elevator Trim Calibration…</em>).</p>
-<figure class="figure-image"> <img alt="The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons" src="../images/msfs-xp-trim-following/calibration_dialog.webp" width="480px"> <figcaption>The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons</figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-following/calibration_dialog.webp"><img alt="The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons" src="../images/msfs-xp-trim-following/calibration_dialog.webp" width="480px"/></a> <figcaption>The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons</figcaption></figure>
 <p>The window shows:</p>
 <ul>
 <li><strong>Instructions</strong> and a <strong>live status</strong> panel: airspeed, pitch, vertical speed, bank, current trim, and the engine’s current state. A <strong>status light</strong> turns green when the aircraft meets the preconditions and the run is ready to begin.</li>
@@ -894,11 +901,11 @@
 </ul>
 <h2 id="running-a-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Running a Calibration<a class="headerlink" href="#running-a-calibration" title="Link to this section">¶</a></h2>
 <p>With the aircraft trimmed, level and stable, with the readiness light green, press <strong>Start</strong>. TelemFFB takes over: it makes a few small control inputs to learn the aircraft’s response, settles it into level flight, finds the natural trim point, then sweeps the trim while recording the stick input needed at each step. A red banner reminds you it is in control, and the status line reports the current phase.</p>
-<figure class="figure-image"> <img a="" aircraft"="" alt="A calibration in progress, showing the red " and="" banner,="" being="" controlling="" data="" is="" live="" plotted"="" point="" src="../images/msfs-xp-trim-following/calibration_in_progress.webp" status,="" sweep="" telemetry,="" telemffb="" the="" width="480px" your=""> <figcaption>A calibration in progress, showing the red "TelemFFB is controlling your aircraft" banner, live telemetry, the SWEEP status, and a data point being plotted</figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-following/calibration_in_progress.webp"><img a="" aircraft"="" alt="A calibration in progress, showing the red " and="" banner,="" being="" controlling="" data="" is="" live="" plotted"="" point="" src="../images/msfs-xp-trim-following/calibration_in_progress.webp" status,="" sweep="" telemetry,="" telemffb="" the="" width="480px" your=""/></a> <figcaption>A calibration in progress, showing the red "TelemFFB is controlling your aircraft" banner, live telemetry, the SWEEP status, and a data point being plotted</figcaption></figure>
 <p>The whole process usually takes one to a few minutes depending on the aircraft. If the aircraft diverges, the airspeed drifts too far, the autopilot is re-engaged, or you take the controls, the run <strong>aborts safely</strong> and hands control back.</p>
 <h2 id="reading-the-result"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Reading the Result<a class="headerlink" href="#reading-the-result" title="Link to this section">¶</a></h2>
 <p>When the sweep finishes, the graph shows the measured data points and the fit. The tool computes both a single static gain and a full curve, and tells you which it recommends.</p>
-<figure class="figure-image"> <img alt="A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared" src="../images/msfs-xp-trim-following/example_calibration.webp" width="480px"/> <figcaption>A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared</figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-following/example_calibration.webp"><img alt="A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared" src="../images/msfs-xp-trim-following/example_calibration.webp" width="480px"/></a> <figcaption>A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared</figcaption></figure>
 <ul>
 <li><strong>Recommended: calibrated curve</strong> - for most aircraft the curve is recommended, because it holds the nose level across the entire trim range even when the response is not a straight line.</li>
 <li><strong>Static fit</strong> — the single <em>Y Trim Gain Virtual</em> value that best fits the data. TelemFFB displays it alongside the curve for reference and comparison with your current profile value.</li>
@@ -942,5 +949,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

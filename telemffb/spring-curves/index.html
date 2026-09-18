@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -869,8 +876,8 @@
 <h2 id="advanced-dynamic-spring-curve-dialog"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Advanced Dynamic Spring Curve Dialog<a class="headerlink" href="#advanced-dynamic-spring-curve-dialog" title="Link to this section">¶</a></h2>
 <p>The advanced spring setting is supported across all simulators in some form. It defines the spring gain mapping as a visual curve across a custom airspeed envelope.</p>
 <p>To enable the Advance Spring mode, change the <strong>Joystick Spring Mode</strong> for the desired aircraft to the “<strong>Advanced Dynamic</strong>” mode. Then choose the <strong>Edit Settings</strong> button to open the configuration dialog.</p>
-<figure class="figure-image"> <img alt="" height="105px" src="../images/spring-curves/adv-spring-entry.webp" width="401px"> <figcaption></figcaption></img></figure>
-<figure class="figure-image"> <img alt="" height="462px" src="../images/spring-curves/adv-spring-dialog.webp" width="413px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/adv-spring-entry.webp"><img alt="" height="105px" src="../images/spring-curves/adv-spring-entry.webp" width="401px"/></a> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/adv-spring-dialog.webp"><img alt="" height="462px" src="../images/spring-curves/adv-spring-dialog.webp" width="413px"/></a> <figcaption></figcaption></figure>
 <p>The form is separated into the X and Y axis configurations. Each axis may be configured separately, although the airspeed scale will be the same for each axis.
 Within each axis configuration the following controls are available:</p>
 <ul>
@@ -946,7 +953,7 @@ Within each axis configuration the following controls are available:</p>
 <p class="admonition-title">Note</p>
 <p>Note that curve modifications are not instant. If the curve has been modified, it must be applied or saved for the modifications to take effect</p>
 </div>
-<figure class="figure-image"> <img alt="" height="322px" src="../images/spring-curves/adv-spring-curve.gif" width="564px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/adv-spring-curve.gif"><img alt="" height="322px" src="../images/spring-curves/adv-spring-curve.gif" width="564px"/></a> <figcaption></figcaption></figure>
 <h3 id="working-with-the-curves"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> Working with the Curves<a class="headerlink" href="#working-with-the-curves" title="Link to this section">¶</a></h3>
 <p>The actual curve editor is a custom widget written entirely in python. The curve uses the Akami algorithm as opposed to other traditional spline methods for its tighter control on overshoot interpolation wildly affecting portions of the curve outside of the segment being edited.</p>
 <p>Its use is fairly straight forward with some conditions:</p>
@@ -985,13 +992,13 @@ Within each axis configuration the following controls are available:</p>
 </ul>
 </li>
 </ul>
-<figure class="figure-image"> <img alt="" height="243px" src="../images/spring-curves/adv-spring-smooth.gif" width="523px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/adv-spring-smooth.gif"><img alt="" height="243px" src="../images/spring-curves/adv-spring-smooth.gif" width="523px"/></a> <figcaption></figcaption></figure>
 <h2 id="advanced-custom-curve-g-force-effect-dialog"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Advanced Custom Curve G-Force Effect Dialog<a class="headerlink" href="#advanced-custom-curve-g-force-effect-dialog" title="Link to this section">¶</a></h2>
 <p>The G-Force effect can also be configured through a custom curve. Many aircraft do not have a linear, or even similar, g-loading response, and the standard exponential-curve g-force effect can produce lackluster or erratic behavior on them.</p>
 <p>To enable, select “Custom Curve” as the G-Force Effect and select the Edit Settings button</p>
-<figure class="figure-image"> <img alt="" height="76px" src="../images/spring-curves/gforce-curve-dialog.webp" width="456px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/gforce-curve-dialog.webp"><img alt="" height="76px" src="../images/spring-curves/gforce-curve-dialog.webp" width="456px"/></a> <figcaption></figcaption></figure>
 <p>Using the same new curve widget as the Advanced Spring Curve feature, a new custom curve G-Effect was created.</p>
-<figure class="figure-image"> <img alt="" height="512px" src="../images/spring-curves/gforce-curve-example.webp" width="382px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/gforce-curve-example.webp"><img alt="" height="512px" src="../images/spring-curves/gforce-curve-example.webp" width="382px"/></a> <figcaption></figcaption></figure>
 <p>The form is separated into Positive and Negative G scale
 configurations.</p>
 <ul>
@@ -1066,5 +1073,6 @@ configurations.</p>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

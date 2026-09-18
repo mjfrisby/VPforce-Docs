@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -894,9 +901,9 @@
 <p>Helicopter force trim emulation is supported for both MSFS and X-Plane. To enable this feature of TelemFFB, enable the Force Trim checkbox and then in the sub-settings, configure a button on your joystick to serve as the trim release button.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you enable force trim, but do not set a button, you will see an error indication for the simulator. The Trim Release button is <strong>mandatory</strong>, the Trim Reset button is <strong>optional</strong>.</p>
+<p>If you enable force trim, but do not set a button, you will see an error indication for the simulator. Until a button is set, the cyclic falls back to the no-spring behavior, so the aircraft stays controllable. The Trim Release button is <strong>mandatory</strong>, the Trim Reset button is <strong>optional</strong>.</p>
 </div>
-<figure class="figure-image"> <img alt="" height="166px" src="../images/msfs-xp-helicopters/force-trim-settings.webp" width="539px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/force-trim-settings.webp"><img alt="" height="166px" src="../images/msfs-xp-helicopters/force-trim-settings.webp" width="539px"/></a> <figcaption></figcaption></figure>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Cyclic Spring Gain</strong></p>
@@ -933,9 +940,15 @@
 <p class="label-paragraph"><strong>Force Trim Switch Simvar</strong></p>
 <ul>
 <li>
-<p>When enabled, TelemFFB will watch the configured L:Var and
+<p>When enabled, TelemFFB will watch the configured variable and
   enable/disable the hardware force trim based on the 0/1 state
   of said variable.</p>
+</li>
+<li>
+<p>The variable can be an <code>L:Var</code>, a SimVar, or an MSFS 2024 input
+  event written as <code>B:EVENT_NAME</code>. See
+  <a href="../telem-overrides/#input-events-b-variables">Input events</a> for
+  how to find the name of a cockpit switch.</p>
 </li>
 <li>
 <p>Some aircraft (like the Taog’s Hangar UH-1) have a switch in the cockpit.
@@ -960,7 +973,7 @@
 <p>Trim-following updates pause while you hold the force-trim release button. The force trim controls the cyclic center while you re-trim manually. On aircraft with a modeled cockpit force-trim switch, switching it off clears the trim offsets.</p>
 <h2 id="collective-spring-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Collective Spring Mode<a class="headerlink" href="#collective-spring-mode" title="Link to this section">¶</a></h2>
 <p>If you fly with a VPforce-powered collective, the <strong>Collective Spring Mode</strong> setting (Basic Settings, collective device) selects how the collective behaves. The implementation is deliberately simple, with two modes:</p>
-<figure class="figure-image"> <img alt="Collective Spring Mode selection showing the No Spring and Hardware Force Trim options" src="../images/msfs-xp-helicopters/collective-spring-mode.webp" width="600px"> <figcaption>Collective Spring Mode selection showing the No Spring and Hardware Force Trim options</figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/collective-spring-mode.webp"><img alt="Collective Spring Mode selection showing the No Spring and Hardware Force Trim options" src="../images/msfs-xp-helicopters/collective-spring-mode.webp" width="600px"/></a> <figcaption>Collective Spring Mode selection showing the No Spring and Hardware Force Trim options</figcaption></figure>
 <ul>
 <li>
 <p class="label-paragraph"><strong>No Spring</strong> - no spring effect is applied. The collective moves freely, held only by whatever friction/damper forces your VPforce Configurator profile provides.</p>
@@ -988,7 +1001,7 @@
 <p>The VPforce Rhino will work with the AFCS and act as the auto trim motor does, slowly moving the joystick as required to keep the SEMAs within their range of travel. The Rhino is also integrated with the force trim release system and the “hands on” spring override detection system. Force trim for hand-flying is also supported.</p>
 <p>Both the Cyclic and Collective axes (if you have a VPforce powered collective) are integrated with the AFCS. The Tail Rotor axis is also supported.</p>
 <p>Excerpt from the <a class="external" href="https://davux.com/docs/h145/AFCS.html#afcs-autoflight-system" target="_blank">HPG H145 user guide</a>:</p>
-<figure class="figure-image"> <img alt="" height="461px" src="../images/msfs-xp-helicopters/hpg-guide-excerpt.webp" width="624px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/hpg-guide-excerpt.webp"><img alt="" height="461px" src="../images/msfs-xp-helicopters/hpg-guide-excerpt.webp" width="624px"/></a> <figcaption></figcaption></figure>
 <p>As part of this implementation, there are certain requirements and recommended settings in the MSFS control bindings, the HPG Helicopter settings (iPad) and in TelemFFB.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1083,13 +1096,13 @@
 <li>Cyclic Trim System: <strong>‘Hardware’</strong></li>
 <li>Cyclic Followup Trim: <strong>‘Both’</strong></li>
 </ul>
-<figure class="figure-image"> <img alt="" height="635px" src="../images/msfs-xp-helicopters/hpg-tablet.webp" width="494px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/hpg-tablet.webp"><img alt="" height="635px" src="../images/msfs-xp-helicopters/hpg-tablet.webp" width="494px"/></a> <figcaption></figcaption></figure>
 <h3 id="force-mode-experimental"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Force Mode (Experimental)<a class="headerlink" href="#force-mode-experimental" title="Link to this section">¶</a></h3>
 <p>New in version 2.0, along with the latest v1.0.18 Rhino firmware is an experimental version of the hands on/off detection that is used in the HPG Class aircraft.</p>
-<figure class="figure-image"> <img alt="" height="263px" src="../images/msfs-xp-helicopters/force-mode.webp" width="488px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/force-mode.webp"><img alt="" height="263px" src="../images/msfs-xp-helicopters/force-mode.webp" width="488px"/></a> <figcaption></figcaption></figure>
 <p>The latest firmware allows us to track the force output for the axis in % of max, which can give a much more granular indication of user hands-on controls as compared to a pure deflection based calculation.</p>
 <p>Because the configurator Adaptive Recentering feature “forces” the stick as close to the exact center as possible, having it enabled typically results in a higher “standing force” reading. Because of this, it is recommended to <strong>disable </strong>the <strong>Adaptive Recentering</strong> figure in configurator when flying the HPG helicopters in Force Mode</p>
-<figure class="figure-image"> <img alt="" height="180px" src="../images/msfs-xp-helicopters/configurator-adaptive-recentering.webp" width="232px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/configurator-adaptive-recentering.webp"><img alt="" height="180px" src="../images/msfs-xp-helicopters/configurator-adaptive-recentering.webp" width="232px"/></a> <figcaption></figcaption></figure>
 <p>Rather than a hard hands-off threshold, it uses a time based hysteresis. This prevents flapping of hands on/off when passing through the center point.</p>
 <ul>
 <li>
@@ -1115,7 +1128,7 @@
 </ul>
 <h2 id="flyinside-helicopters-msfs-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> FlyInside Helicopters (MSFS only)<a class="headerlink" href="#flyinside-helicopters-msfs-only" title="Link to this section">¶</a></h2>
 <p>In collaboration with FlyInside, TelemFFB uses vibration variables from the flight model. ETL, VRS, and other buffeting and engine vibrations are not used. Instead there is a Vibration control under Mechanical/Airframe:</p>
-<figure class="figure-image"> <img alt="" height="67px" src="../images/msfs-xp-helicopters/flyinside-vibration.webp" width="652px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/flyinside-vibration.webp"><img alt="" height="67px" src="../images/msfs-xp-helicopters/flyinside-vibration.webp" width="652px"/></a> <figcaption></figcaption></figure>
 <h2 id="x-trident-aw109-x-plane-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> X-Trident AW109 (X-Plane only)<a class="headerlink" href="#x-trident-aw109-x-plane-only" title="Link to this section">¶</a></h2>
 <p>Developed in collaboration with X-Trident, this implementation integrates all four axes with the AW109’s AFCS. The cyclic follows the autopilot’s trim commands, the collective follows the AFCS in the vertical modes, and the pedals actively track the anti-torque requirement as power and airspeed change, tuned against flight-test observations from a real-world AW109 pilot. Force trim release is supported on all three controls.</p>
 <div class="admonition warning">
@@ -1124,7 +1137,7 @@
 </div>
 <p class="label-paragraph"><strong>Aircraft settings (Controls page):</strong></p>
 <p>The AW109’s own settings page must be configured to match the TelemFFB integration. The highlighted items are the ones that matter:</p>
-<figure class="figure-image"> <img alt="" src="../images/msfs-xp-helicopters/xaw109-sim-settings.webp" width="700px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/xaw109-sim-settings.webp"><img alt="" src="../images/msfs-xp-helicopters/xaw109-sim-settings.webp" width="700px"/></a> <figcaption></figcaption></figure>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Servo motors</strong> must be <strong>On</strong>, and beneath the slider:</p>
@@ -1197,5 +1210,6 @@
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

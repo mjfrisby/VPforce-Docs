@@ -1,8 +1,5 @@
-
 <!DOCTYPE html>
-
-<html class="no-js" lang="en">
-<head>
+<html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Complete documentation for the VPforce Rhino FFB ecosystem." name="description"/>
@@ -23,7 +20,17 @@
 <link href="../../stylesheets/vpforce.css?v=1.1" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
 <body data-md-color-accent="custom" data-md-color-primary="custom" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -1025,7 +1032,7 @@
 <h1 id="application-ui-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Application UI Overview<a class="headerlink" href="#application-ui-overview" title="Link to this section">¶</a></h1>
 <h2 id="general-application-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> General Application Overview<a class="headerlink" href="#general-application-overview" title="Link to this section">¶</a></h2>
 <p>TelemFFB is laid out with a menu bar, the application status area, device status/selection area and the various tabs at the bottom. Refer to the sections below for details on each.</p>
-<figure class="figure-image"> <img alt="" height="600px" src="../images/ui-overview/main-window.webp" width="565px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/main-window.webp"><img alt="" height="600px" src="../images/ui-overview/main-window.webp" width="565px"/></a> <figcaption></figcaption></figure>
 <h2 id="the-menus"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> The Menus<a class="headerlink" href="#the-menus" title="Link to this section">¶</a></h2>
 <h3 id="system-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> System Menu<a class="headerlink" href="#system-menu" title="Link to this section">¶</a></h3>
 <ul>
@@ -1067,6 +1074,12 @@
 <li>
 <p>Effects can be played on the device from here. See <a href="../effect-preview/">Effect Preview</a>.</p>
 </li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Reset Dismissed Profile Prompts</strong></p>
+<ul>
+<li>Brings back every <strong>Multiple matching profiles</strong> prompt that you answered with “Keep mine” or “Don’t ask again”. Your configuration does not change. The item is greyed out when there is nothing to reset. See <a href="../aircraft-profiles/#when-your-profile-and-a-built-in-both-match">When Your Profile and a Built-In Both Match</a>.</li>
 </ul>
 </li>
 </ul>
@@ -1138,24 +1151,25 @@
 </ul>
 <h2 id="application-main-window"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Application Main Window<a class="headerlink" href="#application-main-window" title="Link to this section">¶</a></h2>
 <h3 id="active-devices-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Active Devices Area<a class="headerlink" href="#active-devices-area" title="Link to this section">¶</a></h3>
-<figure class="figure-image"> <img alt="" height="137px" src="../images/ui-overview/active-devices.webp" width="371px"> <figcaption></figcaption></img></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/active-devices.webp"><img alt="" height="137px" src="../images/ui-overview/active-devices.webp" width="371px"/></a> <figcaption></figcaption></figure>
 <p>The active devices area is both a way to switch the master instance configuration scope between devices as well as a device/instance status tracker for the primary and child devices and their TelemFFB instances.</p>
 <h3 id="switching-between-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Switching Between Devices<a class="headerlink" href="#switching-between-devices" title="Link to this section">¶</a></h3>
 <p>To switch between devices for configuration, simply click on the appropriate device icon. When clicked, the configuration elements in the settings page below will update to reflect the settings for that device.</p>
-<figure class="figure-image"> <img alt="" height="329px" src="../images/ui-overview/device-switching.gif" width="329px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/device-switching.gif"><img alt="" height="329px" src="../images/ui-overview/device-switching.gif" width="329px"/></a> <figcaption></figcaption></figure>
 <h3 id="deviceinstance-status-indications"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Device/Instance Status Indications<a class="headerlink" href="#deviceinstance-status-indications" title="Link to this section">¶</a></h3>
 <p>The device icons serve the dual purpose of displaying the status of both the device connection as well as the individual TelemFFB instances which are ultimately controlling the multiple devices.</p>
+<p>The label under each icon names the hardware that holds the role. The icon pulses when its state changes. Hover an icon to read its current state.</p>
 <p class="label-paragraph"><strong>Green Status Icon:</strong></p>
-<figure class="figure-image"> <img alt="" height="55px" src="../images/ui-overview/status-running.webp" width="55px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-running.webp"><img alt="" height="55px" src="../images/ui-overview/status-running.webp" width="55px"/></a> <figcaption></figcaption></figure>
 <p>A green status icon indicates that the device is properly connected to its instance of TelemFFB and the child instance of TelemFFB is healthy</p>
 <p class="label-paragraph"><strong>Yellow Status Icon:</strong></p>
-<figure class="figure-image"> <img alt="" height="53px" src="../images/ui-overview/status-paused.webp" width="47px"/> <figcaption></figcaption></figure>
-<p>A yellow status icon indicates that the device is no longer connected to its instance of TelemFFB</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-paused.webp"><img alt="" height="53px" src="../images/ui-overview/status-paused.webp" width="47px"/></a> <figcaption></figcaption></figure>
+<p>A yellow status icon indicates that the device was connected and has dropped off. TelemFFB looks for it again on its own, so no restart is needed. See <a href="../devices-instances/#device-recovery">Device recovery</a>.</p>
 <p class="label-paragraph"><strong>Red Status Icon:</strong></p>
-<figure class="figure-image"> <img alt="" height="54px" src="../images/ui-overview/status-error.webp" width="54px"/> <figcaption></figcaption></figure>
-<p>A red status icon indicates that the child instance of TelemFFB has crashed, or there is an error condition present for that instance.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-error.webp"><img alt="" height="54px" src="../images/ui-overview/status-error.webp" width="54px"/></a> <figcaption></figcaption></figure>
+<p>A red status icon indicates one of three things: the configured device was not found when TelemFFB started, the child instance of TelemFFB has crashed, or there is an error condition present for that instance. A device that was not found is picked up as soon as it appears.</p>
 <h3 id="application-status-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.4</span> Application Status Area<a class="headerlink" href="#application-status-area" title="Link to this section">¶</a></h3>
-<figure class="figure-image"> <img alt="" height="264px" src="../images/ui-overview/status-area.webp" width="304px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-area.webp"><img alt="" height="264px" src="../images/ui-overview/status-area.webp" width="304px"/></a> <figcaption></figcaption></figure>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Sim Status</strong></p>
@@ -1192,7 +1206,12 @@
 <li>
 <p class="label-paragraph"><strong>Matched Model</strong></p>
 <ul>
-<li>Displays the match string that correlates to the aircraft profile that has been loaded for the detected aircraft</li>
+<li>
+<p>Displays the match string of the aircraft profile that matched the detected aircraft. When several match strings fit, the most specific one wins; see <a href="../aircraft-profiles/#how-telemffb-matches-an-aircraft">How TelemFFB Matches an Aircraft</a>.</p>
+</li>
+<li>
+<p>The <strong>split button</strong> beside it gives the loaded aircraft a more specific profile of its own. See <a href="../aircraft-profiles/#giving-the-loaded-aircraft-its-own-profile">Giving the Loaded Aircraft Its Own Profile</a>.</p>
+</li>
 </ul>
 </li>
 <li>
@@ -1216,13 +1235,13 @@
 <li>
 <p class="label-paragraph"><strong>Telem Ovd:</strong></p>
 <ul>
-<li>Shown when the loaded aircraft has active <a href="../telem-overrides/">telemetry overrides</a>, with counts by tier, e.g. “Default (4) + User (2)” for four overrides from the shipped profile plus two of your own. Hover for the full override list. Note that additional profiles for such an aircraft must be <strong>cloned</strong> from the default profile to pick up the overrides; see the <a href="../telem-overrides/">overrides guide</a>.</li>
+<li>Shown when the loaded aircraft has active <a href="../telem-overrides/">telemetry overrides</a>, with a count for each tier. “Class (4) + Default (2) + User (1)” means four overrides from the aircraft class, two from the built-in profile and one of your own. Hover for the full list. The <a href="../telem-overrides/#where-an-aircrafts-overrides-come-from">overrides guide</a> explains the tiers.</li>
 </ul>
 </li>
 </ul>
 <h3 id="profile-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.5</span> Profile Notes<a class="headerlink" href="#profile-notes" title="Link to this section">¶</a></h3>
 <p>The status area includes a <strong>notes button</strong> for the loaded aircraft profile.</p>
-<figure class="figure-image"> <img alt="The Profile Notes dialog showing shipped notes and the editable profile note" src="../images/ui-overview/profile-notes.webp" width="550px"/> <figcaption>The Profile Notes dialog showing shipped notes and the editable profile note</figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/profile-notes.webp"><img alt="The Profile Notes dialog showing shipped notes and the editable profile note" src="../images/ui-overview/profile-notes.webp" width="550px"/></a> <figcaption>The Profile Notes dialog showing shipped notes and the editable profile note</figcaption></figure>
 <ul>
 <li>Some shipped default profiles carry <strong>curated notes</strong>: special considerations for the aircraft, or an explanation of why its default settings differ from otherwise similar aircraft.</li>
 <li>You can <strong>add your own notes</strong> to any aircraft profile. The dialog shows the inherited notes read-only (shipped notes and any user-default note), with an editable section for the active profile’s own note.</li>
@@ -1231,17 +1250,22 @@
 <h3 id="monitor-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.6</span> Monitor Tab<a class="headerlink" href="#monitor-tab" title="Link to this section">¶</a></h3>
 <p>The Monitor tab shows received telemetry data and effects that are
 currently active:</p>
-<figure class="figure-image"> <img alt="" height="548px" src="../images/ui-overview/monitor-tab.webp" width="516px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/monitor-tab.webp"><img alt="" height="548px" src="../images/ui-overview/monitor-tab.webp" width="516px"/></a> <figcaption></figcaption></figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can also detach the monitor tab from the main window and display it separately along side the main TelemFFB window. This can be useful for monitoring the active effects while you are making adjustments on the settings tab.</p>
 </div>
 <h3 id="hide-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.7</span> Hide Tab<a class="headerlink" href="#hide-tab" title="Link to this section">¶</a></h3>
 <p>The Hide tab is the simplest and reduces information shown to the bare minimum:</p>
-<figure class="figure-image"> <img alt="" height="291px" src="../images/ui-overview/hide-tab.webp" width="525px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/hide-tab.webp"><img alt="" height="291px" src="../images/ui-overview/hide-tab.webp" width="525px"/></a> <figcaption></figcaption></figure>
 <h3 id="settings-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8</span> Settings Tab<a class="headerlink" href="#settings-tab" title="Link to this section">¶</a></h3>
 <p>The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface; every effect and setting is documented in the <a href="../effects-overview/">Effects Reference</a>, which mirrors the Settings tab section for section. Changing any setting has an immediate effect.</p>
-<figure class="figure-image"> <img alt="" height="644px" src="../images/ui-overview/settings-tab.webp" width="606px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/settings-tab.webp"><img alt="" height="644px" src="../images/ui-overview/settings-tab.webp" width="606px"/></a> <figcaption></figcaption></figure>
+<p>Two prompts can appear above the tab:</p>
+<ul>
+<li><strong>No Profile Found for</strong> (red) - the loaded aircraft matches no profile. The controls on the tab are disabled until you create one, because there is no profile to store a change in. Click the prompt to open the <a href="../aircraft-profiles/#adding-new-aircraft-support">New Aircraft Wizard</a>.</li>
+<li><strong>Multiple matching profiles detected</strong> (teal) - one of your own profiles and a built-in profile both match the aircraft. Click the prompt to <a href="../aircraft-profiles/#when-your-profile-and-a-built-in-both-match">choose what to do</a>.</li>
+</ul>
 <p>With an aircraft loaded, an <strong>Offline/Preview Mode</strong> button sits in the corner of the tab. It opens the offline editor on that aircraft, where each effect can be played on the device with a <strong>▶</strong> button. See <a href="../effect-preview/">Effect Preview</a>.</p>
 <p>The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows; each links to its reference page:</p>
 <ul>
@@ -1297,21 +1321,21 @@ currently active:</p>
 <h3 id="modifying-settings-in-real-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.9</span> Modifying settings in real time<a class="headerlink" href="#modifying-settings-in-real-time" title="Link to this section">¶</a></h3>
 <p>Effect sliders have a toggle to enable or disable that effect. You can quickly toggle on/off an effect. When the setting is off, your intensity setting is retained. <strong>The handle will also turn green when that effect is active</strong>.</p>
 <p>Example</p>
-<figure class="figure-image"> <img alt="" height="45px" src="../images/ui-overview/slider-toggle.webp" width="594px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/slider-toggle.webp"><img alt="" height="45px" src="../images/ui-overview/slider-toggle.webp" width="594px"/></a> <figcaption></figcaption></figure>
 <p>Some settings have additional parameters. You will see an expander button next to them and a clickable hyperlink for the effect name. <strong>Click the expander</strong> <strong>or the hyperlink</strong> to see additional settings, and again to collapse:</p>
-<figure class="figure-image"> <img alt="" height="106px" src="../images/ui-overview/expander.gif" width="628px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/expander.gif"><img alt="" height="106px" src="../images/ui-overview/expander.gif" width="628px"/></a> <figcaption></figcaption></figure>
 <p>Any setting you have modified will show a ‘x’ icon on the right side. You can <strong>click this icon</strong> to return the setting to the default:</p>
-<figure class="figure-image"> <img alt="" height="115px" src="../images/ui-overview/revert-x.gif" width="629px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/revert-x.gif"><img alt="" height="115px" src="../images/ui-overview/revert-x.gif" width="629px"/></a> <figcaption></figcaption></figure>
 <p>If you have a setting that you would like to apply to all aircraft of the same class, or for the entire sim, you can right-click on the delete button and choose to move the setting up to the class default or the sim default level. Once you have done so, an information icon will be visible where the delete button was, indicating that the setting has an override from defaults at the sim or class level. Hovering over the information icon will display the override level.</p>
-<figure class="figure-image"> <img alt="" height="75px" src="../images/ui-overview/promote-override.gif" width="680px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/promote-override.gif"><img alt="" height="75px" src="../images/ui-overview/promote-override.gif" width="680px"/></a> <figcaption></figcaption></figure>
 <p>For settings where a unit is used, there is a dropdown of acceptable units:</p>
-<figure class="figure-image"> <img alt="" height="106px" src="../images/ui-overview/unit-dropdown.webp" width="566px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/unit-dropdown.webp"><img alt="" height="106px" src="../images/ui-overview/unit-dropdown.webp" width="566px"/></a> <figcaption></figcaption></figure>
 <p>Some settings require a grip button assignment before use. <strong>Click the button</strong> on the screen and then press the desired grip button before the timer expires:</p>
-<figure class="figure-image"> <img alt="" height="105px" src="../images/ui-overview/button-capture.gif" width="638px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/button-capture.gif"><img alt="" height="105px" src="../images/ui-overview/button-capture.gif" width="638px"/></a> <figcaption></figcaption></figure>
 <p>Once the button is set, you can right-click on the X to apply to class or sim as shown above if you use the same grip and button for other aircraft.</p>
 <h2 id="status-bar"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Status Bar<a class="headerlink" href="#status-bar" title="Link to this section">¶</a></h2>
 <p>Along the very bottom edge of the main window:</p>
-<figure class="figure-image"> <img alt="The status bar showing the firmware version, the Errors counter, and the version status" src="../images/ui-overview/status-bar.webp" width="700px"/> <figcaption>The status bar showing the firmware version, the Errors counter, and the version status</figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-bar.webp"><img alt="The status bar showing the firmware version, the Errors counter, and the version status" src="../images/ui-overview/status-bar.webp" width="700px"/></a> <figcaption>The status bar showing the firmware version, the Errors counter, and the version status</figcaption></figure>
 <ul>
 <li><strong>Rhino Firmware</strong> - the firmware version of the connected device (or “Device Disconnected”).</li>
 <li><strong>Errors</strong> - a red counter that appears only when TelemFFB has logged runtime errors. Click it to open the exceptions viewer; see <a href="../troubleshooting/#exception-tracking-reporting">Exception Tracking &amp; Reporting</a>.</li>
@@ -1319,19 +1343,19 @@ currently active:</p>
 </ul>
 <h2 id="system-tray"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> System Tray<a class="headerlink" href="#system-tray" title="Link to this section">¶</a></h2>
 <p>When TelemFFB starts, a system tray icon with a context menu is added to the windows taskbar. By default, the icon will be accessible from the expander button in the system tray. You may choose to drag the icon into the pinned icon areas of your task bar so that it is always visible.</p>
-<figure class="figure-image"> <img alt="" height="166px" src="../images/ui-overview/system-tray.webp" width="247px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/system-tray.webp"><img alt="" height="166px" src="../images/ui-overview/system-tray.webp" width="247px"/></a> <figcaption></figcaption></figure>
 <p>You can force the TelemFFB window to show by double-clicking the icon or from the context menu.</p>
 <p>When you start a simulator, the system tray icon will change colors to indicate the current status of the sim, very similar to the status indicator icons in the main TelemFFB window.</p>
-<p><em><figure class="figure-image"> <img alt="Sim is running, receiving telemetry" height="20px" src="../images/ui-overview/tray-status-running.webp" width="20px"/> <figcaption>Sim is running, receiving telemetry</figcaption></figure></em></p>
-<p><em><figure class="figure-image"> <img alt="Sim is paused" height="20px" src="../images/ui-overview/tray-status-paused.webp" width="20px"/> <figcaption>Sim is paused</figcaption></figure></em></p>
-<p><em><figure class="figure-image"> <img alt="Error condition." height="20px" src="../images/ui-overview/tray-status-error.webp" width="20px"/> <figcaption>Error condition.</figcaption></figure></em></p>
+<p><em></em></p><figure class="figure-image"><em> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/tray-status-running.webp"><img alt="Sim is running, receiving telemetry" height="20px" src="../images/ui-overview/tray-status-running.webp" width="20px"/></a> <figcaption>Sim is running, receiving telemetry</figcaption></em></figure><p></p>
+<p><em></em></p><figure class="figure-image"><em> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/tray-status-paused.webp"><img alt="Sim is paused" height="20px" src="../images/ui-overview/tray-status-paused.webp" width="20px"/></a> <figcaption>Sim is paused</figcaption></em></figure><p></p>
+<p><em></em></p><figure class="figure-image"><em> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/tray-status-error.webp"><img alt="Error condition." height="20px" src="../images/ui-overview/tray-status-error.webp" width="20px"/></a> <figcaption>Error condition.</figcaption></em></figure><p></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>An error also triggers a system tray notification. The error message appears on the TelemFFB main window.</p>
 </div>
 <h3 id="system-tray-context-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1</span> System Tray Context Menu<a class="headerlink" href="#system-tray-context-menu" title="Link to this section">¶</a></h3>
 <p>Right-clicking on the system tray icon will open the context window. There are several items.</p>
-<figure class="figure-image"> <img alt="" height="131px" src="../images/ui-overview/tray-menu.webp" width="163px"/> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/tray-menu.webp"><img alt="" height="131px" src="../images/ui-overview/tray-menu.webp" width="163px"/></a> <figcaption></figcaption></figure>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Show Window</strong></p>
@@ -1384,5 +1408,6 @@ currently active:</p>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
 <script src="../../javascripts/katex-config.js"></script>
-</body>
-</html>
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
