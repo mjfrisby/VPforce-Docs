@@ -489,11 +489,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -858,16 +858,18 @@
 <h1 id="inertial-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Inertial Effects<a class="headerlink" href="#inertial-effects" title="Link to this section">¶</a></h1>
 <p>Effects driven by acceleration telemetry, in the order they appear under the <strong>Inertial</strong> section of the Settings tab. The badge lines and sub-setting tables are generated from the application’s settings catalog, so they always match the app.</p>
 <h2 id="g-force-effect"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> G-Force Effect<a class="headerlink" href="#g-force-effect" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Joystick</p>
-<p>Simulates the increasing pull force required on the stick as g-loading builds in a dive pull-out or hard turn. The force is a percentage of the constant-force value in VPforce Configurator. The mode dropdown selects between two implementations, each with its own sub-settings:</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Joystick</p>
+<p>Simulates the increasing pull force required on the stick as g-loading builds in a dive pull-out or hard turn. The force is a percentage of the constant-force value in VPforce Configurator. The mode dropdown offers these options, each with its own sub-settings:</p>
 <ul>
+<li><strong>Disabled</strong> - no G-force effect.</li>
 <li>
-<p class="label-paragraph"><strong>Exponential Curve (legacy)</strong> - force ramps between <em>Minimum Gs</em> and <em>Maximum Gs</em>, shaped by the <em>G Force Curvature</em>: 1.0 is linear across the g range; higher values flatten the onset and steepen the force toward the top (default 2.2).</p>
+<p class="label-paragraph"><strong>Exponential Curve</strong> - force ramps between <em>Minimum Gs</em> and <em>Maximum Gs</em>, shaped by the <em>G Force Curvature</em>: 1.0 is linear across the g range; higher values flatten the onset and steepen the force toward the top.</p>
 <p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/effects-inertial/gforce-curvature-plot.webp"><img alt="Example curvature values and the resulting force curves" height="320px" src="../images/effects-inertial/gforce-curvature-plot.webp" width="411px"/></a> <figcaption>Example curvature values and the resulting force curves</figcaption></figure>
-- <strong>Custom Curve</strong> - a force is calculated from the current g-loading between the min and max G settings, and the <strong>physical stick deflection</strong> determines how much of it applies. Example: g-loading halfway between min and max gives a 50% calculated force; with the stick pulled back 50%, the output is 0.5 × 0.5 = 25%. As you pull harder, both factors rise. The <em>Y-Axis Max Point</em> sets the deflection at which 100% of the calculated force applies; negative-g support has mirrored settings. The <em>Advanced</em> option maps the response through a visual curve editor; see <a href="../spring-curves/">Advanced Spring &amp; G-Force Curves</a>.<p></p>
+- <strong>Linear + Deflection Based</strong> - a force is calculated from the current g-loading between the start and maximum G settings, and the <strong>physical stick deflection</strong> determines how much of it applies. Example: g-loading halfway between min and max gives a 50% calculated force; with the stick pulled back 50%, the output is 0.5 × 0.5 = 25%. As you pull harder, both factors rise. The <em>Y-Axis Max Point</em> sets the deflection at which 100% of the calculated force applies, and <em>Enable Negative Gs</em> extends the effect to negative g.
+- <strong>Custom Curve</strong> - maps g-loading to force through a visual curve editor, with separate positive and negative curves, applied either as a constant force or as a spring center offset; see <a href="../spring-curves/">Advanced Spring &amp; G-Force Curves</a>.<p></p>
 </li>
 </ul>
-<p class="label-paragraph"><strong>In mode: Exponential Curve (legacy)</strong></p>
+<p class="label-paragraph"><strong>In mode: Exponential Curve</strong></p>
 <table>
 <thead>
 <tr>
@@ -879,27 +881,27 @@
 <tbody>
 <tr>
 <td>Max Intensity</td>
-<td>DCS, IL2, BMS</td>
+<td>—</td>
 <td>Max force to apply during effect (% of VPf Conf ‘constant’)</td>
 </tr>
 <tr>
 <td>G Force Curvature</td>
-<td>DCS, IL2, BMS</td>
+<td>—</td>
 <td>Affects the onset characteristics of the overall effect</td>
 </tr>
 <tr>
 <td>Minimum Gs</td>
-<td>DCS, IL2, BMS</td>
+<td>—</td>
 <td>G loading where effect will start</td>
 </tr>
 <tr>
 <td>Maximum Gs</td>
-<td>DCS, IL2, BMS</td>
+<td>—</td>
 <td>G loading where effect will max out</td>
 </tr>
 </tbody>
 </table>
-<p class="label-paragraph"><strong>In mode: Custom Curve</strong></p>
+<p class="label-paragraph"><strong>In mode: Linear + Deflection Based</strong></p>
 <table>
 <thead>
 <tr>
@@ -956,7 +958,7 @@
 </tr>
 </tbody>
 </table>
-<p class="label-paragraph"><strong>In mode: Advanced Dynamic</strong></p>
+<p class="label-paragraph"><strong>In mode: Custom Curve</strong></p>
 <table>
 <thead>
 <tr>
@@ -974,7 +976,7 @@
 </tbody>
 </table>
 <h2 id="deceleration-effect"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Deceleration Effect<a class="headerlink" href="#deceleration-effect" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Joystick</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · Joystick</p>
 <p>Monitors deceleration g-forces and, while the aircraft is on the ground, pushes the stick forward (away from the pilot) proportionally to the deceleration; braking you can feel. Capped at <em>Deceleration Max Force</em>, scalable, invertible, and restrictable to ground operations.</p>
 <table>
 <thead>
@@ -987,22 +989,22 @@
 <tbody>
 <tr>
 <td>Deceleration Max Force</td>
-<td>DCS, IL2, MSFS, XP</td>
+<td>DCS, IL2, IL2 Korea, MSFS, XP</td>
 <td>Deceleration effect pulls the stick forward when on the ground and decelerating</td>
 </tr>
 <tr>
 <td>Deceleration Scale Factor</td>
-<td>DCS, IL2, MSFS, XP</td>
+<td>DCS, IL2, IL2 Korea, MSFS, XP</td>
 <td>Artificially increase the G forces in the direction of deceleration</td>
 </tr>
 <tr>
 <td>Invert Force</td>
-<td>DCS, IL2, MSFS, XP</td>
+<td>DCS, IL2, IL2 Korea, MSFS, XP</td>
 <td>Invert the frame of reference (direction of force) for the effect. I.e. stick moving away from pilot vs. pilot moving towards stick.</td>
 </tr>
 <tr>
 <td>Disable while Airborne</td>
-<td>DCS, IL2, MSFS, XP</td>
+<td>DCS, IL2, IL2 Korea, MSFS, XP</td>
 <td>Disable effect while airborne</td>
 </tr>
 </tbody>
@@ -1032,6 +1034,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Aerodynamics" class="md-footer__link md-footer__link--prev" href="../effects-aerodynamics/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Aerodynamics
+              </div>
+</div>
+</a>
+<a aria-label="Next: Ground" class="md-footer__link md-footer__link--next" href="../effects-ground/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Ground
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1046,7 +1076,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

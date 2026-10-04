@@ -396,7 +396,29 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#switching-between-devices">1.3.2 
+<a class="md-nav__link" href="#device-panel">1.3.2 
+<span class="md-ellipsis">
+      
+        Detachable/Dockable Device Panel
+      
+    </span>
+</a>
+<nav aria-label="Detachable/Dockable Device Panel" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#moving-and-docking-the-floating-strip">
+<span class="md-ellipsis">
+      
+        Moving and Docking the Floating Strip
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#switching-between-devices">1.3.3 
 <span class="md-ellipsis">
       
         Switching Between Devices
@@ -405,7 +427,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#deviceinstance-status-indications">1.3.3 
+<a class="md-nav__link" href="#device-status">1.3.4 
 <span class="md-ellipsis">
       
         Device/Instance Status Indications
@@ -414,16 +436,29 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#application-status-area">1.3.4 
+<a class="md-nav__link" href="#application-status-area">1.3.5 
 <span class="md-ellipsis">
       
         Application Status Area
       
     </span>
 </a>
+<nav aria-label="Application Status Area" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration-errors">
+<span class="md-ellipsis">
+      
+        Configuration Errors
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#profile-notes">1.3.5 
+<a class="md-nav__link" href="#profile-notes">1.3.6 
 <span class="md-ellipsis">
       
         Profile Notes
@@ -432,16 +467,65 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#monitor-tab">1.3.6 
+<a class="md-nav__link" href="#prompts">1.3.7 
+<span class="md-ellipsis">
+      
+        Prompts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monitor-tab">1.3.8 
 <span class="md-ellipsis">
       
         Monitor Tab
       
     </span>
 </a>
+<nav aria-label="Monitor Tab" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telemetry">
+<span class="md-ellipsis">
+      
+        Telemetry
+      
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hide-tab">1.3.7 
+<a class="md-nav__link" href="#active-effects">
+<span class="md-ellipsis">
+      
+        Active Effects
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#child-device-data">
+<span class="md-ellipsis">
+      
+        Child Device Data
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#detaching-the-monitor-tab">
+<span class="md-ellipsis">
+      
+        Detaching the Monitor Tab
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hide-tab">1.3.9 
 <span class="md-ellipsis">
       
         Hide Tab
@@ -450,7 +534,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#settings-tab">1.3.8 
+<a class="md-nav__link" href="#settings-tab">1.3.10 
 <span class="md-ellipsis">
       
         Settings Tab
@@ -459,10 +543,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#modifying-settings-in-real-time">1.3.9 
+<a class="md-nav__link" href="#modifying-settings-in-real-time">1.3.11 
 <span class="md-ellipsis">
       
-        Modifying settings in real time
+        Modifying Settings in Real Time
       
     </span>
 </a>
@@ -710,11 +794,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -1031,13 +1115,21 @@
 <article class="md-content__inner md-typeset">
 <h1 id="application-ui-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Application UI Overview<a class="headerlink" href="#application-ui-overview" title="Link to this section">¶</a></h1>
 <h2 id="general-application-overview"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> General Application Overview<a class="headerlink" href="#general-application-overview" title="Link to this section">¶</a></h2>
-<p>TelemFFB is laid out with a menu bar, the application status area, device status/selection area and the various tabs at the bottom. Refer to the sections below for details on each.</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/main-window.webp"><img alt="" height="600px" src="../images/ui-overview/main-window.webp" width="565px"/></a> <figcaption></figcaption></figure>
+<p>The TelemFFB main window has these parts, from top to bottom:</p>
+<ul>
+<li>The <strong>menu bar</strong>, with the VPforce logo at its right-hand end.</li>
+<li>The <strong>Application Status</strong> box: the simulator, the loaded aircraft and profile, and any error message.</li>
+<li><strong>Prompts</strong> that ask you to do something, when there is something to do.</li>
+<li>The <strong>Monitor</strong>, <strong>Settings</strong> and <strong>Hide</strong> tabs.</li>
+<li>The <strong>status bar</strong>.</li>
+</ul>
+<p>The device icons are in the <strong>Active Devices</strong> side panel along the left edge of the window. You can move them to one of several other places; see <a href="#device-panel">1.3.2 Where the Devices Are Shown</a>. Refer to the sections below for details on each part.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/main-window.webp"><img alt="The main window on the Settings tab, with the Active Devices side panel on the left" src="../images/ui-overview/main-window.webp" width="600px"/></a> <figcaption>The main window on the Settings tab, with the Active Devices side panel on the left</figcaption></figure>
 <h2 id="the-menus"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> The Menus<a class="headerlink" href="#the-menus" title="Link to this section">¶</a></h2>
 <h3 id="system-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.1</span> System Menu<a class="headerlink" href="#system-menu" title="Link to this section">¶</a></h3>
 <ul>
 <li>
-<p class="label-paragraph"><strong>System Settings</strong> - see <a href="../configuration/">System Settings</a></p>
+<p class="label-paragraph"><strong>System Settings</strong> - see <a href="../configuration/">System Settings</a>. This item is on the master instance only, because the master’s dialog holds the settings of every device.</p>
 </li>
 <li>
 <p class="label-paragraph"><strong>Open Config/Log directory</strong> - opens the folder in your user local appdata where logs and settings are stored</p>
@@ -1046,7 +1138,7 @@
 <p class="label-paragraph"><strong>Reset Window Size/Position</strong> - resets the window sizes to default. TelemFFB will remember and store the window size and position across executions of the application.</p>
 </li>
 <li>
-<p class="label-paragraph"><strong>Quit TelemFFB</strong> - closes the application and stops all effects.</p>
+<p class="label-paragraph"><strong>Quit TelemFFB</strong> - closes the application and stops all effects. On a child instance, the item is <strong>Quit the <em>Device</em> Instance</strong>, and it closes only that instance.</p>
 </li>
 </ul>
 <h3 id="profiles-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.2</span> Profiles Menu<a class="headerlink" href="#profiles-menu" title="Link to this section">¶</a></h3>
@@ -1069,7 +1161,7 @@
 <p>Puts the application into offline editing mode. While in offline editing mode, telemetry is paused.</p>
 </li>
 <li>
-<p>Edits sim defaults, class defaults, or a specific aircraft and profile without that aircraft being loaded. See <a href="../settings-model/#offlineglobal-simclass-configuration">Offline/Global Sim/Class Configuration</a>.</p>
+<p>Edits sim defaults, class defaults, or a specific aircraft and profile without that aircraft being loaded. See <a href="../settings-model/#offline-editor">Offline Editor</a>.</p>
 </li>
 <li>
 <p>Effects can be played on the device from here. See <a href="../effect-preview/">Effect Preview</a>.</p>
@@ -1079,7 +1171,7 @@
 <li>
 <p class="label-paragraph"><strong>Reset Dismissed Profile Prompts</strong></p>
 <ul>
-<li>Brings back every <strong>Multiple matching profiles</strong> prompt that you answered with “Keep mine” or “Don’t ask again”. Your configuration does not change. The item is greyed out when there is nothing to reset. See <a href="../aircraft-profiles/#when-your-profile-and-a-built-in-both-match">When Your Profile and a Built-In Both Match</a>.</li>
+<li>Brings back every <strong>Multiple matching profiles</strong> prompt that you answered with “Keep mine” or “Don’t ask again”. Your configuration does not change. The item is greyed out when there is nothing to reset. See <a href="../aircraft-profiles/#overlapping-profiles">Overlapping Profiles</a>.</li>
 </ul>
 </li>
 </ul>
@@ -1096,29 +1188,43 @@
 <p class="label-paragraph"><strong>Install Latest TelemFFB</strong> - Start the auto-update process. Only active if an update is available and the update prompt is disabled or was dismissed on startup.</p>
 </li>
 <li>
-<p class="label-paragraph"><strong>Download Other Versions</strong> - opens a webpage where you can select legacy versions to download.</p>
-</li>
-<li>
 <p class="label-paragraph"><strong>Reset User Config</strong> - Removes all user configured settings from TelemFFB and reverts to ‘factory defaults’ for all effects settings. Note that when this is executed, a date-time stamped backup of the existing user configuration is saved in the TelemFFB folder in AppData/Local</p>
 </li>
 <li>
 <p class="label-paragraph"><strong>Launch VPForce Configurator</strong> - Cross launches the VPforce
     configurator app to set up your device</p>
 </li>
+<li>
+<p class="label-paragraph"><strong>SimConnect/Dataref Overrides Editor</strong> - changes where a telemetry item’s data comes from, for MSFS and X-Plane aircraft. See <a href="../telem-overrides/">Telemetry Overrides</a>.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Elevator Trim Calibration…</strong> - opens the trim calibration tool for MSFS and X-Plane fixed-wing aircraft. See <a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a>.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>DirectInput Tap Monitor…</strong> - shows whether a game sends its effects through the <a href="../dinput-tap/">DirectInput Tap</a>, which devices the wrapper captured, and what each effect slot receives. The window keeps a time-stamped log of each change. Use <strong>Save Log…</strong> to save the log and send it to support.</p>
+</li>
 </ul>
 <h3 id="window-menu"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2.4</span> Window Menu<a class="headerlink" href="#window-menu" title="Link to this section">¶</a></h3>
-<p>The window menu only shows if the TelemFFB instance is acting as the master instance for other VPforce devices (pedals, collective, etc)</p>
 <ul>
 <li>
-<p class="label-paragraph"><strong>Show Child Instance Windows</strong></p>
+<p class="label-paragraph"><strong>Devices</strong> (master instance) - chooses where the device icons are shown. See <a href="#device-panel">1.3.2 Where the Devices Are Shown</a>.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Show Child Instance Windows</strong> (master instance, with other VPforce devices in use)</p>
 <ul>
 <li>Forces the child instance device windows to become visible if they are hidden/minimized</li>
 </ul>
 </li>
 <li>
-<p class="label-paragraph"><strong>Hide Child Instance Windows</strong></p>
+<p class="label-paragraph"><strong>Hide Child Instance Windows</strong> (master instance, with other VPforce devices in use)</p>
 <ul>
 <li>Re-hides the child instance device windows.</li>
+</ul>
+</li>
+<li>
+<p class="label-paragraph"><strong>Hide Window</strong> (child instance)</p>
+<ul>
+<li>Hides the window of that child instance.</li>
 </ul>
 </li>
 </ul>
@@ -1131,9 +1237,9 @@
 </ul>
 </li>
 <li>
-<p class="label-paragraph"><strong>Open Child Console</strong> (if more than one VPforce device is in use)</p>
+<p class="label-paragraph"><strong>Open Child Logs</strong> (if more than one VPforce device is in use)</p>
 <ul>
-<li>Opens the log window for the selected child device instance of TelemFFB</li>
+<li>Has one item for each child device instance, for example <strong>Pedals log</strong>. Select an item to open the log window of that instance.</li>
 </ul>
 </li>
 </ul>
@@ -1151,14 +1257,81 @@
 </ul>
 <h2 id="application-main-window"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Application Main Window<a class="headerlink" href="#application-main-window" title="Link to this section">¶</a></h2>
 <h3 id="active-devices-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Active Devices Area<a class="headerlink" href="#active-devices-area" title="Link to this section">¶</a></h3>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/active-devices.webp"><img alt="" height="137px" src="../images/ui-overview/active-devices.webp" width="371px"/></a> <figcaption></figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/active-devices.webp"><img alt="The Active Devices side panel: the joystick configured, the other three roles grey" src="../images/ui-overview/active-devices.webp" width="158px"/></a> <figcaption>The Active Devices side panel: the joystick configured, the other three roles grey</figcaption></figure>
 <p>The active devices area is both a way to switch the master instance configuration scope between devices as well as a device/instance status tracker for the primary and child devices and their TelemFFB instances.</p>
-<h3 id="switching-between-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Switching Between Devices<a class="headerlink" href="#switching-between-devices" title="Link to this section">¶</a></h3>
-<p>To switch between devices for configuration, simply click on the appropriate device icon. When clicked, the configuration elements in the settings page below will update to reflect the settings for that device.</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/device-switching.gif"><img alt="" height="329px" src="../images/ui-overview/device-switching.gif" width="329px"/></a> <figcaption></figcaption></figure>
-<h3 id="deviceinstance-status-indications"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Device/Instance Status Indications<a class="headerlink" href="#deviceinstance-status-indications" title="Link to this section">¶</a></h3>
-<p>The device icons serve the dual purpose of displaying the status of both the device connection as well as the individual TelemFFB instances which are ultimately controlling the multiple devices.</p>
-<p>The label under each icon names the hardware that holds the role. The icon pulses when its state changes. Hover an icon to read its current state.</p>
+<p>The <strong>Active Devices</strong> side panel always shows all four device roles: joystick, pedals, collective and trim wheel. A role that has no device configured shows a grey icon. A grey icon does not respond to a click.</p>
+<p>The label under each icon names the hardware that holds the role. In the other places the devices can be shown, the icons are smaller and have no label; hover an icon to see its name.</p>
+<h3 id="device-panel"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2</span> Detachable/Dockable Device Panel<a class="headerlink" href="#device-panel" title="Link to this section">¶</a></h3>
+<p>The device icons can be shown in one of seven places. Everywhere except the <strong>Side panel</strong>, they appear as the <strong>device strip</strong>: a compact row of small icons.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/device-docking.gif"><img alt="Moving the device icons between the places they can be shown, and docking the floating strip" src="../images/ui-overview/device-docking.gif" width="700px"/></a> <figcaption>Moving the device icons between the places they can be shown, and docking the floating strip</figcaption></figure>
+<table>
+<thead>
+<tr>
+<th>Place</th>
+<th>Where the devices appear</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Side panel</strong></td>
+<td>The <strong>Active Devices</strong> panel along the edge of the window, with a label under each icon. This is the default.</td>
+</tr>
+<tr>
+<td><strong>Side panel (compact)</strong></td>
+<td>A narrow column of small icons along the edge of the window.</td>
+</tr>
+<tr>
+<td><strong>Menu bar</strong></td>
+<td>The device strip at the right-hand end of the menu bar, beside the logo.</td>
+</tr>
+<tr>
+<td><strong>Application status box</strong></td>
+<td>The device strip in the <strong>Application Status</strong> box, below <strong>Matched Model</strong>.</td>
+</tr>
+<tr>
+<td><strong>Monitor/Settings header</strong></td>
+<td>The device strip at the right-hand end of the header of the Monitor or Settings page.</td>
+</tr>
+<tr>
+<td><strong>Bottom of the window</strong></td>
+<td>The device strip in a row of its own below the tabs, at the right-hand end.</td>
+</tr>
+<tr>
+<td><strong>Floating strip</strong></td>
+<td>The device strip in a small window of its own, which you can move anywhere.</td>
+</tr>
+</tbody>
+</table>
+<p>To change the place, do one of these steps:</p>
+<ul>
+<li>In the <strong>Window</strong> menu, open <strong>Devices</strong> and select a place.</li>
+<li>Right-click the device icons, wherever they are shown, and select <strong>Show devices: <em>place</em></strong>.</li>
+<li>Click the <strong>view glyph</strong>: the small window-and-panel symbol. The glyph is in the title of the Active Devices panel, and beside the device strip when you move the mouse over the strip. On the Active Devices panel, a click changes to the compact place that you used last. On the device strip, a click changes back to the Active Devices panel.</li>
+<li>Drag the view glyph away from its position. The device strip starts to float, and you continue to drag it.</li>
+</ul>
+<p class="label-paragraph"><strong>Side panels on the right</strong> (in the <strong>Devices</strong> menu and in the right-click menu) moves both side panels to the right edge of the window.</p>
+<h4 id="moving-and-docking-the-floating-strip"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.2.1</span> Moving and Docking the Floating Strip<a class="headerlink" href="#moving-and-docking-the-floating-strip" title="Link to this section">¶</a></h4>
+<p>Drag the floating strip by its grip or its edges. A click on an icon still selects that device.</p>
+<p>While you drag the strip over the main window, each place where it can dock is highlighted, and a tooltip below the strip names that place, for example <strong>Dock: Menu bar</strong>. Release the strip to dock it there. To keep the strip floating at that position, hold <strong>Ctrl</strong> while you release it.</p>
+<p>Right-click the floating strip for two more options:</p>
+<ul>
+<li><strong>Keep inside the main window</strong> - the strip stays inside the main window, moves with it and minimizes with it. This is the default.</li>
+<li><strong>Keep on top of other windows</strong> - available when the strip is not kept inside the main window. Use it to put the strip over a simulator or on a different monitor.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>With one device configured, the icons show status only. A click on an icon does nothing, because there is no other device to switch to. All seven places are still available.</li>
+<li>On the <strong>Hide</strong> tab, the side panel and the docked device strip are hidden. A floating strip that is not kept inside the main window stays visible.</li>
+<li>A child instance always shows its own device in its <strong>Application Status</strong> box. Where the devices are shown is set on the master instance.</li>
+</ul>
+</div>
+<h3 id="switching-between-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.3</span> Switching Between Devices<a class="headerlink" href="#switching-between-devices" title="Link to this section">¶</a></h3>
+<p>To switch between devices for configuration, click the device icon, wherever the devices are shown. The configuration elements on the Settings tab change to the settings for that device, and the Monitor tab shows the telemetry and effects of that device. See <a href="#monitor-tab">1.3.8 Monitor Tab</a>.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/device-switching.gif"><img alt="Switching the configuration between devices" src="../images/ui-overview/device-switching.gif" width="600px"/></a> <figcaption>Switching the configuration between devices</figcaption></figure>
+<h3 id="device-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.4</span> Device/Instance Status Indications<a class="headerlink" href="#device-status" title="Link to this section">¶</a></h3>
+<p>The device icons serve the dual purpose of displaying the status of both the device connection as well as the individual TelemFFB instances which are ultimately controlling the multiple devices. The small icons of the device strip use the same colors.</p>
+<p>The icon pulses when its state changes. Hover an icon to read its current state.</p>
 <p class="label-paragraph"><strong>Green Status Icon:</strong></p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-running.webp"><img alt="" height="55px" src="../images/ui-overview/status-running.webp" width="55px"/></a> <figcaption></figcaption></figure>
 <p>A green status icon indicates that the device is properly connected to its instance of TelemFFB and the child instance of TelemFFB is healthy</p>
@@ -1168,20 +1341,24 @@
 <p class="label-paragraph"><strong>Red Status Icon:</strong></p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-error.webp"><img alt="" height="54px" src="../images/ui-overview/status-error.webp" width="54px"/></a> <figcaption></figcaption></figure>
 <p>A red status icon indicates one of three things: the configured device was not found when TelemFFB started, the child instance of TelemFFB has crashed, or there is an error condition present for that instance. A device that was not found is picked up as soon as it appears.</p>
-<h3 id="application-status-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.4</span> Application Status Area<a class="headerlink" href="#application-status-area" title="Link to this section">¶</a></h3>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-area.webp"><img alt="" height="264px" src="../images/ui-overview/status-area.webp" width="304px"/></a> <figcaption></figcaption></figure>
+<p class="label-paragraph"><strong>Grey Status Icon:</strong></p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-unconfigured.webp"><img alt="A grey device icon: no device configured for the role" src="../images/ui-overview/status-unconfigured.webp" width="55px"/></a> <figcaption>A grey device icon: no device configured for the role</figcaption></figure>
+<p>A grey icon indicates that no device is configured for that role. To configure a device, see <a href="../devices-instances/">Devices and Instances</a>.</p>
+<h3 id="application-status-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.5</span> Application Status Area<a class="headerlink" href="#application-status-area" title="Link to this section">¶</a></h3>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-area.webp"><img alt="The Application Status box" src="../images/ui-overview/status-area.webp" width="700px"/></a> <figcaption>The Application Status box</figcaption></figure>
+<p>The <strong>Application Status</strong> box has two columns. The left column shows what the simulator is doing. The right column shows the profile and the overrides in use.</p>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Sim Status</strong></p>
 <ul>
 <li>
-<p>Shows the currently connected simulator and the active status</p>
+<p>Shows the currently connected simulator and the active status. Hover the <strong>Sim Status</strong> label to see which simulators are enabled and which are disabled.</p>
 </li>
 <li>
 <p>Possible Status’</p>
 <ul>
 <li>
-<p class="label-paragraph"><strong>Waiting </strong>- No telemetry has been received from any enabled simulator</p>
+<p class="label-paragraph"><strong>Waiting… </strong>- No telemetry has been received from any enabled simulator</p>
 </li>
 <li>
 <p class="label-paragraph"><strong>Running </strong>- Sim is connected and Telemetry is flowing</p>
@@ -1191,7 +1368,10 @@
 </li>
 <li>
 <p class="label-paragraph"><strong>Error </strong>- A configuration error condition is present.
-    Generally, there will be an error status message displayed indicating what the error is and how to resolve it.</p>
+    Generally, there will be an error status message displayed indicating what the error is and how to resolve it. See <a href="#configuration-errors">Configuration errors</a>.</p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Offline </strong>- The offline editor is open. See <a href="../settings-model/#offline-editor">Offline Editor</a>.</p>
 </li>
 </ul>
 </li>
@@ -1210,14 +1390,22 @@
 <p>Displays the match string of the aircraft profile that matched the detected aircraft. When several match strings fit, the most specific one wins; see <a href="../aircraft-profiles/#how-telemffb-matches-an-aircraft">How TelemFFB Matches an Aircraft</a>.</p>
 </li>
 <li>
-<p>The <strong>split button</strong> beside it gives the loaded aircraft a more specific profile of its own. See <a href="../aircraft-profiles/#giving-the-loaded-aircraft-its-own-profile">Giving the Loaded Aircraft Its Own Profile</a>.</p>
+<p>The <strong>fork button</strong> beside it gives the loaded aircraft a more specific profile of its own. See <a href="../aircraft-profiles/#forking-a-profile">Forking a Profile</a>.</p>
 </li>
 </ul>
 </li>
 <li>
 <p class="label-paragraph"><strong>Active Profile</strong></p>
 <ul>
-<li>Displays the actively selected user profile name</li>
+<li>
+<p>On the master instance, a dropdown list of the profiles for the loaded aircraft. The selected profile is the active profile. Select a different profile to make it active. Select <strong>Add New…</strong> to create a new profile for the aircraft. The list is available when a profile matches the aircraft.</p>
+</li>
+<li>
+<p>On a child instance, the field shows the name of the active profile. The master instance selects the profile.</p>
+</li>
+<li>
+<p>The <strong>notes button</strong> beside it opens the <a href="#profile-notes">1.3.6 Profile Notes</a>.</p>
+</li>
 </ul>
 </li>
 <li>
@@ -1239,7 +1427,16 @@
 </ul>
 </li>
 </ul>
-<h3 id="profile-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.5</span> Profile Notes<a class="headerlink" href="#profile-notes" title="Link to this section">¶</a></h3>
+<p>In the offline editor, the fields show <strong>Offline</strong>, and an orange banner below them says that telemetry is paused.</p>
+<h4 id="configuration-errors"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.5.1</span> Configuration Errors<a class="headerlink" href="#configuration-errors" title="Link to this section">¶</a></h4>
+<p>When a configuration error is present, <strong>Sim Status</strong> shows <strong>Error</strong>, and a red message area opens below <strong>Active Profile</strong>. The message names the device it applies to, for example <strong>Joystick:</strong>, then says what is wrong and how to correct it.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/status-error-message.webp"><img alt="The Application Status box showing a configuration error" src="../images/ui-overview/status-error-message.webp" width="700px"/></a> <figcaption>The Application Status box showing a configuration error</figcaption></figure>
+<ul>
+<li>If several errors are present at the same time, the box shows one at a time. When you correct that error, the next one shows.</li>
+<li>The <a href="../troubleshooting/#exception-tracking-reporting">exception viewer</a> lists all of them.</li>
+<li>A corrected error clears only while the simulator is running and not paused, because TelemFFB checks for the error in the live telemetry. A note below the message says this.</li>
+</ul>
+<h3 id="profile-notes"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.6</span> Profile Notes<a class="headerlink" href="#profile-notes" title="Link to this section">¶</a></h3>
 <p>The status area includes a <strong>notes button</strong> for the loaded aircraft profile.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/profile-notes.webp"><img alt="The Profile Notes dialog showing shipped notes and the editable profile note" src="../images/ui-overview/profile-notes.webp" width="550px"/></a> <figcaption>The Profile Notes dialog showing shipped notes and the editable profile note</figcaption></figure>
 <ul>
@@ -1247,26 +1444,74 @@
 <li>You can <strong>add your own notes</strong> to any aircraft profile. The dialog shows the inherited notes read-only (shipped notes and any user-default note), with an editable section for the active profile’s own note.</li>
 <li>When you load an aircraft that has notes to read, the notes icon <strong>flashes green</strong>; click it to view or edit.</li>
 </ul>
-<h3 id="monitor-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.6</span> Monitor Tab<a class="headerlink" href="#monitor-tab" title="Link to this section">¶</a></h3>
-<p>The Monitor tab shows received telemetry data and effects that are
-currently active:</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/monitor-tab.webp"><img alt="" height="548px" src="../images/ui-overview/monitor-tab.webp" width="516px"/></a> <figcaption></figcaption></figure>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also detach the monitor tab from the main window and display it separately along side the main TelemFFB window. This can be useful for monitoring the active effects while you are making adjustments on the settings tab.</p>
-</div>
-<h3 id="hide-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.7</span> Hide Tab<a class="headerlink" href="#hide-tab" title="Link to this section">¶</a></h3>
-<p>The Hide tab is the simplest and reduces information shown to the bare minimum:</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/hide-tab.webp"><img alt="" height="291px" src="../images/ui-overview/hide-tab.webp" width="525px"/></a> <figcaption></figcaption></figure>
-<h3 id="settings-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8</span> Settings Tab<a class="headerlink" href="#settings-tab" title="Link to this section">¶</a></h3>
-<p>The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface; every effect and setting is documented in the <a href="../effects-overview/">Effects Reference</a>, which mirrors the Settings tab section for section. Changing any setting has an immediate effect.</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/settings-tab.webp"><img alt="" height="644px" src="../images/ui-overview/settings-tab.webp" width="606px"/></a> <figcaption></figcaption></figure>
-<p>Two prompts can appear above the tab:</p>
+<h3 id="prompts"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.7</span> Prompts<a class="headerlink" href="#prompts" title="Link to this section">¶</a></h3>
+<p>A prompt appears below the <strong>Application Status</strong> box when TelemFFB needs you to do something. Click the prompt to do it.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/prompt-new-aircraft.webp"><img alt="The No Profile Found prompt" src="../images/ui-overview/prompt-new-aircraft.webp" width="474px"/></a> <figcaption>The No Profile Found prompt</figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/prompt-multi-match.webp"><img alt="The Multiple matching profiles prompt" src="../images/ui-overview/prompt-multi-match.webp" width="406px"/></a> <figcaption>The Multiple matching profiles prompt</figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/prompt-trim-cal.webp"><img alt="The No Trim Calibration prompt" src="../images/ui-overview/prompt-trim-cal.webp" width="519px"/></a> <figcaption>The No Trim Calibration prompt</figcaption></figure>
 <ul>
-<li><strong>No Profile Found for</strong> (red) - the loaded aircraft matches no profile. The controls on the tab are disabled until you create one, because there is no profile to store a change in. Click the prompt to open the <a href="../aircraft-profiles/#adding-new-aircraft-support">New Aircraft Wizard</a>.</li>
-<li><strong>Multiple matching profiles detected</strong> (teal) - one of your own profiles and a built-in profile both match the aircraft. Click the prompt to <a href="../aircraft-profiles/#when-your-profile-and-a-built-in-both-match">choose what to do</a>.</li>
+<li><strong>No Profile Found for <em>aircraft</em></strong> (red) - the loaded aircraft matches no profile. The controls on the Settings tab are disabled until you create one, because there is no profile to store a change in. Click the prompt to open the <a href="../aircraft-profiles/#adding-new-aircraft-support">New Aircraft Wizard</a>.</li>
+<li><strong>Multiple matching profiles detected</strong> (teal) - one of your own profiles and a built-in profile both match the aircraft. Click the prompt to <a href="../aircraft-profiles/#overlapping-profiles">choose what to do</a>.</li>
+<li><strong>No Trim Calibration Found for this Aircraft</strong> (amber) - the loaded MSFS or X-Plane fixed-wing aircraft has no stored trim calibration. Click the prompt to open the <a href="../msfs-xp-trim-calibration/">Elevator Trim Calibration</a> tool. This prompt shows on the master instance, when it drives a joystick.</li>
 </ul>
-<p>With an aircraft loaded, an <strong>Offline/Preview Mode</strong> button sits in the corner of the tab. It opens the offline editor on that aircraft, where each effect can be played on the device with a <strong>▶</strong> button. See <a href="../effect-preview/">Effect Preview</a>.</p>
+<p>Prompts show only on the master instance.</p>
+<h3 id="monitor-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8</span> Monitor Tab<a class="headerlink" href="#monitor-tab" title="Link to this section">¶</a></h3>
+<p>The Monitor tab shows the telemetry that TelemFFB receives, and the effects that are active on the device:</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/monitor-tab.webp"><img alt="The Monitor tab: telemetry on the left, active effects and their intensity on the right" src="../images/ui-overview/monitor-tab.webp" width="600px"/></a> <figcaption>The Monitor tab: telemetry on the left, active effects and their intensity on the right</figcaption></figure>
+<p>The header of the tab has these controls:</p>
+<ul>
+<li><strong>Detach</strong> - moves the Monitor tab into a window of its own. See <a href="#detaching-the-monitor-tab">Detaching the Monitor tab</a>.</li>
+<li><strong>Filter</strong> - shows only the telemetry items that you type. Type a comma-separated list; case does not matter. For example, <code>aoa, ias, rpm</code>.</li>
+<li><strong>Favorites</strong> - shows only the telemetry items that you marked as favorites.</li>
+<li><strong>Device:</strong> - on a master instance with child devices, names the device whose telemetry and effects the tab shows. It is hidden when the device strip is in the page header, because the strip highlights the same device.</li>
+</ul>
+<p>Before telemetry arrives, the tab shows <strong>Waiting for data…</strong> and which simulators are enabled.</p>
+<h4 id="telemetry"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8.1</span> Telemetry<a class="headerlink" href="#telemetry" title="Link to this section">¶</a></h4>
+<p>The telemetry table has one row for each telemetry item, with its <strong>Key</strong> and <strong>Value</strong>. Values that can be negative always show a sign, so the digits do not move when a value changes between positive and negative.</p>
+<p>To copy telemetry, select cells or rows and press <strong>Ctrl+C</strong>.</p>
+<p class="label-paragraph"><strong>Favorites:</strong> click the star at the left of a row to mark that item as a favorite. Click the star again to remove it. Select <strong>Favorites</strong> in the header to show only your favorites. Your favorites are the same for all of your devices, and TelemFFB keeps them between sessions.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/monitor-favorites.webp"><img alt="The telemetry table with Favorites ticked, showing only the starred items" src="../images/ui-overview/monitor-favorites.webp" width="398px"/></a> <figcaption>The telemetry table with Favorites ticked, showing only the starred items</figcaption></figure>
+<h4 id="active-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8.2</span> Active Effects<a class="headerlink" href="#active-effects" title="Link to this section">¶</a></h4>
+<p>The <strong>Active Effects</strong> table lists each effect that plays on the device, grouped by type:</p>
+<ol>
+<li>Periodic effects (vibrations).</li>
+<li>Constant-force effects.</li>
+<li>Spring, spring adjuster and detent effects.</li>
+<li>Damper, inertia and friction effects.</li>
+</ol>
+<p>A badge beside each name shows the effect type: a waveform for a periodic effect, and a letter for the other types. The image below shows every badge, with the name of the type in place of an effect name. Hover an effect name to see its type written out.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/monitor-effects.webp"><img alt="Every effect-type badge, with the name of the type in place of the effect name and an example intensity" src="../images/ui-overview/monitor-effects.webp" width="400px"/></a> <figcaption>Every effect-type badge, with the name of the type in place of the effect name and an example intensity</figcaption></figure>
+<p>The <strong>Intensity</strong> column shows how strong each effect is now:</p>
+<ul>
+<li><strong>Periodic and constant-force effects</strong> show a bar and a percentage of the device’s full scale. Hover the cell to see the value as a percentage of full scale. For an effect that is linked to a setting, the hover text also shows the value as a percentage of your setting, and the position of the setting’s slider.</li>
+<li><strong>Spring, spring adjuster, detent, damper, inertia and friction effects</strong> show the gain of each axis in two cells: X, then Y. A copied row reads <code>X 50% Y 30%</code>. A dash marks an axis the effect does not use. These effects have no strength of their own: the force they make depends on the position or the speed of the stick.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Why the intensity can read low</p>
+<p>Most sliders are scaled: a slider at 30% can set a value of 0.12, not 0.30. Some effects also divide their strength between the X and Y axes. The intensity column shows the real output of the device, so an effect at 6% can be correct for a slider at 30%.</p>
+</div>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/monitor-intensity-tooltip.webp"><img alt="The hover text of an intensity cell" src="../images/ui-overview/monitor-intensity-tooltip.webp" width="427px"/></a> <figcaption>The hover text of an intensity cell</figcaption></figure>
+<h4 id="child-device-data"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8.3</span> Child Device Data<a class="headerlink" href="#child-device-data" title="Link to this section">¶</a></h4>
+<p>On the master instance, click the icon of a child device to see the data of that device. While you look at a child device, the child instance sends its telemetry to the master, and the Monitor tab shows it. This includes items that only the child calculates.</p>
+<p>If the child does not send its telemetry, the <strong>Device:</strong> indicator shows <strong>(no data)</strong> after the device name, and the telemetry table shows the master’s own telemetry.</p>
+<h4 id="detaching-the-monitor-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.8.4</span> Detaching the Monitor Tab<a class="headerlink" href="#detaching-the-monitor-tab" title="Link to this section">¶</a></h4>
+<p>You can detach the Monitor tab from the main window and show it beside the main TelemFFB window. This is useful to watch the active effects while you change settings on the Settings tab.</p>
+<p>To detach the tab, do one of these steps:</p>
+<ul>
+<li>Click <strong>Detach</strong> in the header of the tab.</li>
+<li>Right-click the <strong>Monitor</strong> tab and select <strong>Detach</strong>.</li>
+<li>Press <strong>Ctrl+Shift+M</strong>.</li>
+</ul>
+<p>The detached window has a device strip of its own, so you can switch devices from it. To put the tab back, click <strong>Reattach</strong>, or close the window.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/monitor-detached.webp"><img alt="The detached Monitor window over the main window, with its Reattach button and its own device strip" src="../images/ui-overview/monitor-detached.webp" width="700px"/></a> <figcaption>The detached Monitor window over the main window, with its Reattach button and its own device strip</figcaption></figure>
+<h3 id="hide-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.9</span> Hide Tab<a class="headerlink" href="#hide-tab" title="Link to this section">¶</a></h3>
+<p>The Hide tab is the simplest and reduces information shown to the bare minimum: the menu bar, the <strong>Application Status</strong> box, any <a href="#prompts">1.3.7 prompts</a> and the tab bar. The device side panel and the docked device strip are hidden on this tab.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/hide-tab.webp"><img alt="The Hide tab" src="../images/ui-overview/hide-tab.webp" width="600px"/></a> <figcaption>The Hide tab</figcaption></figure>
+<h3 id="settings-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.10</span> Settings Tab<a class="headerlink" href="#settings-tab" title="Link to this section">¶</a></h3>
+<p>The Settings tab allows you to edit all possible forces and effects for the current aircraft loaded in the simulator. This section describes the interface; every effect and setting is documented in the <a href="../effects-overview/">Effects Reference</a>, which mirrors the Settings tab section for section. Changing any setting has an immediate effect.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/settings-tab.webp"><img alt="The Settings tab" src="../images/ui-overview/settings-tab.webp" width="600px"/></a> <figcaption>The Settings tab</figcaption></figure>
+<p>When the loaded aircraft matches no profile, the controls on this tab are disabled. The <strong>No Profile Found for</strong> prompt above the tabs opens the wizard that creates one. See <a href="#prompts">1.3.7 Prompts</a>.</p>
+<p>With an aircraft loaded, an <strong>Offline/Preview Mode</strong> button is at the right-hand end of the tab bar. It opens the offline editor on that aircraft, where each effect can be played on the device with a <strong>▶</strong> button. See <a href="../effect-preview/">Effect Preview</a>.</p>
 <p>The effects setting page has multiple sections with settings grouped together by logical effect type. The categories are defined as follows; each links to its reference page:</p>
 <ul>
 <li>
@@ -1318,7 +1563,7 @@ currently active:</p>
 </ul>
 </li>
 </ul>
-<h3 id="modifying-settings-in-real-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.9</span> Modifying settings in real time<a class="headerlink" href="#modifying-settings-in-real-time" title="Link to this section">¶</a></h3>
+<h3 id="modifying-settings-in-real-time"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.11</span> Modifying Settings in Real Time<a class="headerlink" href="#modifying-settings-in-real-time" title="Link to this section">¶</a></h3>
 <p>Effect sliders have a toggle to enable or disable that effect. You can quickly toggle on/off an effect. When the setting is off, your intensity setting is retained. <strong>The handle will also turn green when that effect is active</strong>.</p>
 <p>Example</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/slider-toggle.webp"><img alt="" height="45px" src="../images/ui-overview/slider-toggle.webp" width="594px"/></a> <figcaption></figcaption></figure>
@@ -1328,6 +1573,8 @@ currently active:</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/revert-x.gif"><img alt="" height="115px" src="../images/ui-overview/revert-x.gif" width="629px"/></a> <figcaption></figcaption></figure>
 <p>If you have a setting that you would like to apply to all aircraft of the same class, or for the entire sim, you can right-click on the delete button and choose to move the setting up to the class default or the sim default level. Once you have done so, an information icon will be visible where the delete button was, indicating that the setting has an override from defaults at the sim or class level. Hovering over the information icon will display the override level.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/promote-override.gif"><img alt="" height="75px" src="../images/ui-overview/promote-override.gif" width="680px"/></a> <figcaption></figcaption></figure>
+<p>To remove a class or sim override, right-click the information icon and select <strong>Remove setting from the <em>sim</em> <em>class</em> class</strong> or <strong>Remove setting from the <em>sim</em> sim level</strong>. Confirm the removal. Every aircraft that used the override then goes back to the value below it. You do not have to open the offline editor to do this.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/remove-override.gif"><img alt="Removing a class override from a loaded aircraft" src="../images/ui-overview/remove-override.gif" width="700px"/></a> <figcaption>Removing a class override from a loaded aircraft</figcaption></figure>
 <p>For settings where a unit is used, there is a dropdown of acceptable units:</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/ui-overview/unit-dropdown.webp"><img alt="" height="106px" src="../images/ui-overview/unit-dropdown.webp" width="566px"/></a> <figcaption></figcaption></figure>
 <p>Some settings require a grip button assignment before use. <strong>Click the button</strong> on the screen and then press the desired grip button before the timer expires:</p>
@@ -1388,6 +1635,34 @@ currently active:</p>
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: How Settings Work" class="md-footer__link md-footer__link--prev" href="../settings-model/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                How Settings Work
+              </div>
+</div>
+</a>
+<a aria-label="Next: System Settings" class="md-footer__link md-footer__link--next" href="../configuration/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                System Settings
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1402,7 +1677,7 @@ currently active:</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

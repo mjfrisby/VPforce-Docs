@@ -512,11 +512,11 @@
 <a class="md-nav__link" href="#hpg-airbus-helicopters-msfs-only">1.4 
 <span class="md-ellipsis">
       
-        HPG Airbus Helicopters (MSFS only)
+        HPG Airbus Helicopters (MSFS Only)
       
     </span>
 </a>
-<nav aria-label="HPG Airbus Helicopters (MSFS only)" class="md-nav">
+<nav aria-label="HPG Airbus Helicopters (MSFS Only)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#force-mode-experimental">1.4.1 
@@ -534,7 +534,7 @@
 <a class="md-nav__link" href="#flyinside-helicopters-msfs-only">1.5 
 <span class="md-ellipsis">
       
-        FlyInside Helicopters (MSFS only)
+        FlyInside Helicopters (MSFS Only)
       
     </span>
 </a>
@@ -543,7 +543,7 @@
 <a class="md-nav__link" href="#x-trident-aw109-x-plane-only">1.6 
 <span class="md-ellipsis">
       
-        X-Trident AW109 (X-Plane only)
+        X-Trident AW109 (X-Plane Only)
       
     </span>
 </a>
@@ -576,11 +576,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -996,7 +996,7 @@
 <p class="admonition-title">Note</p>
 <p>Aircraft that model a cockpit force-trim switch can drive the hold via the force trim switch variable: while the switch is off, the spring follows the collective without locking.</p>
 </div>
-<h2 id="hpg-airbus-helicopters-msfs-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> HPG Airbus Helicopters (MSFS only)<a class="headerlink" href="#hpg-airbus-helicopters-msfs-only" title="Link to this section">¶</a></h2>
+<h2 id="hpg-airbus-helicopters-msfs-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> HPG Airbus Helicopters (MSFS Only)<a class="headerlink" href="#hpg-airbus-helicopters-msfs-only" title="Link to this section">¶</a></h2>
 <p>In collaboration with HPG, this implementation in TelemFFB was developed as a true-to-life representation of piloting the Airbus H145 and H160 aircraft.</p>
 <p>The VPforce Rhino will work with the AFCS and act as the auto trim motor does, slowly moving the joystick as required to keep the SEMAs within their range of travel. The Rhino is also integrated with the force trim release system and the “hands on” spring override detection system. Force trim for hand-flying is also supported.</p>
 <p>Both the Cyclic and Collective axes (if you have a VPforce powered collective) are integrated with the AFCS. The Tail Rotor axis is also supported.</p>
@@ -1098,10 +1098,10 @@
 </ul>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/hpg-tablet.webp"><img alt="" height="635px" src="../images/msfs-xp-helicopters/hpg-tablet.webp" width="494px"/></a> <figcaption></figcaption></figure>
 <h3 id="force-mode-experimental"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Force Mode (Experimental)<a class="headerlink" href="#force-mode-experimental" title="Link to this section">¶</a></h3>
-<p>New in version 2.0, along with the latest v1.0.18 Rhino firmware is an experimental version of the hands on/off detection that is used in the HPG Class aircraft.</p>
+<p>Force Mode is an experimental hands on/off detection for the HPG Class aircraft. It needs Rhino firmware v1.0.18 or later.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/force-mode.webp"><img alt="" height="263px" src="../images/msfs-xp-helicopters/force-mode.webp" width="488px"/></a> <figcaption></figcaption></figure>
-<p>The latest firmware allows us to track the force output for the axis in % of max, which can give a much more granular indication of user hands-on controls as compared to a pure deflection based calculation.</p>
-<p>Because the configurator Adaptive Recentering feature “forces” the stick as close to the exact center as possible, having it enabled typically results in a higher “standing force” reading. Because of this, it is recommended to <strong>disable </strong>the <strong>Adaptive Recentering</strong> figure in configurator when flying the HPG helicopters in Force Mode</p>
+<p>Force Mode reads the axis force output as a percentage of maximum. That shows whether your hands are on the controls more precisely than stick deflection alone.</p>
+<p>Because the configurator Adaptive Recentering feature “forces” the stick as close to the exact center as possible, having it enabled typically results in a higher “standing force” reading. Because of this, it is recommended to <strong>disable</strong> the <strong>Adaptive Recentering</strong> feature in configurator when flying the HPG helicopters in Force Mode.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/configurator-adaptive-recentering.webp"><img alt="" height="180px" src="../images/msfs-xp-helicopters/configurator-adaptive-recentering.webp" width="232px"/></a> <figcaption></figcaption></figure>
 <p>Rather than a hard hands-off threshold, it uses a time based hysteresis. This prevents flapping of hands on/off when passing through the center point.</p>
 <ul>
@@ -1126,10 +1126,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="flyinside-helicopters-msfs-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> FlyInside Helicopters (MSFS only)<a class="headerlink" href="#flyinside-helicopters-msfs-only" title="Link to this section">¶</a></h2>
+<h2 id="flyinside-helicopters-msfs-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> FlyInside Helicopters (MSFS Only)<a class="headerlink" href="#flyinside-helicopters-msfs-only" title="Link to this section">¶</a></h2>
 <p>In collaboration with FlyInside, TelemFFB uses vibration variables from the flight model. ETL, VRS, and other buffeting and engine vibrations are not used. Instead there is a Vibration control under Mechanical/Airframe:</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-helicopters/flyinside-vibration.webp"><img alt="" height="67px" src="../images/msfs-xp-helicopters/flyinside-vibration.webp" width="652px"/></a> <figcaption></figcaption></figure>
-<h2 id="x-trident-aw109-x-plane-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> X-Trident AW109 (X-Plane only)<a class="headerlink" href="#x-trident-aw109-x-plane-only" title="Link to this section">¶</a></h2>
+<h2 id="x-trident-aw109-x-plane-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> X-Trident AW109 (X-Plane Only)<a class="headerlink" href="#x-trident-aw109-x-plane-only" title="Link to this section">¶</a></h2>
 <p>Developed in collaboration with X-Trident, this implementation integrates all four axes with the AW109’s AFCS. The cyclic follows the autopilot’s trim commands, the collective follows the AFCS in the vertical modes, and the pedals actively track the anti-torque requirement as power and airspeed change, tuned against flight-test observations from a real-world AW109 pilot. Force trim release is supported on all three controls.</p>
 <div class="admonition warning">
 <p class="admonition-title">Map your controls in the sim</p>
@@ -1190,6 +1190,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Manual Trim Tuning (Legacy)" class="md-footer__link md-footer__link--prev" href="../msfs-xp-trim-manual/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Manual Trim Tuning (Legacy)
+              </div>
+</div>
+</a>
+<a aria-label="Next: Special Aircraft" class="md-footer__link md-footer__link--next" href="../msfs-xp-special-aircraft/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Special Aircraft
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1204,7 +1232,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

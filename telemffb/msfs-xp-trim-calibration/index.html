@@ -476,16 +476,69 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#running-a-calibration">1.3 
+<a class="md-nav__link" href="#the-calibration-window">1.3 
+<span class="md-ellipsis">
+      
+        The Calibration Window
+      
+    </span>
+</a>
+<nav aria-label="The Calibration Window" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#live-status">1.3.1 
+<span class="md-ellipsis">
+      
+        Live Status
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#running-a-calibration">1.4 
 <span class="md-ellipsis">
       
         Running a Calibration
       
     </span>
 </a>
+<nav aria-label="Running a Calibration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aborting">1.4.1 
+<span class="md-ellipsis">
+      
+        Aborting
+      
+    </span>
+</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#reading-the-result">1.4 
+<a class="md-nav__link" href="#control-response">1.4.2 
+<span class="md-ellipsis">
+      
+        Control Response
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gliders">1.4.3 
+<span class="md-ellipsis">
+      
+        Gliders
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-the-result">1.5 
 <span class="md-ellipsis">
       
         Reading the Result
@@ -494,10 +547,50 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#applying-and-saving">1.5 
+<a class="md-nav__link" href="#testing-and-saving">1.6 
 <span class="md-ellipsis">
       
-        Applying and Saving
+        Testing and Saving
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#stored-calibrations">1.7 
+<span class="md-ellipsis">
+      
+        Stored Calibrations
+      
+    </span>
+</a>
+<nav aria-label="Stored Calibrations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#trimmed-stick-position">1.7.1 
+<span class="md-ellipsis">
+      
+        Trimmed Stick Position
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#calibrations-in-the-offline-editor">1.8 
+<span class="md-ellipsis">
+      
+        Calibrations in the Offline Editor
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aircraft-with-custom-trim-systems-msfs">1.9 
+<span class="md-ellipsis">
+      
+        Aircraft With Custom Trim Systems (MSFS)
       
     </span>
 </a>
@@ -554,11 +647,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -874,54 +967,149 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="automatic-trim-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Automatic Trim Calibration<a class="headerlink" href="#automatic-trim-calibration" title="Link to this section">¶</a></h1>
-<p>Manual tuning of the elevator trim gain is slow and error prone. The <strong>Elevator Trim Calibration</strong> tool automates it: TelemFFB flies the aircraft briefly, sweeps the elevator trim through its range while holding the aircraft level, measures the stick input for each trim setting, and computes the correct <em>Y Trim Gain Virtual</em> value — or a full response <strong>curve</strong> for aircraft that need one.</p>
+<p>Tuning elevator trim following by hand is slow and error prone. The <strong>Elevator Trim Calibration</strong> tool measures it for you. TelemFFB flies the aircraft, levels and trims it, and holds it at a test speed you choose. It then sweeps the elevator trim across its range and records the stick input needed to hold the nose level at each step. The result is a calibrated trim curve for that airspeed.</p>
+<p>Calibrate at two or three airspeeds. In flight, TelemFFB blends the stored calibrations by airspeed.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>While a calibration is running, <strong>TelemFFB is actively flying your aircraft</strong>: it manipulates the trim and the elevator/aileron axes to hold the aircraft level. Keep your <strong>hands off the controls</strong>, keep the <strong>autopilot off</strong>, and be <strong>ready to take over</strong> and press <strong>Abort</strong> at any time. Only run it with safe altitude and airspace.</p>
+<p>During a calibration, <strong>TelemFFB is flying your aircraft</strong>. It moves the trim and the elevator and aileron axes, and your stick is inactive until it hands control back. Keep the autopilot off, stay ready to take over, and press <strong>Abort</strong> if anything looks wrong. Only calibrate with safe altitude and clear airspace.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Calibration applies to the <strong>elevator (Y) axis of a joystick</strong> only, and is run from the master TelemFFB instance.</p>
+<p>Calibration applies to the elevator (Y) axis of a joystick and runs from the master TelemFFB instance. It is available for fixed-wing aircraft in MSFS and X-Plane.</p>
 </div>
 <h2 id="before-you-start"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Before You Start<a class="headerlink" href="#before-you-start" title="Link to this section">¶</a></h2>
 <ul>
-<li>Be <strong>airborne</strong>, <strong>straight and level</strong>, at a <strong>stable cruise speed</strong>.</li>
-<li><strong>Trim the aircraft</strong> so it holds level with near-zero stick force. Starting far out of trim wastes elevator authority during the sweep.</li>
-<li><strong>Autopilot OFF</strong>, <strong>hands off</strong> the stick.</li>
-<li><strong>Axis Control</strong> and <strong>Trim Following</strong> must be enabled (see <a href="../msfs-xp-trim-following/">Trim &amp; Autopilot Following</a>).</li>
+<li>Calibrate in clear, calm weather if you can. Turbulence and gusts disturb the measurements.</li>
+<li>Be airborne, straight and level, at a stable cruise speed, with the autopilot <strong>off</strong>. </li>
+<li>If a hardware device controls the elevator trim <strong>axis</strong> in the sim, unbind or disconnect it. It can fight TelemFFB for the trim during the run. A VPforce trim wheel is the exception; TelemFFB pauses it for you.</li>
+<li><strong>Axis Control</strong> and <strong>Trim / AP Following</strong> must be enabled for the aircraft (see <a href="../msfs-xp-trim-following/">Trim &amp; Autopilot Following</a>). A calibration can run without them, but the result has no effect in flight. The tool shows a warning banner when either is off.</li>
 </ul>
 <h2 id="opening-the-tool"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Opening the Tool<a class="headerlink" href="#opening-the-tool" title="Link to this section">¶</a></h2>
-<p>Open the calibration tool from the <strong>Trim Curve Calibration → Calibrate…</strong> button in the Trim Following settings, or from the <strong>Utilities</strong> menu (<em>Elevator Trim Calibration…</em>).</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-following/calibration_dialog.webp"><img alt="The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons" src="../images/msfs-xp-trim-following/calibration_dialog.webp" width="480px"/></a> <figcaption>The Elevator Trim Calibration window before a run, showing the instructions, a live status panel, an empty result graph, and the Start/Abort/Apply/Save/Close buttons</figcaption></figure>
-<p>The window shows:</p>
+<p>There are three ways to open the tool:</p>
 <ul>
-<li><strong>Instructions</strong> and a <strong>live status</strong> panel: airspeed, pitch, vertical speed, bank, current trim, and the engine’s current state. A <strong>status light</strong> turns green when the aircraft meets the preconditions and the run is ready to begin.</li>
-<li>A <strong>result graph</strong>, plotting the elevator axis required to hold level (vertical) against elevator trim (horizontal). It fills in as the sweep progresses.</li>
-<li><strong>Start / Abort</strong> and, once a result is available, <strong>Apply / Save</strong>.</li>
+<li><strong>Utilities → Elevator Trim Calibration…</strong></li>
+<li>On the Settings tab, under <strong>Trim / AP Following → Use Calibrated Trim Curve</strong>, the <strong>Trim Curve Calibration</strong> row has a <strong>Calibrate…</strong> button. It reads <strong>View / Recalibrate…</strong> once the aircraft has a stored calibration.</li>
+<li>When you load a fixed-wing aircraft with no stored calibration, the amber prompt <strong>No Trim Calibration Found for this Aircraft</strong> appears above the tabs. Click it to open the tool. The prompt goes away when you save a calibration, and returns if you delete the last one. See <a href="../ui-overview/#prompts">Prompts</a>.</li>
 </ul>
-<h2 id="running-a-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Running a Calibration<a class="headerlink" href="#running-a-calibration" title="Link to this section">¶</a></h2>
-<p>With the aircraft trimmed, level and stable, with the readiness light green, press <strong>Start</strong>. TelemFFB takes over: it makes a few small control inputs to learn the aircraft’s response, settles it into level flight, finds the natural trim point, then sweeps the trim while recording the stick input needed at each step. A red banner reminds you it is in control, and the status line reports the current phase.</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-following/calibration_in_progress.webp"><img a="" aircraft"="" alt="A calibration in progress, showing the red " and="" banner,="" being="" controlling="" data="" is="" live="" plotted"="" point="" src="../images/msfs-xp-trim-following/calibration_in_progress.webp" status,="" sweep="" telemetry,="" telemffb="" the="" width="480px" your=""/></a> <figcaption>A calibration in progress, showing the red "TelemFFB is controlling your aircraft" banner, live telemetry, the SWEEP status, and a data point being plotted</figcaption></figure>
-<p>The whole process usually takes one to a few minutes depending on the aircraft. If the aircraft diverges, the airspeed drifts too far, the autopilot is re-engaged, or you take the controls, the run <strong>aborts safely</strong> and hands control back.</p>
-<h2 id="reading-the-result"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Reading the Result<a class="headerlink" href="#reading-the-result" title="Link to this section">¶</a></h2>
-<p>When the sweep finishes, the graph shows the measured data points and the fit. The tool computes both a single static gain and a full curve, and tells you which it recommends.</p>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-following/example_calibration.webp"><img alt="A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared" src="../images/msfs-xp-trim-following/example_calibration.webp" width="480px"/></a> <figcaption>A completed calibration showing measured points along a slightly curved line, a recommended calibrated curve, the static-fit value, and the linearity R-squared</figcaption></figure>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-following/trim-cal-prompt.webp"><img alt="The amber No Trim Calibration Found prompt above the tabs" src="../images/msfs-xp-trim-following/trim-cal-prompt.webp" width="600px"/></a> <figcaption>The amber No Trim Calibration Found prompt above the tabs</figcaption></figure>
+<p>Many built-in profiles already include a calibration. These include several MSFS default aircraft and the X-Plane 12 Cessna 172, Cirrus SR22 and Van’s RV-10. For these aircraft the prompt does not appear, and the tool opens on the stored calibrations.</p>
+<h2 id="the-calibration-window"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> The Calibration Window<a class="headerlink" href="#the-calibration-window" title="Link to this section">¶</a></h2>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-calibration/cal-before.webp"><img alt="The Elevator Trim Calibration window before a run: control response, the Begin Calibration button with the auto-start checkbox, the live status panel, and an empty result graph" src="../images/msfs-xp-trim-calibration/cal-before.webp" width="480px"/></a> <figcaption>The Elevator Trim Calibration window before a run: control response, the Begin Calibration button with the auto-start checkbox, the live status panel, and an empty result graph</figcaption></figure>
+<p>From top to bottom, the window has:</p>
 <ul>
-<li><strong>Recommended: calibrated curve</strong> - for most aircraft the curve is recommended, because it holds the nose level across the entire trim range even when the response is not a straight line.</li>
-<li><strong>Static fit</strong> — the single <em>Y Trim Gain Virtual</em> value that best fits the data. TelemFFB displays it alongside the curve for reference and comparison with your current profile value.</li>
-<li><strong>Linearity (R²)</strong> - how straight the measured response is. A value close to 1.00 means the aircraft responds almost linearly and the static value alone will work well; a lower value means the response is curved and the calibrated curve is worth using.</li>
-<li><strong>Use calibrated curve (recommended)</strong> - the checkbox that decides which is applied and saved. It defaults to the recommendation.</li>
+<li>
+<p class="label-paragraph"><strong>How to use</strong>: a short version of this page. Click the heading to expand or collapse it.</p>
+<p></p><figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-calibration/cal-instructions.webp"><img alt="The expanded How to use section" src="../images/msfs-xp-trim-calibration/cal-instructions.webp" width="480px"/></a> <figcaption>The expanded How to use section</figcaption></figure><p></p>
+</li>
+<li>
+<p class="label-paragraph"><strong>Control response</strong>: how strongly TelemFFB flies the aircraft during the run. See <a href="#control-response">1.4.2 Control Response</a>.</p>
+</li>
+<li><strong>Glider descent rate</strong>: shown for gliders only. See <a href="#gliders">1.4.3 Gliders</a>.</li>
+<li><strong>Begin Calibration</strong>, the <strong>Start sweep automatically when steady</strong> checkbox, and <strong>Abort</strong>.</li>
+<li><strong>Live status</strong>: suggested test speeds, the current flight values, a status line, and three step lamps.</li>
+<li><strong>Result</strong>: the graph, the stored calibrations, and the result values. Click the heading to collapse it on a small screen. A new result always opens it again.</li>
+<li><strong>Apply (test in sim)</strong>, <strong>Save</strong> and <strong>Close</strong>.</li>
 </ul>
-<p>The tool may also note things worth knowing, for example that the trim response is <strong>asymmetric</strong> (stronger on one side of neutral than the other), or that the <strong>airspeed drifted</strong> during the sweep and the run should be repeated with steadier power.</p>
-<h2 id="applying-and-saving"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Applying and Saving<a class="headerlink" href="#applying-and-saving" title="Link to this section">¶</a></h2>
+<h3 id="live-status"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> Live Status<a class="headerlink" href="#live-status" title="Link to this section">¶</a></h3>
+<p>The top row lists <strong>Suggested calibration speeds (IAS)</strong>, calculated from the aircraft’s data received via telemetry:</p>
 <ul>
-<li><strong>Apply (test in sim)</strong> loads the result live <strong>without saving it</strong>, so you can fly-test it immediately. To test: fly straight and level, <strong>hold the stick still</strong>, and slowly run the trim nose-up then nose-down through its range. With a good value the <strong>nose stays level</strong> as you trim: the stick relieves under force feedback but the aircraft does not pitch. If the nose drifts, re-run the calibration or toggle the curve on/off to compare.</li>
-<li><strong>Save</strong> writes the result to the current aircraft’s profile: the static <em>Y Trim Gain Virtual</em> value, the calibrated curve, and the <strong>Use Calibrated Trim Curve</strong> setting all together, so you can switch between the curve and the static value at any time from the settings.</li>
+<li>The low speed is 1.3 times the clean stall speed.</li>
+<li>The high speed comes from the design cruise speed in MSFS, or from just below the top of the green arc in X-Plane.</li>
 </ul>
-<p>A saved curve is shown (read-only, with its capture date and airspeed) whenever you re-open the calibration tool for that aircraft.</p>
+<p>The suggestions are optional, and the low and high speeds matter most. A speed has a stored calibration within 5kt is crossed out.
+Below the suggestions are the live values: <strong>IAS</strong>, <strong>VS</strong>, <strong>Pitch</strong>, <strong>Bank</strong> and <strong>Trim</strong>. Two of them carry an indicator:</p>
+<ul>
+<li><strong>IAS</strong> has a trend arrow. It points up or down as the airspeed changes, and grows and turns from green to amber to red as the change gets faster. A flat green dash means the airspeed is steady. During a run, IAS also shows how far the speed has drifted from the start, in amber from 5% and in red from 10%.</li>
+<li><strong>VS</strong> has a readiness indicator. A flat green dash means the vertical speed is inside the range the next step accepts. Outside that range, an arrow points the way the aircraft is climbing or descending, and turns from amber to red as the error grows. Before you press <strong>Begin Calibration</strong> the range is ±500 fpm. During the run it is about ±100 fpm. Hover over the indicator to see the current error and range.</li>
+</ul>
+<p>The status line has a colored light and one sentence about the current phase or what is missing. A grey line under it shows the calibration’s detailed progress. During the sweep, a progress bar counts the measuring stations.</p>
+<p>The three step lamps at the bottom show where the run is: <strong>Level &amp; neutral trim</strong>, <strong>Test speed</strong> and <strong>Trim sweep</strong>. A lamp’s color tells you who acts:</p>
+<ul>
+<li>Blue: In Progress.</li>
+<li>Amber: Waiting for user action.</li>
+<li>Green: Step is ready or complete.</li>
+</ul>
+<h2 id="running-a-calibration"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Running a Calibration<a class="headerlink" href="#running-a-calibration" title="Link to this section">¶</a></h2>
+<ol>
+<li>Get the aircraft straight and level at a stable speed. When the status light turns green and reads <strong>Ready to calibrate</strong>, press <strong>Begin Calibration</strong>.</li>
+<li>TelemFFB takes the controls. It makes a few small inputs to learn how the aircraft responds, levels it, and finds the trim setting that holds it level. The button reads <strong>Preparing…</strong> and the first lamp is blue.</li>
+<li>TelemFFB holds the aircraft level while you set the test speed with the throttle. It re-trims after every power change. The button reads <strong>Settling…</strong> and the second lamp is amber. Let the airspeed settle; MSFS can take a minute or more to reach a new speed after a power change.</li>
+<li>When speed and trim have held steady for a few seconds, the lamp turns green and the button becomes <strong>Start Trim Sweep</strong>. Press it to calibrate at the current airspeed, or change power first to pick another speed.</li>
+<li>TelemFFB confirms the airspeed is steady, then sweeps the trim across its range. The button reads <strong>Measuring…</strong> and the progress bar counts the stations. When the sweep finishes, TelemFFB puts the trim back where it was and returns the controls to you.</li>
+</ol>
+<p>Check <strong>Start sweep automatically when steady</strong> to skip step 4. The sweep then starts as soon as speed and trim are steady.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-calibration/cal-running.webp"><img alt="A calibration in progress: the red control banner, the live values with their indicators, the sweep progress bar at station 4, and the first measured points on the graph" src="../images/msfs-xp-trim-calibration/cal-running.webp" width="480px"/></a> <figcaption>A calibration in progress: the red control banner, the live values with their indicators, the sweep progress bar at station 4, and the first measured points on the graph</figcaption></figure>
+<h3 id="aborting"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Aborting<a class="headerlink" href="#aborting" title="Link to this section">¶</a></h3>
+<p>Press <strong>Abort</strong> at any time. If you abort while TelemFFB holds the aircraft at the test speed, it leaves the aircraft trimmed for the current power. If you abort in any other phase after TelemFFB has moved the trim, it puts the trim back where it was.</p>
+<p>TelemFFB also aborts the run on its own, and hands back control, when:</p>
+<ul>
+<li>the sim pauses, the autopilot engages, or the aircraft is on the ground</li>
+<li>telemetry stops arriving, or the aircraft does not report a value the calibration needs</li>
+<li>pitch or roll moves too far from level, or the airspeed drifts out of range</li>
+<li>the trim does not respond to commands, or moves erratically</li>
+<li>the elevator reaches its limit before enough points are measured</li>
+</ul>
+<p>The result area then shows <strong>Last run aborted:</strong> and the reason.</p>
+<p>Some aircraft cannot be calibrated. Examples are aircraft whose trim can overpower full elevator, aircraft with very sensitive trim, and aircraft with automatic trim that cannot be turned off.</p>
+<h3 id="control-response"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Control Response<a class="headerlink" href="#control-response" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Control response</strong> sets how strongly TelemFFB flies the aircraft:</p>
+<ul>
+<li><strong>Normal</strong> suits most aircraft.</li>
+<li><strong>Reduced</strong> is for sensitive aircraft that porpoise or bounce while TelemFFB levels them. <strong>Minimal</strong> is for very sensitive or aerobatic aircraft.</li>
+<li><strong>Increased</strong> is for sluggish or heavy aircraft with a slow porpoise that gets worse when you lower the response.</li>
+</ul>
+<p>If a run aborts because of a pitch oscillation, try the next lower setting. If a slow porpoise gets worse as you lower it, go the other way. TelemFFB also lowers its own control gains when it detects a growing oscillation. You can change the setting during a run until the sweep starts.</p>
+<h3 id="gliders"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.3</span> Gliders<a class="headerlink" href="#gliders" title="Link to this section">¶</a></h3>
+<p>A glider cannot hold level flight, so for a glider TelemFFB holds a steady descent instead. Set the sink rate in <strong>Glider descent rate</strong>. The default is -100 fpm, and the range is -1000 to 0 fpm.</p>
+<p>A glider has no throttle, so the descent rate also sets the test speed. Choose a steeper descent to fly faster or a shallower one to fly slower, and start the sweep once the speed settles. You can change the descent rate until the sweep starts. It returns to the default each time you open the tool.</p>
+<h2 id="reading-the-result"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Reading the Result<a class="headerlink" href="#reading-the-result" title="Link to this section">¶</a></h2>
+<p>When the sweep finishes, the graph shows the measured points and the fitted curve. The horizontal axis is the elevator trim, and the vertical axis is the elevator input needed to hold the nose level.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/msfs-xp-trim-calibration/cal-results.webp"><img alt="A completed calibration: measured points along a straight fitted line, the stored speeds row, Trimmed stick position, Mean Trim Slope and Linearity" src="../images/msfs-xp-trim-calibration/cal-results.webp" width="480px"/></a> <figcaption>A completed calibration: measured points along a straight fitted line, the stored speeds row, Trimmed stick position, Mean Trim Slope and Linearity</figcaption></figure>
+<ul>
+<li><strong>Mean Trim Slope</strong> is the average slope of the measured line: how much the elevator input changes per unit of trim. Use it to compare runs and speeds.</li>
+<li><strong>Linearity (R²)</strong> shows how straight the measured response is. A value near 1.000 means a straight line. A lower value means the response bends, and the curve follows the bend.</li>
+</ul>
+<p>Notes under the values point out anything worth checking:</p>
+<ul>
+<li>The airspeed drifted during the sweep, which can skew the measurement. Test the result with <strong>Apply</strong>, and re-run with steadier power if trim following seems off.</li>
+<li>Some points are shown in amber. The aircraft was still climbing or descending slightly when they were measured, so the curve may be slightly off near those trim settings.</li>
+<li>The trim response is asymmetric: stronger on one side of neutral than the other. This is normal when the nose-up and nose-down trim limits differ, and the curve captures it.</li>
+<li>Saving will replace a stored calibration within 5 knots of this run, or add this run as another stored speed.</li>
+</ul>
+<h2 id="testing-and-saving"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Testing and Saving<a class="headerlink" href="#testing-and-saving" title="Link to this section">¶</a></h2>
+<p class="label-paragraph"><strong>Apply (test in sim)</strong> applies the result live without saving it. To test it:</p>
+<ol>
+<li>Fly straight and level and let the aircraft settle.</li>
+<li>Hold the stick still in one place.</li>
+<li>Slowly run the trim nose-up, then nose-down, across its range.</li>
+</ol>
+<p>With a good calibration the nose stays level as you trim. The stick force relieves, but the aircraft does not pitch. If the nose drifts, run the calibration again.</p>
+<p class="label-paragraph"><strong>Save</strong> adds the result to the aircraft’s stored calibrations, turns on <strong>Use Calibrated Trim Curve</strong>, and saves the <strong>Trimmed stick position</strong>. If a stored calibration is within 5 knots of the new one, TelemFFB asks whether to replace it. <strong>Apply</strong> asks the same question.</p>
+<p>After a save, the window is ready for the next run. Change power, let the speed settle, and calibrate again. Two or three speeds usually cover the aircraft: slow flight, cruise and high cruise. In flight, TelemFFB blends between the two stored speeds nearest the current airspeed. Below the slowest or above the fastest stored speed, it uses that calibration as it is.</p>
+<h2 id="stored-calibrations"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> Stored Calibrations<a class="headerlink" href="#stored-calibrations" title="Link to this section">¶</a></h2>
+<p>The <strong>Stored speeds</strong> row manages the aircraft’s saved calibrations. The graph draws all of them and highlights the one selected in the list.</p>
+<ul>
+<li>Use the arrows or the list to select a calibration.</li>
+<li>The trash can deletes the selected calibration. You can also right-click its curve on the graph. Deleting the last calibration turns off the calibrated curve until you calibrate again.</li>
+<li>The second trash can deletes all stored calibrations.</li>
+<li><strong>Export</strong> writes the stored calibrations and the trimmed stick position to a file you can share.</li>
+<li><strong>Import</strong> loads a shared file and replaces the stored calibrations. If the file was made for a different sim or aircraft profile, TelemFFB lists the differences and asks before importing.</li>
+</ul>
+<h3 id="trimmed-stick-position"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7.1</span> Trimmed Stick Position<a class="headerlink" href="#trimmed-stick-position" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Trimmed stick position</strong> sets where the stick rests when the aircraft is in trim:</p>
+<ul>
+<li><strong>Follows Trim</strong>: the stick moves with the trim, aft when trimmed slow and forward when trimmed fast. This matches aircraft where the yoke is linked to a trim tab or cable.</li>
+<li><strong>Stays Centered</strong>: the stick rests at center whenever the aircraft is in trim. This matches moving-stabilizer, fly-by-wire and spring-cartridge aircraft. Jets default to this mode.</li>
+</ul>
+<p>Stick forces are the same in both modes: zero force in trim, force when out of trim. Only the resting position changes. A change applies and saves at once, without a run. The same setting is on the Settings tab under <strong>Use Calibrated Trim Curve</strong>.</p>
+<h2 id="calibrations-in-the-offline-editor"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8</span> Calibrations in the Offline Editor<a class="headerlink" href="#calibrations-in-the-offline-editor" title="Link to this section">¶</a></h2>
+<p>You can open the tool from the offline editor. Choose a sim, class and aircraft in <strong>Offline Editor Setup</strong> first. The tool then shows that aircraft’s stored calibrations. You can export and import them, but you cannot delete them or change the trimmed stick position.</p>
+<h2 id="aircraft-with-custom-trim-systems-msfs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.9</span> Aircraft With Custom Trim Systems (MSFS)<a class="headerlink" href="#aircraft-with-custom-trim-systems-msfs" title="Link to this section">¶</a></h2>
+<p>A calibration writes the trim the same way the aircraft’s trim wheel does. It uses the aircraft’s Trim Wheel device settings: <strong>Use Axis instead of Direct</strong>, <strong>Custom Simconnect Y Variable</strong> and <strong>+/- Range Y Scaling</strong>. They apply whether or not you own a trim wheel. Profiles for aircraft that ignore direct trim writes ship with these settings, so calibration works on them without changes.</p>
+<p>When TelemFFB’s debug mode is active, the window also shows these trim settings and a <strong>Record diagnostic trace</strong> checkbox. The trace saves a per-frame record of the run to the TelemFFB log folder. Attach it when you report an aircraft that will not calibrate.</p>
 <div class="admonition note">
 <p class="admonition-title">X-Plane</p>
-<p>Automatic calibration works in X-Plane as well as MSFS. The tool commands the elevator trim through the TelemFFB X-Plane plugin; a current version of the plugin is required so that the pitch, vertical-speed and trim telemetry it relies on are available.</p>
+<p>Automatic calibration works in X-Plane as well as MSFS. The tool sets the elevator trim through the TelemFFB X-Plane plugin. Use a current version of the plugin; it supplies the pitch, vertical speed and trim values the calibration needs.</p>
 </div>
 </article>
 </div>
@@ -929,6 +1117,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Trim &amp; Autopilot Following" class="md-footer__link md-footer__link--prev" href="../msfs-xp-trim-following/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Trim &amp; Autopilot Following
+              </div>
+</div>
+</a>
+<a aria-label="Next: Manual Trim Tuning (Legacy)" class="md-footer__link md-footer__link--next" href="../msfs-xp-trim-manual/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Manual Trim Tuning (Legacy)
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -943,7 +1159,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

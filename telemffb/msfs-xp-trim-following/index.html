@@ -467,7 +467,7 @@
 <a class="md-nav__link" href="#calibrated-trim-curve-elevator-only">1.3 
 <span class="md-ellipsis">
       
-        Calibrated Trim Curve (elevator only)
+        Calibrated Trim Curve (Elevator Only)
       
     </span>
 </a>
@@ -489,6 +489,19 @@
       
     </span>
 </a>
+<nav aria-label="Autopilot Following" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-autopilot-variable-msfs">1.5.1 
+<span class="md-ellipsis">
+      
+        Custom Autopilot Variable (MSFS)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -554,11 +567,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -905,7 +918,7 @@
 <p class="admonition-title">Let TelemFFB measure it</p>
 <p>Do not tune the elevator values manually — run the <strong><a href="../msfs-xp-trim-calibration/">Automatic Trim Calibration</a></strong>. TelemFFB flies the aircraft briefly, measures its actual trim response, and computes the correct elevator gain — or a full calibrated curve where the response is not linear. The aileron and rudder gains can usually stay at their defaults.</p>
 </div>
-<h2 id="calibrated-trim-curve-elevator-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Calibrated Trim Curve <em>(elevator only)</em><a class="headerlink" href="#calibrated-trim-curve-elevator-only" title="Link to this section">¶</a></h2>
+<h2 id="calibrated-trim-curve-elevator-only"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Calibrated Trim Curve <em>(Elevator Only)</em><a class="headerlink" href="#calibrated-trim-curve-elevator-only" title="Link to this section">¶</a></h2>
 <p>Some aircraft do not respond to trim in a simple, straight-line fashion, and a single <em>Y Trim Gain Virtual</em> value cannot hold the nose steady across the whole trim range. For these, TelemFFB can measure the aircraft’s actual trim response and store a <strong>curve</strong> instead of a single value.</p>
 <ul>
 <li>
@@ -954,6 +967,12 @@
 <p class="admonition-title">Note</p>
 <p>If an aircraft becomes unstable with autopilot following engaged and tries to roll inverted, enable the <em>Invert Aileron Autopilot Axis</em> option.</p>
 </div>
+<h3 id="custom-autopilot-variable-msfs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5.1</span> Custom Autopilot Variable (MSFS)<a class="headerlink" href="#custom-autopilot-variable-msfs" title="Link to this section">¶</a></h3>
+<p>Autopilot following uses <strong>AUTOPILOT MASTER</strong> to know when the autopilot is engaged. Some aircraft have an autopilot that never sets it. For those, enable <strong>Custom Autopilot Variable</strong> and enter a variable that shows whether the autopilot is engaged: a SimVar, an L:Var or an input event (<code>B:</code>). A value of 0 means off; any other value means on.</p>
+<ul>
+<li>Set it on each device that follows the autopilot.</li>
+<li>If the variable needs converting first, turn this setting off and use the <a href="../telem-overrides/">SimConnect/Dataref Overrides Editor</a> instead: override <strong>APMaster</strong> with the variable and a scale. While this setting is on, its variable is the one TelemFFB reads.</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Legacy manual tuning</p>
 <p>Before automatic calibration existed, users tuned the gains manually. The procedure and suggested starting values appear in <a href="../msfs-xp-trim-manual/">Manual Trim Tuning (Legacy)</a>.</p>
@@ -964,6 +983,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Axis Control &amp; Spring Modes" class="md-footer__link md-footer__link--prev" href="../msfs-xp-axis-spring/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Axis Control &amp; Spring Modes
+              </div>
+</div>
+</a>
+<a aria-label="Next: Automatic Trim Calibration" class="md-footer__link md-footer__link--next" href="../msfs-xp-trim-calibration/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Automatic Trim Calibration
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -978,7 +1025,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

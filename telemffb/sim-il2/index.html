@@ -489,11 +489,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -558,7 +558,7 @@
 <a class="md-nav__link" href="#ffb-pedals-in-il-2-korea">1.1.1 
 <span class="md-ellipsis">
       
-        FFB pedals in IL-2 Korea
+        FFB Pedals in IL-2 Korea
       
     </span>
 </a>
@@ -567,10 +567,19 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#duplicate-shake-effects">1.2 
+<a class="md-nav__link" href="#ffb-telemetry-spring-mode-il-2-korea">1.2 
 <span class="md-ellipsis">
       
-        Duplicate ‘Shake’ effects
+        FFB Telemetry Spring Mode (IL-2 Korea)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#duplicate-shake-effects">1.3 
+<span class="md-ellipsis">
+      
+        Duplicate ‘Shake’ Effects
       
     </span>
 </a>
@@ -865,9 +874,17 @@
 </div>
 <h2 id="the-directinput-tap"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> The DirectInput Tap<a class="headerlink" href="#the-directinput-tap" title="Link to this section">¶</a></h2>
 <p>Both IL-2 titles compute their own force feedback: dynamic stick forces and shake effects. The <a href="../dinput-tap/">DirectInput Tap</a> captures those effects and renders them through TelemFFB, where each effect type gets an enable toggle and a gain, and the game’s spring gets per-axis corrections. To render the captured spring, select the <strong>Game Managed (DirectInput Tap)</strong> joystick spring mode.</p>
-<h3 id="ffb-pedals-in-il-2-korea"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> FFB pedals in IL-2 Korea<a class="headerlink" href="#ffb-pedals-in-il-2-korea" title="Link to this section">¶</a></h3>
-<p>IL-2 Korea is the only supported simulator that renders force feedback to pedals. With the tap capturing the pedals, the pedals instance offers the <strong>Game Managed (DirectInput Tap, Korea Only)</strong> pedal spring mode, the game’s own pedal forces rendered by TelemFFB. The label notes Korea because IL-2 Great Battles has no pedal FFB.</p>
-<h2 id="duplicate-shake-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Duplicate ‘Shake’ effects<a class="headerlink" href="#duplicate-shake-effects" title="Link to this section">¶</a></h2>
+<h3 id="ffb-pedals-in-il-2-korea"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1.1</span> FFB Pedals in IL-2 Korea<a class="headerlink" href="#ffb-pedals-in-il-2-korea" title="Link to this section">¶</a></h3>
+<p>IL-2 Korea is the only supported simulator that renders force feedback to pedals. With the tap capturing the pedals, set <strong>Pedal Spring Mode</strong> on the pedals instance to <strong>Game Managed (DirectInput Tap)</strong>, and TelemFFB renders the game’s own pedal forces. Only IL-2 Korea’s pedal list offers this mode, because IL-2 Great Battles has no pedal force feedback.</p>
+<h2 id="ffb-telemetry-spring-mode-il-2-korea"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> FFB Telemetry Spring Mode (IL-2 Korea)<a class="headerlink" href="#ffb-telemetry-spring-mode-il-2-korea" title="Link to this section">¶</a></h2>
+<p>IL-2 Korea also sends its spring commands in its telemetry. The <strong>FFB Telemetry (Game Managed)</strong> spring mode renders the game’s spring from that data, without the DirectInput Tap. TelemFFB follows the spring’s center and strength as the game sets them. The mode is offered in IL-2 Korea’s <strong>Joystick Spring Mode</strong> and <strong>Pedal Spring Mode</strong> lists.</p>
+<p>The mode needs two things in <a href="../sim-setup/#il-2-sturmovik-and-il-2-korea">System Settings</a>:</p>
+<ul>
+<li>IL-2 Korea must send its FFB telemetry. <strong>Auto Telemetry setup</strong> configures this for you. The game sends this data only while its own force feedback is turned on.</li>
+<li>The IL-2 Korea <strong>IL-2 Install Path</strong> must be set. TelemFFB reads the game’s list of input devices from that folder to find the spring commands meant for your device.</li>
+</ul>
+<p>The <strong>Monitor</strong> tab shows the values the game sends: <code>FFB_X_Center</code> and <code>FFB_X_Force</code> for the X axis, and <code>FFB_Y_Center</code> and <code>FFB_Y_Force</code> for the Y axis.</p>
+<h2 id="duplicate-shake-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Duplicate ‘Shake’ Effects<a class="headerlink" href="#duplicate-shake-effects" title="Link to this section">¶</a></h2>
 <p>IL2 implements FFB for dynamic stick forces and some very basic shake effects. TelemFFB implements duplicate (but far more configurable) effects which overlap with those that are implemented by IL2. To enable these specific settings, enable the “IL-2 Shake Master” setting in TelemFFB.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -913,6 +930,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: DCS" class="md-footer__link md-footer__link--prev" href="../sim-dcs/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                DCS
+              </div>
+</div>
+</a>
+<a aria-label="Next: Falcon BMS" class="md-footer__link md-footer__link--next" href="../sim-bms/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Falcon BMS
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -927,7 +972,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

@@ -242,16 +242,16 @@
 <a class="md-nav__link" href="#master-and-child-instances">1.1 
 <span class="md-ellipsis">
       
-        Master and child instances
+        Master and Child Instances
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#how-telemffb-finds-your-devices">1.2 
+<a class="md-nav__link" href="#device-detection">1.2 
 <span class="md-ellipsis">
       
-        How TelemFFB finds your devices
+        Device Detection
       
     </span>
 </a>
@@ -260,7 +260,7 @@
 <a class="md-nav__link" href="#the-devices-tab">1.3 
 <span class="md-ellipsis">
       
-        The Devices tab
+        The Devices Tab
       
     </span>
 </a>
@@ -269,17 +269,17 @@
 <a class="md-nav__link" href="#multiple-joysticks-msfs-x-plane">1.4 
 <span class="md-ellipsis">
       
-        Multiple joysticks (MSFS &amp; X-Plane)
+        Multiple Joysticks (MSFS &amp; X-Plane)
       
     </span>
 </a>
-<nav aria-label="Multiple joysticks (MSFS &amp; X-Plane)" class="md-nav">
+<nav aria-label="Multiple Joysticks (MSFS &amp; X-Plane)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#configuring-alternate-devices">1.4.1 
 <span class="md-ellipsis">
       
-        Configuring alternate devices
+        Configuring Alternate Devices
       
     </span>
 </a>
@@ -288,7 +288,7 @@
 <a class="md-nav__link" href="#choosing-a-device-per-aircraft">1.4.2 
 <span class="md-ellipsis">
       
-        Choosing a device per aircraft
+        Choosing a Device per Aircraft
       
     </span>
 </a>
@@ -300,7 +300,7 @@
 <a class="md-nav__link" href="#device-recovery">1.5 
 <span class="md-ellipsis">
       
-        Device recovery
+        Device Recovery
       
     </span>
 </a>
@@ -309,7 +309,7 @@
 <a class="md-nav__link" href="#working-with-child-instances">1.6 
 <span class="md-ellipsis">
       
-        Working with child instances
+        Working with Child Instances
       
     </span>
 </a>
@@ -585,11 +585,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -906,14 +906,14 @@
 <article class="md-content__inner md-typeset">
 <h1 id="devices-instances"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Devices &amp; Instances<a class="headerlink" href="#devices-instances" title="Link to this section">¶</a></h1>
 <p>TelemFFB runs <strong>one instance per FFB device</strong>. If you fly with a single VPforce joystick base, one instance is all there is and you can mostly ignore this page. If you also have VPforce-powered pedals or a collective, a separate instance drives each device, and TelemFFB manages them for you.</p>
-<h2 id="master-and-child-instances"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Master and child instances<a class="headerlink" href="#master-and-child-instances" title="Link to this section">¶</a></h2>
+<h2 id="master-and-child-instances"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Master and Child Instances<a class="headerlink" href="#master-and-child-instances" title="Link to this section">¶</a></h2>
 <p>The instance you launch is the <strong>master</strong>. It owns everything global:</p>
 <ul>
-<li>The System Settings dialog opens from the master and configures everything, including each child instance’s own settings; child instances no longer carry a settings dialog of their own.</li>
+<li>The System Settings dialog opens from the master and configures everything, including each child instance’s own settings. Child instances have no settings dialog of their own.</li>
 <li>Auto-launching, monitoring, and revealing the <strong>child</strong> instances that drive your additional devices.</li>
 </ul>
 <p>Child instances each connect to their own device and render effects for it, driven by the same simulator telemetry. They can run with a normal window, minimized, or headless (no window at all).</p>
-<h2 id="how-telemffb-finds-your-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> How TelemFFB finds your devices<a class="headerlink" href="#how-telemffb-finds-your-devices" title="Link to this section">¶</a></h2>
+<h2 id="device-detection"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Device Detection<a class="headerlink" href="#device-detection" title="Link to this section">¶</a></h2>
 <p>In most cases, you do not need to configure anything: on startup, the master instance enumerates the connected VPforce devices and <strong>auto-assigns</strong> any unassigned device role.</p>
 <ul>
 <li>Assignment is by the device’s name as configured in VPforce Configurator: a name containing <em>Joystick</em>, <em>Pedals</em>, <em>Collective</em>, or <em>Trim</em> assigns the device to that role.</li>
@@ -921,7 +921,7 @@
 <li>A device whose name identifies no role is not guessed at; assign it yourself on the Devices tab. On a first launch, TelemFFB reports the auto-assignment result and opens System Settings either way, so you can review and save the assignments (<a href="../quick-start/#first-launch-system-settings">Quick Start</a>).</li>
 </ul>
 <p>To assign devices manually, or fix an auto-assignment, each device role has a <strong>selector pulldown</strong> on its card on the <strong>Devices</strong> tab, listing the connected VPforce devices. Pick the device for each role directly. If you pick a device that is already assigned to another role, TelemFFB asks whether to override the other assignment or cancel.</p>
-<h2 id="the-devices-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> The Devices tab<a class="headerlink" href="#the-devices-tab" title="Link to this section">¶</a></h2>
+<h2 id="the-devices-tab"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> The Devices Tab<a class="headerlink" href="#the-devices-tab" title="Link to this section">¶</a></h2>
 <p>These settings are found on the <strong>Devices</strong> tab of <strong>System → System Settings</strong>. They control which device each instance connects to and which instances start automatically.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/devices-instances/devices-tab.webp"><img alt="" src="../images/devices-instances/devices-tab.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <p>The tab holds one <strong>card per device role</strong>: joystick, pedals, collective, trim wheel. Each card carries:</p>
@@ -952,9 +952,9 @@
 </li>
 </ul>
 <p>Below the cards, the <strong>Device Settings</strong> area holds each device’s per-instance settings: logging level, telemetry timeout, window restore options, and Configurator profiles. See <a href="../configuration/#device-settings">System Settings</a>.</p>
-<h2 id="multiple-joysticks-msfs-x-plane"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Multiple joysticks (MSFS &amp; X-Plane)<a class="headerlink" href="#multiple-joysticks-msfs-x-plane" title="Link to this section">¶</a></h2>
+<h2 id="multiple-joysticks-msfs-x-plane"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Multiple Joysticks (MSFS &amp; X-Plane)<a class="headerlink" href="#multiple-joysticks-msfs-x-plane" title="Link to this section">¶</a></h2>
 <p>If you fly with more than one stick (a center stick, a yoke, and a side stick, for example), the joystick slot can hold up to three configured devices, and each aircraft can choose which one it uses.</p>
-<h3 id="configuring-alternate-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Configuring alternate devices<a class="headerlink" href="#configuring-alternate-devices" title="Link to this section">¶</a></h3>
+<h3 id="configuring-alternate-devices"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.1</span> Configuring Alternate Devices<a class="headerlink" href="#configuring-alternate-devices" title="Link to this section">¶</a></h3>
 <p>On the <strong>Devices</strong> tab, the joystick card has a <strong>+ add device</strong> button. Each added row gets its own device selector and icon.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/devices-instances/joystick-alternates.webp"><img alt="" src="../images/devices-instances/joystick-alternates.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <ul>
@@ -962,7 +962,7 @@
 <li>Selecting the marker on another row makes that device the primary when you save. The switch applies immediately; no restart is required.</li>
 <li>The <strong>x</strong> button removes an alternate row. The primary row cannot be removed, only replaced.</li>
 </ul>
-<h3 id="choosing-a-device-per-aircraft"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Choosing a device per aircraft<a class="headerlink" href="#choosing-a-device-per-aircraft" title="Link to this section">¶</a></h3>
+<h3 id="choosing-a-device-per-aircraft"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4.2</span> Choosing a Device per Aircraft<a class="headerlink" href="#choosing-a-device-per-aircraft" title="Link to this section">¶</a></h3>
 <p>With more than one joystick configured, aircraft settings gain a <strong>Device</strong> section with a <strong>Joystick Device</strong> selector.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/devices-instances/aircraft-device.webp"><img alt="" src="../images/devices-instances/aircraft-device.webp" width="550px"/></a> <figcaption></figcaption></figure>
 <ul>
@@ -974,7 +974,7 @@
 <p>The Device section only appears when more than one joystick device is configured. With a single stick there is nothing to choose, and the section stays hidden.</p>
 </div>
 <p>If you later replace a configured device in System Settings, TelemFFB offers to update the aircraft settings that reference the old one.</p>
-<h2 id="device-recovery"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Device recovery<a class="headerlink" href="#device-recovery" title="Link to this section">¶</a></h2>
+<h2 id="device-recovery"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Device Recovery<a class="headerlink" href="#device-recovery" title="Link to this section">¶</a></h2>
 <p>A device can drop off while TelemFFB runs: a cable gets pulled, a hub resets, or the device is power cycled. TelemFFB recovers without a restart.</p>
 <ul>
 <li><strong>A device that drops off</strong> shows a yellow icon. TelemFFB looks for it by its USB identity, not by the port it was on, so plugging it into a different port or hub works. The retries slow down the longer the device stays away.</li>
@@ -983,8 +983,9 @@
 <li><strong>If a different VPforce device is connected</strong> while the configured one is missing, TelemFFB asks once whether to use it instead. Answer Yes and the selection is saved, the same as choosing it on the device card.</li>
 </ul>
 <p>Changing a device on the Devices tab also takes effect at once. See <a href="../configuration/">System Settings</a>.</p>
-<h2 id="working-with-child-instances"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Working with child instances<a class="headerlink" href="#working-with-child-instances" title="Link to this section">¶</a></h2>
-<p>After starting TelemFFB with auto-launch enabled, all of the device icons appear in the master instance’s <strong>Active Devices</strong> area. From there you can monitor each device’s status and switch between devices to configure their settings; each device has its own settings for every aircraft, so your pedals and joystick are tuned independently. See <a href="../ui-overview/#active-devices-area">Active Devices Area</a> for details.</p>
+<h2 id="working-with-child-instances"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Working with Child Instances<a class="headerlink" href="#working-with-child-instances" title="Link to this section">¶</a></h2>
+<p>After starting TelemFFB with auto-launch enabled, all of the device icons appear in the master instance’s <strong>Active Devices</strong> area. From there you can monitor each device’s status and switch between devices to configure their settings; each device has its own settings for every aircraft, so your pedals and joystick are tuned independently. See <a href="../ui-overview/#active-devices-area">Active Devices Area</a> for details. You can also show the device icons in a compact strip, in one of several places; see <a href="../ui-overview/#device-panel">Where the Devices Are Shown</a>.</p>
+<p>When you switch the master to a child device, the master’s <strong>Monitor</strong> tab shows that device’s telemetry and active effects. The child instance sends its telemetry to the master while you look at it. See <a href="../ui-overview/#child-device-data">Child device data</a>.</p>
 <p>To bring up the window of a minimized or headless child instance:</p>
 <ul>
 <li>use the master instance’s <strong>Window</strong> menu, or</li>
@@ -996,6 +997,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Installation" class="md-footer__link md-footer__link--prev" href="../installation/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Installation
+              </div>
+</div>
+</a>
+<a aria-label="Next: Connecting Your Simulator" class="md-footer__link md-footer__link--next" href="../sim-setup/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Connecting Your Simulator
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1010,7 +1039,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

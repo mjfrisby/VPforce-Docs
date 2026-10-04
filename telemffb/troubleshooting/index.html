@@ -489,11 +489,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -804,10 +804,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#read-the-status-area-first">1.1 
+<a class="md-nav__link" href="#status-area">1.1 
 <span class="md-ellipsis">
       
-        Read the status area first
+        Status Area
       
     </span>
 </a>
@@ -816,7 +816,7 @@
 <a class="md-nav__link" href="#device-problems">1.2 
 <span class="md-ellipsis">
       
-        Device problems
+        Device Problems
       
     </span>
 </a>
@@ -825,7 +825,7 @@
 <a class="md-nav__link" href="#simulator-connection-problems">1.3 
 <span class="md-ellipsis">
       
-        Simulator connection problems
+        Simulator Connection Problems
       
     </span>
 </a>
@@ -843,7 +843,7 @@
 <a class="md-nav__link" href="#reading-the-log">1.5 
 <span class="md-ellipsis">
       
-        Reading the log
+        Reading the Log
       
     </span>
 </a>
@@ -852,7 +852,7 @@
 <a class="md-nav__link" href="#getting-help">1.6 
 <span class="md-ellipsis">
       
-        Getting help
+        Getting Help
       
     </span>
 </a>
@@ -893,23 +893,24 @@
 <article class="md-content__inner md-typeset">
 <h1 id="troubleshooting-getting-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Troubleshooting &amp; Getting Help<a class="headerlink" href="#troubleshooting-getting-help" title="Link to this section">¶</a></h1>
 <p>Most real-world problems are simulator connection issues, and the detailed checklists for those live in <a href="../../rhino/game-specific-troubleshooting/">Game-Specific Troubleshooting</a>. This page is the map: how to tell what kind of problem you have, where the diagnostics are, and how to get help.</p>
-<h2 id="read-the-status-area-first"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Read the status area first<a class="headerlink" href="#read-the-status-area-first" title="Link to this section">¶</a></h2>
-<p>The main window’s status area narrows the problem immediately:</p>
+<h2 id="status-area"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Status Area<a class="headerlink" href="#status-area" title="Link to this section">¶</a></h2>
+<p>The main window’s <strong>Application Status</strong> box narrows the problem immediately:</p>
 <ul>
 <li><strong>Running</strong> - the sim is connected and telemetry is flowing. If something feels wrong, it is configuration, not connectivity; check the loaded settings via <strong>Current Aircraft</strong>, <strong>Matched Model</strong>, and <strong>Active Profile</strong>.</li>
 <li><strong>Paused</strong> - telemetry stopped arriving, or the sim is paused.</li>
-<li><strong>Error</strong> - a configuration problem. The error message shown alongside describes the condition and how to resolve it.</li>
+<li><strong>Error</strong> - a configuration problem. The error message below <strong>Active Profile</strong> names the device, and describes the condition and how to resolve it. If there are several errors, the box shows one at a time, and the <a href="#exception-tracking-reporting">1.4 exception viewer</a> lists all of them. A corrected error clears only while the sim is running and not paused. See <a href="../ui-overview/#configuration-errors">Configuration errors</a>.</li>
 </ul>
-<p>See <a href="../ui-overview/#deviceinstance-status-indications">Device/Instance Status Indications</a> for details. The <strong>Monitor tab</strong> shows the raw telemetry and every active effect in real time, useful for confirming what TelemFFB is actually receiving and playing.</p>
-<h2 id="device-problems"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Device problems<a class="headerlink" href="#device-problems" title="Link to this section">¶</a></h2>
-<p>The icons in the <strong>Active Devices</strong> area show the state of each device:</p>
+<p>See <a href="../ui-overview/#device-status">Device/Instance Status Indications</a> for details. The <strong>Monitor tab</strong> shows the raw telemetry and every active effect in real time, with the current intensity of each effect. Use it to confirm what TelemFFB is actually receiving and playing. See <a href="../ui-overview/#monitor-tab">Monitor Tab</a>.</p>
+<h2 id="device-problems"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Device Problems<a class="headerlink" href="#device-problems" title="Link to this section">¶</a></h2>
+<p>The device icons show the state of each device, in the <strong>Active Devices</strong> panel or wherever you <a href="../ui-overview/#device-panel">chose to show them</a>:</p>
 <ul>
 <li><strong>Yellow</strong> - the device dropped off. TelemFFB retries on its own and recovers when the device returns, on the same USB port or a different one.</li>
 <li><strong>Red</strong> - the configured device was not found at startup, or the instance has an error. Check the USB connection and the device’s power. TelemFFB picks the device up as soon as it appears; a restart is not needed.</li>
+<li><strong>Grey</strong> - no device is configured for that role. See <a href="../devices-instances/">Devices and Instances</a>.</li>
 </ul>
 <p>After a power cycle the firmware has lost everything it held in memory. TelemFFB sends the active VPforce Configurator profile, the gain overrides and the deadzone again. See <a href="../devices-instances/#device-recovery">Device recovery</a>.</p>
 <p>If another VPforce device is connected while the configured one is missing, TelemFFB asks once whether to use that device instead.</p>
-<h2 id="simulator-connection-problems"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Simulator connection problems<a class="headerlink" href="#simulator-connection-problems" title="Link to this section">¶</a></h2>
+<h2 id="simulator-connection-problems"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> Simulator Connection Problems<a class="headerlink" href="#simulator-connection-problems" title="Link to this section">¶</a></h2>
 <p>Verify the sim is enabled in <a href="../sim-setup/">Connecting Your Simulator</a>, then use the detailed per-sim checklists:</p>
 <ul>
 <li><strong>DCS</strong> - <a href="../../rhino/game-specific-troubleshooting/#ffb-not-working">FFB not working</a> · <a href="../../rhino/game-specific-troubleshooting/#not-receiving-telemetry">Not receiving telemetry</a> · <a href="../../rhino/game-specific-troubleshooting/#autopilot-misbehaving-or-disengaging-unexpectedly">Autopilot misbehaving</a></li>
@@ -938,13 +939,13 @@
 <li><strong>Additional information</strong> - describe what you were doing when the problem occurred, or anything else support should know. Your notes travel inside the bundle, where support reads them before digging into the logs.</li>
 </ul>
 <p class="label-paragraph"><strong>Report Exceptions</strong> builds a support bundle (the exception details and tracebacks, your system configuration, the application logs, and anything you entered above) and uploads it to VPforce support. After the upload, a verification page opens in your browser; the report is only submitted once you complete the challenge there.</p>
-<h2 id="reading-the-log"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Reading the log<a class="headerlink" href="#reading-the-log" title="Link to this section">¶</a></h2>
+<h2 id="reading-the-log"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Reading the Log<a class="headerlink" href="#reading-the-log" title="Link to this section">¶</a></h2>
 <p class="label-paragraph"><strong>Log → Open Console Log</strong> shows the live log. Two kinds of entries help with specific problems:</p>
 <ul>
 <li><strong><code>Main thread stalled</code></strong> - the main window stopped responding for three seconds. TelemFFB writes what every part of the application was doing at that moment, once per stall, and notes when the window recovers. Include the log in a support request; these entries name the cause. Dragging a window or holding a title-bar button does not trigger them.</li>
-<li><strong><code>axis contention</code></strong> (MSFS) - with <a href="../msfs-xp-axis-spring/">Axis Control</a> enabled, TelemFFB checks whether something else is also moving the axis it drives. A line marked <code>CONTENDED</code> names an axis that a second source is writing, which is usually a control binding left mapped inside MSFS, or an external tool. A line marked <code>clean</code> means no second source was seen. An <code>unverified</code> line asks you to move the control through its range first.</li>
+<li><strong><code>axis contention</code></strong> (MSFS) - with <a href="../msfs-xp-axis-spring/">Axis Control</a> enabled, TelemFFB checks whether something else is also moving the axis it drives. A line marked <code>CONTENDED</code> names an axis that a second source is writing, which is usually a control binding left mapped inside MSFS, or an external tool; it is logged when the control keeps jumping in ways TelemFFB did not command, which you would also see as the control flopping in the cockpit. A line marked <code>clean</code> means no second source was seen. An <code>unverified</code> line names an axis TelemFFB watches but does not judge yet.</li>
 </ul>
-<h2 id="getting-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Getting help<a class="headerlink" href="#getting-help" title="Link to this section">¶</a></h2>
+<h2 id="getting-help"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Getting Help<a class="headerlink" href="#getting-help" title="Link to this section">¶</a></h2>
 <p>The single most important factor in getting your problem solved quickly is <strong>how you ask</strong>. Read <strong><a href="../../rhino/troubleshooting-maintenance/#how-to-get-effective-support">How to Get Effective Support</a></strong>; it is short, and following it usually turns a multi-day back-and-forth into a single exchange. The essentials:</p>
 <ul>
 <li><strong>Describe exactly what happens and when</strong> - “stick goes limp with no centering force in the F-16 after AP engage”, not “FFB doesn’t work”. One problem per request, and say what you have already tried.</li>
@@ -968,6 +969,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: X-Plane" class="md-footer__link md-footer__link--prev" href="../effects-sim-xplane/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                X-Plane
+              </div>
+</div>
+</a>
+<a aria-label="Next: Release Notes" class="md-footer__link md-footer__link--next" href="../release-notes/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Release Notes
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -982,7 +1011,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

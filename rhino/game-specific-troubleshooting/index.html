@@ -1088,14 +1088,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../telemffb/msfs-toolbar-panel/" class="md-nav__link">
+      <a href="../../telemffb/in-sim-panel/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -2085,11 +2085,8 @@
 <p>TelemFFB interacts with MSFS using standard published <strong>SimConnect</strong> variables to retrieve the telemetry data that drives FFB effects — things like airspeed, G-load, angle of attack, surface deflections, trim position, autopilot state, and so on.</p>
 <p>Many high-fidelity third-party aircraft implement their own internal flight models and systems without writing data back to the standard SimConnect variables that MSFS exposes. In these cases, TelemFFB may receive missing, zero, or incorrect values for certain parameters, causing specific effects to behave incorrectly or not at all for that aircraft.</p>
 <p class="label-paragraph"><strong>Possible workaround — aircraft L:Vars:</strong></p>
-<p>Many third-party developers expose their internal data via <strong>L:Vars</strong> (local variables), which are aircraft-specific SimConnect variables that can be read by external applications. If an L:Var exists that provides the affected data, it can generally be used in a custom TelemFFB aircraft profile to substitute for the missing standard variable.</p>
-<div class="admonition warning">
-<p class="admonition-title">Not Yet User-Accessible</p>
-<p>The interface for mapping custom L:Vars to TelemFFB effects is not yet fully documented or easily accessible to end users. If you encounter an aircraft where a specific effect is not working correctly, reach out on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord — the community or developers may be able to assist with a custom profile.</p>
-</div>
+<p>Many third-party developers expose their internal data via <strong>L:Vars</strong> (local variables), which are aircraft-specific SimConnect variables that can be read by external applications. If an L:Var or input event provides the affected data, you can tell TelemFFB to read it instead of the standard variable. Use the <strong>SimConnect/Dataref Overrides Editor</strong> in the TelemFFB <strong>Utilities</strong> menu. See <strong><a href="../../telemffb/telem-overrides/">Telemetry Overrides</a></strong> for how the editor works, with a worked example.</p>
+<p>If you cannot find a variable that carries the data, ask on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord. Other users may already have an override for the aircraft.</p>
 <p class="label-paragraph"><strong>Known limitation — PMDG and SDK-only aircraft:</strong></p>
 <p>Some aircraft, such as those by <strong>PMDG</strong>, do not expose their internal data through L:Vars and instead rely on a proprietary SDK for third-party integrations. TelemFFB does not currently have the capability to incorporate these aircraft-specific SDKs. For these aircraft, effects that depend on data the aircraft does not expose through standard channels will not function correctly, and there is no available workaround at this time.</p>
 <hr>
@@ -2164,7 +2161,7 @@
 <p class="label-paragraph"><strong>Check 2 — Verify TelemFFB auto-setup and IL-2 telemetry configuration</strong></p>
 <p>TelemFFB includes an auto-setup feature that configures IL-2’s built-in telemetry output and points it at the correct local port. Verify the following:</p>
 <ol>
-<li>In TelemFFB, confirm that <strong>Auto IL-2 Telemetry Setup</strong> is enabled and that the <strong>IL-2 Install Path</strong> is set correctly. See <strong><a href="../../telemffb/sim-setup/#il-2-sturmovik">IL-2 Sturmovik configuration</a></strong> for details on these settings.</li>
+<li>In TelemFFB, confirm that <strong>Auto Telemetry setup</strong> is enabled for your IL-2 game and that its <strong>IL-2 Install Path</strong> is set correctly. See <strong><a href="../../telemffb/sim-setup/#il-2-sturmovik-and-il-2-korea">IL-2 Sturmovik and IL-2 Korea</a></strong> for details on these settings.</li>
 <li>If auto-setup is enabled and the path is correct, allow TelemFFB to perform the setup and restart IL-2.</li>
 <li>If you have manually edited your IL-2 telemetry configuration, verify that the settings match what TelemFFB expects. Incorrect port numbers or IP addresses are a common cause of failure.</li>
 </ol>
@@ -2188,11 +2185,8 @@
 <p>TelemFFB interacts with X-Plane using standard published <strong>datarefs</strong> to retrieve the telemetry data that drives FFB effects — things like airspeed, G-load, angle of attack, surface deflections, trim position, and autopilot state.</p>
 <p>Some third-party aircraft for X-Plane implement custom systems without writing data back to the standard datarefs that X-Plane exposes. In these cases, TelemFFB may receive missing, zero, or incorrect values for certain parameters, causing specific effects to behave incorrectly or not at all for that aircraft. This is less commonly reported in X-Plane than in MSFS given the smaller user base, but the same underlying issue applies.</p>
 <p class="label-paragraph"><strong>Possible workaround — custom datarefs:</strong></p>
-<p>Many third-party X-Plane developers expose internal data through custom datarefs. If a custom dataref exists that provides the affected data, it may be possible to use it in a custom TelemFFB aircraft profile as a substitute.</p>
-<div class="admonition warning">
-<p class="admonition-title">Not Yet User-Accessible</p>
-<p>The interface for mapping custom datarefs to TelemFFB effects is not yet fully documented or easily accessible to end users. If you encounter an aircraft where a specific effect is not working correctly, reach out on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord — the community or developers may be able to assist with a custom profile.</p>
-</div>
+<p>Many third-party X-Plane developers expose internal data through custom datarefs. If a custom dataref provides the affected data, you can tell TelemFFB to read it instead of the standard dataref. Use the <strong>SimConnect/Dataref Overrides Editor</strong> in the TelemFFB <strong>Utilities</strong> menu. See <strong><a href="../../telemffb/telem-overrides/">Telemetry Overrides</a></strong> for how the editor works, with a worked example.</p>
+<p>If you cannot find a dataref that carries the data, ask on the <strong><a class="external" href="https://discord.com/channels/965234441511383080/968208779084701716" target="_blank">#TelemFFB-User</a></strong> channel on the VPforce Discord. Other users may already have an override for the aircraft.</p>
 <hr>
 <h3 id="falcon-bms">Falcon BMS<a class="headerlink" href="#falcon-bms" title="Link to this section">¶</a></h3>
 <div class="admonition warning">
@@ -2223,6 +2217,8 @@
       
         <footer class="md-footer">
   
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -2247,7 +2243,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

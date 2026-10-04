@@ -364,10 +364,10 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#why-use-it">2.1 
+<a class="md-nav__link" href="#why-use-the-tap">2.1 
 <span class="md-ellipsis">
       
-        Why use it
+        Why Use the Tap
       
     </span>
 </a>
@@ -376,7 +376,7 @@
 <a class="md-nav__link" href="#supported-simulators">2.2 
 <span class="md-ellipsis">
       
-        Supported simulators
+        Supported Simulators
       
     </span>
 </a>
@@ -385,7 +385,7 @@
 <a class="md-nav__link" href="#how-it-works">2.3 
 <span class="md-ellipsis">
       
-        How it works
+        How It Works
       
     </span>
 </a>
@@ -394,17 +394,17 @@
 <a class="md-nav__link" href="#setting-it-up">2.4 
 <span class="md-ellipsis">
       
-        Setting it up
+        Setting It Up
       
     </span>
 </a>
-<nav aria-label="Setting it up" class="md-nav">
+<nav aria-label="Setting It Up" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#if-a-dinput8dll-is-already-installed">2.4.1 
 <span class="md-ellipsis">
       
-        If a dinput8.dll is already installed
+        If a dinput8.dll Is Already Installed
       
     </span>
 </a>
@@ -413,7 +413,7 @@
 <a class="md-nav__link" href="#fresh-install-or-existing-configuration">2.4.2 
 <span class="md-ellipsis">
       
-        Fresh install or existing configuration
+        Fresh Install or Existing Configuration
       
     </span>
 </a>
@@ -425,17 +425,17 @@
 <a class="md-nav__link" href="#ffb-fix-only-mode-dcs">2.5 
 <span class="md-ellipsis">
       
-        FFB-Fix only mode (DCS)
+        FFB-Fix Only Mode (DCS)
       
     </span>
 </a>
-<nav aria-label="FFB-Fix only mode (DCS)" class="md-nav">
+<nav aria-label="FFB-Fix Only Mode (DCS)" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#what-you-give-up">2.5.1 
+<a class="md-nav__link" href="#limitations">2.5.1 
 <span class="md-ellipsis">
       
-        What you give up
+        Limitations
       
     </span>
 </a>
@@ -444,7 +444,7 @@
 <a class="md-nav__link" href="#choosing-and-changing-the-mode">2.5.2 
 <span class="md-ellipsis">
       
-        Choosing and changing the mode
+        Choosing and Changing the Mode
       
     </span>
 </a>
@@ -456,25 +456,38 @@
 <a class="md-nav__link" href="#rendering-the-games-spring">2.6 
 <span class="md-ellipsis">
       
-        Rendering the game’s spring
+        Rendering the Game’s Spring
+      
+    </span>
+</a>
+<nav aria-label="Rendering the Game’s Spring" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advanced-dynamic-through-the-tap">2.6.1 
+<span class="md-ellipsis">
+      
+        Advanced Dynamic Through the Tap
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#other-game-effects">2.7 
+<span class="md-ellipsis">
+      
+        Other Game Effects
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-games-other-effects">2.7 
+<a class="md-nav__link" href="#misconfiguration-warnings">2.8 
 <span class="md-ellipsis">
       
-        The game’s other effects
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#when-something-is-misconfigured">2.8 
-<span class="md-ellipsis">
-      
-        When something is misconfigured
+        Misconfiguration Warnings
       
     </span>
 </a>
@@ -483,7 +496,7 @@
 <a class="md-nav__link" href="#the-configuration-file">2.9 
 <span class="md-ellipsis">
       
-        The configuration file
+        The Configuration File
       
     </span>
 </a>
@@ -492,7 +505,7 @@
 <a class="md-nav__link" href="#updates-and-removal">2.10 
 <span class="md-ellipsis">
       
-        Updates and removal
+        Updates and Removal
       
     </span>
 </a>
@@ -643,11 +656,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -965,14 +978,14 @@
 <h1 id="the-directinput-tap"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.</span> The DirectInput Tap<a class="headerlink" href="#the-directinput-tap" title="Link to this section">¶</a></h1>
 <p>DCS, IL-2, and Falcon BMS compute their own force feedback and send it to the stick over DirectInput. TelemFFB has no involvement in the game-generated forces and effects being played on the device: the game drives the device directly, and TelemFFB adds its telemetry-driven effects on top.</p>
 <p>The <strong>DirectInput Tap</strong> captures the effects the game computes and sends them to TelemFFB, which renders them on the device. The game cannot detect the difference: it continues to compute its effects, and everything it exports continues to work.</p>
-<h2 id="why-use-it"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Why use it<a class="headerlink" href="#why-use-it" title="Link to this section">¶</a></h2>
+<h2 id="why-use-the-tap"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.1</span> Why Use the Tap<a class="headerlink" href="#why-use-the-tap" title="Link to this section">¶</a></h2>
 <p>With the tap active, the game’s own effects become visible and adjustable in TelemFFB:</p>
 <ul>
 <li>Each game effect type gets an <strong>enable toggle and a gain slider</strong> - controls the games themselves do not offer.</li>
 <li>The game’s spring can be corrected per axis: swap axes, invert, and scale, with a live force readout on the sliders.</li>
 <li>The game’s effects appear in the effects monitor by name, so you can see exactly what the game is sending at any moment.</li>
 </ul>
-<h2 id="supported-simulators"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Supported simulators<a class="headerlink" href="#supported-simulators" title="Link to this section">¶</a></h2>
+<h2 id="supported-simulators"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.2</span> Supported Simulators<a class="headerlink" href="#supported-simulators" title="Link to this section">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -1005,7 +1018,7 @@
 </tbody>
 </table>
 <p>IL-2 Korea is the only simulator in this group that renders force feedback to pedals.</p>
-<h2 id="how-it-works"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> How it works<a class="headerlink" href="#how-it-works" title="Link to this section">¶</a></h2>
+<h2 id="how-it-works"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.3</span> How It Works<a class="headerlink" href="#how-it-works" title="Link to this section">¶</a></h2>
 <p>TelemFFB places a small wrapper library (<code>dinput8.dll</code>) in the game’s folder, and the game loads it in place of the system DirectInput library. The wrapper passes everything through unchanged, with one exception: the force-feedback effects of the devices you choose to capture. Those effects go to TelemFFB instead of the device.</p>
 <div class="admonition important">
 <p class="admonition-title">Start TelemFFB before the game</p>
@@ -1013,7 +1026,7 @@
 <p>This check is the <code>RequireTelemFFB</code> setting in <code>dinput8.ini</code>, and it is <code>true</code> by default for a reason: it makes the wrapper fail safe. Captured devices only work while TelemFFB is running to render their forces, so a wrapper that engaged unconditionally would leave those devices with no force feedback at all in any session without TelemFFB. With the check in place, the wrapper goes inert instead, and the game’s own force feedback works normally; this prevents FFB from appearing “broken” if you happen to run the simulator without TelemFFB for any reason.</p>
 <p>Setting it to <code>false</code> removes the start-order requirement, at exactly that risk: whenever the game runs without TelemFFB, the captured devices’ forces are swallowed with nothing re-rendering them, and nothing on screen says why. Leave it <code>true</code> unless you accept that trade.</p>
 </div>
-<h2 id="setting-it-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Setting it up<a class="headerlink" href="#setting-it-up" title="Link to this section">¶</a></h2>
+<h2 id="setting-it-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4</span> Setting It Up<a class="headerlink" href="#setting-it-up" title="Link to this section">¶</a></h2>
 <ol>
 <li>Open <strong>System → System Settings</strong> and go to the simulator’s page on the <strong>Simulator Setup</strong> tab.</li>
 <li>
@@ -1037,14 +1050,14 @@
 <p class="admonition-title">Games installed under Program Files</p>
 <p>Windows may deny writes to the game’s folder for a game installed under <code>Program Files</code>. TelemFFB tells you when this is the cause. Run TelemFFB as administrator once to install, or grant the folder write access.</p>
 </div>
-<h3 id="if-a-dinput8dll-is-already-installed"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> If a dinput8.dll is already installed<a class="headerlink" href="#if-a-dinput8dll-is-already-installed" title="Link to this section">¶</a></h3>
+<h3 id="if-a-dinput8dll-is-already-installed"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.1</span> If a dinput8.dll Is Already Installed<a class="headerlink" href="#if-a-dinput8dll-is-already-installed" title="Link to this section">¶</a></h3>
 <p>Some game folders already carry a <code>dinput8.dll</code> wrapper. TelemFFB recognizes the common case, the community <strong>dcs-force-feedback-fix</strong> wrapper that the tap is built from: the panel reports it as an ffb-fix wrapper, and Install offers an upgrade.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/ffbfix-dll.webp"><img alt="" src="../images/dinput-tap/ffbfix-dll.webp" width="620px"/></a> <figcaption></figcaption></figure>
 <p>TelemFFB’s wrapper is a <strong>superset</strong> of the original ffb-fix wrapper: every rule in the existing <code>dinput8.ini</code> (per-device <code>block</code>, <code>allow</code>, and scaling rules, <code>[DeviceOrder]</code>) keeps working exactly as before, so the upgrade is safe. The file is kept as it is, with two exceptions: TelemFFB adds a <code>tap</code> rule for the joystick device selected in TelemFFB, and offers <code>block</code> rules for any configured pedal or collective devices the file does not already cover. Rules you already wrote are recognized, not duplicated - a name rule that already blocks your pedals is left alone.</p>
 <p>After a confirmed upgrade, the device configuration opens by itself with the proposed additions pre-selected - the same dialog and <strong>Preview</strong> as <a href="#fresh-install-or-existing-configuration">2.4.2 Configure Devices</a> - and nothing is added to the file until you confirm it there. Cancelling leaves the file exactly as it was.</p>
 <p>A <code>dinput8.dll</code> that TelemFFB cannot identify is reported as “another dinput8.dll installed”, and Install asks the more careful question. If the DLL belongs to a different mod or utility, replacing it will stop that tool from working.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/another-dll.webp"><img alt="" src="../images/dinput-tap/another-dll.webp" width="620px"/></a> <figcaption></figcaption></figure>
-<h3 id="fresh-install-or-existing-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.2</span> Fresh install or existing configuration<a class="headerlink" href="#fresh-install-or-existing-configuration" title="Link to this section">¶</a></h3>
+<h3 id="fresh-install-or-existing-configuration"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.4.2</span> Fresh Install or Existing Configuration<a class="headerlink" href="#fresh-install-or-existing-configuration" title="Link to this section">¶</a></h3>
 <p>Which path Install takes depends on whether the game’s folders already hold a <code>dinput8.ini</code>:</p>
 <ul>
 <li>On a <strong>fresh install</strong> (no configuration anywhere), the device dialog opens automatically as part of Install, as in the steps above.</li>
@@ -1052,13 +1065,13 @@
 </ul>
 <p class="label-paragraph"><strong>Configure Devices…</strong> opens the same device dialog over the existing configuration. <strong>Preview</strong> shows the proposed changes as a side-by-side diff of each folder’s <code>dinput8.ini</code> before anything is written; <strong>OK</strong> applies them immediately. Only the lines you were asked about change; every rule and comment you wrote yourself is kept.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/diff-preview.webp"><img alt="" src="../images/dinput-tap/diff-preview.webp" width="650px"/></a> <figcaption></figcaption></figure>
-<h2 id="ffb-fix-only-mode-dcs"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> FFB-Fix only mode (DCS)<a class="headerlink" href="#ffb-fix-only-mode-dcs" title="Link to this section">¶</a></h2>
+<h2 id="ffb-fix-only-mode-dcs"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5</span> FFB-Fix Only Mode (DCS)<a class="headerlink" href="#ffb-fix-only-mode-dcs" title="Link to this section">¶</a></h2>
 <p>DCS hands force feedback to the devices it enumerates <strong>first</strong>, and Windows caches that order. A vJoy device or a set of FFB pedals reported ahead of your stick can take the effects the stick should have received - the game creates them on the wrong device, and your stick stays quiet. This is the problem the community <strong>dcs-force-feedback-fix</strong> wrapper was written to solve, and TelemFFB’s wrapper is built from it.</p>
 <p>The tap solves it as a side effect, because captured effects are routed by device rather than by enumeration order. <strong>FFB-Fix only mode</strong> offers the other half on its own: the wrapper blocks the devices DCS should not drive and puts your joystick first, and then stays out of the way. DCS drives the stick directly, exactly as it would with no wrapper present at all.</p>
 <p>Choose it if you want your stick’s force feedback fixed while leaving the game’s forces entirely to the game.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/dcs-ffb-fix.webp"><img alt="" src="../images/dinput-tap/dcs-ffb-fix.webp" width="620px"/></a> <figcaption></figcaption></figure>
 <p>Only DCS offers this. IL-2 and Falcon BMS identify devices by their configured position rather than by enumeration order, so there is nothing for the fix to do there and no toggle appears.</p>
-<h3 id="what-you-give-up"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5.1</span> What you give up<a class="headerlink" href="#what-you-give-up" title="Link to this section">¶</a></h3>
+<h3 id="limitations"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5.1</span> Limitations<a class="headerlink" href="#limitations" title="Link to this section">¶</a></h3>
 <p>FFB-Fix only mode installs no capture rules, so everything the tap makes possible is unavailable:</p>
 <ul>
 <li>No per-effect enable toggles or gain sliders for the game’s effects.</li>
@@ -1067,7 +1080,7 @@
 <li><strong>Joystick Spring Mode</strong> must stay on a TelemFFB mode or <strong>None (Game Managed)</strong>. <strong>Game Managed (DirectInput Tap)</strong> needs a tap that is capturing the device, and in this mode nothing is captured.</li>
 </ul>
 <p>TelemFFB’s own telemetry-driven effects are unaffected and continue to work.</p>
-<h3 id="choosing-and-changing-the-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5.2</span> Choosing and changing the mode<a class="headerlink" href="#choosing-and-changing-the-mode" title="Link to this section">¶</a></h3>
+<h3 id="choosing-and-changing-the-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.5.2</span> Choosing and Changing the Mode<a class="headerlink" href="#choosing-and-changing-the-mode" title="Link to this section">¶</a></h3>
 <p>Set the toggle <strong>before</strong> installing: it decides which configuration <strong>Install</strong> writes.</p>
 <p>Afterwards the toggle still moves, but flipping it changes nothing on its own - it states an intent, and the panel says what is actually installed underneath it: <em>installed as: DirectInput Tap - use Configure Devices to change it</em>. Switching is a rewrite of the configuration, so <strong>Configure Devices…</strong> is where it happens.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/tap-to-fix-switch.webp"><img alt="" src="../images/dinput-tap/tap-to-fix-switch.webp" width="620px"/></a> <figcaption></figcaption></figure>
@@ -1079,45 +1092,49 @@
 </ul>
 <p>Moving the other way, back to the tap, the dialog offers capture rules as usual.</p>
 <p>What the panel reports is read back from <code>dinput8.ini</code> itself, not from the toggle. A file you hand-edited, or one left behind by an earlier choice, is described as it actually is.</p>
-<h2 id="rendering-the-games-spring"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.6</span> Rendering the game’s spring<a class="headerlink" href="#rendering-the-games-spring" title="Link to this section">¶</a></h2>
+<h2 id="rendering-the-games-spring"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.6</span> Rendering the Game’s Spring<a class="headerlink" href="#rendering-the-games-spring" title="Link to this section">¶</a></h2>
 <p>The tap relays the game’s spring, but rendering it is a per-aircraft choice. On the <strong>Settings</strong> tab, set <strong>Joystick Spring Mode</strong> to <strong>Game Managed (DirectInput Tap)</strong>.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/spring-mode.webp"><img alt="" src="../images/dinput-tap/spring-mode.webp" width="450px"/></a> <figcaption></figcaption></figure>
-<p>For IL-2 Korea pedals, the pedals instance offers the same mode as <strong>Game Managed (DirectInput Tap, Korea Only)</strong>.</p>
-<p>You do not have to select the mode aircraft by aircraft. Set it at the <strong>simulator or aircraft-class level</strong> with the <a href="../settings-model/#offlineglobal-simclass-configuration">offline settings editor</a>, and it becomes the default spring mode for every aircraft in that simulator or class. Individual aircraft can still override it. Setting a class or sim-wide value also works from a loaded aircraft: right-click the <strong>x</strong> icon on the setting and promote it, as described in <a href="../settings-model/#reading-the-settings-tab">How Settings Work</a>.</p>
-<p>Selecting the mode reveals the <strong>Tap: Axis Corrections and Gain</strong> group:</p>
+<p>For IL-2 Korea pedals, set <strong>Pedal Spring Mode</strong> to the same mode on the pedals instance. IL-2 Sturmovik’s pedal list does not offer it, because Great Battles has no pedal force feedback.</p>
+<p>You do not have to select the mode aircraft by aircraft. Set it at the <strong>simulator or aircraft-class level</strong> with the <a href="../settings-model/#offline-editor">offline settings editor</a>, and it becomes the default spring mode for every aircraft in that simulator or class. Individual aircraft can still override it. Setting a class or sim-wide value also works from a loaded aircraft: right-click the <strong>x</strong> icon on the setting and promote it, as described in <a href="../settings-model/#reading-the-settings-tab">How Settings Work</a>.</p>
+<p>Selecting the mode reveals two groups:</p>
 <ul>
-<li><strong>Tap: Swap X/Y FFB Axes</strong> - swap which game axis lands on which device axis.</li>
-<li><strong>Tap: Invert X Axis FFB</strong> / <strong>Tap: Invert Y Axis FFB</strong> - reverse an axis whose forces push the wrong way.</li>
-<li><strong>Tap: X Axis Spring Gain</strong> / <strong>Tap: Y Axis Spring Gain</strong> - scale the game’s spring force. 100% renders it exactly as the game commanded. The percentage on the slider handle is the current rendered force; pinned at 100% means the gain is clipping at the device’s maximum.</li>
+<li><strong>Tap: Axis Corrections</strong> - <strong>Swap X/Y FFB Axes</strong> swaps which game axis lands on which device axis; <strong>Invert X Axis FFB</strong> and <strong>Invert Y Axis FFB</strong> reverse an axis whose forces push the wrong way.</li>
+<li><strong>Tap: Spring Gain</strong> - <strong>X Axis Spring Gain</strong> and <strong>Y Axis Spring Gain</strong> scale the game’s spring force. 100% renders it exactly as the game commanded. The percentage on the slider handle is the current rendered force; pinned at 100% means the gain is clipping at the device’s maximum.</li>
 </ul>
-<h2 id="the-games-other-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.7</span> The game’s other effects<a class="headerlink" href="#the-games-other-effects" title="Link to this section">¶</a></h2>
+<p>The tap groups, like the tap spring mode itself, are only offered while the tap is enabled for the sim in System Settings, and on DCS not in FFB-Fix only mode. Values set while a group was shown are kept.</p>
+<h3 id="advanced-dynamic-through-the-tap"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.6.1</span> Advanced Dynamic Through the Tap<a class="headerlink" href="#advanced-dynamic-through-the-tap" title="Link to this section">¶</a></h3>
+<p class="label-paragraph"><strong>Advanced Dynamic</strong> (see <a href="../spring-curves/">Advanced Spring &amp; G-Force Curves</a>) also renders through the tap when the game’s spring cannot reach the device directly: always on a DirectLink device, and on a VPforce device while the tap is capturing it. The airspeed curve sets the spring force, the game’s own center movements come through the tap as usual, and the mode’s hardware trim and G-force offset shift that center. The game’s other effects are rendered exactly as in <strong>Game Managed (DirectInput Tap)</strong>, and the <strong>Tap: Axis Corrections</strong> and <strong>Tap: Additional Game Effects</strong> groups apply in this mode too. The spring gain group is not offered, since the curve sets the force.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/advanced-dynamic-tap.webp"><img alt="The Settings tab with Advanced Dynamic selected on a tap-captured device: the Tap: Axis Corrections and Tap: Additional Game Effects groups, with no Tap: Spring Gain group" src="../images/dinput-tap/advanced-dynamic-tap.webp" width="650px"/></a> <figcaption>The Settings tab with Advanced Dynamic selected on a tap-captured device: the Tap: Axis Corrections and Tap: Additional Game Effects groups, with no Tap: Spring Gain group</figcaption></figure>
+<h2 id="other-game-effects"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.7</span> Other Game Effects<a class="headerlink" href="#other-game-effects" title="Link to this section">¶</a></h2>
 <p>The <strong>Tap: Additional Game Effects</strong> group controls everything else the game sends, each type with its own enable toggle and gain:</p>
 <ul>
 <li><strong>Tap: Constant Forces</strong> - stick kicks, recoil, and similar pushes.</li>
 <li><strong>Tap: Periodic Vibrations</strong> - rumble, buffet, and other oscillations.</li>
 <li><strong>Tap: Damper Effects</strong>, <strong>Tap: Inertia Effects</strong>, <strong>Tap: Friction Effects</strong> - the game’s condition effects.</li>
 </ul>
-<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/tap-settings.webp"><img alt="" src="../images/dinput-tap/tap-settings.webp" width="650px"/></a> <figcaption></figcaption></figure>
-<p>Captured effects appear in the effects monitor as <strong>Game Spring (DirectInput Tap)</strong>, <strong>Game Periodic (DirectInput Tap)</strong>, and so on, alongside TelemFFB’s own effects.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/tap-settings.webp"><img alt="The Settings tab with Game Managed (DirectInput Tap) selected: the Tap: Axis Corrections, Tap: Spring Gain and Tap: Additional Game Effects groups" src="../images/dinput-tap/tap-settings.webp" width="650px"/></a> <figcaption>The Settings tab with Game Managed (DirectInput Tap) selected: the Tap: Axis Corrections, Tap: Spring Gain and Tap: Additional Game Effects groups</figcaption></figure>
+<p>Captured effects appear in the effects monitor as <strong>Game Spring (DirectInput Tap)</strong>, <strong>Game Periodic (DirectInput Tap)</strong>, and so on, alongside TelemFFB’s own effects. Like TelemFFB’s own effects, they show their current intensity, or their gain per axis. See <a href="../ui-overview/#active-effects">Active effects</a>.</p>
+<p>For a wire-level view of what the game sends, open <strong>Utilities → DirectInput Tap Monitor…</strong>. It shows whether the game is publishing through the tap, which devices the wrapper captured, and the raw DirectInput values (±10000) of each effect slot. It keeps a time-stamped log of each change; click <strong>Save Log…</strong> to save it for support.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/dinput-tap/effects-monitor.webp"><img alt="" src="../images/dinput-tap/effects-monitor.webp" width="650px"/></a> <figcaption></figcaption></figure>
 <div class="admonition warning">
 <p class="admonition-title">Doubled effects</p>
 <p>A game effect and the equivalent TelemFFB telemetry effect can both be enabled at once (the game’s gunfire rumble plus TelemFFB’s gunfire effect, for example). If an effect feels doubled, disable one of the pair.</p>
 </div>
-<h2 id="when-something-is-misconfigured"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.8</span> When something is misconfigured<a class="headerlink" href="#when-something-is-misconfigured" title="Link to this section">¶</a></h2>
+<h2 id="misconfiguration-warnings"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.8</span> Misconfiguration Warnings<a class="headerlink" href="#misconfiguration-warnings" title="Link to this section">¶</a></h2>
 <p>TelemFFB reports tap misconfigurations on the error line of the effects area while you fly, with the cause and the fix:</p>
 <ul>
 <li>Spring mode is <strong>None (Game Managed)</strong> while the tap is capturing the device. The tap prevents the game’s spring from reaching the device, so this combination leaves no spring at all. Select the tap spring mode, or remove the device from the capture list.</li>
 <li>The tap spring mode is selected but the tap is not capturing, usually because you started the game before TelemFFB - or, on DCS, because the wrapper is installed in <a href="#ffb-fix-only-mode-dcs">2.5 FFB-Fix only mode</a>, which captures nothing by design.</li>
 </ul>
 <p>The System Settings dialog also warns at configuration time when a selected device needs a tap rule that no enabled simulator provides.</p>
-<h2 id="the-configuration-file"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.9</span> The configuration file<a class="headerlink" href="#the-configuration-file" title="Link to this section">¶</a></h2>
+<h2 id="the-configuration-file"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.9</span> The Configuration File<a class="headerlink" href="#the-configuration-file" title="Link to this section">¶</a></h2>
 <p>TelemFFB writes a <code>dinput8.ini</code> configuration beside the wrapper in each game folder. It generates the file once, in the wrapper’s own documented format, and afterwards only <strong>adds</strong> to it (when your device selection changes, for example). It never rewrites existing content, so you can edit the file freely.</p>
 <ul>
 <li>Device rules are keyed by USB ids (<code>FFFF:2054=tap</code>), so they survive device renames.</li>
 <li>The wrapper writes a log for each game to <code>%LOCALAPPDATA%\VPForce-TelemFFB\log\tap</code>, one file per game executable.</li>
 </ul>
-<h2 id="updates-and-removal"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.10</span> Updates and removal<a class="headerlink" href="#updates-and-removal" title="Link to this section">¶</a></h2>
+<h2 id="updates-and-removal"><span class="enumerate-headings-plugin enumerate-heading-plugin">2.10</span> Updates and Removal<a class="headerlink" href="#updates-and-removal" title="Link to this section">¶</a></h2>
 <p>TelemFFB ships the wrapper and knows which version each game folder holds:</p>
 <ul>
 <li>The status panel marks an outdated copy with “→ v<em>X</em> available”; <strong>Reinstall</strong> updates it in place, keeping the configuration. It is available only when there is an update to apply - against a copy already at the shipped version it is greyed out, and the version reads “(current)”.</li>
@@ -1137,6 +1154,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: VPforce Configurator Integration" class="md-footer__link md-footer__link--prev" href="../vpconf-profiles/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                VPforce Configurator Integration
+              </div>
+</div>
+</a>
+<a aria-label="Next: Overview" class="md-footer__link md-footer__link--next" href="../sim-msfs-xplane/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Overview
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1151,7 +1196,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

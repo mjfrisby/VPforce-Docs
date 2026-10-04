@@ -489,11 +489,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -664,7 +664,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#heli-enginerotor-rumble">1.2 
+<a class="md-nav__link" href="#heli-engine-rotor-rumble">1.2 
 <span class="md-ellipsis">
       
         Heli Engine/Rotor Rumble
@@ -736,7 +736,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#fuel-boomdoor-motion">1.10 
+<a class="md-nav__link" href="#fuel-boom-door-motion">1.10 
 <span class="md-ellipsis">
       
         Fuel Boom/Door Motion
@@ -806,6 +806,19 @@
       
     </span>
 </a>
+<nav aria-label="Low Hydraulic Pressure Effect (Experimental)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#custom-hydraulic-variable-msfs">1.17.1 
+<span class="md-ellipsis">
+      
+        Custom Hydraulic Variable (MSFS)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#vibration-from-telemetry-flyinside">1.18 
@@ -994,8 +1007,15 @@
 <p>Effects driven by the mechanical state of the aircraft (engine vibration, moving surfaces and doors, damage, hydraulics) in the order they appear under the <strong>Mechanical\Airframe</strong> section of the Settings tab. The badge lines and sub-setting tables are generated from the application’s settings catalog, so they always match the app.</p>
 <h2 id="controls-lock"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Controls Lock<a class="headerlink" href="#controls-lock" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-msfs">MSFS</span> · All devices</p>
-<p>For aircraft with a control lock (gust lock): while the configured sim variable reports the lock engaged, TelemFFB holds the controls firmly in place.</p>
+<p>For aircraft with a control lock (gust lock). While the configured sim variable reports the lock engaged, TelemFFB holds the controls in the locked position. The stick and pedals lock at center, and the collective locks fully down.</p>
+<p>When the lock engages, a centering spring pulls the control to the locked position. Once the control is there, TelemFFB holds it with detents and stops the spring. On a device without detent support, the spring stays on and holds the control by itself. A damper also runs for as long as the lock is engaged. When the lock releases, TelemFFB returns the controls to their normal forces.</p>
+<ul>
+<li><strong>Controls Lock Force</strong> sets the strength of the detents and the centering spring.</li>
+<li><strong>Controls Lock Damper</strong> adds damping while the controls are locked. Very strong detents can make the stick bounce or oscillate; the damper settles it.</li>
+</ul>
+<p>Changes to either setting apply at once, even while the controls are locked. The <strong>Monitor</strong> tab lists the lock’s effects as <strong>Controls Lock Spring</strong>, <strong>Controls Lock Lower Bound</strong>, <strong>Controls Lock Upper Bound</strong> and <strong>Controls Lock Damper</strong>.</p>
 <p>The variable can be an <code>L:Var</code>, a SimVar, or an MSFS 2024 input event written as <code>B:EVENT_NAME</code>. See <a href="../telem-overrides/#input-events-b-variables">Input events</a> for how to find the name of a cockpit control.</p>
+<p>The built-in profiles for these MSFS aircraft include a control lock: the Saab 340, A2A Piper PA-24, Black Square A36 and B36TP Bonanza, Baron 58, Duke, Grand Duke, Turbine Duke and Commander 114TC, Flysimware C414AW, Pilatus PC-6, Wilga, and Taog’s Hangar H500C and OH-6A.</p>
 <table>
 <thead>
 <tr>
@@ -1013,11 +1033,21 @@
 <tr>
 <td>Invert Controls Lock Simvar</td>
 <td>—</td>
-<td>Enable if variable ON means Control Lock is OFF</td>
+<td>Enable if variable ON means Controls Lock is OFF</td>
+</tr>
+<tr>
+<td>Controls Lock Force</td>
+<td>—</td>
+<td>Strength of the detents and centering spring that hold the controls while locked</td>
+</tr>
+<tr>
+<td>Controls Lock Damper</td>
+<td>—</td>
+<td>Damping while the controls are locked, to keep a strong lock from oscillating</td>
 </tr>
 </tbody>
 </table>
-<h2 id="heli-enginerotor-rumble"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Heli Engine/Rotor Rumble<a class="headerlink" href="#heli-enginerotor-rumble" title="Link to this section">¶</a></h2>
+<h2 id="heli-engine-rotor-rumble"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Heli Engine/Rotor Rumble<a class="headerlink" href="#heli-engine-rotor-rumble" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>Helicopter engine and rotor vibration, driven by rotor RPM and blade count.</p>
 <table>
@@ -1056,7 +1086,7 @@
 </tbody>
 </table>
 <h2 id="engine-rumble-shake-telemetry-il-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> Engine Rumble - Shake Telemetry (IL-2)<a class="headerlink" href="#engine-rumble-shake-telemetry-il-2" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-il2">IL2</span> · All devices</p>
+<p><span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> · All devices</p>
 <p>IL-2 exports its physics engine’s own computed engine-shake amplitude and frequency. These effects (one for props, one for jets) render that telemetry directly: startup lope, roughness, and damage arrive in the shake automatically. They are an alternative to the RPM-based rumble effects below: enable one or the other, not both.</p>
 <table>
 <thead>
@@ -1091,7 +1121,7 @@
 </tbody>
 </table>
 <h2 id="propeller-rumble"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> Propeller Rumble<a class="headerlink" href="#propeller-rumble" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>RPM-driven piston-engine and propeller vibration. The two RPM/intensity pairs work together: at the <em>Low RPM</em> value the effect plays at <em>Low Intensity</em>, ramping toward <em>High Intensity</em> at the <em>High RPM</em> value. These are not floor values: below <em>Low RPM</em> (engine start, shutdown) the intensity keeps increasing above <em>Low Intensity</em>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1129,7 +1159,7 @@
 </tbody>
 </table>
 <h2 id="jet-engine-rumble"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.6</span> Jet Engine Rumble<a class="headerlink" href="#jet-engine-rumble" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>Turbine rumble scaled by engine power, at a configurable base frequency.</p>
 <table>
 <thead>
@@ -1172,7 +1202,7 @@
 </tbody>
 </table>
 <h2 id="damage-effect"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.8</span> Damage Effect<a class="headerlink" href="#damage-effect" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> · All devices</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> · All devices</p>
 <p>A short bump in a random direction, at randomized intensity, each time the aircraft takes damage; some hits land harder than others by design.</p>
 <table>
 <thead>
@@ -1191,7 +1221,7 @@
 </tbody>
 </table>
 <h2 id="flaps-motion"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.9</span> Flaps Motion<a class="headerlink" href="#flaps-motion" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>Vibration while the flaps are in motion.</p>
 <table>
 <thead>
@@ -1209,7 +1239,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="fuel-boomdoor-motion"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> Fuel Boom/Door Motion<a class="headerlink" href="#fuel-boomdoor-motion" title="Link to this section">¶</a></h2>
+<h2 id="fuel-boom-door-motion"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> Fuel Boom/Door Motion<a class="headerlink" href="#fuel-boom-door-motion" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> · Joystick</p>
 <p>Vibration while the refueling boom receptacle or door is deploying or retracting.</p>
 <table>
@@ -1263,7 +1293,7 @@
 </tbody>
 </table>
 <h2 id="gear-motion"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.12</span> Gear Motion<a class="headerlink" href="#gear-motion" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>Vibration while the gear is in transit, with clunks at the ends of travel.</p>
 <table>
 <thead>
@@ -1353,7 +1383,7 @@
 </table>
 <h2 id="stick-shaker"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.15</span> Stick Shaker<a class="headerlink" href="#stick-shaker" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> · Joystick, Pedals</p>
-<p>A stall-warning stick shaker: the distinct high-frequency square-wave shake of the real device, separate from the aerodynamic <a href="../effects-aerodynamics/#aoastall-buffeting">AoA/Stall Buffeting</a>. In MSFS it triggers from the sim’s stall warning; DCS/BMS use the configurable AoA threshold.</p>
+<p>A stall-warning stick shaker: the distinct high-frequency square-wave shake of the real device, separate from the aerodynamic <a href="../effects-aerodynamics/#aoa-stall-buffeting">AoA/Stall Buffeting</a>. In MSFS it triggers from the sim’s stall warning; DCS/BMS use the configurable AoA threshold.</p>
 <table>
 <thead>
 <tr>
@@ -1417,7 +1447,7 @@
 </table>
 <h2 id="low-hydraulic-pressure-effect-experimental"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.17</span> Low Hydraulic Pressure Effect (Experimental)<a class="headerlink" href="#low-hydraulic-pressure-effect-experimental" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> · All devices</p>
-<p>Simulates the heavy, sluggish controls of a failing hydraulic system: as the <em>HydSys</em> telemetry value falls from the configured threshold toward zero, the damper, inertia, and friction forces ramp from their normal values toward the levels configured here.</p>
+<p>Simulates the heavy, sluggish controls of a failing hydraulic system: as the aircraft’s hydraulic state falls from the configured threshold toward zero, the damper and friction forces ramp from their normal values toward the levels configured here.</p>
 <table>
 <thead>
 <tr>
@@ -1428,19 +1458,29 @@
 </thead>
 <tbody>
 <tr>
+<td>Custom Hydraulic Variable</td>
+<td>MSFS</td>
+<td>Read HydSys from a variable of your choice instead of HYDRAULIC SYSTEM INTEGRITY</td>
+</tr>
+<tr>
+<td>    ↳ Hydraulic Variable</td>
+<td>MSFS</td>
+<td>A SimVar, an L:Var or an input event (B:) that shows the aircraft’s hydraulic state. A switch works as it is. A pressure or other value needs a transform below.</td>
+</tr>
+<tr>
+<td>    ↳ Transform to 0-1</td>
+<td>MSFS</td>
+<td>Turns the variable’s value into 0 (no hydraulics) to 1 (normal), with x standing for the value. The syntax is the same as the Scale field in the overrides editor. Blank: a switch, or a value that already reads 0 to 1 x/3000: a pressure that reads 3000 when normal x/100: a percentage 1-x: a failure flag that reads 1 when failed The Monitor tab shows the raw value as HydSys and the result as _hyd_health</td>
+</tr>
+<tr>
 <td>Hydraulic System Threshold</td>
 <td>—</td>
-<td>“Hydraulic System Integrity” (HydSys in monitor) value to consider “low”. Forces will start increasing below this value</td>
+<td>Hydraulic health (_hyd_health in the Monitor, 0 to 1) below which the forces start to rise</td>
 </tr>
 <tr>
 <td>Damper</td>
 <td>—</td>
 <td>Damper force when hydraulic system pressure reaches 0</td>
-</tr>
-<tr>
-<td>Inertia</td>
-<td>—</td>
-<td>Inertia force when hydraulic system pressure reaches 0</td>
 </tr>
 <tr>
 <td>Friction</td>
@@ -1451,12 +1491,38 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Requires the damper/inertia/friction <a href="../effects-ffb/">overrides</a> to be enabled, and headroom left in them; if your base forces already sit at 100%, there is no room to increase them. To set the threshold for a new aircraft, observe the normal <em>HydSys</em> value in the Monitor tab and set the threshold below it.</p>
+<p>Requires the damper and friction <a href="../effects-ffb/">overrides</a> to be enabled, and headroom left in them; if your base forces already sit at 100%, there is no room to increase them. To set the threshold for a new aircraft, observe the normal <em>HydSys</em> value in the Monitor tab and set the threshold below it.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Increase these forces carefully; too much inertia or friction can cause motor instability and a protective shutdown.</p>
+<p>Increase these forces carefully; too much damper or friction can cause motor instability and a protective shutdown.</p>
 </div>
+<h3 id="custom-hydraulic-variable-msfs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.17.1</span> Custom Hydraulic Variable (MSFS)<a class="headerlink" href="#custom-hydraulic-variable-msfs" title="Link to this section">¶</a></h3>
+<p>TelemFFB reads the aircraft’s hydraulic state from <strong>HYDRAULIC SYSTEM INTEGRITY</strong>. Some aircraft model their hydraulics in their own variables and never change it. For those, enable <strong>Custom Hydraulic Variable</strong> and enter the variable that shows the hydraulic state: a SimVar, an L:Var or an input event (<code>B:</code>).</p>
+<p>The effect needs a value from 0 (no hydraulics) to 1 (normal). A switch, or a value that already reads 0 to 1, works as it is. For anything else, enter a <strong>Transform to 0-1</strong>, with <code>x</code> standing for the variable’s value. The syntax is the same as the Scale field in the <a href="../telem-overrides/">overrides editor</a>:</p>
+<table>
+<thead>
+<tr>
+<th>The variable reads</th>
+<th>Transform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A pressure, 3000 when normal</td>
+<td><code>x/3000</code></td>
+</tr>
+<tr>
+<td>A percentage</td>
+<td><code>x/100</code></td>
+</tr>
+<tr>
+<td>A failure flag, 1 when failed</td>
+<td><code>1-x</code></td>
+</tr>
+</tbody>
+</table>
+<p>The Monitor tab shows the raw value as <em>HydSys</em> and the result as <em>_hyd_health</em>. A transform TelemFFB cannot read is reported as a configuration error. The built-in profiles for the FlyInside Bell 206 and the CowanSim R66 already set this variable.</p>
 <h2 id="vibration-from-telemetry-flyinside"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.18</span> Vibration from Telemetry (FlyInside)<a class="headerlink" href="#vibration-from-telemetry-flyinside" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-msfs">MSFS</span> · All devices</p>
 <p>For FlyInside helicopters in MSFS: renders the vibration data exported by the FlyInside flight model directly. See <a href="../msfs-xp-helicopters/#flyinside-helicopters-msfs-only">FlyInside Helicopters</a>.</p>
@@ -1487,6 +1553,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Ground" class="md-footer__link md-footer__link--prev" href="../effects-ground/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Ground
+              </div>
+</div>
+</a>
+<a aria-label="Next: Weapons" class="md-footer__link md-footer__link--next" href="../effects-weapons/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Weapons
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1501,7 +1595,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

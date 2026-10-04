@@ -260,7 +260,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#microsoft-flight-simulator-2024">1.2 
+<a class="md-nav__link" href="#msfs">1.2 
 <span class="md-ellipsis">
       
         Microsoft Flight Simulator (20/24)
@@ -269,19 +269,32 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#x-plane-1112">1.3 
+<a class="md-nav__link" href="#x-plane">1.3 
 <span class="md-ellipsis">
       
         X-Plane (11/12)
       
     </span>
 </a>
-</li>
+<nav aria-label="X-Plane (11/12)" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#il-2-sturmovik">1.4 
+<a class="md-nav__link" href="#x-plane-installs">1.3.1 
 <span class="md-ellipsis">
       
-        IL-2 Sturmovik
+        X-Plane Installs
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#il-2-sturmovik-and-il-2-korea">1.4 
+<span class="md-ellipsis">
+      
+        IL-2 Sturmovik and IL-2 Korea
       
     </span>
 </a>
@@ -290,7 +303,7 @@
 <a class="md-nav__link" href="#bms-beta-support">1.5 
 <span class="md-ellipsis">
       
-        BMS (Beta support)
+        BMS (Beta Support)
       
     </span>
 </a>
@@ -554,11 +567,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -877,7 +890,7 @@
 <p>These settings are found on the <strong>Simulator Setup</strong> tab of <strong>System → System Settings</strong> and are global for any instance of TelemFFB. Each simulator has its own page on the tab.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/sim-setup/simulator-setup.webp"><img alt="The Simulator Setup tab with per-simulator enable and auto-setup options" src="../images/sim-setup/simulator-setup.webp" width="650px"/></a> <figcaption>The Simulator Setup tab with per-simulator enable and auto-setup options</figcaption></figure>
 <p>Enable each simulator you fly. For the sims that need an export script or plugin (DCS, X-Plane, IL-2), the auto-setup options install it for you.</p>
-<p class="label-paragraph"><strong>Verifying the connection:</strong> start the simulator and load a flight. The TelemFFB status area should show <strong>Running</strong> with the detected aircraft name, and the Monitor tab should show live telemetry values. See <a href="../ui-overview/#deviceinstance-status-indications">Device/Instance Status Indications</a> if it does not.</p>
+<p class="label-paragraph"><strong>Verifying the connection:</strong> start the simulator and load a flight. The TelemFFB status area should show <strong>Running</strong> with the detected aircraft name, and the Monitor tab should show live telemetry values. See <a href="../ui-overview/#device-status">Device/Instance Status Indications</a> if it does not.</p>
 <h2 id="dcs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> DCS<a class="headerlink" href="#dcs" title="Link to this section">¶</a></h2>
 <ul>
 <li>
@@ -899,7 +912,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="microsoft-flight-simulator-2024"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Microsoft Flight Simulator (20/24)<a class="headerlink" href="#microsoft-flight-simulator-2024" title="Link to this section">¶</a></h2>
+<h2 id="msfs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Microsoft Flight Simulator (20/24)<a class="headerlink" href="#msfs" title="Link to this section">¶</a></h2>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Enable</strong></p>
@@ -910,11 +923,11 @@
 <li>
 <p class="label-paragraph"><strong>Start in-sim settings panel server</strong></p>
 <ul>
-<li>Starts a local HTTP server, active only while MSFS is the connected sim, that powers the optional <a href="../msfs-toolbar-panel/">In-Sim Toolbar Panel</a>. Enabled by default.</li>
+<li>Starts a local HTTP server, active only while MSFS is the connected sim, that powers the optional <a href="../in-sim-panel/">In-Sim Settings Panel</a>. Enabled by default.</li>
 </ul>
 </li>
 </ul>
-<h2 id="x-plane-1112"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> X-Plane (11/12)<a class="headerlink" href="#x-plane-1112" title="Link to this section">¶</a></h2>
+<h2 id="x-plane"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3</span> X-Plane (11/12)<a class="headerlink" href="#x-plane" title="Link to this section">¶</a></h2>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Enable</strong></p>
@@ -925,76 +938,69 @@
 <li>
 <p class="label-paragraph"><strong>Auto X-Plane setup</strong></p>
 <ul>
-<li>When enabled, TelemFFB will automatically install the custom telemetry plugin to the configured X-Plane installation path</li>
+<li>When enabled, TelemFFB keeps its telemetry plugin current in your X-Plane installs. At startup, it offers to update the plugin in each install that has an older version. If no install has the plugin, it offers to install it in all of them.</li>
 </ul>
 </li>
 <li>
-<p class="label-paragraph"><strong>X-Plane Install Path</strong></p>
+<p class="label-paragraph"><strong>Start in-sim settings panel server</strong></p>
 <ul>
-<li>As there is no registry entry to discover the installed path for X-Plane, browse for and select the root X-Plane install path. This is required for the auto setup script to succeed</li>
+<li>Starts a local HTTP server, active only while X-Plane is the connected sim, that powers the optional <a href="../in-sim-panel/">In-Sim Settings Panel</a>. Enabled by default. When enabled, TelemFFB also offers panel updates at startup.</li>
 </ul>
 </li>
 </ul>
-<h2 id="il-2-sturmovik"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> IL-2 Sturmovik<a class="headerlink" href="#il-2-sturmovik" title="Link to this section">¶</a></h2>
-<p>Both <strong>IL-2 Great Battles</strong> and <strong>IL-2 Korea</strong> are supported, each with its own options group on the IL2 tab.</p>
+<h3 id="x-plane-installs"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.3.1</span> X-Plane Installs<a class="headerlink" href="#x-plane-installs" title="Link to this section">¶</a></h3>
+<p>TelemFFB lists each X-Plane install on this PC. It finds them from the record that the X-Plane installer keeps. Each install shows its version, its folder, and the state of the two TelemFFB plugins:</p>
+<ul>
+<li><strong>Telemetry plugin</strong> - sends telemetry to TelemFFB and applies axis control. X-Plane needs this plugin for force feedback.</li>
+<li><strong>Panel</strong> - the optional <a href="../in-sim-panel/">In-Sim Settings Panel</a>.</li>
+</ul>
+<p>Each plugin line reads <strong>up to date</strong>, <strong>update available</strong>, or <strong>not installed</strong>. To put the current version into an install, close X-Plane, then click <strong>Update</strong> or <strong>Install</strong> on the plugin line.</p>
+<figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/sim-setup/xplane-installs.webp"><img alt="System Settings, X-Plane: three X-Plane installs, each with its folder, both plugins up to date, and a trash can icon to remove it" src="../images/sim-setup/xplane-installs.webp" width="650px"/></a> <figcaption>System Settings, X-Plane: three X-Plane installs, each with its folder, both plugins up to date, and a trash can icon to remove it</figcaption></figure>
+<ul>
+<li><strong>Add X-Plane folder…</strong> - adds an install that is not in the list. Select the X-Plane folder, the one that contains the <code>Resources</code> folder.</li>
+<li><strong>Trash can icon</strong> - removes an install from the list. TelemFFB does not change anything in the folder, and it stops offering plugin updates for that install. To list the install again, add its folder with <strong>Add X-Plane folder…</strong>.</li>
+</ul>
+<p>Click <strong>Save</strong> to keep the changes to the list.</p>
+<h2 id="il-2-sturmovik-and-il-2-korea"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.4</span> IL-2 Sturmovik and IL-2 Korea<a class="headerlink" href="#il-2-sturmovik-and-il-2-korea" title="Link to this section">¶</a></h2>
+<p>The <strong>IL2</strong> page has a block of settings for each game: IL-2 Sturmovik Great Battles and IL-2 Korea. TelemFFB treats the two games as separate sims, each with its own aircraft profiles and settings.</p>
 <ul>
 <li>
-<p class="label-paragraph"><strong>Enable</strong></p>
+<p class="label-paragraph"><strong>Enable IL-2 Sturmovik</strong> / <strong>Enable IL-2 Korea</strong></p>
 <ul>
-<li>Enable/disable support for IL-2</li>
+<li>Turns on support for that game. Both are off until you turn them on. The other fields in a game’s block are available only while its switch is on.</li>
 </ul>
 </li>
 <li>
-<p class="label-paragraph"><strong>IL-2 Telemetry Port</strong></p>
+<p class="label-paragraph"><strong>Auto Telemetry setup</strong></p>
 <ul>
-<li>The UDP port TelemFFB listens on for IL-2 telemetry (default: 34385)</li>
+<li>When this is on, TelemFFB checks the game’s <code>startup.cfg</code> each time it starts. If the telemetry or motion settings in that file are missing or do not match, TelemFFB shows the changes and asks before writing them. For IL-2 Korea it also checks the FFB settings, which send the game’s force feedback data. Close the game before you accept the changes.</li>
 </ul>
 </li>
 <li>
-<p class="label-paragraph"><strong>IL2 Sturmovik Options</strong> / <strong>IL2 Korea Options</strong></p>
+<p class="label-paragraph"><strong>Telemetry Port</strong></p>
 <ul>
-<li>
-<p>Each game has a discrete configuration group with the same two settings:</p>
-<ul>
-<li>
-<p class="label-paragraph"><strong>Auto Telemetry Setup</strong></p>
-<ul>
-<li>If enabled, TelemFFB will automatically set up the required configuration in that game to support telemetry export</li>
+<li>The UDP port the game sends its telemetry to: 34385 for IL-2 Sturmovik and 34386 for IL-2 Korea by default. The port is how TelemFFB tells the two games apart, so they must use different ports. With both games on, <strong>Save</strong> refuses two equal ports.</li>
+<li>With <strong>Auto Telemetry setup</strong> on, TelemFFB writes the port into the game’s <code>startup.cfg</code>. If IL-2 Korea still sends to the IL-2 Sturmovik port, TelemFFB offers at startup to move it to the Korea port. Until you accept, TelemFFB cannot tell Korea from Great Battles, and it asks again on the next start.</li>
 </ul>
 </li>
 <li>
 <p class="label-paragraph"><strong>IL-2 Install Path</strong></p>
 <ul>
-<li>As there is no registry entry to discover the installed path, browse for and select the root install path for that game. This is required for the auto setup script to succeed</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>The game’s main folder. TelemFFB cannot find IL-2 installs on its own, so select the folder with the <strong>…</strong> button. For IL-2 Sturmovik, select the folder that holds <code>data\startup.cfg</code>. For IL-2 Korea, select the standalone install folder (with <code>game\data\startup.cfg</code>) or the Steam folder (with <code>data\startup.cfg</code>). TelemFFB rejects a folder that does not hold the game’s <code>startup.cfg</code>.</li>
+<li><strong>Auto Telemetry setup</strong> and the DirectInput Tap both use this path, so the field is available when either of them is on.</li>
 </ul>
 </li>
 <li>
 <p class="label-paragraph"><strong>Telemetry Forwarding</strong></p>
 <ul>
+<li>Sends a copy of the IL-2 data that TelemFFB receives to other programs, such as motion software, while TelemFFB keeps the telemetry port. Forwarding applies to both games.</li>
+<li><strong>Enable</strong> turns forwarding on. If the destination list is empty, <strong>Save</strong> asks you to add a destination or turn forwarding off.</li>
 <li>
-<p>TelemFFB can forward the telemetry streams it receives from IL-2 to additional destinations, so other applications (for example, motion software) can consume the same data while TelemFFB owns the telemetry port.</p>
-</li>
-<li>
-<p class="label-paragraph"><strong>Enable</strong></p>
+<p class="label-paragraph"><strong>Add</strong> creates a destination from the <strong>IP</strong>, the <strong>UDP Port</strong> and the streams you check. <strong>Delete Entry</strong> removes the selected destination. The streams are:</p>
 <ul>
-<li>Enable/disable telemetry forwarding</li>
-</ul>
-</li>
-<li>
-<p class="label-paragraph"><strong>Destinations</strong></p>
-<ul>
-<li>
-<p>Use <strong>Add</strong> and <strong>Delete Entry</strong> to manage one or more forwarding destinations. Each entry has an <strong>IP</strong>, a <strong>UDP Port</strong>, and a selection of which streams to forward:</p>
-<ul>
-<li><strong>Telemetry</strong> - the IL-2 <code>telemetrydevice</code> stream</li>
-<li><strong>Motion</strong> - the IL-2 <code>motiondevice</code> stream</li>
-<li><strong>FFB</strong> - the IL-2 <code>ffbdevice</code> stream (IL-2 Korea only)</li>
-</ul>
-</li>
+<li><strong>Telemetry</strong>: the <code>telemetrydevice</code> stream</li>
+<li><strong>Motion</strong>: the <code>motiondevice</code> stream</li>
+<li><strong>FFB</strong>: the <code>ffbdevice</code> stream, which only IL-2 Korea sends</li>
 </ul>
 </li>
 </ul>
@@ -1002,11 +1008,11 @@
 <li>
 <p class="label-paragraph"><strong>DirectInput Tap</strong></p>
 <ul>
-<li>Each IL-2 title has its own tap section for capturing the game’s force feedback effects and rendering them through TelemFFB; see <a href="../dinput-tap/">The DirectInput Tap</a></li>
+<li><strong>Enable for IL-2 Sturmovik Great Battles</strong> and <strong>Enable for IL-2 Korea</strong> set up the tap for each game separately. See <a href="../dinput-tap/">The DirectInput Tap</a>.</li>
 </ul>
 </li>
 </ul>
-<h2 id="bms-beta-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> BMS (Beta support)<a class="headerlink" href="#bms-beta-support" title="Link to this section">¶</a></h2>
+<h2 id="bms-beta-support"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.5</span> BMS (Beta Support)<a class="headerlink" href="#bms-beta-support" title="Link to this section">¶</a></h2>
 <ul>
 <li>
 <p class="label-paragraph"><strong>Enable</strong></p>
@@ -1032,6 +1038,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Devices &amp; Instances" class="md-footer__link md-footer__link--prev" href="../devices-instances/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Devices &amp; Instances
+              </div>
+</div>
+</a>
+<a aria-label="Next: How Settings Work" class="md-footer__link md-footer__link--next" href="../settings-model/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                How Settings Work
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1046,7 +1080,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

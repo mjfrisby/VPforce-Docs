@@ -489,11 +489,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -875,7 +875,8 @@
 <h1 id="advanced-spring-g-force-curves"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Advanced Spring &amp; G-Force Curves<a class="headerlink" href="#advanced-spring-g-force-curves" title="Link to this section">¶</a></h1>
 <h2 id="advanced-dynamic-spring-curve-dialog"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Advanced Dynamic Spring Curve Dialog<a class="headerlink" href="#advanced-dynamic-spring-curve-dialog" title="Link to this section">¶</a></h2>
 <p>The advanced spring setting is supported across all simulators in some form. It defines the spring gain mapping as a visual curve across a custom airspeed envelope.</p>
-<p>To enable the Advance Spring mode, change the <strong>Joystick Spring Mode</strong> for the desired aircraft to the “<strong>Advanced Dynamic</strong>” mode. Then choose the <strong>Edit Settings</strong> button to open the configuration dialog.</p>
+<p>To enable the Advance Spring mode, change the <strong>Joystick Spring Mode</strong> for the desired aircraft to the “<strong>Advanced Dynamic</strong>” mode. Then click the <strong>Configure Settings</strong> button (<strong>Edit Settings</strong> once a curve has been saved) to open the configuration dialog.</p>
+<p>On DCS, IL-2 and Falcon BMS the curve reshapes the game’s own spring, so the game’s trim and center movements keep working underneath it. A VPforce device does this in firmware. A <a href="../devices-instances/">DirectLink</a> device, or any device the <a href="../dinput-tap/">DirectInput Tap</a> is capturing, needs the tap: TelemFFB then renders the game’s captured spring itself with the curve applied. Without a tap capturing that device, the mode reports that no game spring is available to render.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/adv-spring-entry.webp"><img alt="" height="105px" src="../images/spring-curves/adv-spring-entry.webp" width="401px"/></a> <figcaption></figcaption></figure>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/adv-spring-dialog.webp"><img alt="" height="462px" src="../images/spring-curves/adv-spring-dialog.webp" width="413px"/></a> <figcaption></figcaption></figure>
 <p>The form is separated into the X and Y axis configurations. Each axis may be configured separately, although the airspeed scale will be the same for each axis.
@@ -995,7 +996,7 @@ Within each axis configuration the following controls are available:</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/adv-spring-smooth.gif"><img alt="" height="243px" src="../images/spring-curves/adv-spring-smooth.gif" width="523px"/></a> <figcaption></figcaption></figure>
 <h2 id="advanced-custom-curve-g-force-effect-dialog"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Advanced Custom Curve G-Force Effect Dialog<a class="headerlink" href="#advanced-custom-curve-g-force-effect-dialog" title="Link to this section">¶</a></h2>
 <p>The G-Force effect can also be configured through a custom curve. Many aircraft do not have a linear, or even similar, g-loading response, and the standard exponential-curve g-force effect can produce lackluster or erratic behavior on them.</p>
-<p>To enable, select “Custom Curve” as the G-Force Effect and select the Edit Settings button</p>
+<p>To enable, select “Custom Curve” as the G-Force Effect and click the <strong>Configure Settings</strong> button (<strong>Edit Settings</strong> once a curve has been saved)</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/gforce-curve-dialog.webp"><img alt="" height="76px" src="../images/spring-curves/gforce-curve-dialog.webp" width="456px"/></a> <figcaption></figcaption></figure>
 <p>Using the same new curve widget as the Advanced Spring Curve feature, a new custom curve G-Effect was created.</p>
 <figure class="figure-image"> <a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/spring-curves/gforce-curve-example.webp"><img alt="" height="512px" src="../images/spring-curves/gforce-curve-example.webp" width="382px"/></a> <figcaption></figcaption></figure>
@@ -1053,6 +1054,34 @@ configurations.</p>
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: System" class="md-footer__link md-footer__link--prev" href="../effects-system/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                System
+              </div>
+</div>
+</a>
+<a aria-label="Next: DCS" class="md-footer__link md-footer__link--next" href="../effects-sim-dcs/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                DCS
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1067,7 +1096,7 @@ configurations.</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>

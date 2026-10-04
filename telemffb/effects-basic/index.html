@@ -489,11 +489,11 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../msfs-toolbar-panel/">
+<a class="md-nav__link" href="../in-sim-panel/">
 <span class="md-ellipsis">
     
   
-    In-Sim Toolbar Panel
+    In-Sim Settings Panel
   
 
     
@@ -697,7 +697,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#co-pilotrio-spring-override">1.11 
+<a class="md-nav__link" href="#co-pilot-rio-spring-override">1.11 
 <span class="md-ellipsis">
       
         Co-Pilot/RIO Spring Override
@@ -939,10 +939,10 @@
 <h1 id="basic-settings"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.</span> Basic Settings<a class="headerlink" href="#basic-settings" title="Link to this section">¶</a></h1>
 <p>The settings that define how your controls fundamentally feel (the spring model, force trim, axis control, and per-aircraft basics) in the order they appear under the <strong>Basic Settings</strong> section of the Settings tab. The badge lines and sub-setting tables are generated from the application’s settings catalog, so they always match the app.</p>
 <h2 id="class"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.1</span> Class<a class="headerlink" href="#class" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>The aircraft class: PropellerAircraft, TurbopropAircraft, JetAircraft, GliderAircraft, Helicopter, or a special class such as HPGHelicopter (choices depend on the simulator). The class decides which class defaults apply and which spring modes and effects are offered; see <a href="../settings-model/">How Settings Work</a>.</p>
 <h2 id="spring-mode"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.2</span> Spring Mode<a class="headerlink" href="#spring-mode" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
+<p><span class="sim-badge sim-dcs">DCS</span> <span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> <span class="sim-badge sim-bms">BMS</span> <span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · All devices</p>
 <p>The master selector for how the centering spring behaves. The available modes depend on the simulator, aircraft class, and device; an MSFS fixed-wing joystick offers different modes than DCS helicopter pedals or a collective. Each mode reveals its own sub-settings, listed below by mode.</p>
 <ul>
 <li>For <strong>MSFS/X-Plane</strong>, the spring modes are the core of the FFB implementation; see <a href="../msfs-xp-axis-spring/">Axis Control &amp; Spring Modes</a>.</li>
@@ -1010,42 +1010,42 @@
 <tbody>
 <tr>
 <td>Advanced Spring Mapping</td>
-<td>DCS, IL2, BMS, MSFS, XP · Joystick, Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS, MSFS, XP · Joystick, Pedals</td>
 <td></td>
 </tr>
 <tr>
 <td>Use Hardware Trim</td>
-<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
 <td></td>
 </tr>
 <tr>
 <td>    ↳ Trim Reset</td>
-<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
 <td></td>
 </tr>
 <tr>
 <td>    ↳ Trim     ⇧</td>
-<td>DCS, IL2, BMS · Joystick</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick</td>
 <td></td>
 </tr>
 <tr>
 <td>    ↳ Trim     ⇩</td>
-<td>DCS, IL2, BMS · Joystick</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick</td>
 <td></td>
 </tr>
 <tr>
 <td>    ↳ Trim     ⇦</td>
-<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
 <td></td>
 </tr>
 <tr>
 <td>    ↳ Trim     ⇨</td>
-<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
 <td></td>
 </tr>
 <tr>
 <td>    ↳ Trim Slew Rate</td>
-<td>DCS, IL2, BMS · Joystick, Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
 <td>Rate at which the trim will move. Calculated as “steps per second” (1 step =1/8192 of total throw)</td>
 </tr>
 </tbody>
@@ -1116,7 +1116,7 @@
 <tbody>
 <tr>
 <td>Pedal Spring Gain</td>
-<td>DCS, IL2, BMS, MSFS, XP · Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS, MSFS, XP · Pedals</td>
 <td>Percent of spring setting in VPForce Configurator</td>
 </tr>
 <tr>
@@ -1138,32 +1138,32 @@
 <tbody>
 <tr>
 <td>Stall Speed V S</td>
-<td>DCS, IL2, BMS · Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Pedals</td>
 <td>Stall Speed</td>
 </tr>
 <tr>
 <td>V S Gain</td>
-<td>DCS, IL2, BMS · Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Pedals</td>
 <td>Spring gain when aircraft at Vs</td>
 </tr>
 <tr>
 <td>Never Exceed Speed V NE</td>
-<td>DCS, IL2, BMS · Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Pedals</td>
 <td>Never Exceed Speed</td>
 </tr>
 <tr>
 <td>V NE Gain</td>
-<td>DCS, IL2, BMS · Pedals</td>
+<td>DCS, IL2, IL2 Korea, BMS · Pedals</td>
 <td>Spring gain when aircraft is at Vne</td>
 </tr>
 <tr>
 <td>Override Spring Gain</td>
-<td>DCS, IL2, BMS · Joystick</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick</td>
 <td></td>
 </tr>
 <tr>
 <td>Hardware Force Trim</td>
-<td>DCS, IL2, BMS · Joystick</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick</td>
 <td>Bindings and other options for force trim release and hat based hardware trim</td>
 </tr>
 <tr>
@@ -1175,6 +1175,105 @@
 <td>    ↳ Trim Release Damper</td>
 <td>DCS, BMS · Joystick</td>
 <td>Dampening force while trim release is active</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Game Managed (DirectInput Tap) / Advanced Dynamic</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tap: Swap X/Y FFB Axes</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick</td>
+<td>Swap the X and Y axes of the game spring received via the DirectInput tap. Counterpart to in-game FFB tuning settings (e.g. DCS FFTune ‘Swap Axes’): those alter the FFB the game emits and distort the tapped spring, so leave them at neutral in the game and apply any needed correction here instead.</td>
+</tr>
+<tr>
+<td>Tap: Invert X Axis FFB</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Invert the X (roll) direction of the game spring received via the DirectInput tap. Counterpart to in-game FFB tuning settings (e.g. DCS FFTune ‘Invert X’): those alter the FFB the game emits and distort the tapped spring, so leave them at neutral in the game and apply any needed correction here instead. Use if the spring center moves the wrong way left/right when trimming.</td>
+</tr>
+<tr>
+<td>Tap: Invert Y Axis FFB</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick</td>
+<td>Invert the Y (pitch) direction of the game spring received via the DirectInput tap. Counterpart to in-game FFB tuning settings (e.g. DCS FFTune ‘Invert Y’): those alter the FFB the game emits and distort the tapped spring, so leave them at neutral in the game and apply any needed correction here instead. Use if the spring center moves the wrong way fore/aft when trimming.</td>
+</tr>
+<tr>
+<td>Tap: Constant Forces</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Render the game’s constant-force effects received via the DirectInput tap - stick kicks, gun recoil, control impulses.</td>
+</tr>
+<tr>
+<td>    ↳ Tap: Constant Force Gain</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Force gain on the game’s constant-force effects. 100% renders them exactly as the game commanded; raise it if the game’s native forces feel weak. The % shown on the slider handle is the current rendered force - pinned at 100% means the gain is clipping at the device’s maximum.</td>
+</tr>
+<tr>
+<td>Tap: Periodic Vibrations</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Render the game’s periodic vibration effects received via the DirectInput tap - engine rumble, buffet, shaking. If a vibration doubles up with a TelemFFB telemetry-driven effect (e.g. both rendering engine rumble), disable one of the two.</td>
+</tr>
+<tr>
+<td>    ↳ Tap: Periodic Vibration Gain</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Force gain on the game’s periodic vibration effects. 100% renders them exactly as the game commanded; raise it if the game’s native forces feel weak. The % shown on the slider handle is the current rendered force - pinned at 100% means the gain is clipping at the device’s maximum.</td>
+</tr>
+<tr>
+<td>Tap: Damper Effects</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Render the game’s damper effects received via the DirectInput tap - velocity-based resistance to stick motion.</td>
+</tr>
+<tr>
+<td>    ↳ Tap: Damper Gain</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Force gain on the game’s damper effects. 100% renders them exactly as the game commanded; raise it if the game’s native resistance feels weak. The % shown on the slider handle is the current rendered force - pinned at 100% means the gain is clipping at the device’s maximum.</td>
+</tr>
+<tr>
+<td>Tap: Inertia Effects</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Render the game’s inertia effects received via the DirectInput tap - acceleration-based resistance simulating control mass.</td>
+</tr>
+<tr>
+<td>    ↳ Tap: Inertia Gain</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Force gain on the game’s inertia effects. 100% renders them exactly as the game commanded; raise it if the game’s native resistance feels weak. The % shown on the slider handle is the current rendered force - pinned at 100% means the gain is clipping at the device’s maximum.</td>
+</tr>
+<tr>
+<td>Tap: Friction Effects</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Render the game’s friction effects received via the DirectInput tap - constant drag resisting stick motion.</td>
+</tr>
+<tr>
+<td>    ↳ Tap: Friction Gain</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Force gain on the game’s friction effects. 100% renders them exactly as the game commanded; raise it if the game’s native resistance feels weak. The % shown on the slider handle is the current rendered force - pinned at 100% means the gain is clipping at the device’s maximum.</td>
+</tr>
+</tbody>
+</table>
+<p class="label-paragraph"><strong>In mode: Game Managed (DirectInput Tap)</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sub-setting</th>
+<th>Sims</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tap: X Axis Spring Gain</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick, Pedals</td>
+<td>Force gain on the X (roll) axis of the game spring received via the DirectInput tap. 100% renders the spring exactly as the game commanded; raise it if the game’s native forces feel weak. Applies to the axis as rendered on the device: with ‘Swap X/Y FFB Axes’ enabled, this scales whichever game axis ends up on X. Spring centering positions are unaffected - only the force gradient scales. The % shown on the slider handle is the current rendered spring force - pinned at 100% means the gain is clipping at the device’s maximum.</td>
+</tr>
+<tr>
+<td>Tap: Y Axis Spring Gain</td>
+<td>DCS, IL2, IL2 Korea, BMS · Joystick</td>
+<td>Force gain on the Y (pitch) axis of the game spring received via the DirectInput tap. 100% renders the spring exactly as the game commanded; raise it if the game’s native forces feel weak. Applies to the axis as rendered on the device: with ‘Swap X/Y FFB Axes’ enabled, this scales whichever game axis ends up on Y. Spring centering positions are unaffected - only the force gradient scales. The % shown on the slider handle is the current rendered spring force - pinned at 100% means the gain is clipping at the device’s maximum.</td>
 </tr>
 </tbody>
 </table>
@@ -1364,7 +1463,7 @@
 <p><span class="sim-badge sim-msfs">MSFS</span> <span class="sim-badge sim-xplane">XP</span> · </p>
 <p>Enables a static spring on the pedals with a force-trim release button: hold the button, position the pedals, release to lock the new center.</p>
 <h2 id="il2-shake-master"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.7</span> IL2 Shake Master<a class="headerlink" href="#il2-shake-master" title="Link to this section">¶</a></h2>
-<p><span class="sim-badge sim-il2">IL2</span> · All devices</p>
+<p><span class="sim-badge sim-il2">IL2</span> <span class="sim-badge sim-il2k">IL2 Korea</span> · All devices</p>
 <p>IL-2 implements its own basic FFB shake effects in-game. The Shake Master group replaces them with TelemFFB’s more configurable versions: buffeting, runway rumble, and weapons effects, each individually adjustable. When using these, set the in-game “Shaking” intensity to 0; see the <a href="../sim-il2/">IL-2 guide</a>.</p>
 <table>
 <thead>
@@ -1503,6 +1602,16 @@
 <td>Enable logging of hands on/off state (generates lots of logs.. only use if troubleshooting)</td>
 </tr>
 <tr>
+<td>Custom Autopilot Variable</td>
+<td>MSFS · Joystick, Pedals, Trimwheel</td>
+<td>Read the autopilot state from a variable of your choice instead of AUTOPILOT MASTER, for an aircraft whose autopilot does not set it</td>
+</tr>
+<tr>
+<td>    ↳ Custom Autopilot Variable</td>
+<td>MSFS · Joystick, Pedals, Trimwheel</td>
+<td>A SimVar, an L:Var or an input event (B:) that shows whether the autopilot is engaged: 0 is off, anything else is on. Set it on each device that follows the autopilot. A variable that needs converting belongs in the SimConnect Overrides Editor as APMaster instead. Turn this setting off for that entry to be used: while it is on, this variable is the one read.</td>
+</tr>
+<tr>
 <td>Feet On Deadzone</td>
 <td>MSFS · Pedals</td>
 <td>Distance required to trigger a feet-on condition</td>
@@ -1533,9 +1642,9 @@
 <td>Custom Simconnect Variable - use “VARNAME” for simvars or “L:VARNAME” for LVARS</td>
 </tr>
 <tr>
-<td>    ↳ Bit Range X Scaling</td>
+<td>    ↳ +/- Range X Scaling</td>
 <td>MSFS · Joystick, Pedals</td>
-<td>Bit Range Scaling</td>
+<td>+/- Value Range to send to sim</td>
 </tr>
 <tr>
 <td>Custom Simconnect Y Variable</td>
@@ -1548,9 +1657,9 @@
 <td>Custom Simconnect Variable - use “VARNAME” for simvars or “L:VARNAME” for LVARS</td>
 </tr>
 <tr>
-<td>    ↳ Bit Range Y Scaling</td>
+<td>    ↳ +/- Range Y Scaling</td>
 <td>MSFS · Joystick, Collective, Trimwheel</td>
-<td>Bit Range Scaling</td>
+<td>+/- Value Range to send to sim</td>
 </tr>
 <tr>
 <td>Trim / AP Following</td>
@@ -1660,7 +1769,7 @@
 <h2 id="hpg-pedal-spring-gain"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.10</span> HPG Pedal Spring Gain<a class="headerlink" href="#hpg-pedal-spring-gain" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-msfs">MSFS</span> · Pedals</p>
 <p>HPG helicopters: the pedal spring gain used by the AFCS integration, as a percent of the Configurator spring value.</p>
-<h2 id="co-pilotrio-spring-override"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.11</span> Co-Pilot/RIO Spring Override<a class="headerlink" href="#co-pilotrio-spring-override" title="Link to this section">¶</a></h2>
+<h2 id="co-pilot-rio-spring-override"><span class="enumerate-headings-plugin enumerate-heading-plugin">1.11</span> Co-Pilot/RIO Spring Override<a class="headerlink" href="#co-pilot-rio-spring-override" title="Link to this section">¶</a></h2>
 <p><span class="sim-badge sim-dcs">DCS</span> · Joystick</p>
 <p>DCS multi-crew: temporarily overrides the joystick spring gain when you occupy a seat other than the pilot’s, so the stick is not fighting you while you work the back seat. Optionally active only while a configured button is held.</p>
 <table>
@@ -1719,6 +1828,34 @@
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Overview" class="md-footer__link md-footer__link--prev" href="../effects-overview/">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Previous
+              </span>
+<div class="md-ellipsis">
+                Overview
+              </div>
+</div>
+</a>
+<a aria-label="Next: Aerodynamics" class="md-footer__link md-footer__link--next" href="../effects-aerodynamics/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                Next
+              </span>
+<div class="md-ellipsis">
+                Aerodynamics
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1733,7 +1870,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.footer", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
 <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 <script src="../../javascripts/figure-numbering.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
